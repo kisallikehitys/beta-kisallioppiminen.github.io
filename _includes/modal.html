@@ -6,7 +6,7 @@
         <h3>Kirjautuminen</h3><br>
         {% if jekyll.environment == "local" %}
         <p>Kirjaudu Google tunnuksilla tai omilla.</p>
-        <a href="http://localhost:3000/users/auth/google_oauth2"><img src="{{ "/img/google-login.png" | prepend: site.baseurl }}" alt="Google-nappula" /></a>
+        <a href="http://kurssihallinta.kisallioppiminen.fi//users/auth/google_oauth2"><img src="{{ "/img/google-login.png" | prepend: site.baseurl }}" alt="Google-nappula" /></a>
         {% else %}
         <a href="{{ site.backendbaseurl | append: 'users/auth/google_oauth2' }}"><img src="{{ "/img/google-login.png" | prepend: site.baseurl }}" alt="Google-nappula" /></a>
         {% endif %}
