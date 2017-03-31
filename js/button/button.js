@@ -153,13 +153,33 @@ class Button {
       );
   }
 
+  _markStats(data) {
+    console.log(data);
+  }
+
+  _getStats(id) {
+    const obj = this;
+    console.log(this.courseData.course_id);
+    backend.get(`courses/${id}/exercises/statistics`)
+      .then(
+        function fulfilled(data) {
+          obj._markStats(data);
+        },
+        function rejected() {
+          console.warn("Not a teacher.");
+        }
+      );
+  }
+
   init(data) {
+    console.log(data);
     this._extractCourseData(data, this._getHTMLID(window.location.pathname));
     if (this.courseData.coursekey !== '') {
       this._addButtons();
       this._getCheckmarks();
     } else {
       console.warn("No coursekey for this material.");
+      this._getStats(this.courseData.course_id);
     }
   }
 
@@ -178,6 +198,15 @@ $(document).ready(function () {
         },
         function rejected() {
           console.warn("Error, could not get coursekey");
+          backend.get(`teachers/${Session.getUserId()}/courses}`)
+            .then(
+              function fulfilled(data) {
+                button._markStats(data);
+              },
+              function rejected(data) {
+                console.warn(data);
+              }
+            );
         });
   }
 });

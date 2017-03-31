@@ -300,11 +300,12 @@ class View {
     nameH1.innerHTML = data.name;
 
     let h2 = document.createElement('h2');
-    h2.style = "display: inline-block; color: #888888";
+    h2.style.display = "inline-block";
+    h2.style.color = "#888888";
     h2.innerHTML = formattedTime;
 
     let coursekeyH1 = document.createElement('h1');
-    coursekeyH1.style = "float: right";
+    coursekeyH1.style.float = "right";
 
     let collapseAttributes = [
       { key: 'id', value: data.coursekey },
@@ -319,7 +320,10 @@ class View {
     coursekeyH1.appendChild(collapseLink);
 
     let coursekeyH3 = document.createElement('h3');
-    coursekeyH3.style = "font-family: monospace; float: right; display: inline-block; color: #666666";
+    coursekeyH3.style.fontFamily = "monospace";
+    coursekeyH3.style.float = "right";
+    coursekeyH3.style.display = "inline-block";
+    coursekeyH3.style.color = "#666666";
     coursekeyH3.innerHTML = data.coursekey;
 
     header.appendChild(nameH1);
@@ -331,7 +335,7 @@ class View {
     let courseDiv = document.createElement('div');
     courseDiv.setAttribute('id', `checkmarkTable${data.coursekey}`);
     courseDiv.setAttribute('class', 'collapse');
-    courseDiv.style = "overflow-x:auto;";
+    courseDiv.style.overflowX = "auto;";
 
     let alertDiv = document.createElement('div');
     alertDiv.setAttribute('class', "alert alert-info");
@@ -343,7 +347,7 @@ class View {
     alertDiv.appendChild(message);
     courseDiv.appendChild(alertDiv);
     listItem.appendChild(courseDiv);
-
+    console.log(listItem);
     return listItem;
   }
 

@@ -1,6 +1,7 @@
 class CourseList {
 
   static createCourseList(data) {
+    console.log(data);
     for (let i in data) {
       this._createListItem(data[i]);
     }
