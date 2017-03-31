@@ -93,7 +93,7 @@ class Scoreboard {
     let exercises = Exercises.extractExercises(pageData);
     if (data.exercises) {
       let studentData = [{
-        user: session.getUserFirstName(),
+        user: Session.getUserFirstName(),
         exercises: data.exercises
       }];
       this.createTable(studentData, exercises, data.coursekey, course);
@@ -114,7 +114,7 @@ class Scoreboard {
     let url = `courses/${course.id}/scoreboard`;
 
     if (window.location.pathname.includes("/omat_kurssit")) {
-      url = `students/${session.getUserId()}/courses/${course.id}/scoreboard`;
+      url = `students/${Session.getUserId()}/courses/${course.id}/scoreboard`;
     }
 
     this.getPageData(course.html_id)
