@@ -1,5 +1,5 @@
 ---
-title: MAY1 - Luvut ja lukujonot 
+title: MAY1 - Luvut ja lukujonot
 layout: material
 sitemap: true
 main-class: has-atop
@@ -15,7 +15,31 @@ topnav: may1
     }
 </style>
 
+<script>
+    function toggleVisibilityByClass(className) {
+        var arrayOfElements = document.getElementsByClassName(className);
+        for (var i=0; i<arrayOfElements.length; i++) {
+            var x = arrayOfElements[i];
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    }
+</script>
+
 <input type="hidden" id="chapterNumber" value="5"/>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottomNav" style="max-width: 100%">
+    <div class="container-fluid" style="max-width: 1150px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color: #FFFFFF;" href="#"></a>
+        </div>
+        <button onclick="toggleVisibilityByClass('tehtava')" style="margin:10px;">Piilota/Näytä tehtavat</button>
+        <button onclick="toggleVisibilityByClass('teoria')" style="margin:10px;">Piilota/Näytä teoria</button>
+    </div>
+</nav>
 
 <article>
     <section>
@@ -37,7 +61,7 @@ topnav: may1
 
                 <p>
                     Tämän luvun tavoitteena on, että osaat ratkaista prosenttilaskentaan liittyviä ongelmia.
-                    Osaat 
+                    Osaat
                 <ul>
                     <li> laskea, kuinka monta prosenttia luku $a$ on luvusta $b$</li>
                     <li> laskea, kuinka paljon on $p$ prosenttia luvusta $b$</li>
@@ -62,31 +86,33 @@ topnav: may1
         </header>
         <div id="prosenttiosuus" class="collapse">
 
-            <p>
-                Suhteellisten osuuksien ilmaisemiseen käytetään usein prosentteja (kuvankaappauksia <a href="http://yle.fi/uutiset/">Yle Uutisten sivuilta</a>):
-            </p>  
-            <p>
-                <img src="/kurssit/may1/kuvat/p7.png" style="float: left; width: 80%; margin-right: 2%; margin-left: 10%; margin-bottom: 1em;">   
-                <img src="/kurssit/may1/kuvat/p6.png" style="float: left; width: 80%; margin-right: 2%; margin-left: 10%; margin-bottom: 1em;">
-                <img src="/kurssit/may1/kuvat/p5.png" style="float: left; width: 80%; margin-right: 2%; margin-left: 10%; margin-bottom: 1em;">     
-            <p style="clear: both;">                    
-            </p>
-
-            <p>
-                Aloitetaan määrittelemällä, mitä prosentilla tarkoitetaan:
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: PROSENTTI</h3>
+            <div class="teoria">
                 <p>
-                    <em>Prosentti</em> on yksi sadasosa:
-                    $$1 \ \% = \frac{1}{100} = 0{,}01.$$
+                    Suhteellisten osuuksien ilmaisemiseen käytetään usein prosentteja (kuvankaappauksia <a href="http://yle.fi/uutiset/">Yle Uutisten sivuilta</a>):
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/p7.png" style="float: left; width: 80%; margin-right: 2%; margin-left: 10%; margin-bottom: 1em;">
+                    <img src="/kurssit/may1/kuvat/p6.png" style="float: left; width: 80%; margin-right: 2%; margin-left: 10%; margin-bottom: 1em;">
+                    <img src="/kurssit/may1/kuvat/p5.png" style="float: left; width: 80%; margin-right: 2%; margin-left: 10%; margin-bottom: 1em;">
+                <p style="clear: both;">
+                </p>
+
+                <p>
+                    Aloitetaan määrittelemällä, mitä prosentilla tarkoitetaan:
+                </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: PROSENTTI</h3>
+                    <p>
+                        <em>Prosentti</em> on yksi sadasosa:
+                        $$1 \ \% = \frac{1}{100} = 0{,}01.$$
+                    </p>
+                </div>
+
+                <p>
+                    Esimerkiksi $0{,}04 = 4 \ \%$, koska kumpikin merkintä tarkoittaa neljää sadasosaa eri tavoilla kirjoitettuna. Samaan tapaan $0{,}597 = 59{,}7 \ \%$.
                 </p>
             </div>
-
-            <p>
-                Esimerkiksi $0{,}04 = 4 \ \%$, koska kumpikin merkintä tarkoittaa neljää sadasosaa eri tavoilla kirjoitettuna. Samaan tapaan $0{,}597 = 59{,}7 \ \%$.
-            </p>
 
             <div class="tehtavat">
                 <div class="tehtava" id="50bb6593-c99d-488f-9b65-243b9280ea7b">
@@ -137,13 +163,15 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Kun halutaan tietää, kuinka monta prosenttia luku $a$ on luvusta $b$, muodostetaan suhde
-                $$\frac{a}{b}$$
-                ja ilmaistaan se sadasosina eli prosentteina. Esimerkiksi suhteesta
-                $$\frac{7}{13} = 0{,}5384615\ldots$$
-                nähdään, että luku $7$ on noin $53{,}8\ \%$ luvusta 13.
-            </p>
+            <div class="teoria">
+                <p>
+                    Kun halutaan tietää, kuinka monta prosenttia luku $a$ on luvusta $b$, muodostetaan suhde
+                    $$\frac{a}{b}$$
+                    ja ilmaistaan se sadasosina eli prosentteina. Esimerkiksi suhteesta
+                    $$\frac{7}{13} = 0{,}5384615\ldots$$
+                    nähdään, että luku $7$ on noin $53{,}8\ \%$ luvusta 13.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="0ac52030-ac27-4844-8605-d260aa04f0fa">
@@ -235,11 +263,14 @@ topnav: may1
                     </div>
                 </div>
             </div>
-            <p>
-                Joissakin tilanteissa tiedetään prosenttiosuus ja halutaan laskea sitä vastaava määrä. Toisin sanottuna halutaan laskea, kuinka paljon on $p$ prosenttia luvusta $b$. Tällöin prosenttiosuus ilmaistaan desimaalimuodossa ilman prosenttimerkkiä. Sitä vastaava osuus saadaan kertolaskulla. Esimerkiksi jos halutaan tietää, kuinka paljon on $32 \ \%$ luvusta 478, lasketaan
-                $$0{,}32 \cdot 478 = 152{,}96.$$
-                Siis $32 \ \%$ luvusta $478$ on $152{,}96$.
-            </p>
+
+            <div class="teoria">
+                <p>
+                    Joissakin tilanteissa tiedetään prosenttiosuus ja halutaan laskea sitä vastaava määrä. Toisin sanottuna halutaan laskea, kuinka paljon on $p$ prosenttia luvusta $b$. Tällöin prosenttiosuus ilmaistaan desimaalimuodossa ilman prosenttimerkkiä. Sitä vastaava osuus saadaan kertolaskulla. Esimerkiksi jos halutaan tietää, kuinka paljon on $32 \ \%$ luvusta 478, lasketaan
+                    $$0{,}32 \cdot 478 = 152{,}96.$$
+                    Siis $32 \ \%$ luvusta $478$ on $152{,}96$.
+                </p>
+            </div>
 
 
             <div class="tehtava" id="2ba70c01-392f-4668-b878-554cfd5403cf">
@@ -287,12 +318,14 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Prosenttiosuutta vastaavan määrän laskemista voi ajatella myös seuraavasti: Jos halutaan tietää, kuinka paljon on $32 \ \%$ luvusta 478, voidaan muodostaa yhtälö
-                $$\frac{a}{478} = 0{,}32.$$
-                Tässä siis kokonaismäärä $b = 478$ ja prosenttiosuus $r = 0{,}32$. Prosenttiosuutta vastaava määrä $a$ saadaan tästä kertolaskulla kuten jo edellä todettiin:
-                $$a = 0{,}32 \cdot 478 = 152{,}96.$$
-            </p>
+            <div class="teoria">
+                <p>
+                    Prosenttiosuutta vastaavan määrän laskemista voi ajatella myös seuraavasti: Jos halutaan tietää, kuinka paljon on $32 \ \%$ luvusta 478, voidaan muodostaa yhtälö
+                    $$\frac{a}{478} = 0{,}32.$$
+                    Tässä siis kokonaismäärä $b = 478$ ja prosenttiosuus $r = 0{,}32$. Prosenttiosuutta vastaava määrä $a$ saadaan tästä kertolaskulla kuten jo edellä todettiin:
+                    $$a = 0{,}32 \cdot 478 = 152{,}96.$$
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="6c0d8d96-7f77-4a4b-a199-c98290bff4c3">
@@ -305,7 +338,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti4b" class="collapse">
-                        <p> Antin bruttopalkka oli 936,25 euroa. Tästä pidätettiin veroa $18 \ \%$. 
+                        <p> Antin bruttopalkka oli 936,25 euroa. Tästä pidätettiin veroa $18 \ \%$.
                         <ol class="a">
                             <li> Kuinka paljon Antti maksoi veroa palkastaan?</li>
                             <li> Havainnollista tilannetta piirroksella, josta näkyvät bruttopalkka ja veron osuus.</li>
@@ -326,7 +359,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti4c" class="collapse">
-                        <p> Yksiön vuokra oli 480 euroa. Vesimaksun osuus oli siitä $3{,}75 \ \%$.  
+                        <p> Yksiön vuokra oli 480 euroa. Vesimaksun osuus oli siitä $3{,}75 \ \%$.
                         <ol class="a">
                             <li> Mikä oli vesimaksun suuruus?</li>
                             <li> Havainnollista tilannetta piirroksella, josta näkyvät vuokra ja vesimaksu.</li>
@@ -347,7 +380,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti4d" class="collapse">
-                        <p> Säilykepurkin sisältö painaa 730 g ja siitä hiilihydraattia on $22\ \%$. 
+                        <p> Säilykepurkin sisältö painaa 730 g ja siitä hiilihydraattia on $22\ \%$.
                         <ol class="a">
                             <li> Kuinka paljon hiilihydraattia yhdessä säilykepurkissa on?</li>
                             <li> Havainnollista tilannetta piirroksella, josta näkyvät purkin sisältö ja hiilihydraatin määrä.</li>
@@ -358,16 +391,18 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Joskus tiedetään prosenttiosuus ja sitä vastaava määrä, mutta ei kokonaismäärää, johon verrataan. Tällöin kysymys on, mistä luvusta luku $a$ on $p$ prosenttia. Esimerkiksi halutaan selvittää, mistä luvusta luku 264 on $32$ prosenttia. Tätä tilannetta vastaa yhtälö
-                $$\frac{264}{b} = 0{,}32.$$
-                Tässä siis prosenttiosuutta vastaava määrä $a = 264$ ja prosenttiosuus $r = 0{,}32$.
-                Jos yhtälön molemmat puolet kerrotaan luvulla $b$, se voidaan kirjoittaa muodossa
-                $$0{,}32b = 264.$$
-                Kokonaismäärä $b$ saadaan tästä jakolaskulla:
-                $$b = \frac{264}{0{,}32}= 825.$$
-                Siis luku 264 on $32 \ \%$ luvusta 825.
-            </p>
+            <div class="teoria">
+                <p>
+                    Joskus tiedetään prosenttiosuus ja sitä vastaava määrä, mutta ei kokonaismäärää, johon verrataan. Tällöin kysymys on, mistä luvusta luku $a$ on $p$ prosenttia. Esimerkiksi halutaan selvittää, mistä luvusta luku 264 on $32$ prosenttia. Tätä tilannetta vastaa yhtälö
+                    $$\frac{264}{b} = 0{,}32.$$
+                    Tässä siis prosenttiosuutta vastaava määrä $a = 264$ ja prosenttiosuus $r = 0{,}32$.
+                    Jos yhtälön molemmat puolet kerrotaan luvulla $b$, se voidaan kirjoittaa muodossa
+                    $$0{,}32b = 264.$$
+                    Kokonaismäärä $b$ saadaan tästä jakolaskulla:
+                    $$b = \frac{264}{0{,}32}= 825.$$
+                    Siis luku 264 on $32 \ \%$ luvusta 825.
+                </p>
+            </div>
 
             <div class="tehtava" id="974a914a-ad83-449b-b748-675161c72eac">
                 <header>
@@ -425,7 +460,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti7" class="collapse">
-                        <p> Annan veroprosentti oli $21$ ja hän maksoi veroa $465{,}36$ euroa. 
+                        <p> Annan veroprosentti oli $21$ ja hän maksoi veroa $465{,}36$ euroa.
                         <ol class="a">
                             <li> Mikä oli Annan bruttopalkka?</li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -446,7 +481,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti8" class="collapse">
-                        <p> Emil sai ilmoituksen, että hänen vuokraansa korotetaan seuraavan kuun alussa $1{,}5 \ \%$ ja laski, että korotus on $9{,}75$ euroa. 
+                        <p> Emil sai ilmoituksen, että hänen vuokraansa korotetaan seuraavan kuun alussa $1{,}5 \ \%$ ja laski, että korotus on $9{,}75$ euroa.
                         <ol class="a">
                             <li> Mikä oli Emilin vuokra ennen korotusta? </li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -467,7 +502,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti9" class="collapse">
-                        <p> Eräälle kurssille ilmoittautuneista keskimäärin noin 47 % suorittaa kurssin loppuun asti. Tänä vuonna kurssin suoritti 99 henkeä. 
+                        <p> Eräälle kurssille ilmoittautuneista keskimäärin noin 47 % suorittaa kurssin loppuun asti. Tänä vuonna kurssin suoritti 99 henkeä.
                         <ol class="a">
                             <li> Kuinka monta ilmoittautunutta oli alunperin?</li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -491,23 +526,25 @@ topnav: may1
         </header>
         <div id="vertailu" class="collapse">
 
-            <p>
-                Prosentteja voidaan käyttää määrien vertailuun. Esimerkiksi, jos halutaan tietää, kuinka monta prosenttia luku 365 on suurempi kuin luku 310, voidaan laskea näiden lukujen suhde:
-                $$\frac{365}{310} = 1{,}177419\ldots $$
-                Tästä nähdään, että luku  365 on noin $117{,}7 \ \%$ luvusta 310, joten luku 365 on noin $17{,}7 \ \%$ suurempi kuin luku 310.
-            </p>
+            <div class="teoria">
+                <p>
+                    Prosentteja voidaan käyttää määrien vertailuun. Esimerkiksi, jos halutaan tietää, kuinka monta prosenttia luku 365 on suurempi kuin luku 310, voidaan laskea näiden lukujen suhde:
+                    $$\frac{365}{310} = 1{,}177419\ldots $$
+                    Tästä nähdään, että luku  365 on noin $117{,}7 \ \%$ luvusta 310, joten luku 365 on noin $17{,}7 \ \%$ suurempi kuin luku 310.
+                </p>
 
-            <p>
-                Toinen tapa saman tuloksen saamiseen on laskea ensin vertailtavien lukujen erotus: 
-                $$365- 310 = 55.$$
-                Sen jälkeen lasketaan, kuinka monta prosenttia erotus on siitä luvusta, johon verrataan:
-                $$\frac{55}{310} = 0{,}177419\ldots$$
-                Tästä voidaan päätellä, että luku 365 on noin $17{,}7 \ \%$ suurempi kuin luku 310.
-            </p>
+                <p>
+                    Toinen tapa saman tuloksen saamiseen on laskea ensin vertailtavien lukujen erotus:
+                    $$365- 310 = 55.$$
+                    Sen jälkeen lasketaan, kuinka monta prosenttia erotus on siitä luvusta, johon verrataan:
+                    $$\frac{55}{310} = 0{,}177419\ldots$$
+                    Tästä voidaan päätellä, että luku 365 on noin $17{,}7 \ \%$ suurempi kuin luku 310.
+                </p>
 
-            <p>
-                Huomaa, että vertailussa jakajana on aina se luku, johon verrataan. Esimerkiksi edellä kysymys oli, kuinka monta prosenttia luku 365 on suurempi <b>kuin luku 310</b>, minkä vuoksi jakajana käytettiin lukua 310.
-            </p>
+                <p>
+                    Huomaa, että vertailussa jakajana on aina se luku, johon verrataan. Esimerkiksi edellä kysymys oli, kuinka monta prosenttia luku 365 on suurempi <b>kuin luku 310</b>, minkä vuoksi jakajana käytettiin lukua 310.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="954a953b-49c1-4d6c-aa0f-609c435f1137">
@@ -520,7 +557,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti10" class="collapse">
-                        <p> Emmi sai kesätöistään palkkaa 1 150 euroa ja Iida sai 1 225 euroa. 
+                        <p> Emmi sai kesätöistään palkkaa 1 150 euroa ja Iida sai 1 225 euroa.
                         <ol class="a">
                             <li> Kuinka monta prosenttia enemmän palkkaa Iida sai Emmiin verrattuna? Valitse edellä havainnollistetuista ratkaisutavoista se, joka tuntuu sinusta selkeämmältä ja ratkaise tehtävä sitä käyttäen.</li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -542,7 +579,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti11" class="collapse">
-                        <p> Henrik juoksi kesäloman aikana 325 km ja Leo juoksi 303 km. 
+                        <p> Henrik juoksi kesäloman aikana 325 km ja Leo juoksi 303 km.
                         <ol class="a">
                             <li> Kuinka monta prosenttia pidemmän matkan Henrik juoksi kuin Leo?</li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -553,19 +590,21 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Jos halutaan tietää, kuinka monta prosenttia jokin luku on pienempi kuin jokin toinen luku, voidaan laskea samaan tapaan kuin edellä. Esimerkiksi, jos halutaan tietää, kuinka monta prosenttia luku 310 on pienempi kuin luku 365, voidaan laskea näiden lukujen suhde:
-                $$\frac{310}{365} = 0{,}849315\ldots $$
-                Tästä nähdään, että luku  310 on noin $84{,}9 \ \%$ luvusta 365, joten luku 310 on noin $100 - 84{,}9 \ \% = 15{,}1 \ \%$ pienempi kuin luku 365. Huomaa, että jälleen jakana on se luku, johon verrataan.
-            </p>
+            <div class="teoria">
+                <p>
+                    Jos halutaan tietää, kuinka monta prosenttia jokin luku on pienempi kuin jokin toinen luku, voidaan laskea samaan tapaan kuin edellä. Esimerkiksi, jos halutaan tietää, kuinka monta prosenttia luku 310 on pienempi kuin luku 365, voidaan laskea näiden lukujen suhde:
+                    $$\frac{310}{365} = 0{,}849315\ldots $$
+                    Tästä nähdään, että luku  310 on noin $84{,}9 \ \%$ luvusta 365, joten luku 310 on noin $100 - 84{,}9 \ \% = 15{,}1 \ \%$ pienempi kuin luku 365. Huomaa, että jälleen jakana on se luku, johon verrataan.
+                </p>
 
-            <p>
-                Toinen tapa saman tuloksen saamiseen on laskea ensin vertailtavien lukujen erotus: 
-                $$365- 310 = 55.$$
-                Sen jälkeen lasketaan, kuinka monta prosenttia erotus on siitä luvusta, johon verrataan:
-                $$\frac{55}{365} = 0{,}15068\ldots$$
-                Tästä voidaan päätellä, että luku 310 on noin $15{,}1 \ \%$ pienempi kuin luku 365.
-            </p>
+                <p>
+                    Toinen tapa saman tuloksen saamiseen on laskea ensin vertailtavien lukujen erotus:
+                    $$365- 310 = 55.$$
+                    Sen jälkeen lasketaan, kuinka monta prosenttia erotus on siitä luvusta, johon verrataan:
+                    $$\frac{55}{365} = 0{,}15068\ldots$$
+                    Tästä voidaan päätellä, että luku 310 on noin $15{,}1 \ \%$ pienempi kuin luku 365.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="03d6038a-ed9b-401d-bcc8-3f81fa6d5b25">
@@ -578,7 +617,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti12" class="collapse">
-                        <p> Emmi sai kesätöistään palkkaa 1 150 euroa ja Iida sai 1 225 euroa. 
+                        <p> Emmi sai kesätöistään palkkaa 1 150 euroa ja Iida sai 1 225 euroa.
                         <ol class="a">
                             <li> Kuinka monta prosenttia vähemmän palkkaa Emmi sai Iidaan verrattuna? Valitse edellä havainnollistetuista ratkaisutavoista se, joka tuntuu sinusta selkeämmältä ja ratkaise tehtävä sitä käyttäen.</li>
                             <li> Havainnollista tilannetta piirroksella. Vertaa tehtävään 17. Mitä eroa näillä kahdella tehtävällä on? Miten se näkyyy ratkaisussa? Selitä omin sanoin.</li>
@@ -600,7 +639,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti13" class="collapse">
-                        <p> Henrik juoksi kesäloman aikana 325 km ja Leo juoksi 303 km. 
+                        <p> Henrik juoksi kesäloman aikana 325 km ja Leo juoksi 303 km.
                         <ol class="a">
                             <li> Kuinka monta prosenttia lyhyemmän matkan Leo juoksi kuin Henrik?</li>
                             <li> Havainnollista tilannetta piirroksella. Vertaa tehtävään 18. Mitä eroa näillä kahdella tehtävällä on? Miten se näkyyy ratkaisussa? Selitä omin sanoin.</li>
@@ -611,17 +650,19 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Joskus halutaan vertailla prosentteina ilmoitettuja lukuja keskenään. Tällöin vertailu voidaan tehdä joko tutkimalla lukujen suhdetta tai erotusta. Jos lukuja verrataan laskemalla niiden erotus, ilmoitetaan tulos <em>prosenttiyksikköinä</em>. Esimerkiksi, jos säästötilin korko on $2{,}5 \ \%$ ja käyttötilin korko $1 \ \%$, on korkojen erotus $2{,}5 - 1 = 1{,}5$ prosenttiyksikköä. Voidaan sanoa, että säästötilin korko on $1{,}5$ prosenttiyksikköä korkeampi kuin käyttötilin korko, tai että käyttötilin korko on $1{,}5$ prosenttiyksikköä matalampi kuin säästötilin korko.
-            </p>
+            <div class="teoria">
+                <p>
+                    Joskus halutaan vertailla prosentteina ilmoitettuja lukuja keskenään. Tällöin vertailu voidaan tehdä joko tutkimalla lukujen suhdetta tai erotusta. Jos lukuja verrataan laskemalla niiden erotus, ilmoitetaan tulos <em>prosenttiyksikköinä</em>. Esimerkiksi, jos säästötilin korko on $2{,}5 \ \%$ ja käyttötilin korko $1 \ \%$, on korkojen erotus $2{,}5 - 1 = 1{,}5$ prosenttiyksikköä. Voidaan sanoa, että säästötilin korko on $1{,}5$ prosenttiyksikköä korkeampi kuin käyttötilin korko, tai että käyttötilin korko on $1{,}5$ prosenttiyksikköä matalampi kuin säästötilin korko.
+                </p>
 
-            <p> 
-                Vertaaminen voidaan tehdä myös suhteen avulla:
-                $$\frac{1}{2{,}5} = 0{,}4,$$
-                joten käyttötilin korko on $40 \ \%$ säästötilin korosta. Käyttötilin korko on siis $100 \ \% - 40 \ \% = 60 \ \%$ pienempi kuin käyttötilin korko. Toisesta näkökulmasta
-                $$\frac{2{,}5}{1} = 2{,}5,$$
-                joten säästötilin korko on $250\ \%$ käyttötilin korosta. Säästötilin korko on siten $250 \ \% - 100 \ \% = 150 \ \%$ suurempi kuin käyttötilin korko.
-            </p>
+                <p>
+                    Vertaaminen voidaan tehdä myös suhteen avulla:
+                    $$\frac{1}{2{,}5} = 0{,}4,$$
+                    joten käyttötilin korko on $40 \ \%$ säästötilin korosta. Käyttötilin korko on siis $100 \ \% - 40 \ \% = 60 \ \%$ pienempi kuin käyttötilin korko. Toisesta näkökulmasta
+                    $$\frac{2{,}5}{1} = 2{,}5,$$
+                    joten säästötilin korko on $250\ \%$ käyttötilin korosta. Säästötilin korko on siten $250 \ \% - 100 \ \% = 150 \ \%$ suurempi kuin käyttötilin korko.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="f9a8c15e-1d70-4ca4-84fe-ef2917a25b4a">
@@ -634,7 +675,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti14" class="collapse">
-                        <p> Kuluttajahinnat nousivat vuonna 2000 keskimäärin $3{,}4 \ \%$ ja vuonna 2010 keskimäärin $1{,}2 \ \%$. 
+                        <p> Kuluttajahinnat nousivat vuonna 2000 keskimäärin $3{,}4 \ \%$ ja vuonna 2010 keskimäärin $1{,}2 \ \%$.
                         <ol class="a">
                             <li> Kuinka monta prosenttiyksikköä vähemmän hinnat nousivat vuonna 2010 kuin vuonna 2000?</li>
                             <li> Kuinka monta prosenttia vähemmän hinnat nousivat vuonna 2010 kuin vuonna 2000?</li>
@@ -647,7 +688,7 @@ topnav: may1
                 </div>
             </div>
 
-        </div> 
+        </div>
     </section>
 
     <section class="panel">
@@ -659,11 +700,13 @@ topnav: may1
             </h1>
         </header>
         <div id="muutos" class="collapse">
-            <p>
-                Prosentteja käytetään myös muutoksen suuruuden ilmaisemiseen. Laskutapa on samanlainen kuin vertailtaessa. Erityistä huomiota pitää kiinnittää siihen, että jakajana käytetään alkuperäistä, muutosta edeltävää arvoa. Esimerkiksi jos kunnan väkiluku nousi 5 617 asukkaasta 6 221 asukkaaseen, saadaan väkiluvun muutos pääteltyä suhteesta
-                $$\frac{6221}{5617} = 1{,}1075307\ldots$$
-                Tästä nähdään, että uusi väkiluku oli noin $110{,}8 \ \%$ vanhasta väkiluvusta eli väkiluku kasvoi noin $10{,}8 \ \%$. Jakajana käytettiin siis alkuperäistä väkilukua 5 617.
-            </p>
+            <div class="teoria">
+                <p>
+                    Prosentteja käytetään myös muutoksen suuruuden ilmaisemiseen. Laskutapa on samanlainen kuin vertailtaessa. Erityistä huomiota pitää kiinnittää siihen, että jakajana käytetään alkuperäistä, muutosta edeltävää arvoa. Esimerkiksi jos kunnan väkiluku nousi 5 617 asukkaasta 6 221 asukkaaseen, saadaan väkiluvun muutos pääteltyä suhteesta
+                    $$\frac{6221}{5617} = 1{,}1075307\ldots$$
+                    Tästä nähdään, että uusi väkiluku oli noin $110{,}8 \ \%$ vanhasta väkiluvusta eli väkiluku kasvoi noin $10{,}8 \ \%$. Jakajana käytettiin siis alkuperäistä väkilukua 5 617.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="c3fd91d2-545a-4938-ab01-047f77f743f5">
@@ -676,7 +719,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti15" class="collapse">
-                        <p> Lauri oli kahtena kesänä samassa paikassa työharjoittelijana. Ensimmäisenä kesänä hän sai palkkaa 1 320 euroa ja toisena kesänä 1 410 euroa. 
+                        <p> Lauri oli kahtena kesänä samassa paikassa työharjoittelijana. Ensimmäisenä kesänä hän sai palkkaa 1 320 euroa ja toisena kesänä 1 410 euroa.
                         <ol class="a">
                             <li> Kuinka monta prosenttia Laurin palkka nousi?</li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -698,7 +741,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti16" class="collapse">
-                        <p> Kaisa juoksi kesäkuussa aikana 105 km ja heinäkuussa 77 km. 
+                        <p> Kaisa juoksi kesäkuussa aikana 105 km ja heinäkuussa 77 km.
                         <ol class="a">
                             <li> Kuinka monta prosenttia Kaisan juoksumatka lyheni kesäkuusta heinäkuuhun?</li>
                             <li> Havainnollista tilannetta piirroksella.</li>
@@ -709,12 +752,14 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Joissakin tilanteissa tiedetään alkuperäinen arvo ja muutoksen suhteellinen suuruus prosentteina. Tällöin uusi, muuttunut arvo saadaan laskettua kertolaskun avulla. Ensin täytyy kuitenkin päätellä, mikä on muutosprosenttia vastaava kerroin. Esimerkiksi, jos palkka on aluksi 1 450 euroa ja sitä korotetaan $2{,}5 \ \%$, on uusi palkka $102{,}5 \ \%$ vanhaan palkkaan verrattuna. Uusi palkka saadaan siten kertomalla luvulla $1{,}025$:
-                $$1{,}025 \cdot 1 450 \, \unicode{0x20AC} = 1 486{,}25 \, \unicode{0x20AC}.$$
-                Jos taas pyörän hinta on aluksi 390 euroa ja sitä alennetaan $15 \ \%$, on uusi hinta $100 - 15 = 85$ prosenttia vanhasta hinnasta. Uusi hinta saadaan siten kertomalla luvulla $0{,}85$:
-                $$0{,}85 \cdot 390 \, \unicode{0x20AC} = 331{,}50 \, \unicode{0x20AC}.$$
-            </p>
+            <div class="teoria">
+                <p>
+                    Joissakin tilanteissa tiedetään alkuperäinen arvo ja muutoksen suhteellinen suuruus prosentteina. Tällöin uusi, muuttunut arvo saadaan laskettua kertolaskun avulla. Ensin täytyy kuitenkin päätellä, mikä on muutosprosenttia vastaava kerroin. Esimerkiksi, jos palkka on aluksi 1 450 euroa ja sitä korotetaan $2{,}5 \ \%$, on uusi palkka $102{,}5 \ \%$ vanhaan palkkaan verrattuna. Uusi palkka saadaan siten kertomalla luvulla $1{,}025$:
+                    $$1{,}025 \cdot 1 450 \, \unicode{0x20AC} = 1 486{,}25 \, \unicode{0x20AC}.$$
+                    Jos taas pyörän hinta on aluksi 390 euroa ja sitä alennetaan $15 \ \%$, on uusi hinta $100 - 15 = 85$ prosenttia vanhasta hinnasta. Uusi hinta saadaan siten kertomalla luvulla $0{,}85$:
+                    $$0{,}85 \cdot 390 \, \unicode{0x20AC} = 331{,}50 \, \unicode{0x20AC}.$$
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="37c1be84-7d10-43ce-8965-0cbf15cb0499">
@@ -727,13 +772,13 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti17" class="collapse">
-                        <p> Millä desimaaliluvulla alkuperäinen hinta pitää kertoa, jos sitä 
+                        <p> Millä desimaaliluvulla alkuperäinen hinta pitää kertoa, jos sitä
                         <ol class="a">
                             <li> korotetaan $10 \ \%$?</li>
                             <li> korotetaan $13{,}7 \ \%?$</li>
                             <li> korotetaan $75 \ \%?$</li>
                             <li> korotetaan $124{,}5 \ \%?$</li>
-                        </ol>      
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -767,13 +812,13 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti19" class="collapse">
-                        <p> Millä desimaaliluvulla alkuperäinen hinta pitää kertoa, jos sitä 
+                        <p> Millä desimaaliluvulla alkuperäinen hinta pitää kertoa, jos sitä
                         <ol class="a">
                             <li> alennetaan $10 \ \%$?</li>
                             <li> alennetaan $13{,}7 \ \%?$</li>
                             <li> alennetaan $75 \ \%?$</li>
                             <li> alennetaan $1{,}25 \ \%?$</li>
-                        </ol>      
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -807,13 +852,13 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti20b" class="collapse">
-                        <p> Kuinka monta prosenttia hinta $x$ on noussut tai laskenut, jos uusi hinta on 
+                        <p> Kuinka monta prosenttia hinta $x$ on noussut tai laskenut, jos uusi hinta on
                         <ol class="a">
                             <li> $0{,}65x$</li>
                             <li> $1{,}07x$</li>
                             <li> $0{,}05x$</li>
                             <li> $1{,}34x$</li>
-                        </ol>  
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -835,7 +880,7 @@ topnav: may1
                             <li> Mikä oli takin hinta tällöin?</li>
                             <li> Kuinka monta prosenttia hinta oli pudonnut alkuperäisestä?</li>
                             <li> Pystyisitkö selvittämään vastauksen b-kohtaan, jos et tietäisi takin alkuperäistä hintaa? Selitä omin sanoin.</li>
-                        </ol>  
+                        </ol>
 
                         </p>
                     </div>
@@ -853,12 +898,12 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="prosentti22" class="collapse">
-                        <p> Maailmanmarkkinahintojen heilahtelun vuoksi polttoaineen hinta nousi ensin $4 \ \%$ ja laski kuukauden kuluttua äkillisesti $10 \ \%$. 
+                        <p> Maailmanmarkkinahintojen heilahtelun vuoksi polttoaineen hinta nousi ensin $4 \ \%$ ja laski kuukauden kuluttua äkillisesti $10 \ \%$.
                         <ol class="a">
                             <li> Merkitse polttoaineen alkuperäistä hintaa kirjaimella $a$. Millä desimaaliluvuilla alkuperäistä hintaa $a$ pitäisi kertoa, että saisi laskettua muuttuneen hinnan? Ilmaise muuttunut hinta kirjaimen $a$ avulla.</li>
                             <li> Päättele edellisen kohdan avulla, kuinka monta prosenttia hinta oli muuttunut alkuperäiseen hintaan verrattuna. Oliko se noussut vai laskenut?</li>
                             <li> Tarkista laskusi kokeilemalla, saatko saman lopputuloksen, jos alkuperäinen hinta oli esimerkiksi $a = 1$ euroa / litra. </li>
-                        </ol>  
+                        </ol>
 
                         </p>
                     </div>
@@ -878,9 +923,11 @@ topnav: may1
         </header>
         <div id="Ratkaisustrategioita" class="collapse">
 
-            <p>
-                Seuraavissa tehtävissä harjoitellaan ratkaisemaan prosenttilaskentaan liittyviä ongelmia, joiden yleinen ratkaisu vaatii kirjainlausekkeiden käyttämistä. Ratkaisu kuitenkin helpottuu usein, jos ongelman ratkaisee ensin yhdessä erityistapauksessa joillakin itse valitsemillaan luvuilla. Varsinainen ratkaisu on tällöin helpompi muodostaa. Lisäksi tuloksen järkevyyttä voi arvioida vertaamalla eri tavoilla saamiaan tuloksia.
-            </p>
+            <div class="teoria">
+                <p>
+                    Seuraavissa tehtävissä harjoitellaan ratkaisemaan prosenttilaskentaan liittyviä ongelmia, joiden yleinen ratkaisu vaatii kirjainlausekkeiden käyttämistä. Ratkaisu kuitenkin helpottuu usein, jos ongelman ratkaisee ensin yhdessä erityistapauksessa joillakin itse valitsemillaan luvuilla. Varsinainen ratkaisu on tällöin helpompi muodostaa. Lisäksi tuloksen järkevyyttä voi arvioida vertaamalla eri tavoilla saamiaan tuloksia.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="823232a7-bbd0-4794-b686-cccc83868800">
@@ -897,30 +944,30 @@ topnav: may1
                         <ol class="a">
                             <li> Piirrä vihkoosi seuraava taulukko:
                                 <div align="center">
-                                    <table style="width = 75%"> 
+                                    <table style="width = 75%">
                                         <tr>
                                             <th></th>
                                             <th>Hinta (€/kpl)</th>
-                                            <th>Menekki (kpl)</th>     
-                                            <th>Rahamäärä (€)</th>  
+                                            <th>Menekki (kpl)</th>
+                                            <th>Rahamäärä (€)</th>
                                         </tr>
                                         <tr>
                                             <td>Ennen korotusta</td>
                                             <td></td>
-                                            <td></td>      
+                                            <td></td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td>Korotuksen jälkeen</td>
                                             <td></td>
-                                            <td></td>      
-                                            <td></td>        
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                     </table> </div></li>
                             <li> Keksi tuotteelle jokin hinta (euroa/kpl) ja jokin menekki eli myyntimäärä (kappaletta). Laske uusi hinta ja menekki hinnankorotuksen jälkeen. Täydennä nämä tiedot taulukkoon.</li>
                             <li> Laske tuotteen myynnistä saatu rahamäärä ennen hinnankorotusta ja hinnankorotuksen jälkeen. Mitä laskutoimitusta käytit?</li>
                             <li> Laske, kuinka monta prosenttia tuotteen myynnistä saatu rahamäärä muuttui. Kasvoiko vai pienenikö se?</li>
-                        </ol>   
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -941,30 +988,30 @@ topnav: may1
                         <ol class="a">
                             <li> Piirrä vihkoosi seuraava taulukko:
                                 <div align="center">
-                                    <table style="width = 75%"> 
+                                    <table style="width = 75%">
                                         <tr>
                                             <th></th>
                                             <th>Hinta (€/kpl)</th>
-                                            <th>Menekki (kpl)</th>     
-                                            <th>Rahamäärä (€)</th>  
+                                            <th>Menekki (kpl)</th>
+                                            <th>Rahamäärä (€)</th>
                                         </tr>
                                         <tr>
                                             <td>Ennen korotusta</td>
                                             <td></td>
-                                            <td></td>      
+                                            <td></td>
                                             <td></td>
                                         </tr>
                                         <tr>
                                             <td>Korotuksen jälkeen</td>
                                             <td></td>
-                                            <td></td>      
-                                            <td></td>        
+                                            <td></td>
+                                            <td></td>
                                         </tr>
                                     </table> </div></li>
                             <li> Merkitse tuotteen alkuperäistä hintaa kirjaimella $a$ (euroa) ja menekkiä kirjaimella $b$ (kappaletta). Laske uusi hinta ja menekki hinnankorotuksen jälkeen.</li>
                             <li> Laske tuotteen myynnistä saatu rahamäärä ennen hinnankorotusta ja hinnankorotuksen jälkeen. Tarvittaessa katso mallia lausekkeiden muodostamiseen edellisen tehtävän ratkaisusta.</li>
                             <li> Laske, miten tuotteen myynnistä saatu rahamäärä muuttui.</li>
-                        </ol>   
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -985,22 +1032,22 @@ topnav: may1
                         <ol class="a">
                             <li> Piirrä vihkoosi seuraava taulukko:
                                 <div align="center">
-                                    <table style="width = 75%"> 
+                                    <table style="width = 75%">
                                         <tr>
                                             <th>Alkuperäinen hinta (€)</th>
-                                            <th>Alennettu hinta (€)</th>     
-                                            <th>Tarvittava korotus (€)</th>  
+                                            <th>Alennettu hinta (€)</th>
+                                            <th>Tarvittava korotus (€)</th>
                                         </tr>
                                         <tr>
                                             <td>&nbsp;</td>
-                                            <td></td>      
+                                            <td></td>
                                             <td></td>
                                         </tr>
                                     </table> </div></li>
                             <li> Keksi tuotteelle jokin alkuperäinen hinta (euroa). Laske, mikä oli tuotteen hinta hinnanalennuksen jälkeen.</li>
                             <li> Laske, kuinka paljon alennettua hintaa pitäisi korottaa, jotta päästäisiin takaisin alkuperäiseen hintaan. Täydennä tämä tieto taulukkoon. Mitä laskutoimitusta käytit?</li>
                             <li> Selvitä, kuinka monta prosenttia korotus on alennettuun hintaan verrattuna.</li>
-                        </ol>   
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1021,15 +1068,15 @@ topnav: may1
                         <ol class="a">
                             <li> Piirrä vihkoosi seuraava taulukko:
                                 <div align="center">
-                                    <table style="width = 75%"> 
+                                    <table style="width = 75%">
                                         <tr>
                                             <th>Alkuperäinen hinta (€)</th>
-                                            <th>Alennettu hinta (€)</th>     
-                                            <th>Tarvittava korotus (€)</th>  
+                                            <th>Alennettu hinta (€)</th>
+                                            <th>Tarvittava korotus (€)</th>
                                         </tr>
                                         <tr>
                                             <td>&nbsp;</td>
-                                            <td></td>      
+                                            <td></td>
                                             <td></td>
                                         </tr>
                                     </table> </div></li>
@@ -1037,7 +1084,7 @@ topnav: may1
                             <li> Laske, kuinka paljon alennettua hintaa pitäisi korottaa, jotta päästäisiin takaisin alkuperäiseen hintaan. Täydennä tämä tieto taulukkoon. Tarvittaessa katso mallia lausekkeen muodostamiseen edellisen tehtävän ratkaisusta.</li>
                             <li> Selvitä, kuinka monta prosenttia korotus on alennettuun hintaan verrattuna.</li>
                             <li> Keksitkö tavan, jolla tehtävän voi ratkaista pelkästään alkuperäisen hinnan ja alennetun hinnan avulla (ilman korotuksen lausekkeen muodostamista)?</li>
-                        </ol>   
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1069,7 +1116,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_1">
-                    <p> 
+                    <p>
                         Henkilön kuukausipalkka on 3800 euroa ja hän maksaa veroja 900 euroa. Mikä on henkilön veroprosentti eli kuinka monta prosenttia hän maksaa veroja?
 
                     </p>
@@ -1080,7 +1127,7 @@ topnav: may1
                     </h2>
                     <div id="prosentti_1_v" class="collapse">
                         <p>
-                        Noin 23,7 %.
+                            Noin 23,7 %.
                         </p>
                     </div>
                 </div>
@@ -1097,7 +1144,7 @@ topnav: may1
 
                 <div id="prosentti_1_a">
                     <p>
-                        Henkilö haluaa lisätä ravintokuituja ruokavalioonsa. Hänellä on valittavanaan kaksi leipävaihtoa. Leivän A 20 gramman palassa on 3 grammaa ravintokuitua ja leivän B kuitupitoisuus on 13 %. Kumpi leivistä henkilön kannattaa ostaa?     
+                        Henkilö haluaa lisätä ravintokuituja ruokavalioonsa. Hänellä on valittavanaan kaksi leipävaihtoa. Leivän A 20 gramman palassa on 3 grammaa ravintokuitua ja leivän B kuitupitoisuus on 13 %. Kumpi leivistä henkilön kannattaa ostaa?
 
                     </p>
                     <h2>
@@ -1125,7 +1172,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_2">
-                    <p> 
+                    <p>
                         Jääkiekkomaalivahdin torjuntaprosentti on 85,70. Kuinka monta maalia hän keskimäärin torjuu 30 laukauksesta?
                     </p>
                     <h2>
@@ -1135,7 +1182,7 @@ topnav: may1
                     </h2>
                     <div id="prosentti_2_v" class="collapse">
                         <p>
-                        Noin 26.
+                            Noin 26.
                         </p>
                     </div>
                 </div>
@@ -1151,8 +1198,8 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_2_a">
-                    <p> 
-                        <a href="http://www.stat.fi/tup/suoluk/suoluk_vaesto.html">Tilastokeskuksen</a> mukaan vuoden 2015 lopussa suomea äidinkielenään puhuvia oli 88,7 % ja ruotsia 5,3 %. Kuinka moni puhui äidinkielenään jotain muuta kieltä, kun suomalaisia oli tuolloin 5 487 000? 
+                    <p>
+                        <a href="http://www.stat.fi/tup/suoluk/suoluk_vaesto.html">Tilastokeskuksen</a> mukaan vuoden 2015 lopussa suomea äidinkielenään puhuvia oli 88,7 % ja ruotsia 5,3 %. Kuinka moni puhui äidinkielenään jotain muuta kieltä, kun suomalaisia oli tuolloin 5 487 000?
 
                     </p>
                     <h2>
@@ -1180,7 +1227,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_3">
-                    <p> 
+                    <p>
                         Farkut olivat 30 prosentin alennuksessa ja euroina alennus oli 25 euroa. Kuinka paljon farkut maksoivat alun perin?
                     </p>
                     <h2>
@@ -1190,7 +1237,7 @@ topnav: may1
                     </h2>
                     <div id="prosentti_3_v" class="collapse">
                         <p>
-                        83,30 euroa.
+                            83,30 euroa.
                         </p>
                     </div>
                 </div>
@@ -1206,7 +1253,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_3_a">
-                    <p> 
+                    <p>
                         Kevään 2016 ylioppilaskokeisiin ilmoittautuneista 25,7 % ilmoittautui pitkän matematiikan kokeeseen. Pitkän matematiikan kokeeseen ilmoittautuneita oli 10 536. Kuinka monta henkilöä ilmoittautui kevään 2016 ylioppilaskokeisiin? Anna vastaus 100 henkilön tarkkuudella.
                     </p>
                     <h2>
@@ -1234,7 +1281,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_4">
-                    <p> 
+                    <p>
                         Suomen väkiluku maaliskuussa 2016 oli 5 488 265 ja Ruotsin 9 875 378.
                     <ol class="a">
                         <li> Kuinka monta prosenttia vähemmän asukkaita on Suomessa kuin Ruotsissa?</li>
@@ -1248,9 +1295,9 @@ topnav: may1
                     <div id="prosentti_4_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> Noin 44,4 % vähemmän.</li>
-                        <li> Noin 79,9 % enemmän.</li>
-                    </ol>
+                            <li> Noin 44,4 % vähemmän.</li>
+                            <li> Noin 79,9 % enemmän.</li>
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1294,7 +1341,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_5">
-                    <p> 
+                    <p>
                         Asuntolainan korkoprosentti laski 3,4 prosentista 2,6 prosenttiin.
                     <ol class="a">
                         <li> Kuinka monta prosenttiyksikköä asuntolainan korko laski?</li>
@@ -1309,9 +1356,9 @@ topnav: may1
                     <div id="prosentti_5_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> 0,8 prosenttiyksikköä.</li>
-                        <li> Noin 23,5 %.</li>
-                    </ol>
+                            <li> 0,8 prosenttiyksikköä.</li>
+                            <li> Noin 23,5 %.</li>
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1327,7 +1374,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_5_a">
-                    <p> Vuoden 2015 vaaleissa perussuomalaisten kannatus oli 17,7 % ja heinäkuussa 2016 Taloustutkimuksen teettämän gallupin mukaan 8,6 %. 
+                    <p> Vuoden 2015 vaaleissa perussuomalaisten kannatus oli 17,7 % ja heinäkuussa 2016 Taloustutkimuksen teettämän gallupin mukaan 8,6 %.
                     <ol class="a">
                         <li> Kuinka monta prosenttiyksikköä perussuomalaisten kannatus laski tarkasteluaikavälillä?</li>
                         <li> Kuinka monta prosenttia perussuomalaisten kannatus laski tarkasteluaikavälillä?</li>
@@ -1363,7 +1410,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_6a">
-                    <p> 
+                    <p>
                         Asunto maksoi 120 000 euroa vuonna 2005. Vuonna 2016 asunto myytiin 180 000 eurolla. Kuinka monta prosenttia asunnon arvo oli noussut?
 
                     </p>
@@ -1374,7 +1421,7 @@ topnav: may1
                     </h2>
                     <div id="prosentti_6a_v" class="collapse">
                         <p>
-                        50 %.
+                            50 %.
                         </p>
                     </div>
                 </div>
@@ -1390,7 +1437,7 @@ topnav: may1
                 </header>
 
                 <div id="Prosentti_6_a">
-                    <p> 
+                    <p>
                         Vuonna 2007 matematiikan ylioppilaskokeeseen ilmoittautui 13 348 kokelasta, kun vuonna 2015 ilmoittautumisia oli vain 11 956. Kuinka monta prosenttia pitkän matematiikan ylioppilaskokeeseen ilmoittautuneiden määrä on vähentynyt?
                     </p>
                     <h2>
@@ -1418,7 +1465,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_6">
-                    <p> 
+                    <p>
                         Television hinta oli 459 euroa. Aluksi sen hintaa laskettiin 20 %, mutta koska sen kysyntä kasvoi alennuksen myötä voimakkaasti, myyjä päätti korottaa hintaa 20 %.
                     <ol class="a">
                         <li> Kuinka paljon televisio maksoi halvimmillaan?</li>
@@ -1434,9 +1481,9 @@ topnav: may1
                     <div id="prosentti_6_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> 367,20 euroa.</li>
-                        <li> 440,64 euroa.</li>
-                    </ol>
+                            <li> 367,20 euroa.</li>
+                            <li> 440,64 euroa.</li>
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1454,7 +1501,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_7">
-                    <p> 
+                    <p>
                         Paita maksoi ennen alennusmyyntejä 60 €. Hintaa alennettiin ensin 40 prosenttia ja alen loppurysäyksessä vielä 20 prosenttia. Kuinka paljon paita lopuksi maksoi?
                     </p>
                     <h2>
@@ -1482,7 +1529,7 @@ topnav: may1
                 </header>
 
                 <div id="Prosentti_7_b">
-                    <p> 
+                    <p>
                         Osakkeen arvo laski 46 prosenttia ja nousi sitten ensiksi 15 prosenttia ja tämän jälkeen vielä 34 prosenttia.
                     <ol class="a">
                         <li>Oliko osakkeen arvo näiden muutosten jälkeen suurempi vai pienempi kuin ennen muutoksia?</li>
@@ -1502,7 +1549,7 @@ topnav: may1
                             <li>Pienempi.</li>
                             <li> 61 %</li>
 
-                        </ol> 
+                        </ol>
 
                         </p>
 
@@ -1592,8 +1639,8 @@ topnav: may1
                 </header>
 
                 <div id="Prosentti_8">
-                    <p>  
-                        Perheen vuokramenot olivat 25 % tuloista. Vuokramenot nousivat 15 %. Kuinka monta prosenttia vähemmän rahaa riitti muuhun käyttöön korotuksen jälkeen? [Pitkä K2004/3] 
+                    <p>
+                        Perheen vuokramenot olivat 25 % tuloista. Vuokramenot nousivat 15 %. Kuinka monta prosenttia vähemmän rahaa riitti muuhun käyttöön korotuksen jälkeen? [Pitkä K2004/3]
                     </p>
                     <p>
                         Vihje: Hahmottele ensin tehtävän tietoja taulukkoon lukuarvoilla kuten tehtävässä 31.
@@ -1616,7 +1663,7 @@ topnav: may1
 
 
         </div>
-    </section>  
+    </section>
 
     <section class="panel">
         <header>
@@ -1677,7 +1724,7 @@ topnav: may1
                     </h2>
                     <div id="prosentti_3c_v" class="collapse">
                         <p>
-                        Noin 23 %.
+                            Noin 23 %.
                         </p>
                     </div>
                 </div>
@@ -1693,7 +1740,7 @@ topnav: may1
                 </header>
 
                 <div id="prosentti_2c">
-                    <p> 
+                    <p>
                         Hotellihuoneiden hintaa nostettiin 15 %, jolloin kävijämäärä laski 10 %. Miten hotellihuoneista saatavat tulot muuttuivat?
                     </p>
                     <h2>
@@ -1703,7 +1750,7 @@ topnav: may1
                     </h2>
                     <div id="prosentti_2c_v" class="collapse">
                         <p>
-                        Tulot kasvoivat 3,5 %.
+                            Tulot kasvoivat 3,5 %.
                         </p>
                     </div>
                 </div>
@@ -1721,7 +1768,7 @@ topnav: may1
                 </header>
 
                 <div id="Prosentti_9">
-                    <p> 
+                    <p>
                         Vuonna 2007 alennettiin parturimaksujen arvonlisäveroa 22 prosentista 8 prosenttiin. Jos alennus olisi siirtynyt täysimääräisenä parturimaksuihin, kuinka monta prosenttia ne olisivat alentuneet? Arvonlisävero ilmoitetaan prosentteina verottomasta hinnasta ja se on osa tuotteen tai palvelun hintaa. [Pitkä K2008/4]
                     </p>
                     <h2>
@@ -1766,9 +1813,9 @@ topnav: may1
                     <div id="prosentti_1c_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> 60 %</li>
-                        <li> Noin 61,2 %</li>
-                    </ol>
+                            <li> 60 %</li>
+                            <li> Noin 61,2 %</li>
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1807,7 +1854,7 @@ topnav: may1
                 </header>
 
                 <div id="Prosentti_11">
-                    <p> 
+                    <p>
                         Kesämokin rakentaminen tuli 25 % arvioitua kalliimmaksi. Rakennustarvikkeet olivat 19 % ja muut kustannukset 28 % arvioitua kalliimpia. Mikä oli rakennustarvikkeiden arvioitu osuus ja mikä lopullinen osuus kokonaisukustannuksista? [Pitkä K2006/4]
                     </p>
                     <h2>
@@ -1835,7 +1882,7 @@ topnav: may1
                 </header>
 
                 <div id="Prosentti_12">
-                    <p> 
+                    <p>
                         Vuonna 2001 erään liikeyrityksen ulkomaille suuntautuvan myynnin arvo kasvoi 10 % vuoteen 2000 verrattuna. Samaan aikaan myynnin arvo kotimaassa väheni 5 %. Tällöin koko myynnin arvo kasvoi 6 %. Laske, kuinka monta prosenttia myynnistä meni vuonna 2000 ulkomaille. [Pitkä K2002/3]
                     </p>
                     <h2>
@@ -1864,9 +1911,9 @@ topnav: may1
 
                 <div id="Prosentti_12b">
                     <p>
-                        <img src="/kurssit/may1/kuvat/verotaulukko1.png" max-width: 100%; width: auto; height: auto;/> 
+                        <img src="/kurssit/may1/kuvat/verotaulukko1.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
-                    <p> 
+                    <p>
                     <ol class="a">
                         <li> Annika sai 58 000 € perintönä. Kuinka monta euroa Annika maksaa perinnöstä veroa? Mikä on hänen perintöveroprosenttinsa? </li>
                         <li> Piirrä kuvaaja, josta käy ilmi perintöveron suuruus prosentteina perinnön arvon funktiona, kun perinnön suuruus on välillä 0 € ja 60 000 €.</li>
@@ -1881,9 +1928,9 @@ topnav: may1
                     <div id="prosentti_12b_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> Noin 6,3 %.</li>
-                        <li> </li>
-                    </ol>
+                            <li> Noin 6,3 %.</li>
+                            <li> </li>
+                        </ol>
                         </p>
                     </div>
                 </div>
@@ -1914,16 +1961,16 @@ topnav: may1
                     <div id="prosentti_12c_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> $y = -0{,}02x + 12660$</li>
-                        <li> </li>
-                    </ol>
+                            <li> $y = -0{,}02x + 12660$</li>
+                            <li> </li>
+                        </ol>
                         </p>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section>  
+    </section>
 
     <section class="panel">
         <header>
@@ -1935,7 +1982,7 @@ topnav: may1
         </header>
         <div id="L4itsearviointi" class="collapse">
             <p>
-                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1590">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1590">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla.
 
             </p>
         </div>
