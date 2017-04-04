@@ -17,8 +17,32 @@ topnav: may1
     }
 </style>
 
+<script>
+    function toggleVisibilityByClass(className) {
+        var arrayOfElements = document.getElementsByClassName(className);
+        for (var i=0; i<arrayOfElements.length; i++) {
+            var x = arrayOfElements[i];
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    }
+</script>
+
 <input type="hidden" id="theoremStart" value="1"/>
-<input type="hidden" id="chapterNumber" value="4"/>
+<input type="hidden" id="chapterNumber" value="1"/>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottomNav" style="max-width: 100%">
+    <div class="container-fluid" style="max-width: 1150px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color: #FFFFFF;" href="#"></a>
+        </div>
+        <button onclick="toggleVisibilityByClass('tehtava')" style="margin:10px;">Piilota/Näytä tehtavat</button>
+        <button onclick="toggleVisibilityByClass('teoria')" style="margin:10px;">Piilota/Näytä teoria</button>
+    </div>
+</nav>
 
 <article>
     <section>
@@ -40,7 +64,7 @@ topnav: may1
 
                 <p>
                     Tämän luvun tavoitteena on, että tunnet funktion käsitteen ja osaat piirtää ja tulkita funktioiden kuvaajia.
-                    Osaat 
+                    Osaat
                 <ul>
                     <li> tunnistaa, onko sääntö funktio, ja päätellä, mikä on funktion määrittelyehto</li>
                     <li> määrittää funktion arvon tietyssä kohdassa kuvaajasta päättelemällä, käsin laskemalla ja laskimen avulla</li>
@@ -63,13 +87,15 @@ topnav: may1
         </header>
         <div id="funktionKasite" class="collapse">
 
-            <p>
-                Tässä luvussa tutustutaan funktion käsitteeseen. Sen avulla voidaan mallintaa ja tutkia erilaisten mitattavissa olevien asioiden välisiä riippuvuuksia, kuten esimerkiksi pyöräilijän tiettynä aikana kulkeman matkan riippuvuutta pyöräilijän vauhdista tai työntekijän maksamien verojen määrän riippuvuutta työntekijän tuloista. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Tässä luvussa tutustutaan funktion käsitteeseen. Sen avulla voidaan mallintaa ja tutkia erilaisten mitattavissa olevien asioiden välisiä riippuvuuksia, kuten esimerkiksi pyöräilijän tiettynä aikana kulkeman matkan riippuvuutta pyöräilijän vauhdista tai työntekijän maksamien verojen määrän riippuvuutta työntekijän tuloista.
+                </p>
 
-            <p>
-                Funktio on siis jonkinlainen sääntö, joka kertoo, miten jokin asia liittyy toiseen. Ennen kuin sovimme tarkemmin, mitä funktion käsitteellä tarkoitetaan, tutkitaan seuraavissa tehtävissä muutamien erilaisten sääntöjen ominaisuuksia.
-            </p>
+                <p>
+                    Funktio on siis jonkinlainen sääntö, joka kertoo, miten jokin asia liittyy toiseen. Ennen kuin sovimme tarkemmin, mitä funktion käsitteellä tarkoitetaan, tutkitaan seuraavissa tehtävissä muutamien erilaisten sääntöjen ominaisuuksia.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -84,7 +110,7 @@ topnav: may1
                     </header>
                     <div id="funktio0a" class="collapse">
                         <p>
-                            Tutkitaan sääntöä $f$, joka liittää jokaiseen luonnolliseen lukuun sen numeroiden summan. Siis esimerkiksi lukuun $156$ sääntö $f$ liittää luvun $1 + 5 + 6 = 12$. Tämä voidaan merkitä 
+                            Tutkitaan sääntöä $f$, joka liittää jokaiseen luonnolliseen lukuun sen numeroiden summan. Siis esimerkiksi lukuun $156$ sääntö $f$ liittää luvun $1 + 5 + 6 = 12$. Tämä voidaan merkitä
                             $$f(156) = 1 + 5 + 6 = 12.$$
                         <ol class="a">
                             <li> Minkä luvun sääntö $f$ liittää lukuun $389$? Toisin sanottuna, mikä on $f(389)$?</li>
@@ -109,8 +135,8 @@ topnav: may1
                     </header>
                     <div id="funktio0b" class="collapse">
                         <p>
-                            Tutkitaan sääntöä $g$, joka liittää jokaiseen kaksinumeroiseen luonnolliseen lukuun sen numeroiden erotuksen käänteisluvun. Siis esimerkiksi lukuun $36$ sääntö $g$ liittää luvun 
-                            $$\frac{1}{3-6} = \frac{1}{-3} = -\frac{1}{3}.$$ Tämä voidaan merkitä 
+                            Tutkitaan sääntöä $g$, joka liittää jokaiseen kaksinumeroiseen luonnolliseen lukuun sen numeroiden erotuksen käänteisluvun. Siis esimerkiksi lukuun $36$ sääntö $g$ liittää luvun
+                            $$\frac{1}{3-6} = \frac{1}{-3} = -\frac{1}{3}.$$ Tämä voidaan merkitä
                             $$g\left(36\right) = \frac{1}{3-6} = -\frac{1}{3}.$$
                         <ol class="a">
                             <li> Minkä luvun sääntö $g$ liittää lukuun $94$? Toisin sanottuna, mikä on $g(94)$?</li>
@@ -135,8 +161,8 @@ topnav: may1
                     </header>
                     <div id="funktio0c" class="collapse">
                         <p>
-                            Tutkitaan sääntöä $h$, joka liittää jokaiseen murtolukumuodossa kirjoitettuun rationaalilukuun sen osoittajan ja nimittäjän summan. Siis esimerkiksi lukuun $\frac{42}{105}$ sääntö $h$ liittää luvun 
-                            $42 + 105 = 147$. Tämä voidaan merkitä 
+                            Tutkitaan sääntöä $h$, joka liittää jokaiseen murtolukumuodossa kirjoitettuun rationaalilukuun sen osoittajan ja nimittäjän summan. Siis esimerkiksi lukuun $\frac{42}{105}$ sääntö $h$ liittää luvun
+                            $42 + 105 = 147$. Tämä voidaan merkitä
                             $$h\left(\frac{42}{105}\right) = 42 + 105 = 147.$$
                         <ol class="a">
                             <li> Minkä luvun sääntö $h$ liittää lukuun $\frac{2}{4}$? Toisin sanottuna, mikä on $h\left(\frac{2}{4}\right)$?</li>
@@ -149,17 +175,21 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Edellisissä tehtävissä tutkittiin erilaisia sääntöjä, jotka kaikki liittivät tietyn joukon lukuihin toisia lukuja. Sellaista sääntöä, joka liittää tietyn joukon jokaiseen alkioon täsmälleen yhden alkion, sanotaan funktioksi.
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: FUNKTIO</h3>
+            <div class="teoria">
                 <p>
-                    <em>Funktio</em> joukosta $X$ joukkoon $Y$ tarkoittaa sääntöä, joka liittää joukon $X$ jokaiseen alkioon täsmälleen yhden alkion joukosta $Y$.
-                    <br>
-                    Tässä esiintyvä joukko $X$ on funktion <em>määrittelyjoukko</em> eli <em>lähtöjoukko</em> ja joukko $Y$ on funktion <em>maalijoukko</em>.
+                    Edellisissä tehtävissä tutkittiin erilaisia sääntöjä, jotka kaikki liittivät tietyn joukon lukuihin toisia lukuja. Sellaista sääntöä, joka liittää tietyn joukon jokaiseen alkioon täsmälleen yhden alkion, sanotaan funktioksi.
                 </p>
+
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: FUNKTIO</h3>
+                    <p>
+                        <em>Funktio</em> joukosta $X$ joukkoon $Y$ tarkoittaa sääntöä, joka liittää joukon $X$ jokaiseen alkioon täsmälleen yhden alkion joukosta $Y$.
+                        <br>
+                        Tässä esiintyvä joukko $X$ on funktion <em>määrittelyjoukko</em> eli <em>lähtöjoukko</em> ja joukko $Y$ on funktion <em>maalijoukko</em>.
+                    </p>
+                </div>
+
             </div>
 
             <div class="tehtavat">
@@ -201,23 +231,25 @@ topnav: may1
                             Tarkastele alla olevia kuvia, joissa on kuvattu säännöt $\alpha$, $f$, $g$, $\beta$ ja $h$. Mitkä näistä säännöistä ovat funktioita joukosta $X$ joukkoon $Y$? Perustele omin sanoin.
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/funktio1.png" style="max-width: 100%; width: auto; height: auto;" /> 
+                            <img src="/kurssit/may1/kuvat/funktio1.png" style="max-width: 100%; width: auto; height: auto;" />
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/funktio2.png" style="max-width: 100%; width: auto; height: auto;" /> 
+                            <img src="/kurssit/may1/kuvat/funktio2.png" style="max-width: 100%; width: auto; height: auto;" />
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/funktio3.png" style="max-width: 100%; width: auto; height: auto;" /> 
+                            <img src="/kurssit/may1/kuvat/funktio3.png" style="max-width: 100%; width: auto; height: auto;" />
                         </p>
                     </div>
                 </div>
             </div>
 
-            <p>
-                Joskus funktion sääntö voidaan ilmaista lausekkeen avulla. Esimerkiksi merkintä 
-                $$f(x) = 2x + 1$$ 
-                ilmaisee sen, että funktio $f$ liittää lukuun $x$ luvun $2x + 1$. Funktio $f$ siis kertoo luvun $x$ kahdella ja lisää tulokseen luvun $1$. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Joskus funktion sääntö voidaan ilmaista lausekkeen avulla. Esimerkiksi merkintä
+                    $$f(x) = 2x + 1$$
+                    ilmaisee sen, että funktio $f$ liittää lukuun $x$ luvun $2x + 1$. Funktio $f$ siis kertoo luvun $x$ kahdella ja lisää tulokseen luvun $1$.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="c287e196-8a74-48c5-84d6-1e2d4799cbd1">
@@ -244,7 +276,7 @@ topnav: may1
                                 h(-4) &= -(-4)^2 - 3\cdot (-4) + 1 \\
                                 &= -16+12 + 1 = -3.
                                 \end{align*}
-                                Kumman lasku oli oikein? 
+                                Kumman lasku oli oikein?
                             </li>
                             <li> Laske funktion $h$ arvo kohdassa $x = -\frac{1}{2}$.</li>
                         </ol>
@@ -264,19 +296,21 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="funktio0f12" class="collapse">
-                        <p> 
-                            Piirrä vihkoosi samanlainen koordinaatisto kuin alla ja merkitse siihen pisteet $(2,-1)$, $(-3,0)$, $(5,2)$, $(-4,1)$, $(1,0)$, $(6,3)$, $(-5,2)$, $(0,1)$, $(3,0)$, $(-6,3)$, $(-2,-1)$, $(4,1)$ ja $(-1,0)$. Millainen kuvio koordinaatistoon syntyy? 
+                        <p>
+                            Piirrä vihkoosi samanlainen koordinaatisto kuin alla ja merkitse siihen pisteet $(2,-1)$, $(-3,0)$, $(5,2)$, $(-4,1)$, $(1,0)$, $(6,3)$, $(-5,2)$, $(0,1)$, $(3,0)$, $(-6,3)$, $(-2,-1)$, $(4,1)$ ja $(-1,0)$. Millainen kuvio koordinaatistoon syntyy?
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/koordinaatisto.png" max-width: 90%; width: auto; height: auto;/> 
+                            <img src="/kurssit/may1/kuvat/koordinaatisto.png" max-width: 90%; width: auto; height: auto;/>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <p> 
-                Monia funktioita voidaan havainnollistaa piirtämällä funktion <em>kuvaaja</em> koordinaatistoon. Jotta kuvaaja voidaan piirtää, täytyy tietää, mitä arvoja funktio saa muuttujan eri arvoilla. Kuvaajaa piirrettäessä muuttujan arvot luetaan vaaka-akselilta ($x$-akselilta) ja funktion arvot pystyakselilta ($y$-akselilta). 
-            </p>
+            <div class="teoria">
+                <p>
+                    Monia funktioita voidaan havainnollistaa piirtämällä funktion <em>kuvaaja</em> koordinaatistoon. Jotta kuvaaja voidaan piirtää, täytyy tietää, mitä arvoja funktio saa muuttujan eri arvoilla. Kuvaajaa piirrettäessä muuttujan arvot luetaan vaaka-akselilta ($x$-akselilta) ja funktion arvot pystyakselilta ($y$-akselilta).
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="f75b24bf-0a0d-425a-a3e3-348e1840ec68">
@@ -292,65 +326,67 @@ topnav: may1
                         <p>
                             Tutkitaan vielä funktiota $f$, jolla
                             $$f(x) = 2x + 1.$$
-                        <ol class="a">
-                            <li> Täydennä alla oleva taulukko:
-                                <div align="center">
-                                    <table style="width = 75%"> 
-                                        <tr>
-                                            <th>Muuttujan arvo</th>
-                                            <th>Funktion arvo</th>       
-                                        </tr>
-                                        <tr>
-                                            <td>$x$</td>
-                                            <td>$f(x) = 2x + 1$</td>      
-                                        </tr>
-                                        <tr>
-                                            <td>$1$</td>
-                                            <td align="left">$f(1) = $</td>        
-                                        </tr>
-                                        <tr>
-                                            <td>$7$</td>
-                                            <td></td>        
-                                        </tr>
-                                        <tr>
-                                            <td>$0$</td>
-                                            <td></td>        
-                                        </tr>
-                                        <tr>
-                                            <td>$-6$</td>
-                                            <td></td>        
-                                        </tr>
-                                        <tr>
-                                            <td>$a$</td>
-                                            <td></td>        
-                                        </tr>
-                                        <tr>
-                                            <td>$b$</td>
-                                            <td></td>        
-                                        </tr>
-                                    </table> </div></li>
-                            <li> Mikä seuraavista on funktion $f$ kuvaaja? Käytä päättelyssä apuna taulukkoa, jonka täydensit a-kohdassa. 
-                                <p>
-                                    <img src="/kurssit/may1/kuvat/funktio4.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">   
-                                    <img src="/kurssit/may1/kuvat/funktio5.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-                                <img src="/kurssit/may1/kuvat/funktio6.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">     <p style="clear: both;">                    
-                                    <!-- <img src="/kurssit/may1/kuvat/funktio4.png" style="max-width: 100%; width: auto; height: auto;"/> 
-                                    <img src="/kurssit/may1/kuvat/funktio5.png" style="max-width: 100%; width: auto; height: auto;"/> 
-                                    <img src="/kurssit/may1/kuvat/funktio6.png" style="max-width: 100%; width: auto; height: auto;"/> --> </p> </li>
-                            <li> Päättele kuvaajan avulla, millä muuttujan $x$ arvolla funktio $f$ saa arvon $0$. Toisin sanottuna etsi sellaiset luvut $x$, joilla $f(x) = 0$.</li>
+                            <ol class="a">
+                                <li> Täydennä alla oleva taulukko:
+                                    <div align="center">
+                                        <table style="width = 75%">
+                                            <tr>
+                                                <th>Muuttujan arvo</th>
+                                                <th>Funktion arvo</th>
+                                            </tr>
+                                            <tr>
+                                                <td>$x$</td>
+                                                <td>$f(x) = 2x + 1$</td>
+                                            </tr>
+                                            <tr>
+                                                <td>$1$</td>
+                                                <td align="left">$f(1) = $</td>
+                                            </tr>
+                                            <tr>
+                                                <td>$7$</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>$0$</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>$-6$</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>$a$</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>$b$</td>
+                                                <td></td>
+                                            </tr>
+                                        </table> </div></li>
+                                <li> Mikä seuraavista on funktion $f$ kuvaaja? Käytä päättelyssä apuna taulukkoa, jonka täydensit a-kohdassa.
+                        <p>
+                            <img src="/kurssit/may1/kuvat/funktio4.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+                            <img src="/kurssit/may1/kuvat/funktio5.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
+                            <img src="/kurssit/may1/kuvat/funktio6.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">     <p style="clear: both;">
+                        <!-- <img src="/kurssit/may1/kuvat/funktio4.png" style="max-width: 100%; width: auto; height: auto;"/>
+                        <img src="/kurssit/may1/kuvat/funktio5.png" style="max-width: 100%; width: auto; height: auto;"/>
+                        <img src="/kurssit/may1/kuvat/funktio6.png" style="max-width: 100%; width: auto; height: auto;"/> --> </p> </li>
+                        <li> Päättele kuvaajan avulla, millä muuttujan $x$ arvolla funktio $f$ saa arvon $0$. Toisin sanottuna etsi sellaiset luvut $x$, joilla $f(x) = 0$.</li>
                         </ol>
                         </p>
                     </div>
                 </div>
             </div>
-            <p>
-                Edellä tarkasteltu funktio $f$ on määritelty kaikilla reaaliluvuilla. Se tarkoittaa, että funktion $f$ arvo voidaan laskea, olipa muuttujan $x$ arvo mikä tahansa reaaliluku. Esimerkiksi jos $x = 135{,}8642$, on funktion $f$ arvo
-                $$f(135{,}8642) = 2\cdot 135{,}8642 + 1 = 272{,}7284.$$
-                On olemassa myös sellaisia funktiota, joiden arvo ei joidenkin muuttujan arvojen tapauksessa ole määritelty. Esimerkiksi funktion 
-                $$g(x) = \frac{1}{x-2}$$
-                arvo ei ole määritelty, jos $x = 2$, sillä nimittäjä on tällöin nolla. Tässä tilanteessa sanotaan, että funktio $g$ ei ole määritelty kohdassa $x = 2$. Funktion yhteyteen on hyvä liittää tieto siitä, millä muuttujan arvoilla funktio on määritelty:
-                $$g(x) = \frac{1}{x-2}, \quad \text{ missä } x \neq 2.$$
-            </p>
+            <div class="teoria">
+                <p>
+                    Edellä tarkasteltu funktio $f$ on määritelty kaikilla reaaliluvuilla. Se tarkoittaa, että funktion $f$ arvo voidaan laskea, olipa muuttujan $x$ arvo mikä tahansa reaaliluku. Esimerkiksi jos $x = 135{,}8642$, on funktion $f$ arvo
+                    $$f(135{,}8642) = 2\cdot 135{,}8642 + 1 = 272{,}7284.$$
+                    On olemassa myös sellaisia funktiota, joiden arvo ei joidenkin muuttujan arvojen tapauksessa ole määritelty. Esimerkiksi funktion
+                    $$g(x) = \frac{1}{x-2}$$
+                    arvo ei ole määritelty, jos $x = 2$, sillä nimittäjä on tällöin nolla. Tässä tilanteessa sanotaan, että funktio $g$ ei ole määritelty kohdassa $x = 2$. Funktion yhteyteen on hyvä liittää tieto siitä, millä muuttujan arvoilla funktio on määritelty:
+                    $$g(x) = \frac{1}{x-2}, \quad \text{ missä } x \neq 2.$$
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="f2af786d-cc79-4b49-9ff9-12bf66cfeff1">
@@ -388,14 +424,17 @@ topnav: may1
         </header>
         <div id="Kuvaaja" class="collapse">
 
-            <p>
-                Funktion kuvaajan avulla voidaan tehdä päätelmiä sellaisissakin tilanteissa, joissa funktion esittäminen lausekkeen avulla on hankalaa. Esimerkiksi alla olevasta kuvassa on näkyvissä lämpötila ajan funktiona Ilmatieteen laitoksen Kumpulan havaintoasemalla Helsingissä (kuvankaappaus Ilmatieteenlaitoksen <a href="http://ilmatieteenlaitos.fi/saa/helsinki/kumpula">sivuilta</a>).
-            </p>    
-            <p>
-                <img src="/kurssit/may1/kuvat/lampotila.png" max-width: 90%; width: auto; height: auto;/> 
-            </p>
-            <p>
-            </p>
+            <div class="teoria">
+                <p>
+                    Funktion kuvaajan avulla voidaan tehdä päätelmiä sellaisissakin tilanteissa, joissa funktion esittäminen lausekkeen avulla on hankalaa. Esimerkiksi alla olevasta kuvassa on näkyvissä lämpötila ajan funktiona Ilmatieteen laitoksen Kumpulan havaintoasemalla Helsingissä (kuvankaappaus Ilmatieteenlaitoksen <a href="http://ilmatieteenlaitos.fi/saa/helsinki/kumpula">sivuilta</a>).
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/lampotila.png" max-width: 90%; width: auto; height: auto;/>
+                </p>
+                <p>
+                </p>
+            </div>
+
             <div class="tehtavat">
                 <div class="tehtava" id="768ba0f8-7cac-4285-96dc-6de0c8cd46ec">
 
@@ -408,7 +447,7 @@ topnav: may1
                     </header>
                     <div id="funktio1a" class="collapse">
                         <p>
-                            Tarkastele yllä olevaa kuvaajaa, joka esittää lämpötilaa ajan funktiona. 
+                            Tarkastele yllä olevaa kuvaajaa, joka esittää lämpötilaa ajan funktiona.
                         <ol class="a">
                             <li> Mikä on ollut vuorokauden korkein lämpötila? Milloin se on saavutettu?</li>
                             <li> Mikä on ollut vuorokauden matalin lämpötila? Milloin se on saavutettu?</li>
@@ -420,12 +459,14 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Funktion kuvaajan pisteen $y$-koordinaatti ilmaisee aina funktion arvon kyseisessä kohdassa. Esimerkiksi alla olevassa kuvassa funktion $f$ kuvaaja kulkee pisteen $(1,3)$ kautta. Tästä voidaan päätellä, että funktion $f$ arvo kohdassa $x = 1$ on $f(1) = 3$.
-            </p>
-            <p>
-                <img src="/kurssit/may1/kuvat/funktio7.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+            <div class="teoria">
+                <p>
+                    Funktion kuvaajan pisteen $y$-koordinaatti ilmaisee aina funktion arvon kyseisessä kohdassa. Esimerkiksi alla olevassa kuvassa funktion $f$ kuvaaja kulkee pisteen $(1,3)$ kautta. Tästä voidaan päätellä, että funktion $f$ arvo kohdassa $x = 1$ on $f(1) = 3$.
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/funktio7.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="d174cc84-33c1-4094-b203-a3ec7e763708">
@@ -441,29 +482,31 @@ topnav: may1
                     <div id="funktio1" class="collapse">
 
                         <p>
-                            Alla on funktion $f$ kuvaaja. Päättele sen avulla vastaukset seuraaviin kysymyksiin:  
+                            Alla on funktion $f$ kuvaaja. Päättele sen avulla vastaukset seuraaviin kysymyksiin:
                         <ol class="a">
                             <li> Minkä arvon funktio saa kohdassa $x = -1$?</li>
                             <li> Mitä on $f(0)$?</li>
                             <li> Mitä on $f(2)$? Saako funktio $f$ tämän arvon jossain muussakin kohdassa kuin kohdassa $x = 2$?</li>
                         </ol>
                         </p>
-                        <p> 
-                            <img src="/kurssit/may1/kuvat/MAY_1.png" style="max-height: 500px; width: auto; height: auto;" /> 
+                        <p>
+                            <img src="/kurssit/may1/kuvat/MAY_1.png" style="max-height: 500px; width: auto; height: auto;" />
                         </p>
                     </div>
                 </div>
             </div>
 
-            <p>
-                Edellisen tehtävän funktion kuvaaja leikkaa $x$-akselin kohdassa $x = -1$ ja kohdassa $x = 1$. Näissä kohdissa kuvaajan pisteen $y$-koordinaatti on siis $0$. Nämä kohdat, joissa funktion arvo on $0$, on nimetty funktion nollakohdiksi:
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: FUNKTION NOLLAKOHTA</h3>
+            <div class="teoria">
                 <p>
-                    Funktion $f$ <em>nollakohta</em> tarkoittaa sellaista muuttujan $x$ arvoa, jolla funktio saa arvon nolla eli $f(x) = 0$.
+                    Edellisen tehtävän funktion kuvaaja leikkaa $x$-akselin kohdassa $x = -1$ ja kohdassa $x = 1$. Näissä kohdissa kuvaajan pisteen $y$-koordinaatti on siis $0$. Nämä kohdat, joissa funktion arvo on $0$, on nimetty funktion nollakohdiksi:
                 </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: FUNKTION NOLLAKOHTA</h3>
+                    <p>
+                        Funktion $f$ <em>nollakohta</em> tarkoittaa sellaista muuttujan $x$ arvoa, jolla funktio saa arvon nolla eli $f(x) = 0$.
+                    </p>
+                </div>
             </div>
 
             <div class="tehtavat">
@@ -478,7 +521,7 @@ topnav: may1
                     </header>
                     <div id="funktio3a" class="collapse">
                         <p>
-                            Alla on näkyvissä funktioiden $f$, $g$ ja $h$ kuvaajat. Millä näistä funktioista 
+                            Alla on näkyvissä funktioiden $f$, $g$ ja $h$ kuvaajat. Millä näistä funktioista
                         <ol class="a">
                             <li> on tasan yksi nollakohta?</li>
                             <li> on useita nollakohtia?</li>
@@ -486,12 +529,12 @@ topnav: may1
                         </ol>
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/funktio9.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">   
+                            <img src="/kurssit/may1/kuvat/funktio9.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
                             <img src="/kurssit/may1/kuvat/funktio10.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">
-                        <img src="/kurssit/may1/kuvat/funktio11.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">     <p style="clear: both;">                    
-                            <!-- <img src="/kurssit/may1/kuvat/funktio4.png" style="max-width: 100%; width: auto; height: auto;"/> 
-                            <img src="/kurssit/may1/kuvat/funktio5.png" style="max-width: 100%; width: auto; height: auto;"/> 
-                            <img src="/kurssit/may1/kuvat/funktio6.png" style="max-width: 100%; width: auto; height: auto;"/> --> </p>   
+                            <img src="/kurssit/may1/kuvat/funktio11.png" style="float: left; width: 49%; margin-right: 1%; margin-bottom: 0.5em;">     <p style="clear: both;">
+                        <!-- <img src="/kurssit/may1/kuvat/funktio4.png" style="max-width: 100%; width: auto; height: auto;"/>
+                        <img src="/kurssit/may1/kuvat/funktio5.png" style="max-width: 100%; width: auto; height: auto;"/>
+                        <img src="/kurssit/may1/kuvat/funktio6.png" style="max-width: 100%; width: auto; height: auto;"/> --> </p>
                     </div>
                 </div>
             </div>
@@ -507,7 +550,7 @@ topnav: may1
                     </header>
                     <div id="funktio3" class="collapse">
                         <p>
-                            Alla on funktion $g$ kuvaaja. Päättele sen avulla vastaukset seuraaviin kysymyksiin: 
+                            Alla on funktion $g$ kuvaaja. Päättele sen avulla vastaukset seuraaviin kysymyksiin:
                         <ol class="a">
                             <li> Millä muuttujan $x$ arvolla funktio saa arvon $-2$?</li>
                             <li> Onko funktiolla yksi tai useampia nollakohtia? Mitä ne ovat?</li>
@@ -516,26 +559,28 @@ topnav: may1
                         </ol>
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/funktio8.png" max-width: 100%; width: auto; height: auto;/> 
+                            <img src="/kurssit/may1/kuvat/funktio8.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <p>Lukusuoran välejä ja niiden yhdistelmiä voidaan ilmaista merkkien $<$ (pienempi kuin), $>$ (suurempi kuin), $\leq$ (pienempi tai yhtä suuri kuin) ja $\geq$ (suurempi tai yhtä suuri kuin) avulla seuraavaan tapaan:
-            </p>
-            <p>
-                <img src="/kurssit/may1/kuvat/funktio12.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                <img src="/kurssit/may1/kuvat/funktio13.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                <img src="/kurssit/may1/kuvat/funktio14.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                <img src="/kurssit/may1/kuvat/funktio15.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+            <div class="teoria">
+                <p>Lukusuoran välejä ja niiden yhdistelmiä voidaan ilmaista merkkien $<$ (pienempi kuin), $>$ (suurempi kuin), $\leq$ (pienempi tai yhtä suuri kuin) ja $\geq$ (suurempi tai yhtä suuri kuin) avulla seuraavaan tapaan:
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/funktio12.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/funktio13.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/funktio14.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/funktio15.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="6f38bfbb-b0a7-41a9-8c52-c14bb237538e">
@@ -571,7 +616,7 @@ topnav: may1
                     </header>
                     <div id="funktio5" class="collapse">
                         <p>
-                            Tarkastele alla olevaa funktion $f$ kuvaajaa. Millä muuttujan $x$ arvoilla 
+                            Tarkastele alla olevaa funktion $f$ kuvaajaa. Millä muuttujan $x$ arvoilla
                         <ol class="a">
                             <li> funktio saa arvon nolla, eli $f(x)=0$</li>
                             <li> funktion arvot ovat positiivisia eli $f(x)>0$</li>
@@ -580,7 +625,7 @@ topnav: may1
                         Anna vastaus edellä harjoiteltuja lukusuoran välin merkintöjä käyttäen tai selitä omin sanoin.
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/MAY_3.png" style="max-height: 500px; width: auto; height: auto;" /> 
+                            <img src="/kurssit/may1/kuvat/MAY_3.png" style="max-height: 500px; width: auto; height: auto;" />
                         </p>
                     </div>
                 </div>
@@ -597,7 +642,7 @@ topnav: may1
                     </header>
                     <div id="funktio6" class="collapse">
                         <p>
-                            Tarkastele alla olevaa funktion $f$ kuvaajaa. Millaisia arvoja funktio saa eli mitä voit sanoa luvusta $f(x)$, jos 
+                            Tarkastele alla olevaa funktion $f$ kuvaajaa. Millaisia arvoja funktio saa eli mitä voit sanoa luvusta $f(x)$, jos
                         <ol class="a">
                             <li> $-1\leq x\leq 2$</li>
                             <li> $x>0$</li>
@@ -606,18 +651,21 @@ topnav: may1
                         Anna vastaus edellä harjoiteltuja lukusuoran välin merkintöjä käyttäen tai selitä omin sanoin.
                         </p>
                         <p>
-                            <img src="/kurssit/may1/kuvat/MAY_3.png" style="max-height: 500px; width: auto; height: auto;" /> 
+                            <img src="/kurssit/may1/kuvat/MAY_3.png" style="max-height: 500px; width: auto; height: auto;" />
                         </p>
                     </div>
                 </div>
             </div>
 
-            <p>
-                Funktioiden arvoja voi vertailla piirtämällä niiden kuvaajat samaan koordinaatistoon kuten alla olevassa kuvassa. Siitä nähdään esimerkiksi, että funktiot $f$ ja $g$ saavat saman arvon kohdassa $a \approx 3{,}4$ ja tämä arvo on $f(a) = g(a) \approx 5$.
-            </p>
-            <p>
-                <img src="/kurssit/may1/kuvat/funktio16.png" style="max-height: 500px; width: auto; height: auto;" /> 
-            </p>
+            <div class="teoria">
+                <p>
+                    Funktioiden arvoja voi vertailla piirtämällä niiden kuvaajat samaan koordinaatistoon kuten alla olevassa kuvassa. Siitä nähdään esimerkiksi, että funktiot $f$ ja $g$ saavat saman arvon kohdassa $a \approx 3{,}4$ ja tämä arvo on $f(a) = g(a) \approx 5$.
+                </p>
+                <p>
+                    <img src="/kurssit/may1/kuvat/funktio16.png" style="max-height: 500px; width: auto; height: auto;" />
+                </p>
+            </div>
+
             <div class="tehtavat">
                 <div class="tehtava" id="3347d27f-3119-4d84-86bd-c1040f6428ff">
                     <header>
@@ -629,7 +677,7 @@ topnav: may1
                     </header>
                     <div id="funktio6b" class="collapse">
                         <p>
-                            Tarkastele edelleen yllä olevaa kuvaa, jossa näkyvät funktioiden $f$ ja $g$ kuvaajat. 
+                            Tarkastele edelleen yllä olevaa kuvaa, jossa näkyvät funktioiden $f$ ja $g$ kuvaajat.
                         <ol class="a">
                             <li> Saavatko funktiot $f$ ja $g$ saman arvon jossain muussakin kohdassa kuin kohdassa $x = a$? Missä?</li>
                             <li> Kumpi funktioista saa suuremman arvon kohdassa $x = 0$?</li>
@@ -641,7 +689,9 @@ topnav: may1
                 </div>
             </div>
 
-            <p>Seuraavien tehtävien avulla harjoitellaan funktion kuvaajan piirtämistä laskimella.</p>
+            <div class="teoria">
+                <p>Seuraavien tehtävien avulla harjoitellaan funktion kuvaajan piirtämistä laskimella.</p>
+            </div>
 
             <div class="tehtavat">
 
@@ -706,17 +756,19 @@ topnav: may1
         </header>
         <div id="funktioita" class="collapse">
 
-            <p>Funktioita voidaan luokitella eri tavoin. Voidaan esimerkiksi puhua polynomifunktioista, juurifunktioista, murtofunktioista, trigonometrisistä funktioista, eksponentti- ja logaritmifunktioista ja niin edelleen. Tiettyyn luokkaan kuuluvien funktioiden lausekkeet muistuttavat yleensä toisiaan ja niiden kuvaajissa on samoja piirteitä. Tässä kappaleessa tutkitaan kuvaajien avulla erityyppisten funktioiden ominaisuuksia.</p>
+            <div class="teoria">
+                <p>Funktioita voidaan luokitella eri tavoin. Voidaan esimerkiksi puhua polynomifunktioista, juurifunktioista, murtofunktioista, trigonometrisistä funktioista, eksponentti- ja logaritmifunktioista ja niin edelleen. Tiettyyn luokkaan kuuluvien funktioiden lausekkeet muistuttavat yleensä toisiaan ja niiden kuvaajissa on samoja piirteitä. Tässä kappaleessa tutkitaan kuvaajien avulla erityyppisten funktioiden ominaisuuksia.</p>
 
-            <p>
-                Ensimmäiseksi tutkitaan niin sanottujen ensimmäisen asteen polynomifunktioiden ominaisuuksia.
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: ENSIMMÄISEN ASTEEN POLYNOMIFUNKTIO</h3>
                 <p>
-                    Funktiota $f$, joka on muotoa $f(x) = ax+b$, missä $a\neq 0$, sanotaan <em>ensimmäisen asteen polynomifunktioksi</em>.
+                    Ensimmäiseksi tutkitaan niin sanottujen ensimmäisen asteen polynomifunktioiden ominaisuuksia.
                 </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: ENSIMMÄISEN ASTEEN POLYNOMIFUNKTIO</h3>
+                    <p>
+                        Funktiota $f$, joka on muotoa $f(x) = ax+b$, missä $a\neq 0$, sanotaan <em>ensimmäisen asteen polynomifunktioksi</em>.
+                    </p>
+                </div>
             </div>
 
             <div class="tehtavat">
@@ -793,7 +845,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="funktio12" class="collapse">
-                        <p> Selitä omin sanoin, miten voit päätellä ensimmäisen asteen polynomifunktion $f(x) = ax+b$ lausekkeesta, 
+                        <p> Selitä omin sanoin, miten voit päätellä ensimmäisen asteen polynomifunktion $f(x) = ax+b$ lausekkeesta,
                         <ol class="a">
                             <li> onko funktion kuvaaja nouseva vai laskeva suora</li>
                             <li> miten jyrkästi kuvaaja nousee tai laskee</li>
@@ -805,9 +857,11 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Piirtämällä paljon tietyntyyppisten funktioiden kuvaajia saa käsityksen siitä, miltä niiden kuvaajat yleensä näyttävät. Siitä on hyötyä, jos joutuu luonnostelemaan tai piirtämään tällaisen funktion kuvaajan kynän ja paperin avulla ilman laskinta tai tietokonetta. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Piirtämällä paljon tietyntyyppisten funktioiden kuvaajia saa käsityksen siitä, miltä niiden kuvaajat yleensä näyttävät. Siitä on hyötyä, jos joutuu luonnostelemaan tai piirtämään tällaisen funktion kuvaajan kynän ja paperin avulla ilman laskinta tai tietokonetta.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="6fef58a4-c4b3-4bdb-b61a-40caf15536b1">
@@ -819,7 +873,7 @@ topnav: may1
                         </h1>
                     </header>
                     <div id="funktio13" class="collapse">
-                        <p> Tehtävänä on piirtää funktion $f(x) = -x+3$ kuvaaja ilman teknisiä apuvälineitä välillä $-3 \leq x \leq 6$. 
+                        <p> Tehtävänä on piirtää funktion $f(x) = -x+3$ kuvaaja ilman teknisiä apuvälineitä välillä $-3 \leq x \leq 6$.
                         <ol class="a">
                             <li> Määritä jokin kuvaajan piste esimerkiksi laskemalla funktion $f$ arvo jossakin kohdassa välillä $-3 \leq x \leq 6$ tai muuten päättelemällä (voit hyödyntää edellisten tehtävien havaintoja).</li>
                             <li> Pystytkö piirtämään kuvaajan a-kohdan tiedon perusteella? Jos et, määritä jokin toinen kuvaajan piste samaan tapaan.</li>
@@ -830,9 +884,11 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Seuraavassa tehtävässä piirretään erilaisten eksponenttifunktioiden kuvaajia. Eksponenttifunktioiden avulla voidaan mallintaa ja analysoida esimerkiksi sähkövirtapiirejä, aineen radioaktiivista hajoamista, kappaleen jäähtymistä, tietynlaisten kemiallisten reaktioiden nopeutta, populaatioiden koon kasvua, tautien leviämistä, pääoman karttumista korkonkorkolaskennassa, pyramidihuijauksia <a href="https://en.wikipedia.org/wiki/Exponential_decay#Applications_and_examples">ja niin edelleen</a>.
-            </p>
+            <div class="teoria">
+                <p>
+                    Seuraavassa tehtävässä piirretään erilaisten eksponenttifunktioiden kuvaajia. Eksponenttifunktioiden avulla voidaan mallintaa ja analysoida esimerkiksi sähkövirtapiirejä, aineen radioaktiivista hajoamista, kappaleen jäähtymistä, tietynlaisten kemiallisten reaktioiden nopeutta, populaatioiden koon kasvua, tautien leviämistä, pääoman karttumista korkonkorkolaskennassa, pyramidihuijauksia <a href="https://en.wikipedia.org/wiki/Exponential_decay#Applications_and_examples">ja niin edelleen</a>.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="e9fca102-ab7e-487c-b797-94ac35eebbc6">
@@ -853,9 +909,11 @@ topnav: may1
                 </div>
             </div>
 
-            <p>
-                Seuraavassa tehtävässä piirretään erilaisten logaritmifunktioiden kuvaajia. Logaritmifunktioiden avulla voidaan mallintaa äänenvoimakkuutta, maanjäristyksiä, liuoksen happamuutta tai emäksisyyttä <a href="https://en.wikipedia.org/wiki/Logarithm#Applications">ja niin edelleen</a>.
-            </p>
+            <div class="teoria">
+                <p>
+                    Seuraavassa tehtävässä piirretään erilaisten logaritmifunktioiden kuvaajia. Logaritmifunktioiden avulla voidaan mallintaa äänenvoimakkuutta, maanjäristyksiä, liuoksen happamuutta tai emäksisyyttä <a href="https://en.wikipedia.org/wiki/Logarithm#Applications">ja niin edelleen</a>.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="f0a02465-f7f8-448f-89f0-96f664bef104">
@@ -922,14 +980,14 @@ topnav: may1
                         Palauta mieleesi funktion käsitteen määritelmä ja päättele sen avulla, mitkä alla olevista kuvista voivat esittää jonkin funktion kuvaajaa välillä $-2 \leq x \leq 2$. Perustele jokaisen kuvan kohdalla omin sanoin, onko kysymyksessä funktion kuvaaja vai ei.
                     </p>
                     <p>
-                        <img src="/kurssit/may1/kuvat/funktio21a.png" style="float: left; width: 40%; margin-left: 9%; margin-right: 1%; margin-bottom: 0.5em;">   
+                        <img src="/kurssit/may1/kuvat/funktio21a.png" style="float: left; width: 40%; margin-left: 9%; margin-right: 1%; margin-bottom: 0.5em;">
                         <img src="/kurssit/may1/kuvat/funktio21b.png" style="float: left; width: 40%; margin-left: 1%; margin-right: 9%; margin-bottom: 0.5em;">
-                        <img src="/kurssit/may1/kuvat/funktio21c.png" style="float: left; width: 40%; margin-left: 9%; margin-right: 1%; margin-bottom: 0.5em;">   
-                        <img src="/kurssit/may1/kuvat/funktio21d.png" style="float: left; width: 40%; margin-left: 1%; margin-right: 9%; margin-bottom: 0.5em;">  
+                        <img src="/kurssit/may1/kuvat/funktio21c.png" style="float: left; width: 40%; margin-left: 9%; margin-right: 1%; margin-bottom: 0.5em;">
+                        <img src="/kurssit/may1/kuvat/funktio21d.png" style="float: left; width: 40%; margin-left: 1%; margin-right: 9%; margin-bottom: 0.5em;">
                     <p style="clear: both;"></p>
                     <p>
-                        <img src="/kurssit/may1/kuvat/funktio21e.png" style="float: left; width: 40%; margin-left: 9%; margin-right: 1%; margin-bottom: 0.5em;">   
-                        <img src="/kurssit/may1/kuvat/funktio21f.png" style="float: left; width: 40%; margin-left: 1%; margin-right: 9%; margin-bottom: 0.5em;">   
+                        <img src="/kurssit/may1/kuvat/funktio21e.png" style="float: left; width: 40%; margin-left: 9%; margin-right: 1%; margin-bottom: 0.5em;">
+                        <img src="/kurssit/may1/kuvat/funktio21f.png" style="float: left; width: 40%; margin-left: 1%; margin-right: 9%; margin-bottom: 0.5em;">
                     <p style="clear: both;"></p>
                     <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#F13_v">
@@ -1147,7 +1205,7 @@ topnav: may1
                     [Lyhyt S2015/3ab]
                     </p>
                     <p>
-                        <img src="/kurssit/may1/kuvat/funktioYO1.png" max-width: 100%; width: auto; height: auto;/> 
+                        <img src="/kurssit/may1/kuvat/funktioYO1.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#F1_v">
@@ -1282,7 +1340,7 @@ topnav: may1
                 </header>
                 <div id="F8">
                     <p>
-                        Kun seurattiin paistolämpömittarin lukemia, havaittiin, että paistin sisälämpötila nousi koko ajan tasaisesti siten, että neljässä minuutissa lämpötila kohosi 2&nbsp;${}^\circ$C. Kun paisti laitettiin uuniin, lämpömittarin lukema oli 35&nbsp;${}^\circ$C.  
+                        Kun seurattiin paistolämpömittarin lukemia, havaittiin, että paistin sisälämpötila nousi koko ajan tasaisesti siten, että neljässä minuutissa lämpötila kohosi 2&nbsp;${}^\circ$C. Kun paisti laitettiin uuniin, lämpömittarin lukema oli 35&nbsp;${}^\circ$C.
                     </p>
                     <ol class="a">
                         <li> Muodosta lauseke funktiolle $f(t)$, joka kuvaa paistin sisälämpötilaa ajan $t$ funktiona. </li>
@@ -1318,13 +1376,13 @@ topnav: may1
                 </header>
                 <div id="F11">
                     <p>
-                        <img src="/kurssit/may1/kuvat/funktio19.png" max-width: 100%; width: auto; height: auto;/> 
+                        <img src="/kurssit/may1/kuvat/funktio19.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <p>
                         Yllä olevassa kuvassa on joidenkin ensimmäisen asteen polynomifunktioiden kuvaajia. Täydennä alla oleva taulukko liittämällä kuhunkin funktioon sen kuvaaja.
                     </p>
                     <div align="center">
-                        <table style="width = 75%"> 
+                        <table style="width = 75%">
                             <tr>
                                 <th> Funktio </th>
                                 <th> Kuvaaja </th>
@@ -1353,7 +1411,7 @@ topnav: may1
                     </h2>
                     <div id="F11_v" class="collapse">
                         <div align="center">
-                            <table style="width = 75%"> 
+                            <table style="width = 75%">
                                 <tr>
                                     <th> Funktio </th>
                                     <th> Kuvaaja </th>
@@ -1389,13 +1447,13 @@ topnav: may1
                 </header>
                 <div id="F12">
                     <p>
-                        <img src="/kurssit/may1/kuvat/funktio20.png" max-width: 100%; width: auto; height: auto;/> 
+                        <img src="/kurssit/may1/kuvat/funktio20.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <p>
                         Yllä olevassa kuvassa on joidenkin ensimmäisen asteen polynomifunktioiden kuvaajia. Täydennä alla oleva taulukko liittämällä kuhunkin funktioon sen kuvaaja.
                     </p>
                     <div align="center">
-                        <table style="width = 75%"> 
+                        <table style="width = 75%">
                             <tr>
                                 <th> Funktio </th>
                                 <th> Kuvaaja </th>
@@ -1424,7 +1482,7 @@ topnav: may1
                     </h2>
                     <div id="F12_v" class="collapse">
                         <div align="center">
-                            <table style="width = 75%"> 
+                            <table style="width = 75%">
                                 <tr>
                                     <th> Funktio </th>
                                     <th> Kuvaaja </th>
@@ -1452,7 +1510,7 @@ topnav: may1
 
 
         </div>
-    </section>  
+    </section>
 
     <section class="panel">
         <header>
@@ -1479,21 +1537,21 @@ topnav: may1
                         Kahden sähköyhtiön A ja B hinnoittelu perustuu kiinteään kuukausittaiseen perusmaksuun, johon lisätään sähkön kulutuksen mukainen lisämaksu. Yhtiöiden tarjoamat hinnat selviävät alla olevasta taulukosta.
                     </p>
                     <div align="center">
-                        <table style="width = 75%"> 
+                        <table style="width = 75%">
                             <tr>
                                 <th> Yhtiö </th>
                                 <th> Perusmaksu €/kk </th>
-                                <th> Yksikköhinta snt/kWh </th> 
+                                <th> Yksikköhinta snt/kWh </th>
                             </tr>
                             <tr>
                                 <td> <b>A</b></td>
                                 <td> 4,02 </td>
-                                <td> 6,62 </td> 
+                                <td> 6,62 </td>
                             </tr>
                             <tr>
                                 <td> <b>B</b> </td>
                                 <td> 3,75 </td>
-                                <td> 7,99 </td> 
+                                <td> 7,99 </td>
                             </tr>
                         </table> </div>
                     <p>
@@ -1522,25 +1580,25 @@ topnav: may1
                 </div>
             </div>
 
-                <div class="tehtava" id="e3bec84d-573d-4e6b-a989-f6cbdda80f10">
-                    <header>
-                        <h1>
-                            <a data-target="#F3">
-                                
-                            </a>
-                        </h1>
-                    </header>
-                    <div id="F3">
-                        <p>
-                            Ravintoliuoksessa kasvatettavan bakteeripopulaation yksilömäärä $N(t)$ kasvaa eksponentiaalisen mallin $N(t) = 1000 \cdot 1{,}25^t$ mukaisesti, kun aika $t$ ilmoitetaan tunteina.
-                        <ol class="a">
-                            <li> Mikä on populaation koko 24 tunnin kuluttua? Anna vastaus tuhannen bakteerin tarkkuudella. </li>
-                            <li> Kuinka monta prosenttia populaatio kasvaa jokaisen tunnin aikana?</li>
-                            <li> Kuinka monta tuntia kestää, että populaation koko ylittää miljoonan? Vihje: hyödynnä laskinta yhtälön ratkaisemisessa.</li>
-                        </ol>
-                        [Lyhyt K2015/8]
-                        </p>
-                        <h2>
+            <div class="tehtava" id="e3bec84d-573d-4e6b-a989-f6cbdda80f10">
+                <header>
+                    <h1>
+                        <a data-target="#F3">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="F3">
+                    <p>
+                        Ravintoliuoksessa kasvatettavan bakteeripopulaation yksilömäärä $N(t)$ kasvaa eksponentiaalisen mallin $N(t) = 1000 \cdot 1{,}25^t$ mukaisesti, kun aika $t$ ilmoitetaan tunteina.
+                    <ol class="a">
+                        <li> Mikä on populaation koko 24 tunnin kuluttua? Anna vastaus tuhannen bakteerin tarkkuudella. </li>
+                        <li> Kuinka monta prosenttia populaatio kasvaa jokaisen tunnin aikana?</li>
+                        <li> Kuinka monta tuntia kestää, että populaation koko ylittää miljoonan? Vihje: hyödynnä laskinta yhtälön ratkaisemisessa.</li>
+                    </ol>
+                    [Lyhyt K2015/8]
+                    </p>
+                    <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#F3_v">
                             Vastaus
                         </a>
@@ -1548,38 +1606,38 @@ topnav: may1
                     <div id="F3_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> Noin $212\,000$ yksilöä</li>
-                        <li> 25 %</li>
-                        <li> 31 tuntia</li>
+                            <li> Noin $212\,000$ yksilöä</li>
+                            <li> 25 %</li>
+                            <li> 31 tuntia</li>
                         </ol>
                         </p>
                     </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
 
 
-                 <div class="tehtava" id="be6fd0c8-5651-44a5-afa1-771cfa3f46b0">
-                    <header>
-                        <h1>
-                            <a data-target="#F9">
-                                
-                            </a>
-                        </h1>
-                    </header>
-                    <div id="F9">
-                        <p>
-                            Erästä tuotetta myydään päivittäin 55 kappaletta, kun sen hinta on 35 euroa. Hinnan laskemisen on todettu vaikuttavan päivämyyntiin niin, että yhden euron alennus lisää aina menekkiä viidellä kappaleella. 
-                        <ol class="a">
-                            <li> Mikä on päivittäisen myynnin kokonaisarvo, kun yhden tuotteen hinta on 35 euroa? </li>
-                            <li> Jos hintaa lasketaan $x$ euroa, kuinka monta kappaletta tuotetta myydään? </li>
-                            <li> Muodosta lauseke funktiolle $f(x)$, joka ilmaisee myynnin kokonaisarvon tilanteessa, jossa hintaa on laskettu $x$ euroa. </li>
-                            <li> Millä muuttujan $x$ arvoilla funktio $f$ on määritelty?</li>
-                            <li> Piirrä funktion $f$ kuvaaja välillä $5 \leq x \leq 20$ laskimellasi tai esimerkiksi <a href="http://www.wolframalpha.com/">Wolfram|Alphalla</a>. Wolfram|Alphalla piirtäminen onnistuu esimerkiksi komennolla <i>plot $f(x) = x+1$, $x$ from 5 to 20</i> (muuta funktion lauseke oikeaksi). </li>
-                            <li> Päättele kuvaajan avulla, kuinka paljon hintaa pitää alentaa, jotta päivittäisen myynnin kokonaisarvo on mahdollisimman suuri.</li>
-                            <li> Mikä tuotteen hinnaksi kannattaa valita, jos haluaa mahdollisimman suuren myynnin kokonaisarvon? Mikä tämä kokonaisarvo on?</li>
-                        </ol>
-                        </p>
-                        <h2>
+            <div class="tehtava" id="be6fd0c8-5651-44a5-afa1-771cfa3f46b0">
+                <header>
+                    <h1>
+                        <a data-target="#F9">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="F9">
+                    <p>
+                        Erästä tuotetta myydään päivittäin 55 kappaletta, kun sen hinta on 35 euroa. Hinnan laskemisen on todettu vaikuttavan päivämyyntiin niin, että yhden euron alennus lisää aina menekkiä viidellä kappaleella.
+                    <ol class="a">
+                        <li> Mikä on päivittäisen myynnin kokonaisarvo, kun yhden tuotteen hinta on 35 euroa? </li>
+                        <li> Jos hintaa lasketaan $x$ euroa, kuinka monta kappaletta tuotetta myydään? </li>
+                        <li> Muodosta lauseke funktiolle $f(x)$, joka ilmaisee myynnin kokonaisarvon tilanteessa, jossa hintaa on laskettu $x$ euroa. </li>
+                        <li> Millä muuttujan $x$ arvoilla funktio $f$ on määritelty?</li>
+                        <li> Piirrä funktion $f$ kuvaaja välillä $5 \leq x \leq 20$ laskimellasi tai esimerkiksi <a href="http://www.wolframalpha.com/">Wolfram|Alphalla</a>. Wolfram|Alphalla piirtäminen onnistuu esimerkiksi komennolla <i>plot $f(x) = x+1$, $x$ from 5 to 20</i> (muuta funktion lauseke oikeaksi). </li>
+                        <li> Päättele kuvaajan avulla, kuinka paljon hintaa pitää alentaa, jotta päivittäisen myynnin kokonaisarvo on mahdollisimman suuri.</li>
+                        <li> Mikä tuotteen hinnaksi kannattaa valita, jos haluaa mahdollisimman suuren myynnin kokonaisarvon? Mikä tämä kokonaisarvo on?</li>
+                    </ol>
+                    </p>
+                    <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#F9_v">
                             Vastaus
                         </a>
@@ -1587,44 +1645,44 @@ topnav: may1
                     <div id="F9_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> 1925 euroa</li>
-                        <li> $55 + 5x$</li>
-                        <li> $f(x) = (55 + 5x)(35-x)$</li>
-                        <li> $0 \leq x \leq 35$</li>
-                        <li> </li>
-                        <li> 12 euroa</li>
-                        <li> 23 euroa, 2645 euroa.</li>
+                            <li> 1925 euroa</li>
+                            <li> $55 + 5x$</li>
+                            <li> $f(x) = (55 + 5x)(35-x)$</li>
+                            <li> $0 \leq x \leq 35$</li>
+                            <li> </li>
+                            <li> 12 euroa</li>
+                            <li> 23 euroa, 2645 euroa.</li>
                         </ol>
                         </p>
                     </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
 
 
-                <div class="tehtava" id="2a9e414c-641e-44ff-b654-623cc979e3eb">
-                    <header>
-                        <h1>
-                            <a data-target="#F10">
-                                
-                            </a>
-                        </h1>
-                    </header>
-                    <div id="F10">
-                        <p>
-                            Joen rannalla oleva suorakulmion muotoinen alue aidataan kolmelta sivulta 100 m pitkällä köydellä.  
-                        </p>
-                        <p>
-                            <img src="/kurssit/may1/kuvat/joki.png" max-width: 100%; width: auto; height: auto;/> 
-                        </p>
-                        <ol class="a">
-                            <li> Jos rannan suuntaisen sivun pituus on $x$, mikä on kahden muun sivun pituus?</li>
-                            <li> Muodosta lauseke funktiolle $A(x)$, joka ilmaisee aidatun alueen pinta-alan rannan suuntaisen sivun pituuden $x$ funktiona.</li>
-                            <li> Millä muuttujan $x$ arvoilla funktio $A(x)$ on määritelty? </li>
-                            <li> Piirrä funktion $A$ kuvaaja laskimellasi tai esimerkiksi <a href="http://www.wolframalpha.com/">Wolfram|Alphalla</a>. </li>
-                            <li> Päättele kuvaajan avulla, kuinka pitkäksi rannan suuntainen sivu pitää valita, jotta aidatun alueen pinta-ala olisi mahdollisimman suuri.</li>
-                            <li> Mikä on aidatun alueen suurin mahdollinen pinta-ala?</li>
-                        </ol>
-                        <h2>
+            <div class="tehtava" id="2a9e414c-641e-44ff-b654-623cc979e3eb">
+                <header>
+                    <h1>
+                        <a data-target="#F10">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="F10">
+                    <p>
+                        Joen rannalla oleva suorakulmion muotoinen alue aidataan kolmelta sivulta 100 m pitkällä köydellä.
+                    </p>
+                    <p>
+                        <img src="/kurssit/may1/kuvat/joki.png" max-width: 100%; width: auto; height: auto;/>
+                    </p>
+                    <ol class="a">
+                        <li> Jos rannan suuntaisen sivun pituus on $x$, mikä on kahden muun sivun pituus?</li>
+                        <li> Muodosta lauseke funktiolle $A(x)$, joka ilmaisee aidatun alueen pinta-alan rannan suuntaisen sivun pituuden $x$ funktiona.</li>
+                        <li> Millä muuttujan $x$ arvoilla funktio $A(x)$ on määritelty? </li>
+                        <li> Piirrä funktion $A$ kuvaaja laskimellasi tai esimerkiksi <a href="http://www.wolframalpha.com/">Wolfram|Alphalla</a>. </li>
+                        <li> Päättele kuvaajan avulla, kuinka pitkäksi rannan suuntainen sivu pitää valita, jotta aidatun alueen pinta-ala olisi mahdollisimman suuri.</li>
+                        <li> Mikä on aidatun alueen suurin mahdollinen pinta-ala?</li>
+                    </ol>
+                    <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#F10_v">
                             Vastaus
                         </a>
@@ -1632,17 +1690,17 @@ topnav: may1
                     <div id="F10_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> $\frac{100-x}{2}$</li>
-                        <li> $A(x) = \frac{100x-x^2}{2}$</li>
-                        <li> $0 < x < 100$</li>
-                        <li> </li>
-                        <li> 50 m</li>
-                        <li> 1250 m$^2$</li>
+                            <li> $\frac{100-x}{2}$</li>
+                            <li> $A(x) = \frac{100x-x^2}{2}$</li>
+                            <li> $0 < x < 100$</li>
+                            <li> </li>
+                            <li> 50 m</li>
+                            <li> 1250 m$^2$</li>
                         </ol>
                         </p>
                     </div>
-                    </div>
                 </div>
+            </div>
 
 
             <div class="tehtava" id="002583bc-1b47-4cf1-aa26-27629a3aeb8e">
@@ -1655,10 +1713,10 @@ topnav: may1
                 </header>
                 <div id="F7">
                     <p>
-                        Neliön muotoisen levyn sivun pituus on 300 mm. Levystä leikataa kuvion mukaisesti nurkat pois ja levy taitetaan laatikoksi, jossa ei ole kantta. 
+                        Neliön muotoisen levyn sivun pituus on 300 mm. Levystä leikataa kuvion mukaisesti nurkat pois ja levy taitetaan laatikoksi, jossa ei ole kantta.
                     </p>
                     <p>
-                        <img src="/kurssit/may1/kuvat/funktio18.png" max-width: 100%; width: auto; height: auto;/> 
+                        <img src="/kurssit/may1/kuvat/funktio18.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <ol class="a">
                         <li> Askartele paperista malli laatikolle.</li>
@@ -1676,12 +1734,12 @@ topnav: may1
                     <div id="F7_v" class="collapse">
                         <p>
                         <ol class="a">
-                        <li> </li>
-                        <li> $V(h) = h\cdot (300-h)^2$</li>
-                        <li> $0 < h < 150$</li>
-                        <li> </li>
-                        <li> 100 mm</li>
-                        <li> 4 dm$^3$ eli 4 litraa.</li>
+                            <li> </li>
+                            <li> $V(h) = h\cdot (300-h)^2$</li>
+                            <li> $0 < h < 150$</li>
+                            <li> </li>
+                            <li> 100 mm</li>
+                            <li> 4 dm$^3$ eli 4 litraa.</li>
                         </ol>
                         </p>
                     </div>
@@ -1707,7 +1765,7 @@ topnav: may1
                 </div>
             </div>
         </div>
-    </section>  
+    </section>
 
     <section class="panel">
         <header>
@@ -1719,7 +1777,7 @@ topnav: may1
         </header>
         <div id="L4itsearviointi" class="collapse">
             <p>
-                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1609">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1609">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla.
 
             </p>
         </div>

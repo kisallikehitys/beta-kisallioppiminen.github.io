@@ -4,6 +4,30 @@ title: MAA4 Vektorit - Suorat ja tasot
 main-class: has-atop
 topnav: maa4
 ---
+<script>
+    function toggleVisibilityByClass(className) {
+        var arrayOfElements = document.getElementsByClassName(className);
+        for (var i=0; i<arrayOfElements.length; i++) {
+            var x = arrayOfElements[i];
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottomNav" style="max-width: 100%">
+    <div class="container-fluid" style="max-width: 1150px;">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="color: #FFFFFF;" href="#"></a>
+        </div>
+        <button onclick="toggleVisibilityByClass('tehtava')" style="margin:10px;">Piilota/Näytä tehtavat</button>
+        <button onclick="toggleVisibilityByClass('teoria')" style="margin:10px;">Piilota/Näytä teoria</button>
+    </div>
+
+</nav>
 
 <input type="hidden" id="theoremStart" value="11"/>
 <input type="hidden" id="chapterNumber" value="3"/>
@@ -53,24 +77,26 @@ topnav: maa4
         </header>
         <div id="suora" class="collapse">
 
-            <p>
-                Tarkastellaan alla olevaa kuvaa. Sen pisteiden $A$ ja $B$ kautta on mahdollista piirtää ainoastaan yksi suora &mdash; pisteet $A$ ja $B$ määräävät suoran yksiselitteisesti.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k1.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p> Yksi piste ei riitä, sillä sen kautta voi kulkea äärettömän monta eri suoraa. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k2.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+            <div class="teoria">
+                <p>
+                    Tarkastellaan alla olevaa kuvaa. Sen pisteiden $A$ ja $B$ kautta on mahdollista piirtää ainoastaan yksi suora &mdash; pisteet $A$ ja $B$ määräävät suoran yksiselitteisesti.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k1.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p> Yksi piste ei riitä, sillä sen kautta voi kulkea äärettömän monta eri suoraa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k2.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
 
-            <p>
-                Suora voidaan määrittää vektoreiden avulla. Tällöin tarvitaan yhden suoran pisteen paikkavektori sekä yksi suoran suuntainen vektori. Tätä vektoria kutsutaan suoran <em>suuntavektoriksi</em>. Näitä on havainnollistettu alla olevassa kuvassa.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k3.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+                <p>
+                    Suora voidaan määrittää vektoreiden avulla. Tällöin tarvitaan yhden suoran pisteen paikkavektori sekä yksi suoran suuntainen vektori. Tätä vektoria kutsutaan suoran <em>suuntavektoriksi</em>. Näitä on havainnollistettu alla olevassa kuvassa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k3.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="c2cd6e04-c16b-48b9-a7e3-d7059287c784">
@@ -83,10 +109,10 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t1" class="collapse">
-                        <p> Tutki pisteiden $A=(-1,2)$ ja $B=(1,1)$ kautta kulkevaa suoraa $L$.</p>	
+                        <p> Tutki pisteiden $A=(-1,2)$ ja $B=(1,1)$ kautta kulkevaa suoraa $L$.</p>
                         <ol class="a">
                             <li> Piirrä koordinaatistoon pisteet $A$ ja $B$ sekä suora $L$.
-                            <li> Ilmaise vektorit $\pv{OA}$ ja $\pv{AB}$ vektoreiden $\vi$ ja $\vj$ avulla. 
+                            <li> Ilmaise vektorit $\pv{OA}$ ja $\pv{AB}$ vektoreiden $\vi$ ja $\vj$ avulla.
                             <li> Laske vektorit $\pv{OQ} = \pv{OA} + 2\pv{AB}$ ja $\pv{OR} = \pv{OA} - \pv{AB}$.
                             <li> Merkitse piirrokseesi vektorit $\pv{OA}$, $\pv{AB}$, $\pv{OQ}$ ja $\pv{OR}$.
                             <li> Merkitse piirrokseesi piste $S = (5,-1)$. Etsi sellainen luku $t$, että yhtälö $\pv{OS} = \pv{OA} + t\pv{AB}$ toteutuu.
@@ -97,34 +123,36 @@ topnav: maa4
                 </div>
             </div>
 
-            <p>
-                Edellisessä tehtävässä tarkasteltiin suoraa $L$, joka kulkee pisteen $A$ kautta ja jonka suuntavektori on $\vv = \pv{AB}.$ Tehtävässä havaittiin, että piste $P$ on suoralla $L$, jos ja vain jos on olemassa sellainen luku $t$, että 
-                $$\pv{OP} = \pv{OA} + t\vv.$$
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: SUORAN VEKTORIMUOTOINEN PARAMETRIESITYS</h3>
+            <div class="teoria">
                 <p>
-                    Oletetaan, että $A$ on suoran $L$ piste ja $\vv$ on suoran $L$ suuntavektori. Yhtälö
-                    $$\pv{OP} = \pv{OA} + t\vv$$
-                    on suoran $L$ <em>vektorimuotoinen parametriesitys</em>. 
-                    <br>
-                    Tässä esiintyvä kerroin $t$ on <em>parametri</em> ja vektori $\pv{OA}$ on <em>suoran paikkavektori</em>.
+                    Edellisessä tehtävässä tarkasteltiin suoraa $L$, joka kulkee pisteen $A$ kautta ja jonka suuntavektori on $\vv = \pv{AB}.$ Tehtävässä havaittiin, että piste $P$ on suoralla $L$, jos ja vain jos on olemassa sellainen luku $t$, että
+                    $$\pv{OP} = \pv{OA} + t\vv.$$
+                </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: SUORAN VEKTORIMUOTOINEN PARAMETRIESITYS</h3>
+                    <p>
+                        Oletetaan, että $A$ on suoran $L$ piste ja $\vv$ on suoran $L$ suuntavektori. Yhtälö
+                        $$\pv{OP} = \pv{OA} + t\vv$$
+                        on suoran $L$ <em>vektorimuotoinen parametriesitys</em>.
+                        <br>
+                        Tässä esiintyvä kerroin $t$ on <em>parametri</em> ja vektori $\pv{OA}$ on <em>suoran paikkavektori</em>.
+                    </p>
+                </div>
+
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k3.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+
+                <p>Suoran vektorimuotoinen parametriesitys kertoo, millaisia suoran pisteiden paikkavektorit ovat. Antamalla parametrille $t$ eri arvoja, saadaan suoran eri pisteiden paikkavektoreita.
+                </p>
+
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k4.png" max-width: 100%; width: auto; height: auto;/>
                 </p>
             </div>
 
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k3.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-
-            <p>Suoran vektorimuotoinen parametriesitys kertoo, millaisia suoran pisteiden paikkavektorit ovat. Antamalla parametrille $t$ eri arvoja, saadaan suoran eri pisteiden paikkavektoreita.
-            </p>
-
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k4.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            
-             <div class="tehtavat">
+            <div class="tehtavat">
                 <div class="tehtava" id="452640a6-1178-4fac-9d06-1316c1be94d5">
                     <header>
                         <h1>
@@ -135,29 +163,32 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t3b_g" class="collapse">
-                        <p> 
-                        Tarkastele alla olevaa Geogebra-sovellusta. Siinä on näkyvissä suora, jonka vektorimuotoinen parametriesitys on 
-                        $$\pv{OP} = \pv{OA} + t\vv.$$
-                        Säädä parametrin $t$ arvoa liukukytkimellä ja selvitä silmämääräisesti arvioiden, 
+                        <p>
+                            Tarkastele alla olevaa Geogebra-sovellusta. Siinä on näkyvissä suora, jonka vektorimuotoinen parametriesitys on
+                            $$\pv{OP} = \pv{OA} + t\vv.$$
+                            Säädä parametrin $t$ arvoa liukukytkimellä ja selvitä silmämääräisesti arvioiden,
                         <ol class="a">
                             <li> mikä on suoran paikkavektori $\pv{OA}$</li>
                             <li> mikä on suoran suuntavektori $\vv$</li>
                             <li> millä parametrin $t$ arvolla suoran vektorimuotoinen parametriesitys antaa suoran pisteen $P = (-1,2)$ paikkavektorin</li>
                             <li> minkä suoran pisteen paikkavektori saadaan parametrin arvolla $t=3{,}7$. </li>
                         </ol>
-                      <iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CnKZ9rEY/width/791/height/469/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/false/sri/true/at/auto" width="791px" height="469px" style="border:0px;"> </iframe>
-                    </p>
+                        <iframe scrolling="no" src="https://www.geogebra.org/material/iframe/id/CnKZ9rEY/width/791/height/469/border/888888/rc/false/ai/false/sdz/true/smb/false/stb/false/stbh/true/ld/false/sri/true/at/auto" width="791px" height="469px" style="border:0px;"> </iframe>
+                        </p>
                     </div>
                 </div>
             </div>
-          
 
-            <p>Suoran vektorimuotoisen parametriesityksen avulla voidaan määrittää sekä tason että avaruuden suoria. Samaa suoraa voidaan kuvata usealla erilaisella parametriesityksellä, sillä suoran paikkavektoriksi voidaan valita suoran minkä tahansa pisteen paikkavektori ja suoran suuntavektoriksi voidaan valita mikä tahansa suoran suuntainen vektori.
-            </p>
+
+            <div class="teoria">
+                <p>
+                    Suoran vektorimuotoisen parametriesityksen avulla voidaan määrittää sekä tason että avaruuden suoria. Samaa suoraa voidaan kuvata usealla erilaisella parametriesityksellä, sillä suoran paikkavektoriksi voidaan valita suoran minkä tahansa pisteen paikkavektori ja suoran suuntavektoriksi voidaan valita mikä tahansa suoran suuntainen vektori.
+                </p>
+            </div>
 
             <div class="tehtavat">
-            <div class="tehtava" id="8773b487-ab34-4765-8e17-f66097aa676e">
-                <header>
+                <div class="tehtava" id="8773b487-ab34-4765-8e17-f66097aa676e">
+                    <header>
                         <h1>
                             <a data-toggle="collapse" class="collapsed" data-target="#t-L4t3c">
                                 Suoran vektorimuotoinen parametriesitys
@@ -166,7 +197,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t3c" class="collapse">
-                        <p> Suoran $L$ vektorimuotoinen parametriesitys on $\pv{OP} = -2\vi + \vj + t(3\vi + 2\vj)$.  
+                        <p> Suoran $L$ vektorimuotoinen parametriesitys on $\pv{OP} = -2\vi + \vj + t(3\vi + 2\vj)$.
                         </p>
                         <ol class="a">
                             <li> Päättele parametriesityksen avulla suoralle $L$ yksi paikkavektori.
@@ -189,7 +220,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t3b" class="collapse">
-                        <p> Tarkastele alla olevan kuvan suoraa $L$. </p> 
+                        <p> Tarkastele alla olevan kuvan suoraa $L$. </p>
                         <ol class="a">
                             <li> Valitse suoralta $L$ yksi piste ja muodosta sen paikkavektori.
                             <li> Muodosta jokin suoran $L$ suuntavektori.
@@ -197,35 +228,37 @@ topnav: maa4
                         </ol>
 
                         <p>
-                            <img src="/kurssit/maa4/kuvat/L4t3bk.png" max-width: 100%; width: auto; height: auto;/> 
+                            <img src="/kurssit/maa4/kuvat/L4t3bk.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                     </div>
                 </div>
             </div>
 
-            <p>
-                Alla olevassa kuvassa on suora, jonka vektorimuotoinen parametriesitys on
-                $$\pv{OP} = \vi + 2\vj + t(3\vi + \vj).$$
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k8.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Jos pisteen $P$ koordinaatteja merkitään kirjaimilla $x$ ja $y$, voidaan yllä oleva parametriesitys kirjoittaa muodossa
-                $$x\vi + y\vj = \vi + 2\vj + t(3\vi + \vj).$$
-                Tämän yhtälön oikealla puolella voidaan kertoa sulut auki, jolloin yhtälö saadaan muotoon
-                $$x\vi + y\vj = \vi + 2\vj + 3t\vi + t\vj.$$
-                Yhtälön oikeaa puolta voidaan vielä sieventää suorittamalla yhteenlaskut, minkä jälkeen yhtälö näyttää tältä:
-                $$x\vi + y\vj = (1+3t)\vi + (2+t)\vj.$$
-                Vektoreiden samuuden määritelmän mukaan tämä yhtälö toteutuu, jos ja vain jos yhtälön eri puolilla olevat vektorit voidaan ilmaista samalla tavalla vektoreiden $\vi$ ja $\vj$ avulla eli
-                $$
-                \left\{\begin{aligned}
-                x &= 1+3t \\
-                y &= 2+t. 
-                \end{aligned}\right.
-                $$
-                Minkä tahansa suoran vektorimuotoinen parametriesitys voidaan muuttaa vastaavaan muotoon, jossa suoran pisteen jokaiselle koordinaatille on oma yhtälönsä. Tätä esitystapaa sanotaan suoran <em>koordinaattimuotoiseksi parametriesitykseksi</em>.
-            </p>
+            <div class="teoria">
+                <p>
+                    Alla olevassa kuvassa on suora, jonka vektorimuotoinen parametriesitys on
+                    $$\pv{OP} = \vi + 2\vj + t(3\vi + \vj).$$
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k8.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Jos pisteen $P$ koordinaatteja merkitään kirjaimilla $x$ ja $y$, voidaan yllä oleva parametriesitys kirjoittaa muodossa
+                    $$x\vi + y\vj = \vi + 2\vj + t(3\vi + \vj).$$
+                    Tämän yhtälön oikealla puolella voidaan kertoa sulut auki, jolloin yhtälö saadaan muotoon
+                    $$x\vi + y\vj = \vi + 2\vj + 3t\vi + t\vj.$$
+                    Yhtälön oikeaa puolta voidaan vielä sieventää suorittamalla yhteenlaskut, minkä jälkeen yhtälö näyttää tältä:
+                    $$x\vi + y\vj = (1+3t)\vi + (2+t)\vj.$$
+                    Vektoreiden samuuden määritelmän mukaan tämä yhtälö toteutuu, jos ja vain jos yhtälön eri puolilla olevat vektorit voidaan ilmaista samalla tavalla vektoreiden $\vi$ ja $\vj$ avulla eli
+                    $$
+                    \left\{\begin{aligned}
+                    x &= 1+3t \\
+                    y &= 2+t.
+                    \end{aligned}\right.
+                    $$
+                    Minkä tahansa suoran vektorimuotoinen parametriesitys voidaan muuttaa vastaavaan muotoon, jossa suoran pisteen jokaiselle koordinaatille on oma yhtälönsä. Tätä esitystapaa sanotaan suoran <em>koordinaattimuotoiseksi parametriesitykseksi</em>.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -241,12 +274,12 @@ topnav: maa4
                     <div id="t-L4t2" class="collapse">
                         <p> Avaruuden suora $L$ kulkee pisteiden $A = (4,-1,3)$ ja $B = (2,1,3)$ kautta. Koska kysymyksessä on avaruuden suora, tarkan kuvan piirtäminen on hankalaa. Tilannetta voi kuitenkin havainnollistaa mallikuvalla:</p>
                         <p>
-                            <img src="/kurssit/maa4/kuvat/L4k26.png" max-width: 100%; width: auto; height: auto;/> 
+                            <img src="/kurssit/maa4/kuvat/L4k26.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                         <ol class="a">
                             <li> Piirrä tilanteesta mallikuva omaan vihkoosi.
-                            <li> Muodosta suoran $L$ jonkin pisteen paikkavektori ja jokin suoran $L$ suuntavektori. Merkitse nämä mallikuvaan. 
-                            <li> Muodosta suoran $L$ vektorimuotoinen parametriesitys. 
+                            <li> Muodosta suoran $L$ jonkin pisteen paikkavektori ja jokin suoran $L$ suuntavektori. Merkitse nämä mallikuvaan.
+                            <li> Muodosta suoran $L$ vektorimuotoinen parametriesitys.
                             <li> Määritä vektorimuotoisen parametriesityksen avulla kolme uutta pistettä suoralta $L$ antamalla eri arvoja parametrille $t$. Havainnollista näitä pisteitä mallikuvasi avulla.
                             <li> Muodosta suoran $L$ koordinaattimuotoinen parametriesitys c-kohdan avulla.
                         </ol>
@@ -255,11 +288,12 @@ topnav: maa4
                 </div>
             </div>
 
-
-            <p>Suoran vektorimuotoisen parametriesityksen ja siitä saatavan koordinaattimuotoisen parametriesityksen avulla voidaan tutkia, onko jokin piste suoralla. Jos tarkastellun pisteen paikkavektori ei toteuta suoran parametriesitystä millään parametrin $t$ arvolla, voidaan päätellä, että tämä piste ei ole suoralla.</p>
+            <div class="teoria">
+                <p>Suoran vektorimuotoisen parametriesityksen ja siitä saatavan koordinaattimuotoisen parametriesityksen avulla voidaan tutkia, onko jokin piste suoralla. Jos tarkastellun pisteen paikkavektori ei toteuta suoran parametriesitystä millään parametrin $t$ arvolla, voidaan päätellä, että tämä piste ei ole suoralla.</p>
+            </div>
 
             <div class="tehtavat">
-                 <div class="tehtava" id="52b1a9fe-19a8-41ce-903b-9fcf43c4098e">
+                <div class="tehtava" id="52b1a9fe-19a8-41ce-903b-9fcf43c4098e">
                     <header>
                         <h1>
                             <a data-toggle="collapse" class="collapsed" data-target="#t-L4t3r">
@@ -269,28 +303,28 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t3r" class="collapse">
-                        <p> 
-                       Suoran $L$ koordinaattimuotoinen parametriesitys on 
-                        $$
+                        <p>
+                            Suoran $L$ koordinaattimuotoinen parametriesitys on
+                            $$
                             \left\{\begin{aligned}
                             x &= 1-t \\
                             y &= -2+t \\
                             z &= 4t.
                             \end{aligned}\right.
-                            $$ 
-                       
+                            $$
+
                         <ol class="a">
-                            <li> Määritä suoralta $L$ kaksi pistettä antamalla parametrille $t$ kaksi eri arvoa. 
+                            <li> Määritä suoralta $L$ kaksi pistettä antamalla parametrille $t$ kaksi eri arvoa.
                             <li> Tutki, onko piste $R=(4,-5,-12)$ suoralla $L$.
                         </ol>
-                       </p>
-                     
+                        </p>
+
 
                     </div>
                 </div>
-                </div>
-                
-                <div class="tehtavat">
+            </div>
+
+            <div class="tehtavat">
                 <div class="tehtava" id="4e70619a-60c5-473b-a55b-7a688249721d">
                     <header>
                         <h1>
@@ -301,7 +335,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t3" class="collapse">
-                        <p> Suora $L$ kulkee pisteen $A = (1,4,-2)$ kautta ja sillä on suuntavektori $\vv = \vi - 2\vj + 3\vk$. 
+                        <p> Suora $L$ kulkee pisteen $A = (1,4,-2)$ kautta ja sillä on suuntavektori $\vv = \vi - 2\vj + 3\vk$.
                         </p>
                         <ol class="a">
                             <li> Muodosta pisteen $Q = (-1,8,-8)$ paikkavektori ja tutki, onko yhtälöllä $\pv{OQ} = \pv{OA} + t\vv$ ratkaisua.
@@ -312,11 +346,14 @@ topnav: maa4
                     </div>
                 </div>
             </div>
-           
-            
-            <p>
-                Suoran koordinaattimuotoisesta parametriesityksestä voidaan tarvittaessa siirtyä takaisin vektorimuotoiseen parametriesitykseen, kuten seuraavassa tehtävässä tehdään. 
-            </p>
+
+
+            <div class="teoria">
+                <p>
+                    Suoran koordinaattimuotoisesta parametriesityksestä voidaan tarvittaessa siirtyä takaisin vektorimuotoiseen parametriesitykseen, kuten seuraavassa tehtävässä tehdään.
+                </p>
+            </div>
+
             <div class="tehtavat">
                 <div class="tehtava" id="97b065ec-f537-4665-855d-61214632f301">
                     <header>
@@ -328,14 +365,14 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t5" class="collapse">
-                        <p> Tehtävänä on muodostaa suoran $L$ vektorimuotoinen parametriesitys, kun tiedetään, että sen koordinaattimuotoinen parametriesitys on 
+                        <p> Tehtävänä on muodostaa suoran $L$ vektorimuotoinen parametriesitys, kun tiedetään, että sen koordinaattimuotoinen parametriesitys on
                             $$
                             \left\{\begin{aligned}
                             x &= 2-2t \\
                             y &= 5+t \\
                             z &= 1 + 4t
                             \end{aligned}\right.
-                            $$ 
+                            $$
                         <ol class="a">
                             <li> Määritä parametrin $t$ arvoa $t = 0$ vastaava suoran $L$ piste ja muodosta sen paikkavektori.
                             <li> Selitä, miten voit lukea a-kohdan paikkavektorin koordinaattimuotoisesta parametriesityksestä ilman laskuja.
@@ -348,11 +385,13 @@ topnav: maa4
                 </div>
             </div>
 
-            <p> Tutkitaan seuraavaksi suorien leikkauspisteitä. Kaksi suoraa leikkaa toisensa, jos ja vain jos niillä on yhteinen piste. Toisin sanottuna kaksi suoraa leikkaa toisensa, jos ja vain jos on olemassa sellainen piste $P$, jonka paikkavektori $\pv{OP}$ saadaan kummankin suoran parametriesityksestä joillakin parametrien arvoilla. Tätä on havainnollistettu alla olevassa kuvassa.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k9.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+            <div class="teoria">
+                <p> Tutkitaan seuraavaksi suorien leikkauspisteitä. Kaksi suoraa leikkaa toisensa, jos ja vain jos niillä on yhteinen piste. Toisin sanottuna kaksi suoraa leikkaa toisensa, jos ja vain jos on olemassa sellainen piste $P$, jonka paikkavektori $\pv{OP}$ saadaan kummankin suoran parametriesityksestä joillakin parametrien arvoilla. Tätä on havainnollistettu alla olevassa kuvassa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k9.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="a038d4f1-870d-49f3-8cb1-6dec21496f77">
@@ -365,7 +404,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t6" class="collapse">
-                        <p> Suoran $L_1$ vektorimuotoinen parametriesitys on $\pv{OP} = -2\vi + 2\vj + t(\vi + 3\vj)$. Suoran $L_2$ vektorimuotoinen parametriesitys on $\pv{OP} = 2\vi - 1\vj + s(-2\vi - \vj)$. 
+                        <p> Suoran $L_1$ vektorimuotoinen parametriesitys on $\pv{OP} = -2\vi + 2\vj + t(\vi + 3\vj)$. Suoran $L_2$ vektorimuotoinen parametriesitys on $\pv{OP} = 2\vi - 1\vj + s(-2\vi - \vj)$.
                         </p>
                         <ol class="a">
                             <li> Piirrä kumpikin suora koordinaatistoon. Merkitse kuvaan suorien paikkavektorit ja suuntavektorit.
@@ -377,35 +416,37 @@ topnav: maa4
                     </div>
                 </div>
             </div>
-            <p> 
-                Tarkastellaan suoria, joiden vektorimuotoiset parametriesitykset ovat $\pv{OP} = \pv{OA} + t\vv$ ja $\pv{OP} = \pv{OC} + s\vw$. Jos näillä suorilla on leikkauspiste, sen paikkavektori saadaan näistä parametriesityksistä joillakin parametrien $t$ ja $s$ arvoilla. Leikkauspiste löydetään siis tutkimalla yhtälöä 
-                $$\pv{OA} + t\vv = \pv{OC} + s\vw.$$
-                Jos tällä yhtälöllä ei ole ratkaisua, tarkoittaa se, ettei suorilla ole yhtään leikkauspistettä. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Tarkastellaan suoria, joiden vektorimuotoiset parametriesitykset ovat $\pv{OP} = \pv{OA} + t\vv$ ja $\pv{OP} = \pv{OC} + s\vw$. Jos näillä suorilla on leikkauspiste, sen paikkavektori saadaan näistä parametriesityksistä joillakin parametrien $t$ ja $s$ arvoilla. Leikkauspiste löydetään siis tutkimalla yhtälöä
+                    $$\pv{OA} + t\vv = \pv{OC} + s\vw.$$
+                    Jos tällä yhtälöllä ei ole ratkaisua, tarkoittaa se, ettei suorilla ole yhtään leikkauspistettä.
+                </p>
 
-            <p>
-                Esimerkiksi edellisen tehtävän suorien $L_1$ ja $L_2$ leikkauspiste löydetään tutkimalla yhtälöä
-                $$-2\vi + 2\vj + t(\vi + 3\vj) = 2\vi - 1\vj + s(-2\vi - \vj).$$ 
-                Kertomalla sulut auki se saadaan muotoon
-                $$-2\vi + 2\vj + t\vi + 3t\vj = 2\vi - 1\vj + -2s\vi - s\vj.$$
-                Vasenta ja oikeaa puolta voidaan vielä sieventää suorittamalla yhteenlaskut, jolloin päästään yhtälöön
-                $$(-2+t)\vi + (2+3t)\vj= (2-2s)\vi +(-1-s)\vj.$$
-                Vektoreiden samuuden määritelmän mukaan tämä yhtälö toteutuu, jos ja vain jos yhtälön eri puolilla olevat vektorit voidaan ilmaista samalla tavalla vektoreiden $\vi$ ja $\vj$ avulla eli
-                $$
-                \left\{\begin{aligned}
-                -2+t &= 2-2s \\
-                2+3t &= -1-s. 
-                \end{aligned}\right.
-                $$
-                Lisäämällä ensimmäisen yhtälön molemmille puolille $2+2s$ ja toisen yhtälön molemmille puolille $s-2$ saadaan yhtälöryhmä muotoon
-                $$
-                \left\{\begin{aligned}
-                2s+t &= 4 \\
-                s+3t &= -3. 
-                \end{aligned}\right.
-                $$
-                Tämä yhtälöpari voidaan ratkaista samaan tapaan kuin edellisessä luvussa tehtiin.
-            </p>
+                <p>
+                    Esimerkiksi edellisen tehtävän suorien $L_1$ ja $L_2$ leikkauspiste löydetään tutkimalla yhtälöä
+                    $$-2\vi + 2\vj + t(\vi + 3\vj) = 2\vi - 1\vj + s(-2\vi - \vj).$$
+                    Kertomalla sulut auki se saadaan muotoon
+                    $$-2\vi + 2\vj + t\vi + 3t\vj = 2\vi - 1\vj + -2s\vi - s\vj.$$
+                    Vasenta ja oikeaa puolta voidaan vielä sieventää suorittamalla yhteenlaskut, jolloin päästään yhtälöön
+                    $$(-2+t)\vi + (2+3t)\vj= (2-2s)\vi +(-1-s)\vj.$$
+                    Vektoreiden samuuden määritelmän mukaan tämä yhtälö toteutuu, jos ja vain jos yhtälön eri puolilla olevat vektorit voidaan ilmaista samalla tavalla vektoreiden $\vi$ ja $\vj$ avulla eli
+                    $$
+                    \left\{\begin{aligned}
+                    -2+t &= 2-2s \\
+                    2+3t &= -1-s.
+                    \end{aligned}\right.
+                    $$
+                    Lisäämällä ensimmäisen yhtälön molemmille puolille $2+2s$ ja toisen yhtälön molemmille puolille $s-2$ saadaan yhtälöryhmä muotoon
+                    $$
+                    \left\{\begin{aligned}
+                    2s+t &= 4 \\
+                    s+3t &= -3.
+                    \end{aligned}\right.
+                    $$
+                    Tämä yhtälöpari voidaan ratkaista samaan tapaan kuin edellisessä luvussa tehtiin.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -423,15 +464,15 @@ topnav: maa4
                             $$
                             \left\{\begin{aligned}
                             2s+t &= 4 \\
-                            s+3t &= -3. 
+                            s+3t &= -3.
                             \end{aligned}\right.
-                            $$    
+                            $$
                             ja vertaa tulosta edellisen tehtävän tulokseen. Saitko laskemalla saman tuloksen kuin kuvasta päättelemällä?
                         </p>
                     </div>
                 </div>
-                </div>
-                <div class="tehtavat">
+            </div>
+            <div class="tehtavat">
                 <div class="tehtava" id="468a76cf-69d0-44a5-81a3-1b9ed7e665f7">
                     <header>
                         <h1>
@@ -442,24 +483,24 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t9b" class="collapse">
-                        <p> Suoran $L_1$ vektorimuotoinen parametriesitys on $\pv{OP}=\vi-2\vk+t(2\vi+\vj+4\vk)$ ja suoran $L_2$ koordinaattimuotoinen parametriesitys on 
-                        $$
+                        <p> Suoran $L_1$ vektorimuotoinen parametriesitys on $\pv{OP}=\vi-2\vk+t(2\vi+\vj+4\vk)$ ja suoran $L_2$ koordinaattimuotoinen parametriesitys on
+                            $$
                             \left\{\begin{aligned}
                             x &= 3-s \\
                             y &= 1+s\\
                             z &= 2+s.
                             \end{aligned}\right.
-                            $$  
-                        
+                            $$
+
                         <ol class="a">
                             <li> Lausu suoran $L_1$ vektorimuotoinen parametriesitys koordinaattimuotoisena parametriesityksenä.
                             <li> Tutki, leikkavatko suorat $L_1$ ja $L_2$ toisensa. Mitkä ovat mahdollisen leikkauspisteen koordinaatit?</li>
                         </ol>
-                    </p>
+                        </p>
                     </div>
                 </div>
-                </div>
-                <div class="tehtavat">
+            </div>
+            <div class="tehtavat">
                 <div class="tehtava" id="9dfcb39f-ee8a-4ef8-8333-55a84e19d8a1">
                     <header>
                         <h1>
@@ -470,7 +511,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t8" class="collapse">
-                        <p> Suora $L_1$ kulkee pisteiden $A = (4;4;-4,5)$ ja $B = (5,6,-7)$ kautta. Suora $L_2$ kulkee pisteiden $C = (5,0,-1)$ ja $D = (7,1,-3)$ kautta. 
+                        <p> Suora $L_1$ kulkee pisteiden $A = (4;4;-4,5)$ ja $B = (5,6,-7)$ kautta. Suora $L_2$ kulkee pisteiden $C = (5,0,-1)$ ja $D = (7,1,-3)$ kautta.
                         <ol class="a">
                             <li> Muodosta suoran $L_1$ vektorimuotoinen parametriesitys.
                             <li> Muodosta suoran $L_2$ vektorimuotoinen parametriesitys. Käytä parametrina jotain toista kirjainta kuin a-kohdassa.
@@ -479,8 +520,8 @@ topnav: maa4
                         </p>
                     </div>
                 </div>
-                </div>
-                <div class="tehtavat">
+            </div>
+            <div class="tehtavat">
                 <div class="tehtava" id="7b2945c1-1f4f-45cb-b6b5-3bdd34f57c34">
                     <header>
                         <h1>
@@ -491,7 +532,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t9" class="collapse">
-                        <p> Suora $L_1$ kulkee pisteiden $A = (1,-3,0)$ ja $B = (4,0,3)$ kautta. Suora $L_2$ kulkee pisteiden $C = (5,2,2)$ ja $D = (8,0,1)$ kautta. 
+                        <p> Suora $L_1$ kulkee pisteiden $A = (1,-3,0)$ ja $B = (4,0,3)$ kautta. Suora $L_2$ kulkee pisteiden $C = (5,2,2)$ ja $D = (8,0,1)$ kautta.
                         </p>
                         <ol class="a">
                             <li> Muodosta suoran $L_1$ vektorimuotoinen parametriesitys.
@@ -501,37 +542,39 @@ topnav: maa4
                     </div>
                 </div>
 
-           </div>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: SUORIEN VÄLINEN KULMA</h3>
-                <p>
-                    <em>Suorien välinen kulma</em> tarkoittaa toisensa leikkaavien suorien muodostamista kulmista sitä, joka on terävä tai suora kulma. Esimerkiksi alla olevan kuvan suorien välinen kulma on $\alpha$.
-                    <br> 
-                    <img src="/kurssit/maa4/kuvat/L4k12b.png" max-width: 100%; width: auto; height: auto;/> 
-                         <br>
-                    Jos suorat eivät leikkaa toisiaan, tarkoittaa suorien välinen kulma näiden suorien kanssa yhdensuuntaisten toisensa leikkaavien suorien välistä kulmaa.
-                </p>
             </div>
 
-            <p> 
-                Kahden suoran välistä kulmaa voidaan tutkia pistetulon avulla. Esimerkiksi alla olevassa kuvassa suoran $L_1$ suuntavektoriksi voidaan valita vektori $\vv = -3\vi + 2\vj$ ja suoran $L_2$ suuntavektoriksi voidaan valita $\vw = 4\vi + 3\vj$. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k10.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Suuntavektoreiden $\vv$ ja $\vw$ välisen kulman kosini saadaan yhtälöstä
-                $$
-                \begin{align*}
-                \cos(\vv, \vw) &= \frac{\vv \cdot \vw}{|\vv||\vw|} \\
-                &= \frac{-3\cdot 4 + 2\cdot 3}{\sqrt{(-3)^2 + 2^2}\sqrt{4^2 + 3^2}} \\
-                &= \frac{-6}{\sqrt{13}\cdot 5} \\
-                &\approx -0{,}332820.
-                \end{align*}
-                $$
-                Tästä saadaan laskimella $\sphericalangle(\vv, \vw) = 109{,}44003\ldots \approx 109{,}4^\circ$. Koska tulos on yli $90^\circ$ eli kulma on tylppä, voidaan päätellä, että suorien $L_1$ ja $L_2$ välinen kulma on $\alpha = 180^\circ - \sphericalangle(\vv, \vw) \approx 180^\circ - 109{,}4^\circ = 70{,}6^\circ$.
-            </p>
+            <div class="teoria">
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: SUORIEN VÄLINEN KULMA</h3>
+                    <p>
+                        <em>Suorien välinen kulma</em> tarkoittaa toisensa leikkaavien suorien muodostamista kulmista sitä, joka on terävä tai suora kulma. Esimerkiksi alla olevan kuvan suorien välinen kulma on $\alpha$.
+                        <br>
+                        <img src="/kurssit/maa4/kuvat/L4k12b.png" max-width: 100%; width: auto; height: auto;/>
+                        <br>
+                        Jos suorat eivät leikkaa toisiaan, tarkoittaa suorien välinen kulma näiden suorien kanssa yhdensuuntaisten toisensa leikkaavien suorien välistä kulmaa.
+                    </p>
+                </div>
+
+                <p>
+                    Kahden suoran välistä kulmaa voidaan tutkia pistetulon avulla. Esimerkiksi alla olevassa kuvassa suoran $L_1$ suuntavektoriksi voidaan valita vektori $\vv = -3\vi + 2\vj$ ja suoran $L_2$ suuntavektoriksi voidaan valita $\vw = 4\vi + 3\vj$.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k10.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Suuntavektoreiden $\vv$ ja $\vw$ välisen kulman kosini saadaan yhtälöstä
+                    $$
+                    \begin{align*}
+                    \cos(\vv, \vw) &= \frac{\vv \cdot \vw}{|\vv||\vw|} \\
+                    &= \frac{-3\cdot 4 + 2\cdot 3}{\sqrt{(-3)^2 + 2^2}\sqrt{4^2 + 3^2}} \\
+                    &= \frac{-6}{\sqrt{13}\cdot 5} \\
+                    &\approx -0{,}332820.
+                    \end{align*}
+                    $$
+                    Tästä saadaan laskimella $\sphericalangle(\vv, \vw) = 109{,}44003\ldots \approx 109{,}4^\circ$. Koska tulos on yli $90^\circ$ eli kulma on tylppä, voidaan päätellä, että suorien $L_1$ ja $L_2$ välinen kulma on $\alpha = 180^\circ - \sphericalangle(\vv, \vw) \approx 180^\circ - 109{,}4^\circ = 70{,}6^\circ$.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="a4f2ff70-85ca-4115-b2e9-663bb0ecdd4e">
@@ -544,9 +587,9 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t10" class="collapse">
-                        <p>  
+                        <p>
                         <ol class="a">
-                            <li> Laske edellisen tehtävän suorien $L_1$ ja $L_2$ välinen kulma asteen kymmenesosan tarkkuudella. 
+                            <li> Laske edellisen tehtävän suorien $L_1$ ja $L_2$ välinen kulma asteen kymmenesosan tarkkuudella.
                             <li> Miten on mahdollista, että suorat $L_1$ ja $L_2$ eivät leikkaa toisiaan, vaikka ne eivät ole yhdensuuntaisia? Selitä omin sanoin.
                         </ol>
                         </p>
@@ -554,12 +597,14 @@ topnav: maa4
                 </div>
             </div>
 
-            <p>
-                Kaksi koordinaattiakselia määrää aina tason. Esimerkiksi $xy$-taso tarkoittaa $x$- ja $y$-akseleiden kautta kulkevaa tasoa, jossa kaikkien pisteiden $z$-koordinaatti on $0$. Suoran koordinaattimuotoisen parametriesityksen avulla voidaan löytää suoran ja tällaisen tason leikkauspiste. Tilannetta on havainnollistettu alla olevassa kuvassa. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k11.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+            <div class="teoria">
+                <p>
+                    Kaksi koordinaattiakselia määrää aina tason. Esimerkiksi $xy$-taso tarkoittaa $x$- ja $y$-akseleiden kautta kulkevaa tasoa, jossa kaikkien pisteiden $z$-koordinaatti on $0$. Suoran koordinaattimuotoisen parametriesityksen avulla voidaan löytää suoran ja tällaisen tason leikkauspiste. Tilannetta on havainnollistettu alla olevassa kuvassa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k11.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -580,7 +625,7 @@ topnav: maa4
                             y &= -7 -2t \\
                             z &= -8 - t.
                             \end{aligned}\right.
-                            $$  
+                            $$
                             Tehtävänä on tutkia, missä pisteessä suora $L_1$ leikkaa $xz$-tason.
                         </p>
                         <ol class="a">
@@ -595,66 +640,68 @@ topnav: maa4
                 </div>
             </div>
 
-            <p>
-                Alla olevassa mallikuvassa on havainnollistettu suoraa $L$, jonka vektorimuotoinen parametriesitys on $\pv{OP} = 2\vi + \vj + t(-2\vi + 3\vj + 2\vk)$. Tavoitteena on määrittää pisteen $Q = (-2,7,8)$ etäisyys suorasta $L$. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k13.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Etäisyyden määrittämiseksi on etsittävä suoran $L$ piste $P$, joka on lähimpänä pistettä $Q$. Se löydetään piirtämällä pisteen $Q$ kautta toinen suora, joka on kohtisuorassa suoraa $L$ vastaan. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k14.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+            <div class="teoria">
+                <p>
+                    Alla olevassa mallikuvassa on havainnollistettu suoraa $L$, jonka vektorimuotoinen parametriesitys on $\pv{OP} = 2\vi + \vj + t(-2\vi + 3\vj + 2\vk)$. Tavoitteena on määrittää pisteen $Q = (-2,7,8)$ etäisyys suorasta $L$.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k13.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Etäisyyden määrittämiseksi on etsittävä suoran $L$ piste $P$, joka on lähimpänä pistettä $Q$. Se löydetään piirtämällä pisteen $Q$ kautta toinen suora, joka on kohtisuorassa suoraa $L$ vastaan.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k14.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
 
-            <p>
-                Vektori $\pv{QP}$ voidaan kirjoittaa summana 
-                $$\pv{QP} = \pv{QA} + \pv{AP}.$$
-                Tässä vektori $\pv{QA}$ voidaan määrittää pisteiden $A = (2,1,0)$ ja $Q = (3,2,8)$ avulla. (Piste $A$ voidaan päätellä suoran $L$ parametriesityksestä.) 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k15.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Vektoriksi $\pv{QA}$ saadaan 
-                $$\begin{align*}
-                \pv{QA} &= (2-3)\vi + (1-2)\vj + (0-8)\vk \\
-                &= -\vi - \vj - 8\vk.
-                \end{align*}$$
-                Vektori $\pv{AP}$ puolestaan on suoran $L$ suuntavektorin $\vv = -2\vi + 3\vj + 2\vk$ jokin skalaarimonikerta. (Suuntavektori voidaan lukea suoran $L$ parametriesityksestä.) Toisin sanottuna 
-                $$\begin{align*}
-                \pv{AP} &= t\vv \\
-                &= t(-2\vi + 3\vj + 2\vk) \\
-                &= -2t\vi + 3t\vj + 2t\vk.
-                \end{align*}$$
-                Vektoriksi $\pv{QP}$ saadaan siis
-                $$\begin{align*}
-                \pv{QP} &= \pv{QA} + \pv{AP} \\
-                &= (-\vi - \vj - 8\vk) + (-2t\vi + 3t\vj + 2t\vk) \\
-                &= (-1-2t)\vi + (-1+3t)\vj + (-8+2t)\vk.
-                \end{align*}$$
-                Piste $P$ on lähimpänä pistettä $Q$, jos ja vain jos vektori $\pv{QP}$ on kohtisuorassa suoran $L$ suuntavektoria $\vv$ vastaan. Toisin sanottuna, jos ja vain jos 
-                $$\pv{QP} \cdot \vv = 0.$$
-                Kun tähän yhtälöön sijoitetaan edellä selvitetyt vektorit, se saadaan muotoon
-                $$((-1-2t)\vi + (-1+3t)\vj + (-8+2t)\vk)\cdot (-2\vi + 3\vj + 2\vk) = 0.$$
-                Kun lasketaan pistetulo, yhtälö saadaan muotoon
-                $$(-1-2t)\cdot (-2) + (-1+3t)\cdot 3 + (-8+2t)\cdot 2 = 0$$
-                ja sievennyksen sekä muutaman välivaiheen jälkeen muotoon
-                $$17t -17 = 0.$$
-                Tästä saadaan ratkaistua 
-                $$t = 1.$$
-                Siten
-                $$\begin{align*}
-                \pv{QP} &= (-1-2t)\vi + (-1+3t)\vj + (-8+2t)\vk \\
-                &= -3\vi + 2\vj-6\vk.
-                \end{align*}$$
-                Pisteen $Q$ etäisyys suorasta $L$ saadaan selville, kun lasketaan vektorin $\pv{QP}$ pituus
-                $$\begin{align*}
-                |\pv{QP}| &= \sqrt{(-3)^2 + 2^2 + (-6)^2}\\
-                &= \sqrt{49} = 7.
-                \end{align*}$$
-            </p>
+                <p>
+                    Vektori $\pv{QP}$ voidaan kirjoittaa summana
+                    $$\pv{QP} = \pv{QA} + \pv{AP}.$$
+                    Tässä vektori $\pv{QA}$ voidaan määrittää pisteiden $A = (2,1,0)$ ja $Q = (3,2,8)$ avulla. (Piste $A$ voidaan päätellä suoran $L$ parametriesityksestä.)
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k15.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Vektoriksi $\pv{QA}$ saadaan
+                    $$\begin{align*}
+                    \pv{QA} &= (2-3)\vi + (1-2)\vj + (0-8)\vk \\
+                    &= -\vi - \vj - 8\vk.
+                    \end{align*}$$
+                    Vektori $\pv{AP}$ puolestaan on suoran $L$ suuntavektorin $\vv = -2\vi + 3\vj + 2\vk$ jokin skalaarimonikerta. (Suuntavektori voidaan lukea suoran $L$ parametriesityksestä.) Toisin sanottuna
+                    $$\begin{align*}
+                    \pv{AP} &= t\vv \\
+                    &= t(-2\vi + 3\vj + 2\vk) \\
+                    &= -2t\vi + 3t\vj + 2t\vk.
+                    \end{align*}$$
+                    Vektoriksi $\pv{QP}$ saadaan siis
+                    $$\begin{align*}
+                    \pv{QP} &= \pv{QA} + \pv{AP} \\
+                    &= (-\vi - \vj - 8\vk) + (-2t\vi + 3t\vj + 2t\vk) \\
+                    &= (-1-2t)\vi + (-1+3t)\vj + (-8+2t)\vk.
+                    \end{align*}$$
+                    Piste $P$ on lähimpänä pistettä $Q$, jos ja vain jos vektori $\pv{QP}$ on kohtisuorassa suoran $L$ suuntavektoria $\vv$ vastaan. Toisin sanottuna, jos ja vain jos
+                    $$\pv{QP} \cdot \vv = 0.$$
+                    Kun tähän yhtälöön sijoitetaan edellä selvitetyt vektorit, se saadaan muotoon
+                    $$((-1-2t)\vi + (-1+3t)\vj + (-8+2t)\vk)\cdot (-2\vi + 3\vj + 2\vk) = 0.$$
+                    Kun lasketaan pistetulo, yhtälö saadaan muotoon
+                    $$(-1-2t)\cdot (-2) + (-1+3t)\cdot 3 + (-8+2t)\cdot 2 = 0$$
+                    ja sievennyksen sekä muutaman välivaiheen jälkeen muotoon
+                    $$17t -17 = 0.$$
+                    Tästä saadaan ratkaistua
+                    $$t = 1.$$
+                    Siten
+                    $$\begin{align*}
+                    \pv{QP} &= (-1-2t)\vi + (-1+3t)\vj + (-8+2t)\vk \\
+                    &= -3\vi + 2\vj-6\vk.
+                    \end{align*}$$
+                    Pisteen $Q$ etäisyys suorasta $L$ saadaan selville, kun lasketaan vektorin $\pv{QP}$ pituus
+                    $$\begin{align*}
+                    |\pv{QP}| &= \sqrt{(-3)^2 + 2^2 + (-6)^2}\\
+                    &= \sqrt{49} = 7.
+                    \end{align*}$$
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -668,16 +715,16 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t11b" class="collapse">
-                        <p>  Tehtävänä on määrittää alla olevan kuvan tilanteessa pisteen $Q = (4,4)$ etäisyys suorasta $L$. 
+                        <p>  Tehtävänä on määrittää alla olevan kuvan tilanteessa pisteen $Q = (4,4)$ etäisyys suorasta $L$.
                         </p>
                         <p>
-                            <img src="/kurssit/maa4/kuvat/L4k16.png" max-width: 100%; width: auto; height: auto;/> 
+                            <img src="/kurssit/maa4/kuvat/L4k16.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                         <ol class="a">
                             <li> Päättele kuvan avulla suoralle $L$ jokin suuntavektori $\vv$ ja jonkin suoran pisteen $A$ koordinaatit.</li>
                             <li> Piirrä omaan vihkoosi koordinaatisto ja siihen suora $L$ sekä piste $Q$. Piirrä näkyviin myös se suoran $L$ piste, joka on lähinnä pistettä $Q$. Anna sille nimeksi $P$.</li>
-                            <li> Piirrä näkyviin vektorit $\pv{QA}$ ja $\pv{AP}$. 
-                            <li> Ilmaise vektori $\pv{QA}$ vektoreiden $\vi$ ja $\vj$ avulla. Ilmaise vektori $\pv{AP}$ suuntavektorin $\vv$ avulla. Tässä vaiheessa parametrin $t$ arvo on vielä tuntematon, mutta se ei haittaa. 
+                            <li> Piirrä näkyviin vektorit $\pv{QA}$ ja $\pv{AP}$.
+                            <li> Ilmaise vektori $\pv{QA}$ vektoreiden $\vi$ ja $\vj$ avulla. Ilmaise vektori $\pv{AP}$ suuntavektorin $\vv$ avulla. Tässä vaiheessa parametrin $t$ arvo on vielä tuntematon, mutta se ei haittaa.
                             <li> Ilmaise vektori $\pv{QP}$ vektoreiden $\pv{QA}$ ja $\pv{AP}$ avulla.</li>
                             <li> Tutki pistetulon avulla, millä parametrin $t$ arvolla vektori $\pv{QP}$ on kohtisuorassa suoran $L$ suuntavektoria vastaan.</li>
                             <li> Mikä on pisteen $Q$ etäisyys suorasta $L$?</li>
@@ -698,40 +745,44 @@ topnav: maa4
                 </a>
             </h1>
         </header>
+
         <div id="taso" class="collapse">
-            <p>
-                Tarkastellaan alla olevaa kuvaa. Pisteiden $A$, $B$ ja $C$ kautta on mahdollista piirtää ainoastaan yksi taso, sillä nämä pisteet eivät ole samalla suoralla.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k5.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-
-            <p> Kaksi pistettä tai kolme samalla suoralla olevaa pistettä ei riitä tason määräämiseen, sillä niiden kautta voi kulkea äärettömän monta eri tasoa. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k6.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-
-            <p>
-                Vektoreiden avulla taso voidaan määrittää samaan tapaan kuin suora. Ainoa ero on, että tason määrittämiseen ei yksi suuntavektori riitä vaan niitä tarvitaan kaksi. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k7.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: TASON VEKTORIMUOTOINEN PARAMETRIESITYS</h3>
+            <div class="teoria">
                 <p>
-                    Oletetaan, että piste $A$ on tasossa $T$, jonka suuntavektorit ovat $\vv$ ja $\vw$. Oletetaan lisäksi, että $\vv \nparallel \vw$. Yhtälö
-                    $$\pv{OP} = \pv{OA} + s\vv + t\vw$$
-                    on tason $T$ <em>vektorimuotoinen parametriesitys</em>.
-                    <br> 
-                    Tässä esiintyvät kertoimet $s$ ja $t$ ovat parametreja ja vektori $\pv{OA}$ on <em>tason paikkavektori</em>.
+                    Tarkastellaan alla olevaa kuvaa. Pisteiden $A$, $B$ ja $C$ kautta on mahdollista piirtää ainoastaan yksi taso, sillä nämä pisteet eivät ole samalla suoralla.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k5.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+
+                <p> Kaksi pistettä tai kolme samalla suoralla olevaa pistettä ei riitä tason määräämiseen, sillä niiden kautta voi kulkea äärettömän monta eri tasoa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k6.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+
+                <p>
+                    Vektoreiden avulla taso voidaan määrittää samaan tapaan kuin suora. Ainoa ero on, että tason määrittämiseen ei yksi suuntavektori riitä vaan niitä tarvitaan kaksi.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k7.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: TASON VEKTORIMUOTOINEN PARAMETRIESITYS</h3>
+                    <p>
+                        Oletetaan, että piste $A$ on tasossa $T$, jonka suuntavektorit ovat $\vv$ ja $\vw$. Oletetaan lisäksi, että $\vv \nparallel \vw$. Yhtälö
+                        $$\pv{OP} = \pv{OA} + s\vv + t\vw$$
+                        on tason $T$ <em>vektorimuotoinen parametriesitys</em>.
+                        <br>
+                        Tässä esiintyvät kertoimet $s$ ja $t$ ovat parametreja ja vektori $\pv{OA}$ on <em>tason paikkavektori</em>.
+                    </p>
+                </div>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k27.png" max-width: 100%; width: auto; height: auto;/>
                 </p>
             </div>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k27.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
+
             <div class="tehtavat">
                 <div class="tehtava" id="55fc2df1-fa97-4faa-81ff-61754a949852">
                     <header>
@@ -743,52 +794,54 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t4" class="collapse">
-                        <p> Taso $T$ kulkee pisteiden $A = (-3,1,2)$, $B = (2,4,1)$ ja $C = (12,0,-1)$ kautta. 
+                        <p> Taso $T$ kulkee pisteiden $A = (-3,1,2)$, $B = (2,4,1)$ ja $C = (12,0,-1)$ kautta.
                             Tarkan kuvan piirtäminen on hankalaa, mutta tilannetta voi kuitenkin havainnollistaa mallikuvalla:
                         </p>
-                        <p>    
-                            <img src="/kurssit/maa4/kuvat/L4k28.png" max-width: 100%; width: auto; height: auto;/> 
+                        <p>
+                            <img src="/kurssit/maa4/kuvat/L4k28.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                         <ol class="a">
                             <li> Piirrä tilanteesta mallikuva omaan vihkoosi.
                             <li> Muodosta jonkin tason pisteen paikkavektori ja merkitse se mallikuvaan.
-                            <li> Muodosta jotkin tason suuntaiset vektorit ja merkitse ne mallikuvaan. 
+                            <li> Muodosta jotkin tason suuntaiset vektorit ja merkitse ne mallikuvaan.
                             <li> Tarkista, etteivät muodostamasi vektorit ole yhdensuuntaisia.
                             <li> Muodosta tason $T$ vektorimuotoinen parametriesitys.
                             <li> Määritä vektorimuotoisen parametriesityksen avulla kolme uutta pistettä tasosta $T$ antamalla eri arvoja parametreille $s$ ja $t$. Havainnollista näitä pisteitä mallikuvasi avulla.
                         </ol>
-                        
+
                     </div>
                 </div>
             </div>
 
-            <p>Tason vektorimuotoinen parametriesitys kertoo, millaisia tason pisteiden paikkavektorit ovat. Kun siinä esiintyville parametreille $s$ ja $t$ annetaan eri arvoja, saadaan tason eri pisteiden paikkavektoreita samaan tapaan kuin suoran tilanteessa. </p>
+            <div class="teoria">
+                <p>Tason vektorimuotoinen parametriesitys kertoo, millaisia tason pisteiden paikkavektorit ovat. Kun siinä esiintyville parametreille $s$ ja $t$ annetaan eri arvoja, saadaan tason eri pisteiden paikkavektoreita samaan tapaan kuin suoran tilanteessa. </p>
 
-            <p>
-                Tarkastellaan tasoa, jonka vektorimuotoinen parametriesitys on
-                $$\pv{OP} = \vi + 2\vj + 3\vk + s(4\vi + 5\vk) + t(6\vi - 7\vj + 8\vk).$$
-                Sitä on havainnollistettu alla olevassa mallikuvassa:
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k29.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Jos pisteen $P$ koordinaatteja merkitään kirjaimilla $x$, $y$ ja $z$, voidaan yllä oleva parametriesitys kirjoittaa muodossa
-                $$x\vi + y\vj + z\vk = \vi + 2\vj + 3\vk + s(4\vi + 5\vk) + t(6\vi - 7\vj + 8\vk).$$
-                Tämän yhtälön oikealla puolella voidaan kertoa sulut auki, jolloin yhtälö saadaan muotoon
-                $$x\vi + y\vj + z\vk = \vi + 2\vj + 3\vk + 4s\vi + 5s\vk + 6t\vi - 7t\vj + 8t\vk.$$
-                Yhtälön oikeaa puolta voidaan vielä sieventää suorittamalla yhteenlaskut, minkä jälkeen yhtälö näyttää tältä:
-                $$x\vi + y\vj + z\vk = (1+4s + 6t)\vi + (2-7t)\vj + (3+5s+8t)\vk.$$
-                Vektoreiden samuuden määritelmän mukaan tämä yhtälö toteutuu, jos ja vain jos yhtälön eri puolilla olevat vektorit voidaan ilmaista samalla tavalla vektoreiden $\vi$, $\vj$ ja $\vk$ avulla eli
-                $$
-                \left\{\begin{aligned}
-                x &= 1+4s + 6t \\
-                y &= 2-7t \\
-                z &= 3+5s+8t. 
-                \end{aligned}\right.
-                $$
-                Minkä tahansa tason vektorimuotoinen parametriesitys voidaan muuttaa vastaavaan muotoon, jossa tason pisteen jokaiselle koordinaatille on oma yhtälönsä. Tätä esitystapaa sanotaan tason <em>koordinaattimuotoiseksi parametriesitykseksi</em>.
-            </p>
+                <p>
+                    Tarkastellaan tasoa, jonka vektorimuotoinen parametriesitys on
+                    $$\pv{OP} = \vi + 2\vj + 3\vk + s(4\vi + 5\vk) + t(6\vi - 7\vj + 8\vk).$$
+                    Sitä on havainnollistettu alla olevassa mallikuvassa:
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k29.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Jos pisteen $P$ koordinaatteja merkitään kirjaimilla $x$, $y$ ja $z$, voidaan yllä oleva parametriesitys kirjoittaa muodossa
+                    $$x\vi + y\vj + z\vk = \vi + 2\vj + 3\vk + s(4\vi + 5\vk) + t(6\vi - 7\vj + 8\vk).$$
+                    Tämän yhtälön oikealla puolella voidaan kertoa sulut auki, jolloin yhtälö saadaan muotoon
+                    $$x\vi + y\vj + z\vk = \vi + 2\vj + 3\vk + 4s\vi + 5s\vk + 6t\vi - 7t\vj + 8t\vk.$$
+                    Yhtälön oikeaa puolta voidaan vielä sieventää suorittamalla yhteenlaskut, minkä jälkeen yhtälö näyttää tältä:
+                    $$x\vi + y\vj + z\vk = (1+4s + 6t)\vi + (2-7t)\vj + (3+5s+8t)\vk.$$
+                    Vektoreiden samuuden määritelmän mukaan tämä yhtälö toteutuu, jos ja vain jos yhtälön eri puolilla olevat vektorit voidaan ilmaista samalla tavalla vektoreiden $\vi$, $\vj$ ja $\vk$ avulla eli
+                    $$
+                    \left\{\begin{aligned}
+                    x &= 1+4s + 6t \\
+                    y &= 2-7t \\
+                    z &= 3+5s+8t.
+                    \end{aligned}\right.
+                    $$
+                    Minkä tahansa tason vektorimuotoinen parametriesitys voidaan muuttaa vastaavaan muotoon, jossa tason pisteen jokaiselle koordinaatille on oma yhtälönsä. Tätä esitystapaa sanotaan tason <em>koordinaattimuotoiseksi parametriesitykseksi</em>.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -802,11 +855,11 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t12" class="collapse">
-                        <p> Avaruuden taso $T$ kulkee pisteiden $A = (4,-1,3)$, $B = (2,1,3)$ ja $C = (7,-5,9)$ kautta. 
+                        <p> Avaruuden taso $T$ kulkee pisteiden $A = (4,-1,3)$, $B = (2,1,3)$ ja $C = (7,-5,9)$ kautta.
                         <ol class="a">
                             <li> Piirrä tilanteesta mallikuva.
-                            <li> Muodosta tason $T$ jonkin pisteen paikkavektori ja jotkin tason $T$ suuntavektorit. Varmista, etteivät suuntavektorit ole yhdensuuntaisia. Merkitse nämä mallikuvaan. 
-                            <li> Muodosta tason $T$ vektorimuotoinen parametriesitys. 
+                            <li> Muodosta tason $T$ jonkin pisteen paikkavektori ja jotkin tason $T$ suuntavektorit. Varmista, etteivät suuntavektorit ole yhdensuuntaisia. Merkitse nämä mallikuvaan.
+                            <li> Muodosta tason $T$ vektorimuotoinen parametriesitys.
                             <li> Muodosta tason $T$ koordinaattimuotoinen parametriesitys c-kohdan avulla.
                             <li> Määritä kaksi uutta tason $T$ pistettä antamalla parametreille eri arvoja.
                         </ol>
@@ -816,7 +869,9 @@ topnav: maa4
             </div>
 
 
-            <p>Tason vektorimuotoisen parametriesityksen ja siitä saatavan koordinaattimuotoisen parametriesityksen avulla voidaan tutkia, onko jokin piste tasossa. Jos tarkastellun pisteen paikkavektoria ei saada tason parametriesityksestä millään parametrien $s$ ja $t$ arvoilla, voidaan päätellä, että tämä piste ei ole tasossa.</p>
+            <div class="teoria">
+                <p>Tason vektorimuotoisen parametriesityksen ja siitä saatavan koordinaattimuotoisen parametriesityksen avulla voidaan tutkia, onko jokin piste tasossa. Jos tarkastellun pisteen paikkavektoria ei saada tason parametriesityksestä millään parametrien $s$ ja $t$ arvoilla, voidaan päätellä, että tämä piste ei ole tasossa.</p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="bcecdb33-100d-4208-9eee-b36e044fd097">
@@ -841,9 +896,13 @@ topnav: maa4
                     </div>
                 </div>
             </div>
-            <p>
-                Tason koordinaattimuotoisesta parametriesityksestä voidaan tarvittaessa siirtyä takaisin vektorimuotoiseen parametriesitykseen samaan tapaan kuin suorien tapauksessa. 
-            </p>
+
+            <div class="teoria">
+                <p>
+                    Tason koordinaattimuotoisesta parametriesityksestä voidaan tarvittaessa siirtyä takaisin vektorimuotoiseen parametriesitykseen samaan tapaan kuin suorien tapauksessa.
+                </p>
+            </div>
+
             <div class="tehtavat">
                 <div class="tehtava" id="4ad78d65-3369-4321-89f9-71c8a850a693">
                     <header>
@@ -855,14 +914,14 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t15" class="collapse">
-                        <p> Tehtävänä on muodostaa tason $T$ vektorimuotoinen parametriesitys, kun tiedetään, että sen koordinaattimuotoinen parametriesitys on 
+                        <p> Tehtävänä on muodostaa tason $T$ vektorimuotoinen parametriesitys, kun tiedetään, että sen koordinaattimuotoinen parametriesitys on
                             $$
                             \left\{\begin{aligned}
                             x &= 1+8s-2t \\
                             y &= 5+3s \\
                             z &= -7 -9s + 4t
                             \end{aligned}\right.
-                            $$ 
+                            $$
                         </p>
                         <ol class="a">
                             <li> Määritä parametrien arvoja $s = 0$ ja $t = 0$ vastaava tason $T$ piste ja muodosta sen paikkavektori.
@@ -876,38 +935,40 @@ topnav: maa4
                 </div>
             </div>
 
-            <p> Tutkitaan seuraavaksi suorien ja tasojen leikkauspisteitä. Suora ja taso leikkaavat toisensa, jos ja vain jos niillä on yhteinen piste. Toisin sanottuna suora ja taso leikkaavat toisensa, jos ja vain jos on olemassa piste $P$, jonka paikkavektori $\pv{OP}$ toteuttaa sekä suoran että tason parametriesityksen. Tätä on havainnollistettu alla olevassa kuvassa.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k17.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p> 
-                Jos suoran parametriesitys on $\pv{OP} = \pv{OA} + t\vv$ ja tason parametriesitys on $\pv{OP} = \pv{OC} + r\vw + s\vu$, löydetään suoran ja tason leikkauspiste tutkimalla yhtälöä 
-                $$\pv{OA} + t\vv = \pv{OC} + r\vw + s\vu.$$
-                Jos tällä yhtälöllä ei ole ratkaisua, tarkoittaa se, ettei tarkastelluilla suoralla ja tasolla ole yhtään leikkauspistettä. 
-            </p>
+            <div class="teoria">
+                <p> Tutkitaan seuraavaksi suorien ja tasojen leikkauspisteitä. Suora ja taso leikkaavat toisensa, jos ja vain jos niillä on yhteinen piste. Toisin sanottuna suora ja taso leikkaavat toisensa, jos ja vain jos on olemassa piste $P$, jonka paikkavektori $\pv{OP}$ toteuttaa sekä suoran että tason parametriesityksen. Tätä on havainnollistettu alla olevassa kuvassa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k17.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Jos suoran parametriesitys on $\pv{OP} = \pv{OA} + t\vv$ ja tason parametriesitys on $\pv{OP} = \pv{OC} + r\vw + s\vu$, löydetään suoran ja tason leikkauspiste tutkimalla yhtälöä
+                    $$\pv{OA} + t\vv = \pv{OC} + r\vw + s\vu.$$
+                    Jos tällä yhtälöllä ei ole ratkaisua, tarkoittaa se, ettei tarkastelluilla suoralla ja tasolla ole yhtään leikkauspistettä.
+                </p>
 
-            <p>
-                Vektoriyhtälöstä $\pv{OA} + t\vv = \pv{OC} + r\vw + s\vu$ voidaan muodostaa yhtälöryhmä tarkastelemalla erikseen vektoreiden $\vi$, $\vj$ ja $\vk$ suuntaisia komponentteja. Esimerkiksi yhtälöä
-                $$\vi-3\vj + t(\vi + \vj + \vk)  = \vi + 2\vj + 3\vk + r(4\vi + 5\vk) + s(6\vi - 7\vj + 8\vk)$$
-                vastaa yhtälöryhmä
-                $$
-                \left\{\begin{aligned}
-                1 + t &= 1+4r+6s &\qquad &\text{(vektoreiden $\vi$ kertoimet)}\\
-                -3 + t &= 2 -7s &\qquad &\text{(vektoreiden $\vj$ kertoimet)}\\
-                t &= 3 + 5r + 8s &\qquad &\text{(vektoreiden $\vk$ kertoimet).}
-                \end{aligned}\right.
-                $$ 
-                Tämä yhtälöryhmä voidaan vielä muokata muotoon, jossa yhtälöiden kaikki tuntemattomat ovat yhtäsuuruusmerkin vasemmalla puolella ja vakiot oikealla puolella: 
-                $$
-                \left\{\begin{aligned}
-                t -4r - 6s &= 0 \\
-                t + 7s&= 5  \\
-                t -5r -8s&= 3.
-                \end{aligned}\right.
-                $$  
-                Tämän jälkeen yhtälöryhmä voidaan ratkaista tavalliseen tapaan kynän ja paperin avulla tai käyttämällä laskinta tai tietokonetta.
-            </p>
+                <p>
+                    Vektoriyhtälöstä $\pv{OA} + t\vv = \pv{OC} + r\vw + s\vu$ voidaan muodostaa yhtälöryhmä tarkastelemalla erikseen vektoreiden $\vi$, $\vj$ ja $\vk$ suuntaisia komponentteja. Esimerkiksi yhtälöä
+                    $$\vi-3\vj + t(\vi + \vj + \vk)  = \vi + 2\vj + 3\vk + r(4\vi + 5\vk) + s(6\vi - 7\vj + 8\vk)$$
+                    vastaa yhtälöryhmä
+                    $$
+                    \left\{\begin{aligned}
+                    1 + t &= 1+4r+6s &\qquad &\text{(vektoreiden $\vi$ kertoimet)}\\
+                    -3 + t &= 2 -7s &\qquad &\text{(vektoreiden $\vj$ kertoimet)}\\
+                    t &= 3 + 5r + 8s &\qquad &\text{(vektoreiden $\vk$ kertoimet).}
+                    \end{aligned}\right.
+                    $$
+                    Tämä yhtälöryhmä voidaan vielä muokata muotoon, jossa yhtälöiden kaikki tuntemattomat ovat yhtäsuuruusmerkin vasemmalla puolella ja vakiot oikealla puolella:
+                    $$
+                    \left\{\begin{aligned}
+                    t -4r - 6s &= 0 \\
+                    t + 7s&= 5  \\
+                    t -5r -8s&= 3.
+                    \end{aligned}\right.
+                    $$
+                    Tämän jälkeen yhtälöryhmä voidaan ratkaista tavalliseen tapaan kynän ja paperin avulla tai käyttämällä laskinta tai tietokonetta.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="a95ef935-916a-4844-8de6-52892e8a8f5f">
@@ -927,7 +988,7 @@ topnav: maa4
                             y &= -17 + t \\
                             z &= 28 - s + 2t.
                             \end{aligned}\right.
-                            $$  
+                            $$
                             Tehtävänä on tutkia, leikkavatko suora $L$ ja taso $T_1$ toisensa, ja määrittää mahdollisen leikkauspisteen koordinaatit.
                         </p>
                         <ol class="a">
@@ -950,7 +1011,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t14" class="collapse">
-                        <p>  Taso $T$ kulkee pisteen $A = (1,1,2)$ kautta ja sillä on suuntavektorit $\vv = \vi-2\vj-\vk$ ja $\vw = 4\vi+7\vj-5\vk$. 
+                        <p>  Taso $T$ kulkee pisteen $A = (1,1,2)$ kautta ja sillä on suuntavektorit $\vv = \vi-2\vj-\vk$ ja $\vw = 4\vi+7\vj-5\vk$.
                             Tehtävänä on tutkia, missä pisteessä taso $T$ leikkaa $z$-akselin.
                         </p>
 
@@ -973,20 +1034,20 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t14b" class="collapse">
-                        <p>  Tarkastellaan tasoa $T$, jonka vektorimuotoinen parametriesitys on $\pv{OP} = -3\vi + 2\vj + \vk + s(\vi + 2\vj + 2\vk) + t(2\vi - 3\vk)$. Sitä on havainnollistettu alla olevassa mallikuvassa. Tehtävänä on määrittää kuvassa näkyvän pisteen $Q = (-28,31,-37)$ etäisyys tasosta $T$. 
+                        <p>  Tarkastellaan tasoa $T$, jonka vektorimuotoinen parametriesitys on $\pv{OP} = -3\vi + 2\vj + \vk + s(\vi + 2\vj + 2\vk) + t(2\vi - 3\vk)$. Sitä on havainnollistettu alla olevassa mallikuvassa. Tehtävänä on määrittää kuvassa näkyvän pisteen $Q = (-28,31,-37)$ etäisyys tasosta $T$.
                         </p>
                         <p>
-                            <img src="/kurssit/maa4/kuvat/L4k18.png" max-width: 100%; width: auto; height: auto;/> 
+                            <img src="/kurssit/maa4/kuvat/L4k18.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                         <p>
                             Etäisyyden määrittämiseksi on etsittävä tason $T$ piste $P$, joka on lähimpänä pistettä $Q$. Se löydetään piirtämällä pisteen $Q$ kautta suora, joka on kohtisuorassa tasoa $T$ vastaan. Tällaista suoraa sanotaan tason $T$ <em>normaaliksi</em>.
                         <p>
-                            <img src="/kurssit/maa4/kuvat/L4k19.png" max-width: 100%; width: auto; height: auto;/> 
+                            <img src="/kurssit/maa4/kuvat/L4k19.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                         <ol class="a">
                             <li> Päättele tason parametriesityksestä, mitkä ovat tason suuntavektorit $\vw$ ja $\vv$. Päättele lisäksi tason pisteen $A$ koordinaatit.</li>
                             <li> Piirrä omaan vihkoosi mallikuva tilanteesta. Merkitse kuvaan vektorit $\pv{QA}$ ja $\pv{AP}$. </li>
-                            <li> Ilmaise vektori $\pv{QA}$ vektoreiden $\vi$, $\vj$ ja $\vk$ avulla. 
+                            <li> Ilmaise vektori $\pv{QA}$ vektoreiden $\vi$, $\vj$ ja $\vk$ avulla.
                             <li> Ilmaise vektori $\pv{AP}$ tason $T$ suuntavektoreiden $\vw$ ja $\vv$ avulla. Tässä vaiheessa parametrien $s$ ja $t$ arvot ovat tuntemattomia, mutta se ei haittaa. Ne ratkaistaan myöhemmin.
                             <li> Ilmaise vektori $\pv{QP}$ vektoreiden $\pv{QA}$ ja $\pv{AP}$ avulla.</li>
                             <li> Vektorin $\pv{QP}$ pitää olla kohtisuorassa tason $T$ kumpaakin suuntavektoria vastaan. Mitä tämä tarkoittaa pistetulon kannalta? Muodosta kaksi yhtälöä.</li>
@@ -997,7 +1058,7 @@ topnav: maa4
                                 -4s + 13 t &= 64.
                                 \end{aligned}
                                 \right.$$
-                                Ratkaise tämä yhtälöpari. 
+                                Ratkaise tämä yhtälöpari.
                             <li> Kirjoita vektori $\pv{QP}$ vektoreiden $\vi$, $\vj$ ja $\vk$ avulla edellisen kohdan tuloksia hyödyntäen.
                             <li> Mikä on pisteen $Q$ etäisyys tasosta $T$?</li>
                             <li> Mitkä ovat pisteen $P$ koordinaatit? </li>
@@ -1007,6 +1068,7 @@ topnav: maa4
                 </div>
 
             </div>
+        </div>
     </section>
 
     <section class="panel">
@@ -1019,23 +1081,25 @@ topnav: maa4
         </header>
         <div id="normaalit" class="collapse">
 
-            <p>
-                Tarkastellaan alla olevan kuvan suoraa $L$, jonka vektorimuotoinen parametriesitys on 
-                $$\pv{OP} = 2\vi + \vj + t(2\vi - \vj).$$
-            </p>
-            <p>
-            <img src="/kurssit/maa4/kuvat/L4k20.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Kuvassa on näkyvissä vektori $\vn = \vi + 2\vj$, joka on kohtisuorassa suoran $L$ suuntavektoria $\vv = 2\vi - \vj$ vastaan. Tämä voidaan varmistaa laskemalla näiden vektoreiden pistetulo:
-                $$\begin{align*}
-                \vn \cdot \vv &= (\vi + 2\vj)\cdot (2\vi - \vj) \\
-                &= 1\cdot 2 + 2\cdot (-1) \\
-                &= 2-2 = 0.
-                \end{align*}
-                $$
-                Koska vektori $\vn$ on kohtisuorassa suoran $L$ suuntavektoria vastaan ja siten myös koko suoraa $L$ vastaan, sanotaan sitä suoran $L$ <em>normaalivektoriksi</em>. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Tarkastellaan alla olevan kuvan suoraa $L$, jonka vektorimuotoinen parametriesitys on
+                    $$\pv{OP} = 2\vi + \vj + t(2\vi - \vj).$$
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k20.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Kuvassa on näkyvissä vektori $\vn = \vi + 2\vj$, joka on kohtisuorassa suoran $L$ suuntavektoria $\vv = 2\vi - \vj$ vastaan. Tämä voidaan varmistaa laskemalla näiden vektoreiden pistetulo:
+                    $$\begin{align*}
+                    \vn \cdot \vv &= (\vi + 2\vj)\cdot (2\vi - \vj) \\
+                    &= 1\cdot 2 + 2\cdot (-1) \\
+                    &= 2-2 = 0.
+                    \end{align*}
+                    $$
+                    Koska vektori $\vn$ on kohtisuorassa suoran $L$ suuntavektoria vastaan ja siten myös koko suoraa $L$ vastaan, sanotaan sitä suoran $L$ <em>normaalivektoriksi</em>.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -1052,7 +1116,7 @@ topnav: maa4
                         <p> Keksi kaksi eri normaalivektoria alla olevan kuvan suoralle $L$. Tarkista pistetulon avulla, että löytämäsi vektorit ovat todella kohtisuorassa suoran $L$ suuntavektoria vastaan.
                         </p>
 
-                        <img src="/kurssit/maa4/kuvat/L4k22.png" max-width: 100%; width: auto; height: auto;/> 
+                        <img src="/kurssit/maa4/kuvat/L4k22.png" max-width: 100%; width: auto; height: auto;/>
 
                     </div>
                 </div>
@@ -1068,33 +1132,35 @@ topnav: maa4
 
                     <div id="t-L4t20b" class="collapse">
                         <p> Suoran $L$ vektorimuotoinen parametriesitys on $\pv{OP} = \vi - 2\vj + t(\vi + 4\vj)$. <ol class="a">
-                            </p>
-                            <ol>
-                                <li> Mikä on tämän suoran paikkavektori? Entä suuntavektori?
-                                <li> Piirrä suora $L$ koordinaatistoon.
-                                <li> Etsi suoralle $L$ jokin normaalivektori $\vn$. Voit päätellä sen piirroksesta, mutta varmista pistetulon avulla, että se todella on kohtisuorassa suoran $L$ suuntavektoria vastaan.
-                            </ol>
+                        </p>
+                        <ol>
+                            <li> Mikä on tämän suoran paikkavektori? Entä suuntavektori?
+                            <li> Piirrä suora $L$ koordinaatistoon.
+                            <li> Etsi suoralle $L$ jokin normaalivektori $\vn$. Voit päätellä sen piirroksesta, mutta varmista pistetulon avulla, että se todella on kohtisuorassa suoran $L$ suuntavektoria vastaan.
+                        </ol>
                     </div>
                 </div>
             </div>
 
 
-            <p>
-                Tutkimalla alla olevaa kuvaa voidaan havaita, että piste $P = (x,y)$ on suoralla $L$, jos ja vain jos vektori $\pv{AP}$ on kohtisuorassa suoran normaalivektoria $\vn$ vastaan. Pistetulon avulla sama asia voidaan ilmaista sanomalla, että piste $P = (x,y)$ on suoralla $L$, jos ja vain jos
-                $$\pv{AP} \cdot \vn = 0,$$
-                missä $\vn$ on suoran $L$ normaalivektori.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k21.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Kun yhtälöön $\pv{AP} \cdot \vn = 0$ sijoitetaan vektori $\pv{AP} = (x-2)\vi + (y-1)\vj$ ja suoran $L$ normaalivektori $\vn = \vi + 2\vj$, saadaan se muotoon
-                $$((x-2)\vi + (y-1)\vj)\cdot (\vi + 2\vj)= 0.$$
-                Vasenta puolta voidaan sieventää laskemalla pistetulot:
-                $$(x-2)\cdot 1 + (y-1)\cdot 2 = 0.$$
-                Sievennyksen jälkeen yhtälö saadaan muotoon
-                $$x + 2y -4 = 0.$$
-            </p>
+            <div class="teoria">
+                <p>
+                    Tutkimalla alla olevaa kuvaa voidaan havaita, että piste $P = (x,y)$ on suoralla $L$, jos ja vain jos vektori $\pv{AP}$ on kohtisuorassa suoran normaalivektoria $\vn$ vastaan. Pistetulon avulla sama asia voidaan ilmaista sanomalla, että piste $P = (x,y)$ on suoralla $L$, jos ja vain jos
+                    $$\pv{AP} \cdot \vn = 0,$$
+                    missä $\vn$ on suoran $L$ normaalivektori.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k21.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Kun yhtälöön $\pv{AP} \cdot \vn = 0$ sijoitetaan vektori $\pv{AP} = (x-2)\vi + (y-1)\vj$ ja suoran $L$ normaalivektori $\vn = \vi + 2\vj$, saadaan se muotoon
+                    $$((x-2)\vi + (y-1)\vj)\cdot (\vi + 2\vj)= 0.$$
+                    Vasenta puolta voidaan sieventää laskemalla pistetulot:
+                    $$(x-2)\cdot 1 + (y-1)\cdot 2 = 0.$$
+                    Sievennyksen jälkeen yhtälö saadaan muotoon
+                    $$x + 2y -4 = 0.$$
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -1108,8 +1174,8 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t20" class="collapse">
-                        <p>  Jatketaan äskeisen suoran $L$ tarkastelua. 
-                            Edellä pääteltiin, että piste $P = (x,y)$ on tällä suoralla, jos ja vain jos se toteuttaa yhtälön 
+                        <p>  Jatketaan äskeisen suoran $L$ tarkastelua.
+                            Edellä pääteltiin, että piste $P = (x,y)$ on tällä suoralla, jos ja vain jos se toteuttaa yhtälön
                             $$x+2y-4 = 0.$$
                             Missä tässä yhtälössä näkyvät suoran $L$ normaalivektorissa $\vn = \vi + 2\vj$ esiintyvät kertoimet $1$ ja $2$?
                         </p>
@@ -1118,14 +1184,16 @@ topnav: maa4
             </div>
 
 
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: SUORAN NORMAALIMUOTOINEN YHTÄLÖ</h3>
-                <p>
-                    Oletetaan, että $L$ on $xy$-tason suora ja $\vn = a\vi + b\vj$ on sen normaalivektori. 
-                    Yhtälö
-                    $$ax + by + c = 0$$
-                    on suoran $L$ <em>normaalimuotoinen yhtälö</em>.
-                </p>
+            <div class="teoria">
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: SUORAN NORMAALIMUOTOINEN YHTÄLÖ</h3>
+                    <p>
+                        Oletetaan, että $L$ on $xy$-tason suora ja $\vn = a\vi + b\vj$ on sen normaalivektori.
+                        Yhtälö
+                        $$ax + by + c = 0$$
+                        on suoran $L$ <em>normaalimuotoinen yhtälö</em>.
+                    </p>
+                </div>
             </div>
 
 
@@ -1148,7 +1216,7 @@ topnav: maa4
                             <li> Valitse piirroksestasi jokin suoran $L$ piste ja anna sille nimi $P$. Merkitse sen koordinaatteja $(x,y)$.
                             <li> Merkitse piirrokseesi vektori $\pv{AP}$. Tässä $A$ on suoran $L$ jokin piste, jonka koordinaatit tunnetaan.
                             <li> Ilmaise vektori $\pv{AP}$ vektoreiden $\vi$ ja $\vj$ avulla.
-                            <li> Muodosta suoran $L$ normaalimuotoinen yhtälö muokkaamalla yhtälöä 
+                            <li> Muodosta suoran $L$ normaalimuotoinen yhtälö muokkaamalla yhtälöä
                                 $$\pv{AP} \cdot \vn = 0$$
                                 kunnes se on samassa muodossa kuin määritelmässä.
                         </ol>
@@ -1165,13 +1233,13 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t22" class="collapse">
-                        <p>  Suoran $L$ normaalimuotoinen yhtälö on $2x + 3y - 2 = 0$. 
+                        <p>  Suoran $L$ normaalimuotoinen yhtälö on $2x + 3y - 2 = 0$.
                         </p>
                         <ol class="a">
                             <li> Piste $A$ on suoralla $L$ ja tiedetään, että sen $x$-koordinaatti on $4$. Selvitä suoran yhtälön avulla, mikä on pisteen $A$ $y$-koordinaatti.
                             <li> Etsi jokin toinen suoran $L$ piste antamalla sen $x$-koordinaatille jokin arvo ja laskemalla $y$-koordinaatin arvo suoran yhtälön avulla. Anna tälle pisteelle nimeksi $B$.
                             <li> Päättele suoran normaalimuotoisesta yhtälöstä suoran $L$ normaalivektori.
-                            <li> Piirrä suora $L$ koordinaatistoon. Edellisten kohtien tiedoista on apua. 
+                            <li> Piirrä suora $L$ koordinaatistoon. Edellisten kohtien tiedoista on apua.
                             <li> Tarkista pistetulon avulla, että c-kohdassa päättelemäsi normaalivektori todella on kohtisuorassa suoran suuntavektoria $\pv{AB}$ vastaan.
                             <li> Määritä suora $L$ vektorimuotoinen parametriesitys.
                         </ol>
@@ -1181,31 +1249,33 @@ topnav: maa4
             </div>
 
 
-            <p>
-                Tarkastellaan tasoa $T$, jonka vektorimuotoinen parametriesitys on 
-                $$\pv{OP} = -3\vi + 2\vk + s(3\vi + \vk) + t(4\vi - \vj).$$
-                Sitä on havainnollistettu alla olevassa mallikuvassa.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k23.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Kuvassa on näkyvissä vektori $\vn = \vi + 4\vj-3\vk$, joka on kohtisuorassa tason $%$ suuntavektoreita $\vw = 3\vi + \vk$ ja $\vv = 4\vi - \vj$ vastaan. Tämä voidaan varmistaa laskemalla näiden vektoreiden pistetulot:
-                $$\begin{align*}
-                \vn \cdot \vw &= (\vi + 4\vj-3\vk)\cdot (3\vi + \vk) \\
-                &= 1\cdot 3 + 4\cdot 0 + (-3)\cdot 1\\
-                &= 3-3 = 0.
-                \end{align*}
-                $$
-                ja
-                $$\begin{align*}
-                \vn \cdot \vv &= (\vi + 4\vj-3\vk)\cdot (4\vi - \vj) \\
-                &= 1\cdot 4 + 4\cdot (-1) + (-3)\cdot 0\\
-                &= 4-4 = 0.
-                \end{align*}
-                $$
-                Koska vektori $\vn$ on kohtisuorassa tason $T$ kumpaakin suuntavektoria vastaan ja siten myös koko tasoa $T$ vastaan, sanotaan sitä tason $T$ <em>normaalivektoriksi</em>. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Tarkastellaan tasoa $T$, jonka vektorimuotoinen parametriesitys on
+                    $$\pv{OP} = -3\vi + 2\vk + s(3\vi + \vk) + t(4\vi - \vj).$$
+                    Sitä on havainnollistettu alla olevassa mallikuvassa.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k23.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Kuvassa on näkyvissä vektori $\vn = \vi + 4\vj-3\vk$, joka on kohtisuorassa tason $%$ suuntavektoreita $\vw = 3\vi + \vk$ ja $\vv = 4\vi - \vj$ vastaan. Tämä voidaan varmistaa laskemalla näiden vektoreiden pistetulot:
+                    $$\begin{align*}
+                    \vn \cdot \vw &= (\vi + 4\vj-3\vk)\cdot (3\vi + \vk) \\
+                    &= 1\cdot 3 + 4\cdot 0 + (-3)\cdot 1\\
+                    &= 3-3 = 0.
+                    \end{align*}
+                    $$
+                    ja
+                    $$\begin{align*}
+                    \vn \cdot \vv &= (\vi + 4\vj-3\vk)\cdot (4\vi - \vj) \\
+                    &= 1\cdot 4 + 4\cdot (-1) + (-3)\cdot 0\\
+                    &= 4-4 = 0.
+                    \end{align*}
+                    $$
+                    Koska vektori $\vn$ on kohtisuorassa tason $T$ kumpaakin suuntavektoria vastaan ja siten myös koko tasoa $T$ vastaan, sanotaan sitä tason $T$ <em>normaalivektoriksi</em>.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -1219,7 +1289,7 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t23" class="collapse">
-                        <p> Tason $T$ vektorimuotoinen parametriesitys on $\pv{OP} = 2\vi - 5\vj -2\vk + s(7\vi + 5\vk) + t(7\vj + 2\vk)$. 
+                        <p> Tason $T$ vektorimuotoinen parametriesitys on $\pv{OP} = 2\vi - 5\vj -2\vk + s(7\vi + 5\vk) + t(7\vj + 2\vk)$.
                         </p>
                         <ol class="a">
                             <li> Onko vektori $\vb = 3\vi-2\vj -2\vk$ tason $T$ normaalivektori?
@@ -1264,24 +1334,26 @@ topnav: maa4
                 </div>
             </div>
 
-            <p>
-                Tarkastellaan edelleen tasoa $T$, jonka vektorimuotoinen parametriesitys on 
-                $$\pv{OP} = -3\vi + 2\vk + s(3\vi + \vk) + t(4\vi - \vj).$$
-                Tutkimalla alla olevaa kuvaa voidaan havaita, että piste $P = (x,y,z)$ on tasossa $T$, jos ja vain jos vektori $\pv{AP}$ on kohtisuorassa tason normaalivektoria $\vn = \vi + 4\vj-3\vk$ vastaan. Pistetulon avulla sama asia voidaan ilmaista sanomalla, että piste $P = (x,y,z)$ on tasossa $T$, jos ja vain jos
-                $$\pv{AP} \cdot \vn = 0,$$
-                missä $\vn$ on tason $T$ normaalivektori.
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k24.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Kun yhtälöön $\pv{AP} \cdot \vn = 0$ sijoitetaan vektori $\pv{AP} = (x+3)\vi + (y-0)\vj + (z-2)\vk$ ja tason $T$ normaalivektori $\vn = \vi + 4\vj-3\vk$, saadaan se muotoon
-                $$((x+3)\vi + y\vj + (z-2)\vk)\cdot (\vi + 4\vj-3\vk)= 0.$$
-                Vasenta puolta voidaan sieventää laskemalla pistetulot:
-                $$(x+3)\cdot 1 + 4y + (z-2)\cdot (-3) = 0.$$
-                Sievennyksen jälkeen yhtälö saadaan muotoon
-                $$x + 4y -3z +9 = 0.$$
-            </p>
+            <div class="teoria">
+                <p>
+                    Tarkastellaan edelleen tasoa $T$, jonka vektorimuotoinen parametriesitys on
+                    $$\pv{OP} = -3\vi + 2\vk + s(3\vi + \vk) + t(4\vi - \vj).$$
+                    Tutkimalla alla olevaa kuvaa voidaan havaita, että piste $P = (x,y,z)$ on tasossa $T$, jos ja vain jos vektori $\pv{AP}$ on kohtisuorassa tason normaalivektoria $\vn = \vi + 4\vj-3\vk$ vastaan. Pistetulon avulla sama asia voidaan ilmaista sanomalla, että piste $P = (x,y,z)$ on tasossa $T$, jos ja vain jos
+                    $$\pv{AP} \cdot \vn = 0,$$
+                    missä $\vn$ on tason $T$ normaalivektori.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k24.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Kun yhtälöön $\pv{AP} \cdot \vn = 0$ sijoitetaan vektori $\pv{AP} = (x+3)\vi + (y-0)\vj + (z-2)\vk$ ja tason $T$ normaalivektori $\vn = \vi + 4\vj-3\vk$, saadaan se muotoon
+                    $$((x+3)\vi + y\vj + (z-2)\vk)\cdot (\vi + 4\vj-3\vk)= 0.$$
+                    Vasenta puolta voidaan sieventää laskemalla pistetulot:
+                    $$(x+3)\cdot 1 + 4y + (z-2)\cdot (-3) = 0.$$
+                    Sievennyksen jälkeen yhtälö saadaan muotoon
+                    $$x + 4y -3z +9 = 0.$$
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -1295,8 +1367,8 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t23c" class="collapse">
-                        <p>  Jatketaan äskeisen tason $T$ tarkastelua. 
-                            Edellä pääteltiin, että piste $P = (x,y,z)$ on tässä tasossa, jos ja vain jos se toteuttaa yhtälön 
+                        <p>  Jatketaan äskeisen tason $T$ tarkastelua.
+                            Edellä pääteltiin, että piste $P = (x,y,z)$ on tässä tasossa, jos ja vain jos se toteuttaa yhtälön
                             $$x + 4y -3z +9 = 0.$$
                             Missä tässä yhtälössä näkyvät tason $T$ normaalivektorissa $\vn = \vi + 4\vj-3\vk$ esiintyvät kertoimet $1$, $4$ ja $-3$?
                         </p>
@@ -1304,14 +1376,16 @@ topnav: maa4
                 </div>
             </div>
 
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: TASON NORMAALIMUOTOINEN YHTÄLÖ</h3>
-                <p>
-                    Oletetaan, että $\vn = a\vi + b\vj + c\vk$ on tason $T$ normaalivektori. 
-                    Yhtälö
-                    $$ax + by + cz + d = 0$$
-                    on tason $T$ <em>normaalimuotoinen yhtälö</em>.
-                </p>
+            <div class="teoria">
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: TASON NORMAALIMUOTOINEN YHTÄLÖ</h3>
+                    <p>
+                        Oletetaan, että $\vn = a\vi + b\vj + c\vk$ on tason $T$ normaalivektori.
+                        Yhtälö
+                        $$ax + by + cz + d = 0$$
+                        on tason $T$ <em>normaalimuotoinen yhtälö</em>.
+                    </p>
+                </div>
             </div>
 
 
@@ -1332,9 +1406,9 @@ topnav: maa4
                             <li> Piirrä tilanteesta mallikuva.
                             <li> Päättele tason $T$ parametriesityksestä tason jonkin pisteen koordinaatit. Anna tälle pisteelle nimi $A$.
                             <li> Valitse piirroksestasi jokin tason $T$ piste ja anna sille nimi $P$. Merkitse sen koordinaatteja $(x,y,z)$.
-                            <li> Merkitse piirrokseesi vektori $\pv{AP}$. 
+                            <li> Merkitse piirrokseesi vektori $\pv{AP}$.
                             <li> Ilmaise vektori $\pv{AP}$ vektoreiden $\vi$, $\vj$ ja $\vk$ avulla.
-                            <li> Tehtävässä 30 etsittiin tasolle $T$ normaalivektori $\vn$. Muodosta tason $T$ normaalimuotoinen yhtälö muokkaamalla yhtälöä 
+                            <li> Tehtävässä 30 etsittiin tasolle $T$ normaalivektori $\vn$. Muodosta tason $T$ normaalimuotoinen yhtälö muokkaamalla yhtälöä
                                 $$\pv{AP} \cdot \vn = 0$$
                                 kunnes se on samassa muodossa kuin määritelmässä.
                         </ol>
@@ -1352,14 +1426,14 @@ topnav: maa4
                     </header>
 
                     <div id="t-L4t25" class="collapse">
-                        <p>  Tason $T$ normaalimuotoinen yhtälö on $-x + 3y + 2z - 5= 0$. 
+                        <p>  Tason $T$ normaalimuotoinen yhtälö on $-x + 3y + 2z - 5= 0$.
                         </p>
                         <ol class="a">
                             <li> Piste $A$ on tasossa $T$ ja tiedetään, että $A = (4,5,z)$. Selvitä tason yhtälön avulla, mikä on pisteen $A$ $z$-koordinaatti.
                             <li> Etsi jokin toinen tason $T$ piste antamalla sen $x$- ja $y$-koordinaateille jotkin arvot ja laskemalla $z$-koordinaatin arvo tason yhtälön avulla. Anna tälle pisteelle nimeksi $B$.
-                            <li> Muodosta tasolle $T$ yksi suuntavektori pisteiden $A$ ja $B$ avulla. Piirrä tilanteesta mallikuva. 
+                            <li> Muodosta tasolle $T$ yksi suuntavektori pisteiden $A$ ja $B$ avulla. Piirrä tilanteesta mallikuva.
                             <li> Päättele tason normaalimuotoisesta yhtälöstä tason $T$ normaalivektori. Anna sille nimeksi $\vn$.
-                            <li> Keksi jokin vektori $\vv \nparallel \pv{AB}$, joka on kohtisuorassa vektoria $\vn$ vastaan. Tarkista kohtisuoruus pistetulon avulla. 
+                            <li> Keksi jokin vektori $\vv \nparallel \pv{AB}$, joka on kohtisuorassa vektoria $\vn$ vastaan. Tarkista kohtisuoruus pistetulon avulla.
                                 Jos haluat, voit etsiä vektorin $\vv$ samaan tapaan kuin kohdissa (b)-(c).
                             <li> Määritä tason $T$ vektorimuotoinen parametriesitys a-, c- ja e-kohtien avulla.
                         </ol>
@@ -1368,23 +1442,25 @@ topnav: maa4
                 </div>
             </div>
 
-            <p>
-                Tason normaalivektoria voidaan hyödyntää myös suoran ja tason välisen kulman määrittämiseen. Alla oleva mallikuva havainnollistaa edellisen tehtävän tasoa $T$, jonka normaalimuotoinen yhtälö on $-x + 3y + 2z - 5= 0$. Kuvassa on lisäksi suora $L$, jolla on parametriesitys $\pv{OP} = 2\vi + \vk + t(-\vi + \vj + 2\vk)$. 
-            </p>
-            <p>
-                <img src="/kurssit/maa4/kuvat/L4k25.png" max-width: 100%; width: auto; height: auto;/> 
-            </p>
-            <p>
-                Tason $T$ yhtälöstä voidaan päätellä, että tasolla $T$ on normaali $\vn = -\vi + 3\vj + 2\vk$. Suoran $L$ parametriesityksestä voidaan päätellä, että suoralla $L$ on suuntavektori $\vv = -\vi + \vj + 2\vk$. Näiden välinen kulma voidaan laskea pistetulon avulla:
-                $$\begin{align*}
-                \cos(\vn, \vv) &= \frac{\vn\cdot\vv}{|\vn||\vv|} \\
-                &= \frac{(-1)\cdot(-1) + 3\cdot 1 + 2\cdot 2}{\sqrt{(-1)^2 + 3^2 + 2^2}\sqrt{(-1)^2 + 1^2 + 2^2}} \\
-                &= \frac{8}{\sqrt{14}\sqrt{6}} \ (\approx 0{,}87287156).
-                \end{align*}$$
-                Laskimella saadaan tästä $\sphericalangle(\vn,\vv) = 29{,}205932\ldots \approx 29{,}2^\circ$. Tämä on siis suoran $L$ ja tason normaalin välinen kulma. Koska tason normaalin ja tason välinen kulma on $90^\circ$, saadaan suoran ja tason välinen kulma $\alpha$ vähennyslaskulla:
-                $$\alpha = 90^\circ - 29{,}2^\circ = 60{,}8^\circ.$$
-                Suoran $L$ ja tason $T$ välinen kulma on siis noin $60{,}8^\circ$.
-            </p>
+            <div class="teoria">
+                <p>
+                    Tason normaalivektoria voidaan hyödyntää myös suoran ja tason välisen kulman määrittämiseen. Alla oleva mallikuva havainnollistaa edellisen tehtävän tasoa $T$, jonka normaalimuotoinen yhtälö on $-x + 3y + 2z - 5= 0$. Kuvassa on lisäksi suora $L$, jolla on parametriesitys $\pv{OP} = 2\vi + \vk + t(-\vi + \vj + 2\vk)$.
+                </p>
+                <p>
+                    <img src="/kurssit/maa4/kuvat/L4k25.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+                <p>
+                    Tason $T$ yhtälöstä voidaan päätellä, että tasolla $T$ on normaali $\vn = -\vi + 3\vj + 2\vk$. Suoran $L$ parametriesityksestä voidaan päätellä, että suoralla $L$ on suuntavektori $\vv = -\vi + \vj + 2\vk$. Näiden välinen kulma voidaan laskea pistetulon avulla:
+                    $$\begin{align*}
+                    \cos(\vn, \vv) &= \frac{\vn\cdot\vv}{|\vn||\vv|} \\
+                    &= \frac{(-1)\cdot(-1) + 3\cdot 1 + 2\cdot 2}{\sqrt{(-1)^2 + 3^2 + 2^2}\sqrt{(-1)^2 + 1^2 + 2^2}} \\
+                    &= \frac{8}{\sqrt{14}\sqrt{6}} \ (\approx 0{,}87287156).
+                    \end{align*}$$
+                    Laskimella saadaan tästä $\sphericalangle(\vn,\vv) = 29{,}205932\ldots \approx 29{,}2^\circ$. Tämä on siis suoran $L$ ja tason normaalin välinen kulma. Koska tason normaalin ja tason välinen kulma on $90^\circ$, saadaan suoran ja tason välinen kulma $\alpha$ vähennyslaskulla:
+                    $$\alpha = 90^\circ - 29{,}2^\circ = 60{,}8^\circ.$$
+                    Suoran $L$ ja tason $T$ välinen kulma on siis noin $60{,}8^\circ$.
+                </p>
+            </div>
 
 
             <div class="tehtavat">
@@ -1405,13 +1481,13 @@ topnav: maa4
                             y &= -7 -2t \\
                             z &= -8 - t.
                             \end{aligned}\right.
-                            $$  
+                            $$
                             Tehtävänä on määrittää suoran $L$ ja $xy$-tason välinen kulma.
                         </p>
                         <ol class="a">
                             <li> Piirrä $xyz$-koodinaatisto. Mitkä seuraavista pisteistä ovat $xy$-tasossa?
                                 $B = (3,4,0)$, $C = (0,3,4)$, $D = (3,0,0)$, $E = (0,4,0)$, $F = (0,0,3)$.
-                            <li> Keksi $xy$-tasolle jokin normaalivektori $\vn$. Mistä tiedät, että se on $xy$-tason normaalivektori? Selitä omin sanoin.   
+                            <li> Keksi $xy$-tasolle jokin normaalivektori $\vn$. Mistä tiedät, että se on $xy$-tason normaalivektori? Selitä omin sanoin.
                             <li> Päättele suoran $L$ parametriesityksestä suoran $L$ suuntavektori $\vv$.
                             <li> Laske vektorien $\vn$ ja $\vv$ välinen kulma. Mikä on suoran $L$ ja $xy$-tason välinen kulma? Anna vastaus asteen kymmenesosan tarkkuudella.
                         </ol>
@@ -1444,7 +1520,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso1">
-                    <p> 
+                    <p>
                         Suora $L$ kulkee pisteen $A=(-2,3)$ kautta ja sen eräs suuntavektori on $\vv=4\vi-3\vj$.
                     <ol class="a">
                         <li> Piirrä tilanteesta kuva koordinaatistoon.</li>
@@ -1466,8 +1542,8 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso2">
-                    <p> 
-                        Suoran $L$ koordinaattimuotoinen parametriesitys on 
+                    <p>
+                        Suoran $L$ koordinaattimuotoinen parametriesitys on
                         $$ \left\{\begin{aligned}
                         x&=2+3t\\
                         y&=-t\\
@@ -1519,7 +1595,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso4">
-                    <p> 
+                    <p>
                         Suora $L_1$ kulkee pisteiden $A=(1,2,3)$ ja $B=(-1,0,3)$ kautta. Suora $L_2$ kulkee pisteiden $C=(-2,1,0)$ ja $D=(0,2,1)$ kautta.
                     <ol class="a">
                         <li> Muodosta kummallekin suoralle vektorimuotoinen parametriesitys.</li>
@@ -1540,7 +1616,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso5">
-                    <p> Suora $L_1$ kulkee pisteiden $(3,4)$ ja $(6,-2)$ kautta. Suoran $L_2$ koordinaattimuotoinen parametriesitys on 
+                    <p> Suora $L_1$ kulkee pisteiden $(3,4)$ ja $(6,-2)$ kautta. Suoran $L_2$ koordinaattimuotoinen parametriesitys on
                         $$
                         \left\{
                         \begin{aligned}
@@ -1569,7 +1645,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso6">
-                    <p> 
+                    <p>
                         Suora $L_1$ kulkee pisteen $(1,-1,2)$ kautta ja sen eräs suuntavektori on $\vv=-2\vi+\vj+3\vk$. Suora $L_2$ kulkee pisteen $(3,5,-1)$ kautta ja se leikkaa suoran $L_1$ kohtisuorasti. Määritä leikkauspisteen koordinaatit.
                     </p>
 
@@ -1586,8 +1662,8 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso7">
-                    <p> 
-                        Suoran $L$ normaalimuotoinen yhtälö on $3x-y+5=0$. 
+                    <p>
+                        Suoran $L$ normaalimuotoinen yhtälö on $3x-y+5=0$.
                     <ol class="a">
                         <li> Määritä suoran $L$ jokin normaalivektori.</li>
                         <li> Päättele suoran $L$ jokin suuntavektori joko yhtälöstä tai kuvasta. Tarkista päättelysi pistetulon avulla.</li>
@@ -1609,7 +1685,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso8">
-                    <p> 
+                    <p>
                         Tarkastele suoraa $L$, joka kulkee pisteiden $(-1,1,3)$ ja $(5,-3,4)$ kautta.
                     <ol class="a">
                         <li> Mitä tiedät $xz$-tason pisteiden koordinaateista? Käytä tätä tietoa sekä sopivaa parametriesitystä ja määritä suoran $L$ ja $xz$-tason leikkauspiste.</li>
@@ -1631,7 +1707,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso9">
-                    <p> 
+                    <p>
                         Suoran $L$ vektorimuotoinen parametriesitys on $\pv{OP}=\vi-2\vj+t(-2\vi+3\vj)$. Määritä pisteen $(3,4)$ etäisyys suorasta $L$. Koska tehtävä on $xy$-tasossa, piirrä kuva koordinaatistoon ja tarkista vastauksesi järkevyys sen avulla.
                     </p>
 
@@ -1648,7 +1724,7 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso9b">
-                    <p> 
+                    <p>
                         Laske pisteen $Q = (3,-1,0)$ etäisyys pisteiden $A = (-3,-2,1)$ ja $B = (5,4,-3)$ kautta kulkevasta suorasta.
                     </p>
 
@@ -1665,8 +1741,8 @@ topnav: maa4
                 </header>
 
                 <div id="suorataso10">
-                    <p> 
-                        Taso $T$ kulkee pisteiden $(1,0,3)$, $(-2,1,2)$ ja $(3,4,1)$ kautta. 
+                    <p>
+                        Taso $T$ kulkee pisteiden $(1,0,3)$, $(-2,1,2)$ ja $(3,4,1)$ kautta.
                     <ol class="a">
                         <li> Nimeä pisteet ja muodosta tasolle suuntavektorit.</li>
                         <li> Muodosta tasolle vektorimuotoinen parametriesitys.</li>
@@ -1681,8 +1757,8 @@ topnav: maa4
             <div class="tehtava" id="d216510e-ea06-4178-bb4e-a39ec22a1b14">
                 <header>
                     <h1><a data-target="#suorataso11">
-                            Suoran ja tason leikkauspiste
-                        </a>
+                        Suoran ja tason leikkauspiste
+                    </a>
                     </h1>
                 </header>
                 <div id="suorataso11">
@@ -1696,20 +1772,20 @@ topnav: maa4
                         \end{aligned}
                         \right.
                         $$
-                        Piirrä tilanteesta mallikuva. Tutki parametriesitysten avulla, leikkaavatko suora $L$ ja taso $T$. Määritä mahdollisen leikkauspisteen koordinaatit. 
+                        Piirrä tilanteesta mallikuva. Tutki parametriesitysten avulla, leikkaavatko suora $L$ ja taso $T$. Määritä mahdollisen leikkauspisteen koordinaatit.
                     </p>
                 </div>
-            </div>   
+            </div>
 
             <div class="tehtava" id="7162c7e9-2fe6-43f7-9692-bf37d04ae930">
                 <header>
                     <h1><a data-target="#suorataso11b">
-                            Suoran normaalimuotoinen yhtälö
-                        </a>
+                        Suoran normaalimuotoinen yhtälö
+                    </a>
                     </h1>
                 </header>
                 <div id="suorataso11b">
-                    <p> Suora $L$ kulkee pisteiden $A = (2,1)$ ja $B = (3,5)$ kautta. 
+                    <p> Suora $L$ kulkee pisteiden $A = (2,1)$ ja $B = (3,5)$ kautta.
                     <ol class="a">
                         <li> Piirrä suora $L$ koordinaatistoon.</li>
                         <li> Määritä suoralle $L$ suuntavektori.</li>
@@ -1718,13 +1794,13 @@ topnav: maa4
                     </ol>
                     </p>
                 </div>
-            </div>      
+            </div>
 
             <div class="tehtava" id="68ab98f5-aede-48c8-b07e-b19811d60ddf">
                 <header>
                     <h1><a data-target="#suorataso12">
-                            Tason normaalimuotoinen yhtälö
-                        </a>
+                        Tason normaalimuotoinen yhtälö
+                    </a>
                     </h1>
                 </header>
                 <div id="suorataso12">
@@ -1735,20 +1811,20 @@ topnav: maa4
                     </ol>
                     </p>
                 </div>
-            </div>                   
+            </div>
 
             <div class="tehtava" id="b563c247-7402-4de2-9c0c-ff528617b52d">
                 <header>
                     <h1><a data-target="#suorataso13">
-                            Pisteen etäisyys tasosta
-                        </a>
+                        Pisteen etäisyys tasosta
+                    </a>
                     </h1>
                 </header>
                 <div id="suorataso13">
                     <p> Taso $T$ kulkee origon sekä pisteiden $(0,2,1)$ ja $(3,-2,-2)$ kautta. Laske pisteen $(1,-3,4)$ etäisyys tasosta $T$.
                     </p>
                 </div>
-            </div>                       
+            </div>
             <!-- Tähän loppui piilotus -->
         </div>
     </section>
@@ -1775,7 +1851,7 @@ topnav: maa4
                 </header>
 
                 <div id="st1">
-                    <p> 
+                    <p>
                         Osoita, että pisteet $A = (-3,6,4)$, $B = (2,-4,-1)$ ja $C = (-1,2,2)$ ovat samalla suoralla. Missä suhteessa piste $C$ jakaa janan $AB$?
                     </p>
 
@@ -1792,7 +1868,7 @@ topnav: maa4
                 </header>
 
                 <div id="st2b">
-                    <p> 
+                    <p>
                         Lasersäteellä osoitetaan pisteestä $A(1,-2,3)$ vektorin $\vu=2\vi-\vj-3\vk$ suuntaan. Toisella säteellä osoitetaan pisteestä $B(9,-1,-12)$ vektorin $\vv=-\vi-2\vj+3\vk$ suuntaan. Näytä, että säteet leikkaavat toisensa, ja määritä niiden leikkauspiste. [YO K14, 8]
                     </p>
 
@@ -1809,8 +1885,8 @@ topnav: maa4
                 </header>
 
                 <div id="st2">
-                    <p> 
-                        Ovatko pisteet $A = (-3,2,1)$, $B = (-2,4,3)$, $C = (-1,2,-2)$ ja $D = (2,8,3)$ samassa tasossa? 
+                    <p>
+                        Ovatko pisteet $A = (-3,2,1)$, $B = (-2,4,3)$, $C = (-1,2,-2)$ ja $D = (2,8,3)$ samassa tasossa?
                     </p>
 
                 </div>
@@ -1826,8 +1902,8 @@ topnav: maa4
                 </header>
 
                 <div id="st2c">
-                    <p> 
-                        Pisteiden $A(2,0,1)$ ja $B(3,1,3)$ yhdysjanan keskipisteen kautta asetetaan taso, joka on kohtisuorassa yhdysjanaa vastaan. Missä pisteessä tämä taso leikkaa $y$-akselin? [YO K13, 7] 
+                    <p>
+                        Pisteiden $A(2,0,1)$ ja $B(3,1,3)$ yhdysjanan keskipisteen kautta asetetaan taso, joka on kohtisuorassa yhdysjanaa vastaan. Missä pisteessä tämä taso leikkaa $y$-akselin? [YO K13, 7]
                     </p>
 
                 </div>
@@ -1843,7 +1919,7 @@ topnav: maa4
                 </header>
 
                 <div id="st3">
-                    <p> 
+                    <p>
                         Suora $L$ kulkee pisteiden $(8,-3,7)$ ja $(2,5,-1)$ kautta.
                     <ol class="a">
                         <li> Missä pisteessä suora $L$ leikkaa $xy$-tason?</li>
@@ -1864,7 +1940,7 @@ topnav: maa4
                 </header>
 
                 <div id="st4">
-                    <p> 
+                    <p>
                         Laske pisteiden $(-2,4,-5)$ ja $(4,-2,2)$ kautta kulkevan suoran ja koordinaattiakselien väliset kulmat.
                     </p>
 
@@ -1881,7 +1957,7 @@ topnav: maa4
                 </header>
 
                 <div id="st5">
-                    <p> 
+                    <p>
                         Suora $L$ kulkee pisteiden $A = (1,1,-2)$ ja $B = (5,-5,6)$ kautta. Laske pisteen $Q = (2,4,7)$ etäisyys suorasta $L$. Mikä suoran $L$ piste on lähinnä pistettä $Q$?
                     </p>
 
@@ -1898,7 +1974,7 @@ topnav: maa4
                 </header>
 
                 <div id="st6">
-                    <p> 
+                    <p>
                         Pisteiden $A = (2,0,0)$, $B = (0,3,0)$ ja $C = (0,0,4)$ kautta kulkevalle tasolle $T$ asetetaan normaali (eli tasoa vastaan kohtisuorassa oleva suora) pisteeseen $C$. Missä pisteessä normaali leikkaa $xy$-tason?
                     </p>
 
@@ -1915,7 +1991,7 @@ topnav: maa4
                 </header>
 
                 <div id="st7">
-                    <p> 
+                    <p>
                         Suorakulmaisen kolmion kaksi kärkeä ovat origo ja $A = (1,3,0)$. Sen kolmas kärki $B$ on origon ja pisteen $C = (0,1,1)$ kautta kulkevalla suoralla. Määritä pisteen $B$ koordinaatit.
                     </p>
 
@@ -1932,7 +2008,7 @@ topnav: maa4
                 </header>
 
                 <div id="st8">
-                    <p> 
+                    <p>
                         Missä pisteessä origon ja pisteen $(1,2,3)$ kautta kulkeva suora $L$ leikkaa pisteiden $(1,0,0)$, $(0,1,0)$ ja $(0,0,1)$ kautta kulkevan tason $T$? Kuinka suuri on suoran $L$ ja tason $T$ välinen kulma?
                     </p>
 
@@ -1949,8 +2025,8 @@ topnav: maa4
                 </header>
 
                 <div id="st10">
-                    <p> 
-                        Määritä normaalimuotoinen yhtälö suoralle, joka kulkee pisteen $(2,-3)$ kautta ja on 
+                    <p>
+                        Määritä normaalimuotoinen yhtälö suoralle, joka kulkee pisteen $(2,-3)$ kautta ja on
                     <ol class="a">
                         <li> $x$-akselin suuntainen</li>
                         <li> $y$-akselin suuntainen</li>
@@ -1971,7 +2047,7 @@ topnav: maa4
                 </header>
 
                 <div id="st9">
-                    <p> 
+                    <p>
                         Avomerellä suoran rannikon edustalla ajelehtiva vene havaittiin ensimmäisen kerran 15,2 km laiturista $L$ etelään. Myöhemmin se nähtiin ajelehtimassa 8,6 km laiturista $M$ etelään. Laituri $M$ sijaitsee 11,4 km itään laiturista $L$. Missä kohdassa vene ajautuu maihin, jos tuulen suunta pysyy samana?
                     </p>
 
@@ -1988,7 +2064,7 @@ topnav: maa4
                 </header>
 
                 <div id="st11">
-                    <p> 
+                    <p>
                         Lintujen kevätmuuttoa tarkkailtiin kukkulalta $K$. Sieltä 400 m etelään on piste $A$, josta puolestaan 400 m länteen on piste $B$. Piste $C$ on 500 m itään kukkulasta $K$ ja piste $D$ on 200 m pohjoiseen pisteestä $C$. Kuikka lensi suoraviivaista reittiä pisteiden $B$ ja $K$ yli, kaakkuri puolestaan lensi suoraviivaista reittiä pisteiden $A$ ja $D$ yli. Havaitsija $H$ kertoi nähneensä molemmat linnut suoraan yläpuolellaan. Missä paikassa $H$ teki havaintonsa?
                     </p>
 
@@ -2005,7 +2081,7 @@ topnav: maa4
                 </header>
 
                 <div id="st12">
-                    <p> 
+                    <p>
                         Määritä suoran $2x-y+4 = 0$ se piste, joka on yhtä etäällä pisteistä $(0,-3)$ ja $(4,-1)$.
                     </p>
 
@@ -2029,7 +2105,7 @@ topnav: maa4
         </header>
         <div id="L3itsearviointi" class="collapse">
             <p>
-                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1420">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1420">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla.
 
             </p>
         </div>
