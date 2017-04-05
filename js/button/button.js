@@ -177,7 +177,20 @@ class Button {
       console.warn("No coursekey for this material.");
       this._getStats(this.courseData.course_id);
     }
+
   }
+
+    toggleVisibilityByClass(className) {
+    var arrayOfElements = document.getElementsByClassName(className);
+    for (var i=0; i<arrayOfElements.length; i++) {
+        var x = arrayOfElements[i];
+        if (x.style.display === 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+    }
+}
 
 }
 
@@ -187,6 +200,9 @@ class Button {
 $(document).ready(function () {
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     const button = new Button();
+    $('.toggleDivVisibility').click(function() {
+        button.toggleVisibilityByClass(this.id);
+    });
     backend.get(`students/${Session.getUserId()}/courses`)
       .then(
         function fulfilled(data) {

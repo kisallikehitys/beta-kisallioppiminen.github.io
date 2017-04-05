@@ -17,32 +17,11 @@ topnav: may1
     }
 </style>
 
-<script>
-    function toggleVisibilityByClass(className) {
-        var arrayOfElements = document.getElementsByClassName(className);
-        for (var i=0; i<arrayOfElements.length; i++) {
-            var x = arrayOfElements[i];
-            if (x.style.display === 'none') {
-                x.style.display = 'block';
-            } else {
-                x.style.display = 'none';
-            }
-        }
-    }
-</script>
 
 <input type="hidden" id="theoremStart" value="1"/>
-<input type="hidden" id="chapterNumber" value="1"/>
+<input type="hidden" id="chapterNumber" value="4"/>
 
-<nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottomNav" style="max-width: 100%">
-    <div class="container-fluid" style="max-width: 1150px;">
-        <div class="navbar-header">
-            <a class="navbar-brand" style="color: #FFFFFF;" href="#"></a>
-        </div>
-        <button onclick="toggleVisibilityByClass('tehtava')" style="margin:10px;">Piilota/Näytä tehtavat</button>
-        <button onclick="toggleVisibilityByClass('teoria')" style="margin:10px;">Piilota/Näytä teoria</button>
-    </div>
-</nav>
+{% include bottomnav.html %}
 
 <article>
     <section>
