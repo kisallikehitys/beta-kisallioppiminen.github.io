@@ -153,10 +153,6 @@ class Button {
       );
   }
 
-  _markStats(data) {
-    console.log(data);
-  }
-
   _getStats(id) {
     const obj = this;
     console.log(this.courseData.course_id);
@@ -198,15 +194,6 @@ $(document).ready(function () {
         },
         function rejected() {
           console.warn("Error, could not get coursekey");
-          backend.get(`teachers/${Session.getUserId()}/courses}`)
-            .then(
-              function fulfilled(data) {
-                button._markStats(data);
-              },
-              function rejected(data) {
-                console.warn(data);
-              }
-            );
         });
   }
 });
