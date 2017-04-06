@@ -1,17 +1,31 @@
+<style>
+    label.toggleDivVisibilityLabel {
+        line-height: 20px;
+    }
+    label.switch {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px;
+    }
+</style>
+
 <nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottomNav" style="max-width: 100%">
     <div class="container-fluid" style="max-width: 1150px;">
         <div class="navbar-header">
             <a class="navbar-brand" style="color: #FFFFFF;" href="#"></a>
         </div>
-        Näytä tehtävät
+
+        <label class="toggleDivVisibilityLabel" for="tehtava">Näytä tehtävät</label>
         <label class="switch">
             <input class="toggleDivVisibility" id="tehtava" type="checkbox" checked>
             <div class="slider round"></div>
         </label>
-        Näytä teoria
+
+        <label class="toggleDivVisibilityLabel" for="teoria">Näytä teoria</label>
         <label class="switch" >
             <input class="toggleDivVisibility" id="teoria" type="checkbox" checked>
             <div class="slider round"></div>
         </label>
+
     </div>
 </nav>
