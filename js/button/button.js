@@ -60,44 +60,16 @@ class Button {
       console.log('_addGoalCheckboxes');
         const obj = this;
         $(".checkbox-group").each(function (index, value) {
-          //console.log(this);
-          var btn = document.createElement("BUTTON");
-          var checkbox = view.createCheckbox();
+          var checkbox1 = view.createCheckbox('1');
+          this.appendChild(checkbox1);
 
-          this.appendChild(checkbox);
+          var checkbox2 = view.createCheckbox('2');
+          this.appendChild(checkbox2);
+
+          var checkbox3 = view.createCheckbox('3');
+          this.appendChild(checkbox3);
         });
       console.log('endGoalTest');
-        /*
-        $(".tehtava").each(function (index, value) {
-            const id = this.id;
-
-            let buttonDiv = view.createButtonDiv(id);
-            let buttonGroup = view.createButtonGroup();
-            buttonGroup.appendChild(view.createButton(0, id));
-            buttonGroup.appendChild(view.createButton(1, id));
-            buttonGroup.appendChild(view.createButton(2, id));
-            buttonDiv.appendChild(buttonGroup);
-
-            $(value).find("div:first").append(buttonDiv);
-        });
-
-        // Add listener
-
-        $('.problemButton').click(function () {
-
-            obj.sendCheckmark(this.id);
-        });
-
-
-
-         <div class="checkbox" style="float:left; margin-top:0px; margin-right:5px;">
-            <label class="checkbox-bootstrap checkbox-blue checkbox-lg">
-              <input type="checkbox">
-              <span class="checkbox-placeholder"></span>
-            </label>
-         </div>
-
-        */
     }
 
   /**

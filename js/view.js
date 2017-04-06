@@ -268,7 +268,7 @@ class View {
     return scoreboard;
   }
 
-  createCheckbox() {
+  createCheckbox(goalId) {
     let checkboxDiv = document.createElement('div');
     checkboxDiv.setAttribute('class', 'checkbox');
 
@@ -277,6 +277,7 @@ class View {
 
     let checkboxInput = document.createElement('input');
     checkboxInput.setAttribute('type', 'checkbox');
+    checkboxInput.setAttribute('id', goalId);
 
     let placeholderSpan = document.createElement('span');
     placeholderSpan.setAttribute('class', 'checkbox-placeholder');
