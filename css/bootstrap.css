@@ -6822,3 +6822,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+div.checkbox {
+  float: left;
+  margin-top:0px;
+  margin-right:5px;
+}

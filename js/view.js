@@ -268,6 +268,28 @@ class View {
     return scoreboard;
   }
 
+  createCheckbox() {
+    let checkboxDiv = document.createElement('div');
+    checkboxDiv.setAttribute('class', 'checkbox');
+
+    let checkboxLabel = document.createElement('label');
+    checkboxLabel.setAttribute('class', 'checkbox-bootstrap checkbox-blue checkbox-lg');
+
+    let checkboxInput = document.createElement('input');
+    checkboxInput.setAttribute('type', 'checkbox');
+
+    let placeholderSpan = document.createElement('span');
+    placeholderSpan.setAttribute('class', 'checkbox-placeholder');
+
+    checkboxLabel.appendChild(checkboxInput);
+    checkboxLabel.appendChild(placeholderSpan);
+
+    checkboxDiv.appendChild(checkboxLabel);
+
+    return checkboxDiv;
+  }
+
+
   createExercise(number) {
     let item = document.createElement('th');
     item.setAttribute('class', 'numberHeader');
