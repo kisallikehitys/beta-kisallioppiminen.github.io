@@ -54,13 +54,19 @@ topnav: maa4
                 <p>
                     Tämän luvun tavoitteena on, että osaat käyttää vektoreita geometristen ongelmien ratkaisemiseen ilman koordinaatistoa. Lisäksi vahvistat edellisissä luvuissa harjoiteltuja taitoja:
                 <ul>
-                    <li> vektorien laskutoimitusten tulkitsemista geometrisesti (yhteen- ja vähennyslasku sekä reaaliluvulla kertominen)
-                    <li> pistetulon laskusääntöjen ja ominaisuuksien soveltamista geometristen ongelmien ratkaisemiseen.
+                    <li> vektorien laskutoimitusten tulkitsemista geometrisesti (yhteen- ja vähennyslasku sekä reaaliluvulla kertominen) </li>
+                    <li> pistetulon laskusääntöjen ja ominaisuuksien soveltamista geometristen ongelmien ratkaisemiseen. </li>
                 </ul>
                 Tavoitteiden toteutumista pääset arvioimaan luvun lopussa olevan itsearviointitestin avulla.</p>
             </div>
+        <div class="close-section">
+        <a data-toggle="collapse" class="collapsed" data-target="#luvun4-tavoitteet">
+        Sulje kappale
+        </a>
+    </div>
         </div>
     </section>
+
     <section class="panel">
         <header>
             <h1>
@@ -99,18 +105,29 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t1" class="collapse">
                         <p> Alla on kuvattu suunnikas $ABCD$. Ilmaise sen sivuvektoreiden $\va$ ja $\vb$ avulla
                         <ol class="a">
-                            <li> lävistäjävektori $\pv{AC}$
-                            <li> lävistäjävektori $\pv{DB}$
-                            <li> lävistäjävektori $\pv{BD}$.
+                            <li> lävistäjävektori $\pv{AC}$ </li>
+                            <li> lävistäjävektori $\pv{DB}$ </li>
+                            <li> lävistäjävektori $\pv{BD}$. </li>
                         </ol>
                         </p>
                         <p>
                             <img src="/kurssit/maa4/kuvat/L4k31.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t1_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t1_v" class="collapse">
+                            <ol class="a">
+                                <li> $\pv{AC} = \va + \vb$ </li>
+                                <li> $\pv{DB} = \va - \vb$ </li>
+                                <li> $\pv{BD} = \vb - \va$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -124,7 +141,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t2" class="collapse">
                         <p> Alla kuvattu monitahokas on suuntaissärmiö, eli sen kaikki tahkot ovat suunnikkaita. Ilmaise sen särmävektoreiden $\va$, $\vb$ ja $\vc$ avulla
                         <ol class="a">
@@ -137,6 +153,19 @@ topnav: maa4
                         <p>
                             <img src="/kurssit/maa4/kuvat/L4k32.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t2_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t2_v" class="collapse">
+                            <ol class="a">
+                                <li> $\pv{AG} = \va + \vb + \vc$ </li>
+                                <li> $\pv{EC} = \va + \vb - \vc$ </li>
+                                <li> $\pv{HB} = \va - \vb - \vc$ </li>
+                                <li> $\pv{DF} = \va - \vb + \vc$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,7 +179,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t2b" class="collapse">
                         <p> Tarkastele alla olevaa kuvaa.
                         <ol class="a">
@@ -163,9 +191,23 @@ topnav: maa4
                         <p>
                             <img src="/kurssit/maa4/kuvat/hankalaKuva.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t2b_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t2b_v" class="collapse">
+                            <ol class="a">
+                                <li> $\pv{AC} = \va + \vb$ </li>
+                                <li> $\pv{BE} = \vb + \vc - \bar{d}$ </li>
+                                <li> $\pv{EC} = \bar{d} - \vc$ ja $\pv{EC} = -\bar{e} + \va + \vb$ </li>
+                                <li> Summa on $\bar{0}$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="teoria">
                 <p>
                     Joissakin tilanteissa vektorin pituus täytyy muuttaa sopivaksi kertomalla vektoria reaaliluvulla. Esimerkiksi alla olevassa kuvassa piste $C$ jakaa janan $AB$ suhteessa $3:5$. Tällöin
@@ -195,7 +237,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t3" class="collapse">
                         <p> Tarkastellaan alla olevaa kuvaa. Edellä lausuttiin vektori $\pv{OC}$ vektorien $\va$ ja $\vb$ avulla etsimällä reitti pisteestä $O$ pisteen $A$ kautta pisteeseen $C$.
                         </p>
@@ -218,7 +259,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t4" class="collapse">
                         <p> Kolmion $ABC$ sivuvektorit ovat $\va = \pv{AB}$ ja $\vb = \pv{AC}$. Piste $D$ on sivun $BC$ keskipiste. Piirrä tilanteesta mallikuva ja ilmaise vektoreiden $\va$ ja $\vb$ avulla
                         <ol class="a">
@@ -227,6 +267,18 @@ topnav: maa4
                             <li> keskijanavektori $\pv{AD}$.
                         </ol>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t4_v" class="collapse">
+                            <ol class="a">
+                                <li> $\pv{BC} = \vb - \va$ </li>
+                                <li> $\pv{BD} = \frac{1}{2}(\vb - \va)$ </li>
+                                <li> $\pv{AD} = \frac{1}{2}\va + \frac{1}{2}\vb$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -240,7 +292,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t4b" class="collapse">
                         <p> Tiedetään, että vektorit $\vv$ ja $\vw$ ovat yksikkövektoreita eli niiden pituus on yksi. Määritä vektorin $4\vv+6\vw$ pituus, jos vektorit $\vv$ ja $\vw$ ovat
                         <ol class="a">
@@ -250,6 +301,18 @@ topnav: maa4
                         </ol>
                         Havainnollista ratkaisuasi piirroksilla.
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4b_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t4b_v" class="collapse">
+                            <ol class="a">
+                                <li> $|4\vv+6\vw| = 10$ </li>
+                                <li> $|4\vv+6\vw| = 2$ </li>
+                                <li> $|4\vv+6\vw| = \sqrt{52} = 2\sqrt{13}$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -269,18 +332,41 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t4c" class="collapse">
-                        <p> Tiedetään, että $|\va| = 3$, $|\vb| = 5$ ja $\sphericalangle(\va,\vb) = 120^\circ$. Tehtävänä on selvittää vektorin $2\va + \vb$ pituus $|2\va + \vb|$.
+                        <p> 
+                            Tiedetään, että $|\va| = 3$, $|\vb| = 5$ ja $\sphericalangle(\va,\vb) = 120^\circ$. Tehtävänä on selvittää vektorin $2\va + \vb$ pituus $|2\va + \vb|$.
                         <ol class="a">
                             <li> Piirrä tilanteesta mallikuva.</li>
                             <li> Havainnollista piirroksella vektoria $2\va + \vb$.</li>
-                            <li> Sievennä pistetulo $(2\va + \vb) \cdot (2\va + \vb)$. Muista, että pistetulossa sulut voidaan kertoa auki tavalliseen tapaan. (Pistetulon laskusääntöjä löydät $xy$-koordinaatistoa käsittelevän luvun teoreemasta 3.)</li>
-                            <li> Teoreeman 4 mukaan $\vv \cdot \vv = |\vv|^2$ ja teoreeman 5 mukaan $\vv \cdot \vw = |\vv||\vw|\cos(\vv, \vw)$. Käytä näitä tietoja ja ilmaise c-kohdan tulos vektoreiden $\va$ ja $\vb$ itseisarvojen avulla. </li>
-                            <li> Käytä tehtävänannon tietoja ja laske edellisen kohdan avulla lukuarvo pistetulolle $(2\va + \vb) \cdot (2\va + \vb)$.</li>
-                            <li> Sovella tietoa $\vv \cdot \vv = |\vv|^2$ uudelleen ja päättele edellisen kohdan avulla, mikä on vektorin $2\va + \vb$ pituus $|2\va + \vb|$.</li>
+                            <li> 
+                                Sievennä pistetulo $(2\va + \vb) \cdot (2\va + \vb)$. Muista, että pistetulossa sulut voidaan kertoa auki tavalliseen tapaan. (Pistetulon laskusääntöjä löydät $xy$-koordinaatistoa käsittelevän luvun teoreemasta 3.)
+                            </li>
+                            <li> 
+                                Teoreeman 4 mukaan $\vv \cdot \vv = |\vv|^2$ ja teoreeman 5 mukaan $\vv \cdot \vw = |\vv||\vw|\cos(\vv, \vw)$. Käytä näitä tietoja ja ilmaise c-kohdan tulos vektoreiden $\va$ ja $\vb$ itseisarvojen avulla. 
+                            </li>
+                            <li> 
+                                Käytä tehtävänannon tietoja ja laske edellisen kohdan avulla lukuarvo pistetulolle $(2\va + \vb) \cdot (2\va + \vb)$.
+                            </li>
+                            <li> 
+                                Sovella tietoa $\vv \cdot \vv = |\vv|^2$ uudelleen ja päättele edellisen kohdan avulla, mikä on vektorin $2\va + \vb$ pituus $|2\va + \vb|$.
+                            </li>
                         </ol>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4c_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t4c_v" class="collapse">
+                            <ol class="a">
+                                <li>  </li>
+                                <li>  </li>
+                                <li> $4 (\va \cdot \va) + 4(\va \cdot \vb) + \vb\cdot \vb$ </li>
+                                <li> $4 |\va|^2 + 4|\va||\vb|\cos(\va, \vb) + |\vb|^2$ </li>
+                                <li> $31$ </li>
+                                <li> $\sqrt{31}$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -408,7 +494,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t5" class="collapse">
                         <p>
                             Tehtävänä on selvittää, miten janan keskipisteeseen piirretty vektori saadaan lausuttua janan päätepisteisiin piirrettyjen vektoreiden avulla.
@@ -421,6 +506,20 @@ topnav: maa4
                             <li> Muotoile omin sanoin teoreema, jonka todistit tässä tehtävässä.
                         </ol>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t5_v" class="collapse">
+                            <ol class="a">
+                                <li>  </li>
+                                <li>  </li>
+                                <li> $\pv{AB} = \vb - \va$ </li>
+                                <li> $\pv{AM} = \frac{1}{2}\pv{AB}$ </li>
+                                <li> $\pv{OM} = \frac{1}{2}\va + \frac{1}{2}\vb$. </li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -434,7 +533,6 @@ topnav: maa4
                             </a>
                         </h1>
                     </header>
-
                     <div id="t-L5t5c" class="collapse">
                         <p>
                             Tehtävänä on osoittaa, että kolmion kaikki keskijanat leikkaavat toisensa samassa pisteessä ja tämä piste jakaa jokaisen keskijanan kolmion kärjestä lukien suhteessa $2:1$.
@@ -451,9 +549,25 @@ topnav: maa4
                             <li> Ilmaise vektori $\pv{AP}$ vektoreiden $\va$ ja $\vb$ avulla etsimällä reitti pisteestä $A$ pisteen $B$ kautta pisteeseen $P$. Edellisen kohdan tuloksesta on apua. </li>
                             <li> Nyt sinulla on kaksi esitystä vektorille $\pv{AP}$ vektoreiden $\va$ ja $\vb$ avulla. Muodosta niistä yhtälö ja ratkaise se teoreeman 11 avulla.</li>
                             <li> Missä suhteessa piste $P$ jakaa janan $AE$? Entä missä suhteessa piste $P$ jakaa janan $BF$? </li>
-                            <li> Olisiko tulos ollut erilainen, jos olisit käyttänyt keskijanan $BF$ sijaan kärjestä $C$ lähtevää keskijanaa?
+                            <li> Olisiko tulos ollut erilainen, jos olisit käyttänyt keskijanan $BF$ sijaan kärjestä $C$ lähtevää keskijanaa? </li>
                         </ol>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5c_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t5c_v" class="collapse">
+                            <ol class="a">
+                                <li>  </li>
+                                <li> $\pv{AE} = \frac{1}{2}\va + \frac{1}{2}\vb$ </li>
+                                <li> $\pv{AP} = t(\frac{1}{2}\va + \frac{1}{2}\vb)$ </li>
+                                <li> $\pv{BF} = -\va + \frac{1}{2}\vb$ </li>
+                                <li> $\pv{AP} = \va + s(-\va + \frac{1}{2}\vb)$ </li>
+                                <li> $t(\frac{1}{2}\va + \frac{1}{2}\vb) = \va + s(-\va + \frac{1}{2}\vb)$, ratkaisuksi saadaan $s = \frac{2}{3} = t$. </li>
+                                <li> Piste $P$ jakaa janan $AE$ suhteessa $2:1$ ja janan $BF$ suhteessa $2:1$.</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -499,6 +613,22 @@ topnav: maa4
                         <p>
                             <img src="/kurssit/maa4/kuvat/L4k40.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5b_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t5b_v" class="collapse">
+                            <ol class="a">
+                                <li>  </li>
+                                <li> $\pv{OE} = \frac{1}{2}\va + \frac{1}{2}\bar{d}$ </li>
+                                <li> $\pv{OF} = \frac{1}{2}\vb + \frac{1}{2}\vc$ </li>
+                                <li> $\pv{OP} = \frac{1}{2}\pv{OE} + \frac{1}{2}\pv{OF}$ </li>
+                                <li> $\pv{OP} = \frac{1}{4}\va + \frac{1}{4}\vb + \frac{1}{4}\vc + \frac{1}{4}\bar{d}$ </li>
+                                <li> Tulos olisi ollut sama, vaikka siihen olisi päädytty vähän eri tavalla. </li>
+                                <li> Kyllä, nämä janat leikkaavat toisensa yhdysjanojen keskipisteessä.</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -529,29 +659,41 @@ topnav: maa4
             </p>
         </div>
 
-        <div class="tehtavat">
-            <div class="tehtava" id="996f22a1-2159-42ca-b702-2ce39a9be970">
-                <header>
-                    <h1>
-                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5d">
-                            Vektoreiden yhdensuuntaisuus
+            <div class="tehtavat">
+                <div class="tehtava" id="996f22a1-2159-42ca-b702-2ce39a9be970">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5d">
+                                Vektoreiden yhdensuuntaisuus
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t-L5t5d" class="collapse">
+                        <p> 
+                            Tiedetään, että vektorit $\vv$ ja $\vw$ eivät ole yhdensuuntaisia eli $\vv \nparallel \vw$. Tehtävänä on määrittää sellainen luku $k$, että vektorit $2\vv + 3\vw$ ja $5\vv + k\vw$ ovat yhdensuuntaiset. 
+                        <ol class="a">
+                            <li> Millä ehdolla vektorit $2\vv + 3\vw$ ja $5\vv + k\vw$ ovat yhdensuuntaiset? Kertaa tarvittaessa yhdensuuntaisuuden määritelmä $xy$-koordinaatistoa käsittelevästä luvusta. </li>
+                            <li> Edellisessä kohdassa muodostit yhdensuuntaisuuden määritelmän avulla yhtälön. Muokkaa tätä yhtälöä niin, että saat muodostettua siitä yhtälöparin teoreeman 11 avulla. </li>
+                            <li> Ratkaise yhtälöpari. Mikä on etsitty luku $k$? </li>
+                            <li> Kun vektorit $2\vv + 3\vw$ ja $5\vv + k\vw$ ovat yhdensuuntaiset, ovatko ne saman- vai vastakkaissuuntaiset?</li>
+                        </ol>
+                        </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5d_v">
+                            VASTAUS
                         </a>
-                    </h1>
-                </header>
-
-                <div id="t-L5t5d" class="collapse">
-                    <p>
-                        Tiedetään, että vektorit $\vv$ ja $\vw$ eivät ole yhdensuuntaisia eli $\vv \nparallel \vw$. Tehtävänä on määrittää sellainen luku $k$, että vektorit $2\vv + 3\vw$ ja $5\vv + k\vw$ ovat yhdensuuntaiset.
-                    <ol class="a">
-                        <li> Millä ehdolla vektorit $2\vv + 3\vw$ ja $5\vv + k\vw$ ovat yhdensuuntaiset? Kertaa tarvittaessa yhdensuuntaisuuden määritelmä xy-koordinaatistoa käsittelevästä luvusta. </li>
-                        <li> Edellisessä kohdassa muodostit yhdensuuntaisuuden määritelmän avulla yhtälön. Muokkaa tätä yhtälöä niin, että saat muodostettua siitä yhtälöparin teoreeman 11 avulla. </li>
-                        <li> Ratkaise yhtälöpari. Mikä on etsitty luku $k$? </li>
-                        <li> Kun vektorit $2\vv + 3\vw$ ja $5\vv + k\vw$ ovat yhdensuuntaiset, ovatko ne saman- vai vastakkaissuuntaiset?</li>
-                    </ol>
-                    </p>
+                        </h2>
+                        <div id="t-L5t5d_v" class="collapse">
+                            <ol class="a">
+                                <li>  </li>
+                                <li>  </li>
+                                <li> $k = \frac{15}{2} = 7{,}5$ </li>
+                                <li> Samansuuntaiset. </li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <div class="teoria">
             <p>
@@ -575,24 +717,43 @@ topnav: maa4
                     </h1>
                 </header>
 
-                <div id="t-L5t6" class="collapse">
-                    <p> Tarkastele alla olevan kuvan suunnikasta $ABCD$.
-                    </p>
-                    <p>
-                        <img src="/kurssit/maa4/kuvat/L4k43.png" max-width: 100%; width: auto; height: auto;/>
-                    </p>
-                    <p>
-                    <ol class="a">
-                        <li> Ilmaise lävistäjävektorit $\pv{AC}$ ja $\pv{DB}$ vektoreiden $\va$ ja $\vb$ avulla.</li>
-                        <li> Laske pistetulo $\pv{AC} \cdot \pv{DB}$ edellisen kohdan merkintöjä käyttäen. Muista, että pistetulossa sulut voidaan kertoa auki tavalliseen tapaan. (Pistetulon laskusääntöjä löydät $xy$-koordinaatistoa käsittelevän luvun teoreemasta 3.)</li>
-                        <li> Kirjoita b-kohdan tulos vektoreiden $\va$ ja $\vb$ itseisarvojen avulla. Tarvittaessa voit tarkistaa teoreemasta 4, miten vektorin pistetulo itsensä kanssa liittyy vektorin itseisarvoon.</li>
-                        <li> Oletetaan, että suunnikkaan $ABCD$ lävistäjävektorit ovat toisiaan vastaan kohtisuorassa. Mitä voit silloin sanoa lävistäjävektoreiden pistetulosta? Tarvittaessa tarkista asia teoreemasta 6.</li>
-                        <li> Yhdistä c- ja d-kohtien tiedot. Voitko tästä päätellä, että $|\va|=|\vb|$? Selitä omin sanoin, miten ajattelet.</li>
-                    </ol>
-                    </p>
+                    <div id="t-L5t6" class="collapse">
+                        <p> Tarkastele alla olevan kuvan suunnikasta $ABCD$.
+                        </p>
+                        <p>
+                            <img src="/kurssit/maa4/kuvat/L4k43.png" max-width: 100%; width: auto; height: auto;/> 
+                        </p>
+                        <p>
+                        <ol class="a">
+                            <li> Ilmaise lävistäjävektorit $\pv{AC}$ ja $\pv{DB}$ vektoreiden $\va$ ja $\vb$ avulla.</li>
+                            <li> Laske pistetulo $\pv{AC} \cdot \pv{DB}$ edellisen kohdan merkintöjä käyttäen. Muista, että pistetulossa sulut voidaan kertoa auki tavalliseen tapaan. (Pistetulon laskusääntöjä löydät $xy$-koordinaatistoa käsittelevän luvun teoreemasta 3.)</li>
+                            <li> Kirjoita b-kohdan tulos vektoreiden $\va$ ja $\vb$ itseisarvojen avulla. Tarvittaessa voit tarkistaa teoreemasta 4, miten vektorin pistetulo itsensä kanssa liittyy vektorin itseisarvoon.</li>
+                            <li> Oletetaan, että suunnikkaan $ABCD$ lävistäjävektorit ovat toisiaan vastaan kohtisuorassa. Mitä voit silloin sanoa lävistäjävektoreiden pistetulosta? Tarvittaessa tarkista asia teoreemasta 6.</li>
+                            <li> Yhdistä c- ja d-kohtien tiedot. Voitko tästä päätellä, että $|\va|=|\vb|$? Selitä omin sanoin, miten ajattelet.</li>
+                        </ol>
+                        </p>
+                        <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t6_v">
+                            VASTAUS
+                        </a>
+                        </h2>
+                        <div id="t-L5t6_v" class="collapse">
+                            <ol class="a">
+                                <li> $\pv{AC} = \va + \vb$ ja $\pv{DB} = \vb - \va$ </li>
+                                <li> $\pv{AC} \cdot \pv{DB} = \vb \cdot \vb - \va \cdot \va$ </li>
+                                <li> $\pv{AC} \cdot \pv{DB} = |\vb|^2 - |\va|^2$ </li>
+                                <li> $\pv{AC} \cdot \pv{DB} = 0$ </li>
+                                <li> $|\vb|^2 - |\va|^2 = 0$</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        <div class="close-section">
+        <a data-toggle="collapse" class="collapsed" data-target="#geometriaa-vektoreiden-avulla">
+        Sulje kappale
+        </a>
+    </div>
         </div>
     </section>
 
@@ -616,7 +777,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t7">
                     <p>
                         Alla on kuvattuna säännöllinen kuusikulmio $ABCDEF$. Esitä vektoreiden $\vv$ ja $\vw$ avulla
@@ -631,6 +791,20 @@ topnav: maa4
                     <p>
                         <img src="/kurssit/maa4/kuvat/L4k44.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t7_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t7_v" class="collapse">
+                        <ol class="a">
+                            <li> $\pv{BF} = \vv - \vw$</li>
+                            <li> $\pv{BC} = \vv + \vw$</li>
+                            <li> $\pv{AC} = \vv + 2\vw$</li>
+                            <li> $\pv{AD} = 2\vv + 2\vw$</li>
+                            <li> $\pv{BE} + \pv{FC} + \pv{DA} = \bar{0}$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
@@ -642,7 +816,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t8">
                     <p>
                         Alla on kuvattuna säännöllinen oktaedri $ABCDEF$. Sen kaikki tahkot ovat tasasivuisia kolmioita. Esitä vektoreiden $\va$, $\vb$ ja $\vc$ avulla
@@ -656,6 +829,19 @@ topnav: maa4
                     <p>
                         <img src="/kurssit/maa4/kuvat/L4k45.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t8_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t8_v" class="collapse">
+                        <ol class="a">
+                            <li> $\pv{ED} = \vb - \vc$</li>
+                            <li> $\pv{AF} = \va + \vb - \vc$</li>
+                            <li> $\pv{CE} = \vc - \va - \vb$</li>
+                            <li> $\pv{FE} = 2\vc -\va - \vb$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
             <div class="tehtava" id="5279da1b-180f-48e3-bb9f-e97928f191ed">
@@ -666,7 +852,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t9">
                     <p>
                         Piirrä kolmio, jonka sivuvektorit $\va$, $\vb$ ja $\vc$ toteuttavat yhtälön
@@ -687,7 +872,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t10">
                     <p>
                         Missä suhteessa piste $P$ jakaa janan $AB$, jos
@@ -697,6 +881,18 @@ topnav: maa4
                         <li> $\pv{AB} = \dfrac{7}{4}\pv{AP}$?</li>
                     </ol>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t10_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t10_v" class="collapse">
+                        <ol class="a">
+                            <li> $1:2$</li>
+                            <li> $4:5$</li>
+                            <li> $4:3$</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
@@ -708,7 +904,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t11">
                     <p>
                         Alla on kuvattu suunnikas $ABCD$. Piste $P$ jakaa sivun $AB$ suhteessa $4:3$ ja piste $Q$ jakaa sivun $BC$ suhteessa $2:1$. Pisteiden $P$ ja $Q$ kautta on piirretty janat, jotka ovat yhdensuuntaiset suunnikkaan sivujen kanssa. Ilmaise vektoreiden $\va$, $\vb$ ja $\vc$ avulla
@@ -721,6 +916,18 @@ topnav: maa4
                     <p>
                         <img src="/kurssit/maa4/kuvat/L4k46.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t11_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t11_v" class="collapse">
+                        <ol class="a">
+                            <li> $\pv{OP} = \va + \frac{4}{7}\vb$</li>
+                            <li> $\pv{OQ} = \va + \vb + \frac{2}{3}\vc$</li>
+                            <li> $\pv{OR} = \va + \frac{4}{7}\vb + \frac{2}{3}\vc$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
@@ -732,119 +939,173 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t12">
                     <p>
                         Tason suuntien ilmaisemiseen käytettiin vektoreita $\vv$ ja $\vw$, jotka eivät olleet yhdensuuntaisia ($\vv \nparallel \vw$). Pisteestä $A$ kuljettiin ensin suuntaan, joka oli yhdensuuntainen vektorin $\va = 4\vv - 3\vw$ kanssa. Sen jälkeen liikuttiin suuntaan, joka oli yhdensuuntainen vektorin $\vb = 5\vv - 2\vw$ kanssa. Näin päädyttiin sellaiseen pisteeseen $B$, että $\pv{AB} = -10\vv - 3\vw$. Määritä ne kaksi vektoria, jotka muodostivat kuljetun reitin.
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t12_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t12_v" class="collapse">
+                        <p> Kuljetut vektorit olivat $20\vv - 15\vw$ ja $-30\vv + 12\vw$. </p>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="b3f09365-4351-46a4-aef2-40395a2ebf4a">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.2">
+                        <a data-target="#t-L5t13">
                             Vektorin kertominen reaaliluvulla
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.2">
-                    <p>  Oletetaan, että kumpikaan vektoreista $\vv$ ja $\vw$ ole nollavektori. Oletetaan lisäksi, että $\vw-3\vv=5(\vv-\vw)$. Perustele näiden tietojen avulla, että vektorit $\vv$ ja $\vw$ ovat yhdensuuntaiset. Ovatko ne saman- vai vastakkaissuuntaiset?
+                <div id="t-L5t13">
+                    <p>  
+                        Oletetaan, että kumpikaan vektoreista $\vv$ ja $\vw$ ole nollavektori. Oletetaan lisäksi, että $\vw-3\vv=5(\vv-\vw)$. Perustele näiden tietojen avulla, että vektorit $\vv$ ja $\vw$ ovat yhdensuuntaiset. Ovatko ne saman- vai vastakkaissuuntaiset?
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t13_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t13_v" class="collapse">
+                        <p> Vektorit $\vv$ ja $\vw$ ovat samansuuntaiset, sillä $\vw = \frac{4}{3}\vv$. </p>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="2f5ab52e-8630-4efd-800e-a453462eb092">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.2c">
+                        <a data-target="#t-L5t14">
                             Vektoreiden yhdensuuntaisuus
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.2c">
-                    <p>
-                        Tiedetään, että vektorit $\va$ ja $\vb$ eivät ole yhdensuuntaisia eli $\va \nparallel \vb$. Määritä kaikki luvut $k$, joilla vektorit $3\va + k\vb$ ja $4k\va + 3\vb$ ovat yhdensuuntaiset.
+                <div id="t-L5t14">
+                    <p> 
+                        Tiedetään, että vektorit $\va$ ja $\vb$ eivät ole yhdensuuntaisia eli $\va \nparallel \vb$. Määritä kaikki luvut $k$, joilla vektorit $3\va + k\vb$ ja $4k\va + 3\vb$ ovat yhdensuuntaiset. 
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t14_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t14_v" class="collapse">
+                        <p> $k = \pm\frac{3}{2}$ </p>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="c5c77168-fb7e-4cae-b56b-74b228796faa">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.2b">
+                        <a data-target="#t-L5t15">
                             Geometriaa vektoreiden avulla
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.2">
-                    <p>  Tehtävänä on osoittaa, että suunnikkaan lävistäjät puolittavat toisensa.
+                <div id="t-L5t15">
+                    <p>  
+                        Tehtävänä on osoittaa, että suunnikkaan lävistäjät puolittavat toisensa. 
                     <ol class="a">
                         <li> Piirrä vihkoosi mallikuva suunnikkaasta $ABCD$. Anna sen sivuvektoreille nimeksi $\va$ ja $\vb$.</li>
                         <li> Ilmaise suunnikkaan lävistäjävektorit vektoreiden $\va$ ja $\vb$ avulla.</li>
                         <li> Olkoon lävistäjien leikkauspiste $P$. Ilmaise vektori $\pv{AP}$ kahta erilaista reittiä vektoreiden $\va$ ja $\vb$ avulla.</li>
-                        <li> Muodosta tilanteesta yhtälö ja ratkaise se teoreeman 11 avulla.
-                        <li> Missä suhteessa piste $P$ jakaa lävistäjän $AC$? Entä lävistäjän $BD$? Selitä omin sanoin, mistä tämä nähdään.
+                        <li> Muodosta tilanteesta yhtälö ja ratkaise se teoreeman 11 avulla. </li>
+                        <li> Missä suhteessa piste $P$ jakaa lävistäjän $AC$? Entä lävistäjän $BD$? Selitä omin sanoin, mistä tämä nähdään. </li>
                     </ol>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t15_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t15_v" class="collapse">
+                        <ol class="a">
+                            <li> </li>
+                            <li> Esimerkiksi $\va + \vb$ ja $\va - \vb$.</li>
+                            <li> Esimerkiksi $\pv{AP} = t(\va + \vb)$ ja $\pv{AP} = \vb + s(\va - \vb)$.</li>
+                            <li> Ratkaisuksi saadaan $s = \frac{1}{2}$ ja $t = \frac{1}{2}$ </li>
+                            <li> Piste $P$ jakaa lävistäjän $AC$ suhteessa $1:1$, samoin lävistäjän $BD$. </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-
 
             <div class="tehtava" id="35917d33-309e-4432-9744-1db601000974">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.13">
+                        <a data-target="#t-L5t16">
                             Vektorin pituus ja pistetulo
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.13">
-                    <p> Tiedetään, että vektorin pistetulo itsensä kanssa on sama kuin sen pituuden neliö eli $\va \cdot \va = |\va|^2$.
+                <div id="t-L5t16">
+                    <p> Tiedetään, että vektorin pistetulo itsensä kanssa on sama kuin sen pituuden neliö eli $\va \cdot \va = |\va|^2$. 
                     <ol class="a">
                         <li> Muokkaa tämän tiedon ja pistetulon laskusääntöjen avulla lauseke $|\vv + \vw|^2$ muotoon, jossa näkyy vektorin $\vv$ pituus $|\vv|$ ja vektorin $\vw$ pituus $|\vw|$.</li>
                         <li> Mikä on vektorin $\vv + \vw$ pituus, jos $|\vv|=7, |\vw|=5$ ja $\vv\cdot \vw = 1$? Edellisestä kohdasta on apua.</li>
                     </ol>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t16_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t16_v" class="collapse">
+                        <ol class="a">
+                            <li> $|\vv + \vw|^2 = |\vv|^2 + 2(\vv \cdot \vw) + |\vw|^2$</li>
+                            <li> $|\vv + \vw| = \sqrt{72} = 2\sqrt{19}$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="d1838c61-5bcb-4107-9dbe-34e9349a4dfe">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.6">
+                        <a data-target="#t-L5t17">
                             Vektorin pituus ja pistetulo
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.6">
-                    <p> Tiedetään, että $|\va| = 5$ ja $|\vb| = 9$. Vektoreiden $\va$ ja $\vb$ välinen kulma on $\sphericalangle(\va,\vb)= 72^\circ$.
+                <div id="t-L5t17">
+                    <p> Tiedetään, että $|\va| = 5$ ja $|\vb| = 9$. Vektoreiden $\va$ ja $\vb$ välinen kulma on $\sphericalangle(\va,\vb)= 72^\circ$.  </p> 
                     <ol class="a">
                         <li> Laske vektorin $\va-\vb$ pituus.</li>
                         <li> Laske vektorin $\va+\vb$ pituus.</li>
                     </ol>
-                    Piirrä tilanteesta mallikuva ja käytä sitä apuna tehtävän ratkaisussa.
+                    <p>
+                    Piirrä tilanteesta mallikuva ja käytä sitä apuna tehtävän ratkaisussa. Anna vastaukset kahden merkitsevän numeron tarkkuudella.
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t17_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t17_v" class="collapse">
+                        <ol class="a">
+                            <li> $|\va-\vb| \approx 8{,}8$; tarkka arvo $\sqrt{\frac{257 - 45\sqrt{5}}{2}}$</li>
+                            <li> $|\va + \vb| \approx 11{,}6$; tarkka arvo $\sqrt{\frac{167 + 45\sqrt{5}}{2}}$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="895f5509-47d2-49ca-9e37-93c642dc6f60">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.6b">
+                        <a data-target="#t-L5t18">
                             Geometriaa vektoreiden avulla
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.6b">
-                    <p>
-                        Tehtävänä on osoittaa, että puoliympyrän sisältämä kehäkulma on suora kulma. Alla olevassa kuvassa on näkyvissä yksi puoliympyrän sisältämä kehäkulma $\sphericalangle(\pv{PA},\pv{PB})$.
+                <div id="t-L5t18">
+                    <p> Tehtävänä on osoittaa, että puoliympyrän sisältämä kehäkulma on suora kulma. Alla olevassa kuvassa on näkyvissä yksi puoliympyrän sisältämä kehäkulma $\sphericalangle(\pv{PA},\pv{PB})$. Piste $O$ on ympyrän keskipiste.
                     <ol class="a">
                         <li> Ilmaise vektorit $\pv{PA}$ ja $\pv{PB}$ vektoreiden $\va = \pv{OA}$ ja $\bar{p} = \pv{OP}$ avulla. </li>
                         <li> Sievennä pistetulo $\pv{PA} \cdot \pv{PB}$ pistetulon ominaisuuksien avulla.</li>
@@ -855,8 +1116,24 @@ topnav: maa4
                     <p>
                         <img src="/kurssit/maa4/kuvat/L4k47.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t18_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t18_v" class="collapse">
+                        <ol class="a">
+                            <li> $\pv{PA} = \va - \bar{p}$ ja $\pv{PB} = -\va - \bar{p}$. </li>
+                            <li> $\pv{PA} \cdot \pv{PB} = |\bar{p}|^2 - |\va|^2$ </li>
+                            </ol>
+                    </div>
                 </div>
             </div>
+        <div class="close-section">
+        <a data-toggle="collapse" class="collapsed" data-target="#L5tehtavasarja2">
+        Sulje kappale
+        </a>
+    </div>
 
             <!-- Tähän loppui piilotus -->
         </div>
@@ -882,7 +1159,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t20">
                     <p>
                         Perustele, että kolmion kahden sivun keskipisteiden yhdysjana on kolmion kolmannen sivun suuntainen ja pituudeltaan puolet sen pituudesta.
@@ -901,7 +1177,6 @@ topnav: maa4
                         </a>
                     </h1>
                 </header>
-
                 <div id="t-L5t21">
                     <p>
                         Alla olevan kuvan suunnikkaassa piste $H$ jakaa sivun $AD$ suhteessa $1:1$ ja piste $P$ jakaa lävistäjän $BD$ suhteessa $1:1$. Piste $F$ jakaa sivun $DC$ suhteessa $1:2$ ja piste $E$ suhteessa $2:1$. Merkitään $\vv = \pv{AB}$ ja $\vw = \pv{AD}$. Esitä vektoreiden $\vv$ ja $\vw$ avulla
@@ -914,6 +1189,18 @@ topnav: maa4
                     <p>
                         <img src="/kurssit/maa4/kuvat/L4k50.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t21_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t21_v" class="collapse">
+                        <ol class="a">
+                            <li> $\pv{FH} = -\frac{1}{3}\vv - \frac{1}{2}\vw$</li>
+                            <li> $\pv{PE} = \frac{1}{6}\vv + \frac{1}{2}\vw$</li>
+                            <li> $\pv{FP} = \frac{1}{6}\vv - \frac{1}{2}\vw$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
@@ -1006,47 +1293,65 @@ topnav: maa4
             <div class="tehtava" id="9d67214b-1b25-416c-8326-da410cdbff8b">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.3">
+                        <a data-target="#t-L5t46">
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.3">
-                    <p> Tiedetään, että vektoreista $\va$ ja $\vb$ kumpikaan ei ole nollavektori. Lisäksi tiedetään, että $\va \nparallel \vb$. Onko mahdollista, että $-2\va + 15\vb = \bar{0}$? Selitä, miten ratkaisit tehtävän.
+                <div id="t-L5t46">
+                    <p> 
+                        Tiedetään, että vektoreista $\va$ ja $\vb$ kumpikaan ei ole nollavektori. Lisäksi tiedetään, että $\va \nparallel \vb$. Onko mahdollista, että $-2\va + 15\vb = \bar{0}$? Selitä, miten ratkaisit tehtävän.
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t46_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t46_v" class="collapse">
+                        <p> Ei ole mahdollista, sillä yhtälöstä seuraisi, että $\va = \frac{15}{2}\vb$. Kuitenkin tiedetään, että $\va \nparallel \vb$. </p>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="71c57591-4003-45c1-8f14-2b086d6e61cc">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.5">
+                        <a data-target="#t-L5t47">
 
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.5">
-                    <p> Kolmiosta $ABC$ tiedetään, että sivun $AB$ pituus on 4 ja sivun $AC$ pituus on 6. Kuinka pitkä on sivu $BC$, jos
+                <div id="t-L5t47">
+                    <p> 
+                        Kolmiosta $ABC$ tiedetään, että sivun $AB$ pituus on 4 ja sivun $AC$ pituus on 6. Kuinka pitkä on sivu $BC$, jos 
                     <ol class="a">
                         <li> pistetulo $\pv{AB} \cdot \pv{AC} = 5$</li>
                         <li> pistetulo $\pv{AB} \cdot \pv{AC} = -5$.</li>
                     </ol>
                     Piirrä tilanteesta mallikuva.
                     </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t47_v">
+                        VASTAUS
+                    </a>
+                    </h2>
+                    <div id="t-L5t47_v" class="collapse">
+                        <ol class="a">
+                            <li> $|\pv{BC}| = \sqrt{42}$</li>
+                            <li> $|\pv{BC}| = \sqrt{62}$.</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
             <div class="tehtava" id="fa1f83ba-ab2e-4b67-b790-e96883b7fe06">
                 <header>
                     <h1>
-                        <a data-target="#t-setti4.11">
+                        <a data-target="#t-L5t48">
                         </a>
                     </h1>
                 </header>
-
-                <div id="t-setti4.11">
-                    <p> Kolmion $OAB$ sivuvektorit $\va = \pv{OA}$ ja $\vb = \pv{OB}$ toteuttavat ehdon $\va \cdot \va = 2\va \cdot \vb$. Osoita, että kolmio $OAB$ on tasakylkinen. [YO S2008, 11]
+                <div id="t-L5t48">
+                    <p> Kolmion $OAB$ sivuvektorit $\va = \pv{OA}$ ja $\vb = \pv{OB}$ toteuttavat ehdon $\va \cdot \va = 2\va \cdot \vb$. Osoita, että kolmio $OAB$ on tasakylkinen. [Pitkä S2008/11]
                     </p>
                 </div>
             </div>
@@ -1066,22 +1371,31 @@ topnav: maa4
                     </p>
                 </div>
             </div>
+        <div class="close-section">
+        <a data-toggle="collapse" class="collapsed" data-target="#L5tehtavasarja3">
+        Sulje kappale
+        </a>
+    </div>
         </div>
     </section>
 
     <section class="panel">
         <header>
             <h1>
-                <a data-toggle="collapse" class="collapsed" data-target="#L4itsearviointi">
+                <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
                     Itsearviointitehtävät
                 </a>
             </h1>
         </header>
-        <div id="L4itsearviointi" class="collapse">
+        <div id="L5itsearviointi" class="collapse">
             <p>
-                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1424">itsearviointitesti opetus.tv:n polku-palvelussa</a>. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla.
-
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1424">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
             </p>
+        <div class="close-section">
+        <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
+        Sulje kappale
+        </a>
+    </div>
         </div>
     </section>
 </article>

@@ -9,6 +9,18 @@ header a,
         padding: 2px;
 }
 
+.close-section a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 0 -15px -15px -15px;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+.close-section a:hover {
+    background-color: #eee;
+  }
+
 /**
  * NAVIGATION 
  */
