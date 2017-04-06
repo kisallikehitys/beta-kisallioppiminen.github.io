@@ -26,7 +26,7 @@ resources:
     - "/js/common.js"
     - "//code.jquery.com/jquery-2.2.4.min.js"
     # - "/js/jquery.js"
-    # - "/js/jquery-ui.js"
+    - "/js/jquery-ui.js"
     - "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
     - "/js/session.js"
     - "/js/view.js"
