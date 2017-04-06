@@ -6763,7 +6763,7 @@ button.close {
 }
 
 .navbar-inverse {
-  background-color: #C4DA87;
+  background-color: rgba(196, 218, 135, 0.5);
   border-color: #C4DA87;
 }
 
