@@ -30,7 +30,7 @@ describe('Document.cookie', function() {
     document.deleteCookie('userId');
     expect(document.cookie).not.toBe('userId=7; userFirstName=Matti; test=testcase');
     expect(document.cookie).toBe('userFirstName=Matti; test=testcase');
-  })
+  });
 
 });
 
