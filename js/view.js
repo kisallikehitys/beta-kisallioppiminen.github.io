@@ -31,6 +31,8 @@ class View {
       ddomain = '';
     }
 
+    console.log('ddomain is ' + ddomain);
+
     img.setAttribute('src', ddomain + '/img/google-login.png');
     img.setAttribute('alt', 'Google-nappula');
 
@@ -136,13 +138,13 @@ class View {
 
 
     let kirjauduUlos = [
-    {key: 'href', value: BACKEND_BASE_URL + 'users/sign_out.html'},
+    {key: 'href', value: BACKEND_BASE_URL + 'users/sign_out'},
     {key: 'rel', value: 'nofollow'},
     {key: 'data-method', value: 'GET'}
     ];
     let kirjauduUlosClickEvent = function () {
       Session.logout();
-    }
+    };
 
     // Append everything to dropdown menu
     dropdownMenu.appendChild(this._createLink(kurssihallinta, 'Kurssihallinta'));
