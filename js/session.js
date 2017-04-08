@@ -41,11 +41,14 @@ class Session {
     backend.get('user/get_session_user')
       .then(
         function fulfilled(data) {
+          console.log(data);
           const session_user = data;
 
           if (session_user.has_sign_in !== null && session_user.has_sign_in !== undefined) {
             document.cookie = 'userId=' + session_user.has_sign_in.id;
             document.cookie = 'userFirstName=' + session_user.has_sign_in.first_name;
+            document.cookie = 'teacher=' + session_user.has_sign_in.teacher;
+            document.cookie = 'student=' + session_user.has_sign_in.student;
           }
         },
         function rejected() {
@@ -71,6 +74,14 @@ class Session {
    */
   static getUserId() {
     return document.getCookie('userId');
+  }
+
+  static isTeacher() {
+    return document.getCookie('teacher');
+  }
+
+  static isStudent() {
+    return document.getCookie('student');
   }
 
   /** 
