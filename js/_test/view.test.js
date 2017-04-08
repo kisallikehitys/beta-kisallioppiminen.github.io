@@ -66,7 +66,7 @@ describe('Navigation view', function() {
       expect(links[3].innerHTML).toBe('Kirjaudu ulos');
     });
     it('should have "Kirjaudu ulos" pointing to the correct URL', function() {
-      expect(links[3].href).toBe(BACKEND_BASE_URL + 'users/sign_out.html');
+      expect(links[3].href).toBe(BACKEND_BASE_URL + 'users/sign_out');
     })
   });
 });
