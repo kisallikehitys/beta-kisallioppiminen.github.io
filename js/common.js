@@ -5,7 +5,7 @@ if (typeof HTMLDocument !== 'undefined') {
     if (parts.length == 2) return parts.pop().split(';').shift();
   };
   HTMLDocument.prototype.deleteCookie = function(key) {
-    document.cookie = key + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = key + '=; path=/; expires=' + new Date(0).toUTCString();
   };
 } else {
   /**
@@ -21,7 +21,7 @@ if (typeof HTMLDocument !== 'undefined') {
    * @param {String} key - Destroy cookie by value.
    */
   Document.prototype.deleteCookie = function(key) {
-    document.cookie = key + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = key + '=; path=/; expires=' + new Date(0).toUTCString();
   };
 }
 
