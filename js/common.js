@@ -32,7 +32,7 @@ console.log("In environment settings");
 console.log("domain:");
 console.log(document.domain);
 //if in localhost
-if (document.domain == "localhost") {
+if (document.domain == "localhost" || document.domain == "127.0.0.1") {
   console.log("settign local urls!");
   temp_backend_base_url = "https://pure-inlet-98383.herokuapp.com/";
   temp_frontend_base_url = "http://localhost:4000/";
