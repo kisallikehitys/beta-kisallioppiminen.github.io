@@ -173,8 +173,8 @@ class Button {
         function fulfilled(data) {
           obj._markStats(data);
         },
-        function rejected() {
-          console.warn("Not a teacher.");
+        function rejected(data) {
+          console.warn(data);
         }
       );
   }
@@ -240,8 +240,10 @@ class Button {
       }
     }
     this._getStats(this.courseData.course_id);
-    
-    $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
+    console.log(this.courseData.coursekey);
+    if (this.courseData.coursekey.length > 1) {
+      $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);      
+    }
     // insert button
     if (keys.length > 1) {
       $('html body main.has-atop article article section header:first').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
