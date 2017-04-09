@@ -63,13 +63,15 @@ topnav: maa5
         </header>
         <div id="EtaisyysLukusuora" class="collapse">
 
-            <p>
-                Lukusuoraan tutustuttiin jo kurssilla <a href="http://kisallioppiminen.fi/kurssit/may1/luvutLaskutoimitukset/">MAY1</a>. Jokaista lukusuoran pistettä vastaa reaaliluku, ja jokaista reaalilukua vastaa lukusuoran piste. 
-                <br>
-                <img src="/kurssit/may1/kuvat/reaaliK2.png" max-width: 100%; width: auto; height: auto;/> 
-                <!-- <br>
-                Tässä kappaleessa tutkitaan lukusuoran pisteiden välisiä etäisyyksiä. -->
-            </p>
+            <div class="teoria">
+                <p>
+                    Lukusuoraan tutustuttiin jo kurssilla <a href="http://kisallioppiminen.fi/kurssit/may1/luvutLaskutoimitukset/">MAY1</a>. Jokaista lukusuoran pistettä vastaa reaaliluku, ja jokaista reaalilukua vastaa lukusuoran piste.
+                    <br>
+                    <img src="/kurssit/may1/kuvat/reaaliK2.png" max-width: 100%; width: auto; height: auto;/>
+                    <!-- <br>
+                    Tässä kappaleessa tutkitaan lukusuoran pisteiden välisiä etäisyyksiä. -->
+                </p>
+            </div>
 
             <!-- <div class="tehtavat">
                 <div class="tehtava" id="01e7d2ed-21fc-4423-91ec-31aef587266e">
@@ -96,16 +98,18 @@ topnav: maa5
                 </div>
             </div> -->
 
-            <p>
-                Lukusuoran pisteiden välisten etäisyyksien ilmoittamiseen voidaan käyttää itseisarvoa, joka määritellään seuraavasti:
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: ITSEISARVO</h3>
+            <div class="teoria">
                 <p>
-                    Luvun $a$ <em>itseisarvo</em> $\left|a\right|$ ilmaisee luvun $a$ etäisyyden luvusta nolla lukusuoralla.
-                    <br>
+                    Lukusuoran pisteiden välisten etäisyyksien ilmoittamiseen voidaan käyttää itseisarvoa, joka määritellään seuraavasti:
                 </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: ITSEISARVO</h3>
+                    <p>
+                        Luvun $a$ <em>itseisarvo</em> $\left|a\right|$ ilmaisee luvun $a$ etäisyyden luvusta nolla lukusuoralla.
+                        <br>
+                    </p>
+                </div>
             </div>
 
             <div class="tehtavat">
@@ -166,36 +170,40 @@ topnav: maa5
                 </div>
             </div>
 
-            <p>
-                Edellisen tehtävän havainnot voidaan koota seuraavaksi teoreemaksi:
-            </p>
-
-            <div class="theorem" id="ITSEISARVO">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Luvun $a$ itseisarvolle pätee
-                    $$
-                        \left|a\right| = \left\{\begin{aligned}
-                                &a, \quad \text{ jos $a \geq 0$} \\
-                                -&a, \quad \text{ jos $a < 0$.}
-                            \end{aligned}\right.
-                    $$
+                    Edellisen tehtävän havainnot voidaan koota seuraavaksi teoreemaksi:
                 </p>
-                <div class="proof">
-                    <p>
-                       Perustelu: 
-                       <ul>
-                            <li> Jos luku $a$ on positiivinen tai nolla, on sen etäisyys luvusta nolla yhtä suuri kuin luku $a$. Esimerkiksi luvun $5$ etäisyys luvusta nolla on $5$. </li>
-                            <li> Jos luku $a$ on negatiivinen, saadaan sen etäisyys luvusta nolla ilmaistua vastaluvun avulla. Esimerkiksi luvun $-9$ etäisyys luvusta nolla on $9 = -(-9)$.</li>
-                       </ul>
-                        
-                    </p>
-                </div>
-            </div>
 
-            <p>
-                Kahdella eri luvulla voi olla sama itseisarvo. Tätä ilmiötä tutkitaan seuraavassa tehtävässä.
-            </p>
+
+                <div class="theorem" id="ITSEISARVO">
+                    <h3>TEOREEMA</h3>
+                    <p>
+                        Luvun $a$ itseisarvolle pätee
+                        $$
+                            \left|a\right| = \left\{\begin{aligned}
+                                    &a, \quad \text{ jos $a \geq 0$} \\
+                                    -&a, \quad \text{ jos $a < 0$.}
+                                \end{aligned}\right.
+                        $$
+                    </p>
+                    <div class="proof">
+                        <p>
+                           Perustelu:
+                           <ul>
+                                <li> Jos luku $a$ on positiivinen tai nolla, on sen etäisyys luvusta nolla yhtä suuri kuin luku $a$. Esimerkiksi luvun $5$ etäisyys luvusta nolla on $5$. </li>
+                                <li> Jos luku $a$ on negatiivinen, saadaan sen etäisyys luvusta nolla ilmaistua vastaluvun avulla. Esimerkiksi luvun $-9$ etäisyys luvusta nolla on $9 = -(-9)$.</li>
+                           </ul>
+
+                        </p>
+                    </div>
+                </div>
+
+
+                <p>
+                    Kahdella eri luvulla voi olla sama itseisarvo. Tätä ilmiötä tutkitaan seuraavassa tehtävässä.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="e0c10178-450e-4ac2-a612-3e3dabc03666">
@@ -218,34 +226,37 @@ topnav: maa5
                 </div>
             </div>
 
-            <p>
-                Seuraavan teoreeman mukaan lukujen itseisarvot ovat yhtä suuret, jos ja vain jos luvut ovat samat tai toistensa vastaluvut:
-            </p>
-
-            <div class="theorem" id="ITSEISARVOJEN YHTÄSUURUUS">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    $\left|a\right| = \left|b\right|$, jos ja vain jos $a = b$ tai $a = -b$.
+                    Seuraavan teoreeman mukaan lukujen itseisarvot ovat yhtä suuret, jos ja vain jos luvut ovat samat tai toistensa vastaluvut:
                 </p>
-                <div class="proof">
-                    <p>
-                       Perustelu: 
-                       <ul>
-                            <li> Oletetaan, että $\left|a\right| = \left|b\right|$ eli lukujen $a$ ja $b$ itseisarvot ovat samat. Luvut $a$ ja $b$ ovat siten lukusuoralla yhtä kaukana luvusta nolla. Ne ovat siis samat tai toistensa vastaluvut. Toisin sanottuna $a = b$ tai $a = -b$. </li>
-                            <li> Oletetaan, että $a = b$ tai $a = -b$. Tutkitaan kumpikin tapaus:
-                                <ul>
-                                    <li> Jos $a = b$ eli luvut ovat samat, myös niiden itseisarvot ovat samat eli $\left|a\right| = \left|b\right|$.</li>
-                                    <li> Jos $a = -b$ eli luvut ovat toistensa vastaluvut, ne ovat lukusuoralla kuitenkin yhtä kaukana luvusta nolla. Siten niillä on sama itseisarvo eli $\left|a\right| = \left|b\right|$.</li>
-                                </ul>
-                            </li>
-                       </ul>
-                    </p>
-                </div>
-            </div>
 
-            <p>
-                Luvun itseisarvo ilmaisee luvun etäisyyden nollasta. Tutkitaan seuraavaksi, miten itseisarvon avulla voidaan ilmaista kahden nollasta poikkeavan luvun välinen etäisyys.
-            </p>
+
+                <div class="theorem" id="ITSEISARVOJEN YHTÄSUURUUS">
+                    <h3>TEOREEMA</h3>
+                    <p>
+                        $\left|a\right| = \left|b\right|$, jos ja vain jos $a = b$ tai $a = -b$.
+                    </p>
+                    <div class="proof">
+                        <p>
+                           Perustelu:
+                           <ul>
+                                <li> Oletetaan, että $\left|a\right| = \left|b\right|$ eli lukujen $a$ ja $b$ itseisarvot ovat samat. Luvut $a$ ja $b$ ovat siten lukusuoralla yhtä kaukana luvusta nolla. Ne ovat siis samat tai toistensa vastaluvut. Toisin sanottuna $a = b$ tai $a = -b$. </li>
+                                <li> Oletetaan, että $a = b$ tai $a = -b$. Tutkitaan kumpikin tapaus:
+                                    <ul>
+                                        <li> Jos $a = b$ eli luvut ovat samat, myös niiden itseisarvot ovat samat eli $\left|a\right| = \left|b\right|$.</li>
+                                        <li> Jos $a = -b$ eli luvut ovat toistensa vastaluvut, ne ovat lukusuoralla kuitenkin yhtä kaukana luvusta nolla. Siten niillä on sama itseisarvo eli $\left|a\right| = \left|b\right|$.</li>
+                                    </ul>
+                                </li>
+                           </ul>
+                        </p>
+                    </div>
+                </div>
+
+                <p>
+                    Luvun itseisarvo ilmaisee luvun etäisyyden nollasta. Tutkitaan seuraavaksi, miten itseisarvon avulla voidaan ilmaista kahden nollasta poikkeavan luvun välinen etäisyys.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="72afbc46-54d1-4712-a020-14ebc79430a4">
@@ -272,49 +283,51 @@ topnav: maa5
                 </div>
             </div>
 
-            <p>
-                Edellisen tehtävän havainnot voidaan koota seuraavaksi teoreemaksi:
-            </p>
-
-            <div class="theorem" id="ETÄISYYS LUKUSUORALLA">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Lukujen $a$ ja $b$ välinen etäisyys lukusuoralla on $\left|a-b\right|$.
+                    Edellisen tehtävän havainnot voidaan koota seuraavaksi teoreemaksi:
                 </p>
-                <div class="proof">
+
+                <div class="theorem" id="ETÄISYYS LUKUSUORALLA">
+                    <h3>TEOREEMA</h3>
                     <p>
-                       Perustelu: Tutkitaan erikseen kolme mahdollista tapausta:
-                   </p>
-                       <ol>
-                            <li> 
-                                Oletetaan, että $a > b$. Lukujen $a$ ja $b$ välinen etäisyys on $a-b$: 
-                                <br>
-                                <img src="/kurssit/maa5/kuvat/k030.png" max-width: 100%; width: auto; height: auto;/>
-                                Toisaalta erotus $a-b$ on positiivinen, joten $\left|a-b\right| = a-b$. 
-                                <br>
-                            </li>
-                            <li> 
-                                Oletetaan, että $a = b$. Lukujen $a$ ja $b$ välinen etäisyys on $0$: 
-                                <br>
-                                <img src="/kurssit/maa5/kuvat/k032.png" max-width: 100%; width: auto; height: auto;/>
-                                Toisaalta erotus $a - b = 0$, joten $\left|a-b\right| = \left|0\right| = 0$. 
-                                <br>
-                            </li>
-                            <li> 
-                                Oletetaan, että $a < b$. Lukujen $a$ ja $b$ välinen etäisyys on $b-a$:
-                                <br>
-                                <img src="/kurssit/maa5/kuvat/k031.png" max-width: 100%; width: auto; height: auto;/>
-                                Toisaalta erotus $a-b$ on negatiivinen, joten 
-                                \begin{align*}
-                                \left|a-b\right| &= -(a-b) \\
-                                &= -a+b \\
-                                &= b-a.
-                                \end{align*}
-                            </li>
-                       </ol>
-                    <p>
-                        Havaitaan, että kaikissa tapaukissa lukujen $a$ ja $b$ välinen etäisyys on yhtä suuri kuin erotuksen $a-b$ itseisarvo $\left|a-b\right|$.
+                        Lukujen $a$ ja $b$ välinen etäisyys lukusuoralla on $\left|a-b\right|$.
                     </p>
+                    <div class="proof">
+                        <p>
+                           Perustelu: Tutkitaan erikseen kolme mahdollista tapausta:
+                       </p>
+                           <ol>
+                                <li>
+                                    Oletetaan, että $a > b$. Lukujen $a$ ja $b$ välinen etäisyys on $a-b$:
+                                    <br>
+                                    <img src="/kurssit/maa5/kuvat/k030.png" max-width: 100%; width: auto; height: auto;/>
+                                    Toisaalta erotus $a-b$ on positiivinen, joten $\left|a-b\right| = a-b$.
+                                    <br>
+                                </li>
+                                <li>
+                                    Oletetaan, että $a = b$. Lukujen $a$ ja $b$ välinen etäisyys on $0$:
+                                    <br>
+                                    <img src="/kurssit/maa5/kuvat/k032.png" max-width: 100%; width: auto; height: auto;/>
+                                    Toisaalta erotus $a - b = 0$, joten $\left|a-b\right| = \left|0\right| = 0$.
+                                    <br>
+                                </li>
+                                <li>
+                                    Oletetaan, että $a < b$. Lukujen $a$ ja $b$ välinen etäisyys on $b-a$:
+                                    <br>
+                                    <img src="/kurssit/maa5/kuvat/k031.png" max-width: 100%; width: auto; height: auto;/>
+                                    Toisaalta erotus $a-b$ on negatiivinen, joten
+                                    \begin{align*}
+                                    \left|a-b\right| &= -(a-b) \\
+                                    &= -a+b \\
+                                    &= b-a.
+                                    \end{align*}
+                                </li>
+                           </ol>
+                        <p>
+                            Havaitaan, että kaikissa tapaukissa lukujen $a$ ja $b$ välinen etäisyys on yhtä suuri kuin erotuksen $a-b$ itseisarvo $\left|a-b\right|$.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -389,52 +402,54 @@ topnav: maa5
                 </div>
             </div>
 
-            <p>
-                Tutkitaan lopuksi vielä hiukan itseisarvojen ominaisuuksia. Joissakin tilanteissa joudutaan tarkastelemaan tulojen tai osamäärien itseisarvoja. Esimerkiksi lukujen $5k-n$ ja $8k-4n$ väliseksi etäisyydeksi saadaan
-                \begin{align*}
-                \left|(5k-n) - (8k-4n)\right| &= \left|5k-8k - n + 4n\right| \\
-                &= \left|-3k + 3n\right| \\
-                &= \left|-3(k-n)\right|
-                \end{align*}
-                Miten suuri tämä etäisyys on verrattuna lukujen $k$ ja $n$ väliseen etäisyyteen $\left|k-n\right|$? Tähän kysymykseen vastaamisessa auttaa seuraava teoreema:
-            </p>
-
-            <div class="theorem" id="TULON JA OSAMÄÄRÄN ITSEISARVO">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Tulon itseisarvo on yhtä suuri kuin itseisarvojen tulo:
-                    $$\left|ab\right| = \left|a\right|\left|b\right|$$
-                    Osamäärän itseisarvo on yhtä suuri kuin itseisarvojen osamäärä:
-                    $$\left|\frac{a}{b}\right| = \frac{\left|a\right|}{\left|b\right|}$$
+                    Tutkitaan lopuksi vielä hiukan itseisarvojen ominaisuuksia. Joissakin tilanteissa joudutaan tarkastelemaan tulojen tai osamäärien itseisarvoja. Esimerkiksi lukujen $5k-n$ ja $8k-4n$ väliseksi etäisyydeksi saadaan
+                    \begin{align*}
+                    \left|(5k-n) - (8k-4n)\right| &= \left|5k-8k - n + 4n\right| \\
+                    &= \left|-3k + 3n\right| \\
+                    &= \left|-3(k-n)\right|
+                    \end{align*}
+                    Miten suuri tämä etäisyys on verrattuna lukujen $k$ ja $n$ väliseen etäisyyteen $\left|k-n\right|$? Tähän kysymykseen vastaamisessa auttaa seuraava teoreema:
                 </p>
-                <div class="proof">
+
+                <div class="theorem" id="TULON JA OSAMÄÄRÄN ITSEISARVO">
+                    <h3>TEOREEMA</h3>
                     <p>
-                       Perustelu: Molemmat yhtälöt voidaan perustella teoreeman 1 avulla tutkimalla neljä mahdollista tapausta:
-                   </p>
-                       <ol>
-                            <li> $a \geq 0$ ja $b \geq 0$ </li>
-                            <li> $a \geq 0$ ja $b < 0$ </li>
-                            <li> $a < 0$ ja $b \geq 0$ </li>
-                            <li> $a < 0$ ja $b < 0$. </li>
-                       </ol>
-                    <p>
-                        Huomaa, että osamäärää koskevassa yhtälössä $b \neq 0$, sillä muuten osamäärä ei ole määritelty.
-                   </p>
-                    <p>
-                        Tarkastellaan malliksi tulon itseisarvon tapaus 2: 
-                        <br>
-                        Oletetaan, että $a \geq 0$ ja $b < 0$. Tällöin teoreeman 1 mukaan
-                        \begin{align*}
-                        \left|a\right| &= a \\
-                        \left|b\right| &= -b,
-                        \end{align*}
-                        joten 
-                        $$\left|a\right|\left|b\right| = a \cdot (-b) = \textcolor{red}{-ab}.$$
-                        Toisaalta koska $a \geq 0$ ja $b < 0$, niin $ab \leq 0$ ja teoreeman 1 mukaan
-                        $$\left|ab\right| = \textcolor{red}{-ab}.$$
-                        Siis tässä tapauksessa
-                        $$\left|ab\right| = \left|a\right|\left|b\right|.$$
+                        Tulon itseisarvo on yhtä suuri kuin itseisarvojen tulo:
+                        $$\left|ab\right| = \left|a\right|\left|b\right|$$
+                        Osamäärän itseisarvo on yhtä suuri kuin itseisarvojen osamäärä:
+                        $$\left|\frac{a}{b}\right| = \frac{\left|a\right|}{\left|b\right|}$$
                     </p>
+                    <div class="proof">
+                        <p>
+                           Perustelu: Molemmat yhtälöt voidaan perustella teoreeman 1 avulla tutkimalla neljä mahdollista tapausta:
+                       </p>
+                           <ol>
+                                <li> $a \geq 0$ ja $b \geq 0$ </li>
+                                <li> $a \geq 0$ ja $b < 0$ </li>
+                                <li> $a < 0$ ja $b \geq 0$ </li>
+                                <li> $a < 0$ ja $b < 0$. </li>
+                           </ol>
+                        <p>
+                            Huomaa, että osamäärää koskevassa yhtälössä $b \neq 0$, sillä muuten osamäärä ei ole määritelty.
+                       </p>
+                        <p>
+                            Tarkastellaan malliksi tulon itseisarvon tapaus 2:
+                            <br>
+                            Oletetaan, että $a \geq 0$ ja $b < 0$. Tällöin teoreeman 1 mukaan
+                            \begin{align*}
+                            \left|a\right| &= a \\
+                            \left|b\right| &= -b,
+                            \end{align*}
+                            joten
+                            $$\left|a\right|\left|b\right| = a \cdot (-b) = \textcolor{red}{-ab}.$$
+                            Toisaalta koska $a \geq 0$ ja $b < 0$, niin $ab \leq 0$ ja teoreeman 1 mukaan
+                            $$\left|ab\right| = \textcolor{red}{-ab}.$$
+                            Siis tässä tapauksessa
+                            $$\left|ab\right| = \left|a\right|\left|b\right|.$$
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -480,9 +495,11 @@ topnav: maa5
         </header>
         <div id="EtaisyysTasossa" class="collapse">
 
-            <p>
-                Tason pisteiden välinen etäisyys voidaan usein laskea <a href="http://kisallioppiminen.fi/kurssit/maa3/luku1/">MAA3-kurssista</a> tutun Pythagoraan lauseen avulla. 
-            </p>
+            <div class="teoria">
+                <p>
+                    Tason pisteiden välinen etäisyys voidaan usein laskea <a href="http://kisallioppiminen.fi/kurssit/maa3/luku1/">MAA3-kurssista</a> tutun Pythagoraan lauseen avulla.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="9cf4909c-caa6-4620-bb29-a51d1db003dd">
@@ -507,29 +524,32 @@ topnav: maa5
                 </div>
             </div>
 
-            <p>
-                Seuraavassa teoreemassa johdetaan lauseke tason pisteiden väliselle etäisyydelle <a href="http://kisallioppiminen.fi/kurssit/maa4/xy-taso/">MAA4-kurssista</a> tutun vektorin pituuden avulla. 
-            </p>
-
-            <div class="theorem" id="ETÄISYYS TASOSSA">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Pisteiden $P = (x_1,y_1)$ ja $Q = (x_2,y_2)$ välinen etäisyys eli janan $PQ$ pituus on 
-                    $$
-                    \left|PQ\right| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}.
-                    $$
+                    Seuraavassa teoreemassa johdetaan lauseke tason pisteiden väliselle etäisyydelle <a href="http://kisallioppiminen.fi/kurssit/maa4/xy-taso/">MAA4-kurssista</a> tutun vektorin pituuden avulla.
                 </p>
-                <div class="proof">
+
+
+                <div class="theorem" id="ETÄISYYS TASOSSA">
+                    <h3>TEOREEMA</h3>
                     <p>
-                        Perustelu: Muodostetaan vektori pisteestä $P$ pisteeseen $Q$:
+                        Pisteiden $P = (x_1,y_1)$ ja $Q = (x_2,y_2)$ välinen etäisyys eli janan $PQ$ pituus on
                         $$
-                        \pv{PQ} = (x_2-x_1)\vi + (y_2-y_1)\vj.
+                        \left|PQ\right| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}.
                         $$
-                        Tämän vektorin pituus on 
-                        $$
-                        \left|\pv{PQ}\right| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}.
-                        $$
-                   </p>
+                    </p>
+                    <div class="proof">
+                        <p>
+                            Perustelu: Muodostetaan vektori pisteestä $P$ pisteeseen $Q$:
+                            $$
+                            \pv{PQ} = (x_2-x_1)\vi + (y_2-y_1)\vj.
+                            $$
+                            Tämän vektorin pituus on
+                            $$
+                            \left|\pv{PQ}\right| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}.
+                            $$
+                       </p>
+                    </div>
                 </div>
             </div>
 
@@ -625,8 +645,8 @@ topnav: maa5
                 </div>
             </div>
 
-            <p>
-                Vektoreiden avulla voidaan johtaa myös lausekkeet janan keskipisteen koordinaateille: 
+            <div class="teoria"><p>
+                Vektoreiden avulla voidaan johtaa myös lausekkeet janan keskipisteen koordinaateille:
             </p>
 
             <div class="theorem" id="JANAN KESKIPISTE">
@@ -644,21 +664,22 @@ topnav: maa5
                         \pv{OC} &= \pv{OP} + \frac{1}{2}\pv{PQ}.
                         \end{align*}
                         <img src="/kurssit/maa5/kuvat/k056.png" max-width: 100%; width: auto; height: auto;/>
-                        Kun siihen sijoitetaan 
+                        Kun siihen sijoitetaan
                         \begin{align*}
                         \pv{OP} &= x_1\vi + y_1\vj \\
                         \pv{PQ} &= (x_2-x_1)\vi + (y_2-y_1)\vj,
                         \end{align*}
-                        paikkavektoriksi saadaan sievennyksen jälkeen 
+                        paikkavektoriksi saadaan sievennyksen jälkeen
                         \begin{align*}
                         \pv{OC} &= \frac{1}{2}(x_1+x_2)\vi + \frac{1}{2}(y_1 + y_2)\vj.
                         \end{align*}
-                        Paikkavektorista voidaan lukea pisteen $C$ koordinaatit. Siis 
+                        Paikkavektorista voidaan lukea pisteen $C$ koordinaatit. Siis
                         $$
                         C = \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right).
                         $$
                    </p>
                 </div>
+            </div>
             </div>
 
             <div class="tehtavat">
