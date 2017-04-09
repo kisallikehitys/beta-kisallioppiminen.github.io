@@ -60,13 +60,13 @@ class Button {
       console.log('_addGoalCheckboxes');
         const obj = this;
         $(".checkbox-group").each(function (index, value) {
-          var checkbox1 = view.createCheckbox('1');
+          var checkbox1 = view.createCheckbox('1', 'green');
           this.appendChild(checkbox1);
 
-          var checkbox2 = view.createCheckbox('2');
+          var checkbox2 = view.createCheckbox('2', 'orange');
           this.appendChild(checkbox2);
 
-          var checkbox3 = view.createCheckbox('3');
+          var checkbox3 = view.createCheckbox('3', 'purple');
           this.appendChild(checkbox3);
         });
       console.log('endGoalTest');
@@ -192,13 +192,13 @@ class Button {
     if (this.courseData.coursekey !== '') {
       this._addButtons();
       this._getCheckmarks();
-      //if teacher
-      //this._addGoalCheckboxes();
+      //if (Session.isTeacher) {
+      //  this._addGoalCheckboxes();
+      //};
     } else {
       console.warn("No coursekey for this material.");
       this._getStats(this.courseData.course_id);
     }
-    this._addGoalCheckboxes();
   }
 
     toggleVisibilityByClass(className) {

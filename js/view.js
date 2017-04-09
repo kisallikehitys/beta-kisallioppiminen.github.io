@@ -268,12 +268,15 @@ class View {
     return scoreboard;
   }
 
-  createCheckbox(goalId) {
+  /**
+   * Create a large goal checkbox with id and color
+   */
+  createCheckbox(goalId, color) {
     let checkboxDiv = document.createElement('div');
-    checkboxDiv.setAttribute('class', 'checkbox');
+    checkboxDiv.setAttribute('class', 'checkbox checkbox-kisalli');
 
     let checkboxLabel = document.createElement('label');
-    checkboxLabel.setAttribute('class', 'checkbox-bootstrap checkbox-blue checkbox-lg');
+    checkboxLabel.setAttribute('class', 'checkbox-bootstrap checkbox-' + color + ' checkbox-lg');
 
     let checkboxInput = document.createElement('input');
     checkboxInput.setAttribute('type', 'checkbox');

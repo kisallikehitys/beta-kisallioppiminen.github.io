@@ -6862,7 +6862,7 @@ div.checkbox {
 }
 
 /* Colored  boxes */
-:root label.checkbox-bootstrap.checkbox-blue input[type=checkbox]:checked + span.checkbox-placeholder {
+:root label.checkbox-bootstrap.checkbox-green input[type=checkbox]:checked + span.checkbox-placeholder {
   background: #C4DA87;
 }
 
@@ -6918,4 +6918,8 @@ div.checkbox {
   /*checkmark arrow color*/
   border: solid white;
   border-width: 0 3px 3px 0;
+}
+
+.checkbox-kisalli {
+  margin-top: 0 !important;
 }
