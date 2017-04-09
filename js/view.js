@@ -335,7 +335,7 @@ class View {
     let courseDiv = document.createElement('div');
     courseDiv.setAttribute('id', `checkmarkTable${data.coursekey}`);
     courseDiv.setAttribute('class', 'collapse');
-    courseDiv.style.overflowX = "auto;";
+    courseDiv.style.overflow = "scroll";
 
     let alertDiv = document.createElement('div');
     alertDiv.setAttribute('class', "alert alert-info");

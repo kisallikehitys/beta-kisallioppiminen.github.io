@@ -38,6 +38,7 @@ class Scoreboard {
     //let body = document.createElement('tbody');
     //scoreboard.appendChild(body);
 
+    console.log(courseData);
     for (let j in courseData) {      
       let student = courseData[j];
       let row = view.createName(student.user);
@@ -59,7 +60,9 @@ class Scoreboard {
       let fullScreenLink = Scoreboard.getFullScreenLink(course.id, course.html_id, course.coursekey);
       $('div[id=checkmarkTable' + table_id + ']').prepend(view.createFullScreenButton('id', fullScreenLink));
     } else {
-      $('div[id=checkmarkTable' + table_id + ']').prepend(view.createCloseButton());
+      if (!window.location.pathname.includes("/omat_kurssit.html")) {
+        $('div[id=checkmarkTable' + table_id + ']').prepend(view.createCloseButton());
+      }    
     }
 
     let alertID = "#loadingAlert" + table_id;
@@ -68,7 +71,7 @@ class Scoreboard {
     $('[data-toggle="tooltip"]').tooltip();
 
     // make table sortable
-    if (table_id.length > 1) {
+    if (table_id.length > 1 && courseData.length > 1) {
       console.log(id);
       let nto = document.getElementById(id);
       console.log(nto);
@@ -93,7 +96,7 @@ class Scoreboard {
     let exercises = Exercises.extractExercises(pageData);
     if (data.exercises) {
       let studentData = [{
-        user: session.getUserFirstName(),
+        user: Session.getUserFirstName(),
         exercises: data.exercises
       }];
       this.createTable(studentData, exercises, data.coursekey, course);
@@ -114,7 +117,7 @@ class Scoreboard {
     let url = `courses/${course.id}/scoreboard`;
 
     if (window.location.pathname.includes("/omat_kurssit")) {
-      url = `students/${session.getUserId()}/courses/${course.id}/scoreboard`;
+      url = `students/${Session.getUserId()}/courses/${course.id}/scoreboard`;
     }
 
     this.getPageData(course.html_id)
