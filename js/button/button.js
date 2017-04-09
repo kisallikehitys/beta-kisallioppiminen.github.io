@@ -93,6 +93,7 @@ class Button {
   _extractCourseData(data, path) {
     const html_id = path;
     for (let i in data) {
+      console.log(data[i]);
       if (data[i].html_id == html_id) {
         this.courseData.coursekey = data[i].coursekey;
         this.courseData.course_id = data[i].id;
@@ -179,6 +180,65 @@ class Button {
     }
   }
 
+  _invokeCourseSelect(htmlID, keys, data) {
+    $('#courseSelectModalTitle').html(`Opetat useampaa ${htmlID.toUpperCase()}-kurssia. Valitse listalta mitä kurssisuorituksia haluat katsoa.`);
+    for (var i in keys) {
+      $('#courseSelect').append(`<option value="${keys[i]}">${htmlID.toUpperCase()} - ${keys[i]}</option>`);
+    }
+    $('#courseSelectModal').modal('toggle');
+
+    $('#selectCourseButton').click(function(value) {
+      let coursekey = $('#selectCourse').serializeArray().reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+      for (data[i] in data) {
+        if (data[i].coursekey == coursekey.courseSelect) {
+          this.courseData.coursekey = data[i].coursekey;
+          this.courseData.course_id = data[i].id;
+        }
+      }
+      document.cookie = `coursekey=${coursekey.courseSelect}; path=/kurssit/${htmlID};`;
+    });
+  }
+
+  _extractTeacherCourses(data) {
+    let htmlID = this._getHTMLID(window.location.pathname);
+    let keys = [];
+    let obj = this;
+    for (let i in data) {
+      if (data[i].html_id == htmlID) {
+        this.courseData.coursekey = data[i].coursekey;
+        this.courseData.course_id = data[i].id;
+        keys.push(data[i].coursekey);
+      }
+    }
+
+    console.log(this.courseData.coursekey);
+    if (keys.length > 1 && document.getCookie('coursekey') === undefined) {
+      this._invokeCourseSelect(htmlID, keys, data);
+    } else {
+      for (let j in data) {
+        if (data[j].coursekey == document.getCookie('coursekey')) {
+          this.courseData.coursekey = data[j].coursekey;
+          this.courseData.course_id = data[j].id;
+        }
+      }
+    }
+    console.log(this.courseData.coursekey);
+    
+    // insert button
+    $('html body main.has-atop article article section header:first').append('<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>');
+    $('#selectAnotherCourse').click(function() {
+      obj._invokeCourseSelect(htmlID, keys, data);
+    });
+  }
+
+  initTeacher(data) {
+    this._extractTeacherCourses(data);
+    console.log(data);
+  }
+
 }
 
 /**
@@ -187,13 +247,26 @@ class Button {
 $(document).ready(function () {
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     const button = new Button();
-    backend.get(`students/${Session.getUserId()}/courses`)
-      .then(
-        function fulfilled(data) {
-          button.init(data);
-        },
-        function rejected() {
-          console.warn("Error, could not get coursekey");
-        });
+
+    if (Session.isTeacher()) {
+      backend.get(`teachers/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.initTeacher(data);
+          },
+          function rejected(data) {
+            console.warn(data);
+          }
+        );
+    }
+
+    //backend.get(`students/${Session.getUserId()}/courses`)
+    //  .then(
+    //    function fulfilled(data) {
+    //      button.init(data);
+    //    },
+    //    function rejected() {
+    //      console.warn("Error, could not get coursekey");
+    //    });
   }
 });
