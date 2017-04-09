@@ -219,11 +219,11 @@ class Button {
  * Execute when DOM has loaded
  */
 $(document).ready(function () {
-  if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     const button = new Button();
     $('.toggleDivVisibility').click(function() {
         button.toggleVisibilityByClass(this.id);
     });
+    if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     backend.get(`students/${Session.getUserId()}/courses`)
       .then(
         function fulfilled(data) {
