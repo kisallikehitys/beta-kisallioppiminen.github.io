@@ -31,6 +31,7 @@ resources:
     - "/js/backend.js"
     - "/js/mooc.js"
     - "/js/button/button.js"
+    - "/js/statistics.js"
     - "/js/init.js"
     - "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 

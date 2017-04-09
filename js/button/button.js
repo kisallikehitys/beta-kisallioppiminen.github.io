@@ -93,6 +93,7 @@ class Button {
   _extractCourseData(data, path) {
     const html_id = path;
     for (let i in data) {
+      console.log(data[i]);
       if (data[i].html_id == html_id) {
         this.courseData.coursekey = data[i].coursekey;
         this.courseData.course_id = data[i].id;
@@ -153,7 +154,18 @@ class Button {
       );
   }
 
+  _markStats(data) {
+    console.log(data);
+    $("div.stats").remove();
+    $(".tehtava").each(function(index, value) {
+      let stat = data[this.id];
+      let template = `<div class="stats" style="float: right; display: inline-block;"><span style="color:#D0011B;margin-right:1.25em;"><b>${stat.red}</b></span><span style="color:#F6A623;margin-right:1.25em;"><b>${stat.yellow}</b></span><span style="color:#417505;margin-right:1em;"><b>${stat.green}</b></span></div>`;
+      $(value).find("header h1").append(template);
+    });
+  }
+
   _getStats(id) {
+    console.log("Getting stats");
     const obj = this;
     console.log(this.courseData.course_id);
     backend.get(`courses/${id}/exercises/statistics`)
@@ -175,8 +187,73 @@ class Button {
       this._getCheckmarks();
     } else {
       console.warn("No coursekey for this material.");
-      this._getStats(this.courseData.course_id);
     }
+  }
+
+  _invokeCourseSelect(htmlID, keys, data) {
+    let obj = this;
+    $('#courseSelectModalTitle').html(`Opetat useampaa ${htmlID.toUpperCase()}-kurssia. Valitse listalta mitä kurssisuorituksia haluat katsoa.`);
+    $('#courseSelect').empty();
+    for (var i in keys) {
+      $('#courseSelect').append(`<option value="${keys[i]}">${htmlID.toUpperCase()} - ${keys[i]}</option>`);
+    }
+    $('#courseSelectModal').modal('toggle');
+
+    $('#selectCourseButton').click(function(value) {
+      let coursekey = $('#selectCourse').serializeArray().reduce(function (obj, item) {
+        obj[item.name] = item.value;
+        return obj;
+      }, {});
+      console.log(data);
+      for (let j in data) {
+        if (data[j].coursekey == coursekey.courseSelect) {
+          obj.courseData.coursekey = data[j].coursekey;
+          obj.courseData.course_id = data[j].id;
+          obj._getStats(obj.courseData.course_id);
+        }
+      }
+      document.cookie = `coursekey=${coursekey.courseSelect}; path=/kurssit/${htmlID};`;
+      $('#currentCourse').html(obj.courseData.coursekey);
+    });
+  }
+
+  _extractTeacherCourses(data) {
+    let htmlID = this._getHTMLID(window.location.pathname);
+    let keys = [];
+    let obj = this;
+    for (let i in data) {
+      if (data[i].html_id == htmlID) {
+        this.courseData.coursekey = data[i].coursekey;
+        this.courseData.course_id = data[i].id;
+        keys.push(data[i].coursekey);
+      }
+    }
+
+    if (keys.length > 1 && document.getCookie('coursekey') === undefined) {
+      this._invokeCourseSelect(htmlID, keys, data);
+    } else {
+      for (let j in data) {
+        if (data[j].coursekey == document.getCookie('coursekey')) {
+          this.courseData.coursekey = data[j].coursekey;
+          this.courseData.course_id = data[j].id;
+        }
+      }
+    }
+    this._getStats(this.courseData.course_id);
+    
+    $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
+    // insert button
+    if (keys.length > 1) {
+      $('html body main.has-atop article article section header:first').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
+      $('#selectAnotherCourse').click(function() {
+        obj._invokeCourseSelect(htmlID, keys, data);
+      });
+    }
+  }
+
+  initTeacher(data) {
+    this._extractTeacherCourses(data);
+    console.log(data);
   }
 
 }
@@ -187,13 +264,26 @@ class Button {
 $(document).ready(function () {
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     const button = new Button();
-    backend.get(`students/${Session.getUserId()}/courses`)
-      .then(
-        function fulfilled(data) {
-          button.init(data);
-        },
-        function rejected() {
-          console.warn("Error, could not get coursekey");
-        });
+
+    if (document.getCookie('teacher') === 'true') {
+      backend.get(`teachers/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.initTeacher(data);
+          },
+          function rejected(data) {
+            console.warn(data);
+          }
+        );
+    } else {
+      backend.get(`students/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.init(data);
+          },
+          function rejected() {
+            console.warn("Error, could not get coursekey");
+          });
+    }
   }
 });

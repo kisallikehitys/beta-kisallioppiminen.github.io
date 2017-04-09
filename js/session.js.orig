@@ -41,13 +41,19 @@ class Session {
     backend.get('user/get_session_user')
       .then(
         function fulfilled(data) {
+          console.log(data);
           const session_user = data;
 
           if (session_user.has_sign_in !== null && session_user.has_sign_in !== undefined) {
+<<<<<<< HEAD
             document.cookie = 'userFirstName=' + session_user.has_sign_in.first_name + ';path=/';
             document.cookie = 'userId=' + session_user.has_sign_in.id + ';path=/';
+=======
+            document.cookie = 'userId=' + session_user.has_sign_in.id;
+            document.cookie = 'userFirstName=' + session_user.has_sign_in.first_name;
             document.cookie = 'teacher=' + session_user.has_sign_in.teacher;
             document.cookie = 'student=' + session_user.has_sign_in.student;
+>>>>>>> course_select
           }
         },
         function rejected() {
