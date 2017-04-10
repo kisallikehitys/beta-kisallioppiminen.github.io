@@ -44,17 +44,23 @@ class Session {
           const session_user = data;
 
           if (session_user.has_sign_in !== null && session_user.has_sign_in !== undefined) {
-            document.cookie = 'userFirstName=' + session_user.has_sign_in.first_name + ';path=/';
-            document.cookie = 'userId=' + session_user.has_sign_in.id + ';path=/';
-            document.cookie = 'teacher=' + session_user.has_sign_in.teacher;
-            document.cookie = 'student=' + session_user.has_sign_in.student;
+            let newExpireTime = Session._getNewExpireTime();
+
+            document.cookie = 
+              'userFirstName=' + session_user.has_sign_in.first_name + 
+              '; expires=' + newExpireTime + 
+              '; path=/';
+
+            document.cookie = 
+              'userId=' + session_user.has_sign_in.id + 
+              '; expires=' + newExpireTime + 
+              '; path=/';
           }
         },
         function rejected() {
           console.warn('Could not retrieve session');
         }
       );
-
   }
 
   /**
@@ -98,5 +104,34 @@ class Session {
   static logout() {
     document.deleteCookie('userId');
     document.deleteCookie('userFirstName');
+  }
+
+  static renew() {
+    if (this.isLogged()) {
+      let newExpireTime = this._getNewExpireTime();
+      let userFirstName = this.getUserFirstName();
+      let userId = this.getUserId();
+      document.deleteCookie(userFirstName);
+      document.deleteCookie(userId);
+
+      document.cookie = 
+        'userFirstName=' + userFirstName + 
+        '; expires=' + newExpireTime + 
+        '; path=/';
+
+      document.cookie = 
+        'userId=' + userId + 
+        '; expires=' + newExpireTime + 
+        '; path=/';
+
+    } 
+  }
+
+  static _getNewExpireTime() {
+    let now = new Date();
+    let time = now.getTime();
+    time += 3600 * 1000 * 6;
+    now.setTime(time);
+    return now.toUTCString();
   }
 }
