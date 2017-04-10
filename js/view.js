@@ -326,7 +326,7 @@ class View {
 
     let header = document.createElement('header');
     let nameH1 = document.createElement('h1');
-    nameH1.innerHTML = data.name;
+    nameH1.innerHTML = `${data.name} (${data.html_id.toUpperCase()})`;
 
     let h2 = document.createElement('h2');
     h2.style.display = "inline-block";
