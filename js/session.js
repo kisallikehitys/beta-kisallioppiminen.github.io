@@ -119,8 +119,12 @@ class Session {
   static renew() {
     if (this.isLogged()) {
       let newExpireTime = this._getNewExpireTime();
+
       let userFirstName = this.getUserFirstName();
+      let isTeacher = this.isTeacher();
+      let isStudent = this.isStudent();
       let userId = this.getUserId();
+
       document.deleteCookie(userFirstName);
       document.deleteCookie(userId);
 
@@ -134,6 +138,15 @@ class Session {
         '; expires=' + newExpireTime + 
         '; path=/';
 
+      document.cookie = 
+        'teacher=' + isTeacher + 
+        '; expires=' + newExpireTime + 
+        '; path=/';
+
+      document.cookie = 
+        'student=' + isStudent + 
+        '; expires=' + newExpireTime + 
+        '; path=/';
     } 
   }
 
