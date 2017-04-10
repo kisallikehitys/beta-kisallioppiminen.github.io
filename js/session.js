@@ -1,5 +1,5 @@
 /**
- * @file Session ja näkyminen hallinta kirjautumisen mukaan.
+ * @file Session manager
  * @license GPL v2
  * @version 1.00
  */
@@ -10,9 +10,12 @@
 class Session {
 
   /**
-   * Jos evästeiden mukaan ei ole kirjautunut, käy katsomassa palvelimelta
-   * onko kirjautunut. Asettaa evästeen, jos palvelin todentaa kirjautumisen.
-   * Ei kysele palvelimelta kirjautumista, jos eväste on asetettu.
+   * Define if user is logged with cookies. If user is not logged, asks the
+   * backend if session exist. Function will set cookies if session exist. If
+   * user can be defined as logged by cookies, there will be no queries to the
+   * backend.
+   *
+   * @todo Make queries to the backend only when logging in or logging out.
    */
   static init() {
     if (!this.isLogged()) {
@@ -21,20 +24,8 @@ class Session {
   } 
 
   /**
-   * Jos evästeitä ei ole asetettu, käy kysymässä palvelimelta onko kyseinen
-   * käyttäjä kirjautunut. Jos on, asettaa evästeet, eikä kyselyä enää tehdä,
-   * vaan luotetaan siihen, että evästeiden olemassaolo riittää todisteeksi, että
-   * on kirjautunut.
-   *
-   * @todo Käytännössä funktion käynnistäminen kannattaa tehdä silloin, kun
-   * evästeitä ei ole ja tehdään kirjautuminen, koska muuten tehdään aina kysely,
-   * kun ei olla kirjauduttu.
-   *
-   * @todo Session metodia showNav() kutsutaan tässä, ja kutsutaan myös sen
-   * sen jälkeen kun koko html on ladattu. Käytännössä funktiota kutsutaan
-   * kahdesti. Tässä funktiossa oleva kutsu osaa kuitenkin tehdä kutsun vasta sen
-   * jälkeen kun evästeet on varmasti asetettu. Myöhemmin tuleva kutsu tekee sen
-   * ennen kuin palvelimelta on tullut kirjautumisvarmistus.
+   * Asks backend if session exist. If it does, it will set cookies, so no
+   * futher queries are necessary.
    */
   static getSession() {
 
@@ -74,18 +65,18 @@ class Session {
   }
 
   /**
-   * Palauttaa evästeistä käyttäjän etunimen.
+   * Returns user's first name from cookie.
    *
-   * @returns {String} Käyttäjän etunimi.
+   * @returns {String} User's first name.
    */
   static getUserFirstName() {
     return document.getCookie('userFirstName');
   } 
 
   /**
-   * Palauttaa evästeistä käyttäjän ID:n.
+   * Returns user's ID from cookie.
    *
-   * @returns {Number} Käyttäjän ID.
+   * @returns {Number} User's ID.
    */
   static getUserId() {
     return document.getCookie('userId');
@@ -100,16 +91,16 @@ class Session {
   }
 
   /** 
-   * Palauttaa True jos käyttäjä on kirjautunut ja False, jos käyttäjä ei ole
-   * kirjautunut. Todennus tapahtuu evästeiden avulla.
+   * Returns true if user is logged, else returns false. Use cookies to define
+   * logging.
    */
   static isLogged() {
     return document.getCookie('userId') !== undefined && document.getCookie('userFirstName') !== undefined;
   }
 
   /**
-   * Poistaa evästeet, joilla kirjautumista tarkkaillaan.
-   *
+   * Deprecated! Did not work as function call in onclick event, so now the
+   * function is directly written inside the onclick event.
    */
   static logout() {
     document.deleteCookie('userId');
