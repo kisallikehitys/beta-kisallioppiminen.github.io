@@ -1,3 +1,5 @@
+const BACKEND_BASE_URL = "http://kurssihallinta.kisallioppiminen.fi/";
+const FRONTEND_BASE_URL = "http://beta.kisallioppiminen.fi/";
 let backend;
 let view;
 let id;
@@ -64,7 +66,6 @@ class Fullscreen {
         );
     }
   }
-
   static init() {
     id = Fullscreen.getQueryVariable('id');
     html_id = Fullscreen.getQueryVariable('html_id');
