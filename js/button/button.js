@@ -221,7 +221,7 @@ class Button {
     }
     $('#courseSelectModal').modal('toggle');
 
-    $('#selectCourseButton').click(function (value) {
+    $('#selectCourseButton').click(function () {
       let coursekey = $('#selectCourse').serializeArray().reduce(function (obj, item) {
         obj[item.name] = item.value;
         return obj;
