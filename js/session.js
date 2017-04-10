@@ -82,10 +82,16 @@ class Session {
     return document.getCookie('userId');
   }
 
+  /**
+   * @returns {Boolean} Is user teacher?
+   */
   static isTeacher() {
     return document.getCookie('teacher');
   }
 
+  /**
+   * @returns {Boolean} Is user student?
+   */
   static isStudent() {
     return document.getCookie('student');
   }
@@ -107,6 +113,9 @@ class Session {
     document.deleteCookie('userFirstName');
   }
 
+  /**
+   * Extends user's cookies expiring time to match with the backend.
+   */
   static renew() {
     if (this.isLogged()) {
       let newExpireTime = this._getNewExpireTime();
@@ -141,6 +150,9 @@ class Session {
     } 
   }
 
+  /**
+   * Helper to get correct UTC time when extending cookies life.
+   */
   static _getNewExpireTime() {
     let now = new Date();
     let time = now.getTime();
