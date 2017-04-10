@@ -44,7 +44,7 @@ class Button {
       buttonGroup.appendChild(view.createButton(2, id));
       buttonDiv.appendChild(buttonGroup);
 
-      $(value).find("div:first").append(buttonDiv);
+      $(value).find("div:nth-child(2)").append(buttonDiv);
     });
 
     // Add listener
@@ -60,13 +60,13 @@ class Button {
     console.log('_addGoalCheckboxes');
     const obj = this;
     $(".checkbox-group").each(function (index, value) {
-      var checkbox1 = view.createCheckbox('1', 'green');
+      let checkbox1 = view.createCheckbox('1', 'green');
       this.appendChild(checkbox1);
 
-      var checkbox2 = view.createCheckbox('2', 'orange');
+      let checkbox2 = view.createCheckbox('2', 'orange');
       this.appendChild(checkbox2);
 
-      var checkbox3 = view.createCheckbox('3', 'purple');
+      let checkbox3 = view.createCheckbox('3', 'purple');
       this.appendChild(checkbox3);
     });
     console.log('endGoalTest');
@@ -216,7 +216,7 @@ class Button {
     let obj = this;
     $('#courseSelectModalTitle').html(`Opetat useampaa ${htmlID.toUpperCase()}-kurssia. Valitse listalta mitä kurssisuorituksia haluat katsoa.`);
     $('#courseSelect').empty();
-    for (var i in keys) {
+    for (let i in keys) {
       $('#courseSelect').append(`<option value="${keys[i]}">${htmlID.toUpperCase()} - ${keys[i]}</option>`);
     }
     $('#courseSelectModal').modal('toggle');
@@ -281,9 +281,9 @@ class Button {
   }
 
   toggleVisibilityByClass(className) {
-    var arrayOfElements = document.getElementsByClassName(className);
-    for (var i = 0; i < arrayOfElements.length; i++) {
-      var x = arrayOfElements[i];
+    let arrayOfElements = document.getElementsByClassName(className);
+    for (let i = 0; i < arrayOfElements.length; i++) {
+      let x = arrayOfElements[i];
       if (x.style.display === 'none') {
         x.style.display = 'block';
       } else {
@@ -291,38 +291,39 @@ class Button {
       }
     }
   }
+}
 
-  /**
-   * Execute when DOM has loaded
-   */
-  $(document).ready(function () {
-    const button = new Button();
-    $('.toggleDivVisibility').click(function () {
-      button.toggleVisibilityByClass(this.id);
-    });
-
-    if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-      if (document.getCookie('teacher') === 'true') {
-        backend.get(`teachers/${Session.getUserId()}/courses`)
-          .then(
-            function fulfilled(data) {
-              button.initTeacher(data);
-            },
-            function rejected(data) {
-              console.warn(data);
-            }
-          );
-      } else {
-        backend.get(`students/${Session.getUserId()}/courses`)
-          .then(
-            function fulfilled(data) {
-              button.init(data);
-            },
-            function rejected() {
-              console.warn("Error, could not get coursekey");
-            });
-      }
-      console.log('Session.getUserId: ' + Session.getUserId());
-      console.log('Session.getUserFirstName' + Session.getUserFirstName())
-    }
+/**
+ * Execute when DOM has loaded
+ */
+$(document).ready(function () {
+  const button = new Button();
+  $('.toggleDivVisibility').click(function () {
+    button.toggleVisibilityByClass(this.id);
   });
+
+  if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
+    if (document.getCookie('teacher') === 'true') {
+      backend.get(`teachers/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.initTeacher(data);
+          },
+          function rejected(data) {
+            console.warn(data);
+          }
+        );
+    } else {
+      backend.get(`students/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.init(data);
+          },
+          function rejected() {
+            console.warn("Error, could not get coursekey");
+          });
+    }
+    console.log('Session.getUserId: ' + Session.getUserId());
+    console.log('Session.getUserFirstName' + Session.getUserFirstName());
+  }
+});
