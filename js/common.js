@@ -28,9 +28,7 @@ if (typeof HTMLDocument !== 'undefined') {
 let temp_backend_base_url;
 let temp_frontend_base_url;
 
-console.log("In environment settings");
-console.log("domain:");
-console.log(document.domain);
+console.log("Adjusting environment settings");
 console.log("Running in: " + document.domain);
 if (document.domain == "localhost" || document.domain == "127.0.0.1") {
   temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
