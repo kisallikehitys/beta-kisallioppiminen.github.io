@@ -55,6 +55,16 @@ class Session {
               'userId=' + session_user.has_sign_in.id + 
               '; expires=' + newExpireTime + 
               '; path=/';
+
+            document.cookie = 
+              'teacher=' + session_user.has_sign_in.teacher +
+              '; expires=' + newExpireTime +
+              '; path=/';
+
+            document.cookie = 
+              'student=' + session_user.has_sign_in.student +
+              '; expires=' + newExpireTime + 
+              '; path=/';
           }
         },
         function rejected() {

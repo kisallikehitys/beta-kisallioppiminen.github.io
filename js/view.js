@@ -141,10 +141,10 @@ class View {
     {key: 'data-method', value: 'GET'}
     ];
     let kirjauduUlosClickEvent = function () {
-      console.log('Current cookies: ' + document.cookie);
       document.cookie = 'userFirstName=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'userId=; path=/; expires=' + new Date(0).toUTCString();
-      console.log('cookies after login : ' + document.cookie);
+      document.cookie = 'teacher=; path=/; expires=' + new Date(0).toUTCString();
+      document.cookie = 'student=; path=/; expires=' + new Date(0).toUTCString();
     };
 
     // Append everything to dropdown menu
