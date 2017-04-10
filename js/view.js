@@ -31,8 +31,6 @@ class View {
       ddomain = '';
     }
 
-    console.log('ddomain is ' + ddomain);
-
     img.setAttribute('src', ddomain + '/img/google-login.png');
     img.setAttribute('alt', 'Google-nappula');
 

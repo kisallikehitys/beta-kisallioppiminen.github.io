@@ -232,5 +232,7 @@ $(document).ready(function () {
         function rejected() {
           console.warn("Error, could not get coursekey");
         });
-  }
+    }
+    console.log('Session.getUserId: ' + Session.getUserId());
+    console.log('Session.getUserFirstName' + Session.getUserFirstName())
 });
