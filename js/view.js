@@ -31,8 +31,6 @@ class View {
       ddomain = '';
     }
 
-    console.log('ddomain is ' + ddomain);
-
     img.setAttribute('src', ddomain + '/img/google-login.png');
     img.setAttribute('alt', 'Google-nappula');
 
@@ -267,6 +265,32 @@ class View {
 
     return scoreboard;
   }
+
+  /**
+   * Create a large goal checkbox with id and color
+   */
+  createCheckbox(goalId, color) {
+    let checkboxDiv = document.createElement('div');
+    checkboxDiv.setAttribute('class', 'checkbox checkbox-kisalli');
+
+    let checkboxLabel = document.createElement('label');
+    checkboxLabel.setAttribute('class', 'checkbox-bootstrap checkbox-' + color + ' checkbox-lg');
+
+    let checkboxInput = document.createElement('input');
+    checkboxInput.setAttribute('type', 'checkbox');
+    checkboxInput.setAttribute('id', goalId);
+
+    let placeholderSpan = document.createElement('span');
+    placeholderSpan.setAttribute('class', 'checkbox-placeholder');
+
+    checkboxLabel.appendChild(checkboxInput);
+    checkboxLabel.appendChild(placeholderSpan);
+
+    checkboxDiv.appendChild(checkboxLabel);
+
+    return checkboxDiv;
+  }
+
 
   createExercise(number) {
     let item = document.createElement('th');

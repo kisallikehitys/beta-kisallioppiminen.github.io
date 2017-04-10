@@ -19,6 +19,8 @@ topnav: maa5
 <input type="hidden" id="chapterNumber" value="5"/>
 <input type="hidden" id="theoremStart" value="3"/>
 
+{% include bottomnav.html %}
+
 <article>
     <section>
         <header>
@@ -78,8 +80,9 @@ topnav: maa5
         </header>
         <div id="itseisarvo1" class="collapse">
 
+            <div class="teoria">
             <p>
-                Kurssin ensimmäisessä luvussa <a href="http://kisallioppiminen.fi/kurssit/maa5/luku0/">Etäisyys</a> opittiin, miten itseisarvon avulla voidaan ilmaista etäisyyksiä lukusuoralla. Itseisarvoa tarvittiin myös, kun määritettiin tason pisteen etäisyys suorasta (<a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">teoreema 13</a>). Kun määritettiin yhtälö ympyrän tangetille tai paraabelille, ratkaistiin yhtälö, jossa esiintyi itseisarvo. Tässä kappaleessa syvennytään tarkemmin itseisarvoyhtälöiden ratkaisemiseen. 
+                Kurssin ensimmäisessä luvussa <a href="http://kisallioppiminen.fi/kurssit/maa5/luku0/">Etäisyys</a> opittiin, miten itseisarvon avulla voidaan ilmaista etäisyyksiä lukusuoralla. Itseisarvoa tarvittiin myös, kun määritettiin tason pisteen etäisyys suorasta (<a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">teoreema 13</a>). Kun määritettiin yhtälö ympyrän tangetille tai paraabelille, ratkaistiin yhtälö, jossa esiintyi itseisarvo. Tässä kappaleessa syvennytään tarkemmin itseisarvoyhtälöiden ratkaisemiseen.
             </p>
             <p>
                 Aloitetaan palauttamalla mieleen itseisarvon määritelmä:
@@ -107,6 +110,7 @@ topnav: maa5
             <p>
                 Yksinkertaisimmat itseisarvoyhtälöt on mahdollista ratkaista tämän teoreeman avulla päättelemällä. Tätä harjoitellaan seuraavissa tehtävissä.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="1b068115-e2ae-49a1-8448-7216bf51a60e">
@@ -161,6 +165,7 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
                 Useilla itseisarvoyhtälöillä on kaksi ratkaisua. Esimerkiksi yhtälön $\left|x - 7 \right| = 2$ toteuttavat ne luvut, joiden etäisyys luvusta $7$ on kaksi:
                 <br>
@@ -168,6 +173,7 @@ topnav: maa5
                 <br>
                 Yhtälöllä $\left|x - 7 \right| = 2$ on siis kaksi ratkaisua: $x_1 = 5$ ja $x_2 = 9$.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="4be82830-5ed1-4461-b580-a6a92d1887a9">
@@ -197,11 +203,13 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Joillakin itseisarvoyhtälöillä ei ole lainkaan ratkaisua. Esimerkiksi yhtälö 
+                Joillakin itseisarvoyhtälöillä ei ole lainkaan ratkaisua. Esimerkiksi yhtälö
                 $$\left|x - 10 \right| = -3$$
-                on aina epätosi, sillä sen oikea puoli on negatiivinen mutta vasen puoli on itseisarvon määritelmän perusteella aina suurempi tai yhtä suuri kuin nolla. Ennen itseisarvoyhtälön ratkaisemista kannattaakin ensin miettiä, voiko yhtälöllä ylipäätään olla ratkaisuja. 
+                on aina epätosi, sillä sen oikea puoli on negatiivinen mutta vasen puoli on itseisarvon määritelmän perusteella aina suurempi tai yhtä suuri kuin nolla. Ennen itseisarvoyhtälön ratkaisemista kannattaakin ensin miettiä, voiko yhtälöllä ylipäätään olla ratkaisuja.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="30891dfe-6295-447e-b3cb-2b3263a64e24">
@@ -247,13 +255,14 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Monimutkaisemmat itseisarvoyhtälöt on mahdollista ratkaista muodostamalla kaksi tavallista yhtälöä. Tarkastellaan esimerkiksi yhtälöä 
-                $$\left|2x - 3 \right| = 4.$$ 
+                Monimutkaisemmat itseisarvoyhtälöt on mahdollista ratkaista muodostamalla kaksi tavallista yhtälöä. Tarkastellaan esimerkiksi yhtälöä
+                $$\left|2x - 3 \right| = 4.$$
                 Se toteutuu, jos ja vain jos lausekkeen $2x + 3$ arvo on $4$ tai $-4$. Tutkitaan kumpikin vaihtoehto:
             </p>
                 <ol>
-                    <li> 
+                    <li>
                         vaihtoehto (lausekkeen arvo on $4$):
                         \begin{align*}
                             2x-3 &= 4 \\
@@ -276,8 +285,9 @@ topnav: maa5
             <p>
                 Yhtälöllä $\left|2x - 3 \right| = 4$ on siis kaksi ratkaisua:
                 $$x_1 = \frac{7}{2} \ \text{ ja } \ x_2 = -\frac{1}{2}.$$
-                
+
             </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="49f7252f-295a-404e-bd95-058aabeaa8f5">
@@ -347,9 +357,11 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Tarkastellaan seuraavaksi yhtälöitä, joissa esiintyy kaksi itseisarvoa. Niiden ratkaisemiseen voidaan käyttää samoja menetelmiä kuin edellä. Yksinkertaisimmat yhtälöt voidaan ratkaista päättelemällä, kun muistetaan, että erotuksen itseisarvo ilmaisee lukujen etäisyyden lukusuoralla. 
+                Tarkastellaan seuraavaksi yhtälöitä, joissa esiintyy kaksi itseisarvoa. Niiden ratkaisemiseen voidaan käyttää samoja menetelmiä kuin edellä. Yksinkertaisimmat yhtälöt voidaan ratkaista päättelemällä, kun muistetaan, että erotuksen itseisarvo ilmaisee lukujen etäisyyden lukusuoralla.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="b43f33d0-7cdd-446c-ac8a-44249065f2c4">
@@ -415,13 +427,14 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Monimutkaisemmat tapaukset on mahdollista ratkaista muodostamalla kaksi tavallista yhtälöä. Menetelmä perustuu <a href="http://kisallioppiminen.fi/kurssit/maa5/luku0/">Etäisyys</a>-luvussa perusteltuun teoreemaan 2. Tarkastellaan esimerkiksi yhtälöä 
-                $$\left|2x - 3 \right| = \left|5x + 4 \right|.$$ 
+                Monimutkaisemmat tapaukset on mahdollista ratkaista muodostamalla kaksi tavallista yhtälöä. Menetelmä perustuu <a href="http://kisallioppiminen.fi/kurssit/maa5/luku0/">Etäisyys</a>-luvussa perusteltuun teoreemaan 2. Tarkastellaan esimerkiksi yhtälöä
+                $$\left|2x - 3 \right| = \left|5x + 4 \right|.$$
                 Se toteutuu, jos ja vain jos itseisarvojen sisällä olevat lausekkeet ovat samat tai toistensa vastalausekkeet. Tutkitaan kumpikin vaihtoehto:
             </p>
                 <ol>
-                    <li> 
+                    <li>
                         vaihtoehto (lausekkeet ovat samat):
                         \begin{align*}
                             2x-3 &= 5x + 4 \\
@@ -452,6 +465,7 @@ topnav: maa5
                 Yhtälöllä $\left|2x - 3 \right| = \left|5x + 4 \right|$ on siis kaksi ratkaisua:
                 $$x_1 = -\frac{7}{3} \ \text{ ja } \ x_2 = -\frac{1}{7}.$$
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="73d729c5-0ad0-4cfb-acb0-de60583b8c36">
@@ -564,9 +578,11 @@ topnav: maa5
         </header>
         <div id="itseisarvo2" class="collapse">
 
+            <div class="teoria">
             <p>
                 Tässä kappaleessa harjoitellaan itseisarvoepäyhtälöiden ratkaisemista. Osa niistä voidaan ratkaista päättelemällä, kun muistetaan, että erotuksen itseisarvo ilmaisee etäisyyden lukusuoralla.
             </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="972795bf-938e-4742-9c0a-08d24e03a232">
@@ -621,8 +637,9 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Edellisistä tehtävistä voi havaita, että itseisarvoepäyhtälön vastaus riippuu huomattavasti siitä, esiintyykö epäyhtälössä pienempi kuin -merkki vai suurempi kuin -merkki. Esimerkiksi epäyhtälön 
+                Edellisistä tehtävistä voi havaita, että itseisarvoepäyhtälön vastaus riippuu huomattavasti siitä, esiintyykö epäyhtälössä pienempi kuin -merkki vai suurempi kuin -merkki. Esimerkiksi epäyhtälön
                 $$\left| x - 2 \right| < 6$$
                 ratkaisuja ovat kaikki luvut, joiden etäisyys luvusta $2$ on pienempi kuin $6$:
                 <img src="/kurssit/maa5/kuvat/k047.png" max-width: 100%; width: auto; height: auto;/>
@@ -631,6 +648,7 @@ topnav: maa5
                 Tämä voidaan ilmaista myös kaksoisepäyhtälönä
                 $-4 < x < 8$.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="c781e11a-b437-43ad-8b95-33d20d3b0dc7">
@@ -660,14 +678,16 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Epäyhtälön 
+                Epäyhtälön
                 $$\left| x - 2 \right| > 4$$
                 ratkaisuja ovat kaikki luvut, joiden etäisyys luvusta $2$ on suurempi kuin $4$:
                 <img src="/kurssit/maa5/kuvat/k048.png" max-width: 100%; width: auto; height: auto;/>
                 Yhtälö siis toteutuu, jos ja vain jos
                 $$x < -2 \quad \textbf{ tai } \quad x > 6.$$
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="4fe05143-ef93-47f0-a194-500bb1beb7ce">
@@ -741,15 +761,16 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Monimutkaisemmat itseisarvoepäyhtälöt on mahdollista ratkaista muodostamalla kaksi tavallista epäyhtälöä samalla periaatteella kuin edellä. Tarkastellaan esimerkiksi epäyhtälöä 
-                $$\left|2x - 3 \right| < 4.$$ 
-                Se toteutuu, jos ja vain jos lausekkeen $2x - 3$ arvo on lukujen $-4$ ja $4$ välissä eli 
-                $$-4 < 2x - 3 < 4.$$ 
+                Monimutkaisemmat itseisarvoepäyhtälöt on mahdollista ratkaista muodostamalla kaksi tavallista epäyhtälöä samalla periaatteella kuin edellä. Tarkastellaan esimerkiksi epäyhtälöä
+                $$\left|2x - 3 \right| < 4.$$
+                Se toteutuu, jos ja vain jos lausekkeen $2x - 3$ arvo on lukujen $-4$ ja $4$ välissä eli
+                $$-4 < 2x - 3 < 4.$$
                 Ratkaistaan kumpikin epäyhtälö:
             </p>
                 <ol>
-                    <li> 
+                    <li>
                         epäyhtälö:
                         \begin{align*}
                             2x-3 &> -4 \\
@@ -771,10 +792,11 @@ topnav: maa5
                 Epäyhtälö $\left|2x - 3 \right| < 4$ toteutuu, jos ja vain jos kumpikin näistä epäyhtälöistä toteutuu eli
                 $$-\frac{1}{2} < x \quad \textbf{ ja } \quad x < \frac{7}{2}.$$
                 <img src="/kurssit/maa5/kuvat/k049.png" max-width: 100%; width: auto; height: auto;/>
-                Epäyhtälön $\left|2x - 3 \right| < 4$ ratkaisujoukko on siis lukusuoran väli 
+                Epäyhtälön $\left|2x - 3 \right| < 4$ ratkaisujoukko on siis lukusuoran väli
                 $$\left] -\frac{1}{2}, \frac{7}{2}\right[.$$
                 Hakasulkujen suunnasta näkyy, että välin päätepisteet eivät kuulu ratkaisujoukkoon.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="3c709b24-4528-459b-a487-6c0288060a4d">
@@ -804,17 +826,18 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Kun ratkaistaan itseisarvoepäyhtälöä, täytyy heti alussa ottaa huomioon, onko epäyhtälössä pienempi kuin -merkki vai suurempi kuin -merkki. Edellisessä esimerkissä ja tehtävässä tarkasteltiin itseisarvoepäyhtälöitä, joissa esiintyi pienempi kuin -merkki. Siirrytään nyt tutkimaan tapausta, jossa epäyhtälössä esiintyy suurempi kuin -merkki. 
+                Kun ratkaistaan itseisarvoepäyhtälöä, täytyy heti alussa ottaa huomioon, onko epäyhtälössä pienempi kuin -merkki vai suurempi kuin -merkki. Edellisessä esimerkissä ja tehtävässä tarkasteltiin itseisarvoepäyhtälöitä, joissa esiintyi pienempi kuin -merkki. Siirrytään nyt tutkimaan tapausta, jossa epäyhtälössä esiintyy suurempi kuin -merkki.
             </p>
             <p>
                 Tarkalleen ottaen seuraavassa epäyhtälössä esiintyy suurempi tai yhtä suuri kuin -merkki, mutta tämä ei haittaa, sillä päättelyaskeleet ovat samat riippumatta siitä, esiintyykö epäyhtälössä merkki $>$ vai merkki $\geq$.
             </p>
             <p>
                 Tarkastellaan epäyhtälöä
-                $$\left|6x + 7 \right| \geq 5.$$ 
-                Se toteutuu, jos ja vain jos lausekkeen $6x + 7$ arvo on enintään $-5$ tai vähintään $5$: 
-                $$6x + 7 \leq -5 \quad \textbf{ tai } \quad 6x + 7 \geq 5.$$ 
+                $$\left|6x + 7 \right| \geq 5.$$
+                Se toteutuu, jos ja vain jos lausekkeen $6x + 7$ arvo on enintään $-5$ tai vähintään $5$:
+                $$6x + 7 \leq -5 \quad \textbf{ tai } \quad 6x + 7 \geq 5.$$
                 Ratkaistaan kumpikin epäyhtälö:
             </p>
                 <ol>
@@ -826,7 +849,7 @@ topnav: maa5
                         \end{align*}
                         <img src="/kurssit/maa5/kuvat/k054.png" max-width: 100%; width: auto; height: auto;/>
                     </li>
-                    <li> 
+                    <li>
                         epäyhtälö:
                         \begin{align*}
                             6x + 7 &\geq 5 \\
@@ -837,13 +860,14 @@ topnav: maa5
                     </li>
                 </ol>
             <p>
-                Epäyhtälö $\left|6x + 7 \right| \geq 5$ siis toteutuu, jos ja vain jos 
+                Epäyhtälö $\left|6x + 7 \right| \geq 5$ siis toteutuu, jos ja vain jos
                 $$x \leq -2  \quad \textbf{ tai } \quad x \geq -\frac{1}{3}.$$
                 <img src="/kurssit/maa5/kuvat/k050.png" max-width: 100%; width: auto; height: auto;/>
-                Kaksiosainen ratkaisujoukko voidaan merkitä yhdisteen merkin $\displaystyle \cup$ avulla seuraavasti: 
+                Kaksiosainen ratkaisujoukko voidaan merkitä yhdisteen merkin $\displaystyle \cup$ avulla seuraavasti:
                 $$\left] -\infty, -2\right] \cup \left[-\frac{1}{3}, \infty\right[.$$
                 Hakasulkujen suunnasta näkyy, että päätepisteet $-2$ ja $-\frac{1}{3}$ kuuluvat ratkaisujoukkoon.
             </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="a357940a-96ad-418e-bc14-9c4a7ad34ff6">
@@ -926,6 +950,7 @@ topnav: maa5
         </header>
         <div id="itseisarvo3" class="collapse">
 
+            <div class="teoria">
             <p>
                 Tässä kappaleessa tutkitaan itseisarvon avulla määriteltyjä koordinaatiston pistejoukkoja ja opetellaan ratkaisemaan itseisarvoyhtälöitä ja -epäyhtälöitä graafisesti.
             </p>
@@ -939,7 +964,7 @@ topnav: maa5
                 <br>
                 <img src="/kurssit/maa5/kuvat/k059.png" max-width: 100%; width: auto; height: auto;/>
                 <br>
-                Yhtälön $y = \left|x\right|$ määrittelemä pistejoukko saadaan siis suorasta $y = x$ peilaamalla $x$-akselin alapuolelle jäävä osa $x$-akselin suhteen. Kuvasta näkyy myös havainnollisesti teoreeman 1 tulos: 
+                Yhtälön $y = \left|x\right|$ määrittelemä pistejoukko saadaan siis suorasta $y = x$ peilaamalla $x$-akselin alapuolelle jäävä osa $x$-akselin suhteen. Kuvasta näkyy myös havainnollisesti teoreeman 1 tulos:
                 $$
                     \left|x\right| = \left\{\begin{aligned}
                     &x, \quad \text{ jos $x \geq 0$} \\
@@ -950,6 +975,7 @@ topnav: maa5
                 <br>
                 <img src="/kurssit/maa5/kuvat/k060.png" max-width: 100%; width: auto; height: auto;/>
             </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="cdab9221-f36c-41a2-aecc-97fa726004dc">
@@ -1002,12 +1028,13 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
                 Koordinaatistoa ja graafista esitystä voidaan käyttää apuna myös tilanteessa, jossa halutaan ilmaista itseisarvolauseke ilman itseisarvomerkkejä. Esimerkiksi alla on näkyvissä pistejoukko, jonka yhtälö on $y = \left|3-2x\right|$.
                 <br>
                 <img src="/kurssit/maa5/kuvat/k073.png" max-width: 100%; width: auto; height: auto;/>
                 <br>
-                Kuvasta voidaan päätellä, että 
+                Kuvasta voidaan päätellä, että
                 $$
                     \left|3-2x\right| = \left\{\begin{aligned}
                     &\textcolor{blue}{3-2x}, \  \text{ jos $x \leq \tfrac{3}{2}$} \\
@@ -1016,6 +1043,7 @@ topnav: maa5
                 $$
                 <img src="/kurssit/maa5/kuvat/k074.png" max-width: 100%; width: auto; height: auto;/>
             </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="0c4e96a7-732b-4f68-81c1-b57a886ac42d">
@@ -1058,17 +1086,19 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Itseisarvoyhtälöitä voidaan ratkaista graafisesti samaan tapaan kuin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku1/">MAA2-kurssissa</a> ratkaistiin ensimmäisen ja toisen asteen yhtälöitä. Esimerkiksi yhtälö 
-                $$\left|2x + 2\right| = 3$$ 
+                Itseisarvoyhtälöitä voidaan ratkaista graafisesti samaan tapaan kuin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku1/">MAA2-kurssissa</a> ratkaistiin ensimmäisen ja toisen asteen yhtälöitä. Esimerkiksi yhtälö
+                $$\left|2x + 2\right| = 3$$
                 voidaan ratkaista piirtämällä koordinaatistoon pistejoukot $y = \left|2x + 2\right|$ ja $y = 3$:
                 <br>
                 <img src="/kurssit/maa5/kuvat/k066.png" max-width: 100%; width: auto; height: auto;/>
                 <br>
-                Kuvasta havaitaan, että yhtälöllä 
-                $$\left|2x + 2\right| = 3$$ 
+                Kuvasta havaitaan, että yhtälöllä
+                $$\left|2x + 2\right| = 3$$
                 on kaksi ratkaisua: $x_1 = -0{,}5$ ja $x_2 = 2{,}5$.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="e760d195-56eb-4872-9998-0ac37a76eb44">
@@ -1093,13 +1123,15 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
-                Monimutkaisempiakin itseisarvoyhtälöitä voidaan tutkia graafisesti. Esimerkiksi alla olevasta kuvasta voidaan päätellä, että yhtälöllä 
+                Monimutkaisempiakin itseisarvoyhtälöitä voidaan tutkia graafisesti. Esimerkiksi alla olevasta kuvasta voidaan päätellä, että yhtälöllä
                 $$\left|2x + 2\right| = \left|1-2x\right|$$
                 on tasan yksi ratkaisu:
                 <br>
                 <img src="/kurssit/maa5/kuvat/k068.png" max-width: 100%; width: auto; height: auto;/>
             </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="5c6e9728-3c87-4a44-b8ae-fe9b0f3cd8c1">
@@ -1141,6 +1173,7 @@ topnav: maa5
                 </div>
             </div>
 
+            <div class="teoria">
             <p>
                 Graafisesti voidaan tutkia sellaisiakin yhtälöitä, joissa tuntematon esiintyy sekä itseisarvomerkkien sisällä että ulkopuolella. Esimerkiksi alla olevasta kuvasta voidaan päätellä, että yhtälöllä
                 $$2x + 1 = \left|x\right|$$
@@ -1167,7 +1200,7 @@ topnav: maa5
             <p>
                 Ilmiö johtuu toiseen potenssiin korotuksesta. Sen avulla saatu yhtälö (1) kyllä seuraa alkuperäisestä yhtälöstä, mutta yhtälöstä (1) ei päästä takaisin alkuperäiseen yhtälöön. Jos yritetään ottaa yhtälöstä (1) neliöjuuri, tuloksena on yhtälö
                 \begin{align*}
-                \sqrt{(2x + 1)^2} &= \sqrt{\left|x\right|^2}. 
+                \sqrt{(2x + 1)^2} &= \sqrt{\left|x\right|^2}.
                 \end{align*}
                 Se sievenee vain muotoon
                 $$
@@ -1176,7 +1209,7 @@ topnav: maa5
                 Itseisarvoja ei voida poistaa vasemmalta, koska lauseke $2x+1$ saa myös negatiivisia arvoja, mutta neliöjuuren tulos on määritelmän mukaan aina epänegatiivinen.
             </p>
             <p>
-                Toiseen potenssiin korotusta voi tästä ilmiöstä huolimatta käyttää yhtälöiden ratkaisemisessa, kunhan muistaa lopuksi tarkistaa, ovatko kaikki löydetyt ratkaisuehdokkaat todella ratkaisuja. 
+                Toiseen potenssiin korotusta voi tästä ilmiöstä huolimatta käyttää yhtälöiden ratkaisemisessa, kunhan muistaa lopuksi tarkistaa, ovatko kaikki löydetyt ratkaisuehdokkaat todella ratkaisuja.
             </p>
             <p>
                 Edellä löydettiin ratkaisuehdokkaat $x_1 = -\frac{1}{3}$ ja $x_2 = -1$. Tutkitaan, toteuttaako $x_1 = -\frac{1}{3}$ alkuperäisen yhtälön:
@@ -1186,7 +1219,7 @@ topnav: maa5
                     <li> Yhtälön oikea puoli: $\left|-\frac{1}{3}\right| = \frac{1}{3}$.</li>
                 </ul>
             <p>
-                Yhtälön vasen ja oikea puoli ovat yhtä suuret, joten $x_1 = -\frac{1}{3}$ on yhtälön ratkaisu. 
+                Yhtälön vasen ja oikea puoli ovat yhtä suuret, joten $x_1 = -\frac{1}{3}$ on yhtälön ratkaisu.
             </p>
             <p>
                 Tutkitaan vielä, toteuttaako $x_2 = -1$ alkuperäisen yhtälön:
@@ -1198,6 +1231,7 @@ topnav: maa5
             <p>
                 Yhtälön vasen ja oikea puoli eivät ole yhtä suuret, joten $x_2 = -1$ ei ole yhtälön ratkaisu.
             </p>
+</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="5bd7c8ae-f8da-422b-a826-21879f072c35">

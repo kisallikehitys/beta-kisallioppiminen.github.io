@@ -28,7 +28,7 @@ class Button {
       $(header_id + " header").css({ "background": color });
     }
   }
-    
+
   /**
    * Adds button group to each exercise
    */
@@ -51,6 +51,25 @@ class Button {
     $('.problemButton').click(function () {
       obj.sendCheckmark(this.id);
     });
+  }
+
+  /**
+   * Adds goal checkboxes to each exercise
+   */
+  _addGoalCheckboxes() {
+    console.log('_addGoalCheckboxes');
+    const obj = this;
+    $(".checkbox-group").each(function (index, value) {
+      var checkbox1 = view.createCheckbox('1', 'green');
+      this.appendChild(checkbox1);
+
+      var checkbox2 = view.createCheckbox('2', 'orange');
+      this.appendChild(checkbox2);
+
+      var checkbox3 = view.createCheckbox('3', 'purple');
+      this.appendChild(checkbox3);
+    });
+    console.log('endGoalTest');
   }
 
   /**
@@ -143,7 +162,7 @@ class Button {
     backend.post('checkmarks', checkmark)
       .then(
         function fulfilled() {
-          if(checkmark.status !== 'gray') {
+          if (checkmark.status !== 'gray') {
             obj._changeButtonTitleText(id.substr(2, id.length - 1), "Vastauksesi on lähetetty!");
             obj._changeProblemHeaderColor(id);
           }
@@ -157,7 +176,7 @@ class Button {
   _markStats(data) {
     console.log(data);
     $("div.stats").remove();
-    $(".tehtava").each(function(index, value) {
+    $(".tehtava").each(function (index, value) {
       let stat = data[this.id];
       let template = `<div class="stats" style="float: right; display: inline-block;"><span style="color:#D0011B;margin-right:1.25em;"><b>${stat.red}</b></span><span style="color:#F6A623;margin-right:1.25em;"><b>${stat.yellow}</b></span><span style="color:#417505;margin-right:1em;"><b>${stat.green}</b></span></div>`;
       $(value).find("header h1").append(template);
@@ -185,6 +204,9 @@ class Button {
     if (this.courseData.coursekey !== '') {
       this._addButtons();
       this._getCheckmarks();
+      //if (Session.isTeacher) {
+      //  this._addGoalCheckboxes();
+      //};
     } else {
       console.warn("No coursekey for this material.");
     }
@@ -199,7 +221,7 @@ class Button {
     }
     $('#courseSelectModal').modal('toggle');
 
-    $('#selectCourseButton').click(function(value) {
+    $('#selectCourseButton').click(function (value) {
       let coursekey = $('#selectCourse').serializeArray().reduce(function (obj, item) {
         obj[item.name] = item.value;
         return obj;
@@ -242,12 +264,12 @@ class Button {
     this._getStats(this.courseData.course_id);
     console.log(this.courseData.coursekey);
     if (this.courseData.coursekey.length > 1) {
-      $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);      
+      $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
     }
     // insert button
     if (keys.length > 1) {
       $('html body main.has-atop article article section header:first').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
-      $('#selectAnotherCourse').click(function() {
+      $('#selectAnotherCourse').click(function () {
         obj._invokeCourseSelect(htmlID, keys, data);
       });
     }
@@ -258,34 +280,49 @@ class Button {
     console.log(data);
   }
 
-}
-
-/**
- * Execute when DOM has loaded
- */
-$(document).ready(function () {
-  if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-    const button = new Button();
-
-    if (document.getCookie('teacher') === 'true') {
-      backend.get(`teachers/${Session.getUserId()}/courses`)
-        .then(
-          function fulfilled(data) {
-            button.initTeacher(data);
-          },
-          function rejected(data) {
-            console.warn(data);
-          }
-        );
-    } else {
-      backend.get(`students/${Session.getUserId()}/courses`)
-        .then(
-          function fulfilled(data) {
-            button.init(data);
-          },
-          function rejected() {
-            console.warn("Error, could not get coursekey");
-          });
+  toggleVisibilityByClass(className) {
+    var arrayOfElements = document.getElementsByClassName(className);
+    for (var i = 0; i < arrayOfElements.length; i++) {
+      var x = arrayOfElements[i];
+      if (x.style.display === 'none') {
+        x.style.display = 'block';
+      } else {
+        x.style.display = 'none';
+      }
     }
   }
-});
+
+  /**
+   * Execute when DOM has loaded
+   */
+  $(document).ready(function () {
+    const button = new Button();
+    $('.toggleDivVisibility').click(function () {
+      button.toggleVisibilityByClass(this.id);
+    });
+
+    if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
+      if (document.getCookie('teacher') === 'true') {
+        backend.get(`teachers/${Session.getUserId()}/courses`)
+          .then(
+            function fulfilled(data) {
+              button.initTeacher(data);
+            },
+            function rejected(data) {
+              console.warn(data);
+            }
+          );
+      } else {
+        backend.get(`students/${Session.getUserId()}/courses`)
+          .then(
+            function fulfilled(data) {
+              button.init(data);
+            },
+            function rejected() {
+              console.warn("Error, could not get coursekey");
+            });
+      }
+      console.log('Session.getUserId: ' + Session.getUserId());
+      console.log('Session.getUserFirstName' + Session.getUserFirstName())
+    }
+  });

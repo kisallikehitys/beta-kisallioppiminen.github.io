@@ -16,30 +16,7 @@ topnav: may1
     }
 </style>
 
-<script>
-    function toggleVisibilityByClass(className) {
-        var arrayOfElements = document.getElementsByClassName(className);
-        for (var i=0; i<arrayOfElements.length; i++) {
-            var x = arrayOfElements[i];
-            if (x.style.display === 'none') {
-                x.style.display = 'block';
-            } else {
-                x.style.display = 'none';
-            }
-        }
-    }
-</script>
-
-<nav class="navbar navbar-inverse navbar-fixed-bottom" id="bottomNav" style="max-width: 100%">
-    <div class="container-fluid" style="max-width: 1150px;">
-        <div class="navbar-header">
-            <a class="navbar-brand" style="color: #FFFFFF;" href="#"></a>
-        </div>
-        <button onclick="toggleVisibilityByClass('tehtava')" style="margin:10px;">Piilota/Näytä tehtavat</button>
-        <button onclick="toggleVisibilityByClass('teoria')" style="margin:10px;">Piilota/Näytä teoria</button>
-    </div>
-
-</nav>
+{% include bottomnav.html %}
 
 <input type="hidden" id="chapterNumber" value="2"/>
 
@@ -117,6 +94,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi1">
                                 Potenssin määritelmä
                             </a>
@@ -143,6 +121,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi2">
                                 Potenssin määritelmä
                             </a>
@@ -178,6 +157,7 @@ topnav: may1
                 <div class="tehtava" id="90cb826a-f344-4999-9fd3-349b9c09715e">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi2b">
                                 Potenssin määritelmä
                             </a>
@@ -199,6 +179,7 @@ topnav: may1
                 <div class="tehtava" id="11d7b13e-4939-4a85-8f1d-52a7054f573b">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi2c">
                                 Potenssin määritelmä
                             </a>
@@ -230,6 +211,7 @@ topnav: may1
                 <div class="tehtava" id="81396ace-be51-4d4f-9d47-2c59d51e6d5d">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi3">
                                 Potenssin määritelmä
                             </a>
@@ -263,6 +245,7 @@ topnav: may1
                 <div class="tehtava" id="ad2a42fe-3ddd-4642-89c1-6fa203c46783">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi3b">
                                 Tulon potenssi
                             </a>
@@ -285,6 +268,7 @@ topnav: may1
                 <div class="tehtava" id="caac472c-6088-4d2a-95b8-a0615aa9f3f1">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi3d">
                                 Osamäärän potenssi
                             </a>
@@ -307,6 +291,7 @@ topnav: may1
                 <div class="tehtava" id="8cd36b24-8653-4f75-939d-3b05c7623df9">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi3c">
                                 Tulon ja osamäärän potenssi
                             </a>
@@ -336,6 +321,7 @@ topnav: may1
                 <div class="tehtava" id="0aa628c2-fef2-412e-8ede-492653d96a84">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi9">
                                 Potenssin potenssi
                             </a>
@@ -361,6 +347,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi9b">
                                 Potenssin potenssi
                             </a>
@@ -394,6 +381,7 @@ topnav: may1
                 <div class="tehtava" id="a6e0bd7b-c075-4a47-ace4-fb4ad57f68e5">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi4">
                                 Samankantaisten potenssien tulo
                             </a>
@@ -417,6 +405,7 @@ topnav: may1
                 <div class="tehtava" id="426a590f-fef3-44ec-8bdd-bdbc2dbd46d3">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi4c">
                                 Samankantaisten potenssien osamäärä
                             </a>
@@ -440,6 +429,7 @@ topnav: may1
                 <div class="tehtava" id="d28b4064-6705-443d-9ea9-c5f54f8ad873">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi4b">
                                 Samankantaisten potenssien tulo ja osamäärä
                             </a>
@@ -497,6 +487,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi13">
                                 Negatiivinen eksponentti ja eksponentti nolla
                             </a>
@@ -523,6 +514,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi14">
                                 Negatiivinen eksponentti ja eksponentti nolla
                             </a>
@@ -557,6 +549,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi14b">
                                 Eksponentti -1
                             </a>
@@ -581,6 +574,7 @@ topnav: may1
                 <div class="tehtava" id="a3592f79-b9fa-40a2-a1d7-57fef701bcd3">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi15">
                                 Potenssin potenssi
                             </a>
@@ -605,6 +599,7 @@ topnav: may1
                 <div class="tehtava" id="fd1125da-5b32-4484-b629-e19ef6f3095e">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi17">
                                 Samankantaisten potenssien tulo
                             </a>
@@ -658,6 +653,7 @@ topnav: may1
                 <div class="tehtava" id="f1768895-b3f5-4268-86e8-4d35bdcbfb0d">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi19">
                                 Negatiivinen eksponentti
                             </a>
@@ -709,6 +705,7 @@ topnav: may1
                 <div class="tehtava" id="52f3545e-b927-4173-a79d-6e67f252e087">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi20">
                                 Negatiivinen eksponentti
                             </a>
@@ -730,6 +727,7 @@ topnav: may1
                 <div class="tehtava" id="ee6aa5eb-c52e-4809-b53c-c71049ed156c">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi21">
                                 Negatiivinen eksponentti
                             </a>
@@ -778,6 +776,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi22">
                                 Kymmenen potenssit
                             </a>
@@ -802,6 +801,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi24">
                                 Kymmennen potenssit
                             </a>
@@ -825,6 +825,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi23">
                                 Kymmenpotenssimuoto
                             </a>
@@ -862,6 +863,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi24a">
                                 Merkitsevät numerot
                             </a>
@@ -883,6 +885,7 @@ topnav: may1
                 <div class="tehtava" id="587dd7ea-b3d2-4ef6-96f9-de476b8e3f8e">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#potenssi25">
                                 Kymmenpotenssimuoto
                             </a>
@@ -925,6 +928,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#logaritmi0">
                                 Eksponentin arvo
                             </a>
@@ -958,6 +962,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#logaritmi1">
                                 Logaritmi
                             </a>
@@ -980,6 +985,7 @@ topnav: may1
 
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#logaritmi2">
                                 Logaritmi
                             </a>
@@ -1007,6 +1013,7 @@ topnav: may1
                 <div class="tehtava" id="1625a6b8-f77c-4876-a66b-1420d3218159">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#logaritmi3">
                                 Eksponenttiyhtälön ratkaisu
                             </a>
@@ -1040,6 +1047,7 @@ topnav: may1
                 <div class="tehtava" id="1230ba47-7c47-44e0-a34d-3848bf14922c">
                     <header>
                         <h1>
+                            <div class="checkbox-group"></div>
                             <a data-toggle="collapse" class="collapsed" data-target="#logaritmi4">
                                 Eksponenttiyhtälön ratkaisu
                             </a>
@@ -1075,6 +1083,7 @@ topnav: may1
             <div class="tehtava" id="43294d5a-a131-4608-8267-ebed43ac3457">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL6">
                             Potenssi
                         </a>
@@ -1122,6 +1131,7 @@ topnav: may1
             <div class="tehtava" id="bba27fae-fbbb-41b8-8c09-f311dbcb2557">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL7">
                             Potenssi
                         </a>
@@ -1159,6 +1169,7 @@ topnav: may1
             <div class="tehtava" id="e20de552-b0c3-43b8-a010-0deef2e31ad2">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL15">
                             Potenssi
                         </a>
@@ -1195,6 +1206,7 @@ topnav: may1
             <div class="tehtava" id="8e7b5a9f-b85e-4768-96ca-af4f876d1554">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL15b">
                             Potenssi
                         </a>
@@ -1231,6 +1243,7 @@ topnav: may1
             <div class="tehtava" id="0bc72300-5da5-4761-a250-990be446f1bd">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL16">
                             Negatiivinen eksponentti ja eksponentti nolla
                         </a>
@@ -1266,6 +1279,7 @@ topnav: may1
             <div class="tehtava" id="d3054507-bf9a-4574-8bff-de21e5b6729e">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL17">
                             Negatiivinen eksponentti ja eksponentti nolla
                         </a>
@@ -1299,6 +1313,7 @@ topnav: may1
             <div class="tehtava" id="0139a4c0-4840-49f7-b7c6-d84fd1be3a59">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL18">
                             Negatiivinen eksponentti
                         </a>
@@ -1346,6 +1361,7 @@ topnav: may1
             <div class="tehtava" id="af8aef4d-1a20-4125-8698-523fa8d73148">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#potenssi6">
                             Samankantaiset potenssit
                         </a>
@@ -1380,6 +1396,7 @@ topnav: may1
             <div class="tehtava" id="05b29277-8ed0-486b-812a-dfb28adff589">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#potenssi8">
                             Samankantaiset potenssit
                         </a>
@@ -1414,6 +1431,7 @@ topnav: may1
             <div class="tehtava" id="c57c1019-df82-4117-a257-ae450cb49894">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL5">
                             Potenssin potenssi ja samankantaiset potenssit
                         </a>
@@ -1453,6 +1471,7 @@ topnav: may1
             <div class="tehtava" id="1f7f8ba6-ebc8-402e-9b0c-dd9c781499d7">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#Potenssi10">
                             Potenssien tulo, osamäärä ja potenssin potenssi
                         </a>
@@ -1488,6 +1507,7 @@ topnav: may1
             <div class="tehtava" id="c16d8ed4-7dfd-424f-8117-b888db79ed93">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#potenssipeli">
                             Potenssien laskusäännöt
                         </a>
@@ -1536,6 +1556,7 @@ topnav: may1
             <div class="tehtava" id="fc6bac54-cd27-413e-90d1-6fe2fcbc75a0">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL20">
                             Potenssien laskusäännöt
                         </a>
@@ -1567,6 +1588,7 @@ topnav: may1
             <div class="tehtava" id="add12c70-6f3b-4dce-af54-720e21a14f29">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL21">
                             Potenssien laskusäännöt
                         </a>
@@ -1600,6 +1622,7 @@ topnav: may1
             <div class="tehtava" id="ae0d2fee-31e6-4bb5-a544-8739e06b308d">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#Potenssi11">
                             Eksponenttiyhtälön ratkaisu
                         </a>
@@ -1621,6 +1644,7 @@ topnav: may1
             <div class="tehtava" id="a386b43b-737e-4efc-9007-cb0f5cca1af1">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL2">
                             Eksponenttiyhtälö
                         </a>
@@ -1665,6 +1689,7 @@ topnav: may1
             <div class="tehtava" id="adda01a9-28d0-4443-9bed-566e36987b9c">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#Potenssi12">
                             Eksponenttiyhtälön ratkaisu ja logaritmi
                         </a>
@@ -1683,6 +1708,7 @@ topnav: may1
             <div class="tehtava" id="8dc1547e-e4bd-47cf-9285-ca59c481f4aa">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL3">
                             Kymmenpotenssimuoto ja merkitsevät numerot
                         </a>
@@ -1719,6 +1745,7 @@ topnav: may1
             <div class="tehtava" id="38999f73-887e-41d6-942f-6681b30ffc60">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL8b">
                             Kymmenpotenssimuoto
                         </a>
@@ -1801,6 +1828,7 @@ topnav: may1
             <div class="tehtava" id="e64d9762-ac60-4a11-a11f-fe0a7af2ea84">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL9">
                             Logaritmi
                         </a>
@@ -1834,6 +1862,7 @@ topnav: may1
             <div class="tehtava" id="a673f284-8e35-4116-9f92-2fc3a904d261">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL10">
                             Logaritmi
                         </a>
@@ -1869,6 +1898,7 @@ topnav: may1
             <div class="tehtava" id="6af9dd82-68df-4cf5-9432-015e0ba6abcf">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL11">
                             Eksponenttiyhtälön ratkaisu
                         </a>
@@ -1902,6 +1932,7 @@ topnav: may1
             <div class="tehtava" id="ed78217c-34e9-47af-a81a-4785d71f2c34">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL1">
                             Eksponenttiyhtälön ratkaisu
                         </a>
@@ -1940,6 +1971,7 @@ topnav: may1
             <div class="tehtava" id="57fb5e7a-57b0-4abe-91fc-22f52776ec80">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL12">
 
                         </a>
@@ -1967,6 +1999,7 @@ topnav: may1
             <div class="tehtava" id="d2704333-3879-4da2-9c21-fbbfdc30854b">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL13">
 
                         </a>
@@ -1999,6 +2032,7 @@ topnav: may1
             <div class="tehtava" id="0ad566dd-c281-419a-ab71-0b826866cc00">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL4">
 
                         </a>
@@ -2035,6 +2069,7 @@ topnav: may1
             <div class="tehtava" id="c6a8fcd3-739e-4f47-8830-8eaa86f0b023">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL4b">
 
                         </a>
@@ -2067,6 +2102,7 @@ topnav: may1
             <div class="tehtava" id="d700c3b9-3ca4-4965-aa22-b7765b421cc1">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL14">
 
                         </a>
@@ -2103,6 +2139,7 @@ topnav: may1
             <div class="tehtava" id="6707b116-2999-44ec-9cf3-40f3586063fa">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL14b">
 
                         </a>
@@ -2141,6 +2178,7 @@ topnav: may1
             <div class="tehtava" id="2d5bc864-727a-49cd-bb3f-e85d9217f463">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL14c">
 
                         </a>
@@ -2238,6 +2276,7 @@ topnav: may1
             <div class="tehtava" id="30f036fa-96de-4187-8b68-f0761b31fb8c">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL14d">
 
                         </a>
@@ -2272,6 +2311,7 @@ topnav: may1
             <div class="tehtava" id="a604080a-adb2-4271-baca-83232f5b9fc2">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#PL22">
 
                         </a>
@@ -2494,6 +2534,7 @@ topnav: may1
             <div class="tehtava" id="c2d5f9cb-b775-461b-a360-8bc5c75752a1">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#potenssi16">
                             Potenssin potenssi
                         </a>
@@ -2514,6 +2555,7 @@ topnav: may1
             <div class="tehtava" id="9a6b9a72-f115-4956-bb30-714cc993a5c8">
                 <header>
                     <h1>
+                        <div class="checkbox-group"></div>
                         <a data-target="#potenssi18">
                             Samankantaisten potenssien tulo
                         </a>

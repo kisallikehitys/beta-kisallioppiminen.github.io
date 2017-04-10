@@ -28,22 +28,16 @@ if (typeof HTMLDocument !== 'undefined') {
 let temp_backend_base_url;
 let temp_frontend_base_url;
 
-console.log("In environment settings");
-console.log("domain:");
-console.log(document.domain);
-//if in localhost
+console.log("Adjusting environment settings");
+console.log("Running in: " + document.domain);
 if (document.domain == "localhost" || document.domain == "127.0.0.1") {
-  console.log("settign local urls!");
-  temp_backend_base_url = "https://pure-inlet-98383.herokuapp.com/";
+  temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
   temp_frontend_base_url = "http://localhost:4000/";
-  console.log(temp_backend_base_url);
 } else if (document.domain == "ohtukisalli.github.io") {
-  console.log("Running in: " + document.domain);
   temp_backend_base_url = "https://pure-inlet-98383.herokuapp.com/";
   temp_frontend_base_url = "https://ohtukisalli.github.io/dev-frontend/";
 //if in production
 } else if (document.domain == "beta.kisallioppiminen.fi") {
-  console.log("Running in: " + document.domain);
   temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
   temp_frontend_base_url = "http://beta.kisallioppiminen.fi/";
 } else {
@@ -52,3 +46,6 @@ if (document.domain == "localhost" || document.domain == "127.0.0.1") {
 
 const BACKEND_BASE_URL = temp_backend_base_url;
 const FRONTEND_BASE_URL = temp_frontend_base_url;
+
+console.log('BackendUrl: ' + BACKEND_BASE_URL);
+console.log('FrontendUrl: ' + FRONTEND_BASE_URL);
