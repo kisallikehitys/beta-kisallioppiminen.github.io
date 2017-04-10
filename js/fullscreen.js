@@ -1,5 +1,3 @@
-const FRONTEND_BASE_URL = 'http://localhost:4000/';
-const BACKEND_BASE_URL = 'https://pure-inlet-98383.herokuapp.com/';
 let backend;
 let view;
 let id;
