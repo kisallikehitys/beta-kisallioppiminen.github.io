@@ -1,3 +1,10 @@
+/**
+ * @file DOM/View manipulation
+ * @license GPL v2
+ * @version 1.00
+ */
+
+
  /**
   * @class
   */
