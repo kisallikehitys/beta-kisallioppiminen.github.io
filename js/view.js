@@ -8,6 +8,7 @@
  /**
   * @class
   */
+
 class View {
 
   constructor() {
@@ -24,8 +25,11 @@ class View {
   }
 
   _buildModal() {
-    let ga = document.querySelector('#login-modal-body a');
-    let gimg = document.querySelector('#login-modal-body img');
+    const AUTHURL = 'users/auth/google_oauth2';
+
+    let divBody = document.getElementById('login-modal-body');
+    let a = document.createElement('a');
+    let img = document.createElement('img');
 
     let ddomain;
     if (document.domain == 'ohtukisalli.github.io') {
@@ -34,13 +38,18 @@ class View {
       ddomain = '';
     }
 
-    ga.href = BACKEND_BASE_URL + 'users/auth/google_oauth2';
-    gimg.src = ddomain + '/img/google-login.png';
+    img.setAttribute('src', ddomain + '/img/google-login.png');
+    img.setAttribute('alt', 'Google-nappula');
 
+    a.setAttribute('href', BACKEND_BASE_URL + AUTHURL);
 
-    if (FRONTEND_BASE_URL == "http://localhost:4000/" || FRONTEND_BASE_URL == 'http://127.0.0.1:4000/') {
+    a.append(img);
+    divBody.append(a);
+
+    if (FRONTEND_BASE_URL == "http://localhost:4000/") {
       this._addNormalLoginToModal(FRONTEND_BASE_URL);
     }
+
   }
 
   _addNormalLoginToModal(backendUrl) {
