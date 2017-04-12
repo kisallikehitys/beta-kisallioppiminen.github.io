@@ -17,6 +17,13 @@ class View {
   showNavigation() {
     if (Session.isLogged()) {
       this._buildUser();
+      document.cookie = 'attemptedLogin=; path=/; expires=' + new Date(0).toUTCString();
+    } else if (document.getCookie('attemptedLogin')) {
+      console.log('Loggin was too late, refreshing.');
+      setTimeout( function() {
+        document.cookie = 'attemptedLogin=; path=/; expires=' + new Date(0).toUTCString();
+        location.reload();
+      }, 2000);
     } else {
       this._buildGuest();
       this._buildModal();
@@ -37,6 +44,9 @@ class View {
     ga.href = BACKEND_BASE_URL + 'users/auth/google_oauth2';
     gimg.src = ddomain + '/img/google-login.png';
 
+    ga.onclick = function () {
+      document.cookie = 'attemptedLogin=true; path=/';
+    };
 
     if (FRONTEND_BASE_URL == "http://localhost:4000/" || FRONTEND_BASE_URL == 'http://127.0.0.1:4000/') {
       this._addNormalLoginToModal(FRONTEND_BASE_URL);
@@ -95,7 +105,6 @@ class View {
 
     form.append(formDiv);
     document.getElementById('login-modal-body').append(form);
-
   }
   
   _buildUser() {
