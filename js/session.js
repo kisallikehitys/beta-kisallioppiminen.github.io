@@ -35,7 +35,7 @@ class Session {
           const session_user = data;
 
           if (session_user.has_sign_in !== null && session_user.has_sign_in !== undefined) {
-            let newExpireTime = Session._getNewExpireTime();
+            let newExpireTime = Session.getNewExpireTime(Session._getBackendSessionExpireInMs());
 
             document.cookie = 
               'userFirstName=' + session_user.has_sign_in.first_name + 
@@ -118,7 +118,7 @@ class Session {
    */
   static renew() {
     if (this.isLogged()) {
-      let newExpireTime = this._getNewExpireTime();
+      let newExpireTime = this.getNewExpireTime(Session._getBackendSessionExpireInMs());
 
       let userFirstName = this.getUserFirstName();
       let isTeacher = this.isTeacher();
@@ -153,11 +153,19 @@ class Session {
   /**
    * Helper to get correct UTC time when extending cookies life.
    */
-  static _getNewExpireTime() {
+  static getNewExpireTime(newTime) {
     let now = new Date();
     let time = now.getTime();
-    time += 3600 * 1000 * 6;
+    time += newTime;
     now.setTime(time);
     return now.toUTCString();
+  }
+
+  /**
+   * @returns {Number} Milliseconds until backend session expires.
+   */
+  static _getBackendSessionExpireInMs() {
+    const hours = 6;  // this value should always be the same as backend session
+    return 3600 * 1000 * hours;
   }
 }
