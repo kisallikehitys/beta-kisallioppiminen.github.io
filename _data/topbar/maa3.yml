@@ -5,11 +5,11 @@ navigation:
     name: Kurssin etusivu
     path: /kurssit/maa3/
   -
-    name: 1. Kolmio
+    name: Kolmio
     path: /kurssit/maa3/luku1/
   -
-    name: 2. Tasogeometriaa
+    name: Tasogeometriaa
     path: /kurssit/maa3/luku2/
   -
-    name: 3. Avaruusgeometriaa
+    name: Avaruusgeometriaa
     path: /kurssit/maa3/luku3/
