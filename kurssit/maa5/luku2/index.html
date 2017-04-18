@@ -57,7 +57,7 @@ topnav: maa5
     </section>
 
     <section class="panel">
-        <header>
+        <header class="otsikko">
             <h1>
                 <a data-toggle="collapse" class="collapsed" data-target="#ympyra1">
                     Ympyrän yhtälö
@@ -110,57 +110,57 @@ topnav: maa5
                     </div>
                 </div>
             </div>
-<div class="teoria">
-            <p>
-                Seuraavassa teoreemassa johdetaan ympyrän yhtälö käyttämällä samoja ideoita kuin äskeisessä tehtävässä. Lue teoreema ja sen perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
-            </p>
-
-            <div class="theorem" id="YMPYRÄN YHTÄLÖ">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Jos ympyrän keskipiste on $(a,b)$ ja säde $r$, niin ympyrän yhtälö on
-                    $$(x-a)^2 + (y-b)^2 = r^2.$$
+                    Seuraavassa teoreemassa johdetaan ympyrän yhtälö käyttämällä samoja ideoita kuin äskeisessä tehtävässä. Lue teoreema ja sen perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
                 </p>
-                <div class="proof">
+
+                <div class="theorem" id="YMPYRÄN YHTÄLÖ">
+                    <h3>TEOREEMA</h3>
                     <p>
-                        Perustelu:
+                        Jos ympyrän keskipiste on $(a,b)$ ja säde $r$, niin ympyrän yhtälö on
+                        $$(x-a)^2 + (y-b)^2 = r^2.$$
                     </p>
-                    <ol>
-                        <li>
-                            Oletetaan aluksi, että $(x,y)$ on ympyrän piste. Tällöin sen etäisyys ympyrän keskipisteestä $(a,b)$ on $r$. Tämä voidaan ilmaista yhtälönä
+                    <div class="proof">
+                        <p>
+                            Perustelu:
+                        </p>
+                        <ol>
+                            <li>
+                                Oletetaan aluksi, että $(x,y)$ on ympyrän piste. Tällöin sen etäisyys ympyrän keskipisteestä $(a,b)$ on $r$. Tämä voidaan ilmaista yhtälönä
+                                $$
+                                \sqrt{(x-a)^2 + (y-b)^2} = r.
+                                $$
+                                Tästä seuraa, että
+                                $$
+                                (x-a)^2 + (y-b)^2 = r^2.
+                                $$
+                            </li>
+                            <li>
+                                Oletetaan, että piste $(x,y)$ toteuttaa yhtälön
+                                $$
+                                (x-a)^2 + (y-b)^2 = r^2.
+                                $$
+                                Yhtälön kumpikin puoli on epänegatiivinen, joten voidaan ottaa neliöjuuri:
+                                $$
+                                \sqrt{(x-a)^2 + (y-b)^2} = \sqrt{r^2}.
+                                $$
+                                Koska luku $r$ on ympyrän säde, sekin on epänegatiivinen: $r \geq 0$. Tästä seuraa, että $\sqrt{r^2} = r$. Yhtälö voidaan siis kirjoittaa muodossa
+                                $$
+                                \sqrt{(x-a)^2 + (y-b)^2} = r.
+                                $$
+                                Tästä nähdään, että pisteen $(x,y)$ etäisyys ympyrän keskipisteestä $(a,b)$ on $r$. Siis piste $(x,y)$ on ympyrällä.
+                            </li>
+                        </ol>
+                        <p>
+                            Näin on näytetty, että piste $(x,y)$ on ympyrällä, jos ja vain jos se toteuttaa yhtälön
                             $$
                             \sqrt{(x-a)^2 + (y-b)^2} = r.
                             $$
-                            Tästä seuraa, että
-                            $$
-                            (x-a)^2 + (y-b)^2 = r^2.
-                            $$
-                        </li>
-                        <li>
-                            Oletetaan, että piste $(x,y)$ toteuttaa yhtälön
-                            $$
-                            (x-a)^2 + (y-b)^2 = r^2.
-                            $$
-                            Yhtälön kumpikin puoli on epänegatiivinen, joten voidaan ottaa neliöjuuri:
-                            $$
-                            \sqrt{(x-a)^2 + (y-b)^2} = \sqrt{r^2}.
-                            $$
-                            Koska luku $r$ on ympyrän säde, sekin on epänegatiivinen: $r \geq 0$. Tästä seuraa, että $\sqrt{r^2} = r$. Yhtälö voidaan siis kirjoittaa muodossa
-                            $$
-                            \sqrt{(x-a)^2 + (y-b)^2} = r.
-                            $$
-                            Tästä nähdään, että pisteen $(x,y)$ etäisyys ympyrän keskipisteestä $(a,b)$ on $r$. Siis piste $(x,y)$ on ympyrällä.
-                        </li>
-                    </ol>
-                    <p>
-                        Näin on näytetty, että piste $(x,y)$ on ympyrällä, jos ja vain jos se toteuttaa yhtälön
-                        $$
-                        \sqrt{(x-a)^2 + (y-b)^2} = r.
-                        $$
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
-</div>
             <div class="tehtavat">
                 <div class="tehtava" id="a6110eee-beb4-43e0-bbdc-04f728062f1c">
                     <header>
@@ -280,13 +280,13 @@ topnav: maa5
                 </div>
             </div>
 
-<div class="teoria">
-            <p>
-                Ympyrän piirtäminen tarkasti harpin avulla onnistuu joissakin tapauksissa silloinkin, kun ympyrän säde on irrationaaliluku. Ideana on soveltaa Pythagoraan lausetta. Esimerkiksi ympyrä, jonka keskipiste on $(3,2)$ ja säde $\sqrt{17}$, voidaan piirtää etsimällä pisteet, joihin päästään keskipisteestä siirtymällä neljä askelta vaakasuunnassa ja yksi askel pystysuunnassa, ja pisteet, joihin päästään keskipisteestä siirtymällä yksi askel vaakasuunnassa ja neljä askelta pystysuunnassa:
-                <br>
-                <img src="/kurssit/maa5/kuvat/k036.png" max-width: 100%; width: auto; height: auto;/>
-            </p>
-</div>
+            <div class="teoria">
+                <p>
+                    Ympyrän piirtäminen tarkasti harpin avulla onnistuu joissakin tapauksissa silloinkin, kun ympyrän säde on irrationaaliluku. Ideana on soveltaa Pythagoraan lausetta. Esimerkiksi ympyrä, jonka keskipiste on $(3,2)$ ja säde $\sqrt{17}$, voidaan piirtää etsimällä pisteet, joihin päästään keskipisteestä siirtymällä neljä askelta vaakasuunnassa ja yksi askel pystysuunnassa, ja pisteet, joihin päästään keskipisteestä siirtymällä yksi askel vaakasuunnassa ja neljä askelta pystysuunnassa:
+                    <br>
+                    <img src="/kurssit/maa5/kuvat/k036.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="9fedd50e-6432-4422-aa03-ee52fa3052ba">
@@ -369,62 +369,62 @@ topnav: maa5
             </div>
 
             <div class="teoria">
-            <p>
-                Ympyrän yhtälö voidaan aina muokata muotoon
-                $$x^2 + y^2 + ax + by + c = 0.$$
-                Esimerkiksi ympyrän, jonka keskipiste on $(7,-9)$ ja säde on $4$, yhtälö on
-                $$(x-7)^2 + (y+9)^2 = 16.$$
-                Kun yhtälön vasemmalla puolella tehdään potenssiin korotukset, yhtälö saa muodon
-                $$x^2 - 14x + 49 + y^2 + 18y + 81 = 16$$
-                eli
-                $$x^2 + y^2 - 14x + 18y + 114 = 0.$$
-                Huomaa, että potenssiin korotukset voi tehdä joko kertomalla sulut auki tai käyttämällä <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA2-kurssilta</a> tuttuja summan neliön ja erotuksen neliön muistikaavoja:
-            </p>
+                <p>
+                    Ympyrän yhtälö voidaan aina muokata muotoon
+                    $$x^2 + y^2 + ax + by + c = 0.$$
+                    Esimerkiksi ympyrän, jonka keskipiste on $(7,-9)$ ja säde on $4$, yhtälö on
+                    $$(x-7)^2 + (y+9)^2 = 16.$$
+                    Kun yhtälön vasemmalla puolella tehdään potenssiin korotukset, yhtälö saa muodon
+                    $$x^2 - 14x + 49 + y^2 + 18y + 81 = 16$$
+                    eli
+                    $$x^2 + y^2 - 14x + 18y + 114 = 0.$$
+                    Huomaa, että potenssiin korotukset voi tehdä joko kertomalla sulut auki tai käyttämällä <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA2-kurssilta</a> tuttuja summan neliön ja erotuksen neliön muistikaavoja:
+                </p>
 
-            <div class="theorem" id="SUMMAN JA EROTUKSEN NELIÖT">
-                <h3>TEOREEMA</h3>
-                <ol>
-                    <li> $\quad a^2 + 2ab + b^2 = (a+b)^2$</li>
-                    <li> $\quad a^2 - 2ab + b^2 = (a-b)^2$</li>
-                </ol>
+                <div class="theorem" id="SUMMAN JA EROTUKSEN NELIÖT">
+                    <h3>TEOREEMA</h3>
+                    <ol>
+                        <li> $\quad a^2 + 2ab + b^2 = (a+b)^2$</li>
+                        <li> $\quad a^2 - 2ab + b^2 = (a-b)^2$</li>
+                    </ol>
+                </div>
+
+                <p>
+                    Tutkitaan seuraavaksi, esittääkö muotoa
+                    $$x^2 + y^2 + ax + by + c = 0$$
+                    oleva yhtälö aina ympyrää.
+                    Tarkastellaan esimerkiksi yhtälöä
+                    $$x^2 + y^2 - 4x + 2y + c = 0.$$
+                    Tunnistetaan ja ryhmitellään ensin yhteenlaskettavat summan neliön ja erotuksen neliön muistikaavojen mukaisesti:
+                    \begin{align*}
+                    \textcolor{blue}{x^2} + \textcolor{red}{y^2} \textcolor{blue}{- 4x} \textcolor{red}{+ 2y} + c &= 0 \\
+                    \textcolor{blue}{x^2- 4x} + \textcolor{red}{y^2 + 2y} + c &= 0
+                    \end{align*}
+                    Lisätään sen jälkeen yhtälön molemmille puolille termejä niin, että vasemmalle saadaan muistikaavojen mukaiset lausekkeet:
+                    \begin{align*}
+                    \textcolor{blue}{x^2- 4x + 2^2} + \textcolor{red}{y^2 + 2y + 1^2} + c &= \textcolor{blue}{2^2}\textcolor{red}{+1^2}
+                    \end{align*}
+                    Nyt muistikaavojen avulla vasemmalle puolelle saadaan neliöt:
+                    \begin{align*}
+                    \textcolor{blue}{(x-2)^2} + \textcolor{red}{(y+1)^2} + c &= 5.
+                    \end{align*}
+                    Lopuksi yhtälö voidaan kirjoittaa muodossa, josta ympyrän keskipiste ja säde on helppo tunnistaa:
+                    \begin{align*}
+                    (x-2)^2 + (y+1)^2  &= 5-c.
+                    \end{align*}
+                    Havaitaan, että tämän yhtälön vasen puoli on aina epänegatiivinen, koska se on kahden neliölausekkeen summa. Se, mitä käyrää yhtälö esittää, riippuu nyt yhtälön oikeasta puolesta.
+                </p>
+                <ul>
+                    <li> Jos $5-c > 0$, kysymyksessä on ympyrä, jonka keskipiste on $(2,-1)$ ja säde $\sqrt{5-c}$.</li>
+                    <li> Jos $5-c = 0$, yhtälön toteuttaa ainoastaan piste $(2,-1)$. </li>
+                    <li> Jos $5-c < 0$, mikään tason piste ei toteuta yhtälöä. </li>
+                </ul>
+                <p>
+                    Vastaavalla tavalla voidaan osoittaa yleisesti, että yhtälön
+                    $$x^2 + y^2 + ax + by + c = 0$$
+                    ratkaisujoukko on joko ympyrä tai yksittäinen piste, tai ratkaisuja ei ole lainkaan.
+                </p>
             </div>
-
-            <p>
-                Tutkitaan seuraavaksi, esittääkö muotoa
-                $$x^2 + y^2 + ax + by + c = 0$$
-                oleva yhtälö aina ympyrää.
-                Tarkastellaan esimerkiksi yhtälöä
-                $$x^2 + y^2 - 4x + 2y + c = 0.$$
-                Tunnistetaan ja ryhmitellään ensin yhteenlaskettavat summan neliön ja erotuksen neliön muistikaavojen mukaisesti:
-                \begin{align*}
-                \textcolor{blue}{x^2} + \textcolor{red}{y^2} \textcolor{blue}{- 4x} \textcolor{red}{+ 2y} + c &= 0 \\
-                \textcolor{blue}{x^2- 4x} + \textcolor{red}{y^2 + 2y} + c &= 0
-                \end{align*}
-                Lisätään sen jälkeen yhtälön molemmille puolille termejä niin, että vasemmalle saadaan muistikaavojen mukaiset lausekkeet:
-                \begin{align*}
-                \textcolor{blue}{x^2- 4x + 2^2} + \textcolor{red}{y^2 + 2y + 1^2} + c &= \textcolor{blue}{2^2}\textcolor{red}{+1^2}
-                \end{align*}
-                Nyt muistikaavojen avulla vasemmalle puolelle saadaan neliöt:
-                \begin{align*}
-                \textcolor{blue}{(x-2)^2} + \textcolor{red}{(y+1)^2} + c &= 5.
-                \end{align*}
-                Lopuksi yhtälö voidaan kirjoittaa muodossa, josta ympyrän keskipiste ja säde on helppo tunnistaa:
-                \begin{align*}
-                (x-2)^2 + (y+1)^2  &= 5-c.
-                \end{align*}
-                Havaitaan, että tämän yhtälön vasen puoli on aina epänegatiivinen, koska se on kahden neliölausekkeen summa. Se, mitä käyrää yhtälö esittää, riippuu nyt yhtälön oikeasta puolesta.
-            </p>
-            <ul>
-                <li> Jos $5-c > 0$, kysymyksessä on ympyrä, jonka keskipiste on $(2,-1)$ ja säde $\sqrt{5-c}$.</li>
-                <li> Jos $5-c = 0$, yhtälön toteuttaa ainoastaan piste $(2,-1)$. </li>
-                <li> Jos $5-c < 0$, mikään tason piste ei toteuta yhtälöä. </li>
-            </ul>
-            <p>
-                Vastaavalla tavalla voidaan osoittaa yleisesti, että yhtälön
-                $$x^2 + y^2 + ax + by + c = 0$$
-                ratkaisujoukko on joko ympyrä tai yksittäinen piste, tai ratkaisuja ei ole lainkaan.
-            </p>
-</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="15e91a41-38b5-4225-b584-6767e6f76377">
@@ -506,7 +506,7 @@ topnav: maa5
     </section>
 
     <section class="panel">
-        <header>
+        <header class="otsikko">
             <h1>
                 <a data-toggle="collapse" class="collapsed" data-target="#ympyra2">
                     Ympyrän leikkauspisteitä
@@ -514,11 +514,11 @@ topnav: maa5
             </h1>
         </header>
         <div id="ympyra2" class="collapse">
-<div class="teoria">
-            <p>
-                Tässä kappaleessa tutkitaan kahden ympyrän sekä suoran ja ympyrän leikkauspisteitä. Aloitetaan tarkastelemalla kahden ympyrän leikkauspisteitä.
-            </p>
-</div>
+            <div class="teoria">
+                <p>
+                    Tässä kappaleessa tutkitaan kahden ympyrän sekä suoran ja ympyrän leikkauspisteitä. Aloitetaan tarkastelemalla kahden ympyrän leikkauspisteitä.
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="cd98f7fa-e3af-4eec-8018-9b222bd957cd">
                     <header>
@@ -582,65 +582,65 @@ topnav: maa5
                 </div>
             </div>
 
-<div class="teoria">
-            <p>
-                Kahden ympyrän leikkauspisteet löydetään ratkaisemalla ympyröiden yhtälöistä muodostuva yhtälöpari. Tällaiseen yhtälöpariin kannattaa soveltaa luvussa <a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">Suora</a> opiskeltua yhteenlaskumenetelmää. Seuraava esimerkki havainnollistaa asiaa.
-            </p>
+            <div class="teoria">
+                <p>
+                    Kahden ympyrän leikkauspisteet löydetään ratkaisemalla ympyröiden yhtälöistä muodostuva yhtälöpari. Tällaiseen yhtälöpariin kannattaa soveltaa luvussa <a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">Suora</a> opiskeltua yhteenlaskumenetelmää. Seuraava esimerkki havainnollistaa asiaa.
+                </p>
 
-            <p>
-                Tarkastellaan edellisen tehtävän yhtälöparia
-                $$
-                \left\{\begin{aligned}
-                (x+3)^2 + (y-1)^2 &= 20 \\
-                (x-2)^2 + (y-6)^2 &= 10
-                \end{aligned}\right.
-                $$
-                Tehdään yhtälöiden vasemmalla puolella toiseen potenssiin korotukset, jolloin yhtälöpari saadaan sievennysten jälkeen muotoon
-                $$
-                \left\{\begin{aligned}
-                x^2 + y^2 + 6x - 2y &= 10 \\
-                x^2 + y^2 - 4x - 12y &= -30.
-                \end{aligned}\right.
-                $$
-                Ratkaistaan tämä yhtälöpari soveltamalla yhteenlaskumenetelmää.
-                Kerrotaan toinen yhtälö luvulla $-1$:
-                $$
-                \left\{\begin{aligned}
-                \textcolor{red}{x^2 + y^2} + 6x - 2y &= 10  \\
-                \textcolor{red}{x^2 + y^2} - 4x - 12y &= -30 \mid \, \textcolor{red}{\cdot \, (-1)}
-                \end{aligned}\right.
-                $$
-                Yhtälöpari saa näin muodon
-                $$
-                \left\{\begin{aligned}
-                \textcolor{red}{x^2 + y^2} + 6x - 2y &= 10 \\
-                \textcolor{red}{-x^2 - y^2} \textcolor{blue}{+ 4x + 12y} &= \textcolor{blue}{30}.
-                \end{aligned}\right.
-                $$
-                Lasketaan yhtälöt yhteen, jolloin saadaan yksi yhtälö. Nyt tuloksena on yhtälö
-                $$10x + 10y = 40.$$
-                Ratkaistaan tästä toinen tuntematon, esimerkiksi
-                $$y = 4-x.$$
-                Ympyröiden leikkauspisteet sijaitsevat tätä yhtälöä vastaavalla suoralla:
-                <br>
-                <img src="/kurssit/maa5/kuvat/k037.png" max-width: 100%; width: auto; height: auto;/>
-                <br>
-                Sijoitetaan saatu lauseke jompaan kumpaan alkuperäisistä yhtälöistä, esimerkiksi ensimmäiseen ja sievennetään:
-                \begin{align*}
-                x^2 + (4-x)^2 + 6x - 2(4-x) &= 10 \\
-                &\ \vdots \\
-                2x^2   &= 2 \ \mid \, : 2\\
-                x^2 &= 1
-                \end{align*}
-                Tämä yhtälö toteutuu, jos ja vain jos $x = 1$ tai $x = -1$.
-                Leikkauspisteiden $y$-koordinaatit voidaan ratkaista esimerkiksi kohdassa 2 johdetusta yhtälöstä $y = 4-x$:
-            <ul>
-                <li> Jos $x = 1$, niin $y = 4-1 = 3$.</li>
-                <li> Jos $x = -1$, niin $y = 4-(-1) = 5$.</li>
-            </ul>
-            Leikkauspisteet ovat siis $(1,3)$ ja $(-1,5)$.
-            </p>
-</div>
+                <p>
+                    Tarkastellaan edellisen tehtävän yhtälöparia
+                    $$
+                    \left\{\begin{aligned}
+                    (x+3)^2 + (y-1)^2 &= 20 \\
+                    (x-2)^2 + (y-6)^2 &= 10
+                    \end{aligned}\right.
+                    $$
+                    Tehdään yhtälöiden vasemmalla puolella toiseen potenssiin korotukset, jolloin yhtälöpari saadaan sievennysten jälkeen muotoon
+                    $$
+                    \left\{\begin{aligned}
+                    x^2 + y^2 + 6x - 2y &= 10 \\
+                    x^2 + y^2 - 4x - 12y &= -30.
+                    \end{aligned}\right.
+                    $$
+                    Ratkaistaan tämä yhtälöpari soveltamalla yhteenlaskumenetelmää.
+                    Kerrotaan toinen yhtälö luvulla $-1$:
+                    $$
+                    \left\{\begin{aligned}
+                    \textcolor{red}{x^2 + y^2} + 6x - 2y &= 10  \\
+                    \textcolor{red}{x^2 + y^2} - 4x - 12y &= -30 \mid \, \textcolor{red}{\cdot \, (-1)}
+                    \end{aligned}\right.
+                    $$
+                    Yhtälöpari saa näin muodon
+                    $$
+                    \left\{\begin{aligned}
+                    \textcolor{red}{x^2 + y^2} + 6x - 2y &= 10 \\
+                    \textcolor{red}{-x^2 - y^2} \textcolor{blue}{+ 4x + 12y} &= \textcolor{blue}{30}.
+                    \end{aligned}\right.
+                    $$
+                    Lasketaan yhtälöt yhteen, jolloin saadaan yksi yhtälö. Nyt tuloksena on yhtälö
+                    $$10x + 10y = 40.$$
+                    Ratkaistaan tästä toinen tuntematon, esimerkiksi
+                    $$y = 4-x.$$
+                    Ympyröiden leikkauspisteet sijaitsevat tätä yhtälöä vastaavalla suoralla:
+                    <br>
+                    <img src="/kurssit/maa5/kuvat/k037.png" max-width: 100%; width: auto; height: auto;/>
+                    <br>
+                    Sijoitetaan saatu lauseke jompaan kumpaan alkuperäisistä yhtälöistä, esimerkiksi ensimmäiseen ja sievennetään:
+                    \begin{align*}
+                    x^2 + (4-x)^2 + 6x - 2(4-x) &= 10 \\
+                    &\ \vdots \\
+                    2x^2   &= 2 \ \mid \, : 2\\
+                    x^2 &= 1
+                    \end{align*}
+                    Tämä yhtälö toteutuu, jos ja vain jos $x = 1$ tai $x = -1$.
+                    Leikkauspisteiden $y$-koordinaatit voidaan ratkaista esimerkiksi kohdassa 2 johdetusta yhtälöstä $y = 4-x$:
+                <ul>
+                    <li> Jos $x = 1$, niin $y = 4-1 = 3$.</li>
+                    <li> Jos $x = -1$, niin $y = 4-(-1) = 5$.</li>
+                </ul>
+                Leikkauspisteet ovat siis $(1,3)$ ja $(-1,5)$.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="13b14fb9-d70f-4311-af22-e30c1c242d21">
@@ -668,9 +668,9 @@ topnav: maa5
             </div>
 
             <div class="teoria">
-            <p>
-                Siirrytään seuraavaksi tutkimaan suoran ja ympyrän leikkauspisteitä.
-            </p>
+                <p>
+                    Siirrytään seuraavaksi tutkimaan suoran ja ympyrän leikkauspisteitä.
+                </p>
             </div>
 
             <div class="tehtavat">
@@ -737,39 +737,39 @@ topnav: maa5
             </div>
 
             <div class="teoria">
-            <p>
-                Suoran ja ympyrän yhtälöistä muodostuva yhtälöpari on kätevintä ratkaista sijoitusmenetelmällä, jota käytettiin jo kurssissa <a href="http://kisallioppiminen.fi/kurssit/maa4/xyz-koordinaatisto/">MAA4</a>. Havainnollistetaan menetelmää seuraavan esimerkin avulla.
-            </p>
+                <p>
+                    Suoran ja ympyrän yhtälöistä muodostuva yhtälöpari on kätevintä ratkaista sijoitusmenetelmällä, jota käytettiin jo kurssissa <a href="http://kisallioppiminen.fi/kurssit/maa4/xyz-koordinaatisto/">MAA4</a>. Havainnollistetaan menetelmää seuraavan esimerkin avulla.
+                </p>
 
-            <p>
-                Etsitään suoran $x + 2y - 11 = 0$ ja ympyrän $x^2+y^2 + 4x - 8y + 10 = 0$ leikkauspisteet ratkaisemalla yhtälöpari
-                $$
-                \left\{\begin{aligned}
-                x + 2y - 11 &= 0 \\
-                x^2+y^2 + 4x - 8y + 10 &= 0.
-                \end{aligned}\right.
-                $$
-                Ratkaistaan suoran yhtälöstä jompi kumpi tuntemattomista. Esimerkiksi
-                $$x = 11-2y.$$
-                Sijoitetaan saatu lauseke ympyrän yhtälöön ja sievennetään:
-                \begin{align*}
-                ({\scriptstyle 11-2y})^2 + y^2  + 4({\scriptstyle 11-2y}) - 8y  + 10 &= 0 \\
-                &\vdots \\
-                5y^2 - 60y + 175 &= 0 \ \mid \, : 5\\
-                y^2 - 12y + 35 &= 0
-                \end{align*}
-                Saatu toisen asteen yhtälö voidaan ratkaista toisen asteen yhtälön ratkaisukaavan avulla (<a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA2</a>, teoreema 5).
-                $$
-                y = \frac{12\pm \sqrt{12^2 - 4\cdot 35}}{2\cdot 1} = 6 \pm 1.
-                $$
-                Siis $y = 7$ tai $y = 5$.
-                Toinen tuntematon saadaan nyt selville sijoittamalla äsken saatu ratkaisu suoran yhtälöön:
-                $$x = 11 - 2\cdot 7 = -3$$
-                tai
-                $$x = 11 - 2\cdot 5 = 1.$$
-                Etsityt leikkauspisteet ovat siis $(-3,7)$ ja $(1,5)$.
-            </p>
-</div>
+                <p>
+                    Etsitään suoran $x + 2y - 11 = 0$ ja ympyrän $x^2+y^2 + 4x - 8y + 10 = 0$ leikkauspisteet ratkaisemalla yhtälöpari
+                    $$
+                    \left\{\begin{aligned}
+                    x + 2y - 11 &= 0 \\
+                    x^2+y^2 + 4x - 8y + 10 &= 0.
+                    \end{aligned}\right.
+                    $$
+                    Ratkaistaan suoran yhtälöstä jompi kumpi tuntemattomista. Esimerkiksi
+                    $$x = 11-2y.$$
+                    Sijoitetaan saatu lauseke ympyrän yhtälöön ja sievennetään:
+                    \begin{align*}
+                    ({\scriptstyle 11-2y})^2 + y^2  + 4({\scriptstyle 11-2y}) - 8y  + 10 &= 0 \\
+                    &\vdots \\
+                    5y^2 - 60y + 175 &= 0 \ \mid \, : 5\\
+                    y^2 - 12y + 35 &= 0
+                    \end{align*}
+                    Saatu toisen asteen yhtälö voidaan ratkaista toisen asteen yhtälön ratkaisukaavan avulla (<a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA2</a>, teoreema 5).
+                    $$
+                    y = \frac{12\pm \sqrt{12^2 - 4\cdot 35}}{2\cdot 1} = 6 \pm 1.
+                    $$
+                    Siis $y = 7$ tai $y = 5$.
+                    Toinen tuntematon saadaan nyt selville sijoittamalla äsken saatu ratkaisu suoran yhtälöön:
+                    $$x = 11 - 2\cdot 7 = -3$$
+                    tai
+                    $$x = 11 - 2\cdot 5 = 1.$$
+                    Etsityt leikkauspisteet ovat siis $(-3,7)$ ja $(1,5)$.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="97d639f9-78b6-418e-ba12-b646f1b1c8cb">
@@ -815,7 +815,7 @@ topnav: maa5
     </section>
 
     <section class="panel">
-        <header>
+        <header class="otsikko">
             <h1>
                 <a data-toggle="collapse" class="collapsed" data-target="#ympyra3">
                     Ympyrän tangentti
@@ -825,19 +825,19 @@ topnav: maa5
         <div id="ympyra3" class="collapse">
 
             <div class="teoria">
-            <p>
-                Edellisessä luvussa tutkittiin suoran ja ympyrän leikkauspisteitä. Jos suoralla ja ympyrällä on tasan yksi yhteinen piste, sanotaan suoraa ympyrän tangentiksi.
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: YMPYRÄN TANGENTTI</h3>
                 <p>
-                    Suora, joka kohtaa ympyrän vain yhdessä pisteessä, on ympyrän <em>tangentti</em>.
-                    <br>
-                    <img src="/kurssit/maa3/kuvat/tasoK41.png" max-width: 100%; width: auto; height: auto;/>
+                    Edellisessä luvussa tutkittiin suoran ja ympyrän leikkauspisteitä. Jos suoralla ja ympyrällä on tasan yksi yhteinen piste, sanotaan suoraa ympyrän tangentiksi.
                 </p>
+
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: YMPYRÄN TANGENTTI</h3>
+                    <p>
+                        Suora, joka kohtaa ympyrän vain yhdessä pisteessä, on ympyrän <em>tangentti</em>.
+                        <br>
+                        <img src="/kurssit/maa3/kuvat/tasoK41.png" max-width: 100%; width: auto; height: auto;/>
+                    </p>
+                </div>
             </div>
-</div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="302cae05-16fd-4b56-848d-61fa6b5ad839">
@@ -867,10 +867,10 @@ topnav: maa5
             </div>
 
             <div class="teoria">
-            <p>
-                Ympyrän tangenttiin tutustuttiin jo kurssilla <a href="http://kisallioppiminen.fi/kurssit/maa3/luku2/">MAA3</a>. Siellä osoitettiin muun muassa, että ympyrän tangetti on aina kohtisuorassa sivuamispisteeseen piirrettyä sädettä vastaan (teoreema 15). Tämän tiedon avulla voidaan määrittää ympyrän tietyn pisteen kautta kulkevan tangentin yhtälö.
-            </p>
-</div>
+                <p>
+                    Ympyrän tangenttiin tutustuttiin jo kurssilla <a href="http://kisallioppiminen.fi/kurssit/maa3/luku2/">MAA3</a>. Siellä osoitettiin muun muassa, että ympyrän tangetti on aina kohtisuorassa sivuamispisteeseen piirrettyä sädettä vastaan (teoreema 15). Tämän tiedon avulla voidaan määrittää ympyrän tietyn pisteen kautta kulkevan tangentin yhtälö.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="753fadfe-244b-42ff-bc70-191a7dc3367a">
@@ -914,11 +914,11 @@ topnav: maa5
                 </div>
             </div>
 
-<div class="teoria">
-            <p>
-                Tutkitaan seuraavaksi, miten löydetään yhtälö tietyn pisteen kautta kulkevalle tangentille tapauksessa, jossa piste ei ole ympyrällä. Tässä tilanteessa oleellista on, että ympyrän keskipisteen etäisyys tangenttisuorasta on yhtä suuri kuin ympyrän säde. Näin voidaan hyödyntää <a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">edellisen luvun</a> Pisteen etäisyys suorasta -teoreemaa.
-            </p>
-</div>
+            <div class="teoria">
+                <p>
+                    Tutkitaan seuraavaksi, miten löydetään yhtälö tietyn pisteen kautta kulkevalle tangentille tapauksessa, jossa piste ei ole ympyrällä. Tässä tilanteessa oleellista on, että ympyrän keskipisteen etäisyys tangenttisuorasta on yhtä suuri kuin ympyrän säde. Näin voidaan hyödyntää <a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">edellisen luvun</a> Pisteen etäisyys suorasta -teoreemaa.
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="9e752883-c1a7-40ce-9ee9-886afe2f170d">
                     <header>
@@ -970,61 +970,61 @@ topnav: maa5
             </div>
 
             <div class="teoria">
-            <p>
-                Edellisessä tehtävässä päädyttiin ratkaisemaan yhtälö
-                $$\frac{\left|6-2k\right|}{\sqrt{k^2+1}} = \sqrt{20}.$$
-                Tällaiset yhtälöt voidaan ratkaista toiseen potenssiin korottamalla seuraavasti:
-            </p>
-            <p>
-                Jos yhtälön vasen ja oikea puoli ovat yhtä suuret, myös niiden toiset potenssit ovat yhtä suuret:
-                $$\left(\frac{\left|6-2k\right|}{\sqrt{k^2+1}}\right)^2 = \left(\sqrt{20}\right)^2.$$
-                Potenssin laskusääntöjen (<a href="http://kisallioppiminen.fi/kurssit/may1/potenssiLogaritmi/">MAY1</a>) mukaan osamäärän potenssi on sama kuin potenssien osamäärä, joten yhtälö voidaan kirjoittaa muodossa
-                $$\frac{\left(6-2k\right)^2}{\left(\sqrt{k^2+1}\right)^2} = \left(\sqrt{20}\right)^2.$$
-                Huomaa, että itseisarvomerkkejä ei enää tarvita osoittajassa, koska toiseen potenssiin korotus tekee kaikista luvuista epänegatiivisia.
-            </p>
-            <p>
-                Neliöjuuren määritelmän (<a href="http://kisallioppiminen.fi/kurssit/maa2/luku2/">MAA2</a>) mukaan $\left(\sqrt{a}\right)^2 = a$ eli neliöjuuri on luku, jonka toinen potenssi on yhtä suuri kuin juurrettava. Tämän nojalla yhtälö voidaan kirjoittaa muodossa
-                $$\frac{\left(6-2k\right)^2}{k^2+1} = 20.$$
-                Kerrotaan kumpikin puoli nimittäjällä $k^2+1$, jolloin se supistuu vasemmalta puolelta pois:
-                $$(6-2k)^2 = 20(k^2 + 1).$$
-                Nyt vasemmalla voidaan tehdä toiseen potenssiin korotukset ja muokata yhtälöä:
-                \begin{align*}
-                36-24k + 4k^2 &= 20k^2 + 20 \\
-                -16k^2-24k + 16 &= 0 \ \mid \, : (-8)\\
-                2k^2 + 3k - 2 &= 0
-                \end{align*}
-                Tämä yhtälö toteutuu, jos ja vain jos
-                \begin{align*}
-                k &= \frac{-3 \pm \sqrt{3^2 - 4\cdot 2\cdot (-2)}}{2\cdot 2} \\
-                &= \frac{-3 \pm 5}{4}.
-                \end{align*}
-                Ratkaisuiksi saadaan näin $k_1 = \frac{1}{2}$ ja $k_2 = -2$. Ovatko nämä myös alkuperäisen yhtälön
-                $$\frac{\left|6-2k\right|}{\sqrt{k^2+1}} = \sqrt{20}$$
-                ratkaisuja?
-            </p>
-            <p>
-                Koska yhtälön ratkaiseminen aloitettiin toiseen potenssiin korottamisella, on varminta ja yksinkertaisinta tarkistaa saadut ratkaisut sijoittamalla ne alkuperäiseen yhtälöön. Joissain tilanteissa toiseen potenssiin korotus tuottaa "ratkaisuja", jotka eivät toteuta alkuperäistä yhtälöä. Tätä ilmiötä tarkastellaan enemmän seuraavan luvun kappaleessa Itseisarvo koordinaatistossa.
-            </p>
-            <p>
-                Tällä kertaa kumpikin ratkaisuehdokas on alkuperäisen yhtälön ratkaisu, sillä
-                \begin{align*}
-                \frac{\left|6-2 \cdot \frac{1}{2}\right|}{\sqrt{\left(\frac{1}{2}\right)^2+1}} &= \frac{5}{\sqrt{\frac{5}{4}}} = \frac{5}{\frac{\sqrt{5}}{\sqrt{4}}} \\[1mm]
-                &= 5 \cdot \frac{\sqrt{4}}{\sqrt{5}} \\[1mm]
-                &= \sqrt{5}\cdot \sqrt{4} = \sqrt{20}
-                \end{align*}
-                ja
-                \begin{align*}
-                \frac{\left|6-2\cdot (-2)\right|}{\sqrt{(-2)^2+1}} &= \frac{10}{\sqrt{5}} = \frac{\sqrt{100}}{\sqrt{5}} \\[1mm]
-                &= \sqrt{\frac{100}{5}} \\[1mm]
-                &= \sqrt{20}.
-                \end{align*}
-                Tässä käytettiin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku2/">MAA2-kurssissa</a> opiskeltuja neliöjuuren laskusääntöjä.
-            </p>
+                <p>
+                    Edellisessä tehtävässä päädyttiin ratkaisemaan yhtälö
+                    $$\frac{\left|6-2k\right|}{\sqrt{k^2+1}} = \sqrt{20}.$$
+                    Tällaiset yhtälöt voidaan ratkaista toiseen potenssiin korottamalla seuraavasti:
+                </p>
+                <p>
+                    Jos yhtälön vasen ja oikea puoli ovat yhtä suuret, myös niiden toiset potenssit ovat yhtä suuret:
+                    $$\left(\frac{\left|6-2k\right|}{\sqrt{k^2+1}}\right)^2 = \left(\sqrt{20}\right)^2.$$
+                    Potenssin laskusääntöjen (<a href="http://kisallioppiminen.fi/kurssit/may1/potenssiLogaritmi/">MAY1</a>) mukaan osamäärän potenssi on sama kuin potenssien osamäärä, joten yhtälö voidaan kirjoittaa muodossa
+                    $$\frac{\left(6-2k\right)^2}{\left(\sqrt{k^2+1}\right)^2} = \left(\sqrt{20}\right)^2.$$
+                    Huomaa, että itseisarvomerkkejä ei enää tarvita osoittajassa, koska toiseen potenssiin korotus tekee kaikista luvuista epänegatiivisia.
+                </p>
+                <p>
+                    Neliöjuuren määritelmän (<a href="http://kisallioppiminen.fi/kurssit/maa2/luku2/">MAA2</a>) mukaan $\left(\sqrt{a}\right)^2 = a$ eli neliöjuuri on luku, jonka toinen potenssi on yhtä suuri kuin juurrettava. Tämän nojalla yhtälö voidaan kirjoittaa muodossa
+                    $$\frac{\left(6-2k\right)^2}{k^2+1} = 20.$$
+                    Kerrotaan kumpikin puoli nimittäjällä $k^2+1$, jolloin se supistuu vasemmalta puolelta pois:
+                    $$(6-2k)^2 = 20(k^2 + 1).$$
+                    Nyt vasemmalla voidaan tehdä toiseen potenssiin korotukset ja muokata yhtälöä:
+                    \begin{align*}
+                    36-24k + 4k^2 &= 20k^2 + 20 \\
+                    -16k^2-24k + 16 &= 0 \ \mid \, : (-8)\\
+                    2k^2 + 3k - 2 &= 0
+                    \end{align*}
+                    Tämä yhtälö toteutuu, jos ja vain jos
+                    \begin{align*}
+                    k &= \frac{-3 \pm \sqrt{3^2 - 4\cdot 2\cdot (-2)}}{2\cdot 2} \\
+                    &= \frac{-3 \pm 5}{4}.
+                    \end{align*}
+                    Ratkaisuiksi saadaan näin $k_1 = \frac{1}{2}$ ja $k_2 = -2$. Ovatko nämä myös alkuperäisen yhtälön
+                    $$\frac{\left|6-2k\right|}{\sqrt{k^2+1}} = \sqrt{20}$$
+                    ratkaisuja?
+                </p>
+                <p>
+                    Koska yhtälön ratkaiseminen aloitettiin toiseen potenssiin korottamisella, on varminta ja yksinkertaisinta tarkistaa saadut ratkaisut sijoittamalla ne alkuperäiseen yhtälöön. Joissain tilanteissa toiseen potenssiin korotus tuottaa "ratkaisuja", jotka eivät toteuta alkuperäistä yhtälöä. Tätä ilmiötä tarkastellaan enemmän seuraavan luvun kappaleessa Itseisarvo koordinaatistossa.
+                </p>
+                <p>
+                    Tällä kertaa kumpikin ratkaisuehdokas on alkuperäisen yhtälön ratkaisu, sillä
+                    \begin{align*}
+                    \frac{\left|6-2 \cdot \frac{1}{2}\right|}{\sqrt{\left(\frac{1}{2}\right)^2+1}} &= \frac{5}{\sqrt{\frac{5}{4}}} = \frac{5}{\frac{\sqrt{5}}{\sqrt{4}}} \\[1mm]
+                    &= 5 \cdot \frac{\sqrt{4}}{\sqrt{5}} \\[1mm]
+                    &= \sqrt{5}\cdot \sqrt{4} = \sqrt{20}
+                    \end{align*}
+                    ja
+                    \begin{align*}
+                    \frac{\left|6-2\cdot (-2)\right|}{\sqrt{(-2)^2+1}} &= \frac{10}{\sqrt{5}} = \frac{\sqrt{100}}{\sqrt{5}} \\[1mm]
+                    &= \sqrt{\frac{100}{5}} \\[1mm]
+                    &= \sqrt{20}.
+                    \end{align*}
+                    Tässä käytettiin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku2/">MAA2-kurssissa</a> opiskeltuja neliöjuuren laskusääntöjä.
+                </p>
 
-            <p>
-                Pisteen etäisyys suorasta -teoreemaan perustuvalla menetelmällä voidaan määrittää myös ympyrän tietyn suuntaisen tangentin yhtälö. Tätä harjoitellaan seuraavassa tehtävässä.
-            </p>
-</div>
+                <p>
+                    Pisteen etäisyys suorasta -teoreemaan perustuvalla menetelmällä voidaan määrittää myös ympyrän tietyn suuntaisen tangentin yhtälö. Tätä harjoitellaan seuraavassa tehtävässä.
+                </p>
+            </div>
 
             <div class="tehtavat">
                 <div class="tehtava" id="ac0db679-d562-41be-bee0-50f5878e04de">
@@ -1081,7 +1081,7 @@ topnav: maa5
 
 
     <section class="panel">
-        <header>
+        <header class="otsikko">
             <h1>
                 <a data-toggle="collapse" class="collapsed" data-target="#luku2-tehtavasarja2">
                     TEHTÄVÄSARJA II
@@ -1547,7 +1547,7 @@ topnav: maa5
 
 
     <section class="panel">
-        <header>
+        <header class="otsikko">
             <h1>
                 <a data-toggle="collapse" class="collapsed" data-target="#luku2-tehtavasarja3">
                     TEHTÄVÄSARJA III
