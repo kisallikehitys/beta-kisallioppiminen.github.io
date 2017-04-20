@@ -265,6 +265,9 @@ class View {
     body.appendChild(item);
     scoreboard.appendChild(body);
 
+    let foot = document.createElement('tfoot');
+    scoreboard.appendChild(foot);
+
     let column = document.createElement('th');
     column.setAttribute('class', 'nameColumn');
 
