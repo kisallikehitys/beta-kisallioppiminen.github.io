@@ -1,6 +1,7 @@
 # Site settings
 title: Kisallioppiminen.fi
 baseurl: ""
+
 url: "http://beta.kisallioppiminen.fi/"
 backendbaseurl: "http://kurssihallinta.kisallioppiminen.fi/"
 
@@ -29,10 +30,13 @@ resources:
     - "/js/view.js"
     - "/js/exercises.js"
     - "/js/backend.js"
+    - "/js/jquery-ui.js"
+    - "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
     - "/js/mooc.js"
     - "/js/button/button.js"
     - "/js/init.js"
     - "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+
 
 
 exclude: [vendor]

@@ -16,6 +16,7 @@
 	<!-- Bootstrap CSS --> <!-- Navbar käyttää! -->
 	<link rel="stylesheet" href="{{site.url}}/css/bootstrap.css">
 
+
     <!-- Lataa css tiedostot _config.yml:sta -->
 	{% for href in site.resources.css %}
 	    <link rel="stylesheet" href="
@@ -27,17 +28,8 @@
         type="text/css"></link>
     {% endfor %}
 
-	<link rel="icon" type="image/png" href="/img/favicon.png">
+	<link rel="icon" type="image/png" href="{{ "/img/favicon.png" | prepend: site.baseurl }}">
 
-	
-	<!-- {% for href in site.resources.css %} -->
-	<!-- <link rel="stylesheet" href="{% if href contains "//" %}{{href}}{%else%}{{href|prepend:site.baseurl}}{% endif %}" type="text/css">{% endfor %} -->
-	<!-- {% for href in page.resources.css %} -->
-	<!-- <link rel="stylesheet" href="{% if href contains "//" %}{{href}}{%else%}{{href|prepend:site.baseurl}}{% endif %}" type="text/css">{% endfor %} -->
-  <!--  -->
-	<!-- <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"> -->
-  <!--  -->
-	<!-- <link rel="icon" type="image/png" href="{{ "/img/favicon.png" | prepend: site.baseurl }}"> -->
 	
 
 	<!-- mathjax config similar to math.stackexchange -->
@@ -57,5 +49,6 @@
 	</script>
 
 	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
 
 </head>
