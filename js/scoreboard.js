@@ -4,21 +4,11 @@
 
 class Scoreboard {
 
-  static _compare(a, b) {
-    if (a.user < b.user)
-      return -1;
-    if (a.user > b.user)
-      return 1;
-    return 0;
-  }
-
   static getFullScreenLink(id, html_id, coursekey) {
     return `scoreboard.html?id=${encodeURIComponent(id)}&html_id=${encodeURIComponent(html_id)}&coursekey=${coursekey}`;
   }
 
   static createTable(courseData, exercises, table_id, course) {
-    courseData.sort(Scoreboard._compare);
-
     const keys = {
       "green": 0,
       "yellow": 1,
@@ -48,8 +38,13 @@ class Scoreboard {
         let exercise = student.exercises.filter(function (obj) {
           return obj.id == correctExercise.id;
         });
-        let checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.number);
-        row.appendChild(checkmark);
+        if (exercise.length === 1) {
+          let checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.number);
+          row.appendChild(checkmark);
+        } else {
+          let checkmark = view.createCheckmark(3, 'gray', student.user, correctExercise.number);
+          row.appendChild(checkmark);          
+        }
       }
       scoreboard.querySelector('tbody').appendChild(row);
     }
