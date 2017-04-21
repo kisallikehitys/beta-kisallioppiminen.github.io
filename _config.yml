@@ -31,7 +31,6 @@ resources:
     - "/js/exercises.js"
     - "/js/backend.js"
     - "/js/jquery-ui.js"
-    - "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
     - "/js/mooc.js"
     - "/js/button/button.js"
     - "/js/init.js"
