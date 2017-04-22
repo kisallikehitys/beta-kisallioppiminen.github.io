@@ -34,15 +34,9 @@ class View {
     let ga = document.querySelector('#login-modal-body a');
     let gimg = document.querySelector('#login-modal-body img');
 
-    let ddomain;
-    if (document.domain == 'ohtukisalli.github.io') {
-      ddomain = '/dev-frontend';
-    } else {
-      ddomain = '';
-    }
 
     ga.href = BACKEND_BASE_URL + 'users/auth/google_oauth2';
-    gimg.src = ddomain + '/img/google-login.png';
+    gimg.src = '/img/google-login.png';
 
     ga.onclick = function () {
       document.cookie = 'attemptedLogin=true; path=/';
