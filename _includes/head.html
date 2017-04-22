@@ -10,21 +10,10 @@
 	<link rel="dns-prefetch" href="//fonts.googleapis.com" data-proofer-ignore>
 	<link rel="dns-prefetch" href="//code.jquery.com" data-proofer-ignore>
 	<link rel="dns-prefetch" href="//www.google-analytics.com" data-proofer-ignore>
-	<!-- Bootstrap CSS --> <!-- Navbar käyttää! -->
-	<link rel="stylesheet" href="/css/bootstrap.css">
-	<link rel="stylesheet" href="/css/custom.css">
-
-    <!-- Lataa css tiedostot _config.yml:sta -->
+    <!-- Load css from _config.yml -->
 	{% for href in site.resources.css %}
-	    <link rel="stylesheet" href="
-	        {% if href contains "//" %}
-                {{ href }}
-            {%else%}
-                {{ href | prepend:site.baseurl }}
-            {% endif %}"
-        type="text/css"></link>
+		<link rel="stylesheet" href="{{ href }}" type="text/css">
     {% endfor %}
-
 	<link rel="icon" type="image/png" href="/img/favicon.png">
 
 	<!-- mathjax config similar to math.stackexchange -->
