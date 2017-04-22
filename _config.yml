@@ -43,6 +43,7 @@ resources:
     - "/js/backend.js"
     - "/js/mooc.js"
     - "/js/button/button.js"
+    - "/js/goalCheckbox.js"
     - "/js/init.js"
 
 

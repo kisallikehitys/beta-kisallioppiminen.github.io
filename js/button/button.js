@@ -43,7 +43,6 @@ class Button {
       buttonGroup.appendChild(view.createButton(1, id));
       buttonGroup.appendChild(view.createButton(2, id));
       buttonDiv.appendChild(buttonGroup);
-
       $(value).find("div:nth-child(2)").append(buttonDiv);
     });
 
@@ -51,25 +50,6 @@ class Button {
     $('.problemButton').click(function () {
       obj.sendCheckmark(this.id);
     });
-  }
-
-  /**
-   * Adds goal checkboxes to each exercise
-   */
-  _addGoalCheckboxes() {
-    console.log('_addGoalCheckboxes');
-    const obj = this;
-    $(".checkbox-group").each(function (index, value) {
-      let checkbox1 = view.createCheckbox('1', 'green');
-      this.appendChild(checkbox1);
-
-      let checkbox2 = view.createCheckbox('2', 'orange');
-      this.appendChild(checkbox2);
-
-      let checkbox3 = view.createCheckbox('3', 'purple');
-      this.appendChild(checkbox3);
-    });
-    console.log('endGoalTest');
   }
 
   /**
@@ -174,7 +154,6 @@ class Button {
   }
 
   _markStats(data) {
-    console.log(data);
     $("div.stats").remove();
     $(".tehtava").each(function (index, value) {
       let stat = data[this.id];
@@ -204,9 +183,6 @@ class Button {
     if (this.courseData.coursekey !== '') {
       this._addButtons();
       this._getCheckmarks();
-      //if (Session.isTeacher) {
-      //  this._addGoalCheckboxes();
-      //};
     } else {
       console.warn("No coursekey for this material.");
     }
