@@ -239,6 +239,16 @@ class Button {
     });
   }
 
+  _isTeacherCourse(data) {
+    for (let i in data) {
+      let course = data[i];
+      if (course.coursekey === this.courseData.coursekey) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   _extractTeacherCourses(data) {
     let htmlID = this._getHTMLID(window.location.pathname);
     let keys = [];
@@ -261,8 +271,9 @@ class Button {
         }
       }
     }
-    this._getStats(this.courseData.course_id);
-    console.log(this.courseData.coursekey);
+    if (this.courseData.course_id.length !== 0 && this._isTeacherCourse(data)) {
+      this._getStats(this.courseData.course_id);
+    }
     if (this.courseData.coursekey.length > 1) {
       $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
     }
@@ -313,7 +324,8 @@ $(document).ready(function () {
             console.warn(data);
           }
         );
-    } else {
+    } 
+    if (document.getCookie('student') === 'true') {
       backend.get(`students/${Session.getUserId()}/courses`)
         .then(
           function fulfilled(data) {
