@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<!-- numbering.js need JQuery so it need to be loaded here-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 <style>
         section > header h1 {
@@ -14,3 +17,5 @@ layout: default
 	{% include selectcourse.html %}
     {{ content }}
 </article>
+
+<script src="/js/numbering.js"></script>
