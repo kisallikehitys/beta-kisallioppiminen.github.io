@@ -1,9 +1,15 @@
-class GoalCheckbox {
+class ScheduleCheckbox {
+
+  static renderScheduleCheckboxes() {
+    //todo: render according to schedule data
+    ScheduleCheckbox._renderEmptyScheduleCheckboxes();
+    ScheduleCheckbox._populateScheduleCheckboxes(ScheduleCheckbox._createSampleSchedule());
+  }
 
   /**
    * Adds goal checkboxes to each exercise
    */
-  static addGoalCheckboxes() {
+  static _renderEmptyScheduleCheckboxes() {
     $(".checkbox-group").each(function (index, value) {
       let checkbox1 = view.createCheckbox('1', 'green');
       this.appendChild(checkbox1);
@@ -17,15 +23,27 @@ class GoalCheckbox {
   }
 
   /**
-   * Set checkmarks as "checked" according to current schedules
+   * Set checkmarks as "checked" according to current scheduleData
    * @param listOfCurrentSchedules: list of current schedule objects
    */
-  static setTicksToCheckmarks(listOfCurrentSchedules) {
-    listOfCurrentSchedules.forEach(function(schedule) {
-      schedule.exercises.forEach(function (exerciseId) {
-        GoalCheckbox._setExerciseCheckboxChecked(exerciseId, schedule.color);
+  static _populateScheduleCheckboxes(listOfCurrentSchedules) {
+    listOfCurrentSchedules.forEach(function(scheduleObject) {
+      scheduleObject.exercises.forEach(function (exerciseUUID) {
+        var checkboxElement = ScheduleCheckbox._getExerciseCheckboxObject(exerciseUUID, scheduleObject.color);
+        ScheduleCheckbox._setCheckboxChecked(checkboxElement);
       })
     });
+  }
+
+  /**
+   * Get a checkbox element of a exercise
+   * @param exerciseId (uuid)
+   * @param colorId (integer)
+   * @returns jQuery object: <div class="checkbox-bootstrap...">
+   */
+  static _getExerciseCheckboxObject(exerciseId, colorId) {
+    var colorString = ScheduleCheckbox._convertColorIdToColorString(colorId);
+    return $("#" + exerciseId).find(".checkbox-bootstrap.checkbox-" + colorString + ".checkbox-lg");
   }
 
   /**
@@ -33,20 +51,8 @@ class GoalCheckbox {
    * @param exerciseId (uuid)
    * @param goalColorId (integer)
    */
-  static _setExerciseCheckboxChecked(exerciseId, goalColorId) {
-    var checkbox = GoalCheckbox._getExercisesCheckbox(exerciseId, goalColorId);
-    checkbox.find("input").prop('checked', true);
-  }
-
-  /**
-   * Get a checkboxgroup of a exercise
-   * @param exerciseId
-   * @param colorId
-   * @returns jQuery object: <div class="checkbox-group">
-   */
-  static _getExercisesCheckbox(exerciseId, colorId) {
-    var colorString = GoalCheckbox._convertColorIdToColorString(colorId);
-    return $("#" + exerciseId).find(".checkbox-bootstrap.checkbox-" + colorString + ".checkbox-lg");
+  static _setCheckboxChecked(checkboxElement) {
+    checkboxElement.find("input").prop('checked', true);
   }
 
   /**
@@ -97,8 +103,7 @@ class GoalCheckbox {
 $(document).ready(function () {
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     if (document.getCookie('teacher') === 'true') {
-      GoalCheckbox.addGoalCheckboxes();
-      GoalCheckbox.setTicksToCheckmarks(GoalCheckbox._createSampleSchedule());
+      ScheduleCheckbox.renderScheduleCheckboxes();
     }
   }
   //console.log("EDIT VERSION: a");
