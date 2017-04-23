@@ -92,7 +92,7 @@ class Button {
   _extractCourseData(data, path) {
     const html_id = path;
     for (let i in data) {
-      console.log(data[i]);
+      //console.log(data[i]);
       if (data[i].html_id == html_id) {
         this.courseData.coursekey = data[i].coursekey;
         this.courseData.course_id = data[i].id;
@@ -163,9 +163,9 @@ class Button {
   }
 
   _getStats(id) {
-    console.log("Getting stats");
+    //console.log("Getting stats");
     const obj = this;
-    console.log(this.courseData.course_id);
+    //console.log(this.courseData.course_id);
     backend.get(`courses/${id}/exercises/statistics`)
       .then(
         function fulfilled(data) {
@@ -238,7 +238,7 @@ class Button {
       }
     }
     this._getStats(this.courseData.course_id);
-    console.log(this.courseData.coursekey);
+    //console.log(this.courseData.coursekey);
     if (this.courseData.coursekey.length > 1) {
       $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
     }
@@ -253,7 +253,6 @@ class Button {
 
   initTeacher(data) {
     this._extractTeacherCourses(data);
-    console.log(data);
   }
 
   toggleVisibilityByClass(className) {
