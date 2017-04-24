@@ -42,11 +42,14 @@ class View {
       document.cookie = 'attemptedLogin=true; path=/';
     };
 
-    if (FRONTEND_BASE_URL == "http://localhost:4000/" || FRONTEND_BASE_URL == 'http://127.0.0.1:4000/') {
-      this._addNormalLoginToModal(FRONTEND_BASE_URL);
-    }
+    // if (FRONTEND_BASE_URL == "http://localhost:4000/" || FRONTEND_BASE_URL == 'http://127.0.0.1:4000/') {
+    //   this._addNormalLoginToModal(FRONTEND_BASE_URL);
+    // }
   }
 
+  /* 
+   * Deprecated
+   */
   _addNormalLoginToModal(backendUrl) {
 
     let input, attributes;
