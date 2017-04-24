@@ -28,7 +28,7 @@ resources:
     - "/css/custom.css"
     - "//fonts.googleapis.com/css?family=Alegreya+Sans:400|Noto+Sans:400,700|Open+Sans+Condensed:300,700"
     - "/css/main.css"
-    - "/css/definitions_page.css"
+   #- "/css/definitions_page.css"
 
   js:
     # Download libraries
