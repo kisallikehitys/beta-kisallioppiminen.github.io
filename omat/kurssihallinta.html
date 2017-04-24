@@ -106,6 +106,15 @@ layout: default
     tfoot > tr > td.name {
         font-weight: 800 !important;
     }
+
+    .spoiler {
+        -webkit-filter: blur(6px) grayscale(.6);
+        -webkit-transition-property: -webkit-filter;
+        -webkit-transition-duration: .25s;
+    }
+    .spoiler:hover, .spoiler:focus {
+        -webkit-filter: blur(0px) grayscale(0);
+    }
 </style>
 
 <!-- Flatpickr sources -->
