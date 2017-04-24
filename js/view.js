@@ -140,15 +140,24 @@ class View {
 
 
     let kirjauduUlos = [
-    {key: 'href', value: BACKEND_BASE_URL + 'users/sign_out'},
-    {key: 'rel', value: 'nofollow'},
-    {key: 'data-method', value: 'DELETE'}
+    {key: 'href', value: '#'},
+    {key: 'rel', value: 'nofollow'}
     ];
     let kirjauduUlosClickEvent = function () {
+
+      const request = new XMLHttpRequest();
+      request.open('DELETE', BACKEND_BASE_URL + 'users/sign_out', true);
+      request.withCredentials = true;
+      request.send();
+
       document.cookie = 'userFirstName=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'userId=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'teacher=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'student=; path=/; expires=' + new Date(0).toUTCString();
+      
+      setTimeout(function() {
+        document.location.href="/";
+      }, 500);
     };
 
     // Append everything to dropdown menu
