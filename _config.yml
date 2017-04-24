@@ -20,14 +20,23 @@ navigation:
   "Materiaalit": "/"
   "Blogi": "http://blogs.helsinki.fi/kisallioppiminenlukiossa"
   "Tietoa": "/tietoa.html"
+  # Login button added with js
 
 resources:
   css:
+    - "/css/bootstrap.css"
+    - "/css/custom.css"
     - "//fonts.googleapis.com/css?family=Alegreya+Sans:400|Noto+Sans:400,700|Open+Sans+Condensed:300,700"
     - "/css/main.css"
+
   js:
-    - "/js/common.js"
+    # Download libraries
     - "//code.jquery.com/jquery-2.2.4.min.js"
+    - "//code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    - "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+
+    # Download own scripts
+    - "/js/common.js"
     - "/js/session.js"
     - "/js/view.js"
     - "/js/exercises.js"
@@ -35,7 +44,6 @@ resources:
     - "/js/mooc.js"
     - "/js/button/button.js"
     - "/js/init.js"
-    - "//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 
 
 exclude: [vendor]
