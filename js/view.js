@@ -157,7 +157,7 @@ class View {
       
       setTimeout(function() {
         document.location.href="/";
-      }, 500);
+      }, 1000);
     };
 
     // Append everything to dropdown menu
