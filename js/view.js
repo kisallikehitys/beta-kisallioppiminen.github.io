@@ -377,6 +377,7 @@ class View {
     coursekeyH1.appendChild(collapseLink);
 
     let coursekeyH3 = document.createElement('h3');
+    coursekeyH3.setAttribute('class', 'spoiler');
     coursekeyH3.style.fontFamily = "monospace";
     coursekeyH3.style.float = "right";
     coursekeyH3.style.display = "inline-block";
