@@ -7,6 +7,10 @@ class Button {
     };
   }
 
+  /**
+   * Changes header color based on the color ID
+   * @param  {String} id Color ID
+   */
   _changeProblemHeaderColor(id) {
     const obj = this;
     const problemID = id.substr(2, id.length - 1);
@@ -173,6 +177,10 @@ class Button {
       );
   }
 
+  /**
+   * Appends course related exercise statistics to exercise header
+   * @param  {Obj} data JSON data
+   */
   _markStats(data) {
     console.log(data);
     $("div.stats").remove();
@@ -183,6 +191,10 @@ class Button {
     });
   }
 
+  /**
+   * Gets course related exercise statistics from backend
+   * @param  {Integer} id Course ID
+   */
   _getStats(id) {
     console.log("Getting stats");
     const obj = this;
@@ -198,6 +210,10 @@ class Button {
       );
   }
 
+  /**
+   * Init function
+   * @param  {Obj} data Course data in JSON
+   */
   init(data) {
     console.log(data);
     this._extractCourseData(data, this._getHTMLID(window.location.pathname));
@@ -212,6 +228,12 @@ class Button {
     }
   }
 
+  /**
+   * Displays a modal window so that the teacher can select which course statistics they wish to see.
+   * @param  {String} htmlID Course HTML ID
+   * @param  {Array} keys   Course IDs
+   * @param  {Obj} data   Course data
+   */
   _invokeCourseSelect(htmlID, keys, data) {
     let obj = this;
     $('#courseSelectModalTitle').html(`Opetat useampaa ${htmlID.toUpperCase()}-kurssia. Valitse listalta mitä kurssisuorituksia haluat katsoa.`);
@@ -249,6 +271,10 @@ class Button {
     return false;
   }
 
+  /**
+   * Extracts current course (Teacher)
+   * @param  {Obj} data JSON course data
+   */
   _extractTeacherCourses(data) {
     let htmlID = this._getHTMLID(window.location.pathname);
     let keys = [];
@@ -286,11 +312,19 @@ class Button {
     }
   }
 
+  /**
+   * Init function (Teacher)
+   * @param  {Obj} data Course data
+   */
   initTeacher(data) {
     this._extractTeacherCourses(data);
     console.log(data);
   }
 
+  /**
+   * Switches class visibility
+   * @param  {String} className Class name
+   */
   toggleVisibilityByClass(className) {
     let arrayOfElements = document.getElementsByClassName(className);
     for (let i = 0; i < arrayOfElements.length; i++) {
@@ -324,7 +358,7 @@ $(document).ready(function () {
             console.warn(data);
           }
         );
-    } 
+    }
     if (document.getCookie('student') === 'true') {
       backend.get(`students/${Session.getUserId()}/courses`)
         .then(
