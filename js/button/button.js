@@ -358,7 +358,7 @@ $(document).ready(function () {
             console.warn(data);
           }
         );
-    } 
+    }
     if (document.getCookie('student') === 'true') {
       backend.get(`students/${Session.getUserId()}/courses`)
         .then(
