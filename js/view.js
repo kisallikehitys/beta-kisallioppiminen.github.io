@@ -324,6 +324,18 @@ class View {
     return mark;
   }
 
+  createScheduleMark(key, status, name, exercise) {
+    let mark = document.createElement('td');
+    mark.setAttribute('id', 'status');
+    let color = document.createElement('div');
+    color.setAttribute('style', `background-color: ${key}`);
+    color.setAttribute('class', status);
+    color.setAttribute('data-toggle', 'tooltip');
+    color.setAttribute('title', `${name} - ${exercise}`);
+    mark.appendChild(color);
+    return mark;
+  }
+
   createListItem(data, formattedTime) {
     let listItem = document.createElement('section');
     listItem.setAttribute('class', 'panel panel-courselisting');

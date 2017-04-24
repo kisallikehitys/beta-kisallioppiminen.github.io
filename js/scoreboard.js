@@ -16,6 +16,8 @@ class Scoreboard {
       "gray": 3
     };
 
+    const scheduleColors = ['#ffffff', '#da9887', '#87b2da', '#c4da87', '#f9bb81', '#eae981'];
+
     let id = Math.random().toString(36).substring(7);
 
     let scoreboard = view.createScoreboardFrame(id);
@@ -40,7 +42,13 @@ class Scoreboard {
           return obj.id == correctExercise.id;
         });
         if (exercise.length === 1) {
-          let checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.number);
+          console.log(student.color);
+          let checkmark;
+          if(student.color === undefined) {
+            checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.number);            
+          } else {
+            checkmark = view.createScheduleMark(scheduleColors[student.color], exercise[0].status, student.user, correctExercise.number);
+          }
           row.appendChild(checkmark);
         } else {
           let checkmark = view.createCheckmark(3, 'gray', student.user, correctExercise.number);
