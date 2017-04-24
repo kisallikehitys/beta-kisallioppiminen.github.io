@@ -31,6 +31,7 @@ class Scoreboard {
     console.log(courseData);
     for (let j in courseData) {      
       let student = courseData[j];
+
       let row = view.createName(student.user);
 
       for (let k in student.exercises) {
@@ -46,7 +47,11 @@ class Scoreboard {
           row.appendChild(checkmark);          
         }
       }
-      scoreboard.querySelector('tbody').appendChild(row);
+      if (student.color != undefined) {
+        scoreboard.querySelector('tfoot').appendChild(row);
+      } else {
+        scoreboard.querySelector('tbody').appendChild(row);        
+      }
     }
 
     $('div[id=checkmarkTable' + table_id + ']').html(scoreboard);
@@ -66,7 +71,7 @@ class Scoreboard {
     $('[data-toggle="tooltip"]').tooltip();
 
     // make table sortable
-    if (table_id.length > 1 && courseData.length > 1) {
+    if (table_id.length > 1 && courseData.length > 1 && !window.location.pathname.includes('/omat_kurssit.html')) {
       console.log(id);
       let nto = document.getElementById(id);
       console.log(nto);
