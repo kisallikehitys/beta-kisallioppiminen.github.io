@@ -77,8 +77,12 @@ title: Materiaalit
         </h1>
     </header>
     <section class="description">
-
+<<<<<<< HEAD
+        <p><em>Versio 0.8</em></p>
+        <p>Versio 1.0 valmistuu viidennen jakson alkuun mennessä.</p>
+=======
         <p><em>Versio 0.9.6</em></p>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
     </section>
     <section class="call_to_action">
         <a href="kurssit/maa5/index.html">
