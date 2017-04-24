@@ -44,7 +44,7 @@ class Button {
       buttonGroup.appendChild(view.createButton(2, id));
       buttonDiv.appendChild(buttonGroup);
 
-      $(value).find("div:nth-child(2)").append(buttonDiv);
+      $(value).find("div:nth-child(2):last-child").append(buttonDiv);
     });
 
     // Add listener
