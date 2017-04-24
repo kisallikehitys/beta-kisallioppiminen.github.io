@@ -226,9 +226,11 @@ topnav: maa2
                 </p>
 
                 <p>
-
+<<<<<<< HEAD
+                    Ensimmäisen asteen polynomifunktion $f(x) = ax + b$ kuvaaja muodostuu siis pisteistä, joiden $y$-koordinaatti on funktion arvo eli $y = ax + b$. Tällaiset pisteet muodostavat aina suoran. Muuttujan $x$ kerrointa sanotaan suoran kulmakertoimeksi:
+=======
                     Suoran yhtälössä $y = ax + b$ esiintyvä kerroin $a$ on kyseisen suoran <em>kulmakerroin</em>.
-
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 </p>
 
                 <div class="definition">

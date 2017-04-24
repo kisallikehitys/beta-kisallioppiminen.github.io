@@ -255,11 +255,15 @@ topnav: maa4
                         </ol>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t4_v" class="collapse">
                             <ol class="a">
@@ -291,11 +295,15 @@ topnav: maa4
                         Havainnollista ratkaisuasi piirroksilla.
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4b_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4b_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t4b_v" class="collapse">
                             <ol class="a">
@@ -344,11 +352,15 @@ topnav: maa4
                         </ol>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4c_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t4c_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t4c_v" class="collapse">
                             <ol class="a">
@@ -500,11 +512,15 @@ topnav: maa4
                         </ol>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t5_v" class="collapse">
                             <ol class="a">
@@ -548,11 +564,15 @@ topnav: maa4
                         </ol>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5c_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5c_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t5c_v" class="collapse">
                             <ol class="a">
@@ -611,11 +631,15 @@ topnav: maa4
                             <img src="/kurssit/maa4/kuvat/L4k40.png" max-width: 100%; width: auto; height: auto;/>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5b_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5b_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t5b_v" class="collapse">
                             <ol class="a">
@@ -678,11 +702,15 @@ topnav: maa4
                         </ol>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5d_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t5d_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t5d_v" class="collapse">
                             <ol class="a">
@@ -734,11 +762,15 @@ topnav: maa4
                         </ol>
                         </p>
                         <h2>
-
+<<<<<<< HEAD
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t6_v">
                             VASTAUS
                         </a>
-
+=======
+                            <a data-toggle="collapse" class="collapsed" data-target="#t-L5t6_v">
+                                VASTAUS
+                            </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                         </h2>
                         <div id="t-L5t6_v" class="collapse">
                             <ol class="a">
@@ -752,13 +784,19 @@ topnav: maa4
                     </div>
                 </div>
             </div>
-
+<<<<<<< HEAD
         <div class="close-section">
         <a data-toggle="collapse" class="collapsed" data-target="#geometriaa-vektoreiden-avulla">
         Sulje kappale
         </a>
     </div>
-
+=======
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#geometriaa-vektoreiden-avulla">
+                    Sulje kappale
+                </a>
+            </div>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
         </div>
     </section>
 
@@ -797,11 +835,15 @@ topnav: maa4
                         <img src="/kurssit/maa4/kuvat/L4k44.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t7_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t7_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t7_v" class="collapse">
                         <ol class="a">
@@ -837,11 +879,15 @@ topnav: maa4
                         <img src="/kurssit/maa4/kuvat/L4k45.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t8_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t8_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t8_v" class="collapse">
                         <ol class="a">
@@ -853,9 +899,12 @@ topnav: maa4
                     </div>
                 </div>
             </div>
-
+<<<<<<< HEAD
             <div class="tehtava" id="5279da1b-180f-48e3-bb9f-e97928f191ed">
+=======
 
+            <div class="tehtava" id="t-L5t9-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t9">
@@ -893,11 +942,15 @@ topnav: maa4
                     </ol>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t10_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t10_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t10_v" class="collapse">
                         <ol class="a">
@@ -930,11 +983,15 @@ topnav: maa4
                         <img src="/kurssit/maa4/kuvat/L4k46.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t11_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t11_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t11_v" class="collapse">
                         <ol class="a">
@@ -959,10 +1016,15 @@ topnav: maa4
                         Tason suuntien ilmaisemiseen käytettiin vektoreita $\vv$ ja $\vw$, jotka eivät olleet yhdensuuntaisia ($\vv \nparallel \vw$). Pisteestä $A$ kuljettiin ensin suuntaan, joka oli yhdensuuntainen vektorin $\va = 4\vv - 3\vw$ kanssa. Sen jälkeen liikuttiin suuntaan, joka oli yhdensuuntainen vektorin $\vb = 5\vv - 2\vw$ kanssa. Näin päädyttiin sellaiseen pisteeseen $B$, että $\pv{AB} = -10\vv - 3\vw$. Määritä ne kaksi vektoria, jotka muodostivat kuljetun reitin.
                     </p>
                     <h2>
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t12_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t12_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t12_v" class="collapse">
                         <p> Kuljetut vektorit olivat $20\vv - 15\vw$ ja $-30\vv + 12\vw$. </p>
@@ -970,9 +1032,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="b3f09365-4351-46a4-aef2-40395a2ebf4a">
-
+=======
+            <div class="tehtava" id="t-L5t13-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t13">
@@ -985,11 +1049,15 @@ topnav: maa4
                         Oletetaan, että kumpikaan vektoreista $\vv$ ja $\vw$ ole nollavektori. Oletetaan lisäksi, että $\vw-3\vv=5(\vv-\vw)$. Perustele näiden tietojen avulla, että vektorit $\vv$ ja $\vw$ ovat yhdensuuntaiset. Ovatko ne saman- vai vastakkaissuuntaiset?
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t13_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t13_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t13_v" class="collapse">
                         <p> Vektorit $\vv$ ja $\vw$ ovat samansuuntaiset, sillä $\vw = \frac{4}{3}\vv$. </p>
@@ -997,9 +1065,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="2f5ab52e-8630-4efd-800e-a453462eb092">
-
+=======
+            <div class="tehtava" id="t-L5t14-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t14">
@@ -1012,11 +1082,15 @@ topnav: maa4
                         Tiedetään, että vektorit $\va$ ja $\vb$ eivät ole yhdensuuntaisia eli $\va \nparallel \vb$. Määritä kaikki luvut $k$, joilla vektorit $3\va + k\vb$ ja $4k\va + 3\vb$ ovat yhdensuuntaiset. 
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t14_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t14_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t14_v" class="collapse">
                         <p> $k = \pm\frac{3}{2}$ </p>
@@ -1024,9 +1098,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="c5c77168-fb7e-4cae-b56b-74b228796faa">
-
+=======
+            <div class="tehtava" id="t-L5t15-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t15">
@@ -1046,11 +1122,15 @@ topnav: maa4
                     </ol>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t15_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t15_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t15_v" class="collapse">
                         <ol class="a">
@@ -1064,9 +1144,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="35917d33-309e-4432-9744-1db601000974">
-
+=======
+            <div class="tehtava" id="t-L5t16-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t16">
@@ -1082,11 +1164,15 @@ topnav: maa4
                     </ol>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t16_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t16_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t16_v" class="collapse">
                         <ol class="a">
@@ -1097,9 +1183,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="d1838c61-5bcb-4107-9dbe-34e9349a4dfe">
-
+=======
+            <div class="tehtava" id="t-L5t17-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t17">
@@ -1108,22 +1196,32 @@ topnav: maa4
                     </h1>
                 </header>
                 <div id="t-L5t17">
-
+<<<<<<< HEAD
                     <p> Tiedetään, että $|\va| = 5$ ja $|\vb| = 9$. Vektoreiden $\va$ ja $\vb$ välinen kulma on $\sphericalangle(\va,\vb)= 72^\circ$.  </p> 
-
+=======
+                    <p> Tiedetään, että $|\va| = 5$ ja $|\vb| = 9$. Vektoreiden $\va$ ja $\vb$ välinen kulma on $\sphericalangle(\va,\vb)= 72^\circ$.
+                    </p> 
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     <ol class="a">
                         <li> Laske vektorin $\va-\vb$ pituus.</li>
                         <li> Laske vektorin $\va+\vb$ pituus.</li>
                     </ol>
                     <p>
-
+<<<<<<< HEAD
+                    Piirrä tilanteesta mallikuva ja käytä sitä apuna tehtävän ratkaisussa. Anna vastaukset kahden merkitsevän numeron tarkkuudella.
+                    </p>
+                    <h2>
+                    <a data-toggle="collapse" class="collapsed" data-target="#t-L5t17_v">
+                        VASTAUS
+                    </a>
+=======
                         Piirrä tilanteesta mallikuva ja käytä sitä apuna tehtävän ratkaisussa. Anna vastaukset kahden merkitsevän numeron tarkkuudella.
                     </p>
                     <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#t-L5t17_v">
                             VASTAUS
                         </a>
-
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t17_v" class="collapse">
                         <ol class="a">
@@ -1134,9 +1232,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="895f5509-47d2-49ca-9e37-93c642dc6f60">
-
+=======
+            <div class="tehtava" id="t-L5t18-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t18">
@@ -1145,10 +1245,12 @@ topnav: maa4
                     </h1>
                 </header>
                 <div id="t-L5t18">
-
+<<<<<<< HEAD
+                    <p> Tehtävänä on osoittaa, että puoliympyrän sisältämä kehäkulma on suora kulma. Alla olevassa kuvassa on näkyvissä yksi puoliympyrän sisältämä kehäkulma $\sphericalangle(\pv{PA},\pv{PB})$. Piste $O$ on ympyrän keskipiste.
+=======
                     <p> 
                         Tehtävänä on osoittaa, että puoliympyrän sisältämä kehäkulma on suora kulma. Alla olevassa kuvassa on näkyvissä yksi puoliympyrän sisältämä kehäkulma $\sphericalangle(\pv{PA},\pv{PB})$. Piste $O$ on ympyrän keskipiste.
-
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     <ol class="a">
                         <li> Ilmaise vektorit $\pv{PA}$ ja $\pv{PB}$ vektoreiden $\va = \pv{OA}$ ja $\bar{p} = \pv{OP}$ avulla. </li>
                         <li> Sievennä pistetulo $\pv{PA} \cdot \pv{PB}$ pistetulon ominaisuuksien avulla.</li>
@@ -1160,17 +1262,21 @@ topnav: maa4
                         <img src="/kurssit/maa4/kuvat/L4k47.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t18_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t18_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t18_v" class="collapse">
                         <ol class="a">
                             <li> $\pv{PA} = \va - \bar{p}$ ja $\pv{PB} = -\va - \bar{p}$. </li>
                             <li> $\pv{PA} \cdot \pv{PB} = |\bar{p}|^2 - |\va|^2$ </li>
-
+<<<<<<< HEAD
                             </ol>
                     </div>
                 </div>
@@ -1180,7 +1286,17 @@ topnav: maa4
         Sulje kappale
         </a>
     </div>
-
+=======
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L5tehtavasarja2">
+                    Sulje kappale
+                </a>
+            </div>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
 
             <!-- Tähän loppui piilotus -->
         </div>
@@ -1237,11 +1353,15 @@ topnav: maa4
                         <img src="/kurssit/maa4/kuvat/L4k50.png" max-width: 100%; width: auto; height: auto;/>
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t21_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t21_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t21_v" class="collapse">
                         <ol class="a">
@@ -1339,9 +1459,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="9d67214b-1b25-416c-8326-da410cdbff8b">
-
+=======
+            <div class="tehtava" id="t-L5t46-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t46">
@@ -1353,11 +1475,15 @@ topnav: maa4
                         Tiedetään, että vektoreista $\va$ ja $\vb$ kumpikaan ei ole nollavektori. Lisäksi tiedetään, että $\va \nparallel \vb$. Onko mahdollista, että $-2\va + 15\vb = \bar{0}$? Selitä, miten ratkaisit tehtävän.
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t46_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t46_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t46_v" class="collapse">
                         <p> Ei ole mahdollista, sillä yhtälöstä seuraisi, että $\va = \frac{15}{2}\vb$. Kuitenkin tiedetään, että $\va \nparallel \vb$. </p>
@@ -1365,9 +1491,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="71c57591-4003-45c1-8f14-2b086d6e61cc">
-
+=======
+            <div class="tehtava" id="t-L5t47-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t47">
@@ -1385,11 +1513,15 @@ topnav: maa4
                     Piirrä tilanteesta mallikuva.
                     </p>
                     <h2>
-
+<<<<<<< HEAD
                     <a data-toggle="collapse" class="collapsed" data-target="#t-L5t47_v">
                         VASTAUS
                     </a>
-
+=======
+                        <a data-toggle="collapse" class="collapsed" data-target="#t-L5t47_v">
+                            VASTAUS
+                        </a>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     </h2>
                     <div id="t-L5t47_v" class="collapse">
                         <ol class="a">
@@ -1400,9 +1532,11 @@ topnav: maa4
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="fa1f83ba-ab2e-4b67-b790-e96883b7fe06">
-
+=======
+            <div class="tehtava" id="t-L5t48-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#t-L5t48">
@@ -1430,13 +1564,19 @@ topnav: maa4
                     </p>
                 </div>
             </div>
-
+<<<<<<< HEAD
         <div class="close-section">
         <a data-toggle="collapse" class="collapsed" data-target="#L5tehtavasarja3">
         Sulje kappale
         </a>
     </div>
-
+=======
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L5tehtavasarja3">
+                    Sulje kappale
+                </a>
+            </div>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
         </div>
     </section>
 
@@ -1451,14 +1591,22 @@ topnav: maa4
         <div id="L5itsearviointi" class="collapse">
             <p>
                 Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="http://polku.opetus.tv/node/1424">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
-
+<<<<<<< HEAD
             </p>
         <div class="close-section">
         <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
         Sulje kappale
         </a>
     </div>
+=======
 
+            </p>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
+                    Sulje kappale
+                </a>
+            </div>
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
         </div>
     </section>
 </article>
