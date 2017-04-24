@@ -2,25 +2,23 @@ class ScheduleCheckbox {
 
   static renderScheduleCheckboxes() {
     //todo: render according to schedule data
-    ScheduleCheckbox._renderEmptyScheduleCheckboxes();
-    ScheduleCheckbox._populateScheduleCheckboxes(ScheduleCheckbox._createSampleSchedule());
+    let listOfCurrentSchedules = ScheduleCheckbox._createSampleSchedule()
+    ScheduleCheckbox._renderEmptyCheckboxesForSchedules(listOfCurrentSchedules);
+    ScheduleCheckbox._populateScheduleCheckboxes(listOfCurrentSchedules);
   }
 
   /**
    * Adds goal checkboxes to each exercise
    */
-  static _renderEmptyScheduleCheckboxes() {
-    $(".checkbox-group").each(function (index, value) {
-      let checkbox1 = view.createCheckbox('1', 'green');
-      this.appendChild(checkbox1);
-
-      let checkbox2 = view.createCheckbox('2', 'orange');
-      this.appendChild(checkbox2);
-
-      let checkbox3 = view.createCheckbox('3', 'purple');
-      this.appendChild(checkbox3);
+  static _renderEmptyCheckboxesForSchedules(listOfCurrentSchedules) {
+    listOfCurrentSchedules.forEach(function(scheduleObject) {
+      let colorString = ScheduleCheckbox._convertColorIdToColorString(scheduleObject.color);
+      let scheduleId = scheduleObject.id;
+      view.renderEmptyCheckboxesForOneSchedule(scheduleId, colorString);
     });
-  }
+  };
+
+
 
   /**
    * Set checkmarks as "checked" according to current scheduleData
@@ -29,7 +27,7 @@ class ScheduleCheckbox {
   static _populateScheduleCheckboxes(listOfCurrentSchedules) {
     listOfCurrentSchedules.forEach(function(scheduleObject) {
       scheduleObject.exercises.forEach(function (exerciseUUID) {
-        var checkboxElement = ScheduleCheckbox._getExerciseCheckboxObject(exerciseUUID, scheduleObject.color);
+        let checkboxElement = ScheduleCheckbox._getExerciseCheckboxObject(exerciseUUID, scheduleObject.color);
         ScheduleCheckbox._setCheckboxChecked(checkboxElement);
       })
     });
@@ -42,7 +40,7 @@ class ScheduleCheckbox {
    * @returns jQuery object: <div class="checkbox-bootstrap...">
    */
   static _getExerciseCheckboxObject(exerciseId, colorId) {
-    var colorString = ScheduleCheckbox._convertColorIdToColorString(colorId);
+    let colorString = ScheduleCheckbox._convertColorIdToColorString(colorId);
     return $("#" + exerciseId).find(".checkbox-bootstrap.checkbox-" + colorString + ".checkbox-lg");
   }
 
@@ -61,7 +59,7 @@ class ScheduleCheckbox {
    * @returns corresponding color in english
    */
   static _convertColorIdToColorString(colorId) {
-    var colorStringsForColorIds = {
+    let colorStringsForColorIds = {
       1: "brown", //#da9887
       2: "blue", //#87b2da
       3: "green", //#c4da87
@@ -77,7 +75,7 @@ class ScheduleCheckbox {
    * @private
    */
   static _createSampleSchedule() {
-    var sampleScheduleGoalGreen = {
+    let sampleScheduleGoalGreen = {
       id : 3,
       name : "GreenSchedule",
       color : 3,
@@ -87,13 +85,12 @@ class ScheduleCheckbox {
           "ec569649-1589-42ca-9625-2233e27c1350"]
     };
 
-    var sampleScheduleGoalOrange = {
+    let sampleScheduleGoalOrange = {
       id : 4,
       name : "OrangeSchedule",
       color : 4,
       exercises :
-        ["ec569649-1589-42ca-9625-2233e27c1350",
-          "0f83dca3-25f1-4ff4-8d4a-f0a83d81387a"]
+        ["ec569649-1589-42ca-9625-2233e27c1350"]
     };
 
     return [sampleScheduleGoalGreen, sampleScheduleGoalOrange];
