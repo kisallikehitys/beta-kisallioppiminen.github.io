@@ -142,7 +142,7 @@ class View {
     let kirjauduUlos = [
     {key: 'href', value: BACKEND_BASE_URL + 'users/sign_out'},
     {key: 'rel', value: 'nofollow'},
-    {key: 'data-method', value: 'GET'}
+    {key: 'data-method', value: 'DELETE'}
     ];
     let kirjauduUlosClickEvent = function () {
       document.cookie = 'userFirstName=; path=/; expires=' + new Date(0).toUTCString();
