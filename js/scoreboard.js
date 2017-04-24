@@ -71,7 +71,7 @@ class Scoreboard {
     $('[data-toggle="tooltip"]').tooltip();
 
     // make table sortable
-    if (table_id.length > 1 && courseData.length > 1) {
+    if (table_id.length > 1 && courseData.length > 1 && !window.location.pathname.includes('/omat_kurssit.html')) {
       console.log(id);
       let nto = document.getElementById(id);
       console.log(nto);
