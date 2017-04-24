@@ -82,9 +82,11 @@ topnav: maa3
             </div>
 
             <div class="tehtavat">
-
+<<<<<<< HEAD
                 <div class="tehtava" id="0dca4faa-b685-4ad4-92a1-b54a0cf0a9d2">
-
+=======
+                <div class="tehtava" id="firstEx">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                     <header>
                         <h1>
                             <a data-toggle="collapse" class="collapsed" data-target="#kolmio01">
@@ -3330,9 +3332,11 @@ topnav: maa3
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="91cbf71e-3847-40bf-90f3-1f41bd2484b8">
-
+=======
+            <div class="tehtava" id="skkS301b-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#skkS301b">
@@ -3364,9 +3368,11 @@ topnav: maa3
                 </div>
             </div>
 
-
+<<<<<<< HEAD
             <div class="tehtava" id="d61cced4-f7f8-4559-a1de-c0e240e433f6">
-
+=======
+            <div class="tehtava" id="skkS302-ex">
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
                 <header>
                     <h1>
                         <a data-target="#skkS302">

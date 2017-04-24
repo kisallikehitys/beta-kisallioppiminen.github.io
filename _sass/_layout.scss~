@@ -21,10 +21,8 @@ header a,
     background-color: #eee;
   }
 
-/**
- * mergessä nämä lisää:
- */
-
+<<<<<<< HEAD
+=======
 section > header h1 {
     font-size: 2.75em;
     padding-top: 15px;
@@ -39,11 +37,8 @@ ul a {
     border-bottom: 1px dotted #aaa;
 }
 
-/**
- * tähän asti
- */
 
-
+>>>>>>> 63bdc151972ff63e35c39199039a2973231f70e1
 /**
  * NAVIGATION 
  */
