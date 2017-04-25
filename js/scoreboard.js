@@ -102,15 +102,22 @@ class Scoreboard {
 
   static createScoreboard(pageData, data, course) {
     let exercises = Exercises.extractExercises(pageData);
-    if (data.exercises) {
-      let studentData = [{
-        user: Session.getUserFirstName(),
-        exercises: data.exercises
-      }];
-      this.createTable(studentData, exercises, data.coursekey, course);
-    } else {
-      this.createTable(data.students, exercises, data.coursekey, course);
+    this.createTable(data.students, exercises, data.coursekey, course);
+  }
+
+  static validateScoreboardData(data) {
+    let amount = [];
+    for (let i in data.students) {
+      let item = data.students[i];
+      amount.push(item.exercises.length);
     }
+    return amount.every( (val, i, arr) => val == arr[0] );
+  }
+
+  static displayError(course, data) {
+    $(`#loadingAlert${course.coursekey}`).removeClass('alert-info').addClass('alert-danger');
+    $(`#loadingAlert${course.coursekey} strong`).html('Virhe! Tulostaulua ei pystytty lataamaan.');
+    console.warn(data + ": Could not get scoreboard.");
   }
 
   init(data, key) {
@@ -134,13 +141,15 @@ class Scoreboard {
           backend.get(url)
             .then(
               function fulfilled(data) {
-                Scoreboard.createScoreboard(pageData, data, course);
+                if (Scoreboard.validateScoreboardData(data)) {
+                  Scoreboard.createScoreboard(pageData, data, course);                  
+                } else {
+                  Scoreboard.displayError(course, data);
+                }
               },
               function rejected(data) {
                 console.log(course.coursekey);
-                $(`#loadingAlert${course.coursekey}`).removeClass('alert-info').addClass('alert-danger');
-                $(`#loadingAlert${course.coursekey} strong`).html('Virhe! Tulostaulua ei pystytty lataamaan.');
-                console.warn(data + ": Could not get scoreboard.");
+                Scoreboard.displayError(course, data);
               }
             );
         },
