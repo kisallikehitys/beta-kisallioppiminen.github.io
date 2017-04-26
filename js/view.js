@@ -156,7 +156,7 @@ class View {
       document.cookie = 'student=; path=/; expires=' + new Date(0).toUTCString();
       
       setTimeout(function() {
-        document.location.href="/";
+        document.location.href='/omat/kirjauduUlos.html';
       }, 1000);
     };
 
