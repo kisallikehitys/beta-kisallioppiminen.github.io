@@ -5,6 +5,7 @@ class ScheduleCheckbox {
     let listOfCurrentSchedules = ScheduleCheckbox._createSampleSchedule()
     ScheduleCheckbox._renderEmptyCheckboxesForSchedules(listOfCurrentSchedules);
     ScheduleCheckbox._populateScheduleCheckboxes(listOfCurrentSchedules);
+    ScheduleCheckbox._addScheduleCheckboxClickHandlers();
   }
 
   /**
@@ -53,6 +54,17 @@ class ScheduleCheckbox {
     checkboxElement.find("input").prop('checked', true);
   }
 
+  static _addScheduleCheckboxClickHandlers() {
+    $('.checkbox-kisalli').find('input').click(function() {
+      let checkboxInputElement = this;
+      let deltaScheduleItem = {};
+      let ScheduleExerciseItem = {};
+      ScheduleExerciseItem[checkboxInputElement.closest(".tehtava").id] = checkboxInputElement.checked;
+      deltaScheduleItem[checkboxInputElement.id] = ScheduleExerciseItem;
+      console.log(deltaScheduleItem);
+    });
+  };
+
   /**
    * Convert color id to string
    * @param colorId (integer)
@@ -76,7 +88,7 @@ class ScheduleCheckbox {
    */
   static _createSampleSchedule() {
     let sampleScheduleGoalGreen = {
-      id : 3,
+      id : 93,
       name : "GreenSchedule",
       color : 3,
       exercises :
@@ -86,7 +98,7 @@ class ScheduleCheckbox {
     };
 
     let sampleScheduleGoalOrange = {
-      id : 4,
+      id : 94,
       name : "OrangeSchedule",
       color : 4,
       exercises :

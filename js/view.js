@@ -401,8 +401,8 @@ class View {
    renderEmptyCheckboxesForOneSchedule(scheduleId, scheduleColorString) {
      let viewObject = this;
      $(".checkbox-group").each(function () {
-       let checkboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
-       this.appendChild(checkboxElement);
+       let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
+       this.appendChild(newCheckboxElement);
      });
    };
 
