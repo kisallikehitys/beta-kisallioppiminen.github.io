@@ -3,29 +3,37 @@ class ScheduleCheckbox {
   constructor() {
     this.currentSchedules = {};
     this.newScheduleCheckmarks = {};
-    this._getSchedulesFromServer('1');
+    this.execute();
+  }
+
+  execute() {
+    let ScheduleClass = this;
+    $(document).ready(function () {
+      if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
+        if (document.getCookie('teacher') === 'true') {
+          console.log("Course ID hardcoded!!");
+          ScheduleClass._getSchedulesFromServer('1');
+        }
+      }
+    });
   }
 
   _getSchedulesFromServer(courseID) {
-    //todo: implement GET
-    let obj = this;
+    let ScheduleClass = this;
     backend.get(`courses/${courseID}/schedules`)
       .then(
         function fulfilled(data) {
-          console.log("Schedule received!");
-          console.log(data);
-          obj.currentSchedules = data;
-          console.log(obj.currentSchedules);
-          let schedulesIDs = obj._getScheduleIDs(obj.currentSchedules);
-          obj.newScheduleCheckmarks = obj._initNewSchedulesObject(schedulesIDs);
-          obj.execute();
+          ScheduleClass.currentSchedules = data;
+          ScheduleClass.newScheduleCheckmarks = ScheduleClass._getEmptyScheduleCheckmarksDeltaObject();
+          scheduleCheckbox.createScheduleCheckboxes();
         },
         function rejected() {
           console.warn("Error, could not get schedule");
         });
   }
 
-  _initNewSchedulesObject(schedulesIDs) {
+  _getEmptyScheduleCheckmarksDeltaObject() {
+    let schedulesIDs = this._getScheduleIDs();
     let newScheduleCheckmarksObject = {};
     newScheduleCheckmarksObject['schedules'] = {};
     schedulesIDs.forEach(function(scheduleId) {
@@ -34,9 +42,9 @@ class ScheduleCheckbox {
     return newScheduleCheckmarksObject;
   };
 
-  _getScheduleIDs(currentScheduleObject) {
+  _getScheduleIDs() {
     let scheduleIDs = [];
-    currentScheduleObject.forEach(function(singleSchedule) {
+    this.currentSchedules.forEach(function(singleSchedule) {
       scheduleIDs.push(singleSchedule.id);
     });
     return scheduleIDs;
@@ -124,14 +132,15 @@ class ScheduleCheckbox {
     $('.'+classname).prop('style').display = 'none';
   }
 
-  _saveScheduleChanges() {
+  saveScheduleChanges() {
     console.log('saving not implemented!!');
     this._setElementsHiddenByClass('SaveScheduleChangesDiv');
     this._resetDeltaAndUpdateSchedules();
   }
 
   _resetDeltaAndUpdateSchedules() {
-    this.ScheduleCheckbox();
+    console.log('Reseting changes!');
+    this.newScheduleCheckmarks = this._getEmptyScheduleCheckmarksDeltaObject();
   }
 
   /**
@@ -177,13 +186,4 @@ class ScheduleCheckbox {
     return [sampleScheduleGoalGreen, sampleScheduleGoalOrange];
   }
 
-  execute() {
-    $(document).ready(function () {
-      if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-        if (document.getCookie('teacher') === 'true') {
-          scheduleCheckbox.createScheduleCheckboxes();
-        }
-      }
-    });
-  }
 }
