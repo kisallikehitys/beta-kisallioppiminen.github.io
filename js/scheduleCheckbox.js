@@ -1,32 +1,53 @@
 class ScheduleCheckbox {
 
-  static renderScheduleCheckboxes() {
-    //todo: render according to schedule data
-    let listOfCurrentSchedules = ScheduleCheckbox._createSampleSchedule()
-    ScheduleCheckbox._renderEmptyCheckboxesForSchedules(listOfCurrentSchedules);
-    ScheduleCheckbox._populateScheduleCheckboxes(listOfCurrentSchedules);
-    ScheduleCheckbox._addScheduleCheckboxClickHandlers();
+  constructor() {
+    this.currentSchedules = this._createSampleSchedule();
+    let schedulesIDs = this._getScheduleIDs(this.currentSchedules);
+    this.newScheduleCheckmarks = this._initNewSchedulesObject(schedulesIDs);
+  }
+
+  _initNewSchedulesObject(schedulesIDs) {
+    let newScheduleCheckmarksObject = {};
+    newScheduleCheckmarksObject['schedules'] = {};
+    schedulesIDs.forEach(function(scheduleId) {
+      newScheduleCheckmarksObject.schedules[scheduleId] = {};
+    });
+    return newScheduleCheckmarksObject;
+  };
+
+  _getScheduleIDs(currentScheduleObject) {
+    let scheduleIDs = [];
+    currentScheduleObject.forEach(function(singleSchedule) {
+      scheduleIDs.push(singleSchedule.id);
+    });
+    return scheduleIDs;
+  }
+
+  createScheduleCheckboxes() {
+    this._renderEmptyCheckboxesForSchedules();
+    this._populateScheduleCheckboxes();
+    this._addScheduleCheckboxClickHandlers();
   }
 
   /**
    * Adds goal checkboxes to each exercise
    */
-  static _renderEmptyCheckboxesForSchedules(listOfCurrentSchedules) {
-    listOfCurrentSchedules.forEach(function(scheduleObject) {
+  _renderEmptyCheckboxesForSchedules() {
+    let ScheduleCheckbox = this;
+    this.currentSchedules.forEach(function(scheduleObject) {
       let colorString = ScheduleCheckbox._convertColorIdToColorString(scheduleObject.color);
       let scheduleId = scheduleObject.id;
       view.renderEmptyCheckboxesForOneSchedule(scheduleId, colorString);
     });
   };
 
-
-
   /**
    * Set checkmarks as "checked" according to current scheduleData
    * @param listOfCurrentSchedules: list of current schedule objects
    */
-  static _populateScheduleCheckboxes(listOfCurrentSchedules) {
-    listOfCurrentSchedules.forEach(function(scheduleObject) {
+  _populateScheduleCheckboxes() {
+    let ScheduleCheckbox = this;
+    this.currentSchedules.forEach(function(scheduleObject) {
       scheduleObject.exercises.forEach(function (exerciseUUID) {
         let checkboxElement = ScheduleCheckbox._getExerciseCheckboxObject(exerciseUUID, scheduleObject.color);
         ScheduleCheckbox._setCheckboxChecked(checkboxElement);
@@ -40,8 +61,8 @@ class ScheduleCheckbox {
    * @param colorId (integer)
    * @returns jQuery object: <div class="checkbox-bootstrap...">
    */
-  static _getExerciseCheckboxObject(exerciseId, colorId) {
-    let colorString = ScheduleCheckbox._convertColorIdToColorString(colorId);
+  _getExerciseCheckboxObject(exerciseId, colorId) {
+    let colorString = this._convertColorIdToColorString(colorId);
     return $("#" + exerciseId).find(".checkbox-bootstrap.checkbox-" + colorString + ".checkbox-lg");
   }
 
@@ -50,19 +71,29 @@ class ScheduleCheckbox {
    * @param exerciseId (uuid)
    * @param goalColorId (integer)
    */
-  static _setCheckboxChecked(checkboxElement) {
+  _setCheckboxChecked(checkboxElement) {
     checkboxElement.find("input").prop('checked', true);
   }
 
-  static _addScheduleCheckboxClickHandlers() {
+  _addScheduleCheckboxClickHandlers() {
+    let ScheduleCheckbox = this;
     $('.checkbox-kisalli').find('input').click(function() {
       let checkboxInputElement = this;
-      let deltaScheduleItem = {};
-      let ScheduleExerciseItem = {};
-      ScheduleExerciseItem[checkboxInputElement.closest(".tehtava").id] = checkboxInputElement.checked;
-      deltaScheduleItem[checkboxInputElement.id] = ScheduleExerciseItem;
-      console.log(deltaScheduleItem);
+      let checkboxScheduleID = checkboxInputElement.id;
+      let checkboxExerciseUUID = checkboxInputElement.closest(".tehtava").id;
+      let checkboxIsChecked = checkboxInputElement.checked;
+      ScheduleCheckbox._setScheduleChange(checkboxScheduleID, checkboxExerciseUUID, checkboxIsChecked);
+      ScheduleCheckbox._showAlertForUnsavedChanges();
     });
+  };
+
+  _setScheduleChange(scheduleID, exerciseUUID, isChecked) {
+    this.newScheduleCheckmarks.schedules[scheduleID][exerciseUUID] = isChecked;
+    console.log(this.newScheduleCheckmarks);
+  }
+
+  _showAlertForUnsavedChanges() {
+    console.log('UNSAVED CHANGES!')
   };
 
   /**
@@ -70,7 +101,7 @@ class ScheduleCheckbox {
    * @param colorId (integer)
    * @returns corresponding color in english
    */
-  static _convertColorIdToColorString(colorId) {
+  _convertColorIdToColorString(colorId) {
     let colorStringsForColorIds = {
       1: "brown", //#da9887
       2: "blue", //#87b2da
@@ -86,7 +117,7 @@ class ScheduleCheckbox {
    * @returns List of schedule objests
    * @private
    */
-  static _createSampleSchedule() {
+  _createSampleSchedule() {
     let sampleScheduleGoalGreen = {
       id : 93,
       name : "GreenSchedule",
@@ -112,7 +143,8 @@ class ScheduleCheckbox {
 $(document).ready(function () {
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
     if (document.getCookie('teacher') === 'true') {
-      ScheduleCheckbox.renderScheduleCheckboxes();
+      const scheduleObject = new ScheduleCheckbox();
+      scheduleObject.createScheduleCheckboxes();
     }
   }
   //console.log("EDIT VERSION: a");
