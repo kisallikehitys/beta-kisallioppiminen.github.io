@@ -37,18 +37,8 @@
         </label>
 
         <div class="SaveScheduleChangesDiv">
-            <button type="button" class="btn btn-saveChanges" onclick="saveChanges()">Tallenna muutokset!</button>
+            <button type="button" class="btn btn-saveChanges" onclick="scheduleCheckbox.saveScheduleChanges()">Tallenna muutokset!</button>
         </div>
 
     </div>
 </nav>
-
-<script>
-    function saveChanges() {
-        console.log('Saving not implemented!');
-        setElementsHiddenByClass();
-    }
-    function setElementsHiddenByClass() {
-        $('.SaveScheduleChangesDiv').prop('style').display = 'none';
-    }
-</script>

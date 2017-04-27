@@ -102,13 +102,22 @@ div.checkbox {
     background: #C4DA87;
 }
 
+:root label.checkbox-bootstrap.checkbox-brown input[type=checkbox]:checked + span.checkbox-placeholder {
+    background: #da9887;
+}
+
+:root label.checkbox-bootstrap.checkbox-blue input[type=checkbox]:checked + span.checkbox-placeholder {
+    background: #87b2da;
+}
+
 :root label.checkbox-bootstrap.checkbox-orange input[type=checkbox]:checked + span.checkbox-placeholder {
     background: #f9bb81;
 }
 
-:root label.checkbox-bootstrap.checkbox-purple input[type=checkbox]:checked + span.checkbox-placeholder {
-    background: #d381ea;
+:root label.checkbox-bootstrap.checkbox-yellow input[type=checkbox]:checked + span.checkbox-placeholder {
+    background: #eae981;
 }
+
 
 :root label.checkbox-bootstrap input[type=checkbox]:checked + span.checkbox-placeholder:before {
     display: inline-block;

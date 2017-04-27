@@ -1,9 +1,28 @@
 class ScheduleCheckbox {
 
   constructor() {
-    this.currentSchedules = this._createSampleSchedule();
-    let schedulesIDs = this._getScheduleIDs(this.currentSchedules);
-    this.newScheduleCheckmarks = this._initNewSchedulesObject(schedulesIDs);
+    this.currentSchedules = {};
+    this.newScheduleCheckmarks = {};
+    this._getSchedulesFromServer('1');
+  }
+
+  _getSchedulesFromServer(courseID) {
+    //todo: implement GET
+    let obj = this;
+    backend.get(`courses/${courseID}/schedules`)
+      .then(
+        function fulfilled(data) {
+          console.log("Schedule received!");
+          console.log(data);
+          obj.currentSchedules = data;
+          console.log(obj.currentSchedules);
+          let schedulesIDs = obj._getScheduleIDs(obj.currentSchedules);
+          obj.newScheduleCheckmarks = obj._initNewSchedulesObject(schedulesIDs);
+          obj.execute();
+        },
+        function rejected() {
+          console.warn("Error, could not get schedule");
+        });
   }
 
   _initNewSchedulesObject(schedulesIDs) {
@@ -105,6 +124,16 @@ class ScheduleCheckbox {
     $('.'+classname).prop('style').display = 'none';
   }
 
+  _saveScheduleChanges() {
+    console.log('saving not implemented!!');
+    this._setElementsHiddenByClass('SaveScheduleChangesDiv');
+    this._resetDeltaAndUpdateSchedules();
+  }
+
+  _resetDeltaAndUpdateSchedules() {
+    this.ScheduleCheckbox();
+  }
+
   /**
    * Convert color id to string
    * @param colorId (integer)
@@ -147,14 +176,14 @@ class ScheduleCheckbox {
 
     return [sampleScheduleGoalGreen, sampleScheduleGoalOrange];
   }
-}
 
-$(document).ready(function () {
-  if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-    if (document.getCookie('teacher') === 'true') {
-      const scheduleObject = new ScheduleCheckbox();
-      scheduleObject.createScheduleCheckboxes();
-    }
+  execute() {
+    $(document).ready(function () {
+      if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
+        if (document.getCookie('teacher') === 'true') {
+          scheduleCheckbox.createScheduleCheckboxes();
+        }
+      }
+    });
   }
-  //console.log("EDIT VERSION: a");
-});
+}

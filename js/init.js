@@ -1,7 +1,7 @@
 var view = new View();
 const backend = new Backend();
+const scheduleCheckbox = new ScheduleCheckbox();
 Session.init();
-console.log('Session.init() has been called!');
 window.onload = function() {
 
   view.showNavigation();
