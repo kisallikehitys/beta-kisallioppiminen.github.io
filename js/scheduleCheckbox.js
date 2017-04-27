@@ -94,7 +94,16 @@ class ScheduleCheckbox {
 
   _showAlertForUnsavedChanges() {
     console.log('UNSAVED CHANGES!')
+    this._setElementsVisibleByClass('SaveScheduleChangesDiv');
   };
+
+  _setElementsVisibleByClass(classname) {
+    $('.'+classname).prop('style').display = 'inline-block';
+  }
+
+  _setElementsHiddenByClass(classname) {
+    $('.'+classname).prop('style').display = 'none';
+  }
 
   /**
    * Convert color id to string
