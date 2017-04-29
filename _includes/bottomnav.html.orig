@@ -7,6 +7,7 @@
         vertical-align: middle;
         margin: 10px;
     }
+<<<<<<< HEAD
     #scrollToTop {
         z-index: 99;
         display: none;
@@ -26,7 +27,7 @@
 
     #scrollToTop:hover {
         background-color: #52CD57;
-    }
+=======
     div.SaveScheduleChangesDiv {
         display: none;
         vertical-align: middle;
@@ -38,6 +39,7 @@
         border-color: #bf3e3e;
         line-height: 20px;
         border-radius: 20px;
+>>>>>>> c79514733f598008b15b7993fc036843573b8549
     }
 </style>
 
