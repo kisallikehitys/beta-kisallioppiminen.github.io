@@ -1,8 +1,9 @@
 class ScheduleCheckbox {
 
-  constructor() {
+  constructor(courseId) {
     this.currentSchedules = {};
     this.newScheduleCheckmarks = {};
+    this.courseId = courseId;
     this.execute();
   }
 
@@ -11,8 +12,7 @@ class ScheduleCheckbox {
     $(document).ready(function () {
       if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
         if (document.getCookie('teacher') === 'true') {
-          console.log("Course ID hardcoded!!");
-          ScheduleClass._getSchedulesFromServer('1');
+          ScheduleClass._getSchedulesFromServer(ScheduleClass.courseId);
         }
       }
     });
@@ -25,7 +25,7 @@ class ScheduleCheckbox {
         function fulfilled(data) {
           ScheduleClass.currentSchedules = data;
           ScheduleClass.newScheduleCheckmarks = ScheduleClass._getEmptyScheduleCheckmarksDeltaObject();
-          scheduleCheckbox.createScheduleCheckboxes();
+          ScheduleClass.createScheduleCheckboxes();
         },
         function rejected() {
           console.warn("Error, could not get schedule");
@@ -120,7 +120,7 @@ class ScheduleCheckbox {
   }
 
   _showAlertForUnsavedChanges() {
-    console.log('UNSAVED CHANGES!')
+    console.log('UNSAVED CHANGES!, showing save-button..');
     this._setElementsVisibleByClass('SaveScheduleChangesDiv');
   };
 
@@ -135,6 +135,12 @@ class ScheduleCheckbox {
   saveScheduleChanges() {
     console.log('saving not implemented!!');
     this._setElementsHiddenByClass('SaveScheduleChangesDiv');
+    console.log('this should be saved:');
+    console.log(this.newScheduleCheckmarks);
+    console.log('converting to json..');
+    console.log(JSON.stringify(this.newScheduleCheckmarks));
+    let courseId = '1';
+    console.log(backend.post(`courses/${courseId}/schedules/`, this.newScheduleCheckmarks));
     this._resetDeltaAndUpdateSchedules();
   }
 

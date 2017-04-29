@@ -249,6 +249,16 @@ class Button {
         obj._invokeCourseSelect(htmlID, keys, data);
       });
     }
+    this.getAndShowSchedules(this.courseData.course_id);
+  }
+
+  getAndShowSchedules(courseId) {
+    const scheduleCheckbox = new ScheduleCheckbox(courseId);
+
+    // Add listener
+    $('#saveScheduleButton').click(function () {
+      scheduleCheckbox.saveScheduleChanges();
+    });
   }
 
   initTeacher(data) {
