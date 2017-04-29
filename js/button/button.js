@@ -49,31 +49,13 @@ class Button {
       buttonDiv.appendChild(buttonGroup);
 
       $(value).find("div:nth-child(2):last-child").append(buttonDiv);
+
     });
 
     // Add listener
     $('.problemButton').click(function () {
       obj.sendCheckmark(this.id);
     });
-  }
-
-  /**
-   * Adds goal checkboxes to each exercise
-   */
-  _addGoalCheckboxes() {
-    console.log('_addGoalCheckboxes');
-    const obj = this;
-    $(".checkbox-group").each(function (index, value) {
-      let checkbox1 = view.createCheckbox('1', 'green');
-      this.appendChild(checkbox1);
-
-      let checkbox2 = view.createCheckbox('2', 'orange');
-      this.appendChild(checkbox2);
-
-      let checkbox3 = view.createCheckbox('3', 'purple');
-      this.appendChild(checkbox3);
-    });
-    console.log('endGoalTest');
   }
 
   /**
@@ -116,7 +98,7 @@ class Button {
   _extractCourseData(data, path) {
     const html_id = path;
     for (let i in data) {
-      console.log(data[i]);
+      //console.log(data[i]);
       if (data[i].html_id == html_id) {
         this.courseData.coursekey = data[i].coursekey;
         this.courseData.course_id = data[i].id;
@@ -182,7 +164,6 @@ class Button {
    * @param  {Obj} data JSON data
    */
   _markStats(data) {
-    console.log(data);
     $("div.stats").remove();
     $(".tehtava").each(function (index, value) {
       let stat = data[this.id];
@@ -196,9 +177,9 @@ class Button {
    * @param  {Integer} id Course ID
    */
   _getStats(id) {
-    console.log("Getting stats");
+    //console.log("Getting stats");
     const obj = this;
-    console.log(this.courseData.course_id);
+    //console.log(this.courseData.course_id);
     backend.get(`courses/${id}/exercises/statistics`)
       .then(
         function fulfilled(data) {
@@ -220,9 +201,6 @@ class Button {
     if (this.courseData.coursekey !== '') {
       this._addButtons();
       this._getCheckmarks();
-      //if (Session.isTeacher) {
-      //  this._addGoalCheckboxes();
-      //};
     } else {
       console.warn("No coursekey for this material.");
     }
@@ -297,9 +275,11 @@ class Button {
         }
       }
     }
+
     if (this.courseData.course_id.length !== 0 && this._isTeacherCourse(data)) {
       this._getStats(this.courseData.course_id);
     }
+
     if (this.courseData.coursekey.length > 1) {
       $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
     }
@@ -310,6 +290,16 @@ class Button {
         obj._invokeCourseSelect(htmlID, keys, data);
       });
     }
+    this.getAndShowSchedules(this.courseData.course_id);
+  }
+
+  getAndShowSchedules(courseId) {
+    const scheduleCheckbox = new ScheduleCheckbox(courseId);
+
+    // Add listener
+    $('#saveScheduleButton').click(function () {
+      scheduleCheckbox.saveScheduleChanges();
+    });
   }
 
   /**
@@ -318,7 +308,6 @@ class Button {
    */
   initTeacher(data) {
     this._extractTeacherCourses(data);
-    console.log(data);
   }
 
   /**

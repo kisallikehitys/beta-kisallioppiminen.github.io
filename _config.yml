@@ -45,6 +45,7 @@ resources:
     - "/js/jquery-ui.js"
     - "/js/mooc.js"
     - "/js/button/button.js"
+    - "/js/scheduleCheckbox.js"
     - "/js/init.js"
 
 

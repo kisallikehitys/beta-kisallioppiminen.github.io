@@ -285,7 +285,7 @@ class View {
   /**
    * Create a large goal checkbox with id and color
    */
-  createCheckbox(goalId, color) {
+  _createCheckbox(goalId, color) {
     let checkboxDiv = document.createElement('div');
     checkboxDiv.setAttribute('class', 'checkbox checkbox-kisalli');
 
@@ -426,6 +426,14 @@ class View {
     button.setAttribute('onClick', 'self.close()');
     return button;
   }
+
+   renderEmptyCheckboxesForOneSchedule(scheduleId, scheduleColorString) {
+     let viewObject = this;
+     $(".checkbox-group").each(function () {
+       let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
+       this.appendChild(newCheckboxElement);
+     });
+   };
 
 }
 
