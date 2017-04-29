@@ -42,11 +42,14 @@ class View {
       document.cookie = 'attemptedLogin=true; path=/';
     };
 
-    if (FRONTEND_BASE_URL == "http://localhost:4000/" || FRONTEND_BASE_URL == 'http://127.0.0.1:4000/') {
-      this._addNormalLoginToModal(FRONTEND_BASE_URL);
-    }
+    // if (FRONTEND_BASE_URL == "http://localhost:4000/" || FRONTEND_BASE_URL == 'http://127.0.0.1:4000/') {
+    //   this._addNormalLoginToModal(FRONTEND_BASE_URL);
+    // }
   }
 
+  /* 
+   * Deprecated
+   */
   _addNormalLoginToModal(backendUrl) {
 
     let input, attributes;
@@ -137,15 +140,24 @@ class View {
 
 
     let kirjauduUlos = [
-    {key: 'href', value: BACKEND_BASE_URL + 'users/sign_out'},
-    {key: 'rel', value: 'nofollow'},
-    {key: 'data-method', value: 'GET'}
+    {key: 'href', value: '#'},
+    {key: 'rel', value: 'nofollow'}
     ];
     let kirjauduUlosClickEvent = function () {
+
+      const request = new XMLHttpRequest();
+      request.open('DELETE', BACKEND_BASE_URL + 'users/sign_out', true);
+      request.withCredentials = true;
+      request.send();
+
       document.cookie = 'userFirstName=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'userId=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'teacher=; path=/; expires=' + new Date(0).toUTCString();
       document.cookie = 'student=; path=/; expires=' + new Date(0).toUTCString();
+      
+      setTimeout(function() {
+        document.location.href='/omat/kirjauduUlos.html';
+      }, 1000);
     };
 
     // Append everything to dropdown menu
@@ -259,6 +271,9 @@ class View {
     body.appendChild(item);
     scoreboard.appendChild(body);
 
+    let foot = document.createElement('tfoot');
+    scoreboard.appendChild(foot);
+
     let column = document.createElement('th');
     column.setAttribute('class', 'nameColumn');
 
@@ -321,6 +336,18 @@ class View {
     return mark;
   }
 
+  createScheduleMark(key, status, name, exercise) {
+    let mark = document.createElement('td');
+    mark.setAttribute('id', 'status');
+    let color = document.createElement('div');
+    color.setAttribute('style', `background-color: ${key}`);
+    color.setAttribute('class', status);
+    color.setAttribute('data-toggle', 'tooltip');
+    color.setAttribute('title', `${name} - ${exercise}`);
+    mark.appendChild(color);
+    return mark;
+  }
+
   createListItem(data, formattedTime) {
     let listItem = document.createElement('section');
     listItem.setAttribute('class', 'panel panel-courselisting');
@@ -350,6 +377,8 @@ class View {
     coursekeyH1.appendChild(collapseLink);
 
     let coursekeyH3 = document.createElement('h3');
+    coursekeyH3.setAttribute('class', 'spoiler');
+    coursekeyH3.setAttribute('ontouchstart', '');
     coursekeyH3.style.fontFamily = "monospace";
     coursekeyH3.style.float = "right";
     coursekeyH3.style.display = "inline-block";

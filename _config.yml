@@ -28,6 +28,7 @@ resources:
     - "/css/custom.css"
     - "//fonts.googleapis.com/css?family=Alegreya+Sans:400|Noto+Sans:400,700|Open+Sans+Condensed:300,700"
     - "/css/main.css"
+   #- "/css/definitions_page.css"
 
   js:
     # Download libraries
@@ -41,10 +42,12 @@ resources:
     - "/js/view.js"
     - "/js/exercises.js"
     - "/js/backend.js"
+    - "/js/jquery-ui.js"
     - "/js/mooc.js"
     - "/js/button/button.js"
     - "/js/scheduleCheckbox.js"
     - "/js/init.js"
+
 
 
 exclude: [vendor]
