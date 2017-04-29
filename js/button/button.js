@@ -1,3 +1,5 @@
+let button;
+
 class Button {
 
   constructor() {
@@ -160,38 +162,6 @@ class Button {
   }
 
   /**
-   * Appends course related exercise statistics to exercise header
-   * @param  {Obj} data JSON data
-   */
-  _markStats(data) {
-    $("div.stats").remove();
-    $(".tehtava").each(function (index, value) {
-      let stat = data[this.id];
-      let template = `<div class="stats" style="float: right; display: inline-block;"><span style="color:#D0011B;margin-right:1.25em;"><b>${stat.red}</b></span><span style="color:#F6A623;margin-right:1.25em;"><b>${stat.yellow}</b></span><span style="color:#417505;margin-right:1em;"><b>${stat.green}</b></span></div>`;
-      $(value).find("header h1").append(template);
-    });
-  }
-
-  /**
-   * Gets course related exercise statistics from backend
-   * @param  {Integer} id Course ID
-   */
-  _getStats(id) {
-    //console.log("Getting stats");
-    const obj = this;
-    //console.log(this.courseData.course_id);
-    backend.get(`courses/${id}/exercises/statistics`)
-      .then(
-        function fulfilled(data) {
-          obj._markStats(data);
-        },
-        function rejected(data) {
-          console.warn(data);
-        }
-      );
-  }
-
-  /**
    * Init function
    * @param  {Obj} data Course data in JSON
    */
@@ -231,7 +201,7 @@ class Button {
         if (data[j].coursekey == coursekey.courseSelect) {
           obj.courseData.coursekey = data[j].coursekey;
           obj.courseData.course_id = data[j].id;
-          obj._getStats(obj.courseData.course_id);
+          Statistics.getStats(obj.courseData.course_id);
         }
       }
       document.cookie = `coursekey=${coursekey.courseSelect}; path=/kurssit/${htmlID};`;
@@ -277,7 +247,7 @@ class Button {
     }
 
     if (this.courseData.course_id.length !== 0 && this._isTeacherCourse(data)) {
-      this._getStats(this.courseData.course_id);
+      Statistics.getStats(this.courseData.course_id);
     }
 
     if (this.courseData.coursekey.length > 1) {
@@ -310,6 +280,11 @@ class Button {
     this._extractTeacherCourses(data);
   }
 
+  getCourseID() {
+    // Caution. Asynchronous!
+    return this.courseData.course_id;
+  }
+
   /**
    * Switches class visibility
    * @param  {String} className Class name
@@ -331,7 +306,7 @@ class Button {
  * Execute when DOM has loaded
  */
 $(document).ready(function () {
-  const button = new Button();
+  button = new Button();
   $('.toggleDivVisibility').click(function () {
     button.toggleVisibilityByClass(this.id);
   });
