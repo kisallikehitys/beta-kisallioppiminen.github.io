@@ -11,7 +11,7 @@ class ScheduleCheckbox {
     let ScheduleClass = this;
     $(document).ready(function () {
       if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-        if (document.getCookie('teacher') === 'true') {
+        if (document.getCookie(`teacher`) === `true`) {
           ScheduleClass._getSchedulesFromServer(ScheduleClass.courseId);
         }
       }
@@ -35,7 +35,7 @@ class ScheduleCheckbox {
   _getEmptyScheduleCheckmarksDeltaObject() {
     let schedulesIDs = this._getScheduleIDs();
     let newScheduleCheckmarksObject = {};
-    newScheduleCheckmarksObject['schedules'] = {};
+    newScheduleCheckmarksObject[`schedules`] = {};
     schedulesIDs.forEach(function(scheduleId) {
       newScheduleCheckmarksObject.schedules[scheduleId] = {};
     });
@@ -94,17 +94,17 @@ class ScheduleCheckbox {
   }
 
   /**
-   * Set a checkbox as 'checked'
+   * Set a checkbox as `checked`
    * @param exerciseId (uuid)
    * @param goalColorId (integer)
    */
   _setCheckboxChecked(checkboxElement) {
-    checkboxElement.find("input").prop('checked', true);
+    checkboxElement.find("input").prop(`checked`, true);
   }
 
   _addScheduleCheckboxClickHandlers() {
     let ScheduleCheckbox = this;
-    $('.checkbox-kisalli').find('input').click(function() {
+    $(`.checkbox-kisalli`).find(`input`).click(function() {
       let checkboxInputElement = this;
       let checkboxScheduleID = checkboxInputElement.id;
       let checkboxExerciseUUID = checkboxInputElement.closest(".tehtava").id;
@@ -116,36 +116,27 @@ class ScheduleCheckbox {
 
   _setScheduleChange(scheduleID, exerciseUUID, isChecked) {
     this.newScheduleCheckmarks.schedules[scheduleID][exerciseUUID] = isChecked;
-    console.log(this.newScheduleCheckmarks);
   }
 
   _showAlertForUnsavedChanges() {
-    console.log('UNSAVED CHANGES!, showing save-button..');
-    this._setElementsVisibleByClass('SaveScheduleChangesDiv');
+    this._setElementsVisibleByClass(`SaveScheduleChangesDiv`);
   };
 
   _setElementsVisibleByClass(classname) {
-    $('.'+classname).prop('style').display = 'inline-block';
+    $(`.`+classname).prop(`style`).display = `inline-block`;
   }
 
   _setElementsHiddenByClass(classname) {
-    $('.'+classname).prop('style').display = 'none';
+    $(`.`+classname).prop(`style`).display = `none`;
   }
 
   saveScheduleChanges() {
-    console.log('saving not implemented!!');
-    this._setElementsHiddenByClass('SaveScheduleChangesDiv');
-    console.log('this should be saved:');
-    console.log(this.newScheduleCheckmarks);
-    console.log('converting to json..');
-    console.log(JSON.stringify(this.newScheduleCheckmarks));
-    let courseId = '1';
-    console.log(backend.post(`courses/${courseId}/schedules/`, this.newScheduleCheckmarks));
+    this._setElementsHiddenByClass(`SaveScheduleChangesDiv`);
+    backend.post(`courses/${this.courseId}/schedules/`, this.newScheduleCheckmarks);
     this._resetDeltaAndUpdateSchedules();
   }
 
   _resetDeltaAndUpdateSchedules() {
-    console.log('Reseting changes!');
     this.newScheduleCheckmarks = this._getEmptyScheduleCheckmarksDeltaObject();
   }
 
