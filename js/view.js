@@ -433,7 +433,7 @@ class View {
        let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
        this.appendChild(newCheckboxElement);
      });
-   };
+   }
 
 }
 
