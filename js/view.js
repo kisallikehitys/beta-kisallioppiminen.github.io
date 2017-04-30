@@ -427,13 +427,14 @@ class View {
     return button;
   }
 
-   renderEmptyCheckboxesForOneSchedule(scheduleId, scheduleColorString) {
-     let viewObject = this;
-     $(".checkbox-group").each(function () {
-       let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
-       this.appendChild(newCheckboxElement);
-     });
-   }
+  renderEmptyCheckboxesForOneSchedule(scheduleId, scheduleColorString) {
+    let viewObject = this;
+    $(".checkbox-group").each(function () {
+      let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
+      this.appendChild(newCheckboxElement);
+    });
+  }
+
 
 }
 
