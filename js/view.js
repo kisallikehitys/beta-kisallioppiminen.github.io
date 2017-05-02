@@ -435,6 +435,77 @@ class View {
     });
   }
 
+  clearScheduleManagerColor() {
+    let scheduleManagerColor = document.getElementById('schedule-manager-color');
+    while (scheduleManagerColor.firstChild) {
+      scheduleManagerColor.removeChild(scheduleManagerColor.firstChild);
+    }
+  }
+
+  createScheduleColorSection(color, name) {
+
+    let colorDictionary = new Map();
+    colorDictionary['brown'] = 'Ruskea';
+    colorDictionary['blue'] = 'Sininen';
+    colorDictionary['green'] = 'Vihreä';
+    colorDictionary['orange'] = 'Oranssi';
+    colorDictionary['yellow'] = 'Keltainen';
+
+    let divRow = document.createElement('div');
+    let divRadioButton = document.createElement('div');
+    let input = document.createElement('input');
+    let label = document.createElement('label');
+
+    divRow.setAttribute('class', 'row');
+    divRadioButton.setAttribute('class', 'col-sm-6');
+
+    let isDisabled = function() {
+      if (name) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    input.setAttribute('type', 'radio');
+    input.setAttribute('name', 'optionsRadios');
+    input.setAttribute('id', 'schedule-' + color);
+    input.setAttribute('value', 'option5');
+    input.disabled = isDisabled();
+
+    label.innerHTML = colorDictionary[color];
+
+    let scheduleManagerColor = document.getElementById('schedule-manager-color');
+
+    divRadioButton.appendChild(input);
+    divRadioButton.appendChild(label);
+    divRow.appendChild(divRadioButton);
+    scheduleManagerColor.appendChild(divRow);
+
+    if (name != undefined) {
+      this._addDeleteScheduleColorSection(divRow, divRadioButton, name);
+    }
+
+  }
+
+  // do not create if color is taken
+  _addDeleteScheduleColorSection(divRow, divRadioButton, name) {
+
+    let spanName = document.createElement('span');
+    spanName.setAttribute('style', 'display: block; margin-left:20px;');
+    spanName.innerHTML = '"' + name + '"';
+    divRadioButton.appendChild(spanName);
+
+    let divButton = document.createElement('div');
+    let button = document.createElement('button');
+
+    divButton.setAttribute('class', 'col-sm-6');
+    button.setAttribute('type', 'button');
+    button.setAttribute('class', 'btn btn-danger');
+    button.innerHTML = 'Poista';
+
+    divButton.appendChild(button);
+    divRow.appendChild(divButton);
+  }
 
 }
 
