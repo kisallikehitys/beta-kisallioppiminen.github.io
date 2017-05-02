@@ -47,6 +47,7 @@ resources:
     - "/js/button/button.js"
     - "/js/statistics.js"
     - "/js/scheduleCheckbox.js"
+    - "/js/scheduleManager.js"
     - "/js/init.js"
 
 
