@@ -457,7 +457,7 @@ class View {
     let label = document.createElement('label');
 
     divRow.setAttribute('class', 'row');
-    divRadioButton.setAttribute('class', 'col-sm-6');
+    divRadioButton.setAttribute('class', 'col-sm-12');
 
     let isDisabled = function() {
       if (reserved) {
@@ -474,6 +474,7 @@ class View {
     input.disabled = isDisabled();
 
     label.innerHTML = colorDictionary[color];
+    label.style.marginLeft = '1em';
 
     let scheduleManagerColor = document.getElementById('schedule-manager-color');
 
@@ -492,23 +493,21 @@ class View {
   _addDeleteScheduleColorSection(divRow, divRadioButton, reserved) {
 
     let spanName = document.createElement('span');
-    spanName.setAttribute('style', 'display: block; margin-left:20px;');
+    spanName.style.marginLeft = '1em';
     spanName.innerHTML = '"' + reserved.name + '"';
     divRadioButton.appendChild(spanName);
 
-    let divButton = document.createElement('div');
     let scheduleButton = document.createElement('button');
 
-    divButton.setAttribute('class', 'col-sm-6');
     scheduleButton.setAttribute('type', 'button');
     scheduleButton.setAttribute('class', 'btn btn-danger');
     scheduleButton.innerHTML = 'Poista';
+    scheduleButton.style.marginLeft = '3.3em';
     scheduleButton.onclick = function() {
       schedulemanager.deleteSchedule(button.getCourseID(), reserved.id);
     };
 
-    divButton.appendChild(scheduleButton);
-    divRow.appendChild(divButton);
+    divRow.appendChild(scheduleButton);
   }
 
   createOpenScheduleManagerLink() {
@@ -527,7 +526,7 @@ class View {
     };
 
     let p = document.createElement('p');
-    p.style.marginBottom = '2em';
+    p.style.marginBottom = '1em';
 
     p.append(a);
     currentCourse.parentElement.parentElement.parentElement.append(p);
