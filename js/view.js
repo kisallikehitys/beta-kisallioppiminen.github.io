@@ -511,6 +511,28 @@ class View {
     divRow.appendChild(divButton);
   }
 
+  createOpenScheduleManagerLink() {
+    let currentCourse = document.getElementById('currentCourse');
+
+    let attributes = [
+    {key: 'href', value: '#'}, 
+    {key: 'id', value: 'open-schedule-modal'}, 
+    {key: 'data-toggle', value: 'modal'},
+    {key: 'data-target', value: '#schedule-modal'},]; 
+
+    let a = this._addAttributesToElement(attributes, document.createElement('a'));
+    a.innerHTML = 'Luo kurssille tavoitteita';
+    a.onclick = function() {
+      schedulemanager.getSchedule(button.getCourseID());
+    };
+
+    let p = document.createElement('p');
+    p.style.marginBottom = '2em';
+
+    p.append(a);
+    currentCourse.parentElement.parentElement.parentElement.append(p);
+  }
+
 }
 
 
