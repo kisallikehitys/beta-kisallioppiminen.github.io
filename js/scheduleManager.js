@@ -35,11 +35,9 @@ class ScheduleManager {
           function fulfilled() {
             info.innerHTML = 'Tavoite luotu!';
             obj.getSchedule(button.getCourseID());
-            console.log('New schedule was created!');
           },
           function rejected(response) {
-            info.innerHTML = 'Tavoitteen luominen epäonnistui.';
-            console.log('could not create new schedule: ' + response);
+            info.innerHTML = response.error;
           });
   }
 
@@ -57,7 +55,6 @@ class ScheduleManager {
               for (let j = 0; j < data.length; j++) {
                 if (data[j].color - 1 == i) {
                   view.createScheduleColorSection(colors[i], data[j]);
-                  console.log(data[j]);
                   isReserved = true;
                 }
               }
@@ -67,11 +64,8 @@ class ScheduleManager {
               isReserved = false;
             }
 
-            console.log('Got schedule:' + data);
-
           },
           function rejected() {
-            console.log('could not get schedule');
           });
   }
 
@@ -82,15 +76,11 @@ class ScheduleManager {
     backend.delete(`courses/${courseId}/schedules/${scheduleId}`)
       .then(
           function fulfilled(data) {
-            info.innerHTML = 'Tavoite on tuhottu!';
+            info.innerHTML = 'Tavoite on poistettu!';
             obj.getSchedule(button.getCourseID());
-            console.log(`deleted course with ID ${courseId} and schedule with ID ${scheduleId}`);
-            console.log(`data was ${data}`);
           },
           function rejected(err) {
-            info.innerHTML = 'Tavoitteen tuhoaminen epäonnistui.';
-            console.log(`could not delete schedule with course ID ${courseId} and schedule ID ${scheduleId}`);
-            console.log(`error message: ${err.error}`);
+            info.innerHTML = 'Tavoitteen poistaminen epäonnistui.';
           });
   }
 
