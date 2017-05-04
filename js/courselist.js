@@ -1,7 +1,9 @@
+let myCourses;
+
 class CourseList {
 
   static createCourseList(data) {
-    console.log(data);
+    myCourses = data;
     for (let i in data) {
       this._createListItem(data[i]);
     }
@@ -45,5 +47,4 @@ class CourseList {
 $(document).ready(function () {
   const courselist = new CourseList();
   courselist.init();
-
 });

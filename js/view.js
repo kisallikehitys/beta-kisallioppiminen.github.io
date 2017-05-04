@@ -406,7 +406,6 @@ class View {
     alertDiv.appendChild(message);
     courseDiv.appendChild(alertDiv);
     listItem.appendChild(courseDiv);
-    console.log(listItem);
     return listItem;
   }
 
