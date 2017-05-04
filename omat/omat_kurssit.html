@@ -119,10 +119,6 @@ tfoot > tr > td.name {
                     </span>
                 </div>
             </div>
-
-            <div class="leaveCourseButtonContainer">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#leaveCourseModal">Poistu kurssilta</button>
-            </div>
         </form>
     </div>
 </section>
@@ -137,6 +133,7 @@ tfoot > tr > td.name {
             </div>
             <div class="modal-body">
                 <form id="leaveCourseForm" class="form-horizontal" role="form">
+                    <div id="remove_course_alert" class="alert alert-danger" role="alert">Kurssilta poistuminen poistaa kaikki tietosi.</div>
 
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="coursekeyRemove">Kurssiavain</label>
@@ -153,7 +150,7 @@ tfoot > tr > td.name {
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Sulje</button>
+                <a href="/omat/omat_kurssit.html"><button type="button" class="btn btn-default">Sulje</button></a>
             </div>
         </div>
 
@@ -167,23 +164,3 @@ tfoot > tr > td.name {
 <script src="/js/scoreboard.js"></script>
 <script src="/js/courselist.js"></script>
 <script src="/js/join_course.js"></script>
-<script>
-
-    $(document).ready(function () {
-        $("#leaveCourse").on('click', function () {
-            let coursekey = $("#coursekeyRemove").val();
-            let courseId;
-            console.log(myCourses);
-            console.log(coursekey);
-            for (let i in myCourses) {
-                if (coursekey === myCourses[i].coursekey) {
-                    courseId = myCourses[i].id;
-                    console.log(courseId);
-                    backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
-                }
-            }
-        });
-    });
-
-
-</script>
