@@ -442,7 +442,7 @@ class View {
     }
   }
 
-  createScheduleColorSection(color, name) {
+  createScheduleColorSection(color, reserved) {
 
     let colorDictionary = new Map();
     colorDictionary['brown'] = 'Ruskea';
@@ -460,7 +460,7 @@ class View {
     divRadioButton.setAttribute('class', 'col-sm-6');
 
     let isDisabled = function() {
-      if (name) {
+      if (reserved) {
         return true;
       } else {
         return false;
@@ -482,18 +482,18 @@ class View {
     divRow.appendChild(divRadioButton);
     scheduleManagerColor.appendChild(divRow);
 
-    if (name != undefined) {
-      this._addDeleteScheduleColorSection(divRow, divRadioButton, name);
+    if (reserved != undefined) {
+      this._addDeleteScheduleColorSection(divRow, divRadioButton, reserved);
     }
 
   }
 
   // do not create if color is taken
-  _addDeleteScheduleColorSection(divRow, divRadioButton, name) {
+  _addDeleteScheduleColorSection(divRow, divRadioButton, reserved) {
 
     let spanName = document.createElement('span');
     spanName.setAttribute('style', 'display: block; margin-left:20px;');
-    spanName.innerHTML = '"' + name + '"';
+    spanName.innerHTML = '"' + reserved.name + '"';
     divRadioButton.appendChild(spanName);
 
     let divButton = document.createElement('div');
@@ -503,6 +503,9 @@ class View {
     button.setAttribute('type', 'button');
     button.setAttribute('class', 'btn btn-danger');
     button.innerHTML = 'Poista';
+    button.onclick = function() {
+
+    }
 
     divButton.appendChild(button);
     divRow.appendChild(divButton);

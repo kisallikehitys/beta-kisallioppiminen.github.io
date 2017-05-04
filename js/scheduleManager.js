@@ -59,7 +59,8 @@ class ScheduleManager {
             for (let i = 0; i < colors.length; i++) {
               for (let j = 0; j < data.length; j++) {
                 if (data[j].color - 1 == i) {
-                  view.createScheduleColorSection(colors[i], data[j].name);
+                  view.createScheduleColorSection(colors[i], data[j]);
+                  console.log(data[j]);
                   isReserved = true;
                 }
               }
@@ -77,8 +78,16 @@ class ScheduleManager {
           });
   }
 
-  deleteSchedule(scheduleId) {
-
+  deleteSchedule(courseId, scheduleId) {
+    backend.delete(`courses/${courseId}/schedules/${scheduleId}`)
+      .then(
+          function fulfilled(data) {
+            console.log(`deleted course with ID ${courseId} and schedule with ID ${scheduleId}`);
+            console.log(`data was ${data}`);
+          },
+          function rejected() {
+            console.log(`could not delete schedule with course ID ${courseId} and schedule ID ${scheduleId}`);
+          });
   }
 
 }
