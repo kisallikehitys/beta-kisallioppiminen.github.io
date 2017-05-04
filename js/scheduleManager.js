@@ -1,10 +1,16 @@
 class ScheduleManager {
 
   constructor() {
-    let button = document.getElementById('open-schedule-modal');
     let obj = this;
-    button.onclick = function() {
+
+    let openScheduleButton = document.getElementById('open-schedule-modal');
+    openScheduleButton.onclick = function() {
       obj.init();
+    };
+
+    let createScheduleButton = document.getElementById('create-schedule');
+    createScheduleButton.onclick = function() {
+      obj.createSchedule(button.getCourseID());
     };
   }
 
