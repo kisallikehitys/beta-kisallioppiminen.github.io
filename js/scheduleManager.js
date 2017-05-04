@@ -79,14 +79,21 @@ class ScheduleManager {
   }
 
   deleteSchedule(courseId, scheduleId) {
+    let obj = this;
+    let info = document.getElementById('schedule-footer-info');
+    info.innerHTML = 'Tavoitetta tuhotaan...';
     backend.delete(`courses/${courseId}/schedules/${scheduleId}`)
       .then(
           function fulfilled(data) {
+            info.innerHTML = 'Tavoite on tuhottu!';
+            obj.getSchedule(button.getCourseID());
             console.log(`deleted course with ID ${courseId} and schedule with ID ${scheduleId}`);
             console.log(`data was ${data}`);
           },
-          function rejected() {
+          function rejected(err) {
+            info.innerHTML = 'Tavoitteen tuhoaminen epäonnistui.';
             console.log(`could not delete schedule with course ID ${courseId} and schedule ID ${scheduleId}`);
+            console.log(`error message: ${err.error}`);
           });
   }
 

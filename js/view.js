@@ -504,8 +504,8 @@ class View {
     button.setAttribute('class', 'btn btn-danger');
     button.innerHTML = 'Poista';
     button.onclick = function() {
-
-    }
+      schedulemanager.deleteSchedule(7, reserved.id);
+    };
 
     divButton.appendChild(button);
     divRow.appendChild(divButton);
