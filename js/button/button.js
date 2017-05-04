@@ -5,7 +5,8 @@ class Button {
   constructor() {
     this.courseData = {
       coursekey: '',
-      course_id: ''
+      course_id: '',
+      data: []
     };
   }
 
@@ -209,9 +210,9 @@ class Button {
     });
   }
 
-  _isTeacherCourse(data) {
-    for (let i in data) {
-      let course = data[i];
+  _isTeacherCourse() {
+    for (let i in this.courseData.data) {
+      let course = this.courseData.data[i];
       if (course.coursekey === this.courseData.coursekey) {
         return true;
       }
@@ -246,7 +247,7 @@ class Button {
       }
     }
 
-    if (this.courseData.course_id.length !== 0 && this._isTeacherCourse(data)) {
+    if (this.courseData.course_id.length !== 0 && this._isTeacherCourse()) {
       Statistics.getStats(this.courseData.course_id);
     }
 
@@ -277,6 +278,7 @@ class Button {
    * @param  {Obj} data Course data
    */
   initTeacher(data) {
+    this.courseData.data = data;
     this._extractTeacherCourses(data);
   }
 
