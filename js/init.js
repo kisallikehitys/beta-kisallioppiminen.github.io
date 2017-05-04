@@ -1,4 +1,4 @@
-var view = new View();
+let view = new View();
 const backend = new Backend();
 Session.init();
 window.onload = function() {
