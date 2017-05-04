@@ -3,10 +3,7 @@ class ScheduleManager {
   constructor() {
     let obj = this;
 
-    let openScheduleButton = document.getElementById('open-schedule-modal');
-    openScheduleButton.onclick = function() {
-      obj.getSchedule(button.getCourseID());
-    };
+    view.createOpenScheduleManagerLink();
 
     let createScheduleButton = document.getElementById('create-schedule');
     createScheduleButton.onclick = function() {
