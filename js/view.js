@@ -497,17 +497,17 @@ class View {
     divRadioButton.appendChild(spanName);
 
     let divButton = document.createElement('div');
-    let button = document.createElement('button');
+    let scheduleButton = document.createElement('button');
 
     divButton.setAttribute('class', 'col-sm-6');
-    button.setAttribute('type', 'button');
-    button.setAttribute('class', 'btn btn-danger');
-    button.innerHTML = 'Poista';
-    button.onclick = function() {
-      schedulemanager.deleteSchedule(7, reserved.id);
+    scheduleButton.setAttribute('type', 'button');
+    scheduleButton.setAttribute('class', 'btn btn-danger');
+    scheduleButton.innerHTML = 'Poista';
+    scheduleButton.onclick = function() {
+      schedulemanager.deleteSchedule(button.getCourseID(), reserved.id);
     };
 
-    divButton.appendChild(button);
+    divButton.appendChild(scheduleButton);
     divRow.appendChild(divButton);
   }
 
