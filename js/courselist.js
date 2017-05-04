@@ -1,7 +1,9 @@
+let myCourses;
+
 class CourseList {
 
   static createCourseList(data) {
-    console.log(data);
+    myCourses = data;
     for (let i in data) {
       this._createListItem(data[i]);
     }
@@ -9,6 +11,11 @@ class CourseList {
     $('header h1 a').click(function () {
       const scoreboard = new Scoreboard();
       scoreboard.init(data, this.id);
+    });
+
+    $('.btn-exit').click(function () {
+        console.log(myCourses);
+      CourseList._removeFromCourse();
     });
   }
 
@@ -37,6 +44,24 @@ class CourseList {
       );
   }
 
+  static _removeFromCourse() {
+        $("#leaveCourse").on('click', function () {
+            let coursekey = $("#coursekeyRemove").val();
+            let courseId;
+            for (let i in myCourses) {
+                if (coursekey === myCourses[i].coursekey) {
+                    courseId = myCourses[i].id;
+                    console.log(courseId);
+                    backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
+                    $('#remove_course_alert').html("Olet poistunut kurssilta " + myCourses[i].html_id + " " + myCourses[i].name).show();
+                    $('#remove_course_alert').attr("class", "alert alert-success");
+                    break
+                } else {
+                    $('#remove_course_alert').html('Kurssia ei löytynyt').show();
+                }
+            }
+        });
+  }
 }
 
 /**
@@ -45,5 +70,4 @@ class CourseList {
 $(document).ready(function () {
   const courselist = new CourseList();
   courselist.init();
-
 });

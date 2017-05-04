@@ -361,6 +361,15 @@ class View {
     h2.style.color = "#888888";
     h2.innerHTML = formattedTime;
 
+    let del = document.createElement('button');
+    del.setAttribute('class', 'btn btn-primary btn-exit');
+    del.setAttribute('id', 'leaveCourse');
+    del.setAttribute('style', 'button');
+    del.setAttribute('data-toggle', 'modal');
+    del.setAttribute('data-target', '#leaveCourseModal');
+    del.style.display = "inline-block";
+    del.innerHTML = "Poistu kurssilta";
+
     let coursekeyH1 = document.createElement('h1');
     coursekeyH1.style.float = "right";
 
@@ -387,8 +396,10 @@ class View {
 
     header.appendChild(nameH1);
     header.appendChild(h2);
+    header.appendChild(del);
     header.appendChild(coursekeyH1);
     header.append(coursekeyH3);
+
     listItem.appendChild(header);
 
     let courseDiv = document.createElement('div');
@@ -406,7 +417,6 @@ class View {
     alertDiv.appendChild(message);
     courseDiv.appendChild(alertDiv);
     listItem.appendChild(courseDiv);
-    console.log(listItem);
     return listItem;
   }
 

@@ -5,7 +5,6 @@
 class JoinCourse {
 
   static sendSignUpJSON(coursekey) {
-    console.log(coursekey);
     backend.post('courses/join', coursekey)
       .then(
         function fulfilled(data) {
