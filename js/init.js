@@ -4,11 +4,12 @@ const backend = new Backend();
 Session.init();
 
 let schedulemanager;
-if (button._isTeacherCourse()) {
-  schedulemanager = new ScheduleManager();
-}
 
 window.onload = function() {
+
+  if (button._isTeacherCourse()) {
+    schedulemanager = new ScheduleManager();
+  }
 
   view.showNavigation();
 
