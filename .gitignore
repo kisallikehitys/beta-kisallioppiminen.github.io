@@ -12,5 +12,7 @@ out/
 node_modules/
 _coverage/*
 *~
+*.orig
+CNAME
 
 /HTML5Application/nbproject/private
