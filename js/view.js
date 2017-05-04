@@ -437,13 +437,110 @@ class View {
     return button;
   }
 
-   renderEmptyCheckboxesForOneSchedule(scheduleId, scheduleColorString) {
-     let viewObject = this;
-     $(".checkbox-group").each(function () {
-       let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
-       this.appendChild(newCheckboxElement);
-     });
-   };
+  renderEmptyCheckboxesForOneSchedule(scheduleId, scheduleColorString) {
+    let viewObject = this;
+    $(".checkbox-group").each(function () {
+      let newCheckboxElement = viewObject._createCheckbox(scheduleId, scheduleColorString);
+      this.appendChild(newCheckboxElement);
+    });
+  }
+
+  clearScheduleManagerColor() {
+    let scheduleManagerColor = document.getElementById('schedule-manager-color');
+    while (scheduleManagerColor.firstChild) {
+      scheduleManagerColor.removeChild(scheduleManagerColor.firstChild);
+    }
+  }
+
+  createScheduleColorSection(color, reserved) {
+
+    let colorDictionary = new Map();
+    colorDictionary['brown'] = 'Ruskea';
+    colorDictionary['blue'] = 'Sininen';
+    colorDictionary['green'] = 'Vihreä';
+    colorDictionary['orange'] = 'Oranssi';
+    colorDictionary['yellow'] = 'Keltainen';
+
+    let divRow = document.createElement('div');
+    let divRadioButton = document.createElement('div');
+    let input = document.createElement('input');
+    let label = document.createElement('label');
+
+    divRow.setAttribute('class', 'row');
+    divRadioButton.setAttribute('class', 'col-sm-12');
+
+    let isDisabled = function() {
+      if (reserved) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+    input.setAttribute('type', 'radio');
+    input.setAttribute('name', 'optionsRadios');
+    input.setAttribute('id', 'schedule-' + color);
+    input.setAttribute('name', 'schedule-radio');
+    input.setAttribute('value', 'option-' + color);
+    input.disabled = isDisabled();
+
+    label.innerHTML = colorDictionary[color];
+    label.style.marginLeft = '1em';
+
+    let scheduleManagerColor = document.getElementById('schedule-manager-color');
+
+    divRadioButton.appendChild(input);
+    divRadioButton.appendChild(label);
+    divRow.appendChild(divRadioButton);
+    scheduleManagerColor.appendChild(divRow);
+
+    if (reserved != undefined) {
+      this._addDeleteScheduleColorSection(divRow, divRadioButton, reserved);
+    }
+
+  }
+
+  // do not create if color is taken
+  _addDeleteScheduleColorSection(divRow, divRadioButton, reserved) {
+
+    let spanName = document.createElement('span');
+    spanName.style.marginLeft = '1em';
+    spanName.innerHTML = '"' + reserved.name + '"';
+    divRadioButton.appendChild(spanName);
+
+    let scheduleButton = document.createElement('button');
+
+    scheduleButton.setAttribute('type', 'button');
+    scheduleButton.setAttribute('class', 'btn btn-danger');
+    scheduleButton.innerHTML = 'Poista';
+    scheduleButton.style.marginLeft = '3.3em';
+    scheduleButton.onclick = function() {
+      schedulemanager.deleteSchedule(button.getCourseID(), reserved.id);
+    };
+
+    divRow.appendChild(scheduleButton);
+  }
+
+  createOpenScheduleManagerLink() {
+    let currentCourse = document.getElementById('currentCourse');
+
+    let attributes = [
+    {key: 'href', value: '#'}, 
+    {key: 'id', value: 'open-schedule-modal'}, 
+    {key: 'data-toggle', value: 'modal'},
+    {key: 'data-target', value: '#schedule-modal'},]; 
+
+    let a = this._addAttributesToElement(attributes, document.createElement('a'));
+    a.innerHTML = 'Luo kurssille tavoitteita';
+    a.onclick = function() {
+      schedulemanager.getSchedule(button.getCourseID());
+    };
+
+    let p = document.createElement('p');
+    p.style.marginBottom = '1em';
+
+    p.append(a);
+    currentCourse.parentElement.parentElement.parentElement.append(p);
+  }
 
 }
 
