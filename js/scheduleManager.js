@@ -98,5 +98,3 @@ class ScheduleManager {
   }
 
 }
-
-let schedulemanager = new ScheduleManager();
