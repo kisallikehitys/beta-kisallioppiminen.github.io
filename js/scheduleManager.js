@@ -15,18 +15,33 @@ class ScheduleManager {
   }
 
   createSchedule(courseId) {
+    let obj = this;
 
-    let data = [
-    {'name': 'Alin mahdollinen arvosana'},
-    {'color': '2'}
-    ];
+    let colors = new Map();
+    colors.set('option-brown', 1);
+    colors.set('option-blue', 2);
+    colors.set('option-green', 3);
+    colors.set('option-orange', 4);
+    colors.set('option-yellow', 5);
 
-    backend.post(`courses/${courseId}/schedules/new`, data)
+    let formData = $('#create-schedule-form').serializeArray();
+    let jsonData = {
+      'name': formData[0].value,
+      'color': colors.get(formData[1].value)
+    };
+
+    let info = document.getElementById('schedule-footer-info');
+    info.innerHTML = 'Uutta tavoitetta luodaan...';
+
+    backend.post(`courses/${courseId}/schedules/new`, jsonData)
       .then(
           function fulfilled() {
+            info.innerHTML = 'Tavoite luotu!';
+            obj.getSchedule(button.getCourseID());
             console.log('New schedule was created!');
           },
           function rejected() {
+            info.innerHTML = 'Tavoitteen luominen epäonnistui.';
             console.log('could not create new schedule');
           });
   }
