@@ -40,9 +40,9 @@ class ScheduleManager {
             obj.getSchedule(button.getCourseID());
             console.log('New schedule was created!');
           },
-          function rejected() {
+          function rejected(response) {
             info.innerHTML = 'Tavoitteen luominen epäonnistui.';
-            console.log('could not create new schedule');
+            console.log('could not create new schedule: ' + response);
           });
   }
 

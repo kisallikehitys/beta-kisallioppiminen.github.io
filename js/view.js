@@ -469,7 +469,8 @@ class View {
     input.setAttribute('type', 'radio');
     input.setAttribute('name', 'optionsRadios');
     input.setAttribute('id', 'schedule-' + color);
-    input.setAttribute('value', 'option5');
+    input.setAttribute('name', 'schedule-radio');
+    input.setAttribute('value', 'option-' + color);
     input.disabled = isDisabled();
 
     label.innerHTML = colorDictionary[color];
