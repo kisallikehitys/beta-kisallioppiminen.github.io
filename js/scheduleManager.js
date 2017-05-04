@@ -5,53 +5,13 @@ class ScheduleManager {
 
     let openScheduleButton = document.getElementById('open-schedule-modal');
     openScheduleButton.onclick = function() {
-      obj.init();
+      obj.getSchedule(button.getCourseID());
     };
 
     let createScheduleButton = document.getElementById('create-schedule');
     createScheduleButton.onclick = function() {
       obj.createSchedule(button.getCourseID());
     };
-  }
-
-  // get schedules from server
-  // use dummy for now
-  init() {
-
-    view.clearScheduleManagerColor();
-
-    let colors = ['brown', 'blue', 'green', 'orange', 'yellow'];
-
-    // returns Map
-    // function getDummyData() {
-    let schedules = new Map();
-    schedules[1] = "Ensimmäinen setti";
-    schedules[3] = "kolmas setti";
-      // return schedules;
-
-      // let schedules = [{
-      //   "name": "Ensimmäinen setti",
-      //   "color": 1
-      // },
-      // {
-      //   "name": "Toinen setti",
-      //   "color": 2
-      // }];
-      // return schedules;
-    // }
-
-    // get this from backend
-    // let schedules = getDummydata();
-
-    for (let i = 0; i < colors.length; i++) {
-      // view.createScheduleColorSection(schedules.hasOwnProperty(i+1));
-      let scheduleName;
-      if (schedules.hasOwnProperty(i+1)) {
-        scheduleName = schedules[i+1];
-      }
-      view.createScheduleColorSection(colors[i], scheduleName);
-    }
-
   }
 
   createSchedule(courseId) {
