@@ -14,7 +14,6 @@ class CourseList {
     });
 
     $('.btn-exit').click(function () {
-        console.log(myCourses);
       CourseList._removeFromCourse();
     });
   }
@@ -51,7 +50,6 @@ class CourseList {
             for (let i in myCourses) {
                 if (coursekey === myCourses[i].coursekey) {
                     courseId = myCourses[i].id;
-                    console.log(courseId);
                     backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
                     $('#remove_course_alert').html("Olet poistunut kurssilta " + myCourses[i].html_id + " " + myCourses[i].name).show();
                     $('#remove_course_alert').attr("class", "alert alert-success");
