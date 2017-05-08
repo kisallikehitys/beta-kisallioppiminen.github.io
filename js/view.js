@@ -368,10 +368,12 @@ class View {
     del.setAttribute('data-toggle', 'modal');
     del.setAttribute('data-target', '#leaveCourseModal');
     del.style.display = "inline-block";
+    del.style.margin = "0px 80px 10px 20px";
     del.innerHTML = "Poistu kurssilta";
 
     let coursekeyH1 = document.createElement('h1');
     coursekeyH1.style.float = "right";
+
 
     let collapseAttributes = [
       { key: 'id', value: data.coursekey },
@@ -391,6 +393,7 @@ class View {
     coursekeyH3.style.fontFamily = "monospace";
     coursekeyH3.style.float = "right";
     coursekeyH3.style.display = "inline-block";
+    coursekeyH3.style.marginTop = "30px";
     coursekeyH3.style.color = "#666666";
     coursekeyH3.innerHTML = data.coursekey;
 
