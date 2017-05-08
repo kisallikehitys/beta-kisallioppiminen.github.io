@@ -396,7 +396,9 @@ class View {
 
     header.appendChild(nameH1);
     header.appendChild(h2);
-    header.appendChild(del);
+    if (window.location.pathname.includes("/omat_kurssit")) {
+        header.appendChild(del);
+    }
     header.appendChild(coursekeyH1);
     header.append(coursekeyH3);
 
