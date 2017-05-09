@@ -348,7 +348,7 @@ class Button {
   initialize() {
     let obj = this;
     if (document.getCookie('student') === 'true' && document.getCookie('teacher') === 'true') {
-      $('html body main.has-atop article article section header:first').append(`<button style="margin-bottom: 20px" class="changeRole btn btn-success" onClick="$('#selectRole').modal('toggle');"><span id="roleSpan">Hello</span></button>`);
+      $('html body main.has-atop article article section header:first').append(`<button style="margin-bottom: 20px" class="changeRole btn btn-success" onClick="$('#selectRole').modal('toggle');"><span id="roleSpan">Valitse käyttäjä</span></button>`);
       if (document.getCookie('role') === 'teacher') {
         obj.getTeacher();
         $('#roleSpan').text("Opettaja");
