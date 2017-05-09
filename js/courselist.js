@@ -56,8 +56,12 @@ class CourseList {
             console.log("jes");
             let courseId = myCourses[i].id;
             backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
+            document.deleteCookie("student");
+            document.deleteCookie("teacher");
+            document.deleteCookie("role");
             $('#remove_course_alert').html("Olet poistunut kurssilta " + myCourses[i].html_id + " " + myCourses[i].name).show();
             $('#remove_course_alert').attr("class", "alert alert-success");
+            setTimeout(function(){ Session.getSession(); }, 500);
             break;
           } else {
             $('#remove_course_alert').html('Kurssia ei löytynyt').show();
