@@ -2,6 +2,24 @@
 layout: default
 ---
 
+<div class="modal fade" id="selectRole" tabindex="-1" role="dialog" aria-labelledby="selectRoleLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="selectRoleLabel">Valitse käyttäjä</h4>
+      </div>
+      <div class="modal-body">
+        Olet sekä oppilas, että opettaja. Valitse kumpi käyttäjä haluat olla.
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="teacher" class="btn btn-info roleButton" data-dismiss="modal">Opettaja</button>
+        <button type="button" id="student" class="btn btn-info roleButton" data-dismiss="modal">Oppilas</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="schedule-modal" tabindex="-1" role="dialog" aria-labelledby="Create Schedule" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-md">
     <div class="modal-content">

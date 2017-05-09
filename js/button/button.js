@@ -253,25 +253,25 @@ class Button {
 
     if (this.courseData.coursekey.length > 1) {
 
-      $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
+      $('html body main.has-atop article article section header:first').append(`<div class="chosenCourse"><h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3></div>`);
 
       view.createOpenScheduleManagerLink();
 
       let openScheduleModal = document.getElementById('open-schedule-modal');
-      openScheduleModal.onclick = function() {
+      openScheduleModal.onclick = function () {
         schedulemanager.getSchedule(obj.getCourseID());
         document.getElementById('schedule-footer-info').innerHTML = '';
       };
 
       let createScheduleButton = document.getElementById('create-schedule');
-      createScheduleButton.onclick = function() {
+      createScheduleButton.onclick = function () {
         schedulemanager.createSchedule(obj.getCourseID());
       };
 
     }
     // insert button
     if (keys.length > 1) {
-      $('html body main.has-atop article article section header:first').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
+      $('html body main.has-atop article article section header:last').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
       $('#selectAnotherCourse').click(function () {
         obj._invokeCourseSelect(htmlID, keys, data);
       });
@@ -317,6 +317,54 @@ class Button {
       }
     }
   }
+
+  getTeacher() {
+    if (document.getCookie('teacher') === 'true') {
+      backend.get(`teachers/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.initTeacher(data);
+          },
+          function rejected(data) {
+            console.warn(data);
+          }
+        );
+    }
+  }
+
+  getStudent() {
+    if (document.getCookie('student') === 'true') {
+      backend.get(`students/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.init(data);
+          },
+          function rejected() {
+            console.warn("Error, could not get coursekey");
+          });
+    }
+  }
+
+  initialize() {
+    let obj = this;
+    if (document.getCookie('student') === 'true' && document.getCookie('teacher') === 'true') {
+      $('html body main.has-atop article article section header:first').append(`<button style="margin-bottom: 20px" class="changeRole btn btn-success" onClick="$('#selectRole').modal('toggle');"><span id="roleSpan">Hello</span></button>`);
+      if (document.getCookie('role') === 'teacher') {
+        obj.getTeacher();
+        $('#roleSpan').text("Opettaja");
+      } else if (document.getCookie('role') === 'student') {
+        obj.getStudent();
+        $('#roleSpan').text("Oppilas");
+      } else {
+        $('#selectRole').modal('toggle');
+      }
+    } else if (document.getCookie('student') === 'false' && document.getCookie('teacher') === 'true') {
+      obj.getTeacher();
+    } else if (document.getCookie('student') === 'true' && document.getCookie('teacher') === 'false') {
+      obj.getStudent();
+    }
+  }
+
 }
 
 /**
@@ -329,26 +377,17 @@ $(document).ready(function () {
   });
 
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-    if (document.getCookie('teacher') === 'true') {
-      backend.get(`teachers/${Session.getUserId()}/courses`)
-        .then(
-          function fulfilled(data) {
-            button.initTeacher(data);
-          },
-          function rejected(data) {
-            console.warn(data);
-          }
-        );
-    }
-    if (document.getCookie('student') === 'true') {
-      backend.get(`students/${Session.getUserId()}/courses`)
-        .then(
-          function fulfilled(data) {
-            button.init(data);
-          },
-          function rejected() {
-            console.warn("Error, could not get coursekey");
-          });
-    }
+    button.initialize();
   }
+
+  $('.roleButton').click(function () {
+    if (this.id === 'teacher') {
+      button.getTeacher();
+      document.cookie = `role=teacher; path=/;`;
+    } else {
+      button.getStudent();
+      document.cookie = `role=student; path=/;`;
+    }
+    location.reload();
+  });
 });
