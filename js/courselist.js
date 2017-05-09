@@ -46,28 +46,28 @@ class CourseList {
   }
 
   static _removeFromCourse() {
-        $("#leaveCourse").on('click', function () {
-            let coursekey1 = $("#coursekeyRemove").val();
-            for (let i in myCourses) {
-                if(coursekey1 === coursekey2) {
-                    let courseName1 = myCourses[i].name + ' (' + myCourses[i].html_id + ')';
+    $("#leaveCourse").on('click', function () {
+      let coursekey1 = $("#coursekeyRemove").val();
+      for (let i in myCourses) {
+        if (coursekey1 === coursekey2) {
+          let courseName1 = myCourses[i].name + ' (' + myCourses[i].html_id + ')';
 
-                    if( courseName1.toLowerCase() === courseName2.toLowerCase()) {
-                        console.log("jes");
-                        let courseId = myCourses[i].id;
-                        backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
-                        $('#remove_course_alert').html("Olet poistunut kurssilta " + myCourses[i].html_id + " " + myCourses[i].name).show();
-                        $('#remove_course_alert').attr("class", "alert alert-success");
-                        break
-                    } else {
-                        $('#remove_course_alert').html('Kurssia ei löytynyt').show();
-                    }
+          if (courseName1.toLowerCase() === courseName2.toLowerCase()) {
+            console.log("jes");
+            let courseId = myCourses[i].id;
+            backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
+            $('#remove_course_alert').html("Olet poistunut kurssilta " + myCourses[i].html_id + " " + myCourses[i].name).show();
+            $('#remove_course_alert').attr("class", "alert alert-success");
+            break;
+          } else {
+            $('#remove_course_alert').html('Kurssia ei löytynyt').show();
+          }
 
-                } else {
-                    $('#remove_course_alert').html('Kurssia ei löytynyt').show();
-                }
-            }
-        });
+        } else {
+          $('#remove_course_alert').html('Kurssia ei löytynyt').show();
+        }
+      }
+    });
   }
 }
 
@@ -78,10 +78,9 @@ $(document).ready(function () {
   const courselist = new CourseList();
   courselist.init();
 
-    $('#leaveCourseModal').on('show.bs.modal', function (e) {
-        courseName2 = $(e.relatedTarget).siblings('h1:first').text();
-        coursekey2 = $(e.relatedTarget).siblings('h3').text();
-        $('#remove_course_alert').text('Olet poistumassa kurssilta ' + courseName2 + '. Poistuminen poistaa lopullisesti kaikki kurssiin liittyvät tietosi.');
-    });
+  $('#leaveCourseModal').on('show.bs.modal', function (e) {
+    courseName2 = $(e.relatedTarget).siblings('h1:first').text();
+    coursekey2 = $(e.relatedTarget).siblings('h3').text();
+    $('#remove_course_alert').text('Olet poistumassa kurssilta ' + courseName2 + '. Poistuminen poistaa lopullisesti kaikki kurssiin liittyvät tietosi.');
+  });
 });
-
