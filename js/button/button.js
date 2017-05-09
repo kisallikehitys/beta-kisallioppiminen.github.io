@@ -271,7 +271,7 @@ class Button {
     }
     // insert button
     if (keys.length > 1) {
-      $('html body main.has-atop article article section header:last').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
+      $('html body main.has-atop article article section header:first').append(`<button id="selectAnotherCourse" class="btn btn-info" style="margin-bottom: 10px">Valitse toinen kurssi</button>`);
       $('#selectAnotherCourse').click(function () {
         obj._invokeCourseSelect(htmlID, keys, data);
       });
