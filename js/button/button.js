@@ -354,7 +354,7 @@ class Button {
         $('#roleSpan').text("Opettaja");
       } else if (document.getCookie('role') === 'student') {
         obj.getStudent();
-        $('#roleSpan').text("Oppilas");
+        $('#roleSpan').text("Opiskelija");
       } else {
         $('#selectRole').modal('toggle');
       }
