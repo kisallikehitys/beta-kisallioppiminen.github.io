@@ -260,6 +260,7 @@ class Button {
       let openScheduleModal = document.getElementById('open-schedule-modal');
       openScheduleModal.onclick = function() {
         schedulemanager.getSchedule(obj.getCourseID());
+        document.getElementById('schedule-footer-info').innerHTML = '';
       };
 
       let createScheduleButton = document.getElementById('create-schedule');
