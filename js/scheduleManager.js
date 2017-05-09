@@ -23,6 +23,7 @@ class ScheduleManager {
       .then(
           function fulfilled() {
             info.innerHTML = 'Tavoite luotu!';
+            document.getElementById('schedule-name').value = '';
             obj.getSchedule(button.getCourseID());
           },
           function rejected(response) {
