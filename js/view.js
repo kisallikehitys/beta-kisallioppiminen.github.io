@@ -457,7 +457,7 @@ class View {
     }
   }
 
-  createScheduleColorSection(color, reserved) {
+  createScheduleColorSection(color, reserved, schedulemanagerInstance) {
 
     let colorDictionary = new Map();
     colorDictionary['brown'] = 'Ruskea';
@@ -499,13 +499,13 @@ class View {
     scheduleManagerColor.appendChild(divRow);
 
     if (reserved != undefined) {
-      this._addDeleteScheduleColorSection(divRow, divRadioButton, reserved);
+      this._addDeleteScheduleColorSection(divRow, divRadioButton, reserved, schedulemanagerInstance);
     }
 
   }
 
   // do not create if color is taken
-  _addDeleteScheduleColorSection(divRow, divRadioButton, reserved) {
+  _addDeleteScheduleColorSection(divRow, divRadioButton, reserved, schedulemanagerInstance) {
 
     let spanName = document.createElement('span');
     spanName.style.marginLeft = '1em';
@@ -519,7 +519,7 @@ class View {
     scheduleButton.innerHTML = 'Poista';
     scheduleButton.style.marginLeft = '3.3em';
     scheduleButton.onclick = function() {
-      schedulemanager.deleteSchedule(button.getCourseID(), reserved.id);
+      schedulemanagerInstance.deleteSchedule(button.getCourseID(), reserved.id);
     };
 
     divRow.appendChild(scheduleButton);
@@ -536,9 +536,9 @@ class View {
 
     let a = this._addAttributesToElement(attributes, document.createElement('a'));
     a.innerHTML = 'Luo kurssille tavoitteita';
-    a.onclick = function() {
-      schedulemanager.getSchedule(button.getCourseID());
-    };
+    // a.onclick = function() {
+    //   schedulemanager.getSchedule(button.getCourseID());
+    // };
 
     let p = document.createElement('p');
     p.style.marginBottom = '1em';

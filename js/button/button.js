@@ -222,6 +222,8 @@ class Button {
    * @param  {Obj} data JSON course data
    */
   _extractTeacherCourses(data) {
+    let schedulemanager;
+
     let htmlID = this._getHTMLID(window.location.pathname);
     let keys = [];
     let obj = this;
@@ -244,12 +246,27 @@ class Button {
       }
     }
 
-    if (this.courseData.course_id.length !== 0 && this._isTeacherCourse()) {
+    if (this.courseData.course_id.length !== 0 && this._isTeacherCourse(data)) {
       Statistics.getStats(this.courseData.course_id);
+      schedulemanager = new ScheduleManager();
     }
 
     if (this.courseData.coursekey.length > 1) {
+
       $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
+
+      view.createOpenScheduleManagerLink();
+
+      let openScheduleModal = document.getElementById('open-schedule-modal');
+      openScheduleModal.onclick = function() {
+        schedulemanager.getSchedule(obj.getCourseID());
+      };
+
+      let createScheduleButton = document.getElementById('create-schedule');
+      createScheduleButton.onclick = function() {
+        schedulemanager.createSchedule(obj.getCourseID());
+      };
+
     }
     // insert button
     if (keys.length > 1) {

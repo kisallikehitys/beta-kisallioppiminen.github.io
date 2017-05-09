@@ -1,16 +1,5 @@
 class ScheduleManager {
 
-  constructor() {
-    let obj = this;
-
-    view.createOpenScheduleManagerLink();
-
-    let createScheduleButton = document.getElementById('create-schedule');
-    createScheduleButton.onclick = function() {
-      obj.createSchedule(button.getCourseID());
-    };
-  }
-
   createSchedule(courseId) {
     let obj = this;
 
@@ -42,6 +31,8 @@ class ScheduleManager {
   }
 
   getSchedule(courseId) {
+    let obj = this;
+
     backend.get(`courses/${courseId}/schedules`)
       .then(
           function fulfilled(data) {
@@ -54,7 +45,7 @@ class ScheduleManager {
             for (let i = 0; i < colors.length; i++) {
               for (let j = 0; j < data.length; j++) {
                 if (data[j].color - 1 == i) {
-                  view.createScheduleColorSection(colors[i], data[j]);
+                  view.createScheduleColorSection(colors[i], data[j], obj);
                   isReserved = true;
                 }
               }

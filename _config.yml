@@ -40,6 +40,7 @@ resources:
     - "/js/common.js"
     - "/js/session.js"
     - "/js/view.js"
+    - "/js/scheduleManager.js"
     - "/js/exercises.js"
     - "/js/backend.js"
     - "/js/jquery-ui.js"
@@ -47,7 +48,6 @@ resources:
     - "/js/button/button.js"
     - "/js/statistics.js"
     - "/js/scheduleCheckbox.js"
-    - "/js/scheduleManager.js"
     - "/js/init.js"
 
 
