@@ -3,8 +3,6 @@ const backend = new Backend();
 
 Session.init();
 
-window.onload = function() {
-
+$(document).ready(function() {
   view.showNavigation();
-
-};
+});
