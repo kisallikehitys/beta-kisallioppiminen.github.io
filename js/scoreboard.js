@@ -30,7 +30,6 @@ class Scoreboard {
     //let body = document.createElement('tbody');
     //scoreboard.appendChild(body);
 
-    console.log(courseData);
     for (let j in courseData) {      
       let student = courseData[j];
 
@@ -42,7 +41,6 @@ class Scoreboard {
           return obj.id == correctExercise.id;
         });
         if (exercise.length === 1) {
-          console.log(student.color);
           let checkmark;
           if(student.color === undefined) {
             checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.number);            
@@ -80,9 +78,7 @@ class Scoreboard {
     
     // make table sortable
     if (table_id.length > 1 && courseData.length > 1 && !window.location.pathname.includes('/omat_kurssit.html')) {
-      console.log(id);
       let nto = document.getElementById(id);
-      console.log(nto);
       sorttable.makeSortable(nto);
     }
   }
@@ -148,7 +144,6 @@ class Scoreboard {
                 }
               },
               function rejected(data) {
-                console.log(course.coursekey);
                 Scoreboard.displayError(course, data);
               }
             );

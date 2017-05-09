@@ -101,7 +101,6 @@ class Button {
   _extractCourseData(data, path) {
     const html_id = path;
     for (let i in data) {
-      //console.log(data[i]);
       if (data[i].html_id == html_id) {
         this.courseData.coursekey = data[i].coursekey;
         this.courseData.course_id = data[i].id;
@@ -167,7 +166,6 @@ class Button {
    * @param  {Obj} data Course data in JSON
    */
   init(data) {
-    console.log(data);
     this._extractCourseData(data, this._getHTMLID(window.location.pathname));
     if (this.courseData.coursekey !== '') {
       this._addButtons();
@@ -197,7 +195,6 @@ class Button {
         obj[item.name] = item.value;
         return obj;
       }, {});
-      console.log(data);
       for (let j in data) {
         if (data[j].coursekey == coursekey.courseSelect) {
           obj.courseData.coursekey = data[j].coursekey;
@@ -335,7 +332,5 @@ $(document).ready(function () {
             console.warn("Error, could not get coursekey");
           });
     }
-    console.log('Session.getUserId: ' + Session.getUserId());
-    console.log('Session.getUserFirstName' + Session.getUserFirstName());
   }
 });
