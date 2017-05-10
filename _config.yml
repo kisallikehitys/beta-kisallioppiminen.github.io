@@ -35,6 +35,7 @@ resources:
     - "/js/common.js"
     - "/js/session.js"
     - "/js/view.js"
+    - "/js/scheduleManager.js"
     - "/js/exercises.js"
     - "/js/backend.js"
     - "/js/jquery-ui.js"

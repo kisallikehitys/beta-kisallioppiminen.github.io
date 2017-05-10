@@ -5,7 +5,8 @@ class Button {
   constructor() {
     this.courseData = {
       coursekey: '',
-      course_id: ''
+      course_id: '',
+      data: []
     };
   }
 
@@ -100,7 +101,6 @@ class Button {
   _extractCourseData(data, path) {
     const html_id = path;
     for (let i in data) {
-      //console.log(data[i]);
       if (data[i].html_id == html_id) {
         this.courseData.coursekey = data[i].coursekey;
         this.courseData.course_id = data[i].id;
@@ -166,7 +166,6 @@ class Button {
    * @param  {Obj} data Course data in JSON
    */
   init(data) {
-    console.log(data);
     this._extractCourseData(data, this._getHTMLID(window.location.pathname));
     if (this.courseData.coursekey !== '') {
       this._addButtons();
@@ -196,7 +195,6 @@ class Button {
         obj[item.name] = item.value;
         return obj;
       }, {});
-      console.log(data);
       for (let j in data) {
         if (data[j].coursekey == coursekey.courseSelect) {
           obj.courseData.coursekey = data[j].coursekey;
@@ -209,9 +207,9 @@ class Button {
     });
   }
 
-  _isTeacherCourse(data) {
-    for (let i in data) {
-      let course = data[i];
+  _isTeacherCourse() {
+    for (let i in this.courseData.data) {
+      let course = this.courseData.data[i];
       if (course.coursekey === this.courseData.coursekey) {
         return true;
       }
@@ -224,6 +222,8 @@ class Button {
    * @param  {Obj} data JSON course data
    */
   _extractTeacherCourses(data) {
+    let schedulemanager;
+
     let htmlID = this._getHTMLID(window.location.pathname);
     let keys = [];
     let obj = this;
@@ -248,10 +248,26 @@ class Button {
 
     if (this.courseData.course_id.length !== 0 && this._isTeacherCourse(data)) {
       Statistics.getStats(this.courseData.course_id);
+      schedulemanager = new ScheduleManager();
     }
 
     if (this.courseData.coursekey.length > 1) {
-      $('html body main.has-atop article article section header:first').append(`<h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3>`);
+
+      $('html body main.has-atop article article section header:first').append(`<div class="chosenCourse"><h3>Valittu kurssi: <tt><span id="currentCourse">${this.courseData.coursekey}<span></tt></h3></div>`);
+
+      view.createOpenScheduleManagerLink();
+
+      let openScheduleModal = document.getElementById('open-schedule-modal');
+      openScheduleModal.onclick = function () {
+        schedulemanager.getSchedule(obj.getCourseID());
+        document.getElementById('schedule-footer-info').innerHTML = '';
+      };
+
+      let createScheduleButton = document.getElementById('create-schedule');
+      createScheduleButton.onclick = function () {
+        schedulemanager.createSchedule(obj.getCourseID());
+      };
+
     }
     // insert button
     if (keys.length > 1) {
@@ -277,6 +293,7 @@ class Button {
    * @param  {Obj} data Course data
    */
   initTeacher(data) {
+    this.courseData.data = data;
     this._extractTeacherCourses(data);
   }
 
@@ -300,6 +317,54 @@ class Button {
       }
     }
   }
+
+  getTeacher() {
+    if (document.getCookie('teacher') === 'true') {
+      backend.get(`teachers/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.initTeacher(data);
+          },
+          function rejected(data) {
+            console.warn(data);
+          }
+        );
+    }
+  }
+
+  getStudent() {
+    if (document.getCookie('student') === 'true') {
+      backend.get(`students/${Session.getUserId()}/courses`)
+        .then(
+          function fulfilled(data) {
+            button.init(data);
+          },
+          function rejected() {
+            console.warn("Error, could not get coursekey");
+          });
+    }
+  }
+
+  initialize() {
+    let obj = this;
+    if (document.getCookie('student') === 'true' && document.getCookie('teacher') === 'true') {
+      $('html body main.has-atop article article section header:first').append(`<button style="margin-bottom: 20px" class="changeRole btn btn-success" onClick="$('#selectRole').modal('toggle');"><span id="roleSpan">Valitse käyttäjä</span></button>`);
+      if (document.getCookie('role') === 'teacher') {
+        obj.getTeacher();
+        $('#roleSpan').text("Opettaja");
+      } else if (document.getCookie('role') === 'student') {
+        obj.getStudent();
+        $('#roleSpan').text("Opiskelija");
+      } else {
+        $('#selectRole').modal('toggle');
+      }
+    } else if (document.getCookie('student') === 'false' && document.getCookie('teacher') === 'true') {
+      obj.getTeacher();
+    } else if (document.getCookie('student') === 'true' && document.getCookie('teacher') === 'false') {
+      obj.getStudent();
+    }
+  }
+
 }
 
 /**
@@ -312,28 +377,17 @@ $(document).ready(function () {
   });
 
   if (window.location.pathname.includes("/kurssit") && Session.getUserId() !== undefined) {
-    if (document.getCookie('teacher') === 'true') {
-      backend.get(`teachers/${Session.getUserId()}/courses`)
-        .then(
-          function fulfilled(data) {
-            button.initTeacher(data);
-          },
-          function rejected(data) {
-            console.warn(data);
-          }
-        );
-    }
-    if (document.getCookie('student') === 'true') {
-      backend.get(`students/${Session.getUserId()}/courses`)
-        .then(
-          function fulfilled(data) {
-            button.init(data);
-          },
-          function rejected() {
-            console.warn("Error, could not get coursekey");
-          });
-    }
-    console.log('Session.getUserId: ' + Session.getUserId());
-    console.log('Session.getUserFirstName' + Session.getUserFirstName());
+    button.initialize();
   }
+
+  $('.roleButton').click(function () {
+    if (this.id === 'teacher') {
+      button.getTeacher();
+      document.cookie = `role=teacher; path=/;`;
+    } else {
+      button.getStudent();
+      document.cookie = `role=student; path=/;`;
+    }
+    location.reload();
+  });
 });

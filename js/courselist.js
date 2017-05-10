@@ -1,7 +1,11 @@
+let myCourses;
+let courseName2;
+let coursekey2;
+
 class CourseList {
 
   static createCourseList(data) {
-    console.log(data);
+    myCourses = data;
     for (let i in data) {
       this._createListItem(data[i]);
     }
@@ -9,6 +13,10 @@ class CourseList {
     $('header h1 a').click(function () {
       const scoreboard = new Scoreboard();
       scoreboard.init(data, this.id);
+    });
+
+    $('.btn-exit').click(function () {
+      CourseList._removeFromCourse();
     });
   }
 
@@ -32,11 +40,37 @@ class CourseList {
           CourseList.createCourseList(data);
         },
         function rejected() {
-          console.warn("Could not retrieve course keys");
         }
       );
   }
 
+  static _removeFromCourse() {
+    $("#leaveCourse").on('click', function () {
+      let coursekey1 = $("#coursekeyRemove").val();
+      for (let i in myCourses) {
+        if (coursekey1 === coursekey2) {
+          let courseName1 = myCourses[i].name + ' (' + myCourses[i].html_id + ')';
+
+          if (courseName1.toLowerCase() === courseName2.toLowerCase()) {
+            let courseId = myCourses[i].id;
+            backend.delete(`students/${Session.getUserId()}/courses/${courseId}`);
+            document.deleteCookie("student");
+            document.deleteCookie("teacher");
+            document.deleteCookie("role");
+            $('#remove_course_alert').html("Olet poistunut kurssilta " + courseName1).show();
+            $('#remove_course_alert').attr("class", "alert alert-success");
+            setTimeout(function(){ Session.getSession(); }, 500);
+            break;
+          } else {
+            $('#remove_course_alert').html('Kurssia ei löytynyt').show();
+          }
+
+        } else {
+          $('#remove_course_alert').html('Kurssia ei löytynyt').show();
+        }
+      }
+    });
+  }
 }
 
 /**
@@ -46,4 +80,9 @@ $(document).ready(function () {
   const courselist = new CourseList();
   courselist.init();
 
+  $('#leaveCourseModal').on('show.bs.modal', function (e) {
+    courseName2 = $(e.relatedTarget).siblings('h1:first').text();
+    coursekey2 = $(e.relatedTarget).siblings('h3').text();
+    $('#remove_course_alert').text('Olet poistumassa kurssilta ' + courseName2 + '. Poistuminen poistaa lopullisesti kaikki kurssiin liittyvät tietosi.');
+  });
 });
