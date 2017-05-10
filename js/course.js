@@ -40,7 +40,6 @@ class Course {
         Course.createCoursePost(data);
       },
       error: function () {
-        console.log("Could not retrieve course page");
       }
     });
   }
