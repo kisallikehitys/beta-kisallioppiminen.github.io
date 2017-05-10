@@ -38,7 +38,7 @@ if (document.domain == "localhost" || document.domain == "127.0.0.1") {
   temp_frontend_base_url = "https://ohtukisalli.github.io/";
 //if in production
 } else if (document.domain == "beta-kisallioppiminen.github.io") {
-  temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
+  temp_backend_base_url = "https://kurssihallinta.kisallioppiminen.fi/";
   temp_frontend_base_url = "https://beta-kisallioppiminen.github.io/";
 } else {
 }
