@@ -28,8 +28,6 @@ if (typeof HTMLDocument !== 'undefined') {
 let temp_backend_base_url;
 let temp_frontend_base_url;
 
-console.log("Adjusting environment settings");
-console.log("Running in: " + document.domain);
 if (document.domain == "localhost" || document.domain == "127.0.0.1") {
   //temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
   temp_backend_base_url = "https://pure-inlet-98383.herokuapp.com/";
@@ -43,11 +41,7 @@ if (document.domain == "localhost" || document.domain == "127.0.0.1") {
   temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
   temp_frontend_base_url = "https://beta-kisallioppiminen.github.io/";
 } else {
-  console.log("ERROR: cannot set temp_backend_base_url and temp_frontend_base_url. Domain changed?");
 }
 
 const BACKEND_BASE_URL = temp_backend_base_url;
 const FRONTEND_BASE_URL = temp_frontend_base_url;
-
-console.log('BackendUrl: ' + BACKEND_BASE_URL);
-console.log('FrontendUrl: ' + FRONTEND_BASE_URL);

@@ -19,7 +19,6 @@ class View {
       this._buildUser();
       document.cookie = 'attemptedLogin=; path=/; expires=' + new Date(0).toUTCString();
     } else if (document.getCookie('attemptedLogin')) {
-      console.log('Loggin was too late, refreshing.');
       setTimeout( function() {
         document.cookie = 'attemptedLogin=; path=/; expires=' + new Date(0).toUTCString();
         location.reload();
