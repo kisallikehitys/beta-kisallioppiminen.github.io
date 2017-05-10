@@ -25,6 +25,7 @@ class Course {
           const alert = '<div id="join_course_alert" class="alert alert-success" role="alert">' + data.message + '</div>';
           $('#validationMessage').html(alert).show();
           document.cookie = "teacher=true;path=/";
+          location.reload();
         },
         function rejected(data) {
           const alert = '<div id="join_course_alert" class="alert alert-danger" role="alert">' + data.error + '</div>';
