@@ -51,7 +51,6 @@ class Fullscreen {
                   Scoreboard.createScoreboard(pageData, data, data.coursekey);
                 },
                 function rejected(data) {
-                  console.log("Virhe");
                   $(`#loadingAlert${coursekey}`).removeClass('alert-info').addClass('alert-danger');
                   $(`#loadingAlert${coursekey} strong`).html('Virhe! Tulostaulua ei pystytty lataamaan.');
                   console.warn(data + ": Could not get scoreboard.");

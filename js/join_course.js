@@ -5,13 +5,13 @@
 class JoinCourse {
 
   static sendSignUpJSON(coursekey) {
-    console.log(coursekey);
     backend.post('courses/join', coursekey)
       .then(
         function fulfilled(data) {
           let alert = '<div id="join_course_alert" class="alert alert-success" role="alert">' + data.message + '</div>';
           $('#join_course_group').prepend(alert);
-          document.cookie("student=true;path=/");
+          document.cookie = "student=true;path=/";
+          location.reload();
         },
         function rejected(data) {
           let alert = '<div id="join_course_alert" class="alert alert-danger" role="alert">' + data.error + '</div>';
