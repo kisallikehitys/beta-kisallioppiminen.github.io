@@ -1,7 +1,7 @@
 # Student application Kisallioppiminen.fi with marking system
 
-* Development/Staging version: https://ohtukisalli.github.io/dev-frontend/
-* Production version: http://beta.kisallioppiminen.fi/
+* Development/Staging version: https://ohtukisalli.github.io/
+* Production version: http://beta-kisallioppiminen.github.io
 
 ## Setting up Kisallioppiminen.fi site locally with Jekyll
 
@@ -31,13 +31,6 @@ And replace `backendUrl` with the base of the backend location (You don't need t
 
 Note that backend forward after login does not work yet, so you might need to manually return to your frontend.
 
-
-## Testing with Selenium
-
-To run Selenium tests, execute
-```bash
-bundle exec rspec
-```
 
 ## Unit testing
 
