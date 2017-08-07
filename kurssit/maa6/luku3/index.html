@@ -1,0 +1,1588 @@
+---
+title: MAA6 - Derivaatta
+layout: material
+sitemap: true
+main-class: has-atop
+topnav: maa6
+---
+
+<input type="hidden" id="chapterNumber" value="3"/>
+<input type="hidden" id="theoremStart" value="4"/>
+
+<article>
+    <section>
+        <header>
+            <h1>Rationaalifunktiot</h1>
+        </header>
+    </section>
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun3-tavoitteet">
+                    Luvun tavoitteet
+                </a>
+            </h1>
+        </header>
+        <div id="luvun3-tavoitteet" class="collapse">
+
+            <div class="objective">
+                <p> 
+                    Tämän luvun tavoitteena on, että ... Osaat
+                <ul>
+                    <li> </li>
+                    
+                </ul> 
+                </p>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun3-tavoitteet">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali1">
+                    Murto- ja rationaalilausekkeet
+                </a>
+            </h1>
+        </header>
+        <div id="rationaali1" class="collapse">
+            
+            <p>
+                Murtolauseke tarkoittaa kahden polynomin osamäärää. Esimerkiksi lausekkeet
+                $$\frac{4x-1}{7-x^2} \quad \text{ ja } \quad \frac{9}{y^3+5y}$$
+                ovat murtolausekkeita. Murtolausekkeita voidaan käsitellä samoilla säännöillä kuin murtolukuja. Tässä kappaleessa palautetaan mieleen murtolukujen laskusäännöt ja harjoitellaan soveltamaan niitä murtolausekkeisiin.
+            </p>
+
+            <p>
+                Murtolukuja ja -lausekkeita voidaan sieventää supistamalla. Supistaminen onnistuu, jos sekä osoittaja että nimittäjä voidaan muuttaa tulomuotoon ja niistä löytyy yhteinen tekijä:
+                $$
+                \frac{30}{21} = \frac{3\cdot 10}{3\cdot 7} = \frac{10}{7}
+                $$
+                Murtolausekkeiden tapauksessa tulomuotoon muuttaminen saattaa vaatia yhteisen tekijän erottamisen sekä osoittajassa että nimittäjässä:
+                $$
+                \frac{8x+4}{6x^2+3x} = \frac{4(2x+1)}{3x(2x + 1)} = \frac{4}{3x}
+                $$
+                Tässä osoittajan termeillä oli yhteinen tekijä $4$, ja nimittäjän termeillä oli yhteinen tekijä $3x$. Kun osoittaja ja nimittäjä kirjoitettiin tulomuotoon, nähtiin molemmissa tekijänä myös lauseke $2x+1$. Se voitiin supistaa pois.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="firstEx">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t301">
+                                Murtolausekkeiden supistaminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t301" class="collapse">
+                        <p>
+                            Tehtävänä on supistaa murtolauseke $$\dfrac{18x + 30}{12x}$$
+                        </p>
+                        <ol class="a">
+                            <li> Kirjoita osoittaja tulomuodossa erottamalla mahdollisimman suuri yhteinen tekijä. </li>
+                            <li> Nimittäjä on jo valmiiksi tulo. Onko osoittajassa ja nimittäjässä jokin yhteinen tekijä? Supista se pois. Tarkista, jäikö osoittajaan ja nimittäjään vielä jokin yhteinen tekijä ja supista tarvittaessa uudestaan. </li>
+                            <li> Miltä tehtävän murtolauseke näyttää, kun se on supistettu mahdollisimman yksinkertaiseen muotoon?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t301_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t301_v" class="collapse">
+                            <ol class="a">
+                                <li> $6(3x+5)$ </li>
+                                <li> Osoittajassa ja nimittäjässä on molemmissa tekijänä luku 6.</li>
+                                <li> $\dfrac{3x+5}{2x}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t302-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t302">
+                                Murtolausekkeiden supistaminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t302" class="collapse">
+                        <p>
+                            Tehtävänä on supistaa murtolauseke $$\dfrac{4x-7x^2}{9x}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Kirjoita osoittaja tulomuodossa erottamalla yhteinen tekijä. </li>
+                            <li> Nimittäjä on jo valmiiksi tulo. Onko osoittajassa ja nimittäjässä jokin yhteinen tekijä? Supista se pois. Tarkista, jäikö osoittajaan ja nimittäjään vielä jokin yhteinen tekijä ja supista tarvittaessa uudestaan. </li>
+                            <li> Miltä tehtävän murtolauseke näyttää, kun se on supistettu mahdollisimman yksinkertaiseen muotoon?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t302_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t302_v" class="collapse">
+                            <ol class="a">
+                                <li> $x(4-7x)$ </li>
+                                <li> Osoittajassa ja nimittäjässä on molemmissa tekijänä $x$.</li>
+                                <li> $\dfrac{4-7x}{9}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t303-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t303">
+                                Murtolausekkeiden supistaminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t303" class="collapse">
+                        <p>
+                            Tehtävänä on supistaa murtolauseke $$\dfrac{4x+2}{14x + 7}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Kirjoita osoittaja tulomuodossa erottamalla mahdollisimman suuri yhteinen tekijä. </li>
+                            <li> Kirjoita nimittäjä tulomuodossa erottamalla mahdollisimman suuri yhteinen tekijä. </li>
+                            <li> Onko osoittajassa ja nimittäjässä jokin yhteinen tekijä? Supista se pois. Tarkista, jäikö osoittajaan ja nimittäjään vielä jokin yhteinen tekijä ja supista tarvittaessa uudestaan. </li>
+                            <li> Miltä tehtävän murtolauseke näyttää, kun se on supistettu mahdollisimman yksinkertaiseen muotoon?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t303_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t303_v" class="collapse">
+                            <ol class="a">
+                                <li> $2(2x+1)$ </li>
+                                <li> $7(2x+1)$ </li>
+                                <li> Osoittajassa ja nimittäjässä on molemmissa tekijänä $2x+1$.</li>
+                                <li> $\dfrac{2}{7}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Murtolukujen tapauksessa luvun ja sen vastaluvun osamäärä on helppo tunnistaa. Esimerkiksi
+                $$\frac{\phantom{-}3}{-3} = -1.$$
+                Murtolausekkeiden tapauksessa vastaava tilanne voi näyttää esimerkiksi tältä:
+                $$
+                \frac{x-8}{8-x}
+                $$
+                Osoittajaa sieventämällä nähdään, että se on nimittäjän vastalauseke: 
+                \begin{align*}
+                x-8 &= -8 + x \\
+                &=-1 \cdot (8-x).
+                \end{align*}
+                Osoittaja ja nimittäjä voidaan muuttaa tulomuotoon ja sen jälkeen supistaa yhteinen tekijä pois:
+                $$
+                \frac{x-8}{8-x} = \frac{-1 \cdot (8-x)}{\phantom{-}1 \cdot (8-x)} = \frac{-1}{\phantom{-}1} = -1
+                $$
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t304-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t304">
+                                Murtolausekkeiden supistaminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t304" class="collapse">
+                        <p>
+                            Kirjoita tässäkin tehtävässä kaikki välivaiheet huolellisesti näkyviin. Muista muuttaa osoittaja ja nimittäjä tulomuotoon ennen supistamista.
+                        </p>
+                        <ol class="a">
+                            <li> Supista murtolauseke $$\dfrac{6-x}{x-6}$$ </li>
+                            <li> Supista murtolauseke $$\dfrac{\phantom{-}5x+4}{-5x-4}$$ </li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t304_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t304_v" class="collapse">
+                            <ol class="a">
+                                <li> $-1$ </li>
+                                <li> $-1$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA2-kurssilla</a> johdetut summan ja erotuksen tulon sekä binomien neliöiden muistikaavat ovat välillä tarpeen murtolausekkeiden supistamisessa.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t305-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t305">
+                                Murtolausekkeiden supistaminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t305" class="collapse">
+                        <p>
+                            Tehtävänä on supistaa murtolauseke $$\dfrac{x^2-25}{9x + 45}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Kirjoita osoittaja tulomuodossa sopivan muistikaavan avulla. Kertaa tarvittaessa muistikaavat MAA2-kurssin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">luvun 3</a> teoreemasta 3. </li>
+                            <li> Kirjoita nimittäjä tulomuodossa erottamalla mahdollisimman suuri yhteinen tekijä. </li>
+                            <li> Onko osoittajassa ja nimittäjässä jokin yhteinen tekijä? Supista se pois. Tarkista, jäikö osoittajaan ja nimittäjään vielä jokin yhteinen tekijä ja supista tarvittaessa uudestaan. </li>
+                            <li> Miltä tehtävän murtolauseke näyttää, kun se on supistettu mahdollisimman yksinkertaiseen muotoon?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t305_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t305_v" class="collapse">
+                            <ol class="a">
+                                <li> $(x+5)(x-5)$ </li>
+                                <li> $9(x+5)$ </li>
+                                <li> Osoittajassa ja nimittäjässä on molemmissa tekijänä $x+5$.</li>
+                                <li> $\dfrac{x-5}{9}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Ennen yhteen- ja vähennyslaskuja murtoluvut täytyy laventaa samannimisiksi. Laventaminen tarkoittaa, että osoittaja ja nimittäjä kerrotaan samalla luvulla. Tällöin murtoluvusta tulee eri näköinen mutta sen suuruus ei muutu. Esimerkiksi
+                $$
+                \frac{1}{2} = \frac{6\cdot 1}{6 \cdot 2} = \frac{6}{12}.
+                $$
+                Kun kaksi murtolukua lavennetaan samannimisiksi, yksi varma keino on laventaa ne toistensa nimittäjillä seuraavaan tapaan:
+                \begin{align*}
+                \frac{4}{\textcolor{blue}{5}} - \frac{3}{\textcolor{red}{7}} &= \frac{\textcolor{red}{7}\cdot 4}{\textcolor{red}{7}\cdot \textcolor{blue}{5}} - \frac{\textcolor{blue}{5}\cdot 3}{\textcolor{blue}{5}\cdot \textcolor{red}{7}} \\[2mm]
+                &= \frac{28}{35} - \frac{15}{35} \\[2mm]
+                &= \frac{28-15}{35} \\[2mm]
+                &= \frac{13}{35}
+                \end{align*}
+                Lavennuksen jälkeen osoittajat voitiin yhdistää. Lopuksi vielä tarkistetaan, voiko tulosta supistaa. Tällä kertaa supistaminen ei onnistu, koska osoittajalla ja nimittäjällä ei ole yhteisiä tekijöitä.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t306-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t306">
+                                Murtolausekkeiden yhteenlasku
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t306" class="collapse">
+                        <p>
+                            Tehtävänä on sieventää summa $$\dfrac{x+2}{x} + \dfrac{5x}{x+1}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Lavenna yhteenlaskettavat samannimisiksi.   </li>
+                            <li> Muodosta ja sievennä osoittajien summa. Jätä lausekkeiden yhteinen nimittäjä tulomuotoon. </li>
+                            <li> Miltä vastaus näyttää, kun se on sievennetty mahdollisimman pitkälle?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t306_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t306_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{(x+1)(x+2)}{(x+1)x} + \dfrac{x\cdot 5x}{x(x+1)}$ </li>
+                                <li> </li>
+                                <li> $\dfrac{6x^2 + 3x + 2}{x(x+1)}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Murtolausekkeiden vähennyslaskussa on tärkeää huomata, että lausekkeiden välissä oleva miinusmerkki vaikuttaa sen perässä olevan murtolausekkeen koko osoittajaan. Esimerkiksi
+                \begin{align*}
+                \frac{1+x}{x^2} \textcolor{red}{-} \frac{\textcolor{blue}{4-x}}{x^2} &= \frac{1+x \textcolor{red}{-} \textcolor{blue}{(4-x)}}{x^2} \\[2mm]
+                &= \frac{1+x \textcolor{red}{-} \textcolor{blue}{4}\textcolor{red}{+} \textcolor{blue}{x}}{x^2} \\[2mm]
+                &= \frac{2x-3}{x^2}
+                \end{align*}
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t307-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t307">
+                                Murtolausekkeiden vähennyslasku
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t307" class="collapse">
+                        <p>
+                            Tehtävänä on sieventää erotus $$\dfrac{x-1}{x+2} - \dfrac{3x-7}{4x + 8}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Lavenna murtolausekkeet samannimisiksi. Pystytkö tekemään tämän laventamalla vain ensimmäistä murtolauseketta?  </li>
+                            <li> Muodosta ja sievennä osoittajien erotus. </li>
+                            <li> Miltä vastaus näyttää, kun se on sievennetty mahdollisimman pitkälle?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t307_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t307_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{4(x-1)}{4(x+2)} - \dfrac{3x-7}{4x +8}$ </li>
+                                <li> </li>
+                                <li> $\dfrac{x+3}{4x+8}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Murtolukujen kerto- ja jakolaskussa laventamista ei tarvitse tehdä. Kertolaskussa osoittajat kerrotaan keskenään ja nimittäjät kerrotaan keskenään. Esimerkiksi
+                $$
+                    \frac{1}{2} \cdot \frac{3}{5} = \frac{1\cdot 3}{2\cdot 5} = \frac{3}{10}
+                $$
+                <!-- Yllä oleva lasku voidaan tulkita seuraavasti: Otetaan puolet luvusta $\frac{3}{5}$ jakamalla jokainen viidesosa puoliksi. Puolet viidesosasta on kymmenesosa, ja näitä puolikkaita saadaan kolme kappaletta. Puolet luvusta $\frac{3}{5}$ on siis $\frac{3}{10}$.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva28.png" max-width: 100%; width: auto; height: auto;/>
+                <br> -->
+                Usein kannattaa jo välivaiheessa tarkistaa, onko supistaminen mahdollista. Esimerkiksi
+                $$
+                    \frac{1}{2} \cdot \frac{4}{5} = \frac{1\cdot 4}{2\cdot 5} = \frac{2\cdot 2}{2\cdot 5} = \frac{2}{5}
+                $$
+                <!-- Yllä oleva lasku voidaan tulkita myös niin, että puolet neljästä viidesosasta on kaksi viidesosaa:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva30.png" max-width: 100%; width: auto; height: auto;/>
+                <br> -->
+                Murtolausekkeiden kertolasku voidaan tehdä samaan tapaan kertomalla osoittajat keskenään ja nimittäjät keskenään. Ennen sulkujen avaamista kannattaa tarkistaa, onko osoittajassa ja nimittäjässä yhteisiä tekijöitä, jotka voisi supistaa pois. Esimerkiksi
+                \begin{align*}
+                    \frac{x^2+x}{6x-9} \cdot \frac{3x}{x+1} &= \frac{(x^2+x) \cdot 3x}{(6x-9)(x+1)} \\[2mm]
+                    &= \frac{x\textcolor{blue}{(x+1)} \cdot \textcolor{red}{3}x}{\textcolor{red}{3}(2x-3)\textcolor{blue}{(x+1)}} \\[2mm]
+                    &= \frac{x\cdot x}{2x-3} \\[2mm]
+                    &= \frac{x^2}{2x-3}
+                \end{align*}
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t308-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t308">
+                                Murtolausekkeiden kertolasku
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t308" class="collapse">
+                        <p>
+                            Tehtävänä on sieventää tulo $$\dfrac{12x^2}{5x+15} \cdot \dfrac{10-25x}{4x}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Kerro osoittajat ja nimittäjät keskenään mutta älä avaa vielä sulkuja.  </li>
+                            <li> Mieti, onko osoittajassa ja nimittäjässä yhteisiä tekijöitä, jotka voisi supistaa pois. Tee kaikki mahdolliset supistukset. </li>
+                            <li> Miltä vastaus näyttää, kun se on sievennetty mahdollisimman pitkälle?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t308_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t308_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{12x^2(10-25x)}{(5x+15)4x}$ </li>
+                                <li> Yhteisiä tekijöitä $5$ ja $4x$.</li>
+                                <li> $\dfrac{6x-15x^2}{2x+3}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Jakolasku saadaan suoritettua, kun kerrotaan jakajan käänteisluvulla. Esimerkiksi $10 : 2 = 5$ ja samaan tulokseen päästään myös kertomalla jakajan käänteisluvulla:
+                $$
+                    10 \cdot \frac{1}{2} = \frac{10}{2} = 5.
+                $$
+                Murtolausekkeiden tapauksessa kannattaa jälleen tehdä mahdolliset supistukset jo ennen sulkujen avaamista. Esimerkiksi
+                \begin{align*}
+                \frac{x^2+x}{x-1} : \textcolor{red}{\frac{x}{x^2-1}} &= \frac{x^2+x}{x-1} \cdot \textcolor{red}{\frac{x^2-1}{x}} \\[2mm]
+                &= \frac{\textcolor{purple}{(x^2+x)}\textcolor{blue}{(x^2-1)}}{(x-1)x} \\[2mm]
+                &= \frac{\textcolor{purple}{x(x+1)}\textcolor{blue}{(x-1)(x+1)}}{(x-1)x} \\[2mm]
+                &= \frac{(x+1)(x+1)}{1} \\[2mm]
+                &= (x+1)^2.
+                \end{align*}
+                Tässä käytettiin MAA2-kurssin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">luvun 3</a> teoreeman 3 summan ja erotuksen tulon kaavaa, jonka mukaan 
+                $$\textcolor{blue}{(x+1)(x-1) = x^2-1}.$$
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t309-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t309">
+                                Murtolausekkeiden jakolasku
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t309" class="collapse">
+                        <p>
+                            Tehtävänä on sieventää osamäärä $$\dfrac{3x^2-3x}{2x+8} : \dfrac{6x-6}{x^2-16}$$                  
+                        </p>
+                        <ol class="a">
+                            <li> Muuta jakolasku kertolaskuksi ja sievennä, mutta älä avaa vielä sulkuja.  </li>
+                            <li> Mieti, onko osoittajassa ja nimittäjässä yhteisiä tekijöitä, jotka voisi supistaa pois. Tee kaikki mahdolliset supistukset. </li>
+                            <li> Miltä vastaus näyttää, kun se on sievennetty mahdollisimman pitkälle?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t309_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t309_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{(3x^2-3x)(x^2-16)}{(2x+8)(6x-6)}$ </li>
+                                <li> Yhteisiä tekijöitä $3$, $x-1$ ja $x+4$. Huom. MAA2-kurssin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">luvun 3</a> teoreemasta 3 on apua.</li>
+                                <li> $\dfrac{x^2-4x}{4}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Rationaalilauseke tarkoittaa polynomien ja murtolausekkeiden summaa. Myös pelkät polynomit ja pelkät murtolausekkeet luetaan mukaan rationaalilausekkeisiin. Rationaalilausekkeita ovat siis esimerkiksi
+                \begin{align*}
+                \frac{3x+13}{x^2} + 7x^3 - 2 \\[2mm]
+                6x^4-\frac{7}{9}x + 1 \\[2mm]
+                \frac{1}{x}
+                \end{align*}
+                Kun rationaalilausekkeita sievennetään, voidaan käyttää murtolausekkeiden laskusääntöjä. Esimerkiksi
+                \begin{align*}
+                    &\phantom{={}}\left(\frac{25}{x} - x\right) : (x+5) \\[2mm]
+                    &= \left(\frac{25}{x} - \frac{x^2}{x}\right) : (x+5) \\[2mm]
+                    &= \frac{25-x^2}{x} : (x+5) \\[2mm]
+                    &= \frac{25-x^2}{x} \cdot \frac{1}{x+5}
+                \end{align*}
+                Huomaa, että tässä jaettava sievennettiin ensin yhdeksi murtolausekkeeksi. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t310-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t310">
+                                Rationaalilausekkeiden sieventäminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t310" class="collapse">
+                        <p>
+                            Sievennä loppuun edellisen esimerkin lauseke
+                            $$
+                                \frac{25-x^2}{x} \cdot \frac{1}{x+5}
+                            $$                 
+                        </p>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t310_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t310_v" class="collapse">
+                            <p>
+                                $\dfrac{5-x}{x}$
+                                <br>
+                                Vinkki: summan ja erotuksen tulo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t311-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t311">
+                                Rationaalilausekkeiden sieventäminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t311" class="collapse">
+                        <p>
+                            Sievennä rationaalilauseke
+                            $$
+                                \left(\frac{1}{2a+1} + \frac{1}{2a-1}\right) \cdot \left(1 - \frac{1}{4a^2}\right)
+                            $$                 
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t311_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t311_v" class="collapse">
+                            <p>
+                                $\dfrac{1}{a}$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali1">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali2">
+                    Rationaalifunktiot ja -yhtälöt
+                </a>
+            </h1>
+        </header>
+        <div id="rationaali2" class="collapse">
+<!-- Tähän myös rationaaliyhtälön ratkaiseminen ja merkin tutkiminen -->
+
+            <p>
+                Tässä kappaleessa tutustutaan niin sanottuihin rationaalifunktioihin. Ne ovat funktioita, jotka on määritelty jonkin rationaalilausekkeen avulla. Esimerkiksi
+                $$
+                    f(x) = 4-\frac{3}{5}x^2 + \frac{6x}{x^2-2}
+                $$
+                on rationaalifunktio. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t312-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t312">
+                                Rationaalifunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t312" class="collapse">
+                        <p>
+                            Alla on näkyvissä rationaalifunktioiden kuvaajia. Kopioi alla oleva taulukko vihkoosi ja täydennä se yhdistämällä oikea kuvaaja jokaiseen funktioon. 
+                        </p>
+                        <div align="center">
+                            <table style="width = 75%"> 
+                                <tr>
+                                    <th> Funktio </th>
+                                    <th> Kuvaaja </th>
+                                </tr>
+                                <tr>
+                                    <td> $\ f(x) = \dfrac{8x}{1+2x^2}  \ $ </td>
+                                    <td>  </td>
+                                </tr>
+                                <tr>
+                                    <td> $\ g(x) = \dfrac{1}{x-2} \ $ </td>
+                                    <td>  </td>
+                                </tr>
+                                <tr>
+                                    <td> $\ h(x) = \dfrac{3}{1+x^2} \ $ </td>
+                                    <td>  </td>
+                                </tr>
+                                <tr>
+                                    <td> $\ k(x) =  \dfrac{1}{x} \ $ </td>
+                                    <td>  </td>
+                                </tr>
+                            </table> 
+                        </div>
+                        <p>
+                        <img src="/kurssit/maa6/kuvat/kuva32.png" max-width: 100%; width: auto; height: auto;/>
+                        <img src="/kurssit/maa6/kuvat/kuva33.png" max-width: 100%; width: auto; height: auto;/>
+                        <br>
+                        <img src="/kurssit/maa6/kuvat/kuva34.png" max-width: 100%; width: auto; height: auto;/>
+                        <img src="/kurssit/maa6/kuvat/kuva35.png" max-width: 100%; width: auto; height: auto;/>
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t312_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t312_v" class="collapse">
+                            <p>
+                                Funktion $f$ kuvaaja on B.
+                                <br>
+                                Funtktion $g$ kuvaaja on A.
+                                <br>
+                                Funtktion $h$ kuvaaja on D.
+                                <br>
+                                Funtktion $g$ kuvaaja on C.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t313-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t313">
+                                Rationaalifunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t313" class="collapse">
+                        <p>
+                            Alla on näkyvissä funktion 
+                            $$f(x) = \frac{x+2}{3x-3}$$
+                            kuvaaja. 
+                        </p>
+                        <ol class="a">
+                            <li> Missä kohdassa funktio $f$ ei ole määritelty? Miten tämä kohta näkyy funktion $f$ kuvaajassa? </li>
+                            <li> Miten voit funktion $f$ lausekkeen avulla selvittää, missä kohdassa funktio $f$ ei ole määritelty? </li>
+                            <li> Onko funktiolla $f$ nollakohtia? Miten ne näkyvät funktion $f$ kuvaajassa? </li>
+                            <li> Miten voit funktion $f$ lausekkeen avulla selvittää, onko funktiolla $f$ nollakohtia? </li>
+                            <li> Millä lukusuoran väleillä funktio $f$ saa positiivisia arvoja? </li>
+                            <li> Millä lukusuoran väleillä funktio $f$ saa negatiivisia arvoja? </li>
+                            <li> Missä kohdissa funktion arvojen merkki vaihtuu positiivisesta negatiiviseksi tai päinvastoin?</li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva36.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t313_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t313_v" class="collapse">
+                            <ol class="a">
+                            <li> Funktio $f$ ei ole määritelty kohdassa $x = 1$.  </li>
+                            <li> Funktio $f$ ei ole määritelty nimittäjän nollakohdissa, sillä nollalla jakamisen tulosta ei ole määritelty. </li>
+                            <li> Funktiolla $f$ on nollakohta $x = -2$. </li>
+                            <li> Ratkaisemalla osoittajan nollakohdat, tässä tapauksessa siis yhtälön $x + 2 = 0$. </li>
+                            <li> Väleillä $\pa -\infty, -2 \pe$ ja $\pa 1, \infty \pe$.</li>
+                            <li> Välillä $\pa -2,1\pe$.</li>
+                            <li> Funktion nollakohdassa ja kohdassa, jossa funktio ei ole määritelty.</li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>
+                Koska nollalla jakamista ei ole määritelty, rationaalifunktio ei ole määritelty kohdissa, joissa jokin siinä esiintyvistä nimittäjistä saa arvon nolla. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t314-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t314">
+                                Rationaalifunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t314" class="collapse">
+                        <p>
+                            Tutkitaan funktiota
+                            $$f(x) = \frac{6x}{x-5} + \frac{3}{x+4}.$$ 
+                        </p>
+                        <ol class="a">
+                            <li> Missä kohdissa funktio $f$ ei ole määritelty? </li>
+                            <li> Ratkaise funktion $f$ nollakohdat. Aloita esimerkiksi sieventämällä funktion lauseke yhdeksi murtolausekkeeksi. </li>
+                            <li> Tarkista vastauksesi piirtämällä funktion $f$ kuvaaja laskimella tai tietokoneella. </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t314_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t314_v" class="collapse">
+                            <ol class="a">
+                            <li> Funktio $f$ ei ole määritelty kohdissa $x = 5$ ja $x = -4$.  </li>
+                            <li> Funktiolla $f$ on nollakohdat $x = -5$ ja $x = \frac{1}{2}$. </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Kun tutkitaan, missä kohdassa jokin rationaalifunktio saa tietyn arvon, päädytään ratkaisemaan niin sanottu rationaaliyhtälö. Esimerkiksi rationaalifunktion $f$ nollakohdat voidaan löytää ratkaisemalla yhtälö $f(x) = 0$.
+            </p>
+            <p>
+                Rationaaliyhtälöiden ratkaisussa ensimmäinen tavoite on päästä eroon nimittäjistä. Tämä voidaan tehdä ainakin kahdella tavalla:
+            </p>
+            <ol>
+                <li> Kerrotaan yhtälön kumpikin puoli kaikkien yhtälössä esiintyvien nimittäjien tulolla, jolloin nimittäjät voidaan supistaa pois.</li>
+                <li> Muokataan yhtälön kumpikin puoli samannimisiksi murtolausekkeiksi sopivasti laventamalla. Tällöin voidaan päätellä, että yhtälö toteutuu, jos ja vain jos osoittajat ovat yhtä suuria.</li>
+            </ol>
+            <p>
+                Esimerkiksi yhtälön
+                $$\frac{x}{2-x} + 1 = \frac{3}{x}$$
+                nimittäjistä voidaan hankkiutua eroon kummalla tahansa tavalla. Ennen ratkaisua kannattaa kuitenkin huomata, että yhtälö ei ole määritelty nimittäjien nollakohdissa eli jos $x = 2$ tai $x = 0$. Nämä luvut eivät siis missään tapauksessa kelpaa yhtälön ratkaisuksi.
+            </p>
+            <ol>
+                <li> 
+                    tapa: Yhtälössä esiintyvät nimittäjät $2-x$ ja $x$, joten kerrotaan yhtälön molemmat puolet tulolla $x(2-x)$ ja tehdään mahdolliset supistukset sen jälkeen:
+                    \begin{align*}
+                        \frac{x}{2-x} + 1 &= \frac{3}{x} \\[2mm]
+                        \frac{x\cdot \textcolor{blue}{x}\textcolor{red}{(2-x)}}{2-x} + \textcolor{blue}{x}\textcolor{red}{(2-x)} &= \frac{3\textcolor{blue}{x}\textcolor{red}{(2-x)}}{x} \\[2mm]
+                        x^2 + x(2-x) &= 3(2-x)
+                    \end{align*}
+                </li>
+                <li> 
+                    tapa: Muokataan yhtälön kumpikin puoli samannimisiksi murtolausekkeiksi sopivasti laventamalla. 
+                    \begin{align*}
+                        \frac{x}{2-x} + 1 &= \frac{3}{x} \\[2mm]
+                        \frac{x\cdot \textcolor{blue}{x}}{\textcolor{blue}{x}(2-x)} + \frac{\textcolor{blue}{x}\textcolor{red}{(2-x)}}{\textcolor{blue}{x}\textcolor{red}{(2-x)}} &= \frac{3\textcolor{red}{(2-x)}}{x\textcolor{red}{(2-x)}} \\[2mm]
+                        \frac{x^2 + x(2-x)}{x(2-x)} &= \frac{3(2-x)}{x(2-x)} 
+                    \end{align*}
+                    Tämä yhtälö toteutuu, jos ja vain jos osoittajat ovat yhtä suuria eli
+                    $$x^2 + x(2-x) = 3(2-x)$$
+                </li>
+            </ol>
+            
+            <p>
+                Kun nimittäjistä on päästy eroon tavalla tai toisella, voidaan yhtälön ratkaisemista jatkaa normaalisti:
+                    \begin{align*}
+                        x^2 + x(2-x) &= 3(2-x) \\
+                        x^2 + 2x - x^2 &= 6-3x \\
+                        5x &= 6 \\
+                        x &= \frac{6}{5} 
+                    \end{align*}
+                Lopuksi tarkistetaan, että kysymyksessä todella on alkuperäisen yhtälön ratkaisu. Tämä voidaan tehdä sijoittamalla ratkaisuehdokas alkuperäiseen yhtälöön tai tarkistamalla, ettei kysymyksessä ole minkään yhtälössä esiintyvän nimittäjän nollakohta. Tässä tarkastellun yhtälön nimittäjien nollakohdat ovat $x = 0$ ja $x = 2$, joten $x = \frac{6}{5}$ todella on yhtälön ratkaisu. (Sijoittamalla havaitaan, että jos $x = \frac{6}{5}$, niin yhtälön vasen ja oikea puoli saavat kumpikin arvon $\frac{5}{2}$.)
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t315-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t315">
+                                Rationaaliyhtälö
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t315" class="collapse">
+                        <p>
+                            Vertaile kahta edellä esitettyä tapaa, joilla rationaaliyhtälö saadaan muokattua tavalliseksi polynomiyhtälöksi. 
+                        </p>
+                        <ol class="a">
+                            <li> Mitä eroa näissä tavoissa on? </li>
+                            <li> Mitä yhteistä näissä tavoissa on? </li>
+                            <li> Kumpi näistä tavoista tuntuu itsellesi luontevammalta? Miksi? </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t316-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t316">
+                                Rationaaliyhtälö
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t316" class="collapse">
+                        <p>
+                            Tehtävänä on ratkaista rationaaliyhtälö 
+                            $$\frac{x}{1-x} + 4 = \frac{2}{3-x}$$
+                        </p>
+                        <ol class="a">
+                            <li> Millä muuttujan arvoilla yhtälö ei ole määritelty? </li>
+                            <li> Poista yhtälöstä nimittäjät. Käytä jompaa kumpaa edellä esitetyistä tavoista. Millaiseen polynomiyhtälöön päädyt? </li>
+                            <li> Ratkaise polynomiyhtälö. Ovatko sen ratkaisut alkuperäisen yhtälön ratkaisuja? </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t316_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t316_v" class="collapse">
+                            <ol class="a">
+                            <li> Arvoilla $x = 1$ ja $x = 3$.  </li>
+                            <li> Yhtälöön $3x-x^2 + 4(1-x)(3-x) = 2-2x$. </li>
+                            <li> Alkuperäinen yhtälö toteutuu, jos ja vain jos $x = \frac{5}{3}$ tai $x = 2$. </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali2b">
+                    Rationaaliepäyhtälöt
+                </a>
+            </h1>
+        </header>
+        <div id="rationaali2b" class="collapse">
+
+            <p>
+                Edellisessä kappaleessa harjoiteltiin rationaaliyhtälöiden ratkaisemista. Esimerkiksi yhtälö
+                $$
+                \frac{2}{x-1} = 4
+                $$
+                voidaan ratkaista kertomalla sen molemmat puolet nimittäjällä $x-1$, jolloin yhtälö saa muodon
+                $$
+                2 = 4(x-1).
+                $$
+                Vastaava tekniikka ei kuitenkaan toimi rationaaliepäyhtälöiden ratkaisemisessa, sillä epäyhtälömerkin käyttäytyminen riippuu siitä, kerrotaanko epäyhtälöä positiivisella vai negatiisivisella luvulla. Esimerkiksi
+                \begin{align*}
+                1 &< 2 \quad \mid \ \cdot 3 \\
+                3 &< 6 
+                \end{align*}
+                mutta
+                \begin{align*}
+                1 &< 2 \quad \mid \ \cdot (-7) \\
+                -7 &> -14. 
+                \end{align*}
+                Jos epäyhtälö
+                $$
+                \frac{2}{x-1} > 4
+                $$
+                yritetään ratkaista samalla tavalla kuin vastaava yhtälö eli kertomalla sen molemmat puolet nimittäjällä $x-1$, päädytään hankalaan tilanteeseen, koska lausekkeen $x-1$ merkki riippuu muuttujan $x$ arvosta ja vaikuttaa myös epäyhtälömerkin käyttäytymiseen. Tässä kappaleessa opitaan ratkaisemaan rationaaliepäyhtälöt tavalla, johon ei tällaisia ongelmia liity. Menetelmä perustuu rationaalifunktioiden arvojen merkin tutkimiseen.
+            </p>
+
+            <p>
+                Tarkastellaan aluksi rationaalifunktion 
+                $$
+                f(x) = \frac{x+2}{3x-3}
+                $$
+                kuvaajaa:
+            </p>
+            <img src="/kurssit/maa6/kuvat/kuva36.png" max-width: 100%; width: auto; height: auto;/>
+            <p>
+                Kuvaajasta nähdään, että funktion arvojen merkki vaihtuu nollakohdassa $x = -2$ ja kohdassa $x = 1$, jossa funktio ei ole määritelty. On mahdollista osoittaa, että kysymyksessä ei ole sattuma: 
+            </p>
+
+            <div class="theorem" id="RATIONAALIFUNKTION ARVOJEN MERKKI">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Jos rationaalifunktion $f$ arvot $f(a)$ ja $f(b)$ ovat erimerkkiset, niin funktiolla on välillä $\pa a, b \pe$ (ainakin yksi) nollakohta tai kohta, jossa funktio ei ole määritelty.
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu pohjautuu Bolzanon lauseeseen sekä tietoon siitä, että rationaalifunktiot ovat jatkuvia määrittelyjoukossaan. 
+                    </p>      
+                </div>
+            </div>
+
+            <p>
+                Teoreemasta 3 seuraa, että rationaalifunktion arvojen merkki voi vaihtua vain funktion nollakohdissa sekä kohdissa, joissa funktio ei ole määritelty. Nämä kohdat täytyy siis ottaa huomioon, kun tutkitaan rationaalifunktion merkkiä. 
+            </p>
+            <p>
+                Tarkastellaan esimerkiksi funktiota 
+                $$
+                g(x) = \frac{6x-8}{12x + 15}.
+                $$
+                Ratkaistaan aluksi funktion $g$ nollakohdat. Huomaa, että osamäärä on nolla täsmälleen siinä tapauksessa, että osoittaja on nolla:
+                \begin{align*}
+                g(x) &= 0 \\[2mm]
+                \frac{6x - 8}{12x + 15} &= 0 \\[2mm]
+                6x - 8 &= 0 \\[2mm]
+                6x &= 8 \\[2mm]
+                x &= \frac{8}{6} = \frac{4}{3} 
+                \end{align*}
+                Ratkaistaan myös nimittäjän nollakohdat eli kohdat, joissa funktio $g$ ei ole määritelty:
+                \begin{align*}
+                12x + 15 &= 0 \\[2mm]
+                12x &= -15 \\[2mm]
+                x &= -\frac{15}{12} = -\frac{5}{4} 
+                \end{align*}
+                Laaditaan funktion merkkikaavio, johon merkitään funktion nollakohdat ja kohdat, joissa funktio ei ole määritelty. 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva74.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Valitaan jokaiselta merkkikaavion väliltä jokin kohta ja lasketaan funktion arvo tässä kohdassa. Esimerkiksi
+                \begin{align*}
+                g(-2) &= \frac{-12-8}{-24 + 15} = \frac{-20}{-9} = \frac{20}{9} \\[2mm]
+                g(0) &= \frac{0-8}{0+15} = -\frac{8}{15} \\[2mm]
+                g(2) &= \frac{12-8}{24 + 15} = \frac{4}{39}
+                \end{align*}
+                Täydennetään tiedot funktion arvojen merkistä merkkikaavioon:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva75.png" max-width: 100%; width: auto; height: auto;/>
+                Funktio $g$ saa siis positiivisia arvoja lukusuoran väleillä $\pa -\infty, -\frac{5}{4} \pe$ ja $\pa \frac{4}{3}, \infty \pe$ ja negatiivisia arvoja lukusuoran välillä $\pa -\frac{5}{4}, \frac{4}{3} \pe$.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t322-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t322">
+                                Rationaalifunktion merkki
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t322" class="collapse">
+                        <p>
+                            Tehtävänä on selvittää, millä väleillä funktio
+                            $$
+                            f(x) = \frac{6-2x}{2x+1}
+                            $$
+                            saa positiivisia arvoja ja millä negatiivisia.
+                        </p>
+                        <ol class="a">
+                            <li> Määritä funktion $f$ nollakohdat. </li>
+                            <li> Määritä ne kohdat, joissa funktio $f$ ei ole määritelty. </li>
+                            <li> Laadi funktion $f$ merkkikaavio. Millä väleillä funktio $f$ saa positiivisia arvoja ja millä negatiivisia?  </li>
+                            <li> Tarkista vastauksesi piirtämällä funktion $f$ kuvaaja laskimella tai tietokoneella. </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t322_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t322_v" class="collapse">
+                            <ol class="a">
+                                <li> $x = 3$ </li>
+                                <li> $x = -\frac{1}{2}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Rationaaliepäyhtälön ratkaisemisessa ensimmäinen askel on palauttaa tilanne rationaalifunktion merkin tarkasteluun. Käytännössä epäyhtälöä muokataan niin, että sen toiselle puolelle jää nolla. Esimerkiksi epäyhtälö
+                $$
+                \frac{x}{x+1} < \frac{1}{2-x}
+                $$
+                muutetaan aluksi muotoon
+                $$
+                \frac{x}{x+1} - \frac{1}{2-x} < 0.
+                $$
+                Epäyhtälön ratkaisut löydetään, kun tutkitaan, millä väleillä vastaavan rationaalifunktion
+                $$
+                f(x) = \frac{x}{x+1} - \frac{1}{2-x}
+                $$
+                arvot ovat negatiivisia. 
+            </p>
+
+            <p>
+                Kohdat, joissa funktio $f$ ei ole määritelty, ovat nimittäjien nollakohdat $x = -1$ ja $x = 2$. Ratkaistaan vielä funktion $f$ nollakohdat. Käytetään edellisessä kappaleessa harjoiteltua tapaa 1:
+                \begin{align*}
+                f(x) &= 0 \\[2mm]
+                \frac{x}{x+1} - \frac{1}{2-x} &= 0 \\[2mm]
+                \frac{x}{x+1} &= \frac{1}{2-x} \\[2mm]
+                \frac{x\textcolor{blue}{(x+1)}\textcolor{red}{(2-x)}}{x+1} &= \frac{\textcolor{blue}{(x+1)}\textcolor{red}{(2-x)}}{2-x} \\[2mm]
+                x(2-x) &= x+1  \\[2mm]
+                2x - x^2 &= x + 1 \\[2mm]
+                -x^2 + x - 1 &= 0
+                \end{align*}
+                Tämän toisen asteen yhtälön diskriminantti on negatiivinen:
+                \begin{align*}
+                D &= 1^2 - 4\cdot (-1)\cdot (-1) \\
+                &= 1-4 = -3.
+                \end{align*}
+                Yhtälöllä ei siten ole yhtään ratkaisua (<a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA 2</a>, teoreema 6). Tämä näkyy käytännössä myös siitä, että toisen asteen yhtälön ratkaisukaavassa juurrettava on negatiivinen.
+            </p>
+
+            <p>
+                Funktiolla $f$ ei siis ole nollakohtia, joten merkitään merkkikaavioon vain kohdat, joissa funktio ei ole määritelty. 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva76.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Valitaan jokaiselta merkkikaavion väliltä jokin kohta ja lasketaan funktion arvo tässä kohdassa. Esimerkiksi
+                \begin{align*}
+                f(-2) &= \frac{-2}{-1} - \frac{1}{4} = \frac{7}{4} \\[2mm]
+                f(0) &= 0 - \frac{1}{2} = -\frac{1}{2} \\[2mm]
+                f(3) &= \frac{3}{4} - \frac{1}{-1}= \frac{7}{4}
+                \end{align*}
+                Täydennetään tiedot funktion arvojen merkistä merkkikaavioon:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva77.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Alkuperäinen epäyhtälö toteutuu, jos ja vain jos funktion $f$ arvot ovat negatiivisia. Epäyhtälö 
+                $$
+                \frac{x}{x+1} < \frac{1}{2-x}
+                $$
+                siis toteutuu, jos ja vain jos $-1 < x  < 2$. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t323-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t323">
+                                Rationaaliepäyhtälö
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t323" class="collapse">
+                        <p>
+                            Tehtävänä on ratkaista epäyhtälö
+                            $$
+                            \frac{x-5}{x+3} \geq 2.
+                            $$
+                        </p>
+                        <ol class="a">
+                            <li> Muokkaa epäyhtälöä niin, että sen oikealle puolelle jää nolla. </li>
+                            <li> Millaisen rationaalifunktion merkkiä tutkimalla löydät alkuperäisen epäyhtälön ratkaisut? Laadi tämän funktion merkkikaavio. </li>
+                            <li> Millä muuttujan arvoilla alkuperäinen epäyhtälö toteutuu? </li>
+                            <li> Harjoittele teknisen apuvälineen käyttöä rationaalifunktioiden, -yhtälöiden ja -epäyhtälöiden tutkimisessa. Katso Texas Nspiren ohjevideo halutessasi <a href="https://www.youtube.com/watch?v=LJYt2CHzopc&t=7s">täältä</a> ja käytä oppimaasi tämän tehtävän ratkaisemiseen tai tarkistamiseen.
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t323_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t323_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{x-5}{x+3} - 2 \geq 0$ </li>
+                                <li> $f(x) = \dfrac{x-5}{x+3} - 2$ </li>
+                                <li> $-11 \leq x < -3$ (huom. kohdassa $x = -3$ epäyhtälön vasen puoli ei ole määritelty). </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali2b">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali3">
+                    Rationaalifunktion raja-arvo
+                </a>
+            </h1>
+        </header>
+        <div id="rationaali3" class="collapse">
+
+            <p>
+                <a href="http://kisallioppiminen.fi/kurssit/maa6/luku2/">Edellisessä luvussa</a> tutustuttiin funktion raja-arvon käsitteeseen. Tässä kappaleessa tutkitaan tarkemmin rationaalifunktioiden raja-arvoja. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t317-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t317">
+                                Rationaalifunktion raja-arvo
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t317" class="collapse">
+                        <p>
+                            Alla on näkyvissä osa funktion 
+                            $$f(x) = \frac{1}{x+1}$$
+                            kuvaajasta.
+                        </p>
+                        <ol class="a">
+                            <li> Missä kohdassa funktio $f$ ei ole määritelty? </li>
+                            <li> Onko funktiolla $f$ raja-arvo kohdassa
+                                <ul>
+                                    <li> $x = -2$ </li>
+                                    <li> $x = -1$ </li>
+                                    <li> $x = 0$?  </li>
+                                </ul>
+                                Kertaa tarvittaessa raja-arvon määritelmä <a href="http://kisallioppiminen.fi/kurssit/maa6/luku2/">edellisestä luvusta.</a>
+                            </li>
+                            <li>
+                                Jos b-kohdassa raja-arvo on olemassa, mikä se on? Käytä vastausten ilmoittamiseen merkintätapaa 
+                                $$\lim_{x \rightarrow a} f(x) = b.$$
+                            </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva38.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t317_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t317_v" class="collapse">
+                            <ol class="a">
+                            <li> Funktio ei ole määritelty kohdassa $x = -1$. </li>
+                            <li> Funktiolla $f$ on raja-arvo kohdissa $x = -2$ ja $x = 0$. Funktiolla $f$ ei ole raja-arvoa kohdassa $x = -1$. </li>
+                            <li> Raja-arvot ovat seuraavat:
+                                \begin{align*}
+                                \lim_{x \rightarrow -2} f(x) &= -1 \\[1mm]
+                                \lim_{x \rightarrow 0} f(x) &= 1 
+                                \end{align*}
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t318-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t318">
+                                Rationaalifunktion raja-arvo
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t318" class="collapse">
+                        <p>
+                            Alla on näkyvissä osa funktion 
+                            $$g(x) = \frac{x^2-1}{2x-2}$$
+                            kuvaajasta.
+                        </p>
+                        <ol class="a">
+                            <li> Missä kohdassa funktio $g$ ei ole määritelty? </li>
+                            <li> Onko funktiolla $g$ raja-arvo kohdassa
+                                <ul>
+                                    <li> $x = -1$ </li>
+                                    <li> $x = 1$ </li>
+                                    <li> $x = 3$?  </li>
+                                </ul></li>
+                            <li>
+                                Jos b-kohdassa raja-arvo on olemassa, mikä se on? Käytä vastausten ilmoittamiseen merkintätapaa 
+                                $$\lim_{x \rightarrow a} f(x) = b.$$
+                            </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva37.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t318_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t318_v" class="collapse">
+                            <ol class="a">
+                            <li> Funktio ei ole määritelty kohdassa $x = 1$. </li>
+                            <li> Funktiolla $f$ on raja-arvo kaikissa mainituissa kohdissa. </li>
+                            <li> Raja-arvot ovat seuraavat:
+                                \begin{align*}
+                                \lim_{x \rightarrow -1} f(x) &= 0 \\[1mm]
+                                \lim_{x \rightarrow 1} f(x) &= 1 \\[1mm]
+                                \lim_{x \rightarrow 3} f(x) &= 2 
+                                \end{align*}
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Edellisistä tehtävistä havaitaan, että raja-arvon olemassaolon kannalta kriittisimpiä ovat ne kohdat, joissa rationaalifunktio ei ole määritelty. Jos funktiolla on tällaisessa kohdassa raja-arvo, voidaan se löytää supistamalla funktion lauseketta. Esimerkiksi edellisen tehtävän funktio
+                $$g(x) = \frac{x^2-1}{2x-2}$$
+                ei ole määritelty nimittäjän nollakohdassa $x = 1$. Lauseketta voidaan kuitenkin supistaa niin, että raja-arvo voidaan määrittää:
+                \begin{align*}
+                \frac{x^2-1}{2x-2} &= \frac{(x+1)(x-1)}{2(x-1)} \\[2mm]
+                &= \frac{x+1}{2} \xrightarrow[x \rightarrow 1]{} \frac{1+1}{2} = 1
+                \end{align*}
+                Tässä osoittaja ja nimittäjä muokattiin ensin tulomuotoon. Supistamisen jälkeen tutkittiin, mitä lausekkeelle tapahtuu, kun lähestytään kohtaa $x = 1$.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t319-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t319">
+                                Rationaalifunktion raja-arvo
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t319" class="collapse">
+                        <p>
+                            Alla on näkyvissä osa funktion 
+                            $$h(x) = \frac{3x}{x^2-4x}$$
+                            kuvaajasta.
+                        </p>
+                        <ol class="a">
+                            <li> Missä kohdissa funktio $h$ ei ole määritelty? </li>
+                            <li> Onko funktiolla $h$ raja-arvo kohdassa
+                                <ul>
+                                    <li> $x = 0$ </li>
+                                    <li> $x = 4$?  </li>
+                                </ul></li>
+                            <li>
+                                Jos b-kohdassa raja-arvo on olemassa, mikä se on? Muokkaa funktion lauseketta niin, että supistaminen on mahdollista, ja määritä tarkka raja-arvo samaan tapaan kuin edellä tehtiin.
+                            </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva39.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t319_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t319_v" class="collapse">
+                            <ol class="a">
+                            <li> Funktio ei ole määritelty kohdissa $x = 0$ ja $x = 4$. </li>
+                            <li> Funktiolla $f$ on raja-arvo kohdassa $x = 0$. Funktiolla ei ole raja-arvoa kohdassa $x = 4$. </li>
+                            <li> 
+                                \begin{align*}
+                                \frac{3x}{x^2-4x} &= \frac{3x}{x(x-4)} \\[2mm]
+                                &= \frac{3}{x-4} \xrightarrow[x \rightarrow 0]{} \frac{\phantom{-}3}{-4} = -\frac{3}{4}.
+                                \end{align*}
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Jos rationaalifunktio on määritelty tarkastelukohdassa, saadaan raja-arvo selvitettyä ilman supistamista. Esimerkiksi 
+                $$\frac{3x}{x^2-4x} \xrightarrow[x \rightarrow 7]{} \frac{3\cdot 7}{7^2 - 4\cdot 7} = \frac{21}{21} = 1,$$
+                joten edellisen tehtävän funktiolle
+                $$h(x) = \frac{3x}{x^2-4x}$$
+                pätee
+                $$\lim_{x\rightarrow 7} h(x) = 1.$$
+                Tämä itse asiassa tarkoittaa, että funktion $h$ raja-arvo kohdassa $x = 7$ on sama kuin funktion arvo kohdassa $x = 7$:
+                $$\lim_{x\rightarrow 7} h(x) = h(7).$$
+                <a href="http://kisallioppiminen.fi/kurssit/maa6/luku2/">Luvussa 2</a> esitetty jatkuvuuden määritelmän ehto siis toteutuu, joten funktio $h$ on jatkuva kohdassa $x = 7$. 
+            </p>
+
+            <p>
+                On mahdollista osoittaa, että vastaava ilmiö koskee kaikkia rationaalifunktioita:
+            </p>
+
+            <div class="theorem" id="RATIONAALIFUNKTION JATKUVUUS">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Rationaalifunktio on jatkuva koko määrittelyjoukossaan.
+                </p>
+            </div>
+
+            <p>
+                Teoreeman 4 mukaan rationaalifunktion raja-arvo on sama kuin funktion arvo kaikissa kohdissa, joissa funktio on määritelty. Erityistä tarkastelua vaativat vain nimittäjän nollakohdat, joissa funktio ei ole määritelty.
+            </p>
+        
+            <div class="tehtavat">
+                <div class="tehtava" id="t320-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t320">
+                                Rationaalifunktion raja-arvo
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t320" class="collapse">
+                        <p>
+                            Tutki, onko funktiolla
+                            $$f(x) = \frac{x^3-3x^2}{x-3}$$
+                            raja-arvo kohdassa
+                        </p>
+                        <ol class="a">
+                            <li> $x = -5$ </li>
+                            <li> $x = 3$ </li>
+                            <li> $x = 11$. </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t320_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t320_v" class="collapse">
+                            <ol class="a">
+                            <li> ${\displaystyle\lim_{x\rightarrow -5} f(x) = 25}$. </li>
+                            <li> ${\displaystyle\lim_{x\rightarrow 3} f(x) = 9}$. 
+                                <br>
+                                (Osoittajassa ja nimittäjässä on tekijänä $x-3$, joten sen voi supistaa pois.)
+                            </li>
+                            <li> ${\displaystyle\lim_{x\rightarrow 11} f(x) = 121}$. </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Tutkitaan seuraavaksi funktiota
+                $$g(x) = \frac{x^2-16}{x^2 - 8x + 16}$$
+                kohdassa $x = 4$. 
+            </p>
+            <p> 
+                Havaitaan, että kohdassa $x = 4$ nimittäjä saa arvon nolla, joten funktio $g$ ei ole määritelty. Muistikaavojen 
+                \begin{align*}
+                (a+b)(a-b) &= a^2 + b^2  \quad \text{ ja}\\
+                (a-b)^2 &= a^2 -2ab + b^2
+                \end{align*}
+                avulla funktion laukseke saadaan muotoon, jossa supistaminen on mahdollista:
+                \begin{align*}
+                \frac{x^2-16}{x^2 - 8x + 16} &= \frac{(x+4)(x-4)}{(x-4)^2} \\[2mm]
+                &= \frac{x+4}{x-4}
+                \end{align*}
+                Huomataan, että tulos ole määritelty kohdassa $x = 4$, vaikka kaikki mahdolliset supistukset on tehty. Tällaisessa tilanteessa funktiolla ei ole raja-arvoa, vaan funktion arvot kasvavat tai pienenevät rajatta tarkastelukohdan läheisyydessä.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva40.png" max-width: 100%; width: auto; height: auto;/>
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t321-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t321">
+                                Rationaalifunktion raja-arvo
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t321" class="collapse">
+                        <p>
+                            Tutki, onko funktiolla
+                            $$f(x) = \frac{x^2-4}{4x^2-8x}$$
+                            raja-arvo kohdassa
+                        </p>
+                        <ol class="a">
+                            <li> $x = -1$ </li>
+                            <li> $x = 0$ </li>
+                            <li> $x = 2$ </li>
+                            <li> $x = 5$. </li>
+                                <li> Katso <a href="https://www.youtube.com/watch?v=9uTpiK-al7Y&t=2s">tästä</a> ohjevideo, miten raja-arvoja voi laskea Texas Nspirellä, ja tarkista aiemmat kohdat teknisellä apuvälineellä.</li> 
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t321_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t321_v" class="collapse">
+                            <ol class="a">
+                            <li> ${\displaystyle\lim_{x\rightarrow -1} f(x) = -\frac{1}{4}}$. </li>
+                            <li> Raja-arvoa ei ole olemassa. Funktion lauseke supistuu muotoon $\frac{x+2}{4x}$, joka ei ole määritelty kohdassa $x = 0$. Pidemmälle sitä ei voi supistaa.
+                            </li>
+                            <li> ${\displaystyle\lim_{x\rightarrow 2} f(x) = \frac{1}{2}}$. </li>
+                            <li> ${\displaystyle\lim_{x\rightarrow 5} f(x) = \frac{7}{20}}$. </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#rationaali3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku3-tehtavasarja2">
+                    TEHTÄVÄSARJA II
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku1-tehtavasarja2" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="s2t101-ex">
+                <header>
+                    <h1>
+                        <a data-target="#s2t101">
+                            Suoran yhtälö
+                        </a>
+                    </h1>
+                </header>
+                <div id="s2t101">
+                    <p>
+                        Määritä yhtälö suoralle, joka kulkee seuraavien pisteiden kautta:
+                    </p>
+                    <ol class="a">
+                        <li> $(-1,4)\ $ ja $\ (5,-1)$</li>
+                        <li> $\left(-\frac{5}{3}, \frac{1}{2}\right)\ $ ja $\ \left(\frac{1}{3}, \frac{5}{6}\right)$.</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#s2t101_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="s2t101_v" class="collapse">
+                        <p>
+                        <ol class="a">
+                            <li> $y = -\frac{5}{6}x + \frac{19}{6}$ </li>
+                            <li> $y = \frac{1}{6}x + \frac{7}{9}$ </li>
+                        </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku3-tehtavasarja2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku3-tehtavasarja3">
+                    TEHTÄVÄSARJA III
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku3-tehtavasarja3" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s3t301-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t301">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t301">
+                    <ol class="a">
+                        <li> 
+                            Laske 
+                            $$
+                            \lim_{x \rightarrow 2} \frac{x^2 - 4}{x - 2}.
+                            $$
+                        </li>
+                        <li>
+                            Ratkaise epäyhtälö
+                            $$
+                            \left| \frac{x^2-4}{x-2} - 4 \right| < 0{,}01.
+                            $$
+                        </li>
+                    </ol>
+                    <p>
+                        [Pitkä S2011/6]
+                        <br>
+                        Vinkki: kertaa tarvittaessa b-kohtaa varten MAA5-kurssin <a href="http://kisallioppiminen.fi/kurssit/maa5/luku4/">luku 5</a>. 
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t301_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t301_v" class="collapse">
+                        <ol class="a">
+                        <li> 
+                            $$
+                            \lim_{x \rightarrow 2} \frac{x^2 - 4}{x - 2} = \lim_{x \rightarrow 2} (x + 2)  =  4.
+                            $$
+                        </li>
+                        <li>
+                            $1{,}99 < x < 2$ tai $2 < x < 2{,}01$. (Huomaa, että epäyhtälö ei ole määritelty, jos $x = 2$.)
+                        </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t302-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t302">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t302">
+                    <p>
+                        Määritä vakio $a$ siten, että funktiolla 
+                        $$
+                        f(x) = \frac{3x^3 - x^2 - 12x + a}{x+2}
+                        $$
+                        on raja-arvo kohdassa $x = -2$. Mikä tämä raja-arvo on?
+                        <br>
+                        [Pitkä S2008/12]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t302_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t302_v" class="collapse">
+                        <p>
+                            Funktion lauseke voidaan supistaa, jos osoittajalla ja nimittäjällä on yhteinen nollakohta (ks. <a href="http://kisallioppiminen.fi/kurssit/maa2/luku4/">MAA2-kurssin</a> teoreema 9). Näin saadaan selville, että raja-arvo on olemassa, jos $a = 4$. Raja-arvo on $28$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t303-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t303">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t303">
+                    <p>
+                        Ratkaise epäyhtälö
+                        $$
+                        \frac{x^2 + 7x + 2}{x - 3} > 1.
+                        $$
+                        [Pitkä K2007/6]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t303_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t303_v" class="collapse">
+                        <p>
+                            $-5 < x < -1$ tai $x > 3$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku3-tehtavasarja3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#L3itsearviointi">
+                    Itsearviointitehtävät
+                </a>
+            </h1>
+        </header>
+        <div id="L3itsearviointi" class="collapse">
+            <p>
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+            </p>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L3itsearviointi">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+</article>

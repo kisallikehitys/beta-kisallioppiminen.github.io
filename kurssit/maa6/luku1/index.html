@@ -1,0 +1,1158 @@
+---
+title: MAA6 - Derivaatta
+layout: material
+sitemap: true
+main-class: has-atop
+topnav: maa6
+---
+
+<input type="hidden" id="chapterNumber" value="1"/>
+<input type="hidden" id="theoremStart" value="1"/>
+
+<article>
+    <section>
+        <header>
+            <h1>Derivaatta</h1>
+        </header>
+    </section>
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun1-tavoitteet">
+                    Luvun tavoitteet
+                </a>
+            </h1>
+        </header>
+        <div id="luvun1-tavoitteet" class="collapse">
+
+            <div class="objective">
+                <p> 
+                    Tämän luvun tavoitteena on, että yhdistät funktion derivaatan mielessäsi funktion arvojen kasvunopeuteen ja funktion kuvaajan jyrkkyyteen. Osaat
+                <ul>
+                    <li> määrittää funktion derivaatan arvon laskemalla, mikä on funktion kuvaajalle piirretyn tangentin kulmakerroin </li>
+                    <li> määrittää funktion kuvaajalle piirretyn tangentin yhtälön, jos derivaatan arvo eli tangetin kulmakerroin tunnetaan</li>
+                    <li> tunnistaa funktion kuvaajasta kohdat, joissa funktion derivaatta on nolla </li>
+                    <li> tunnistaa funktion kuvaajasta kohdat, joissa derivaatta on positiivinen, ja kohdat, joissa derivaatta on negatiivinen </li>
+                    <li> hahmotella ensimmäisen asteen polynomifunktion derivaattafunktion kuvaajan</li>
+                    <li> hahmotella vakiofunktion derivaattafunktion kuvaajan.</li>
+                </ul> 
+                </p>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun1-tavoitteet">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#tangentti1">
+                    Funktion kuvaajan tangentti
+                </a>
+            </h1>
+        </header>
+        <div id="tangentti1" class="collapse">
+
+            <p>
+                Kursseissa MAA3 ja MAA5 on tarkasteltu ympyrän tangetteja. Nämä ovat suoria, jotka sivuavat ympyrää tasan yhdessä pisteessä. 
+                <br>
+                <img src="/kurssit/maa3/kuvat/tasoK41.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Samaan tapaan voidaan piirtää tangetti myös funktion kuvaajalle. Esimerkiksi alla olevassa kuvassa on piirretty funktion $f$ kuvaajalle tangentti kohtaan $x = 2$.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva01.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Tangentin kulmakerroin antaa tietoa funktion kuvaajan jyrkkyydestä tarkastelukohdassa. Alla olevasta kuvasta nähdään, että tässä tapauksessa tangetin kulmakerroin on 
+                $$\frac{-2}{\phantom{-}4} = -0{,}5.$$
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva02.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Funktion kuvaajalle piirretyn tangentin kulmakerroin on toiselta nimeltään funktion derivaatta. Tämän funktion $f$ derivaatta kohdassa $x = 2$ on siis $-0{,}5$. Tämä ilmaistaan merkinnällä 
+                $$f'(2) = -0{,}5.$$
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="firstEx">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t101">
+                                Tangentin kulmakerroin
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t101" class="collapse">
+                        <p>
+                            Tutki alla olevaa kuvaa. Mikä on funktion $f$
+                        </p>
+                        <ol class="a">
+                            <li> arvo kohdassa $x = -2$ </li>
+                            <li> derivaatta kohdassa $x = -2$  </li>
+                            <li> derivaatta kohdassa $x = 1$? </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva03.png" max-width: 100%; width: auto; height: auto;/>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t101_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t101_v" class="collapse">
+                            <ol class="a">
+                                <li> $f(-2) = 1$ </li>
+                                <li> $f'(-2) = \frac{3}{2}$ </li>
+                                <li> $f'(1) = 0$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t102-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t102">
+                                Tangentin kulmakerroin
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t102" class="collapse">
+                        <p>
+                            Tutki alla olevaa kuvaa.
+                        </p>
+                        <ol class="a">
+                            <li> Mitä on $g'(-1)$ eli mikä on funktion $g$ derivaatta kohdassa $x = -1$? </li>
+                            <li> Onko funktion $g$ derivaatta kohdassa $x = 3$ positiivinen vai negatiivinen?  </li>
+                            <li> Anna esimerkki kohdasta $x$, jossa sekä funktion arvo että funktion derivaatta ovat positiivisia. </li>
+                            <li> Anna esimerkki kohdasta $x$, jossa funktion $g$ derivaatta on negatiivinen. </li>
+                            <li> Missä kohdissa funktion $g$ derivaatta on nolla? Selitä omin sanoin, miten nämä kohdat tunnistaa kuvaajasta. </li>
+                            <li> Kuinka monessa kohdassa funktio $g$ saa arvon nolla? Selitä omin sanoin, miten nämä kohdat tunnistaa kuvaajasta. </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva04.png" max-width: 100%; width: auto; height: auto;/>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t102_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t102_v" class="collapse">
+                            <ol class="a">
+                                <li> $g'(-1) = 0$ </li>
+                                <li> $g'(3)$ on positiivinen. </li>
+                                <li> Esim. $x = 4$. </li>
+                                <li> Esim. $x = 0$. </li>
+                                <li> Derivaatta on nolla kohdissa $x = -1$ ja $x = 2$.</li>
+                                <li> Funktio saa arvon nolla kolmessa kohdassa.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t103-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t103">
+                                Tangentin kulmakerroin
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t103" class="collapse">
+                        <p>
+                            Tutki alla olevaa kuvaa.
+                        </p>
+                        <ol class="a">
+                            <li> Minkä arvon funktio $h$ saa kohdassa $x = -2$?  </li>
+                            <li> Funktion $h$ derivaatta kohdassa $x = -2$ on $5{,}7$. Toisin sanottuna $h'(-2) = 5{,}7$. Muodosta funktion $h$ kuvaajalle kohtaan $x = -2$ piirretyn tangentin yhtälö. </li>
+                            <li> Mitä on $h(3)$? </li>
+                            <li> Määritä kuvasta päättelemällä funktion $h$ derivaatan arvo kohdassa $x = 3$. </li>
+                            <li> Muodosta funktion $h$ kuvaajalle kohtaan $x = 3$ piirretyn tangentin yhtälö. </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva05.png" max-width: 100%; width: auto; height: auto;/>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t103_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t103_v" class="collapse">
+                            <ol class="a">
+                                <li> $h(-2) = -1$ </li>
+                                <li> $y = 5{,}7x + 10{,}4$ </li>
+                                <li> $h(3) = 2$ </li>
+                                <li> $h'(3) = -2$ </li>
+                                <li> $y = -2x + 8$.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#tangentti1">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#tangentti2">
+                    Funktion kasvunopeus
+                </a>
+            </h1>
+        </header>
+        <div id="tangentti2" class="collapse">
+
+            <p>
+                Funktion kuvaajalle piirretyn tangentin kulmakerroin eli funktion derivaatta ilmaisee funktion arvojen kasvunopeuden kyseisessä kohdassa. Tarkastellaan esimerkiksi funktiota $f$, jonka kuvaaja on näkyvissä alla.  
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva06.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kuvaajalle piirretyistä tangeteista havaitaan, että funktion arvot kasvavat voimakkaasti kohdassa $x = -1$. Kohdassa $x = 2$ kasvu on hiipumassa ja kohdassa $x = 5$ funktion arvot pienenevät. Jokaisessa kohdassa tangentin kulmakerroin eli funktion $f$ derivaatta antaa kasvunopeuden hetkellisen arvon. 
+            </p>
+            
+            <div class="tehtavat">
+                <div class="tehtava" id="t104-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t104">
+                                Funktion kasvunopeus
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t104" class="collapse">
+                        <p>
+                            Tutki alla olevaa kuvaa. Määritä derivaatan eli tangentin kulmakertoimen avulla funktion $f$ kasvunopeus kohdassa
+                        </p>
+                        <ol class="a">
+                            <li> $x = -1$ </li>
+                            <li> $x = 2$ </li>
+                            <li> $x = 5$. </li>
+                            <li> Missä kohdassa funktion kasvu hetkellisesti pysähtyy? </li>
+                            <li> Mikä on funktion $f$ suurin arvo? Missä kohdassa funktio $f$ saa suurimman arvonsa? </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva06.png" max-width: 100%; width: auto; height: auto;/>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t104_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t104_v" class="collapse">
+                            <ol class="a">
+                                <li> Funktion $f$ kasvunopeus kohdassa $x = -1$ on $f'(-1) = 2.$ </li>
+                                <li> Funktion $f$ kasvunopeus kohdassa $x = 2$ on $f'(2) \approx 0{,}5$ </li>
+                                <li> Funktion $f$ kasvunopeus kohdassa $x = 5$ on $f'(5) = -1$ eli funktion arvot pienenevät. </li>
+                                <li> Kohdassa $x = 3$. </li>
+                                <li> Funktion $f$ suurin arvo on $4$. Funktio saa sen kohdassa $x = 3$. Siis $f(3) = 4$.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t105-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t105">
+                                Funktion kasvunopeus
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t105" class="collapse">
+                        <p>
+                            Tutki alla olevaa kuvaa. 
+                        </p>
+                        <ol class="a">
+                            <li> Määritä funktion $g$ kasvunopeus kohdassa $x = -4$. </li>
+                            <li> Millä $x$-akselin väleillä funktion arvot ovat positiivisia eli $g(x) > 0$? </li>
+                            <li> Millä $x$-akselin väleillä funktion derivaatta on positiivinen eli $g'(x) > 0$?</li>
+                            <li> Missä kohdissa $g(x) = 0$? </li>
+                            <li> Missä kohdissa $g'(x) = 0$? </li>
+                            <li> Millä $x$-akselin väleillä funktion arvot ovat negatiivisia eli $g(x) < 0$? </li>
+                            <li> Millä $x$-akselin väleillä funktion derivaatta on negavinen eli $g'(x) < 0$?</li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva07.png" max-width: 100%; width: auto; height: auto;/>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t105_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t105_v" class="collapse">
+                            <ol class="a">
+                                <li> Funktion $g$ kasvunopeus kohdassa $x = -4$ on $g'(-4) = 4$. </li>
+                                <li> Funktion $g$ arvot ovat positiivisia väleillä $\pa -4, 0 \pe$ ja $\pa 4, \infty \pe$. </li>
+                                <li> Funktion $g$ derivaatta on positiivinen väleillä $\pa -\infty, -2\pe$ ja $\pa 2, \infty \pe$. </li>
+                                <li> Kohdissa $x = -4$, $x = 0$ ja $x = 4$. </li>
+                                <li> Kohdissa $x = -2$ ja $x = 2$.</li>
+                                <li> Funktion $g$ arvot ovat negatiivisia välillä $\pa 0,4 \pe$. </li>
+                                <li> Funktion $g$ derivaatta on negatiivinen välillä $\pa -2, 2\pe$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Edellä on tutkittu funktioita, joiden kasvunopeus vaihtelee kohdasta toiseen. On olemassa myös funktioita, joiden arvot kasvavat koko ajan samalla nopeudella. Esimerkiksi funktion $f(x) = 2x-3$ arvo kasvaa aina kahdella, kun $x$-akselilla siirrytään yhden yksikön verran oikealle:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva08.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Tästä voidaan päätellä, että funktion $f(x) = 2x-3$ derivaatan arvo on koko ajan vakio: $$f'(x) = 2$$
+                kaikissa kohdissa $x$.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t106-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t106">
+                                Funktion kasvunopeus
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t106" class="collapse">
+                        <p>
+                            Keksi esimerkki funktiosta $g$,  
+                        </p>
+                        <ol class="a">
+                            <li> jonka kasvunopeus on koko ajan $3$ </li>
+                            <li> jonka kasvunopeus on koko ajan $-1$ </li>
+                            <li> jonka kasvunopeus on koko ajan $0$. </li>
+                        </ol>
+                        <p>
+                            Piirrä myös keksimäsi funktion kuvaaja ja tarkista sen avulla, että keksimäsi funktio on sopiva.
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t106_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t106_v" class="collapse">
+                            <ol class="a">
+                                <li> Esimerkiksi ensimmäisen asteen polynomifunktio $g(x) = 3x-1$. </li>
+                                <li> Esimerkiksi ensimmäisen asteen polynomifunktio $g(x) = -x+5$ </li>
+                                <li> Esimerkiksi vakiofunktio $g(x) = 6$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#tangentti2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#tangentti3">
+                    Derivaattafunktio
+                </a>
+            </h1>
+        </header>
+        <div id="tangentti3" class="collapse">
+
+            <p>
+                Edellä havaittiin, että ensimmäisen asteen polynomifunktioiden ja vakiofunktioiden kasvunopeus on vakio. Esimerkiksi funktion $g(x) = -0{,}5x + 4$ arvo pienenee aina puolikkaan verran, kun $x$-akselilla siirrytään yhden yksikön verran oikealle:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva09.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Tästä voidaan päätellä, että funktion $g(x) = -0{,}5x+4$ derivaatan arvo on koko ajan vakio: $$g'(x) = -0{,}5$$
+                kaikissa kohdissa $x$. Derivaatta on siis vakiofunktio, jonka arvo on koko ajan $-0{,}5$:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva10.png" max-width: 100%; width: auto; height: auto;/>
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t107-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t107">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t107" class="collapse">
+                        <p>
+                            Tarkastellaan ensimmäisen asteen polynomifunktiota $f(x) = 4x - 1$. 
+                        </p>
+                        <ol class="a">
+                            <li> Päättele funktion $f$ lausekkeesta, mikä on funktion $f$ kasvunopeus. </li>
+                            <li> Piirrä funktion $f$ kuvaaja ja tarkista sen avulla, että a-kohdan johtopäätöksesi on oikein. </li>
+                            <li> Piirrä derivaattafunktion $f'$ kuvaaja. </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t107_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t107_v" class="collapse">
+                            <ol class="a">
+                                <li> Kasvunopeus on koko ajan $4$. </li>
+                                <li> Kuvaaja on suora, joka kulkee pisteiden $(0,-1)$ ja $(1,3)$ kautta. </li>
+                                <li> Kuvaaja on vaakasuora suora, joka leikkaa $y$-akselin korkeudella $4$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t108-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t108">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t108" class="collapse">
+                        <p>
+                            Tarkastellaan vakiofunktiota $h(x) = 3$. 
+                        </p>
+                        <ol class="a">
+                            <li> Mikä on funktion $h$ kasvunopeus? </li>
+                            <li> Piirrä funktion $h$ kuvaaja ja tarkista sen avulla, että a-kohdan johtopäätöksesi on oikein. </li>
+                            <li> Piirrä derivaattafunktion $h'$ kuvaaja. </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t108_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t108_v" class="collapse">
+                            <ol class="a">
+                                <li> Kasvunopeus on koko ajan $0$. </li>
+                                <li> Kuvaaja on vaakasuora suora, joka leikkaa $y$-akselin korkeudella $3$. </li>
+                                <li> Kuvaaja on vaakasuora suora, joka leikkaa $y$-akselin korkeudella $0$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t109-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t109">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t109" class="collapse">
+                        <p>
+                            Tiedetään, että $g(0) = -3$. Lisäksi tiedetään, että funktion $g$ kasvunopeus on koko ajan $2$. 
+                        </p>
+                        <ol class="a">
+                            <li> Piirrä derivaattafunktion $g'$ kuvaaja. </li>
+                            <li> Piirrä funktion $g$ kuvaaja. </li>
+                            <li> Muodosta funktion $g$ lauseke.  </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t109_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t109_v" class="collapse">
+                            <ol class="a">
+                                <li> Kuvaaja on vaakasuora suora, joka leikkaa $y$-akselin korkeudella $2$. </li>
+                                <li> Kuvaaja on nouseva suora, jonka kulmakerroin on $2$ ja joka kulkee pisteen $\left(0, -3\right)$ kautta. </li>
+                                <li> $g(x) = 2x - 3$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Tarkastellaan seuraavaksi toisen asteen potenssifunktiota $f(x) = x^2$. Alla on näkyvissä osa sen kuvaajasta ja sille piirrettyjä tangentteja. 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva11.png" max-width: 100%; width: auto; height: auto;/> 
+                <br>
+                Lisäksi havaitaan, että kohdassa $x = 0$ kuvaajan tangettina on $x$-akseli. Näiden tangenttien kulmakertoimista saadaan funktion $f$ derivaatalle seuraavat arvot:
+            </p>
+
+            <div align="center">
+                <table style="width = 75%"> 
+                    <tr>
+                        <th> $\phantom{-}x$ </th>
+                        <th> $\phantom{-}f'(x)$ </th>
+                    </tr>
+                    <tr>
+                        <td> $\textcolor{blue}{-2}$ </td>
+                        <td> $\textcolor{blue}{-4}$ </td>
+                    </tr>
+                    <tr>
+                        <td> $\textcolor{Purple}{-1}$ </td>
+                        <td> $\textcolor{Purple}{-2}$ </td>
+                    </tr>
+                    <tr>
+                        <td> $\phantom{-}0$ </td>
+                        <td> $\phantom{-}0$ </td>
+                    </tr>
+                    <tr>
+                        <td> $\phantom{-}\textcolor{red}{1}$ </td>
+                        <td> $\phantom{-}\textcolor{red}{2}$ </td>
+                    </tr>
+                    <tr>
+                        <td> $\phantom{-}\textcolor{DeepSkyBlue}{2}$ </td>
+                        <td> $\phantom{-}\textcolor{DeepSkyBlue}{4}$ </td>
+                    </tr>
+                </table> 
+            </div>
+
+            <p>
+                Kun vastaavat pisteet merkitään koordinaatistoon, saadaan hieman käsitystä siitä, millainen derivaattafunktio $f'$ on.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva12.png" max-width: 100%; width: auto; height: auto;/> 
+                <br>
+                Jos funktion kuvaajalle piirretään enemmän tangentteja ja määritetään niiden kulmakertoimet, saadaan tarkempaa tietoa derivaattafunktion arvoista. Tätä kokeillaan seuraavassa tehtävässä.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t110-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t110">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t110" class="collapse">
+                        <p>
+                            Tutki tämän <a href="http://webspace.ship.edu/msrenault/GeoGebraCalculus/derivative_elementary_functions.html">Geogebra-havainnollistuksen</a> avulla, miltä funktion $f(x) = x^2$ derivaattafunktion kuvaaja näyttää. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t111-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t111">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t111" class="collapse">
+                        <p>
+                            Alla on näkyvissä erään funktion $h$ derivaattafunktion kuvaaja. 
+                            <br>
+                            <img src="/kurssit/maa6/kuvat/kuva13.png" max-width: 100%; width: auto; height: auto;/> 
+                            <br>
+                            Tutki derivaattafunktion kuvaajaa ja päättele vastaukset seuraaviin kysymyksiin:
+                        </p>
+                        <ol class="a">
+                            <li> Missä kohdassa derivaattafunktio saa arvon nolla?</li>
+                            <li> Missä kohdassa funktion $h$ kasvunopeus on nolla?</li>
+                            <li> Millä välillä derivaattafunktion arvo on vakio? </li>
+                            <li> Millä välillä funktion $h$ kasvunopeus on vakio? Mikä tämä kasvunopeus on? </li>
+                            <li> Millä välillä derivaattafunktion arvo on positiivinen?  </li>
+                            <li> Millä välillä funktion $h$ arvot kasvavat?  </li>
+                            <li> Millä välillä derivaattafunktion arvo on negatiivinen? </li>
+                            <li> Millä välillä funktion $h$ arvot pienenevät?</li>
+                            <li> Missä kohdassa funktio $h$ saa suurimman arvonsa?</li>
+                        </ol>
+                        <p>
+                            Tiedetään, että $h(3) = 4$. Hahmottele alkuperäisen funktion $h$ kuvaaja.
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t111_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t111_v" class="collapse">
+                            <ol class="a">
+                            <li> Kohdassa $x = 3$.</li>
+                            <li> Kohdassa $x = 3$.</li>
+                            <li> Välillä $\pa -\infty, 1]$. </li>
+                            <li> Välillä $\pa -\infty, 1]$. </li>
+                            <li> Välillä $\pa -\infty, 3\pe$.  </li>
+                            <li> Välillä $\pa -\infty, 3\pe$.  </li>
+                            <li> Välillä $\pa 3, \infty\pe$. </li>
+                            <li> Välillä $\pa 3, \infty\pe$. </li>
+                            <li> Kohdassa $x = 3$. </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva95.png" max-width: 100%; width: auto; height: auto;/> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Tässä luvussa olemme tutustuneet derivaatan käsitteeseen pääasiassa graafisesti määrittämällä funktion kuvaajalle piirrettyjen tangenttien kulmakertoimia. Jotta voimme tarkastella derivaattaa myös lausekkeiden avulla, perehdymme seuraavassa luvussa funktion raja-arvon käsitteeseen. Kolmannessa luvussa harjoittelemme rationaalifunktioiden käsittelyä, minkä jälkeen voimme määritellä derivaatan käsitteen täsmällisesti niin sanottuna erotusosamäärän raja-arvona luvussa 4. 
+            </p>
+        
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#tangentti3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku1-tehtavasarja2">
+                    TEHTÄVÄSARJA II
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku1-tehtavasarja2" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s2t105-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t105">
+                            Tangentin kulmakerroin
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t105">
+                    <p>
+                        Määritä alla olevan kuvan avulla seuraavat derivaatan arvot:
+                    </p>
+                    <ol class="a">
+                        <li> $f'(-1)$ </li>
+                        <li> $f'(1)$ </li>
+                        <li> $f'(3)$ </li>
+                        <li> $f'(5)$ </li>
+                        <li> $f'(6)$ </li>
+                        <li> $f'(8)$. </li>
+                    </ol>
+                    <img src="/kurssit/maa6/kuvat/kuva101.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t105_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t105_v" class="collapse">
+                        <ol class="a">
+                        <li> $f'(-1) = 1$ </li>
+                        <li> $f'(1) = 0$ </li>
+                        <li> $f'(3) = -1$ </li>
+                        <li> $f'(5) = -2$ </li>
+                        <li> $f'(6) = 0$ </li>
+                        <li> $f'(8) = 4$. </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t106-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t106">
+                            Tangentin kulmakerroin
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t106">
+                    <p>
+                        Määritä funktion $f$ kuvaajalle seuraaviin kohtiin piirrettyjen tangettien yhtälöt:
+                    </p>
+                    <ol class="a">
+                        <li> $x = -1$ </li>
+                        <li> $x = 5$ </li>
+                        <li> $x = 8$. </li>
+                    </ol>
+                    <img src="/kurssit/maa6/kuvat/kuva101.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t106_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t106_v" class="collapse">
+                        <ol class="a">
+                        <li> $y = x + 3$ </li>
+                        <li> $y = -2x+9$ </li>
+                        <li> $y = 4x-30$ </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tehtava" id="MAA6s2t107-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t107">
+                            Tangentin kulmakerroin
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t107">
+                    <p>
+                        Piirrä funktion
+                        $$
+                        f(x) = 0{,}1x^4 - 0{,}3x^3 - 1{,}5x^2 + 1{,}9x + 3
+                        $$
+                        kuvaaja välillä $[-3,5]$ laskimella tai tietokoneella. Määritä 
+                    </p>
+                    <ol class="a">
+                        <li> kuvaajalle kohtaan $x = -0{,}5$ piirretyn tangentin yhtälö laskimen tai tietokoneen avulla </li>
+                        <li> derivaatta $f'(-0{,}5)$.</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t107_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t107_v" class="collapse">
+                        <ol class="a">
+                            <li> $y = 3{,}125x+3{,}28125$ </li>
+                            <li> $f'(-0{,}5) = 3{,}125$ </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t104-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t104">
+                            Funktion kasvunopeus
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t104">
+                    <p>
+                        Alla näkyvä kuvaaja esittää paikallisjunan etäisyyttä päärautatieasemasta ajan funktiona.
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuva99.png" max-width: 100%; width: auto; height: auto;/> 
+                    <ol class="a">
+                        <li> Selitä omin sanoin, mitä tapahtuu kyseisten yhdeksän minuutin aikana. </li>
+                        <li> 
+                            Kuvaajalle on alla piirretty kolme tangenttia kohtiin $x = 2 \text{ min}$, $x = 3{,}5 \text{ min}$ ja $x = 6 \text{ min}$. Määritä näiden tangenttien kulmakertoimien likiarvot kuvasta. Mitä junaan liittyvää tietoa niistä saadaan?
+                        </li>
+                    </ol>
+                    <img src="/kurssit/maa6/kuvat/kuva100.png" max-width: 100%; width: auto; height: auto;/> 
+                    <p>
+                        Mikä on junan huippunopeus kyseisten yhdeksän minuutin aikana?
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t104_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t104_v" class="collapse">
+                        <ol class="a">
+                            <li> Juna lähtee päärautatieasemalta, kiihdyttää vauhtiaan, hidastaa ja pysähtyy seuraavalle asemalle, lähtee uudelleen liikkeelle, kiihdyttää, hidastaa ja pysähtyy jälleen. </li>
+                            <li> Kulmakertoimet ovat 
+                                <ul>
+                                    <li> $\textcolor{red}{k = 2 \text{ km/min} = 120 \text{ km/h}}$ </li>
+                                    <li> $\textcolor{blue}{k = 0{,}5 \text{ km/min} = 30 \text{ km/h}}$ </li>
+                                    <li> $\textcolor{Purple}{k = 1 \text{ km/min} = 60 \text{ km/h}}$ </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <p>
+                            Junan huippunopeus on $120 \text{ km/h}$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t108-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t108">
+                            Funktion kasvunopeus
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t108">
+                    <p>
+                        Funktio
+                        $$
+                        v(t) = \frac{10t}{t+4}
+                        $$
+                        kuvaa pyöräilijän nopeutta (m/s) ajan funktiona. Aika ilmaistaan sekunneissa.
+                    </p>
+                    <ol class="a">
+                        <li> Piirrä funktion $v$ kuvaaja välillä $0 \leq t \leq 10$ laskimella tai tietokoneella. </li>
+                        <li> 
+                            Mikä on pyöräilijän nopeus hetkellä $t = 2$? Anna vastaus sekä metreinä sekunnissa että kilometreinä tunnissa (käytä yksikkömuunnoksessa tarvittaessa apuna esimerkiksi <a href="https://fi.wikipedia.org/wiki/Nopeus">Wikipediaa</a>).
+                        </li>
+                        <li>
+                            Selvitä laskimen tai tietokoneen avulla, miten pyöräilijän nopeus muuttuu hetkellä $t = 2$. Mitä nimitystä käytetään pyöräilijän nopeuden muutosnopeudelle?
+                        </li>
+                        <li>
+                            Miten pyöräilijän nopeus muuttuu silloin, kun hänen nopeutensa on 5 m/s eli 18 km/h?
+                        </li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t108_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t108_v" class="collapse">
+                        <ol class="a">
+                            <li>  </li>
+                            <li> 
+                                Nopeus on $\frac{10}{3}$ m/s eli 12 km/h.
+                            </li>
+                            <li>
+                                Pyöräilijän kiihtyvyys on noin $1{,}1 \frac{\text{ m}}{\text{ s}^2}$ eli nopeus kasvaa noin 1,1 m/s joka sekunti.
+                            </li>
+                            <li>
+                                Pyöräilijän kiihtyvyys on noin $0{,}63 \frac{\text{ m}}{\text{ s}^2}$ eli nopeus kasvaa noin 0,63 m/s joka sekunti.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t101-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t101">
+                            Derivaattafunktio
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t101">
+                    <p>
+                        Päättele funktion $f$ kuvaajasta, millä muuttujan $x$ arvoilla
+                    </p>
+                    <ol class="a">
+                        <li> $f'(x) = 0$</li>
+                        <li> $f'(x) \geq 0$</li>
+                        <li> $f'(x) \leq 0$. </li>
+                    </ol>
+                    <img src="/kurssit/maa6/kuvat/kuva96.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t101_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t101_v" class="collapse">
+                        <ol class="a">
+                            <li> Muuttuja $x$ arvoilla $-3$ ja $1$. </li>
+                            <li> Jos $x < -3$ tai $x > 1$.</li>
+                            <li> Jos $-3 < x < 1$. </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t102-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t102">
+                            Derivaattafunktio
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t102">
+                    <p>
+                        Funktion $g$ derivaattafunktio on näkyvissä alla. Päättele derivaattafunktion $g'$ kuvaajasta, millä muuttujan $x$ arvoilla
+                    </p>
+                    <ol class="a">
+                        <li> funktion $g$ arvot kasvavat </li>
+                        <li> funktion $g$ arvot pienenevät.</li>
+                    </ol>
+                    <img src="/kurssit/maa6/kuvat/kuva97.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t102_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t102_v" class="collapse">
+                        <ol class="a">
+                        <li> Funktion $g$ arvot kasvavat, kun kasvunopeus eli derivaatta on positiivinen. Toisin sanottuna jos $-5 < x < 0{,}5$ tai $x > 2$ </li>
+                        <li> Funktion $g$ arvot pienenevät, kun kasvunopeus eli derivaatta on negatiivinen. Toisin sanottuna jos $x < -5$ tai $0{,}5 < x < 2$.</li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t103-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t103">
+                            Derivaattafunktio
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t103">
+                    <p>
+                        Alla on näkyvissä neljän funktion kuvaajat. Mitkä niistä ovat toistensa derivaattafunktioita? Etsi niin monta funktio &amp; derivaattafunktio -paria kuin mahdollista.
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuva98a.png" max-width: 100%; width: auto; height: auto;/> 
+                    <img src="/kurssit/maa6/kuvat/kuva98b.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t103_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t103_v" class="collapse">
+                        <p>
+                            Funktion $f$ derivaattafunktio on $k$ eli $f' = k$.
+                            <br>
+                            Funktion $h$ derivaattafunktio on $f$ eli $h' = f$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku1-tehtavasarja2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku1-tehtavasarja3">
+                    TEHTÄVÄSARJA III
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku1-tehtavasarja3" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s3t101-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t101">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t101">
+                    <p>
+                        Taulukon ylärivissä ovat funktioiden $f(x)$, $g(x)$ ja $h(x)$ kuvaajat. Alemmassa rivissä on viiden eri funktion kuvaajat. Näiden joukossa ovat myös derivaattafunktioiden $f'(x)$, $g'(x)$ ja $h'(x)$ kuvaajat.                
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO4.png" max-width: 100%; width: auto; height: auto;/> 
+                    <p>
+                        Kopioi alla oleva taulukko vastauspaperiisi ja merkitse siihen, mikä kuvaajista 1−5 esittää kyseessä olevan funktion derivaattaa. Vastausta ei tarvitse perustella. 
+                        <br>
+                        [Pitkä K2014/2]
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO5.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t101_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t101_v" class="collapse">
+                        <p>
+                            $f(x)$: 4, $g(x)$: 1, $h(x)$: 3.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t102-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t102">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t102">
+                    <ol class = "a">
+                        <li> 
+                            Alle on piirretty funktio $f(x)$ kuvaaja välillä $[0,2]$. Hahmottele samanlaiseen koordinaatistoon funktion $f'(x)$ kuvaaja. 
+                            <br>
+                            <img src="/kurssit/maa6/kuvat/kuvaYO6.png" max-width: 100%; width: auto; height: auto;/> 
+                        </li>
+                        <li>
+                            Alle on piirretty funktion $g'(x)$ kuvaaja välillä $[0,2]$. Hahmottele samanlaiseen koordinaatistoon funktion $g(x)$ kuvaaja, kun lisäksi tiedetään, että $g(0) = 0$. 
+                            <br>
+                            <img src="/kurssit/maa6/kuvat/kuvaYO7.png" max-width: 100%; width: auto; height: auto;/> 
+                        </li>
+                    </ol>
+                    <p>
+                        [Lyhyt K2016/4]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t102_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t102_v" class="collapse">
+                        <ol class = "a">
+                        <li> 
+                            <img src="/kurssit/maa6/kuvat/kuva93.png" max-width: 100%; width: auto; height: auto;/> 
+                        </li>
+                        <li>
+                            <img src="/kurssit/maa6/kuvat/kuva94.png" max-width: 100%; width: auto; height: auto;/> 
+                        </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t103-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t103">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t103">
+                    <p>
+                        Oheisessa kuviossa on erään funktion $f(x)$ kuvaaja. Määritä kuvaajan avulla ne muuttujan $x$ arvot, joille $-2 \leq x \leq 4$ ja
+                    </p>
+                    <ol class = "a">
+                        <li> 
+                            $f(x) = 1$
+                        </li>
+                        <li>
+                            $f(x) \leq 0$
+                        </li>
+                        <li>
+                            $f'(x) \leq 0$.
+                        </li>
+                    </ol>
+                    <p>
+                        [Lyhyt S2015/3]
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO8.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t103_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t103_v" class="collapse">
+                        <ol class = "a">
+                            <li> 
+                                $x = -1$ tai $x = 3$
+                            </li>
+                            <li>
+                                $0 \leq x \leq 2$
+                            </li>
+                            <li>
+                                $-2 \leq x \leq 1$.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t104-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t104">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t104">
+                    <p>
+                        Alla on taulukoituina erään funktion arvot $0{,}1 \text{ :n}$ välein välillä $[-1,1]$. Hahmottele funktion kuvaaja ja määritä sen avulla likimääräisesti funktion derivaatta kohdassa $x = 0$
+                        <br>
+                        [Lyhyt K2011/5]
+                        <br>
+                        Vinkki: Kannattaa valita $x$-akselilla yksiköksi esimerkiksi $0{,}1$ ja $y$-akselilla $1$. Näin kuva mahtuu mukavasti A4-koon ruutupaperille. Muista ottaa akseleilla käyttämäsi yksiköt huomioon, kun lasket derivaatan likiarvoa.
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO10.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t104_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t104_v" class="collapse">
+                        <p>
+                            Derivaatan arvo kohdassa $x = 0$ eli funktion kuvaajalle kohtaan $x = 0$ piirretyn tangentin kulmakerroin on suunnilleen 5 tai 6.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t105-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t105">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t105">
+                    <p>
+                        Oheisessa kuviossa on erään funktion kuvaaja. Määritä kuvion perusteella
+                    </p>
+                    <ol class="a">
+                        <li> funktion nollakohdat </li>
+                        <li> funktion derivaatan nollakohdat </li>
+                        <li> funktion suurin arvo välillä $[-2,3]$ </li>
+                        <li> funktion pienin arvo välillä $[-2,3]$ </li>
+                        <li> välit, joilla funktio on kasvava </li>
+                        <li> välit, joilla funktio on vähenevä. </li>
+                    </ol>
+                    <p>
+                        [Lyhyt K2010/3]
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO11.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t105_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t105_v" class="collapse">
+                        <ol class="a">
+                        <li> $x = -2$, $x \approx 0{,}5$ ja $x \approx 2{,}8$ </li>
+                        <li> $x = -1$ ja $x = 2$ </li>
+                        <li> $f(-1) \approx 3$ </li>
+                        <li> $f(2) \approx -5$ </li>
+                        <li> $[-2,-1]$ ja $[2,3]$ </li>
+                        <li> $[-1,2]$ </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku1-tehtavasarja3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#L1itsearviointi">
+                    Itsearviointitehtävät
+                </a>
+            </h1>
+        </header>
+        <div id="L1itsearviointi" class="collapse">
+            <p>
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+            </p>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L1itsearviointi">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+</article>

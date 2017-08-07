@@ -1,0 +1,1677 @@
+---
+title: MAA6 - Derivaatta
+layout: material
+sitemap: true
+main-class: has-atop
+topnav: maa6
+---
+
+<input type="hidden" id="chapterNumber" value="5"/>
+<input type="hidden" id="theoremStart" value="10"/>
+
+<article>
+    <section>
+        <header>
+            <h1>Funktion kulku</h1>
+        </header>
+    </section>
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun5-tavoitteet">
+                    Luvun tavoitteet
+                </a>
+            </h1>
+        </header>
+        <div id="luvun5-tavoitteet" class="collapse">
+
+            <div class="objective">
+                <p> 
+                    Tämän luvun tavoitteena on, että ... Osaat
+                <ul>
+                    <li> </li>
+                    
+                </ul> 
+                </p>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun5-tavoitteet">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#aari1">
+                    Kasvaminen ja väheneminen
+                </a>
+            </h1>
+        </header>
+        <div id="aari1" class="collapse">
+
+            <p>
+                Funktioiden käyttäytymistä voidaan tutkia niiden kuvaajien avulla. Kuvaajasta saatava tieto on kuitenkin monesti likimääräistä eikä sopivan kuvaajan piirtäminen välttämättä aina onnistu. (Tietokonesovellukset kuten <a href="https://www.wolframalpha.com">Wolfram|Alpha</a> kyllä helpottavat kuvaajien piirtämistä huomattavasti.) Derivaatan avulla voidaan saada tarkka käsitys sellaistenkin funktioiden käyttäytymisestä, joiden tutkiminen pelkän kuvaajan avulla ei ole mahdollista.
+            </p>
+
+            <p>
+                Tässä kappaleessa tutkitaan derivaatan avulla funktion kasvamista ja vähenemistä. Aloitetaan sopimalla, mitä tarkoitetaan, kun sanotaan funktion olevan aidosti kasvava tai aidosti vähenevä.
+            </p>
+
+            <div class="definition">
+                <h3>MÄÄRITELMÄ: AIDOSTI KASVAVA JA AIDOSTI VÄHENEVÄ FUNKTIO</h3>
+                <p>
+                    Funktio $f$ on <em>aidosti kasvava</em> lukusuoran välillä, jos tällä välillä muuttujan arvon kasvaessa myös funktion arvo kasvaa eli ehdosta $x_1 < x_2$ seuraa aina $f(x_1) < f(x_2)$.
+                    <br>
+                    <img src="/kurssit/maa6/kuvat/kuva50.png" max-width: 100%; width: auto; height: auto;/>
+                    <br>
+                    Funktio $f$ on <em>aidosti vähenevä</em> lukusuoran välillä, jos tällä välillä muuttujan arvon kasvaessa funktion arvo pienee eli ehdosta $x_1 < x_2$ seuraa aina $f(x_1) > f(x_2)$.
+                    <br>
+                    <img src="/kurssit/maa6/kuvat/kuva51.png" max-width: 100%; width: auto; height: auto;/>
+                    <br>
+                    <em>Aidosti monotoninen</em> funktio tarkoittaa funktiota, joka on aidosti kasvava tai aidosti vähenevä.
+                </p>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="firstEx">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t501">
+                                Aidosti kasvava ja aidosti vähenevä funktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t501" class="collapse">
+                        <p>
+                            Tutki alla olevaa funktion $f$ kuvaajaa.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Onko funktio $f$ aidosti kasvava
+                                <ul>
+                                    <li> välillä $[1,3]$ </li>
+                                    <li> välillä $[-3,0]$? </li>
+                                </ul>
+                            </li>
+                            <li> 
+                                Onko funktio $f$ aidosti vähenevä 
+                                <ul>
+                                    <li> välillä $[-6,-2]$ </li>
+                                    <li> välillä $[3,5]$? </li>
+                                </ul>
+                            </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva52.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t501_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t501_v" class="collapse">
+                            <ol class="a">
+                                <li> 
+                                    Funktio $f$ on aidosti kasvava välillä $[1,3]$. 
+                                    <br>
+                                    Funktio $f$ ei ole aidosti kasvava välillä $[-3,0]$, sillä $f(-1) = f(0)$ vaikka $-1 < 0$. 
+                                </li>
+                                <li> 
+                                    Funktio $f$ ei ole aidosti vähenevä välillä $[-6,-2]$, sillä $f(-3) < f(-2)$. 
+                                    <br>
+                                    Funktio $f$ on aidosti vähenevä välillä $[3,5]$.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t502-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t502">
+                                Aidosti kasvava ja aidosti vähenevä funktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t502" class="collapse">
+                        <p>
+                            Tiedetään, että funktio $f$ on aidosti kasvava välillä $[0,8]$, aidosti vähenevä välillä $[8,10]$ ja $f(5) = 256$. Päättele vastaukset alla oleviin kysymyksiin. Voit havainnollistaa tilannetta piirroksilla.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Mikä funktion arvoista $f(1)$, $f(4)$ ja $f(7)$ on suurin? Entä pienin?
+                            </li>
+                            <li> 
+                                Kaverisi laski, että $f(6) = 244$. Voiko tulos olla oikein?
+                            </li>
+                            <li>
+                                Mikä funktion arvoista $f(7)$, $f(8)$ ja $f(9)$ on suurin? 
+                            </li>
+                            <li> 
+                                Missä kohdassa funktio $f$ saa suurimman arvonsa välillä $[0,10]$? 
+                            </li>
+                            <li>
+                                Missä kohdassa funktio $f$ saa pienimmän arvonsa välillä $[0,10]$? 
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t502_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t502_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                Näistä arvoista $f(7)$ on suurin ja $f(1)$ on pienin, koska $f$ on aidosti kasvava välillä $[0,8]$. 
+                            </li>
+                            <li> 
+                                Tulos ei ole oikein, koska $f(5) = 256$ ja funktio on aidosti kasvava välillä $[0,8]$. Tästä seuraa, että $f(6) > 256$.
+                            </li>
+                            <li>
+                                Näistä arvoista suurin on $f(8)$. Muut ovat sitä pienempiä, koska $f$ on aidosti kasvava välillä $[0,8]$ ja aidosti vähenevä välillä $[8,10]$.
+                            </li>
+                            <li> 
+                                Kohdassa $x = 8$.
+                            </li>
+                            <li>
+                                Kohdassa $x = 0$ tai $x = 10$. Annetuista tiedoista ei voi päätellä, kummassa kohdassa arvo on pienempi.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Jo aikaisemmin on havaittu, että derivaatta kuvaa funktion kasvunopeutta. Jos derivaatta on negatiivinen, funktion arvot pienenevät, ja jos derivaatta on positiivinen, funktion arvot kasvavat. Alla olevat kuvat havainnollistavat ilmiötä. Kun vasemmalla näkyvän derivaattafunktion merkki vaihtuu, muuttuu varsinainen funktio aidosti vähenevästä aidosti kasvavaksi.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva53.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Funktion kulkusuunta ei kuitenkaan aina muutu derivaatan nollakohdassa. Esimerkiksi alla vasemmalla derivaattafunktio on positiivinen nollakohdan kummallakin puolella, ja varsinainen funktio säilyy aidosti kasvavana, vaikka kasvu derivaatan nollakohdan ympäristössä hidastuukin.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva54.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Näiden esimerkkien pohjalta seuraava teoreema on helppo uskoa todeksi, mutta yleispätevän perustelun esittäminen on jälleen niin työlästä, että sitä käsitellään vasta yliopistotasolla.
+            </p>
+
+            <div class="theorem" id="DERIVAATTA JA FUNKTION KULKU">
+                <h3>TEOREEMA</h3>
+                <p>
+                <ul>
+                    <li> 
+                        <p> Jos $f'(x) \geq 0$ kaikissa välin kohdissa ja $f(x) = 0$ enintään yksittäisissä kohdissa, niin funktio $f$ on aidosti kasvava tällä välillä. </p>
+                    </li>
+                    <li>  
+                        <p> Jos $f'(x) \leq 0$ kaikissa välin kohdissa ja $f(x) = 0$ enintään yksittäisissä kohdissa, niin funktio $f$ on aidosti vähenevä tällä välillä. </p>
+                    </li>
+                    <li>  
+                        <p> Jos $f'(x) = 0$ kaikissa välin kohdissa, niin $f$ saa vakioarvon tällä välillä. </p>
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <p>
+                Seuraava esimerkki näyttää, miten derivaattaa ja teoreemaa 7 voidaan hyödyntää, kun tutkitaan funktion kasvamista ja vähenemistä.
+            </p>
+
+            <p>
+                Tarkastellaan funktiota 
+                $$f(x) = 2x^2(75-x) + 50.$$ 
+                Sen kuvaajan piirtäminen käsin on hankalaa, koska funktio saa kohdan $x = 0$ lähellä melko suuria arvoja. Tietokoneella piirretty kuvaaja näyttää kohdan $x = 0$ ympäristössä tältä:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuvaWA1.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Näyttää siltä, että funktio on aidosti vähenevä, kun $x \leq 0$ ja aidosti kasvava, kun $x \geq 0$. Kuvaajasta on kuitenkin näkyvissä vain melko pieni osa. Muuttuuko tilanne, jos kuvaaja piirretään laajemmalta alueelta? 
+            </p>
+            <p>
+                Alla olevasta kuvasta näkyy, että kuvaajan muoto ei juurikaan muutu:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuvaWA2.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Varmistetaan vielä derivaatan ja teoreeman 7 avulla, että johtopäätökset ovat oikeita. Funktion $f$ derivaattafunktio saadaan määritettyä, kun funktion lauseke sievennetään ensin kertomalla sulut auki:
+                \begin{align*}
+                f(x) &= 2x^2(75-x) + 50 \\
+                &= 150x^2 - 2x^3 + 50
+                \end{align*}
+                Derivaattafunktio on 
+                \begin{align*}
+                f'(x) &= 150 \cdot 2x - 2\cdot 3x^2 + 0 \\
+                &= 300x - 6x^2.
+                \end{align*}
+                Tutkitaan, missä derivaattafunktion arvot ovat positiivisia ja missä negatiivisia. Aloitetaan etsimällä derivaattafunktion nollakohdat:
+                \begin{align*}
+                f'(x) &= 0 \\
+                300x - 6x^2 &= 0 \\
+                x(300 - 6x) &= 0
+                \end{align*}
+                Tulon nollasäännön mukaan alin yhtälö toteutuu, jos ja vain jos $x = 0$ tai $300 - 6x = 0$. Ratkaistaan vielä näistä yhtälöistä jälkimmäinen:
+                \begin{align*}
+                300 - 6x &= 0 \\
+                -6x &= -300 \\
+                6x &= 300 \\[1mm]
+                x &= \frac{300}{6} = 50
+                \end{align*}
+                Derivaattafunktiolla on siis kaksi nollakohtaa: $x_1 = 0$ ja $x_2 = 50$. Tutkitaan derivaattafunktion merkkiä laskemalla derivaattafunktion arvo näiden nollakohtien eri puolilla, esimerkiksi kohdissa $x = -1$, $x = 1$ ja $x = 51$:
+                \begin{align*}
+                f'(-1) &= 300 \cdot (-1) - 6\cdot (-1)^2 = -306 \\
+                f'(1) &= 300 \cdot 1 - 6\cdot 1^2 = 294 \\
+                f'(51) &= 300 \cdot 51 - 6 \cdot 51^2 = -306.
+                \end{align*}
+                Kootaan tiedot merkkikaavioon:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva55.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Derivaattafunktion merkkikaaviosta nähdään, että aiemmat funktion $f$ kuvaajan perusteella tehdyt päätelmät ovat osittain vääriä. Funktio $f$ on kyllä aidosti vähenevä, kun $x \leq 0$, mutta se on aidosti vähenevä myös silloin, kun $x \geq 50$, ja aidosti kasvava välillä $[0,50]$. Nämä päätelmät voidaan ilmaista myös niin sanotun kulkukaavion avulla:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva56.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Jotta funktion kulusta saadaan oikea käsitys, sen kuvaaja pitää siis piirtää välillä, joka sisältää derivaata nollakohdat $x_1 = 0$ ja $x_2 = 50$:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuvaWA3.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Huomaa, että kulkukaavion perusteella tiedetään, ettei tämän kuvan ulkopuolelta paljastu enää mitään yllätyksiä. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t503-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t503">
+                                Funktion kulun tutkiminen
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t503" class="collapse">
+                        <p>
+                            Tehtävänä on selvittää, missä funktio 
+                            $$
+                            f(x) = 3x^4 - 8x^3 - 90x^2 + 24
+                            $$
+                            on aidosti kasvava ja missä aidosti vähenevä.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Määritä derivaattafunktio $f'(x)$.
+                            </li>
+                            <li> 
+                                Etsi derivaattafunktion nollakohdat. Kertaa tarvittaessa <a href="http://kisallioppiminen.fi/kurssit/maa2/luku4/">MAA2-kurssin</a> tehtävä 4.11.
+                            </li>
+                            <li>
+                                Laske derivaattafunktion arvo nollakohtien eri puolilla ja muodosta derivaattafunktion merkkikaavio.
+                            </li>
+                            <li> 
+                                Missä funktio $f$ on aidosti kasvava? Entä aidosti vähenevä? Täydennä merkkikaavio funktion $f$ kulkukaavioksi, mutta ilmaise johtopäätöksesi myös sanallisesti.
+                            </li>
+                            <li>
+                                Mistä kohdista ryhtyisit kulkukaavion perusteella etsimään funktion $f$ pienintä arvoa?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t503_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t503_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                $f'(x) = 12x^3 - 24x^2 - 180x$.
+                            </li>
+                            <li> 
+                                Derivaattafunktiolla on kolme nollakohtaa: $x_1 = -3$, $x_2 = 0$ ja $x_3 = 5$.
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li> 
+                                
+                            </li>
+                            <li> 
+                                
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Funktion kulkua tutkimalla saadaan tietoa myös funktion nollakohtien lukumäärästä. Tarkastellaan esimerkiksi funktiota
+                $$
+                f(x) = \frac{2}{15}x^3 - \frac{3}{10}x^2 + \frac{1}{8}x + \frac{1}{25}
+                $$
+                jonka kuvaaja näyttää tältä:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva83.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Funktiolla $f$ näyttäisi olevan ainakin kaksi nollakohtaa. Tutkitaan asiaa tarkemmin funktion kulkukaavion avulla.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t510-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t510">
+                                Funktion kulku
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t510" class="collapse">
+                        <p>
+                            Tehtävänä on muodostaa edellä tarkastellun funktion 
+                            $$
+                            f(x) = \frac{2}{15}x^3 - \frac{3}{10}x^2 + \frac{1}{8}x + \frac{1}{25}
+                            $$
+                            kulkukaavio.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Määritä derivaattafunktio $f'(x)$ ja etsi sen nollakohdat.
+                            </li>
+                            <li>
+                                Laske derivaattafunktion arvo nollakohtien eri puolilla ja muodosta derivaattafunktion merkkikaavio.
+                            </li>
+                            <li> 
+                                Täydennä derivaattafunktion merkkikaavio funktion $f$ kulkukaavioksi.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t510_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t510_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                Derivaattafunktio on $f'(x) = \frac{2}{5}x^2 - \frac{3}{5}x + \frac{1}{8}$. Sen nollakohdat ovat $x_1 = \frac{1}{4}$ ja $x_2 = \frac{5}{4}$.
+                            </li>
+                            <li> 
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--             <p>
+                Funktion $f$ derivaattafunktio on 
+                $$
+                f'(x) = \frac{2}{5}x^2 - \frac{3}{5}x + \frac{1}{8}
+                $$
+                Toisen asteen yhtälön ratkaisukaavalla löydetään derivaattafunktion nollakohdat eli yhtälön $f'(x) = 0$ ratkaisut:
+                \begin{align*}
+                x &= \frac{\frac{3}{5}\pm \sqrt{\frac{9}{25}- 4\cdot \frac{2}{5}\cdot \frac{1}{8}}}{\frac{4}{5}} \\[2mm]
+                &= \frac{\frac{3}{5}\pm \sqrt{\frac{4}{25}}}{\frac{4}{5}} \\[2mm]
+                &= \frac{\frac{3}{5}\pm \frac{2}{5}}{\frac{4}{5}} \\[2mm]
+                &= \frac{3\pm 2}{4} \\[2mm]
+                \end{align*}
+                Derivaattafunktion nollakohdat ovat siis $x_1 = \frac{1}{4}$ ja $x_2 = \frac{5}{4}$.
+            </p> -->
+
+            <p>
+                Funktio $f$ on polynomifunktio, joten se on jatkuva. Bolzanon lausetta (teoreema 1) voidaan nyt soveltaa väleille, joissa funktion kuvaajan ja kulkukaavion perusteella vaikuttaa olevan funktion nollakohta.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t511-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t511">
+                                Nollakohtien määrä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t511" class="collapse">
+                        <p>
+                            Tarkastellaan funktiota 
+                            $$
+                            f(x) = \frac{2}{15}x^3 - \frac{3}{10}x^2 + \frac{1}{8}x + \frac{1}{25}
+                            $$
+                            välillä $\left[\frac{1}{4}, \frac{5}{4}\right]$, jossa se edellisen tehtävän kulkukaavion mukaan on aidosti vähenevä.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Laske funktion arvo välin $\left[\frac{1}{4}, \frac{5}{4}\right]$ kummassakin päätepisteessä.  
+                            </li>
+                            <li>
+                                Mitä voit a-kohdan ja Bolzanon lauseen (<a href="http://kisallioppiminen.fi/kurssit/maa6/luku2/">luvun 2</a> teoreema 1) perusteella päätellä funktion nollakohtien määrästä välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$?
+                            </li>
+                            <li> 
+                                Kulkukaavion mukaan funktio $f$ on aidosti vähenevä välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$. Mitä voit päätellä funktion nollakohtien määrästä välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$ tämän perusteella?
+                            </li>
+                            <li>
+                                Kuinka monta nollakohtaa funktiolla $f$ on välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t511_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t511_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                $f\left(\frac{1}{4}\right) = \frac{131}{2400}$ ja $f\left(\frac{5}{4}\right) = -\frac{29}{2400}$
+                            </li>
+                            <li> 
+                                Koska $f\left(\frac{1}{4}\right) > 0$ ja $f\left(\frac{5}{4}\right) < 0$ ja funktio $f$ on polynomifunktiona jatkuva kaikkialla, on funktiolla $f$ Bolzanon lauseen mukaan ainakin yksi nollakohta välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$.
+                            </li>
+                            <li>
+                                Koska $f$ on aidosti vähenevä välillä $\left[\frac{1}{4}, \frac{5}{4}\right]$, se ei saa mitään arvoa tällä välillä kahta kertaa. Näin ollen funktiolla $f$ on enintään yksi nollakohta välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$.
+                            </li>
+                            <li>
+                                Edellisistä kohdista voidaan päätellä, että funktiolla $f$ on tasan yksi nollakohta välillä $\left]\frac{1}{4}, \frac{5}{4}\right[$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t512-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t512">
+                                Nollakohtien määrä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t512" class="collapse">
+                        <p>
+                            Tarkastellaan funktiota 
+                            $$
+                            f(x) = \frac{2}{15}x^3 - \frac{3}{10}x^2 + \frac{1}{8}x + \frac{1}{25}
+                            $$
+                            välillä $\left]-\infty, \frac{1}{4}\right]$, jossa se kulkukaavion mukaan on aidosti kasvava.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Valitse väliltä $\left]-\infty, \frac{1}{4}\right[$ jokin kohta $b$. Laske funktion arvo välin $\left[b, \frac{1}{4}\right]$ kummassakin päätepisteessä. (Voit hyödyntää edellisen tehtävän tulosta.)
+                            </li>
+                            <li>
+                                Mitä voit a-kohdan ja Bolzanon lauseen perusteella päätellä funktion nollakohtien määrästä välillä $\left]b, \frac{1}{4}\right[$? (Jos Bolzanon lauseen ehdot eivät täyty, valitse jokin toinen kohta $b$).
+                            </li>
+                            <li> 
+                                Kulkukaavion mukaan funktio $f$ on aidosti kasvava välillä $\left]-\infty, \frac{1}{4}\right[$. Mitä voit päätellä funktion nollakohtien määrästä välillä $\left]-\infty, \frac{1}{4}\right[$ tämän perusteella?
+                            </li>
+                            <li>
+                                Kuinka monta nollakohtaa funktiolla $f$ on välillä $\left]-\infty, \frac{1}{4}\right[$?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t512_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t512_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                Valitaan esimerkiksi $b = -1$. Tällöin $f(b) = f(-1) = -\frac{311}{600}$ ja $f\left(\frac{1}{4}\right) = \frac{131}{2400}$.
+                            </li>
+                            <li> 
+                                Koska $f\left(-1\right) < 0$ ja $f\left(\frac{1}{4}\right) > 0$ ja funktio $f$ on polynomifunktiona jatkuva kaikkialla, on funktiolla $f$ Bolzanon lauseen mukaan ainakin yksi nollakohta välillä $\left]-1, \frac{1}{4}\right[$.
+                            </li>
+                            <li>
+                                Koska $f$ on aidosti kasvava välillä $\left]-\infty, \frac{1}{4}\right[$, se ei saa mitään arvoa tällä välillä kahta kertaa. Näin ollen funktiolla $f$ on enintään yksi nollakohta välillä $\left]-\infty, \frac{1}{4}\right[$.
+                            </li>
+                            <li>
+                                Edellisistä kohdista voidaan päätellä, että funktiolla $f$ on tasan yksi nollakohta välillä $\left]-\infty, \frac{1}{4}\right[$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="tehtavat">
+                <div class="tehtava" id="t513-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t513">
+                                Nollakohtien määrä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t513" class="collapse">
+                        <p>
+                            Jatkoa edellisiin tehtäviin. 
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Päättele samaan tapaan kuin edellisessä tehtävässä, kuinka monta nollakohtaa funktiolla $f$ on välillä $\left]\frac{5}{4}, \infty\right[$. Perustele vastauksesi huolellisesti.
+                            </li>
+                            <li>
+                                Kuinka monta nollakohtaa funktiolla $f$ on yhteensä?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t513_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t513_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                Funktio $f$ on kaikkialla jatkuva. Lisäksi $f\left(\frac{5}{4}\right) = -\frac{29}{2400}$ ja $f\left(2\right) = \frac{47}{300}$, joten Bolzanon lauseen mukaan funktiolla $f$ on ainakin yksi nollakohta välillä $\left]\frac{5}{4}, 2\right[$. Toisaalta funktio $f$ on aidosti kasvava välillä $\left]\frac{5}{4}, \infty\right[$, joten sillä on tällä välillä enintään yksi nollakohta. Siis funktiolla $f$ on tasan yksi nollakohta välillä $\left]\frac{5}{4}, \infty\right[$.
+                            </li>
+                            <li> 
+                                Edellisten tehtävien perusteella funktiolla $f$ on täsmälleen kolme nollakohtaa.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#aari1">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#aari2">
+                    Ääriarvot
+                </a>
+            </h1>
+        </header>
+        <div id="aari2" class="collapse">
+
+            <p>
+                Tässä luvussa opitaan löytämään derivoituvan funktion paikalliset ääriarvot sekä mahdollinen suurin ja pienin arvo. Esimerkiksi alla näkyvällä funktiolla on useita ääriarvokohtia, joissa funktion kulkusuunta muuttuu. Näistä kohdista $x_1$ ja $x_3$ ovat minimikohtia ja $x_2$ on maksimikohta. Funktiolla ei näytä olevan suurinta arvoa, mutta pienimmän arvonsa se saa kohdassa $x_1$.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva57.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Aloitetaan sopimalla ääriarvoihin liittyvistä nimityksistä:
+            </p>
+
+            <div class="definition">
+                <h3>MÄÄRITELMÄ: ÄÄRIARVOKOHTA JA ÄÄRIARVO</h3>
+                <p>
+                    Kohta $x_0$ on funktion $f$ <em>maksimikohta</em>, jos funktio $f$ suurin arvo jollakin kohdan $x_0$ sisältävällä avoimella välillä saavutetaan kohdassa $x_0$. Tällöin $f(x_0)$ on funktion <em>maksimiarvo</em>.
+                    <br>
+                    <img src="/kurssit/maa6/kuvat/kuva58.png" max-width: 100%; width: auto; height: auto;/>
+                    <br>
+                    Kohta $x_0$ on funktion $f$ <em>minimikohta</em>, jos funktio $f$ pienin arvo jollakin kohdan $x_0$ sisältävällä avoimella välillä saavutetaan kohdassa $x_0$. Tällöin $f(x_0)$ on funktion <em>minimiarvo</em>.
+                    <br>
+                    <img src="/kurssit/maa6/kuvat/kuva59.png" max-width: 100%; width: auto; height: auto;/>
+                    <br>
+                    Maksimi- ja minimikohdat ovat funktion <em>ääriarvokohtia</em>. Maksimi- ja minimiarvot ovat funktion <em>ääriarvoja</em>.
+                </p>
+            </div>
+
+            <p>
+                On mahdollista osoittaa, että derivoituvan funktion ääriarvokohdat löytyvät derivaatan nollakohdista. Ääriarvoja etsittäessä kannattaa siis selvittää derivaatan nollakohdat ja tutkia funktion kulkukaavion avulla, mitkä niistä ovat funktion maksimi- tai minimikohtia. Kulkukaaviota tarvitaan, sillä kaikki derivaatan nollakohdat eivät välttämättä ole funktion ääriarvokohtia.
+            </p>
+
+            <div class="theorem" id="DERIVAATTA ÄÄRIARVOKOHDASSA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Oletetaan, että funktio $f$ on derivoituva tarkasteluvälillä. Jos $x_0$ on funktion $f$ ääriarvokohta, niin $f'(x_0) = 0$.
+                </p>
+            </div>
+
+            <p>
+                Tarkastellaan funktiota 
+                $$f(x) = \frac{1}{6}x^3 + 1.$$
+                Sen derivaattafunktio on 
+                $$f'(x) = \frac{1}{2}x^2.$$
+                Derivaattafunktiolla on yksi nollakohta, $x = 0$, ja sen arvo on kaikkialla muualla positiivinen. Teoreeman 7 mukaan funktio $f$ on siten aidosti kasvava koko reaaliakselilla, vaikka kasvu derivaatan nollakohdan ympärillä onkin hidasta. Funktiolla ei siis ole yhtään ääriarvokohtaa, vaikka sen derivaattafunktiolla on nollakohta.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva60.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Tällaista derivaatan nollakohtaa, joka ei ole funktion ääriarvokohta, sanotaan funktion <em>terassikohdaksi</em>.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t504-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t504">
+                                Funktion ääriarvot
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t504" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää funktion 
+                            $$
+                            f(x) = 4x^5 - 5x^4 - 80x^3
+                            $$
+                            ääriarvokohdat ja ääriarvot.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Määritä derivaattafunktio $f'(x)$.
+                            </li>
+                            <li> 
+                                Etsi derivaattafunktion nollakohdat. Kertaa tarvittaessa <a href="http://kisallioppiminen.fi/kurssit/maa2/luku4/">MAA2-kurssin</a> tehtävä 4.11.
+                            </li>
+                            <li>
+                                Laske derivaattafunktion arvo nollakohtien eri puolilla ja muodosta derivaattafunktion merkkikaavio.
+                            </li>
+                            <li> 
+                                Täydennä merkkikaavio funktion $f$ kulkukaavioksi ja päättele sen perusteella, mitkä derivaattafunktion nollakohdista ovat funktion ääriarvokohtia.
+                            </li>
+                            <li>
+                                Luettele funktion $f$ maksimikohdat ja niitä vastaavat maksimiarvot, sekä minimikohdat ja niitä vastaavat minimiarvot.
+                            </li>
+                            <li> Varmista, että osaat selvittää ääriarvokohdat ja ääriarvot teknisen apuvälineen avulla. Texas Nspiren käyttöön on ohjevideo <a href="https://www.youtube.com/watch?v=xOK1gaUONsc">tässä</a>.
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t504_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t504_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                $f'(x) = 20x^4 - 20x^3 - 240x^2$.
+                            </li>
+                            <li> 
+                                Derivaattafunktiolla on kolme nollakohtaa: $x_1 = -3$, $x_2 = 0$ ja $x_3 = 4$.
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li> 
+                                
+                            </li>
+                            <li> 
+                                Maksimikohta $x = -3$ ja maksimiarvo $f(3) = 783$, minimikohta $x = 4$ ja minimiarvo $f(4) = -2304$
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Siirrytään seuraavaksi tarkastelemaan funktion suurinta ja pienintä arvoa. Jos funktiota tarkastellaan koko lukusuoralla tai jollakin avoimella välillä, ei suurinta tai pienintä arvoa välttämättä ole olemassa. 
+            </p>
+            <p>
+                Esimerkki tällaisesta funktiosta on $f(x) = 2x$, joka on aidosti kasvava koko lukusuoralla. Sillä ei ole suurinta eikä pienintä arvoa, tarkasteltiinpa sitä koko lukusuoralla tai jollakin avoimella välillä. Esimerkiksi välillä $\pa -1; 1{,}5 \pe$ tilanne näyttää tältä:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva61.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Joku saattaisi väittää, että välillä $\pa -1; 1{,}5 \pe$ funktio saa suurimman arvonsa kohdassa $x = 1{,}4$. Tämän väitteen voi kuitenkin kumota näyttämällä, että kohdassa $x = 1{,}45$ funktio saa suuremman arvon:
+                $
+                f(1{,}4) = 2{,}8
+                $
+                mutta
+                $
+                f(1{,}45) = 2{,}9.
+                $
+                Tämäkään ei ole funktion $f$ suurin arvo välillä $\pa -1; 1{,}5\pe$, sillä esimerkiksi kohdassa $1{,}453$ funktio saa vieläkin suuremman arvon:
+                $
+                f(1{,}453) = 2{,}906.
+                $
+                Tätä päättelyä voidaan jatkaa loputtomiin eikä mitään funktion arvoa saada näytettyä kaikkein suurimmaksi, sillä aina löytyy vielä suurempi arvo.
+            </p>
+
+            <p>
+                Tilanne muuttuu kokonaan toisenlaiseksi, jos funktiota tarkastellaan suljetulla välillä:
+            </p>
+
+            <div class="theorem" id="SUURIN JA PIENIN ARVO SULJETULLA VÄLILLÄ">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Derivoituva funktio saa suljetulla välillä $[a,b]$ suurimman ja pienimmän arvonsa derivaattafunktion nollakohdissa tai välin päätepisteissä $a$ ja $b$.
+                    <br>
+                    <img src="/kurssit/maa6/kuvat/kuva63.png" max-width: 100%; width: auto; height: auto;/>
+                </p>
+            </div>
+
+            <p>
+                Teoreeman 9 mukaan derivoituvalla funktiolla on suljetulla välillä aina olemassa suurin ja pienin arvo. Nämä löydetään laskemalla funktion arvo tarkasteluvälin päätepisteissä sekä derivaattafunktion niissä nollakohdissa, jotka osuvat tarkasteluvälille. Tätä harjoitellaan seuraavassa tehtävässä.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t505-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t505">
+                                Funktion suurin ja pienin arvo suljetulla välillä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t505" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää funktion 
+                            $$
+                            f(x) = \frac{1}{3}x^3 - \frac{5}{2}x^2 - 14x + 7
+                            $$
+                            suurin ja pienin arvo välillä $[-6,12]$.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Määritä derivaattafunktio $f'(x)$.
+                            </li>
+                            <li> 
+                                Etsi derivaattafunktion nollakohdat. Mitkä niistä kuuluvat tarkasteluvälille $[-6,12]$?
+                            </li>
+                            <li>
+                                Laske funktion arvo välin $[-6,12]$ päätepisteissä sekä niissä derivaattafunktion nollakohdissa, jotka osuvat välille $[-6,12]$.
+                            </li>
+                            <li>
+                                Mikä on funktion $f$ suurin arvo välillä $[-6,12]$? Entä pienin arvo?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t505_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t505_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                $f'(x) = x^3 - 5x^2 - 14$.
+                            </li>
+                            <li> 
+                                Derivaattafunktiolla on kaksi nollakohtaa: $x_1 = -2$ ja $x_2 = 7$.
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li> 
+                                
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Käytännön ongelmissa halutaan monesti maksimoida jotain, esimerkiksi myyntivoittoa tai tuotannon määrää, tai minimoida jotain, esimerkiksi kustannuksia tai tarvittavan materiaalin määrää. Tällaisissa tilanteissa ongelmanratkaisun apuna voidaan usein käyttää derivaattaa ja teoreemaa 9. Ensin on kuitenkin mallinnettava ongelma matemaattiseen muotoon: valittava sopiva muuttuja, selvitettävä, millä välillä sen arvot vaihtelevat, ja muodostettava funktio, jonka suurinta tai pienintä arvoa etsitään.
+            </p>
+
+            <p>
+                Tarkastellaan esimerkiksi tilannetta, jossa pakkausvalmistaja suunnittelee leipomoiden käyttöön uutta pahvista rasiaa. Rasia muotoillaan alla olevan kuvan mukaisesti pahvineliöstä, jonka sivun pituus on 30 cm. Mitkä pitää valita rasian mitoiksi, jotta rasian tilavuus olisi mahdollisimman suuri?
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva71b.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Valitaan muuttujaksi esimerkiksi rasian korkeus, ja ilmaistaan rasian muut mitat sen avulla. (Tämä ei ole ainoa vaihtoehto, yhtä hyvin muuttujaksi voi valita vaikkapa rasian leveyden. Siinä tapauksessa ratkaisun idea on sama, mutta yksityiskohdista tulee vähän erinäköisiä.)
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva73b.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kuvioista voidaan päätellä, että rasian korkeus vaihtelee välillä 0-15 cm. Itse asiassa näissä ääritapauksissa mitään varsinaista rasiaa ei muodostu, koska jokin rasian mitoista on nolla.
+            </p>
+            <p> 
+                Rasian tilavuus riippuu rasian korkeudesta eli tilavuus on korkeuden funktio:
+                $$
+                V(x) = (15-x)(30-2x)x.
+                $$
+                Ongelma on nyt saatu mallinnettua matemaattisesti: tehtävänä on etsiä funktion $V$ suurin arvo välillä $[0,15]$. Tämä tehdään seuraavassa tehtävässä.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t507-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t507">
+                                Funktion suurin ja pienin arvo suljetulla välillä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t507" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                Määritä funktion 
+                                $$V(x) = (15-x)(30-2x)x$$ 
+                                suurin arvo välillä $[0,15]$. 
+                                <br>
+                                Vinkki: tee aluksi kaikki kertolaskut ja sievennä funktion $V$ lauseke yhdeksi polynomiksi. 
+                             </li>
+                            <li> 
+                                Mitkä pitää valita edellisen esimerkin pahvirasian mitoiksi, jotta rasian tilavuus olisi mahdollisimman suuri? 
+                            </li>
+                            <li>
+                                Mikä on rasian suurin mahdollinen tilavuus?
+                            </li>
+                        </ol>
+                        <p>
+                            
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t507_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t507_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                Funktion $V$ suurin arvo välillä $[0,15]$ on $V(5) = 1000$.
+                            </li>
+                            <li> 
+                                Korkeus 5 cm, leveys 20 cm ja syvyys 10 cm.
+                            </li>
+                            <li>
+                                Suurin mahdollinen tilavuus on $1000 \text{ cm}^3 = 1 \text{ dm}^3 = 1 \text{ l}$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Ongelman mallintamista matemaattiseen muotoon voi helpottaa esimerkiksi seuraavilla keinoilla:
+                <ul>
+                    <li> Piirrä tilanteesta kuva tai laadi annetuista tiedoista taulukko. </li>
+                    <li> Kokeile laskea kysytty asia joillakin itse keksimilläsi luvuilla. Tutki, mitä laskutoimituksia käytit, ja korvaa sitten luvut kirjainsymboleilla. </li>
+                </ul>
+            </p>
+
+            <p>
+                Tarkastellaan vielä seuraavaa ongelmaa: Kauppias on havainnut, että 10 sentin korotus tomaattien kilohinnassa laskee päivittäistä myyntiä noin 2 kg. Kun hinta on 2,20 €/kg, tomaatteja myydään päivässä 70 kg. Millä kilohinnalla kauppiaan voitto on suurin, jos hän joutuu maksamaan tomaateista 1,05 €/kg? 
+            </p>
+
+            <p>
+                Ongelmaan liittyy paljon tietoja: muun muassa myytyjen tomaattien määrä, tomaattien kilohinta ja tomaateista saatu myyntitulo. Laaditaan näistä taulukko: 
+            </p>
+
+            <div align="center">
+                <table style="width = 95%"> 
+                    <tr>
+                        <th> Hinta (€/kg) </th>
+                        <th> Myynti (kg)</th>
+                        <th> Myyntitulo (€)</th>
+                    </tr>
+                    <tr>
+                        <td> $2{,}20$  </td>
+                        <td> $70$  </td>
+                        <td> $70 \cdot 2{,}20 = 154$ </td>
+                    </tr>
+                    <tr>
+                        <td> $2{,}20 + 0{,}10x$ </td>
+                        <td> $70-2x$ </td>
+                        <td> $154 + 2{,}6x - 0{,}2x^2$ </td>
+                    </tr>
+                </table> 
+            </div>
+
+            <p>
+                Taulukon viimeiselle riville on muotoiltu tieto siitä, että jokainen 10 sentin korotus hinnassa laskee myyntiä 2 kg. Kahdesta ensimmäisestä sarakkeesta voidaan päätellä, että 10 sentin korotusten määrä $x$ on välillä $[-22, 35]$. Näissä ääritilanteissa joko kilohinta tai myyntimäärä menee nollaksi. 
+            </p>
+            <p>
+                Myyntitulo $M(x)$ on myyntimäärän ja kilohinnan tulo:
+                \begin{align*}
+                M(x)&= (70 - 2x)(2{,}2 + 0{,}1x) \\
+                &= 154 + 7x - 4{,}4x - 0{,}2x^2 \\
+                &= 154 + 2{,}6x - 0{,}2x^2
+                \end{align*}
+                Kauppiaan voitto saadaan tästä, kun huomioidaan, että hän joutuu itse maksamaan tomaateista 1,05 €/kg. Voitto on siten
+                \begin{align*}
+                V(x) &= M(x) - 1{,}05(70 - 2x) \\
+                &= 154 + 2{,}6x - 0{,}2x^2 - 73{,}5 + 2{,}1x \\
+                &= 80{,}5 + 4{,}7x - 0{,}2x^2
+                \end{align*}
+                Ongelma on nyt saatu mallinnettua matemaattisesti: tehtävänä on etsiä funktion $V$ suurin arvo välillä $[-22,35]$. Tämä tehdään seuraavassa tehtävässä.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t508-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t508">
+                                Funktion suurin ja pienin arvo suljetulla välillä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t508" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                Määritä funktion 
+                                $$V(x) = 80{,}5 + 4{,}7x - 0{,}2x^2$$ 
+                                suurin arvo välillä $[-22,35]$. 
+                            </li>
+                            <li> 
+                                Mikä kauppiaan kannattaa asettaa tomaattien kilohinnaksi, jos hän haluaa mahdollisimman suuren voiton? 
+                            </li>
+                            <li>
+                                Mikä on päivittäisen myynnin arvo tällä kilohinnalla? Entä kuinka suuri on kauppiaan saama voitto?
+                            </li>
+                        </ol>
+                        <p>
+                            
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t508_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t508_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                Funktion $V$ suurin arvo välillä $[-22,35]$ on $V(11{,}75) = 108{,}1125$.
+                            </li>
+                            <li> 
+                                Kilohinnaksi kannattaa asettaa $2{,}20 + 11{,}75 \cdot 0{,}1 \approx 3{,}38$ €/kg.
+                            </li>
+                            <li>
+                                Päivittäisen myynnin arvo on 157,17 € ja kauppiaan saama voitto noin 108,35 €.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t509-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t509">
+                                Funktion suurin ja pienin arvo suljetulla välillä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t509" class="collapse">
+                        <p>
+                            Festivaalin anniskelualueen rajaamiseen on käytettävissä 100 m pitkän varaston seinä sekä lisäksi 125 metriä mellakka-aitaa. Anniskelualueesta halutaan pinta-alaltaan mahdollisimman suuri suorakulmio. Tehtävänä on selvittää, miten aidat kannattaa asettaa.
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                Piirrä tilanteesta kuva.  
+                            </li>
+                            <li> 
+                                Valitse muuttuja ja ilmaise suorakulmion mitat sen avulla. Millä välillä muuttujan arvot vaihtelevat?
+                            </li>
+                            <li>
+                                Muodosta funktio, joka ilmaisee suorakulmion pinta-alan, ja määritä sen suurin arvo tarkasteluvälillä.
+                            </li>
+                            <li>
+                                Miten aidat kannattaa asettaa, jotta anniskelualueen pinta-ala on mahdollisimman suuri? Mikä sen ala silloin on?
+                            </li>
+                        </ol>
+                        <p>
+                            
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t509_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t509_v" class="collapse">
+                            <ol class="a">
+                            <li> 
+                                
+                            </li>
+                            <li> 
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Joskus on tarpeen tutkia funktion suurimman ja pienimmän arvon olemassaoloa koko reaaliakselilla. Tällöin tarvitaan tietoa siitä, miten funktion arvot käyttäytyvät, kun muuttujan arvot kasvavat tai pienenevät rajatta. Pelkän kulkukaavion perusteella ei varmoja johtopäätöksiä ole mahdollista tehdä, vaan tarvitaan myös muunlaista tietoa funktion käyttäytymisestä. Tästä ovat osoituksena esimerkiksi funktiot $f(x) = x^3 + 3x$ ja  
+                $$
+                g(x) = \frac{-3x}{x^2 + 1}.
+                $$
+                Funktioilla on sama kulkukaavio (seuraavassa luvussa opitaan, miten funktio $g$ derivoidaan):
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva65.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kulkukaaviosta nähdään, että kumpikin funktio on aidosti kasvava väleillä $\pa -\infty, -1]$ ja $[1, \infty\pe$ ja aidosti vähenevä välillä $[-1,1]$. Kohta $x = -1$ on molempien funktioiden maksimikohta ja kohta $x = 1$ on molempien funktioiden minimikohta. Onko näillä funktioilla suurinta tai pienintä arvoa?
+            </p>
+            <p>
+                Alla olevista kuvaajista näkyy, että kolmannen asteen polynomifunktiolla $f$ ei ole suurinta eikä pienintä arvoa, mutta rationaalifunktio $g$ saa suurimman arvonsa kohdassa $x = -1$ ja pienimmän arvonsa kohdassa $x = 1$.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva66.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva67.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                On mahdollista osoittaa, että polynomifunktioiden suurimman ja pienimmän arvon olemassaolo riippuu polynomin korkeimman asteen termin käyttäytymisestä lukusuoran äärilaidoilla. Esimerkiksi polynomifunktion $f(x) = 0{,}5x^5 - 2x^2 - 3{,}5x + 3$ korkeimman asteen termi $0{,}5x^5$ kasvaa rajatta, kun muuttuja arvoa kasvatetaan, ja pienenee rajatta, kun muuttujan arvoa pienennetään. Tästä voidaan päätellä, ettei funktiolla $f$ ole suurinta eikä pienintä arvoa: 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva68.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Polynomifunktion $g(x) = -x^4 + x + 1$ korkeimman asteen termi $-x^4$ puolestaan pienenee rajatta, kun muuttujan arvoa kasvatetaan tai pienennetään. Tästä voidaan päätellä, että funktiolla $g$ on suurin arvo, mutta ei pienintä arvoa. Tämä suurin arvo löydetään jostain funktion $g$ ääriarvokohdasta:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva69.png" max-width: 100%; width: auto; height: auto;/>
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t506-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t506">
+                                Polynomifunktion suurin ja pienin arvo
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t506" class="collapse">
+                        <p>
+                            Mitä voit päätellä polynomifunktion korkeimman asteen termistä, jos 
+                        </p>
+                        <ol class="a">
+                            <li> 
+                                funktiolla ei ole suurinta eikä pienintä arvoa
+                            </li>
+                            <li> 
+                                funktiolla on suurin arvo mutta ei pienintä arvoa
+                            </li>
+                            <li>
+                                funktiolla on pienin arvo mutta ei suurinta arvoa?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t506_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t506_v" class="collapse">
+                            <p>
+                                Korkeimman asteen termi on muotoa $ax^n$, missä 
+                            </p>
+                            <ol class="a">
+                            <li> 
+                                $n \geq 1$ on pariton kokonaisluku.
+                            </li>
+                            <li> 
+                                $n \geq 2$ on parillinen kokonaisluku ja $a < 0$.
+                            </li>
+                            <li>
+                                $n \geq 2$ on parillinen kokonaisluku ja $a > 0$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#aari2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!--     <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#aari3">
+                    Funktion suurin ja pienin arvo
+                </a>
+            </h1>
+        </header>
+        <div id="aari3" class="collapse">
+
+            
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#aari3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku5-tehtavasarja2">
+                    TEHTÄVÄSARJA II
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku5-tehtavasarja2" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="s2t101-ex">
+                <header>
+                    <h1>
+                        <a data-target="#s2t101">
+                            Suoran yhtälö
+                        </a>
+                    </h1>
+                </header>
+                <div id="s2t101">
+                    <p>
+                        Määritä yhtälö suoralle, joka kulkee seuraavien pisteiden kautta:
+                    </p>
+                    <ol class="a">
+                        <li> $(-1,4)\ $ ja $\ (5,-1)$</li>
+                        <li> $\left(-\frac{5}{3}, \frac{1}{2}\right)\ $ ja $\ \left(\frac{1}{3}, \frac{5}{6}\right)$.</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#s2t101_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="s2t101_v" class="collapse">
+                        <p>
+                        <ol class="a">
+                            <li> $y = -\frac{5}{6}x + \frac{19}{6}$ </li>
+                            <li> $y = \frac{1}{6}x + \frac{7}{9}$ </li>
+                        </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku5-tehtavasarja2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku5-tehtavasarja3">
+                    TEHTÄVÄSARJA III
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku5-tehtavasarja3" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s3t501-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t501">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t501">
+                    <p>
+                        Suorakulmion yksi kärki on origossa, ja siitä lähtevät kaksi sivua sijaitsevat positiivisilla koordinaattiakseleilla. Neljäs kärki sijaitsee paraabelilla $y = 4 − x^2$ alueessa $x \geq 0$, $y \geq 0$. Määritä suorakulmion suurimman mahdollisen pinta-alan tarkka arvo.   
+                        <br>
+                        [Pitkä S2016/4]
+                        <br>
+                        <img src="/kurssit/maa6/kuvat/kuvaYO1.png" max-width: 100%; width: auto; height: auto;/>    
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t501_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t501_v" class="collapse">
+                        <p>
+                            Suurin mahdollinen pinta-ala on 
+                            $$\frac{16}{9}\sqrt{3}.$$
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t502-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t502">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t502">
+                    <p>
+                        Alla olevassa kuviossa on erään funktion $f(x)$ derivaattafunktion $f'(x)$ kuvaaja välillä $-1 < x < 5$. Määritä kuvaajan perusteella   
+                    </p>
+                    <ol class="a">
+                        <li> derivaattafunktion $f'(x)$ nollakohdat </li>
+                        <li> ne välit, joilla funktio $f(x)$ on kasvava </li>
+                        <li> funktion $f(x)$ paikalliset ääriarvokohdat ja niiden tyypit.</li>
+                    </ol>
+                    <p>
+                        [Pitkä K2016/4]
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO2.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t502_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t502_v" class="collapse">
+                        <ol class="a">
+                            <li> Nollakohtia on kaksi: $x = 0$ ja $x = 3$. </li>
+                            <li> Funktio on aidosti kasvava, kun $0 \leq x < 5$. </li>
+                            <li> 
+                                Funktiolla on minimikohta $x = 0$, koska siinä funktio muuttuu aidosti vähenevästä aidosti kasvavaksi (derivaatan merkki muuttuu negatiivisesta positiiviseksi). 
+                                <br>
+                                (Kannattaa tehdä derivaatan merkkikaavio ja funktion kulkukaavio.)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t506-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t506">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t506">
+                    <p>
+                        Määritä polynomifunktion $f(x) = x^3 - 6x^2 - 15x + 2$ suurin ja pienin arvo välillä $[2,6]$.
+                        <br>
+                        [Pitkä S2012/5]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t506_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t506_v" class="collapse">
+                        <p>
+                            Suurin arvo on $f(2) = -44$ ja pienin arvo on $f(5) = -98$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t506b-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t506b">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t506b">
+                    <p>
+                        Osoita, että funktioilla $f(x) = −4x^3$ ja $g(x) = x^3 + x$ ei ole ääriarvoja, mutta summafunktiolla $h(x) = f(x) + g(x)$ on. Mitkä ovat nämä ääriarvot?
+                        <br>
+                        [Lyhyt S2004/10]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t506b_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t506b_v" class="collapse">
+                        <p>
+                            Funktion $f$ derivaatta saa arvon nolla vain kohdassa $x = 0$ ja on kaikkialla muualla negatiivinen, joten funktio $f$ on aidosti vähenevä koko lukusuoralla eikä sillä siten ole ääriarvoja.
+                            <br>
+                            Funktion $g$ derivaatta on kaikkialla positiivinen, joten funktio $g$ on aidosti kasvava koko lukusuoralla eikä silläkään ole ääriarvoja. 
+                            <br>
+                            Funktion $h$ kulkukaavion perusteella sillä on minimiarvo $h\left(-\frac{1}{3}\right) = -\frac{2}{9}$ ja maksimiarvo $h\left(\frac{1}{3}\right) = \frac{2}{9}$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t503-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t503">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t503">
+                    <p>
+                        Tasakylkisen suorakulmaisen kolmion kateetin pituus on $a$. Kolmion sisälle asetetaan kuvion mukaisesti pienempi tasakylkinen kolmio, jonka yksi kärki sijaitsee alkuperäisen kolmion hypotenuusalla. Lisäksi jana $AB$ on hypotenuusan suuntainen. Määritä pienemmän kolmion suurin mahdollinen pinta‐ala.  
+                        <br>
+                        [Pitkä S2015/7]
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO3.png" max-width: 100%; width: auto; height: auto;/> 
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t503_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t503_v" class="collapse">
+                        <p>
+                            Suurin mahdollinen pinta-ala on 
+                            $\frac{1}{8}a^2$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t504-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t504">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t504">
+                    <p>
+                        Italialainen Fibonacci laski vuonna 1225 yhtälön $x^3 + 2x^2 + 10x - 20 = 0$ juurelle likiarvon $x \approx 1{,}368808108$. Osoita, että yhtälöllä on täsmälleen yksi juuri reaalilukujen joukossa.
+                        <br>
+                        [Pitkä K2015/12a]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t504_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t504_v" class="collapse">
+                        <p>
+                            Derivaattafunktiolla ei ole nollakohtia, joten funktio $f$ on aidosti monotoninen. Alkuperäisellä yhtälöllä on siten korkeintaan yksi juuri. Koska esimerkiksi $f(1) = -7 < 0$ ja $f(2) = 16 > 0$, niin yhtälöllä on täsmälleen yksi juuri (ja se on välillä $\left]1,2\right[$).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t505-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t505">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t505">
+                    <p>
+                        Tarkastellaan paraabelin kaarta $y = 3x - 5x^2$, missä $0 \leq x \leq \frac{1}{2}$. Mikä kaaren piste on kauimpana origosta? 
+                        <br>
+                        [Pitkä S2014/6]
+                        <br>
+                        Vinkki: Piirrä tilanteesta kuva. Tarkastele etäisyyden toista potenssia, jotta et joudu derivoimaan neliöjuurifunktiota.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t505_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t505_v" class="collapse">
+                        <p>
+                            Kysytty piste on $\left(\frac{5}{2}, \frac{5}{2}\right)$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tehtava" id="MAA6s3t507-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t507">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t507">
+                    <p>
+                        Määritä polynomin $x(x+3)(5-x)$ suurin ja pienin arvo välillä $[-1,5]$.
+                        <br>
+                        [Pitkä K2011/5]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t507_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t507_v" class="collapse">
+                        <p>
+                            Suurin arvo on $36$ ja pienin arvo on $-12$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t508-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t508">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t508">
+                    <p>
+                        Paraabelin $y = x^2$ pisteeseen $(x_0,y_0)$, $x_0 \in \left]0, 1\right]$, piirretty tangentti, $x$-akseli ja suora $x = 1$ muodostavat kolmion. Millä arvolla $x_0$ tämä kolmio on pinta-alaltaan suurin?
+                        <br>
+                        [Pitkä K2009/7]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t508_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t508_v" class="collapse">
+                        <p>
+                            Arvolla $x_0 = \frac{2}{3}$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t509-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t509">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t509">
+                    <p>
+                        Millä $a$:n arvoilla funktio $f(x) = −x^2 + ax + a − 3$ saa vain negatiivisia arvoja?
+                        <br>
+                        [Pitkä S2005/4]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t509_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t509_v" class="collapse">
+                        <p>
+                            Arvolla $-6 < a < 2$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t510-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t510">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t510">
+                    <p>
+                        Neljännen asteen polynomifunktiolla on paikallinen maksimi 16, kun $x = −1$. Origossa polynomifunktio saa arvon 11. Funktion kuvaajan pisteeseen $(1, 11)$ piirretyn tangentin kulmakerroin on 0. Muodosta yhtälöryhmä, josta polynomifunktion kertoimet voidaan ratkaista. Ratkaise tämä laskinta käyttämättä. Mikä on kyseinen polynomifunktio?
+                        <br>
+                        [Pitkä K2005/10]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t510_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t510_v" class="collapse">
+                        <p>
+                            $f(x) = -\frac{5}{2}x^4 + \frac{5}{4}x^3 + 5x^2 - \frac{15}{4}x + 11$
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tehtava" id="MAA6s3t511-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t511">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t511">
+                    <ol class = "a">
+                        <li>
+                            Mihin käyrän $y = -x^3 + x^2 + 3x$ pisteeseen asetetun tangentin kulmakerroin on suurin mahdollinen?
+                        </li>
+                        <li>
+                            Määritä a-kohdan tangentin yhtälö.
+                        </li>
+                    </ol>
+                    <p>
+                        [Lyhyt K2014/13]
+                        <br>
+                        <img src="/kurssit/maa6/kuvat/kuvaYO9.png" max-width: 100%; width: auto; height: auto;/> 
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t511_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t511_v" class="collapse">
+                        <ol class = "a">
+                            <li>
+                                Pisteeseen $\left(\frac{1}{3}, \frac{29}{27}\right)$.
+                            </li>
+                            <li>
+                                Tangentin yhtälö on 
+                                $$
+                                y = \frac{10}{3}x - \frac{1}{27}
+                                $$
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t512-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t512">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t512">
+                    <p>
+                        Mittaustuloksina on saatu xy-koordinaatiston pisteet $(1; 1{,}2)$, $(2; 3{,}1)$ ja $(4; 5{,}5)$. Näiden lomitse sovitetaan origon kautta kulkeva suora $y = kx$, jossa kulmakerroin $k$ määritetään pienimmän neliösumman menetelmällä: kunkin $x$-arvon kohdalla lasketaan suoran $y = kx$ antaman $y$-arvon ja mitatun $y$-arvon erotus, ja kerroin $k$ valitaan siten, että erotusten neliöiden summa
+                        $$
+                        (k \cdot 1 − 1{,}2)^2 + (k \cdot 2 − 3{,}1)^2 + (k \cdot 4 − 5{,}5)^2
+                        $$
+                        on mahdollisimman pieni. Määritä $k$ tällä tavoin. Piirrä kuvio.
+                        <br>
+                        [Lyhyt S2008/13]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t512_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t512_v" class="collapse">
+                        <p>
+                            $k = 1{,}4$
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t513-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t513">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t513">
+                    <p>
+                        Pienien alumiinista valmistettavien suoran ympyräkartion muotoisten valaisinkupujen korkeuden ja pohjaympyrän halkaisijan summa on 18,6 cm. Määritä kartion pohjaympyrän säde siten, että kartion tilavuus on mahdollisimman suuri. Määritä tämä tilavuus.
+                        <br>
+                        [Lyhyt K2006/13]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t513_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t513_v" class="collapse">
+                        <p>
+                            Suurin tilavuus saadaan, kun pohjaympyrän säde on 6,2 cm. Suurin tilavuus on $\text{249{,}6 cm}^3$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t514-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t514">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t514">
+                    <p>
+                        Olkoot $\va = \vi + 2\vj + 3\vk$ ja $\vb = 2\vi + 5\vk$. Millä parametrin $-2 \leq t \leq 2$ arvolla vektorin $\vc_t = t\va + (1-t)\vb$ pituus on mahdollisimman pieni?
+                        <br>
+                        [Pitkä K2017/3]
+                        <br>
+                        Vinkki: tarkastele pituuden neliötä, jotta et joudu tekemisiin neliöjuuren kanssa.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t514_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t514_v" class="collapse">
+                        <p>
+                            $t = \frac{4}{3}$
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku5-tehtavasarja3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
+                    Itsearviointitehtävät
+                </a>
+            </h1>
+        </header>
+        <div id="L4itsearviointi" class="collapse">
+            <p>
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+            </p>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+</article>

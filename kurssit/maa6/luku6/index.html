@@ -1,0 +1,1580 @@
+---
+title: MAA6 - Derivaatta
+layout: material
+sitemap: true
+main-class: has-atop
+topnav: maa6
+---
+
+<input type="hidden" id="chapterNumber" value="6"/>
+<input type="hidden" id="theoremStart" value="13"/>
+
+<article>
+    <section>
+        <header>
+            <h1>Derivointisääntöjä II</h1>
+        </header>
+    </section>
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun6-tavoitteet">
+                    Luvun tavoitteet
+                </a>
+            </h1>
+        </header>
+        <div id="luvun6-tavoitteet" class="collapse">
+
+            <div class="objective">
+                <p> 
+                    Tämän luvun tavoitteena on, että ... Osaat
+                <ul>
+                    <li> </li>
+                    
+                </ul> 
+                </p>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun6-tavoitteet">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+        <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja3">
+                    Funktioiden tulo
+                </a>
+            </h1>
+        </header>
+        <div id="saantoja3" class="collapse">
+
+            <p>
+                Tässä kappaleessa johdetaan derivointisäännöt funktioiden tulolle ja funktion potenssille. Tulon derivointisääntöä tarvitaan toden teolla vasta seuraavassa kurssissa MAA7, mutta sen avulla saadaan seuraavassa kappaleessa johdettua funktioiden osamäärän derivointisääntö. Sitä tarvitaan rationaalifunktioiden derivoimiseen.
+            </p>
+
+            <p>
+                Aloitetaan sopimalla, mitä funktioiden tulolla tarkoitetaan:
+            </p>
+
+            <div class="definition">
+                <h3>MÄÄRITELMÄ: FUNKTIOIDEN TULO</h3>
+                <p>
+                    Funktioiden $f$ ja $g$ <em>tulo</em> tarkoittaa funktiota, jonka arvo kohdassa $x$ on funktioiden $f$ ja $g$ arvojen tulo:
+                    $$(fg)(x) = f(x)g(x).$$
+                </p>
+            </div>
+
+            <p>
+                Esimerkiksi funktio 
+                $$h(x) = x^2(0{,}5x-1)$$ 
+                voidaan tulkita funktioiden $f(x) = x^2$ ja $g(x) = 0{,}5x-1$ tuloksi:
+                $$h(x) = f(x)g(x).$$
+                <img src="/kurssit/maa6/kuvat/kuva49.png" max-width: 100%; width: auto; height: auto;/>
+            </p>
+
+            <p>
+                Jos funktioiden tulon lauseke voidaan sieventää yhdeksi polynomiksi, saadaan derivaatta määritettyä aiemmin opitulla tavalla. Tätä harjoitellaan seuraavassa tehtävässä.   
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t413-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t413">
+                                Funktioiden tulon derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t413" class="collapse">
+                        <p>
+                            Tutkitaan funktioiden $f(x) = x^3-5$ ja $g(x) = 4x^2+7$ tulon derivaattaa. 
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta ja sievennä tulofunktion $(fg)(x)$ lauseke. </li>
+                            <li> Määritä derivaattafunktio $(fg)'(x)$.  </li>
+                            <li> Määritä derivaatafunktiot $f'(x)$ ja $g'(x)$. Laske niiden tulo.</li>
+                            <li> Vertaa tulon derivaattaa $(fg)'(x)$ ja derivaattojen tuloa $f'(x)g'(x)$. Mitä huomaat?</li>
+                        </ol>
+                        <p>
+                            Vinkki: kertaa tarvittaessa teoreemat 6-9 <a href="http://kisallioppiminen.fi/kurssit/maa6/luku4/">luvusta 4</a>.
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t413_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t413_v" class="collapse">
+                        <ol class="a">
+                            <li> $(fg)(x) = 4x^5 + 7x^3 - 20x^2 - 35$ </li>
+                            <li> $(fg)'(x) = 20x^4 + 21x^2 - 40x$ </li>
+                            <!-- <li> $f'(x) = 3x^2$ ja $g(x) = 8x$ </li> -->
+                            <li> $f'(x)g'(x) = 24x^3$ </li>
+                            <li> Tulon derivaatta ei ole derivaattojen tulo. (Tulon derivaatta esimerkiksi kohdassa $x = 1$ on $(fg)'(1) = 1$ mutta derivaattojen tulo on $f'(1)g'(1) = 24$.)</li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Edellinen tehtävä osoittaa, että funktioiden tulon derivaatta <b>ei ole</b> sama kuin derivaattojen tulo. Yleispätevä sääntö on monimutkaisempi ja se todistetaan seuraavassa teoreemassa. Lue teoreema ja sen perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa. Jos sievennyksen yksityiskohdat tuntuvat kovin hankalilta, keskity aluksi tunnistamaan perustelusta kolme vaihetta ja vertaa niitä teoreeman 8 perusteluun.
+            </p>
+
+            <div class="theorem" id="FUNKTIOIDEN TULON DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Oletetaan, että funktio $f$ ja $g$ ovat derivoituvia. Tulofunktion $fg$ derivaattafunktio on 
+                    $$(fg)'(x) = f'(x)g(x) + f(x)g'(x)$$
+                    eli
+                    $$\mathop{\mathrm{D}} f(x)g(x) = f'(x)g(x) + f(x)g'(x).$$ 
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu: Tulon $fg$ erotusosamäärä kohdassa $a$ on
+                        $$
+                        \frac{f(x)g(x) - f(a)g(a)}{x-a}.
+                        $$
+                        Joku on keksinyt, että osoittajassa kannattaa lisätä ja vähentää sama termi $\textcolor{red}{f(a)g(x)}$:
+                        \begin{align*}
+                        &\phantom{ {} = {} } f(x)g(x) - f(a)g(a) \\[2mm]
+                        &= f(x)g(x) \textcolor{red}{ - f(a)g(x)} \\
+                        &\phantom{ {} = f(x)g(x) {} } \textcolor{red}{ + f(a)g(x)} - f(a)g(a) \\[2mm]
+                        &= (f(x)-f(a))g(x) \\
+                        &\phantom{ {} = (f(x) {} }+ f(a)(g(x)-g(a))
+                        \end{align*}
+                        Erotusosamäärä saadaan näin muotoon
+                        \begin{multline*}
+                        \frac{f(x) - f(a)}{x-a}g(x) + f(a)\frac{g(x) - g(a)}{x-a}
+                        \end{multline*}
+                        Koska funktiot $f$ ja $g$ ovat derivoituvia, niiden erotusosamäärillä on raja-arvot. Lisäksi koska funktio $g$ on derivoituva, se on myös jatkuva (teoreema 3). Siten $g(x) \rightarrow g(a)$, kun $x \rightarrow a$. 
+                        Siis
+                        \begin{multline*}
+                        \frac{f(x) - f(a)}{x-a}g(x) + f(a)\frac{g(x) - g(a)}{x-a} \\[2mm]
+                        \xrightarrow[x \rightarrow a]{} f'(a)g(a) + f(a)g'(a)
+                        \end{multline*}
+                        Näin on osoitettu, että
+                        $$(fg)'(a) = f'(a)g(a) + f(a)g'(a).$$
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t414-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t414">
+                                Funktioiden tulon derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t414" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää funktion $h(x) = (x^2-4x)(x^3+6x)$ arvojen kasvunopeus kohdassa $x = 3$.  
+                        </p>
+                        <ol class="a">
+                            <li> Määritä derivaattafunktio $h'(x)$ teoreeman 13 avulla.  </li>
+                            <li> Mikä on funktion $h$ arvojen kasvunopeus kohdassa $x = 3$? </li>
+                            <li> Kasvavatko vai pienenevätkö funktion $h$ arvot kohdassa $x = 3$? </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t414_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t414_v" class="collapse">
+                        <ol class="a">
+                            <li> $h'(x) = (2x-4)(x^3 + 6x) + (x^2-4x)(3x^2+6)$ </li>
+                            <li> $h'(3) = -9$ </li>
+                            <li> Funktion $h$ arvot pienenevät kohdassa $x = 3$, koska kasvunopeus on negatiivinen. </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Funktioiden tulon yksi erikoistapaus on funktion potenssi. Esimerkiksi funktio $g(x) = (x^2 + 9x)^4$ voidaan tulkita funktion $f(x) = x^2 + 9x$ neljänneksi potenssiksi:
+                $$g(x) = (f(x))^4.$$
+                Funktioiden tulon derivointisääntöä voidaan soveltaa funktion $f$ toiseen potenssiin:
+                \begin{align*}
+                \mathop{\mathrm{D}} (f(x))^2 &= \mathop{\mathrm{D}}f(x)f(x) \\[1mm]
+                &= f'(x)f(x) + f(x)f'(x) \\[1mm]
+                &= 2f(x)f'(x)
+                \end{align*}
+                Tämän tiedon ja tulon derivointisäännön avulla saadaan määritettyä funktion $f$ kolmannen potenssin derivaatta:
+                \begin{align*}
+                \mathop{\mathrm{D}} (f(x))^3 &= \mathop{\mathrm{D}}f(x)(f(x))^2 \\[1mm]
+                &= f'(x)(f(x))^2 + f(x)\mathop{\mathrm{D}}(f(x))^2 \\[1mm]
+                &= f'(x)(f(x))^2 + f(x)\cdot 2f(x)f'(x) \\[1mm]
+                &= (f(x))^2f'(x) + 2(f(x))^2f'(x) \\[1mm]
+                &= 3(f(x))^2f'(x)
+                \end{align*}
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t415-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t415">
+                                Funktion potenssin derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t415" class="collapse">
+                        <ol class="a">
+                            <li>
+                                Määritä funktion $f$ neljännen potenssin derivaatta $\mathop{\mathrm{D}} (f(x))^4$ samaan tapaan kuin edellä. 
+                                <br>
+                                Vinkki: Tulkitse funktion $f$ neljäs potenssi kahden funktion tulona. Hyödynnä teoreemaa 13 ja edellä johdettuja derivaattoja.
+                            </li>
+                            <li>
+                                Määritä funktion $g(x) = (x^2 + 9x)^4$ derivaatta a-kohdan tuloksen avulla.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t415_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t415_v" class="collapse">
+                            <ol class="a">
+                                <li>
+                                    $\mathop{\mathrm{D}} (f(x))^4 = 4(f(x))^3f'(x)$.
+                                </li>
+                                <li>
+                                    $g'(x) = 4(x^2 + 9x)^3(2x + 9)$.
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                On mahdollista osoittaa, että vastaava funktion potenssin derivointisääntö pätee kaikilla positiivisilla kokonaislukueksponenteilla:
+            </p>
+
+            <div class="theorem" id="FUNKTION POTENSSIN DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Oletetaan, että funktio $f$ on derivoituva. Olkoon $n$ on positiivinen kokonaisluku. Tällöin
+                    $$\mathop{\mathrm{D}} (f(x))^n = n(f(x))^{n-1}f'(x).$$ 
+                </p>
+                <div class="proof">
+                    <p>
+                        Teoreema voidaan perustella esimerkiksi matemaattisella induktiolla, johon tutustutaan kurssissa MAA11.
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t416-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t416">
+                                Funktion potenssin derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t416" class="collapse">
+                        <p>
+                            Tutkitaan funktiota $f(x) = (2x^2 - 8x)^4$.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Määritä derivaattafunktio $f'(x)$. 
+                            </li>
+                            <li>
+                                Määritä funktion kuvaajalle kohtaan $x = 1$ piirretyn tangentin kulmakerroin. 
+                            </li>
+                            <li>
+                                Mikä on funktion kuvaajalle kohtaan $x = 1$ piirretyn tangentin yhtälö?
+                            </li>
+                            <li>
+                                Missä kohdissa funktion kuvaajalle piirretty tangetti on vaakasuora?
+                            </li>
+                            <li> Piirrä teknisellä apuvälineellä funktion $f(x)$ kuvaaja ja kohtaan $x=1$ piirretty tangentti. Saitko tangentin yhtälöksi saman kuin c)-kohdassa? Ohjeen Geogebralla piirtämiseen löydät <a href="https://www.youtube.com/watch?v=NUVZNLuefC4&t=1s">täältä</a>.
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t416_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t416_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $f'(x) = 4(2x^2 - 8x)^3(4x-8)$. 
+                            </li>
+                            <li>
+                                $f'(1) = 3456$ 
+                            </li>
+                            <li>
+                                $y = 3456x - 2160$
+                            </li>
+                            <li>
+                                Derivaattafunktion nollakohdissa $x = 0$, $x = 2$, $x = 4$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section> 
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja4">
+                    Funktioiden osamäärä
+                </a>
+            </h1>
+        </header>
+        <div id="saantoja4" class="collapse">
+
+            <p>
+                Tässä kappaleessa johdetaan funktioiden osamäärän derivointisääntö, jonka avulla saadaan määritettyä muun muassa rationaalifunktioiden derivaatat.
+            </p>
+
+            <p>
+                Aloitetaan sopimalla, mitä funktioiden osamäärällä tarkoitetaan:
+            </p>
+
+            <div class="definition">
+                <h3>MÄÄRITELMÄ: FUNKTIOIDEN OSAMÄÄRÄ</h3>
+                <p>
+                    Funktioiden $f$ ja $g$ <em>osamäärä</em> tarkoittaa funktiota,
+                    jonka arvo kohdassa $x$ on funktioiden $f$ ja $g$ arvojen osamäärä:
+                    $$\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}.$$
+                </p>
+            </div>
+        
+            <p>
+                Esimerkiksi rationaalifunktio 
+                $$h(x) = \frac{5x-2}{x^2+5}$$
+                voidaan tulkita funktioiden $f(x) = 5x-2$ ja $g(x) = x^2+5$ osamääräksi:
+                $$h(x) = \frac{f(x)}{g(x)}.$$ 
+                Funktioiden osamäärän derivointisääntö saadaan johdettua tulon derivointisäännön avulla:
+            </p>
+
+            <div class="theorem" id="FUNKTIOIDEN OSAMÄÄRÄN DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Oletetaan, että funktiot $f$ ja $g$ ovat derivoituvia. Niiden osamäärän derivaattafunktio on
+                    $$\mathop{\mathrm{D}} \frac{f(x)}{g(x)} = \frac{f'(x)g(x)- f(x)g'(x)}{(g(x))^2}$$ 
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu: Merkitään
+                        $$h(x) = \frac{f(x)}{g(x)},$$
+                        jolloin $f(x) = h(x)g(x)$. Funktion $f$ derivaatta saadaan tulon derivointisäännöllä:
+                        $$
+                        f'(x) = h'(x)g(x) + h(x)g'(x).
+                        $$
+                        Tästä yhtälöstä voidaan ratkaista funktion $h$ derivaatta:
+                        \begin{align*}
+                        h'(x)g(x) &= f'(x) - h(x)g'(x) \\[2mm]
+                        h'(x) &= \frac{1}{g(x)}\left(f'(x) - h(x)g'(x) \right)
+                        \end{align*}
+                        Kun funktion $h$ paikalle sijoitetaan funktioiden $f$ ja $g$ osamäärä, saadaan lauseke sievennettyä:
+                        \begin{align*}
+                        h'(x) &= \frac{1}{g(x)}\left(f'(x) - \frac{f(x)}{g(x)}g'(x) \right) \\[2mm]
+                        &= \frac{f'(x)}{g(x)} - \frac{f(x)g'(x)}{(g(x))^2} \\[2mm]
+                        &= \frac{f'(x)g(x)}{(g(x))^2} - \frac{f(x)g'(x)}{(g(x))^2} \\[2mm]
+                        &= \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}
+                        \end{align*}
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t417-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t417">
+                                Funktioiden osamäärän derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t417" class="collapse">
+                        <p>
+                            Tutkitaan funktiota $h(x) = \dfrac{5x^2+1}{x}$.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Missä kohdassa funktio $h$ ei ole määritelty?
+                            </li>
+                            <li>
+                                Määritä derivaattafunktio $h'(x)$. Missä kohdassa derivaattafunktio ei ole määritelty?
+                            </li>
+                            <li>
+                                Missä kohdissa funktion $h$ kuvaajalle piirretty tangetti on yhdensuuntainen suoran $y = 4x - 1$ kanssa? 
+                            </li>
+                            <li>
+                                Mitkä ovat c-kohdan tangenttien yhtälöt?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t417_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t417_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                Funktio $h$ ei ole määritelty kohdassa $x = 0$. 
+                            </li>
+                            <li>
+                                Derivaattafunktio on 
+                                $$h'(x) = \dfrac{5x^2-1}{x^2}.$$ 
+                                Se ole määritelty kohdassa $x = 0$.
+                            </li>
+                            <li>
+                                Kohdissa $x = -1$ ja $x = 1$. 
+                            </li>
+                            <li>
+                                $y = 4x - 2$ ja $y = 4x + 2$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Osamäärän derivointisäännön avulla saadaan yleistettyä funktion potenssin derivointisääntö myös negatiivisten eksponenttien tapaukseen:
+            </p>
+
+            <div class="theorem" id="FUNKTION POTENSSIN DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Olkoon $n$ mikä tahansa kokonaisluku. Jos $f$ on derivoituva funktio, niin
+                    $$\mathop{\mathrm{D}} (f(x))^n = n(f(x))^{n-1}f'(x).$$
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu: Oletetaan, että $f$ on derivoituva funktio. Tapaus, jossa kokonaisluku $n$ on positiivinen, on käsitelty teoreemassa 14. 
+                        <br>
+                        Jos $n = 0$, funktio $(f(x))^n$ on vakiofunktio, ja sen derivaatta on nolla. Toisaalta tässä tapauksessa myös 
+                        \begin{align*}
+                        n(f(x))^{n-1}f'(x) &= 0 \cdot (f(x))^{-1}f'(x) \\
+                        &= 0,
+                        \end{align*}
+                        joten derivointisääntö antaa oikean tuloksen. 
+                        <br>
+                        Tutkitaan vielä tapaus, jossa kokonaisluku $n$ on negatiivinen. Merkitään sen vastalukua kirjaimella $k$, jolloin $k$ on positiivinen. (Siis $k = -n$ eli $n = -k$.) Sovelletaan potenssien laskusääntöjä kurssilta <a href="http://kisallioppiminen.fi/kurssit/may1/potenssiLogaritmi/">MAY1</a> sekä funktioiden osamäärän ja funktion potenssin derivointisääntöjä:
+                        \begin{align*}
+                        \mathop{\mathrm{D}} (f(x))^n &= \mathop{\mathrm{D}} \frac{1}{(f(x))^{-n}} \\[2mm]
+                        &= \mathop{\mathrm{D}} \frac{1}{(f(x))^{k}} \\[2mm]
+                        &= \frac{0 - k(f(x))^{k-1}f'(x)}{(f(x))^{2k}} \\[2mm]
+                        &=  -\frac{k(f(x))^{k-1}f'(x)}{(f(x))^{2k}} \\[2mm]
+                        &= -k(f(x))^{k-1-2k}f'(x) \\[2mm]
+                        &= -k(f(x))^{-k-1}f'(x) \\[2mm]
+                        &= n(f(x))^{n-1}f'(x)
+                        \end{align*}
+                        Huomaa, että funktion potenssin derivointisääntöä (teoreema 14) voidaan käyttää yllä olevassa päättelyssä, koska $k$ on positiivinen. 
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t606-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t606">
+                                Funktion potenssin derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t606" class="collapse">
+                        <p>
+                            Tutkitaan funktiota $g(x) = (1-5x)^{-2}$.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Missä kohdassa funktio $g$ ei ole määritelty?
+                            </li>
+                            <li>
+                                Määritä derivaattafunktio $g'(x)$. Missä kohdassa derivaattafunktio ei ole määritelty?
+                            </li>
+                            <li>
+                                Laadi derivaattafunktion merkkikaavio ja päättele, millä lukusuoran väleillä funktio $g$ on aidosti kasvava ja millä aidosti vähenevä. 
+                            </li>
+                            <li>
+                                Tarkista vastauksesi piirtämällä funktion $g$ kuvaaja laskimella tai tietokoneella.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t606_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t606_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                Funktio $g$ ei ole määritelty kohdassa $x = \frac{1}{5}$. 
+                            </li>
+                            <li>
+                                Derivaattafunktio on 
+                                $g'(x) = 10(1-5x)^{-3}$. 
+                                Se ole määritelty kohdassa $x = \frac{1}{5}$.
+                            </li>
+                            <li>
+                                Funktio $g$ on aidosti kasvava välillä $\left]-\infty, \frac{1}{5}\right[$ ja aidosti vähenevä välillä $\left]\frac{1}{5}, \infty\right[$
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Seuraavassa tehtävässä yleistetään potenssifunktion derivointisääntö myös negatiivisille eksponenteille.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t607-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t607">
+                                Funktion potenssin derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t607" class="collapse">
+                        <p>
+                            Olkoon $n$ kokonaisluku. Tarkastellaan funktiota $g(x) = x^n$.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Mikä on sellainen funktio $f(x)$, että $g(x) = \left(f(x)\right)^n$?
+                            </li>
+                            <li>
+                                Mikä on derivaattafunktio $f'(x)$?
+                            </li>
+                            <li>
+                                Määritä funktion $g$ derivaattafunktio a-kohdan ja teoreeman 16 avulla.
+                                <br>
+                                Vinkki: hyödynnä myös b-kohdan tulosta.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t607_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t607_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $f(x) = x$
+                            </li>
+                            <li>
+                                $f'(x) = 1$
+                            </li>
+                            <li>
+                                \begin{align*}
+                                g'(x) &= \mathop{\mathrm{D}} \left(f(x)\right)^n \\
+                                &= n\left(f(x)\right)^{n-1}f'(x) \\
+                                &= nx^{n-1}\cdot 1 \\
+                                &= nx^{n-1}
+                                \end{align*}
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Edellisen tehtävän tuloksena saadaan seuraava teoreema:
+            </p>
+
+            <div class="theorem" id="POTENSSIFUNKTION DERIVOINTISÄÄNNÖN YLEISTYS">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Olkoon $n$ mikä tahansa kokonaisluku. Funktion $g(x) = x^n$ derivaattafunktio on 
+                    $$g'(x) = nx^{n-1}.$$
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu tehtävässä 6.7.
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t608-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t608">
+                                POTENSSIN DERIVOINTISÄÄNNÖN YLEISTYS
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t608" class="collapse">
+                        <p>
+                            Tehtävänä on derivoida funktio
+                            $$
+                            f(x) = \frac{1}{x^6}.
+                            $$
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Ilmaise funktion lauseke negatiivisen eksponentin avulla ja määritä derivaattafunktio potenssin derivointisääntöä käyttäen. 
+                            </li>
+                            <li>
+                                Määritä derivaattafunktio osamäärän derivointisäännön avulla.
+                            </li>
+                            <li>
+                                Vertaa a- ja b-kohdan tuloksia. Ovatko ne samat? Kumpi ratkaisutapa on mielestäsi helpompi? Minkä vuoksi? Selitä omin sanoin.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t608_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t608_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $f(x) = x^{-6}$ ja $f'(x) = -6x^{-7}$
+                            </li>
+                            <li>
+                                $f'(x) = \dfrac{0-6x^5}{x^{12}}$
+                            </li>
+                            <li>
+                                Tulokset ovat samat, koska kumpikin sievenee muotoon 
+                                $$f'(x) = -\dfrac{6}{x^7}.$$
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja4">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#viimeinen">
+                    Rationaalifunktion kulku
+                </a>
+            </h1>
+        </header>
+        <div id="viimeinen" class="collapse">
+
+            <p>
+                Nyt olemme hankkineet kaikki tiedot, joita tarvitaan rationaalifunktioiden kulun tutkimiseen. Jos haluamme esimerkiksi selvittää funktion 
+                $$
+                f(x) = \frac{x^2}{x-1}
+                $$
+                ääriarvot, pystymme 
+            </p>
+                <ul>
+                    <li> määrittämään derivaattafunktion osamäärän derivointisäännöllä </li>
+                    <li> ratkaisemaan derivaattafunktion nollakohdat ja kohdat, joissa derivaattafunktio ei ole määritelty</li>
+                    <li> laatimaan derivaattafunktiolle merkkikaavion ja täydentämään sen funktion $f$ kulkukaavioksi.</li>
+                </ul>
+            <p>
+                Erona aikaisempiin tilanteisiin on oikeastaan vain se, että rationaalifunktion derivaattafunktiolla saattaa olla kohtia, joissa derivaattafunktio ei ole määritelty. Nämä täytyy ottaa huomioon merkkikaaviossa (ks. <a href="http://kisallioppiminen.fi/kurssit/maa6/luku3/">luvun 3</a> kappale Rationaaliepäyhtälö). 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t609-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t609">
+                                RATIONAALIFUNKTION KULKU
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t609" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää funktion 
+                            $$
+                            f(x) = \frac{x^2}{x-1}
+                            $$
+                            ääriarvot.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Määritä derivaattafunktio $f'(x)$.
+                            </li>
+                            <li>
+                                Määritä derivaattafunktion nollakohdat ja kohdat, joissa derivaattafunktio ei ole määritelty. 
+                            </li>
+                            <li>
+                                Laadi derivaattafunktion merkkikaavio. Muista merkitä siihen myös kohdat, joissa derivaattafunktio ei ole määritelty.
+                            </li>
+                            <li> Täydennä derivaattafunktion merkkikaavio funktion $f$ kulkukaavioksi. Mitkä ovat funktion ääriarvot? </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t609_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t609_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $f'(x) = \dfrac{x^2-2x}{(x-1)^2}$
+                            </li>
+                            <li>
+                                 Nollakohdat $x_1 = 0$ ja $x_2 = 2$. Derivaattafunktio ei ole määritelty nimittäjän nollakohdassa $x = 1$.
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                Paikallinen maksimiarvo $f(0) = 0$ ja minimiarvo $f(2) = 4$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t610-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t610">
+                                RATIONAALIFUNKTION KULKU
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t610" class="collapse">
+                        <p>
+                            Tehtävänä on tutkia, onko funktiolla
+                            $$
+                            g(x) = \frac{x}{x^2-1}
+                            $$
+                            ääriarvoja.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Määritä derivaattafunktio $g'(x)$.
+                            </li>
+                            <li>
+                                Määritä derivaattafunktion nollakohdat ja kohdat, joissa derivaattafunktio ei ole määritelty. 
+                            </li>
+                            <li>
+                                Laadi derivaattafunktion merkkikaavio. Muista merkitä siihen myös kohdat, joissa derivaattafunktio ei ole määritelty.
+                            </li>
+                            <li> Täydennä derivaattafunktion merkkikaavio funktion $g$ kulkukaavioksi. Onko funktiolla $g$ ääriarvoja? </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t610_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t610_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $g'(x) = \dfrac{-x^2-1}{(x^2-1)^2}$
+                            </li>
+                            <li>
+                                 Derivaattafunktiolla ei ole nollakohtia. Derivaattafunktio ei ole määritelty nimittäjän nollakohdissa $x_1 = 1$ ja $x_2 = -1$.
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                Funktion kulkukaavio on 
+                                <br>
+                                <img src="/kurssit/maa6/kuvat/kuva86.png" max-width: 100%; width: auto; height: auto;/>
+                                <br>
+                                Funktiolla $g$ ei ole ääriarvoja.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Kohdat, joissa derivaattafunktio ei ole määritelty, täytyy huomioida myös silloin, kun kulkukaavion pohjalta tehdään päätelmiä funktion kasvamisesta ja vähenemisestä. Aikaisemmin luvussa 5 tarkasteltiin polynomifunktiota 
+                $$f(x) = \frac{1}{6}x^3 + 1,$$
+                jonka derivaattafunktio on 
+                $$f'(x) = \frac{1}{2}x^2.$$
+                Funktion $f$ kulkukaaviosta voidaan päätellä, että funktio $f$ on aidosti kasvava koko reaaliakselilla:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva84.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Myös funktion $f$ kuvaaja tukee tätä johtopäätöstä:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva85.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Tehtävässä 6.10 puolestaan tarkasteltiin rationaalifunktiota
+                $$
+                g(x) = \frac{x}{x^2-1},
+                $$
+                jonka kulkukaavioksi saatiin
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva86.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kulkukaaviosta nähdään, että funktio $g$ on aidosti vähenevä väleillä $\left]-\infty, -1\right[$, $\left]-1, 1\right[$ ja $\left] 1, \infty\right[$. Se ei kuitenkaan ole aidosti vähenevä koko lukusuoralla, mikä nähdään funktion kuvaajasta:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva87.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kun kulkukaavion perusteella tehdään johtopäätöksiä, täytyy siis olla tarkkana, ovatko siihen merkityt erityiskohdat derivaatan nollakohtia vai kohtia, joissa derivaattafunktio ei ole määritelty. Funktion kuvaajan avulla voi usein tarkistaa, ovatko kulkukaaviosta tehdyt päätelmät oikein.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t611-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t611">
+                                RATIONAALIFUNKTION KULKU
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t611" class="collapse">
+                        <p>
+                            Tehtävänä on tutkia, on funktiolla
+                            $$
+                            f(x) = \frac{x^2}{x^2+1}
+                            $$
+                            suurinta tai pienintä arvoa.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Määritä derivaattafunktio $f'(x)$.
+                            </li>
+                            <li>
+                                Laadi funktion $f$ kulkukaavio.  
+                            </li>
+                            <li>
+                                Onko funktiolla $f$ paikallisia ääriarvoja?
+                            </li>
+                            <li>
+                                Onko funktiolla $f$ suurinta arvoa? Entä pienintä? Pystytkö perustelemaan vastaukset pelkän kulkukaavion avulla?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t611_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t611_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $f'(x) = \dfrac{2x}{(x^2+1)^2}$
+                            </li>
+                            <li>
+                                 
+                            </li>
+                            <li>
+                                Funktiolla $f$ on minimiarvo $f(0) = 0$.
+                            </li>
+                            <li>
+                                Funktio on aidosti vähenevä välillä $\left] -\infty, 0\right]$ ja aidosti kasvava välillä $\left[0, \infty\right[$, joten funktion $f$ pienin arvo on $f(0) = 0$. Funktiolla $f$ ei ole suurinta arvoa.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Joissakin tilanteissa funktion suurimman ja pienimmän arvon olemassaoloa ei voida päätellä pelkän kulkukaavion avulla. Esimerkiksi funktion
+                $$
+                g(x) = \frac{-3x}{x^2 + 1}
+                $$
+                kulkukaaviosta nähdään, että funktiolla $g$ on kaksi ääriarvoa: maksimiarvo $g(-1) = \frac{3}{2}$ ja minimiarvo $g(1) = -\frac{3}{2}$. 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva88.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Se, onko maksimiarvo $g(-1) = -\frac{3}{2}$ myös funktion $g$ suurin arvo, riippuu funktion arvojen käyttäytymisestä muuttujan kasvaessa rajatta. Kulkukaaviosta nimittäin nähdään, että funktio $g$ on aidosti kasvava välillä $\left[1, \infty\right[$. Kasvavatko sen arvot tällä välillä suuremmiksi kuin maksimikohdassa $x = -1$?
+            </p>
+
+            <p>
+                Funktion $g$ lauseketta tarkastelemalla havaitaan, että nimittäjä $x^2 + 1$ on aina positiivinen. Jos $x \geq 1$, osoittaja $-3x$ on negatiivinen. Funktion $g$ arvot ovat siis negatiivisia välillä $\left[1, \infty\right[$, joten $g(-1) = \frac{3}{2}$ on funktion suurin arvo. 
+            </p>
+
+            <p>
+                Tutkitaan vielä, onko minimiarvo $g(1) = -\frac{3}{2}$ funktion $g$ pienin arvo. Saako funktio $g$ tätä pienemmän arvon välillä $\left] -\infty, -1\right]$? 
+            </p>
+
+            <p>
+                Funktion $g$ lausekkeesta voidaan päätellä samaan tapaan kuin edellä, että jos $x \leq -1$, niin funktion arvot ovat positiivisia. Siten $g(1) = -\frac{3}{2}$ on funktion $g$ pienin arvo. Myös funktion kuvaaja tukee näitä johtopäätöksiä:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva67.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Huomaa, että pelkän kuvaajan perusteella ei voida olla täysin varmoja, kuinka suuria tai pieniä arvoja funktio saa, kun muuttuja kasvaa tai pienenee rajatta. Edellä tehty päättely kuitenkin takaa, että $g(-1) = \frac{3}{2}$ ja $g(1) = -\frac{3}{2}$ ovat todella funktion suurin ja pienin arvo.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t612-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t612">
+                                RATIONAALIFUNKTION SUURIN JA PIENIN ARVO
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t612" class="collapse">
+                        <p>
+                            Tehtävänä on tutkia, on funktiolla
+                            $$
+                            f(x) = \frac{4x}{x^2+3}
+                            $$
+                            suurinta tai pienintä arvoa.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Määritä derivaattafunktio $f'(x)$.
+                            </li>
+                            <li>
+                                Laadi funktion $f$ kulkukaavio.  
+                            </li>
+                            <li>
+                                Onko funktiolla $f$ paikallisia ääriarvoja?
+                            </li>
+                            <li>
+                                Onko funktiolla $f$ suurinta arvoa? Entä pienintä? Perustele vastauksesi huolellisesti samaan tapaan kuin edellä.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t612_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t612_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $f'(x) = \dfrac{12-4x^2}{(x^2+3)^2}$
+                            </li>
+                            <li>
+                                 
+                            </li>
+                            <li>
+                                Funktiolla $f$ on minimiarvo $f(-\sqrt{3}) = -\frac{2}{3}\sqrt{3}$ ja maksimiarvo $f(\sqrt{3}) = \frac{2}{3}\sqrt{3}$.
+                            </li>
+                            <li>
+                                Funktion $f$ on aidosti vähenevä välillä $\left[\sqrt{3}, \infty\right[$ mutta sen arvot ovat tällä välillä positiivisia, joten minimiarvo $f(-\sqrt{3}) = -\frac{2}{3}\sqrt{3}$ on funktion $f$ pienin arvo.
+                                <br>
+                                Funktion $f$ arvot ovat negatiivisia välillä $\left]-\infty, -\sqrt{3}]$, joten maksimiarvo $f(\sqrt{3}) = \frac{2}{3}\sqrt{3}$ on funktion $f$ suurin arvo.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Taito tutkia rationaalifunktion kulkua antaa uusia mahdollisuuksia erilaisten käytännön ongelmien ratkaisemiseen. Jälleen ensimmäinen haaste on kuitenkin mallintaa ongelma matemaattisesti: 
+                <ul>
+                    <li> Mitä muuttujaa tarkastellaan? </li>
+                    <li> Minkä funktion suurinta tai pienintä arvoa etsitään?</li>
+                    <li> Millä välillä muuttujan arvot vaihtelevat? </li>
+                </ul>
+            </p>
+
+            <p>
+                Tarkastellaan esimerkiksi seuraavaa tilannetta: Kunnan kaavoitusarkkitehti suunnittelee uutta pientaloaluetta. Alueelle halutaan kaavoittaa tontteja, joille voi rakentaa $130 \text{ m}^2$ omakotitalon. Tontit ovat suorakulmion muotoisia ja rajoittuvat yhdeltä sivultaan puroon. Rakennuksen etäisyys purosta on oltava vähintään 11 metriä ja tontin muista reunoista vähintään 5 metriä. Mitkä ovat pienimmän mahdollisen tontin mitat ja pinta-ala? Oletetaan yksinkertaisuuden vuoksi, että myös rakennuksen pohja on suorakulmion muotoinen ja sen sivut ovat yhdensuuntaiset tontin rajojen kanssa. 
+            </p>
+
+            <p>
+                Aloitetaan piirtämällä tilanteesta kuva. Merkitään tontin sivujen pituuksia kirjaimilla $x$ ja $y$:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva89.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Rakennuksen pinta-alasta $130 \text{ m}^2$ saadaan ehto muuttujille $x$ ja $y$:
+                $$
+                (x-10)(y-16) = 130.
+                $$
+                Tästä yhtälöstä voidaan ratkaista toinen muuttujista:
+                \begin{align*}
+                y-16 &= \frac{130}{x-10} \\[2mm]
+                y &= \frac{130}{x-10} + 16
+                \end{align*}
+                Tontista halutaan mahdollisimman pieni, joten ryhdytään tutkimaan tontin pinta-alaa $A = xy$. Sijoitetaan tähän äskeisen pyörittelyn tulos, jolloin tontin pinta-ala saadaan ilmaistua muuttujan $x$ funktiona:
+                \begin{align*}
+                A(x) &= x\left(\frac{130}{x-10} + 16\right) \\[2mm]
+                &= \frac{130x}{x - 10} + 16x.
+                \end{align*}
+                Mallikuvasta voidaan päätellä, että tontin leveys $x$ on vähintään 10 metriä eikä sillä periaatteessa ole ylärajaa. Tehtävänä on siis etsiä funktion $A(x)$ pienin arvo, kun $x \geq 10$. Tämä tehdään seuraavassa tehtävässä.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t613-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t613">
+                                RATIONAALIFUNKTION SUURIN JA PIENIN ARVO
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t613" class="collapse">
+                        <p>
+                            Jatkoa edelliseen esimerkkiin. Tehtävänä on määrittää funktion
+                            $$
+                            A(x) = \frac{130x}{x - 10} + 16x
+                            $$
+                            pienin arvo, kun $x \geq 10$, tai osoittaa, että pienintä arvoa ei ole olemassa.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Määritä derivaattafunktio $A'(x)$.
+                            </li>
+                            <li>
+                                Laadi funktion $A$ kulkukaavio.  
+                            </li>
+                            <li>
+                                Onko funktiolla $A$ pienin arvo välillä $\left[10, \infty\right[$? 
+                            </li>
+                            <li>
+                                Mitkä ovat pienimmän mahdollisen tontin mitat desimetrin tarkkuudella? Entä mikä on sen pinta-ala?
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t613_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t613_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                $A'(x) = \dfrac{-1300}{(x-10)^2 + 16}$
+                            </li>
+                            <li>
+                                 
+                            </li>
+                            <li>
+                                Funktion $A$ pienin arvo on $A\left(10+\frac{5}{2}\sqrt{13}\right) = 130 + 80\sqrt{13} \approx 578$.
+                            </li>
+                            <li>
+                                Leveys $x \approx 19{,}0 \text{ m}$, pituus $y \approx 30{,}4 \text{ m}$. Pinta-ala noin $578 \text{ m}^2$.
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t614-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t614">
+                                RATIONAALIFUNKTION SUURIN JA PIENIN ARVO
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t614" class="collapse">
+                        <p>
+                            Suoran ympyrälieriön muotoisen ananassäilykepurkin tilavuus on $6{,}2 \text{ dl}$. Tehtävänä on selvittää, miten purkin korkeus ja pohjan säde pitäisi valita, jotta purkin valmistaminen vaatisi mahdollisimman vähän peltiä.
+                        </p>
+                        <ol class="a">
+                            <li>
+                                Piirrä kuva suorasta ympyrälieriöstä. Merkitse sen korkeutta ja pohjaympyrän sädettä joillakin kirjaimilla. 
+                            </li>
+                            <li>
+                                Muodosta säilykepurkin tilavuuden avulla yhtälö, jossa esiintyvät sekä lieriön korkeus että pohjaympyrän säde. 
+                                <br>
+                                Vinkki: Kertaa tarvittaessa lieriön geometriaa <a href="http://kisallioppiminen.fi/kurssit/maa3/luku3/">MAA3-kurssista</a>. Muunna lieriön tilavuus  kuutiosenttimetreiksi esimerkiksi <a href="https://fi.wikipedia.org/wiki/Litra">Wikipedian</a> avulla.
+                            </li>
+                            <li>
+                                Valitse toinen muuttujista ja muodosta funktio, jonka pienintä arvoa etsitään. 
+                            </li>
+                            <li>
+                                Tutki derivaatan avulla, onko funktiolla pienin arvo.  
+                            </li>
+                            <li>
+                                Miten säilykepurkin korkeus ja pohjan säde pitäisi valita, jotta purkin valmistaminen vaatisi mahdollisimman vähän peltiä? Anna vastaukset millimetrin tarkkuudella.
+                            </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t614_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t614_v" class="collapse">
+                            <ol class="a">
+                            <li>
+                                
+                            </li>
+                            <li>
+                                 
+                            </li>
+                            <li>
+                                
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#viimeinen">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku5-tehtavasarja2">
+                    TEHTÄVÄSARJA II
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku5-tehtavasarja2" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="s2t101-ex">
+                <header>
+                    <h1>
+                        <a data-target="#s2t101">
+                            Suoran yhtälö
+                        </a>
+                    </h1>
+                </header>
+                <div id="s2t101">
+                    <p>
+                        Määritä yhtälö suoralle, joka kulkee seuraavien pisteiden kautta:
+                    </p>
+                    <ol class="a">
+                        <li> $(-1,4)\ $ ja $\ (5,-1)$</li>
+                        <li> $\left(-\frac{5}{3}, \frac{1}{2}\right)\ $ ja $\ \left(\frac{1}{3}, \frac{5}{6}\right)$.</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#s2t101_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="s2t101_v" class="collapse">
+                        <p>
+                        <ol class="a">
+                            <li> $y = -\frac{5}{6}x + \frac{19}{6}$ </li>
+                            <li> $y = \frac{1}{6}x + \frac{7}{9}$ </li>
+                        </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku5-tehtavasarja2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku6-tehtavasarja3">
+                    TEHTÄVÄSARJA III
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku6-tehtavasarja3" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s3t601-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t601">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t601">
+                    <ol class="a">
+                        <li>
+                            Laske funktion 
+                            $$
+                            f(x) = \frac{x}{2} + \frac{2}{x} + 1
+                            $$
+                            derivaatan arvo kohdassa $x = 2$.
+                        </li>
+                        <li>
+                            Määritä $f'(-3)$, kun 
+                            $$
+                            f(x) = \frac{x^2}{x+1}.
+                            $$
+                        </li>
+                    </ol>
+                    <p>
+                        [Pitkä S2016/2b &amp; S2010/1c]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t601_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t601_v" class="collapse">
+                        <ol class="a">
+                            <li>
+                                $f'(2) = 0$
+                            </li>
+                            <li>
+                                $f'(-3) = \frac{3}{4}$
+                            </li>   
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t602-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t602">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t602">
+                    <p>
+                        Tehtaassa valmistetaan tölkitettyjä säilykehedelmiä. Päärynänpuolikkaita pakataan suoran ympyrälieriön muotoiseen peltitölkkiin. Tölkin pohja- ja kansilevyjen materiaalin hinta on 2,00 €/$\text{m}^2$ ja vaipan materiaalin hinta 1,00 €/$\text{m}^2$. Suunnittele materiaalikustannuksiltaan mahdollisimman halpa peltitölkki, jonka tilavuus on $1\,000 \text{ cm}^3$. Anna vastauksena tölkin korkeuden ja pohjan halkaisijan suhteen tarkka arvo.
+                        <br>
+                        [Pitkä K2016/11]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t602_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t602_v" class="collapse">
+                        <p>
+                            Kysytty suhde on $h:2r = 2$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t603a-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t603a">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t603a">
+                    <p>
+                        Laskeva suora kulkee pisteen $(3, 4)$ kautta siten, että sen ja koordinaattiakselien rajoittaman kolmion ala on mahdollisimman pieni. Määritä suoran kulmakerroin ja vastaava pienin ala.
+                        <br>
+                        [Pitkä S2005/9]
+                        <br>
+                        Vinkki: Piirrä tilanteesta mallikuva. Kertaa tarvittaessa <a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">MAA5-kurssin</a> teoreema 9.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t603a_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t603a_v" class="collapse">
+                        <p>
+                            Kun pinta-ala on mahdollisimman pieni, kulmakerroin on $-\frac{4}{3}$ ja pinta-ala on $24$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t603-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t603">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t603">
+                    <p>
+                        Oletetaan, että $a > 0$ ja $b > 0$. Suora kulkee kiinteän pisteen $(a,b)$ kautta ja muodostaa positiivisten koordinaattiakselien kanssa kolmion. Mikä on tällaisen kolmion pienin mahdollinen pinta-ala?
+                        <br>
+                        [Pitkä S2010/10]
+                        <br>
+                        Vinkki: Piirrä tilanteesta mallikuva. Valitse muuttujaksi suoran kulmakerroin $k$.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t603_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t603_v" class="collapse">
+                        <p>
+                            Kolmion pienin mahdollinen pinta-ala saavutetaan, kun suoran kulmakerroin on $k = -\frac{b}{a}$. Pienin pinta-ala on $2ab$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t604-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t604">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t604">
+                    <p>
+                        Suorakulmion kaksi kärkeä on $x$-akselilla ja kaksi käyrällä
+                        $$
+                        y = \frac{4}{2 + x^2}
+                        $$
+                        Mitkä ovat suorakulmion sivujen pituudet, kun sen pinta-ala on suurin mahdollinen?
+                        <br>
+                        [Pitkä K2010/7]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t604_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t604_v" class="collapse">
+                        <p>
+                            Suorakulmion sivujen pituudet ovat $2\sqrt{2}$ ja $1$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t605-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t605">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t605">
+                    <ol class="a">
+                        <li>
+                            Derivoi funktio
+                            $$
+                            f(x) = \frac{1-2x^2}{1+x^2}.
+                            $$
+                        </li>
+                        <li>
+                            
+                        </li>
+                    </ol>
+                    <p>
+                        [Pitkä S2008/2a &amp; ]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t605_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t605_v" class="collapse">
+                        <ol class="a">
+                            <li>
+                                $$
+                                f'(x) = -\frac{6x}{(1+x^2)^2}
+                                $$
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t606-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t606">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t606">
+                    <p>
+                        Tulta syöksevät lohikäärmeet Draco ja Nid vartioivat solaa, ja solassa kulkeva joutuu menemään niiden välistä. Lohikäärmeiden välinen etäisyys on 200 kyynärää. Tulisuihkun vaikutus on suoraan verrannollinen lohikäärmeen kokoon ja kääntäen verrannollinen lohikäärmeestä mitatun etäisyyden kolmanteen potenssiin. Draco on kaksi kertaa niin suuri kuin Nid. Mistä kohtaa lohikäärmeiden välistä kulkijan on vaellettava, jotta hän selviäisi mahdollisimman vähällä? Anna vastaus kyynärän tarkkuudella.
+                        <br>
+                        [Pitkä K2006/10]
+                        <br>
+                        Vinkki: Tarkastele tilannetta, jossa kulkija on etäisyydellä $x$ Dracosta. Jos Dracon tulisuihkun vaikutus on 
+                        $$
+                        \frac{2a}{x^3},
+                        $$
+                        niin mikä on Nidin tulisuihkun vaikutus? Millä etäisyydellä niiden yhteisvaikutus on pienin? 
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t606_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t606_v" class="collapse">
+                        <p>
+                            Noin 109 kyynärän päässä Dracosta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t607-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t607">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t607">
+                    <p>
+                        Olkoon 
+                        $$
+                        f(x) = \frac{x^2}{x^4 + x^2 + 1}.
+                        $$
+                        Kumpi on suurempi, $f(a)$ vai $f(b)$, kun $a = 1 + 10^{-1500}$ ja $b = 1 + 2\cdot 10^{-1500}$?
+                        <br>
+                        [Pitkä S2005/7]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t607_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t607_v" class="collapse">
+                        <p>
+                            Kulkukaaviosta nähdään, että funktio on aidosti vähenevä, kun $x > 1$. Koska $1 < a < b$, on siis $f(a) > f(b)$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t608a-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t608a">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t608a">
+                    <p>
+                        Rautalanka, jonka pituus on 120 cm, katkaistaan kahteen osaan. Toinen osa taivutetaan neliöksi, toinen ympyräksi. Miten lanka on katkaistava, jotta ympyrän ja neliön alojen summa olisi mahdollisimman pieni?
+                        <br>
+                        [Lyhyt S2007/12]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t608a_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t608a_v" class="collapse">
+                        <p>
+                            Ympyrän osuus langasta on noin 52,8 cm ja neliön 67,2 cm.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t608-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t608">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t608">
+                    <p>
+                        Yksikkösäteisen pallon sisällä on tilavuudeltaan mahdollisimman suuri suora ympyräpohjainen lieriö. Määritä lieriön korkeus ja pohjaympyrän säde. Laske lieriön ja pallon tilavuuksien suhde.
+                        <br>
+                        [Pitkä K2003/8]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t608_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t608_v" class="collapse">
+                        <p>
+                            Lieriön korkeus on $\frac{2}{\sqrt{3}}$ ja pohjaympyrän säde on $\sqrt{\frac{2}{3}}$. Lieriön ja pallon tilavuuksien suhde on $\frac{1}{\sqrt{3}}$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t609-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t609">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t609">
+                    <p>
+                        Suunnittele sellainen suoran lieriön muotoinen juomalasi, jonka pohjan paksuus on 5,0 mm, seinämän paksuus 2,0 mm, vetoisuus 2,0 dl ja jonka valmistamiseen tarvitaan mahdollisimman vähän lasia. Ilmoita lasin korkeus ja ulkopuolelta mitattu pohjan halkaisija.
+                        <br>
+                        [Pitkä K2017/7]
+                    </p>
+                    <img src="/kurssit/maa6/kuvat/kuvaYO12.png" max-width: 100%; width: auto; height: auto;/>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t609_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t609_v" class="collapse">
+                        <p>
+                            Lasin korkeus on noin 78,6 mm ja pohjan halkaisija noin 62,8 mm.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku6-tehtavasarja3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
+                    Itsearviointitehtävät
+                </a>
+            </h1>
+        </header>
+        <div id="L4itsearviointi" class="collapse">
+            <p>
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+            </p>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L5itsearviointi">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+</article>

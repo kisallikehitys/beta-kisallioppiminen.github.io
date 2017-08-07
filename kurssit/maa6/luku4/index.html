@@ -1,0 +1,1306 @@
+---
+title: MAA6 - Derivaatta
+layout: material
+sitemap: true
+main-class: has-atop
+topnav: maa6
+---
+
+<input type="hidden" id="chapterNumber" value="4"/>
+<input type="hidden" id="theoremStart" value="6"/>
+
+<article>
+    <section>
+        <header>
+            <h1>Derivointisääntöjä I</h1>
+        </header>
+    </section>
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun4-tavoitteet">
+                    Luvun tavoitteet
+                </a>
+            </h1>
+        </header>
+        <div id="luvun4-tavoitteet" class="collapse">
+
+            <div class="objective">
+                <p> 
+                    Tämän luvun tavoitteena on, että ... Osaat
+                <ul>
+                    <li> </li>
+                    
+                </ul> 
+                </p>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luvun4-tavoitteet">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja0">
+                    Derivaatan määritelmä
+                </a>
+            </h1>
+        </header>
+        <div id="saantoja0" class="collapse">
+
+            <p>
+                Kurssin <a href="http://kisallioppiminen.fi/kurssit/maa6/luku1/">ensimmäisessä luvussa</a> tutustuimme funktion derivaatan käsitteeseen. Opimme, että funktion derivaatta on funktion kuvaajalle piirretyn tangentin kulmakerroin, joka kuvaa funktion kasvunopeutta kyseisessä kohdassa. Tässä kappaleessa määrittelemme derivaatan käsitteen täsmällisemmin tietynlaisena raja-arvona.
+            </p>
+
+            <p>
+                Tarkastellaan aluksi funktiota $f$ ja suoraa, joka leikkaa funktion kuvaajan (ainakin) kahdessa kohdassa kuten alla olevassa kuvassa.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva41.png" max-width: 100%; width: auto; height: auto;/>
+                Tämän suoran kulmakerroin on
+                $$
+                \frac{f(x) - f(a)}{x-a}
+                $$
+                Sitä sanotaan funktion $f$ <em>erotusosamääräksi kohdassa</em> $a$. 
+            </p>
+
+            <p>
+                Kun $x \rightarrow a$, lähestyy pisteiden $(a,f(a))$ ja $(x, f(x))$ kautta kulkeva suora funktion kuvaajalle pisteeseen $(a,f(a))$ piirrettyä tangettia: 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva42.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Suoran kulmakerroin puolestaan lähestyy tangentin kulmakerrointa, joten seuraava määritelmä sopii derivaatan täsmälliseksi määritelmäksi:
+            </p>
+
+            <div class="definition">
+                <h3>MÄÄRITELMÄ: DERIVAATTA</h3>
+                <p>
+                    Jos funktion $f$ erotusosamäärällä kohdassa $a$ on raja-arvo kohdassa $a$, niin funktio $f$ on <em>derivoituva kohdassa</em> $a$.
+                    <br>
+                    Raja-arvoa kutsutaan funktion $f$ <em>derivaataksi kohdassa</em> $a$ ja merkitään $f'(a)$. Siis
+                    $$
+                    f'(a) = \lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a}
+                    $$
+                </p>
+            </div>
+
+            <p>
+                Esimerkiksi funktion $f(x) = x^2$ erotusosamäärä kohdassa $0{,}5$ on
+                $$
+                \frac{x^2 - 0{,}5^2}{x-0{,}5}
+                $$
+                Murtolauseketta voidaan muokata niin, että raja-arvo on mahdollista selvittää:
+                \begin{align*}
+                \frac{x^2 - 0{,}5^2}{x-0{,}5} &= \frac{(x - 0{,}5)(x + 0{,}5)}{x-0{,}5} \\[2mm]
+                &= x + 0{,}5 \xrightarrow[x \rightarrow 0{,}5]{} 0{,}5 + 0{,}5 \\
+                &= 1
+                \end{align*}
+                Siis funktion $f(x) = x^2$ derivaatta kohdassa $x = 0{,}5$ on 
+                $$f'(0{,}5) = 1.$$
+                <img src="/kurssit/maa6/kuvat/kuva43.png" max-width: 100%; width: auto; height: auto;/>
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="firstEx">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t401">
+                                Derivaatan määritelmä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t401" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää funktion $f(x) = x^2$ derivaatan arvo kohdassa $3$.
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta funktion $f$ erotusosamäärä kohdassa $3$. </li>
+                            <li> Muokkaa erotusosamäärää niin, että supistaminen on mahdollista. Mikä on erotusosamäärän raja-arvo, kun $x \rightarrow 3$? </li>
+                            <li> Mitä on $f'(3)$?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t401_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t401_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{x^2 - 9}{x-3}$ </li>
+                                <li> ${\displaystyle x + 3 \xrightarrow[x\rightarrow 3]{} 6}$</li>
+                                <li> $f'(3) = 6$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t402-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t402">
+                                Derivaatan määritelmä
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t402" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää funktion 
+                            $$g(x) = \dfrac{1}{x-2}$$ 
+                            derivaatan arvo kohdassa $-1$.
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta funktion $g$ erotusosamäärä kohdassa $-1$. </li>
+                            <li> Sievennä erotusosamäärä mahdollisimman pitkälle. Aloita laventamalla osoittajassa esiintyvät termit samannimisiksi. </li>
+                            <li> Mitä on $g'(-1)$?</li>
+                        </ol>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t402_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t402_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{\frac{1}{x-2} + \frac{1}{3}}{x+1}$ </li>
+                                <li> ${\displaystyle \frac{1}{3(x-2)}}$</li>
+                                <li> $f'(-1) = -\frac{1}{9}$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Derivaatan arvon selvittäminen suoraan derivaatan määritelmän perusteella on monesti melko työlästä. Sen vuoksi seuraavaksi johdetaan sääntöjä, joilla voidaan helpommin muodostaa erilaisten funktioiden derivaattoja.
+            </p>
+
+<!--        <p>
+                Yllä olevan kuvan tapauksessa funktion $f$ on määritelty yhtälöllä $f(x) = 0{,}05x^3 + 1$, joten funktion $f$ erotusosamäärä kohdassa $a = 2$ on 
+                \begin{align*}
+                \frac{f(x) - f(2)}{x-2} &= \frac{0{,}05x^3 + 1 - 1{,}4}{x-2} \\[2mm]
+                &=\frac{0{,}05x^3 -0{,}4}{x-2}
+                \end{align*}
+            </p> -->
+        
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja1">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja1">
+                    Vakiofunktio ja potenssifunktiot
+                </a>
+            </h1>
+        </header>
+        <div id="saantoja1" class="collapse">
+
+            <p>
+                Kurssissa <a href="http://kisallioppiminen.fi/kurssit/maa2/luku4/">MAA2</a> tutustuttiin potenssifunktioihin. Potenssifunktiot ovat muotoa $f(x) = x^n$, missä $n$ on positiivinen kokonaisluku. Tässä kappaleessa määritetään potenssifunktioiden sekä vakiofunktion derivaattafunktiot. 
+            </p>
+
+            <p>
+                Tarkastellaan aluksi ensimmäisen asteen potenssifunktiota $f(x) = x$. Sen erotusosamäärä kohdassa $a$ on 
+                $$\frac{f(x)-f(a)}{x-a} = \frac{x-a}{x-a} = 1.$$
+                Funktion derivaatta kohdassa $a$ on erotusosamäärän raja-arvo:
+                $$
+                f'(a) =  \lim_{x \rightarrow a} 1 = 1.
+                $$
+                Tulos ei riipu tarkastelukohdasta $a$, joten derivaattafunktio vakiofunktio $f'(x) = 1$. Tämä nähdään myös ensimmäisen asteen potenssifunktion kuvaajasta: 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva45.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kuvaaja on suora, jonka kulmakerroin on $1$. Funktion arvojen kasvunopeus on siis koko ajan $1$.
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t403-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t403">
+                                Vakiofunktion derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t403" class="collapse">
+                        <p>
+                            Tarkastellaan vakiofunktiota $g(x) = \pi$. 
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta funktion $g$ erotusosamäärä kohdassa $a$. </li>
+                            <li> Määritä funktion $g$ derivaatta kohdassa $a$ erotusosamäärän raja-arvona. </li>
+                            <li> Riippuuko derivaatan arvo tarkastelukohdasta? Mikä on vakiofunktion derivaattafunktio?</li>
+                            <li> Tarkista johtopäätöksesi funktion $g$ kuvaajan avulla. Mikä on sen perusteella funktion arvojen kasvunopeus?</li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva44.png" max-width: 100%; width: auto; height: auto;/>
+                             <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t403_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t403_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{\pi - \pi}{x-a} = \dfrac{0}{x-a} = 0$ </li>
+                                <li> ${\displaystyle g'(a) = \lim_{x \rightarrow a} 0  = 0}$</li>
+                                <li> Vakiofunktion derivaattafunktio on nollafunktio $g'(x) = 0$ </li>
+                                <li> Funktion arvojen kasvunopeus on $0$.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Edellisen tehtävän päättely voidaan toistaa minkä tahansa vakiofunktion tapauksessa, joten saadaan seuraava teoreema:</p>
+
+            <div class="theorem" id="VAKIOFUNKTION DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Vakiofunktion $f(x) = c$ derivaattafunktio nollafunktio:
+                    $$f'(x) = 0.$$
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu kuten tehtävässä 4.3.
+                    </p>      
+                </div>
+            </div>
+
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t404-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t404">
+                                Toisen asteen potenssifunktion derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t404" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää toisen asteen potenssifunktion $f(x) = x^2$ derivaattafunktio. 
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta funktion $f$ erotusosamäärä kohdassa $a$. </li>
+                            <li> Muokkaa erotusosamäärää niin, että supistaminen on mahdollista. Mikä on erotusosamäärän raja-arvo, kun $x \rightarrow a$? </li>
+                            <li> Mikä on toisen asteen potenssifunktion $f(x) = x^2$ derivaattafunktio?</li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva46.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t404_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t404_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{x^2 - a^2}{x-a}$ </li>
+                                <li> ${\displaystyle x+a \xrightarrow[x \rightarrow a]{} a + a = 2a}$</li>
+                                <li> Derivaattafunktio on $f'(x) = 2x$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t405-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t405">
+                                Kolmannen asteen potenssifunktion derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t405" class="collapse">
+                        <p>
+                            Tehtävänä on määrittää kolmannen asteen potenssifunktion $f(x) = x^3$ derivaattafunktio. 
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta funktion $f$ erotusosamäärä kohdassa $a$. </li>
+                            <li> Kerro sulut auki lausekkeesta $(x-a)(x^2 + xa + a^2)$.</li>
+                            <li> Sievennä erotusosamäärää b-kohdan avulla. Mikä on erotusosamäärän raja-arvo, kun $x \rightarrow a$? </li>
+                            <li> Mikä on kolmannen asteen potenssifunktion $f(x) = x^3$ derivaattafunktio? </li>
+                        </ol>
+                        <img src="/kurssit/maa6/kuvat/kuva47.png" max-width: 100%; width: auto; height: auto;/>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t405_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t405_v" class="collapse">
+                            <ol class="a">
+                                <li> $\dfrac{x^3 - a^3}{x-a}$ </li>
+                                <li> $(x-a)(x^2 + xa + a^2) = x^3 - a^3$ </li>
+                                <li> ${\displaystyle x^2 + xa + a^2 \xrightarrow[x \rightarrow a]{} 3a^2}$</li>
+                                <li> $f'(x) = 3x^2$. </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Edellisen tehtävän idea voidaan yleistää myös korkeamman asteen potenssifunktioille. Jos $n \geq 2$ on positiivinen kokonaisluku, niin 
+                \begin{multline*}
+                (x-a)(x^{n-1} + x^{n-2}a + \cdots + xa^{n-2} + a^{n-1}) \\
+                = x^n - a^n
+                \end{multline*}
+                Tämän yhtälön avulla erotusosamäärä saadaan supistettua niin, että raja-arvo voidaan määrittää.
+            </p>
+
+            <div class="theorem" id="POTENSSIFUNKTION DERIVAATTAFUNKTIO">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Olkoon $n$ positiivinen kokonaisluku. Potenssifunktion $f(x) = x^n$ derivaattafunktio on 
+                    $$f'(x) = nx^{n-1}.$$
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu: Aikaisemmin on osoitettu, että teoreeman tulos pätee tapauksessa $n = 1$. Nimittäin funktion $f(x) = x$ derivaattafunktio on 
+                        $$f'(x) = 1 = 1 \cdot x^0.$$
+                        Oletetaan seuraavaksi, että $n \geq 2$.
+                        Funktion $f(x) = x^n$ erotusosamäärä kohdassa $a$ on
+                        $$
+                        \frac{x^n-a^n}{x-a}.
+                        $$
+                        Se supistuu muotoon
+                        $$x^{n-1} + x^{n-2}a + \cdots + xa^{n-2} + a^{n-1}.$$
+                        Tässä summassa muuttujan $x$ eksponentti saa kaikki kokonaislukuarvot luvusta $n-1$ lukuun $0$, joten yhteenlaskettavia on $n$ kappaletta. Vakion $a$ eksponentti saa vastaavat arvot niin, että jokaisessa yhteenlaskettavassa eksponenttien summa on aina $n-1$. Kun $x \rightarrow a$, raja-arvoksi saadaan 
+                        \begin{align*}
+                        &\phantom{={}} a^{n-1} + a^{n-2}a + \cdots + aa^{n-2} + a^{n-1} \\[1mm]
+                        &= a^{n-1} + a^{n-1} + \cdots + a^{n-1} + a^{n-1} \\[1mm]
+                        &= na^{n-1}
+                        \end{align*}
+                        Siis 
+                        $$f'(a) = na^{n-1}.$$
+                        Tästä voidaan päätellä, että potenssifunktio $f(x) = x^n$ on derivoituva ja sen derivaattafunktio on $f'(x) = nx^{n-1}$.
+                    </p>      
+                </div>
+            </div>
+
+            <p>
+                Derivaattafunktio voidaan ilmaista myös derivointimerkin $\mathop{\mathrm{D}}$ avulla. Esimerkiksi tehtävissä 4.3-4.5 osoitettiin, että
+                \begin{align*}
+                \mathop{\mathrm{D}} \pi &= 0 \\
+                \mathop{\mathrm{D}} x^2 &= 2x \\
+                \mathop{\mathrm{D}} x^3 &= 3x^2
+                \end{align*}
+                Seuraavassa tehtävässä harjoitellaan teoreeman 2 soveltamista. 
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t406-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t406">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t406" class="collapse">
+                        <p>
+                            Määritä seuraavat derivaattafunktiot: 
+                        </p>
+                        <ol class="a">
+                            <li> $\mathop{\mathrm{D}} x^5$ </li>
+                            <li> $\mathop{\mathrm{D}} x^9$ </li>
+                            <li> $\mathop{\mathrm{D}} x^{14}$ </li>
+                            <li> $\mathop{\mathrm{D}} 9$ </li>
+                        </ol>
+                        <p>
+                            Kertaa tarvittaessa tehtävä 4.3.
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t406_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t406_v" class="collapse">
+                            <ol class="a">
+                                <li> $\mathop{\mathrm{D}} x^5 = 5x^4$ </li>
+                                <li> $\mathop{\mathrm{D}} x^9 = 9x^8$ </li>
+                                <li> $\mathop{\mathrm{D}} x^{14} = 14x^13$ </li>
+                                <li> $\mathop{\mathrm{D}} 9 = 0$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja1">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja2">
+                    Funktioiden summa ja vakiokerroin
+                </a>
+            </h1>
+        </header>
+        <div id="saantoja2" class="collapse">
+
+            <p>
+                Edellisessä kappaleessa tutkitiin potenssifunktioita ja vakiofunktioita. Polynomifunktiot saadaan muodostettua niistä yhteenlaskun ja vakiolla kertomisen avulla. Esimerkiksi polynomifunktio
+                $$
+                p(x) = -3x^2 + 5x - 4
+                $$
+                voidaan muodostaa potenssifunktioista $f(x) = x^2$ ja $g(x) = x$ sekä vakiofunktiosta $h(x) = -4$:
+                $$
+                p(x) = -3f(x) + 5g(x) + h(x).
+                $$
+                Tässä kappaleessa osoitetaan, että derivaattafunktio on vastaava yhdistelmä potenssi- ja vakiofunktioiden derivaatoista:
+                $$
+                p'(x) = -3f'(x) + 5g'(x) + h'(x).
+                $$
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t407-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t407">
+                                Derivaattafunktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t407" class="collapse">
+                        <p>
+                            Sievennä funktion $p(x) = -3x^2 + 5x - 4$ derivaattafunktio
+                            $$p'(x) = -3f'(x) + 5g'(x) + h'(x),$$
+                            missä $f(x) = x^2$, $g(x) = x$ ja $h(x) = -4$.
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t407_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t407_v" class="collapse">
+                            <p>
+                                $p'(x)= -6x + 5$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Tarkastellaan aluksi funktioiden summan derivaattaa. Seuraavassa teoreemassa osoitetaan, että se saadaan laskemalla funktioiden derivaatat yhteen. Lue teoreema ja sen perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
+            </p>
+
+            <div class="theorem" id="FUNKTIOIDEN SUMMAN DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Oletetaan, että funktiot $f$ ja $g$ ovat derivoituvia. Summan $f+g$ derivaatta on funktioiden $f$ ja $g$ derivaattojen summa:
+                    $$(f + g)'(x) = f'(x) + g'(x)$$
+                    eli
+                    $$\mathop{\mathrm{D}}(f(x) + g(x)) = f'(x) + g'(x)$$ 
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu: Summan $f+g$ erotusosamäärä kohdassa $a$ on
+                        $$
+                        \frac{(f(x) + g(x)) - (f(a) + g(a))}{x-a}.
+                        $$
+                        Muokataan tätä erotusmäärää niin, että siitä erottuvat funktioiden $f$ ja $g$ erotusosamäärät:
+                        \begin{align*}
+                        &\phantom{={}}\frac{(f(x) + g(x)) - (f(a) + g(a))}{x-a} \\[2mm]
+                        &= \frac{f(x) + g(x) - f(a) - g(a)}{x-a} \\[2mm]
+                        &= \frac{f(x) - f(a) + g(x) - g(a)}{x-a} \\[2mm]
+                        &= \frac{f(x) - f(a)}{x-a} + \frac{g(x) - g(a)}{x-a}
+                        \end{align*}
+                        Summan erotusosamäärä on siis funktioiden $f$ ja $g$ erotusosamäärien summa. Koska funktiot $f$ ja $g$ ovat derivoituvia, näillä erotusosamäärillä on raja-arvot:
+                        \begin{multline*}
+                        \frac{f(x) - f(a)}{x-a} + \frac{g(x) - g(a)}{x-a} \\
+                        \xrightarrow[x \rightarrow a]{} f'(a) + g'(a) 
+                        \end{multline*}
+                        Näin on osoitettu, että 
+                        $$(f+g)'(a) = f'(a) + g'(a).$$
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t408-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t408">
+                                Funktioiden summan derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t408" class="collapse">
+                        <p>
+                            Määritä seuraavat derivaattafunktiot teoreeman 3 avulla: 
+                        </p>
+                        <ol class="a">
+                            <li> $\mathop{\mathrm{D}} (x^4 + x)$ </li>
+                            <li> $\mathop{\mathrm{D}} (x^7 + x^2 - 25)$ </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t408_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t408_v" class="collapse">
+                            <ol class="a">
+                            <li> $\mathop{\mathrm{D}} (x^4 + x^3) = 4x^3 + 3x^2$ </li>
+                            <li> $\mathop{\mathrm{D}} (x^7 + x^2 - 25) = 7x^6 + 2x$ </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t408b-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t408b">
+                                Funktioiden summan derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t408b" class="collapse">
+                        <p>
+                            Tutkitaan funktiota $f(x) = x^2 + x$.
+                        </p>
+                        <ol class="a">
+                            <li> Määritä derivaattafunktio $f'(x)$. </li>
+                            <li> Mikä on funktion $f$ arvojen kasvunopeus kohdassa $x = 1$? </li>
+                            <li> Missä kohdassa funktion arvojen kasvunopeus on nolla? </li>
+                            <li> Mikä on funktion kuvaajalle kohtaan $x = -2$ piirretyn tangentin kulmakerroin?</li>
+                            <li> Mikä on funktion kuvaajalle kohtaan $x = -2$ piirretyn tangentin yhtälö? </li>
+                        </ol>
+                        <p>
+                            Piirrä funktion $f$ kuvaaja ja vertaa vastauksiasi siihen. Ovatko vastaukset järkeviä?
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t408b_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t408b_v" class="collapse">
+                            <ol class="a">
+                                <li> $f'(x) = 2x + 1$. </li>
+                                <li> $f'(1) = 3$. </li>
+                                <li> $x = -\frac{1}{2}$ </li>
+                                <li> $f'(-2) = -3$.</li>
+                                <li> $y = -3x-4$ </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Tarkastellaan seuraavaksi vakiolla kerrotun funktion derivaattaa. Kun funktio kerrotaan vakiolla, tulee sen arvo jokaisessa kohdassa kerrotuksi tällä vakiolla:
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva48.png" max-width: 100%; width: auto; height: auto;/>
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t409-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t409">
+                                Vakiolla kerrottu funktio
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t409" class="collapse">
+                        <p>
+                            Funktioiden $f$ ja $kf$ kuvaajat näkyvät yllä olevassa kuvassa. Mikä on vakion $k$ arvo tässä tapauksessa?
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t409_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t409_v" class="collapse">
+                            <p>
+                                $k = 2$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="tehtavat">
+                <div class="tehtava" id="t410-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t410">
+                                Vakiolla kerrotun funktion derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t410" class="collapse">
+                        <p>
+                            Oletetaan, että funktio $f$ on derivoituva. Tehtävänä on määrittää vakiolla kerrotun funktion $kf$ derivaatta.
+                        </p>
+                        <ol class="a">
+                            <li> Muodosta funktion $kf$ erotusosamäärä kohdassa $a$.  </li>
+                            <li> Muokkaa erotusosamäärää niin, että siitä erottuu funktion $f$ erotusosamäärä. </li>
+                            <li> Mikä on funktion $kf$ erotusosamäärän raja-arvo, kun $x \rightarrow a$?</li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t410_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t410_v" class="collapse">
+                            <ol class="a">
+                            <li> $\dfrac{kf(x) - kf(a)}{x-a}$ </li>
+                            <li> $k\cdot \dfrac{f(x) - f(a)}{x-a}$ </li>
+                            <li> $kf'(a)$ </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Tehtävän 4.11 tuloksena saadaan seuraava teoreema:</p>
+
+            <div class="theorem" id="VAKIOLLA KERROTUN FUNKTION DERIVAATTA">
+                <h3>TEOREEMA</h3>
+                <p>
+                    Oletetaan, että funktio $f$ on derivoituva. Vakiolla kerrotun funktion $kf$ derivaatta on funktion $f$ derivaatta kerrottuna samalla vakiolla:
+                    $$(kf)'(x) = kf'(x)$$
+                    eli
+                    $$\mathop{\mathrm{D}} kf(x) = kf'(x).$$ 
+                </p>
+                <div class="proof">
+                    <p>
+                        Perustelu tehtävässä 4.11.
+                    </p>      
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t411-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t411">
+                                Vakiolla kerrotun funktion derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t411" class="collapse">
+                        <p>
+                            Määritä seuraavat derivaattafunktiot teoreemojen 3 ja 4 avulla: 
+                        </p>
+                        <ol class="a">
+                            <li> $\mathop{\mathrm{D}} 7x^9$ </li>
+                            <li> $\mathop{\mathrm{D}} (2x^5 - 4x^3 + 6x)$ </li>
+                            <li> $\mathop{\mathrm{D}} (17x^2 - 8x^6 - 56)$ </li>
+                        </ol>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t411_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t411_v" class="collapse">
+                        <ol class="a">
+                            <li> $63x^8$ </li>
+                            <li> $10x^4 - 12x^2 + 6$ </li>
+                            <li> $34x - 48x^5$ </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t412-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t412">
+                                Vakiolla kerrotun funktion derivaatta
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t412" class="collapse">
+                        <p>
+                            Tutkitaan funktiota 
+                            $$f(x) = \frac{3}{2}x^2 - 10x + 20.$$
+                        </p>
+                        <ol class="a">
+                            <li> Määritä derivaattafunktio $f'(x)$. </li>
+                            <li> Muuttuvatko funktion $f$ arvot voimakkaammin kohdassa $x = 2$ vai kohdassa $x = 4$? </li>
+                            <li> Missä kohdassa funktion arvojen kasvunopeus on nolla? </li>
+                            <li> Harjoittele teknisen apuvälineen käyttöä derivointitehtävissä. Katso esimerkiksi <a href="https://www.youtube.com/watch?v=m1NybE2YF2M&t=1s">tästä</a> Texas Nspiren käyttöön ohjevideo ja ratkaise kohdat a)-c) teknisen apuvälineen avulla.
+                            <li> Funktion $f$ kuvaaja on paraabeli. Määritä paraabelin huipun koordinaatit. </li>
+                        </ol>
+                        <p>
+                            Piirrä funktion $f$ kuvaaja ja vertaa vastauksiasi siihen. Ovatko vastaukset järkeviä?
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t412_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t412_v" class="collapse">
+                        <ol class="a">
+                            <li> $f'(x) = 3x - 10$ </li>
+                            <li> Arvot muuttuvat voimakkaammin kohdassa $x = 2$, jossa funktion kuvaajalle piirretyn tangentin kulmakerroin on $-4$. </li>
+                            <li> Kohdassa $x = \frac{10}{3}$. </li>
+                            <li> Huippu on $\left(\frac{10}{3}, \frac{10}{3}\right)$. </li>
+                        </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#saantoja2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku4-tehtavasarja2">
+                    TEHTÄVÄSARJA II
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku4-tehtavasarja2" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s2t401-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t401">
+                            Suoran yhtälö
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t401">
+                    <p>
+                        Määritä yhtälö suoralle, joka kulkee seuraavien pisteiden kautta:
+                    </p>
+                    <ol class="a">
+                        <li> $(-1,4)\ $ ja $\ (5,-1)$</li>
+                        <li> $\left(-\frac{5}{3}, \frac{1}{2}\right)\ $ ja $\ \left(\frac{1}{3}, \frac{5}{6}\right)$.</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t401_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t401_v" class="collapse">
+                        <p>
+                        <ol class="a">
+                            <li> $y = -\frac{5}{6}x + \frac{19}{6}$ </li>
+                            <li> $y = \frac{1}{6}x + \frac{7}{9}$ </li>
+                        </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku4-tehtavasarja2">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#luku4-tehtavasarja3">
+                    TEHTÄVÄSARJA III
+                </a>
+            </h1>
+        </header>
+
+        <div id="luku4-tehtavasarja3" class="collapse">
+            <!-- Tästä alkaa piilotus -->
+
+            <div class="tehtava" id="MAA6s3t401a-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t401a">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t401a">
+                    <p>
+                        Määritä paraabelin $y = 2x^2 + bx + 3$ huippu ja totea, että se kertoimen $b$ arvosta riippumatta sijaitsee paraabelilla $y = −2x^2 + 3$.
+                        <br>
+                        [Pitkä K2005/5]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t401a_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t401a_v" class="collapse">
+                        <p>
+                            Huipun $x$-koordinaatti on derivaatan nollakohta $-\frac{1}{4}b$. Sen avulla saadaan laskettua $y$-koordinaatti $-\frac{1}{8}b^2 + 3$. Nämä toteuttavat paraabelin $y = −2x^2 + 3$ yhtälön riippumatta kertoimen $b$ arvosta.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t401b-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t401b">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t401b">
+                    <p>
+                        Määritä käyrän $y = x^3$ pisteeseen $(2,8)$ piirretyn tangentin yhtälö. Missä pisteessä tangentti leikkaa $y$-akselin? Määritä tangentin, $y$-akselin ja suoran $y = 8$ määräämän kolmion pinta-ala.
+                        <br>
+                        [Pitkä K2001/2]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t401b_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t401b_v" class="collapse">
+                        <p>
+                            Tangentin yhtälö on $y = 12x - 16$. Tangentti leikkaa $y$-akselin pisteessä $(0,-16)$. Kolmion pinta-ala on $24$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t401-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t401">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t401">
+                    <p>
+                        Osoita erotusosamäärää tutkimalla, että funktio
+                        $$
+                        f(x) = \frac{x}{1 + \left|x\right|}
+                        $$
+                        on derivoituva kohdassa $x = 0$.
+                        <br>
+                        [Pitkä K2015/13a]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t401_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t401_v" class="collapse">
+                        <p>
+                            \begin{align*}
+                            \frac{f(x) - f(0)}{x-0} = \frac{1}{1 + \left|x\right|} \xrightarrow[x\rightarrow 0]{} 1
+                            \end{align*}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t402-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t402">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t402">
+                    <ol class ="a">
+                        <li>
+                            Millä muuttujan $x$ arvoilla polynomin $P(x) = x^4 - x^3 + x$ derivaatta saa arvon $1$?
+                        </li>
+                        <li> 
+                            Määritellään funktiot $f(x) = x^3 - 3x$ ja $g(x) = \frac{1}{2}f(2x)$, kun $x \in \R$. Laske derivaatta $g'(1)$. 
+                            <br>
+                            Vinkki: aloita sieventemällä funktion $g$ lauseke.
+                        </li>
+                    </ol>
+                    [Pitkä S2013/2a &amp; K2014/3b]
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t402_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t402_v" class="collapse">
+                        <ol class ="a">
+                            <li>
+                                Muuttujan arvoilla $x = 0$ ja $x = \frac{3}{4}$
+                            </li>
+                            <li> 
+                                $g'(1) = 9$
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t403-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t403">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t403">
+                    <p>
+                        Millä parametrin $k$ arvoilla käyrien $y = kx^2$ ja $y = k(x-2)^2$ leikkauspisteeseen piirretyt tangentit ovat kohtisuorassa toisiaan vastaan?
+                    </p>
+                    [Pitkä S2013/4]
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t403_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t403_v" class="collapse">
+                        <p>
+                            Parametrin arvoilla $k = \pm\frac{1}{2}$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t404-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t404">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t404">
+                    <ol class="a">
+                        <li>
+                            Määritä sellainen kerroin $a$, että funktio
+                            $$
+                            f(x) = \begin{cases}
+                            ax^2, &\text{ jos $x \leq -1$,} \\[2mm]
+                            \frac{x^2}{1+x^2}, &\text{ jos $x > -1$.}
+                            \end{cases}
+                            $$               
+                            on jatkuva kaikkialla.
+                        </li>
+                        <li>
+                            Onko funktio $f(x)$ tällöin derivoituva kaikkialla?
+                        </li>
+                    </ol>
+                    <p>
+                        [Pitkä K2011/11a&amp;b]
+                        <br>
+                        Vinkki: b-kohdassa tutki erotusosamäärän raja-arvoa kahdessa tapauksessa: jos $x \rightarrow (-1)-$ ja jos $x \rightarrow (-1)+$.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t404_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t404_v" class="collapse">
+                        <ol class="a">
+                        <li>
+                            $a = \frac{1}{2}$
+                        </li>
+                        <li>
+                            Funktio ei ole derivoituva kohdassa $x = -1$, sillä erotusosamäärän vasemman- ja oikeanpuoleinen raja-arvo ovat tässä kohdassa erisuuruiset. Vasemmanpuoleinen raja-arvo on $-1$ ja oikeanpuoleinen on $-\frac{1}{2}$.
+                        </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t405-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t405">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t405">
+                    <p>
+                        Neljännen asteen polynomilla $3x^4 - 8x^3 - 18x^2 + 7$ ja sen derivaatalla on yhteinen nollakohta. Määritä tämä yhteinen nollakohta.
+                        <br>
+                        [Pitkä K2009/4]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t405_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t405_v" class="collapse">
+                        <p>
+                            $x = -1$
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t406-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t406">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t406">
+                    <p>
+                        Tiedetään, että funktio $f$ kasvaa varsin tarkoin lineaarisesti (suoraviivaisesti) välillä $[1{,}9995; 2{,}0005]$. Lisäksi tiedetään funktion arvot $f(2) = 3{,}7458053$ ja $f(2{,}0005) = 3{,}7458664$. Määritä tämän perusteella likiarvo derivaatalle $f'(2)$.
+                        <br>
+                        [Pitkä K2006/12]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t406_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t406_v" class="collapse">
+                        <p>
+                            $f'(x) \approx 0{,}1222$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t407-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t407">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t407">
+                    <p>
+                        Olkoon funktio $f$ jatkuva origossa. Määritä erotusosamäärän avulla funktion $g(x) = xf(x)$ derivaatta origossa. Voidaanko tulosta soveltaa funktioon $f(x) = \left|x\right| + 1$?
+                        <br>
+                        [Pitkä K2005/12]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t407_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t407_v" class="collapse">
+                        <p>
+                            \begin{align*}
+                            \frac{g(x) - g(0)}{x-0} &= \frac{xf(x) - 0\cdotf(0)}{x} \\[2mm]
+                            &= \frac{xf(x)}{x} \\[2mm]
+                            &= f(x) \xrightarrow[x \rightarrow 0]{} f(0)
+                            \end{align*}
+                            Tulosta voidaan soveltaa funktioon $f(x) = \left|x\right| + 1$, sillä se on jatkuva origossa. Funktiolla $g(x) = x\left|x\right| + x$ on siis origossa derivaatta $g'(0) = f(0) = 1$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t408-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t408">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t408">
+                    <p>
+                        Määritä funktion 
+                        $$
+                        f(x) = \frac{1}{x}
+                        $$
+                        derivaatta kohdassa $x = 2$ laskemalla erotusosamäärän raja-arvo.
+                        <br>
+                        [Pitkä S2004/10]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t408_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t408_v" class="collapse">
+                        <p>
+                            \begin{align*}
+                            \frac{f(x) - f(2)}{x-2} &= \frac{\frac{1}{x} - \frac{1}{2}}{x-2} \\[2mm]
+                            &= \frac{\frac{2-x}{2x}}{x-2} \\[2mm]
+                            &= \frac{-(x-2)}{2x} \cdot \frac{1}{x-2} \\[2mm]
+                            &= \frac{-1}{2x} \xrightarrow[x \rightarrow 2]{} -\frac{1}{4}
+                            \end{align*}
+                            Siis $f'(2) = -\frac{1}{4}$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t409-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t409">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t409">
+                    <p>
+                        Määritä se paraabelin $y = x^2-2x-3$ piste, jossa paraabelin tangentin suuntakulma on $+45^\circ$.
+                        <br>
+                        [Pitkä K2004/5]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t409_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t409_v" class="collapse">
+                        <p>
+                            Piste on $\left(\frac{3}{2}, -\frac{15}{4}\right)$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t410-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t410">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t410">
+                    <p>
+                        Olkoon $f(x) = x^2 - 3x - 5$. 
+                    </p>
+                    <ol class="a">
+                        <li> Ratkaise yhtälö $f(x) = 0$. </li>
+                        <li> Millä muuttujan $x$ arvoilla on $f'(x) = 1$? </li>
+                        <li> Piirrä derivaattafunktion $f'$ kuvaaja. </li>
+                    </ol>
+                    <p>
+                        [Pitkä S2003/1]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t410_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t410_v" class="collapse">
+                        <ol class="a">
+                        <li> $x = \frac{1}{2}(3 \pm \sqrt{29})$ </li>
+                        <li> $x = 2$ </li>
+                        <li> Kuvaaja on suora, jonka yhtälö on $y = 2x -3$. Se kulkee siis pisteiden $(0,-3)$ ja $(1,-1)$ kautta. </li>
+                    </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t411-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t411">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t411">
+                    <p>
+                        Osoita, että käyrillä $x^2 -6x - 3 + 4y = 0$ ja $2x^2 + 1 - y = 0$ on yksi yhteinen piste, jossa ne sivuavat toisiaan, so. niillä on yhteinen tangetti. Määritä tämän tangentin yhtälö.
+                        <br>
+                        [Pitkä S2001/4]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t411_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t411_v" class="collapse">
+                        <p>
+                            Käyrillä on yksi yhteinen piste: $\left(\frac{1}{3}, \frac{11}{9}\right)$. Käyriä vastaavien polynomifunktioiden derivaatat saavat saman arvo kohdassa $x = \frac{1}{3}$, joten niillä on tässä yhteisessä pisteessä yhteinen tangentti. Tangetin yhtälö on $12x - 9y + 7 = 0$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s3t412-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s3t412">
+
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s3t412">
+                    <p>
+                        Paraabelin $y = ax^2 + bx − 3$ huippu on pisteessä $\left(\frac{3}{2}, 1\right)$. Määritä kertoimet $a$ ja $b$.
+                        <br>
+                        [Lyhyt K2007/12]
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s3t412_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s3t412_v" class="collapse">
+                        <p>
+                            $a = -\frac{16}{9}$ ja $b = \frac{16}{3}$
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#luku4-tehtavasarja3">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel">
+        <header>
+            <h1>
+                <a data-toggle="collapse" class="collapsed" data-target="#L4itsearviointi">
+                    Itsearviointitehtävät
+                </a>
+            </h1>
+        </header>
+        <div id="L3itsearviointi" class="collapse">
+            <p>
+                Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
+            </p>
+            <div class="close-section">
+                <a data-toggle="collapse" class="collapsed" data-target="#L4itsearviointi">
+                    Sulje kappale
+                </a>
+            </div>
+        </div>
+    </section>
+
+</article>
