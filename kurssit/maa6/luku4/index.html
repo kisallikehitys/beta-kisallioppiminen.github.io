@@ -27,10 +27,12 @@ topnav: maa6
 
             <div class="objective">
                 <p> 
-                    Tämän luvun tavoitteena on, että ... Osaat
+                    Tämän luvun tavoitteena on, että pystyt määrittämään derivaatan erotusosamäärän raja-arvona ja sovellat derivointisääntöjä sujuvasti polynomifunktioiden derivoimiseen. Osaat
                 <ul>
-                    <li> </li>
-                    
+                    <li> muodostaa funktion erotusosamäärän ja laskea sen raja-arvon </li>
+                    <li> määrittää vakiofunktion ja potenssifunktioiden derivaattafunktiot </li>
+                    <li> käyttää funktioiden summan ja vakiolla kerrotun funktion derivointisääntöjä</li>
+                    <li> muodostaa polynomifunktion kuvaajalle asetetun tangentin yhtälön. </li>
                 </ul> 
                 </p>
             </div>
@@ -764,6 +766,88 @@ topnav: maa6
                 </div>
             </div>
 
+            <p>
+                Tässä luvussa johdettujen derivointisääntöjen avulla voidaan nyt määrittää minkä tahansa polynomifunktion derivaatta. Tämä mahdollistaa myös monenlaisten geometristen ongelmien ratkaisemisen. Tarkastellaan esimerkiksi tilannetta, jossa halutaan määrittää käyrälle $y = x^2 - 4x + 5$ sellainen tangentti, joka kulkee pisteen $(1,-2)$ kautta. 
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva103.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Havaitaan, että piste $(1,-2)$ ei ole käyrällä, sillä jos $x = 1$, niin
+                $$
+                    y = 1^2 - 4\cdot 1 + 5 = 2 \neq -2.
+                $$
+                Hahmotellaan etsitty tangentti kuvaan ja merkitään sivuamispisteen $x$-koordinaattia kirjaimella $a$. Koska sivuamispiste on käyrällä, sen $y$-koordinaatti on käyrän yhtälön mukaisesti $a^2-4a+5$.
+                <br>
+                <img src="/kurssit/maa6/kuvat/kuva104.png" max-width: 100%; width: auto; height: auto;/>
+                <br>
+                Kuvasta havaitaan, että sopivia tangentteja näyttäisi olevan kaksi erilaista. Tangentin kulmakerroin kohdassa $x = a$ saadaan derivoimalla käyrää vastaava polynomifunktio $f(x) = x^2 - 4x + 5$:
+                $$
+                f'(x) = 2x - 4,
+                $$
+                joten
+                $$
+                f'(a) = 2a - 4.
+                $$
+                Muodostetaan pisteen $(a,a^2-4a+5)$ kautta kulkevan tangentin yhtälö:
+                $$
+                 y - (a^2-4a+5) = (2a-4)(x-a) 
+                $$
+                Tangentti kulkee myös pisteen $(1,-2)$ kautta, joten saadaan yhtälö
+                $$
+                 -2 - (a^2-4a+5) = (2a-4)(1-a).
+                $$
+                Tästä voidaan ratkaista $a$:
+                \begin{align*}
+                -2 - (a^2-4a+5) &= (2a-4)(1-a) \\
+                -a^2 + 4a - 7 &= 2a -2a^2 - 4 + 4a \\
+                a^2 - 2a - 3 &=0
+                \end{align*}
+                Toisen asteen ratkaisukaavalla ratkaisuiksi saadaan
+                \begin{align*}
+                a &= \frac{2 \pm \sqrt{4+12}}{2} \\[2mm]
+                &= \frac{2 \pm 4}{2} \\[2mm]
+                &= 1\pm 2
+                \end{align*}
+                Sopivia tangentteja siis todella on kaksi ja niiden yhtälöiksi saadaan arvoilla $a = -1$ ja $a = 3$
+                $$
+                 y = -6x + 4
+                $$
+                ja
+                $$
+                y = 2x - 4.
+                $$
+            </p>
+
+            <div class="tehtavat">
+                <div class="tehtava" id="t413-ex">
+                    <header>
+                        <h1>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t413">
+                                Käyrän tangentti
+                            </a>
+                        </h1>
+                    </header>
+                    <div id="t413" class="collapse">
+                        <p>
+                        Määritä käyrälle
+                        $$
+                            y = x^2 - x + 1
+                        $$
+                        kohtaan $x = -1$ piirretyn normaalin yhtälö.
+                        </p>
+                        <h2>
+                            <a data-toggle="collapse" class="collapsed" data-target="#t413_v">
+                                VASTAUS
+                            </a>
+                        </h2>
+                        <div id="t413_v" class="collapse">
+                            <p>
+                            $y = \frac{1}{3}x + \frac{10}{3}$.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="close-section">
                 <a data-toggle="collapse" class="collapsed" data-target="#saantoja2">
@@ -785,37 +869,623 @@ topnav: maa6
         <div id="luku4-tehtavasarja2" class="collapse">
             <!-- Tästä alkaa piilotus -->
 
+
+            <div class="tehtava" id="MAA6s2t407-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t407">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t407">
+                    <p>
+                        Mihin paraabelin 
+                        $$
+                            y = x^2 - 2x
+                        $$
+                        pisteeseen asetettu tangetti on suoran 
+                        $$
+                            4x - y + 3 = 0
+                        $$
+                        suuntainen?
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t407_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t407_v" class="collapse">
+                        <p>
+                            Pisteeseen $(3,3)$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t406-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t406">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t406">
+                    <p>
+                        Määritä käyrälle 
+                        $$
+                            y = 4 + 3x - x^2
+                        $$
+                        kohtaan $x = 2$ piirretyn tangetin ja koordinaattiakselien rajoittaman kolmion pinta-ala.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t406_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t406_v" class="collapse">
+                        <p>
+                            Pinta-ala on 32.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <div class="tehtava" id="MAA6s2t401-ex">
                 <header>
                     <h1>
                         <a data-target="#MAA6s2t401">
-                            Suoran yhtälö
+                            Polynomifunktion derivaatta
                         </a>
                     </h1>
                 </header>
                 <div id="MAA6s2t401">
                     <p>
-                        Määritä yhtälö suoralle, joka kulkee seuraavien pisteiden kautta:
+                        Avain pudotetaan kerrostalon kolmannen kerroksen ikkunasta, joka on 15 metrin korkeudella maan pinnasta. Avaimen sijaintikorkeus ajan funktiona on likimain
+                        $$
+                         f(t) = 15 - 4{,}9t^2.
+                        $$
+                        Tässä aika ilmaistaan sekunteina ja sijaintikorkeus metreinä. 
                     </p>
                     <ol class="a">
-                        <li> $(-1,4)\ $ ja $\ (5,-1)$</li>
-                        <li> $\left(-\frac{5}{3}, \frac{1}{2}\right)\ $ ja $\ \left(\frac{1}{3}, \frac{5}{6}\right)$.</li>
+                        <li> 
+                            Kuinka korkealla avain on 1,5 sekunnin kuluttua? 
+                        </li>
+                        <li> 
+                            Mikä on avaimen nopeus 1,5 sekunnin kuluttua? 
+                            <br>
+                            Vinkki: nopeus on sijaintikorkeuden muutosnopeus eli derivaatta.
+                        </li>
+                        <li>
+                            Millä nopeudella avain osuu maahan?
+                        </li>
                     </ol>
+                    <p>
+                        Pyöristä vastaukset kahden merkitsevän numeron tarkkuuteen.
+                    </p>
                     <h2>
                         <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t401_v">
                             Vastaus
                         </a>
                     </h2>
                     <div id="MAA6s2t401_v" class="collapse">
-                        <p>
                         <ol class="a">
-                            <li> $y = -\frac{5}{6}x + \frac{19}{6}$ </li>
-                            <li> $y = \frac{1}{6}x + \frac{7}{9}$ </li>
+                            <li> 
+                                Noin 4,0 metrin korkeudella.
+                            </li>
+                            <li> 
+                                Noin 15 m/s.
+                            </li>
+                            <li>
+                                Noin 17 m/s.
+                            </li>
                         </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t402-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t402">
+                            Polynomifunktion derivaatta
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t402">
+                    <p>
+                        Pallo heitetään suoraan ylöspäin alkunopeudella 12 m/s, jolloin sen sijaintikorkeus ajan funktiona on likimain
+                        $$
+                         f(t) = 12t - 4{,}9t^2.
+                        $$
+                        Tässä aika ilmaistaan sekunteina ja sijaintikorkeus metreinä. 
+                    </p>
+                    <ol class="a">
+                        <li> 
+                            Mikä on kappaleen nopeus 1 sekunnin kuluttua?
+                        </li>
+                        <li> 
+                            Mikä on kappaleen nopeus 2 sekunnin kuluttua?
+                        </li>
+                        <li>
+                            Millä hetkellä kappale saavuttaa lentoratansa lakipisteen?
+                        </li>
+                        <li>
+                            Kuinka korkealla kappale käy?
+                        </li>
+                    </ol>
+                    <p>
+                        Pyöristä vastaukset kahden merkitsevän numeron tarkkuuteen.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t402_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t402_v" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                Noin 2,2 m/s ylöspäin.
+                            </li>
+                            <li> 
+                                Noin 7,6 m/s alaspäin.
+                            </li>
+                            <li>
+                                Noin 1,2 sekunnin kuluttua. 
+                            </li>
+                            <li>
+                                Noin 7,3 metrin korkeudessa.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t403-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t403">
+                            Polynomifunktion derivaatta
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t403">
+                    <p>
+                        Lentokoneen lähtökiihdytyksessä kulkema matka ajan funktiona on likimain
+                        $$
+                         s(t) = 1{,}05t^2.
+                        $$
+                        Tässä aika ilmaistaan sekunteina ja matka metreinä. 
+                    </p>
+                    <ol class="a">
+                        <li> 
+                            Mikä on lentokoneen nopeus $10$ sekunnin kuluttua? Anna vastaus sekä metreinä sekunnissa että kilometreinä tunnissa (käytä yksikkömuunnoksessa tarvittaessa apuna esimerkiksi <a href="https://fi.wikipedia.org/wiki/Nopeus">Wikipediaa</a>).
+                        </li>
+                        <li> 
+                            Mikä on lentokoneen nopeus, kun se on liikkunut 500 metrin matkan?
+                        </li>
+                        <li>
+                            Kuinka pitkä kiitotien on vähintään oltava, jos koneen lentoonlähtönopeus on 250 km/h?
+                        </li>
+                    </ol>
+                    <p>
+                        Pyöristä vastaukset kahden merkitsevän numeron tarkkuuteen.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t403_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t403_v" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                Noin 21 m/s eli noin 76 km/h.
+                            </li>
+                            <li> 
+                                Noin $46$ m/s eli noin 165 km/h.
+                            </li>
+                            <li>
+                                Vähintään 1200 m (tässä vastauksen pyöristäminen normaalisääntöjen mukaan alaspäin ei tunnu turvallisuuden kannalta järkevältä). 
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t404-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t404">
+                            Polynomifunktion derivaatta
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t404">
+                    <p>
+                        Jos auton renkaat kaarteessa menettävät otteen tiehen, auto jatkaa matkaansa kaarteen tangetin suuntaisesti. Auto saapuu kaarteeseen
+                        $$ 
+                            y = \frac{1}{2}\left(x - \frac{5}{2}\right)^2 + 2
+                        $$
+                        kovalla vauhdilla ylhäältä vasemmalta ja suistuu tieltä kohdassa $x = 2$. 
+                    </p>
+                    <ol class="a">
+                        <li> 
+                            Missä pisteessä auto päätyy $x$-akselia pitkin virtaavaan jokeen?
+                        </li>
+                        <li> 
+                            Kuinka pitkän matkan auto on kulkenut pitkin peltoa ennen jokeen suistumista? Koordinaatiston yksikkö vastaa kymmentä metriä maastossa.
+                        </li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t404_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t404_v" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                Pisteessä $\left(\frac{25}{4}, 0\right)$.
+                            </li>
+                            <li> 
+                                Etäisyys on $\dfrac{17}{8}\sqrt{5} \approx 4{,}7$ eli noin 47 metriä.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t413-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t413">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t413">
+                    <p>
+                        Käyrän
+                        $$
+                            y = \left(2 + \frac{x}{2}\right)\left(3- \frac{x}{2}\right)
+                        $$
+                        ja $x$-akselin leikkauspisteisiin piirretyt tangentit rajoittavat yhdessä $x$-akselin kanssa kolmion. Laske tämän kolmion pinta-ala.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t413_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t413_v" class="collapse">
+                        <p>
+                            Pinta-ala on 62,5.
                         </p>
                     </div>
                 </div>
             </div>
+
+            <div class="tehtava" id="MAA6s2t411-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t411">
+                            Käyrän tangetti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t411">
+                    <p>
+                        Määritä sen kulman suuruus, jonka käyrät $y = x^3$ ja $y = 2-x^2$ muodostavat leikkauspisteessään.
+                        <br>
+                        Huom. kahden käyrän välinen kulma on leikkauspisteeseen piirrettyjen tangenttien välinen kulma.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t411_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t411_v" class="collapse">
+                        <p>
+                            Käyrien välinen kulma on $45^\circ$. 
+                            <br>
+                            (Leikkauspiste on $(1,1)$.)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t405a-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t405a">
+                            Polynomifunktion derivaatta
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t405a">
+                    <p>
+                        Jos funktion lausekkeessa esiintyy useita kirjaimia, on oltava tarkkana sen suhteen, mikä niistä on muuttuja. Derivoi funktio 
+                    </p>
+                    <ol class="a">
+                        <li> 
+                            $f(x) = tx^3-t^2x$
+                        </li>
+                        <li> 
+                            $g(t) = tx^3-t^2x$
+                        </li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t405a_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t405a_v" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                $f'(x) = 3tx^2 - t^2$
+                            </li>
+                            <li> 
+                                $g'(t) = x^3 - 2tx$
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t405-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t405">
+                            Polynomifunktion derivaatta
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t405">
+                    <p>
+                        Tehtävänä on selvittää, minkä käyrän piirtää paraabelin
+                        $$
+                            y = \frac{1}{2}x^2 + ax + a
+                        $$
+                        huippu, kun $a$ saa kaikki reaalilukuarvot.
+                    </p>
+                    <ol class="a">
+                        <li> 
+                            Määritä paraabelin huipun koordinaatit.
+                        </li>
+                        <li> 
+                            Ilmaise paraabelin huipun $y$-koordinaatti $x$-koordinaatin avulla. Millaisen käyrän yhtälö tällöin muodostuu?
+                        </li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t405_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t405_v" class="collapse">
+                        <ol class="a">
+                            <li> 
+                                $\left(-a, -\frac{1}{2}a^2 + a\right)$.
+                            </li>
+                            <li> 
+                                Paraabeli $y = -\frac{1}{2}x^2 - x$.
+                                <br>
+                                Huomaa, että a-kohdassa huipun $x$-koordinaatti on $-a$.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tehtava" id="MAA6s2t408-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t408">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t408">
+                    <p>
+                        Määritä pisteestä $(-1,1)$ paraabelille
+                        $$
+                            y = \frac{1}{2}x^2 - 1
+                        $$
+                        piirrettyjen tangettien yhtälöt.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t408_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t408_v" class="collapse">
+                        <p>
+                            $y = -1$ ja $y = 2x-3$.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t410-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t410">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t410">
+                    <p>
+                        Tehtävänä on osoittaa, että käyrät 
+                        $y = x^2$
+                        ja
+                        $$
+                        y = -x^2 + 2x - \frac{1}{2}
+                        $$ 
+                        sivuavat toisiaan.
+                    </p>
+                    <ol class="a">
+                        <li> Määritä käyrien leikkauspisteet. </li>
+                        <li> Näytä, että käyrillä on yhdessä leikkauspisteessä yhteinen tangentti.</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t410_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t410_v" class="collapse">
+                        <ol class="a">
+                            <li> Leikkauspisteitä on yksi: $\left(\frac{1}{2}, \frac{1}{2}\right)$. </li>
+                            <li> Kohdassa $x = \frac{1}{2}$ käyriä vastaavien polynomifunktioden derivaatan arvo on sama:
+                                \begin{align*}
+                                f'(0{,}5) &= 2\cdot 0{,}5 = 1 \\
+                                g'(0{,}5) &= -2\cdot 0{,}5 + 2 = 1
+                                \end{align*}
+                                Leikkauspisteeseen asetettujen tangenttien kulmakertoimet ovat siis samat, joten kysymyksessä on yksi yhteinen tangetti.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t412-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t412">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t412">
+                    <p>
+                        Osoita, että paraabelit
+                        $$y = ax^2 + 2x$$ 
+                        ja
+                        $$
+                        y = ax^2 - \frac{1}{2}x
+                        $$ 
+                        leikkaavat toisensa kohtisuorasti origossa riippumatta kertoimen $a$ arvosta.
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t412_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t412_v" class="collapse">
+                        <p>
+                            Kumpikin paraabeli kulkee pisteen $(0,0)$, joten ne leikkaavat toisensa origossa. Vastaavien polynomifunktioiden derivaattafunktioiden arvot origossa ovat
+                            \begin{align*}
+                            f'(0) &= 2a \cdot 0 + 2 = 2 \\[2mm]
+                            g'(0) &= 2a \cdot 0 - \frac{1}{2} = -\frac{1}{2}
+                            \end{align*}
+                            Koska paraabeleille origoon asetettujen tangenttien kulmakertoimien tulo on $-1$, ne ovat kohtisuorassa toisiaan vastaan (ks. <a href="http://kisallioppiminen.fi/kurssit/maa5/luku1/">MAA5-kurssin</a> teoreema 11).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t415-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t415">
+                            Käyrän tangentti
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t415">
+                    <p>
+                        Onko mahdollista valita vakiolle $a$ sellainen arvo, että käyrän $y = x^3$ pisteeseen $(1,1)$ asetettu tangentti sivuaa myös käyrää $y = a - x^2$?
+                    </p>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t415_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t415_v" class="collapse">
+                        <p>
+                            Kyllä, $a = -\frac{17}{4}$.
+                            <br>
+                            Ohjeita:
+                            <ul>
+                                <li> Muodosta käyrän $y = x^3$ pisteeseen $(1,1)$ asetetun tangentin yhtälö. </li>
+                                <li> Määritä käyrän $y = a-x^2$ tangentin kulmakerroin. </li>
+                                <li> Selvitä, missä kohdassa tangenteilla on sama kulmakerroin. </li>
+                                <li> Selvitä sivuamispisteen $y$-koordinaatti ja ratkaise sen avulla $a$. </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t416-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t416">
+                            Derivaatan määritelmä
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t416">
+                    <p>
+                        Tarkastellaan funktiota $f(x) = 4x - x^2$. Tehtävänä on määrittää $f'(1)$ derivaatan määritelmään nojautuen.
+                    </p>
+                    <ol class="a">
+                        <li> Muodosta funktion $f$ erotusosamäärä kohdassa $1$. </li>
+                        <li> Jaa erotusosamäärän osoittaja tekijöihin <a href="http://kisallioppiminen.fi/kurssit/maa2/luku3/">MAA2-kurssin</a> teoreeman 8 avulla. </li>
+                        <li> Mitä on $f'(1)$? </li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t416_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t416_v" class="collapse">
+                        <ol class="a">
+                            <li> $\dfrac{-x^2+4x-3}{x-1}$ </li>
+                            <li> $-x^2+4x-3 = -(x-1)(x-3)$ </li>
+                            <li> $f'(1) = 2$ </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tehtava" id="MAA6s2t417-ex">
+                <header>
+                    <h1>
+                        <a data-target="#MAA6s2t417">
+                            Derivaatan määritelmä
+                        </a>
+                    </h1>
+                </header>
+                <div id="MAA6s2t417">
+                    <p>
+                        Tehtävänä on johtaa funktion 
+                        $$
+                        f(x) = \frac{x-1}{x+1}
+                        $$
+                        derivaattafunktion lauseke derivaatan määritelmän avulla.
+                    </p>
+                    <ol class="a">
+                        <li> Muodosta funktion $f$ erotusosamäärä kohdassa $a$. </li>
+                        <li> Lavenna erotusosamäärän osoittajassa esiintyvät murtolausekkeet samannimisiksi ja sievennä niiden erotus mahdollisimman pitkälle. </li>
+                        <li> Tee kaikki mahdolliset supistukset. </li>
+                        <li> Mitä on $f'(a)$?</li>
+                    </ol>
+                    <h2>
+                        <a data-toggle="collapse" class="collapsed" data-target="#MAA6s2t417_v">
+                            Vastaus
+                        </a>
+                    </h2>
+                    <div id="MAA6s2t417_v" class="collapse">
+                        <ol class="a">
+                            <li> $\dfrac{\frac{x-1}{x+1} - \frac{a-1}{a+1}}{x-a}$ </li>
+                            <li> $\dfrac{\frac{2(x-a)}{(x+1)(a+1)}}{x-a}$ </li>
+                            <li> $\dfrac{2}{(x+1)(a+1)}$ </li>
+                            <li> $f'(a) = \dfrac{2}{(a+1)^2}$ </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
             <div class="close-section">
                 <a data-toggle="collapse" class="collapsed" data-target="#luku4-tehtavasarja2">
                     Sulje kappale
@@ -1003,7 +1673,7 @@ topnav: maa6
                             $$
                             f(x) = \begin{cases}
                             ax^2, &\text{ jos $x \leq -1$,} \\[2mm]
-                            \frac{x^2}{1+x^2}, &\text{ jos $x > -1$.}
+                            \dfrac{x^2}{1+x^2}, &\text{ jos $x > -1$.}
                             \end{cases}
                             $$               
                             on jatkuva kaikkialla.
@@ -1291,7 +1961,7 @@ topnav: maa6
                 </a>
             </h1>
         </header>
-        <div id="L3itsearviointi" class="collapse">
+        <div id="L4itsearviointi" class="collapse">
             <p>
                 Varmista, että olet oppinut tämän luvun keskeiset asiat tekemällä <a href="">itsearviointitesti</a> opetus.tv:n polku-palvelussa. Samalla harjoittelet omien ratkaisujesi pisteyttämistä pisteytysohjeiden avulla. 
             </p>
