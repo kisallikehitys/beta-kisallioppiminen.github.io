@@ -51,12 +51,14 @@ topnav: may1
             </h1>
         </header>
         <div id="lukujono" class="collapse">
-            <p> 
-                Lukujono tarkoittaa nimensä mukaisesti lukujen muodostamaa, yleensä päättymätöntä jonoa. Esimerkiksi 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, $\ldots$ on eräs lukujono. Tästä jonosta on vaikea sanoa, miten se jatkuu. Yleensä lukujonoon liittyy jokin sääntö, jonka avulla voidaan päätellä, mitkä ovat jonon seuraavat luvut.
-            </p>
-            <p>
-                Lukujonon lukuja sanotaan jonon <em>termeiksi</em> tai <em>jäseniksi</em>. Voidaan esimerkiksi sanoa, että edellä mainitun lukujonon ensimmäinen jäsen on 3 tai että sen kuudes termi on 9. 
-            </p>
+            <div class="teoria">
+                <p> 
+                    Lukujono tarkoittaa nimensä mukaisesti lukujen muodostamaa, yleensä päättymätöntä jonoa. Esimerkiksi 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9, $\ldots$ on eräs lukujono. Tästä jonosta on vaikea sanoa, miten se jatkuu. Yleensä lukujonoon liittyy jokin sääntö, jonka avulla voidaan päätellä, mitkä ovat jonon seuraavat luvut.
+                </p>
+                <p>
+                    Lukujonon lukuja sanotaan jonon <em>termeiksi</em> tai <em>jäseniksi</em>. Voidaan esimerkiksi sanoa, että edellä mainitun lukujonon ensimmäinen jäsen on 3 tai että sen kuudes termi on 9. 
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc67e6c-7df5-11e7-bb31-be2e44b06b34">
                     <header>
@@ -84,14 +86,14 @@ topnav: may1
                 Edellisen tehtävän c-kohdassa tarkastellun jonon jäsenistä vain osa on kokonaislukuja. Esimerkiksi jonon kolmas jäsen $\frac{1}{3}$ ei ole kokonaisluku, mikä voidaan merkitä $\frac{1}{3}\not\in \Z$. Kaikki tämän jonon jäsenet ovat kuitenkin rationaalilukuja, sillä ne voidaan esittää murtolukumuodossa. Esimerkiksi jonon ensimmäinen jäsen $1$ voidaan kirjoittaa vaikkapa muodossa $\frac{1}{1}$ tai muodossa $\frac{2}{2}$. <em>Rationaalilukujen joukon</em> $\Q$ muodostavat kaikki sellaiset luvut, jotka voidaan kirjoittaa murtolukumuodossa. Tämä voidaan ilmaista myös kirjoittamalla
                 $$\Q = \left\{ \frac{m}{n} \mid m, n \in \Z \text{ ja } n \neq 0 \right\}.$$
             </p> -->
-
-            <p>
-                Joskus lukujonosta on helpompi puhua, jos sille annetaan nimi. Voidaan esimerkiksi puhua lukujonosta $(a_n)$ tai lukujonosta $(b_n)$ tai lukujonosta $(x_n)$. Tässä merkinnässä sulut kertovat sen, että puhutaan koko lukujonosta eikä yksittäisestä jonon jäsenestä. 
-            </p>
-            <p>
-                Kun lukujono on nimetty esimerkiksi jonoksi $(a_n)$, tarkoittaa merkintä $a_1$ sen ensimmäistä jäsentä, $a_2$ sen toista jäsentä, $a_3$ sen kolmatta jäsentä ja niin edelleen. Jos halutaan esimerkiksi puhua jonon $(a_n)$ sadannesta jäsenestä, voidaan käyttää merkintää $a_{100}$. Alaindeksi siis kertoo, kuinka mones jonon jäsen on kysymyksessä. 
-            </p>
-
+            <div class="teoria">
+                <p>
+                    Joskus lukujonosta on helpompi puhua, jos sille annetaan nimi. Voidaan esimerkiksi puhua lukujonosta $(a_n)$ tai lukujonosta $(b_n)$ tai lukujonosta $(x_n)$. Tässä merkinnässä sulut kertovat sen, että puhutaan koko lukujonosta eikä yksittäisestä jonon jäsenestä. 
+                </p>
+                <p>
+                    Kun lukujono on nimetty esimerkiksi jonoksi $(a_n)$, tarkoittaa merkintä $a_1$ sen ensimmäistä jäsentä, $a_2$ sen toista jäsentä, $a_3$ sen kolmatta jäsentä ja niin edelleen. Jos halutaan esimerkiksi puhua jonon $(a_n)$ sadannesta jäsenestä, voidaan käyttää merkintää $a_{100}$. Alaindeksi siis kertoo, kuinka mones jonon jäsen on kysymyksessä. 
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc681aa-7df5-11e7-bb31-be2e44b06b34">
 
@@ -135,21 +137,21 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p>
-                Joskus lukujonoon liittyvä sääntö voidaan esittää niin, että sen avulla voidaan laskea jonon mikä tahansa jäsen, jos vain tiedetään, kuinka mones jäsen on kysymyksessä. Jos esimerkiksi tiedetään, että lukujonon $(a_n)$ <em>yleinen jäsen</em> on $a_n = 2n-1$, voidaan laskea, että esimerkiksi
-                $$
-                \begin{align*}
-                a_{\textcolor{blue}{1}} &= 2\cdot \textcolor{blue}{1} - 1 = 2-1 = 1 \\
-                a_{\textcolor{blue}{2}} &= 2\cdot \textcolor{blue}{2} - 1 = 4-1 = 3 \\
-                a_{\textcolor{blue}{3}} &= 2\cdot \textcolor{blue}{3} - 1 = 6-1 = 5 \\
-                a_{\textcolor{blue}{50}} &= 2\cdot \textcolor{blue}{50} - 1 = 100-1 = 99 \\
-                a_{\textcolor{blue}{1000}} &= 2\cdot \textcolor{blue}{1000} - 1 = 2000-1 = 1999
-                \end{align*}
-                $$
-                Tällaisessa tilanteessa sanotaan, että lukujono on määritelty <em>analyyttisesti</em>.
-            </p>
-
+            <div class="teoria">
+                <p>
+                    Joskus lukujonoon liittyvä sääntö voidaan esittää niin, että sen avulla voidaan laskea jonon mikä tahansa jäsen, jos vain tiedetään, kuinka mones jäsen on kysymyksessä. Jos esimerkiksi tiedetään, että lukujonon $(a_n)$ <em>yleinen jäsen</em> on $a_n = 2n-1$, voidaan laskea, että esimerkiksi
+                    $$
+                    \begin{align*}
+                    a_{\textcolor{blue}{1}} &= 2\cdot \textcolor{blue}{1} - 1 = 2-1 = 1 \\
+                    a_{\textcolor{blue}{2}} &= 2\cdot \textcolor{blue}{2} - 1 = 4-1 = 3 \\
+                    a_{\textcolor{blue}{3}} &= 2\cdot \textcolor{blue}{3} - 1 = 6-1 = 5 \\
+                    a_{\textcolor{blue}{50}} &= 2\cdot \textcolor{blue}{50} - 1 = 100-1 = 99 \\
+                    a_{\textcolor{blue}{1000}} &= 2\cdot \textcolor{blue}{1000} - 1 = 2000-1 = 1999
+                    \end{align*}
+                    $$
+                    Tällaisessa tilanteessa sanotaan, että lukujono on määritelty <em>analyyttisesti</em>.
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc683a8-7df5-11e7-bb31-be2e44b06b34">
 
@@ -234,48 +236,48 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p> 
-                Edellisissä tehtävissä tutkittiin, onko annettu luku tietyn lukujonon jäsen. Esimerkiksi voidaan kysyä, onko luku $1280$ edellisessä tehtävässä tarkastellun lukujonon $(b_n)$ jäsen. Toisin sanottuna, onko olemassa sellainen positiivinen kokonaisluku $n$, että $b_n = 1280$. Jos tällainen luku $n$ on olemassa, se kertoo, kuinka mones jonon jäsen luku $1280$ on.
-            </p>
-            <p>
-                Kysymys, onko luku $1280$ lukujonon $(b_n)$ jäsen, johtaa siis <em>yhtälöön</em> $b_n = 1280$. Kysymykseen saadaan vastaus, kun tutkitaan, onko olemassa sellainen $n$, jolla tämä yhtälö toteutuu. Jos tällainen $n$ on olemassa, se on yhtälön $b_n = 1280$ <em>ratkaisu</em>. 
-            </p>
-            <p>
-                Koska tiedetään, että lukujonon $(b_n)$ yleinen jäsen on $b_n=3n+5$, voidaan yhtälö
-                $$b_n = 1280$$
-                kirjoittaa muodossa
-                $$3n + 5 = 1280.$$
-                Tässä yhtälössä on yksi <em>tuntematon</em>, joka on tässä tapauksessa luku $n$. Kun yhtälö ratkaistaan, etsitään kaikki sellaiset luvut $n$, joilla yhtälö toteutuu eli joilla sen vasen ja oikea puoli ovat yhtä suuret.
-            </p>
-            <p>
-                Kun yhtälö ratkaistaan, voidaan sitä muokata monin eri tavoin. Tärkeää kuitenkin on, että yhtälön kummallekin puolelle tehdään aina sama asia. Tällä tavalla yhtälön oikea ja vasen puoli säilyvät yhtä suurina. Esimerkiksi yhtälön
-                $$3n + 5 = 1280$$
-                molemmilta puolilta voidaan vähentää luku $5$, jolloin vasemmalle puolelle jää pelkkä $3n$ ja oikealle puolelle jää $1275$. Saadaan siis uusi yhtälö
-                $$3n = 1275.$$
-                Yhtälön vasemmalla puolella olleesta yhteenlaskettavasta $5$ päästiin siis eroon käyttämällä päinvastaista laskutoimitusta eli vähennyslaskua. 
-            </p>
-            <p>
-                Yhtälön vasemmalla puolella on kuitenkin vielä ylimääräinen luku $3$. Se on tuntemattoman $n$ kerroin, joten siitä päästään eroon jakolaskun avulla. Jaetaan yhtälön molemmat puolet luvulla $3$, jolloin saadaan uusi yhtälö
-                $$\frac{3n}{3} = \frac{1275}{3}.$$
-                Tämän yhtälön vasen puoli on sama kuin pelkkä $n$, koska kolmosella kertominen ja jakaminen kumoavat toisensa. Esimerkiksi laskimen avulla nähdään, että oikea puoli on sama kuin $425$. Siis
-                $$n = 425.$$
-            </p>
-            <p>
-                Tähän mennessä tehdyt laskut osoittavat, että yhtälöllä $3n + 5 = 1280$ ei voi olla mitään muita ratkaisuja kuin $n = 425$. Vielä pitää kuitenkin tarkistaa, että luku $n = 425$ todella on tämän yhtälön ratkaisu. Jos yhtälön vasemmalle puolelle sijoitetaan $n = 425$, saadaan
-                $$
-                \begin{align*}
-                3n + 5 &= 3\cdot 425 + 5 \\
-                &= 1275 + 5 \\
-                &= 1280.
-                \end{align*}
-                $$
-                Huomataan, että vasemmasta puolesta saadaan tuloksena alkuperäisen yhtälön oikea puoli. Yhtälö siis toteutuu.
-            </p>
-            <p>
-                Näin on saatu selville, että yhtälöllä $3n + 5 = 1280$ eli yhtälöllä $b_n = 1280$ on yksi ratkaisu, joka on $n = 425$. Siis $b_{425} = 1280$. Tämän perusteella voidaan sanoa, että luku 1280 on lukujonon $(b_n)$ jäsen, tarkemmin sanottuna 425. jäsen.
-            </p>
-
+            <div class="teoria">
+                <p> 
+                    Edellisissä tehtävissä tutkittiin, onko annettu luku tietyn lukujonon jäsen. Esimerkiksi voidaan kysyä, onko luku $1280$ edellisessä tehtävässä tarkastellun lukujonon $(b_n)$ jäsen. Toisin sanottuna, onko olemassa sellainen positiivinen kokonaisluku $n$, että $b_n = 1280$. Jos tällainen luku $n$ on olemassa, se kertoo, kuinka mones jonon jäsen luku $1280$ on.
+                </p>
+                <p>
+                    Kysymys, onko luku $1280$ lukujonon $(b_n)$ jäsen, johtaa siis <em>yhtälöön</em> $b_n = 1280$. Kysymykseen saadaan vastaus, kun tutkitaan, onko olemassa sellainen $n$, jolla tämä yhtälö toteutuu. Jos tällainen $n$ on olemassa, se on yhtälön $b_n = 1280$ <em>ratkaisu</em>. 
+                </p>
+                <p>
+                    Koska tiedetään, että lukujonon $(b_n)$ yleinen jäsen on $b_n=3n+5$, voidaan yhtälö
+                    $$b_n = 1280$$
+                    kirjoittaa muodossa
+                    $$3n + 5 = 1280.$$
+                    Tässä yhtälössä on yksi <em>tuntematon</em>, joka on tässä tapauksessa luku $n$. Kun yhtälö ratkaistaan, etsitään kaikki sellaiset luvut $n$, joilla yhtälö toteutuu eli joilla sen vasen ja oikea puoli ovat yhtä suuret.
+                </p>
+                <p>
+                    Kun yhtälö ratkaistaan, voidaan sitä muokata monin eri tavoin. Tärkeää kuitenkin on, että yhtälön kummallekin puolelle tehdään aina sama asia. Tällä tavalla yhtälön oikea ja vasen puoli säilyvät yhtä suurina. Esimerkiksi yhtälön
+                    $$3n + 5 = 1280$$
+                    molemmilta puolilta voidaan vähentää luku $5$, jolloin vasemmalle puolelle jää pelkkä $3n$ ja oikealle puolelle jää $1275$. Saadaan siis uusi yhtälö
+                    $$3n = 1275.$$
+                    Yhtälön vasemmalla puolella olleesta yhteenlaskettavasta $5$ päästiin siis eroon käyttämällä päinvastaista laskutoimitusta eli vähennyslaskua. 
+                </p>
+                <p>
+                    Yhtälön vasemmalla puolella on kuitenkin vielä ylimääräinen luku $3$. Se on tuntemattoman $n$ kerroin, joten siitä päästään eroon jakolaskun avulla. Jaetaan yhtälön molemmat puolet luvulla $3$, jolloin saadaan uusi yhtälö
+                    $$\frac{3n}{3} = \frac{1275}{3}.$$
+                    Tämän yhtälön vasen puoli on sama kuin pelkkä $n$, koska kolmosella kertominen ja jakaminen kumoavat toisensa. Esimerkiksi laskimen avulla nähdään, että oikea puoli on sama kuin $425$. Siis
+                    $$n = 425.$$
+                </p>
+                <p>
+                    Tähän mennessä tehdyt laskut osoittavat, että yhtälöllä $3n + 5 = 1280$ ei voi olla mitään muita ratkaisuja kuin $n = 425$. Vielä pitää kuitenkin tarkistaa, että luku $n = 425$ todella on tämän yhtälön ratkaisu. Jos yhtälön vasemmalle puolelle sijoitetaan $n = 425$, saadaan
+                    $$
+                    \begin{align*}
+                    3n + 5 &= 3\cdot 425 + 5 \\
+                    &= 1275 + 5 \\
+                    &= 1280.
+                    \end{align*}
+                    $$
+                    Huomataan, että vasemmasta puolesta saadaan tuloksena alkuperäisen yhtälön oikea puoli. Yhtälö siis toteutuu.
+                </p>
+                <p>
+                    Näin on saatu selville, että yhtälöllä $3n + 5 = 1280$ eli yhtälöllä $b_n = 1280$ on yksi ratkaisu, joka on $n = 425$. Siis $b_{425} = 1280$. Tämän perusteella voidaan sanoa, että luku 1280 on lukujonon $(b_n)$ jäsen, tarkemmin sanottuna 425. jäsen.
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc68d4e-7df5-11e7-bb31-be2e44b06b34">
 
@@ -295,92 +297,92 @@ topnav: may1
                     </div>
                 </div>
             </div>
+            <div class="teoria">
+                <p>
+                    Joskus lukujonoon liittyvä sääntö voidaan esittää niin, että sen avulla voidaan laskea jonon seuraava jäsen, jos tiedetään, mitä jonon edelliset jäsenet ovat. Tarkastellaan esimerkiksi tilannetta, jossa tiedetään, että lukujonon $(a_n)$ ensimmäinen jäsen on $a_1 = 1$ ja että seuraava jäsen saadaan aina edellisestä jäsenestä lisäämällä siihen kaksi. Tämä sääntö voidaan kirjoittaa muodossa $a_1 = 1$ ja
+                    $$
+                    a_n = a_{n-1} + 2$$
+                    kaikilla luonnollisilla luvuilla $n\geq 2$ eli luonnollisilla luvuilla $n$, jotka ovat suurempia tai yhtä suuria kuin luku $2$. Tällaisessa tilanteessa sanotaan, että lukujono on määritelty <em>rekursiivisesti</em>. Rekursioyhtälön avulla voidaan laskea, että 
+                    $$
+                    \begin{align*}
+                    a_2 &= a_1 + 2 = 1 + 2 = {\textcolor{blue}{3}}\\
+                    a_3 &= a_2 + 2 = {\textcolor{blue}{3}} + 2 = {\textcolor{green}{5}} \\
+                    a_4 &= a_3 + 2 = {\textcolor{green}{5}} + 2 = {\textcolor{red}{7}} \\
+                    a_5 &= a_4 + 2 = {\textcolor{red}{7}} + 2 = {\textcolor{magenta}{9}} \\
+                    a_6 &= a_5 + 2 = {\textcolor{magenta}{9}} + 2 = 11 \\
+                    \end{align*}
+                    $$
+                </p>
 
-            <p>
-                Joskus lukujonoon liittyvä sääntö voidaan esittää niin, että sen avulla voidaan laskea jonon seuraava jäsen, jos tiedetään, mitä jonon edelliset jäsenet ovat. Tarkastellaan esimerkiksi tilannetta, jossa tiedetään, että lukujonon $(a_n)$ ensimmäinen jäsen on $a_1 = 1$ ja että seuraava jäsen saadaan aina edellisestä jäsenestä lisäämällä siihen kaksi. Tämä sääntö voidaan kirjoittaa muodossa $a_1 = 1$ ja
-                $$
-                a_n = a_{n-1} + 2$$
-                kaikilla luonnollisilla luvuilla $n\geq 2$ eli luonnollisilla luvuilla $n$, jotka ovat suurempia tai yhtä suuria kuin luku $2$. Tällaisessa tilanteessa sanotaan, että lukujono on määritelty <em>rekursiivisesti</em>. Rekursioyhtälön avulla voidaan laskea, että 
-                $$
-                \begin{align*}
-                a_2 &= a_1 + 2 = 1 + 2 = {\textcolor{blue}{3}}\\
-                a_3 &= a_2 + 2 = {\textcolor{blue}{3}} + 2 = {\textcolor{green}{5}} \\
-                a_4 &= a_3 + 2 = {\textcolor{green}{5}} + 2 = {\textcolor{red}{7}} \\
-                a_5 &= a_4 + 2 = {\textcolor{red}{7}} + 2 = {\textcolor{magenta}{9}} \\
-                a_6 &= a_5 + 2 = {\textcolor{magenta}{9}} + 2 = 11 \\
-                \end{align*}
-                $$
-            </p>
+                <div class="tehtavat">
+                    <div class="tehtava" id="8dc68e34-7df5-11e7-bb31-be2e44b06b34">
 
-            <div class="tehtavat">
-                <div class="tehtava" id="8dc68e34-7df5-11e7-bb31-be2e44b06b34">
+                        <header>
+                            <h1>                            <div class="checkbox-group"></div>
+                                <a data-toggle="collapse" class="collapsed" data-target="#t-helloweb5">
+                                    Rekursiivisen lukujonon jäsenen määrittäminen
+                                </a>
+                            </h1>
+                        </header>
+                        <div id="t-helloweb5" class="collapse">
+                            Lukujonosta $(a_n)$ tiedetään, että $a_1 = 3$ ja $a_n = a_{n-1} + 4$ kaikilla $n \geq 2$. Määritä $a_2$, $a_3$, $a_4$, $a_5$ ja $a_6$.
+                        </div>
+                    </div>
+                </div>
 
-                    <header>
-                        <h1>                            <div class="checkbox-group"></div>
-                            <a data-toggle="collapse" class="collapsed" data-target="#t-helloweb5">
-                                Rekursiivisen lukujonon jäsenen määrittäminen
-                            </a>
-                        </h1>
-                    </header>
-                    <div id="t-helloweb5" class="collapse">
-                        Lukujonosta $(a_n)$ tiedetään, että $a_1 = 3$ ja $a_n = a_{n-1} + 4$ kaikilla $n \geq 2$. Määritä $a_2$, $a_3$, $a_4$, $a_5$ ja $a_6$.
+                <div class="tehtavat">
+                    <div class="tehtava" id="8dc68efc-7df5-11e7-bb31-be2e44b06b34">
+
+                        <header>
+                            <h1>                            <div class="checkbox-group"></div>
+                                <a data-toggle="collapse" class="collapsed" data-target="#t-helloweb6">
+                                    Rekursiivisen lukujonon jäsenen määrittäminen
+                                </a>
+                            </h1>
+                        </header>
+                        <div id="t-helloweb6" class="collapse">
+                            Lukujonon $(a_n)$ ensimmäinen jäsen on 1 ja toinen jäsen on 19. Seuraavat jäsenet saadaan laskemalla kahden edellisen jäsenen keskiarvo. Lukujono voidaan siis määritellä seuraavasti:
+                            $$
+                            \begin{equation*}
+                            \left\{
+                            \begin{array}{ll}
+                            a_1&=1\\ 
+                            a_2&=19\\
+                            a_n&=\dfrac{a_{n-2}+a_{n-1}}{2}, \quad n=3,4,\ldots.
+                            \end{array}
+                            \right.
+                            \end{equation*}
+                            $$
+                            <ol class="a">
+                                <li> Määritä $a_3$ ja $a_4$.</li>
+                                <li> Miksi rekursiokaavaa 
+                                    $$a_n=\dfrac{a_{n-2}+a_{n-1}}{2}$$    
+                                    voi käyttää vasta järjestysnumerosta $n=3$ alkaen eikä $n=2$ alkaen?</li>
+                            </ol>  
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tehtavat">
+                    <div class="tehtava" id="8dc68fba-7df5-11e7-bb31-be2e44b06b34">
+
+                        <header>
+                            <h1>                            <div class="checkbox-group"></div>
+                                <a data-toggle="collapse" class="collapsed" data-target="#t-helloweb8">
+                                    Rekursiivinen lukujono
+                                </a>
+                            </h1>
+                        </header>
+                        <div id="t-helloweb8" class="collapse">
+                            Rekursiivisen jonon ensimmäinen jäsen on 3 ja seuraavat saadaan kertomalla edellinen jäsen luvulla 2. <ol class="a">
+                                <li> Määritä $a_2, a_3$ ja $a_4$.</li>
+                                <li> Selitä, miten saisit määritettyä jäsenen $a_{20}$.</li>
+                                <li> Kirjoita rekursiokaava jonon yleiselle jäsenelle $a_n$.</li>
+                            </ol>  
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="tehtavat">
-                <div class="tehtava" id="8dc68efc-7df5-11e7-bb31-be2e44b06b34">
-
-                    <header>
-                        <h1>                            <div class="checkbox-group"></div>
-                            <a data-toggle="collapse" class="collapsed" data-target="#t-helloweb6">
-                                Rekursiivisen lukujonon jäsenen määrittäminen
-                            </a>
-                        </h1>
-                    </header>
-                    <div id="t-helloweb6" class="collapse">
-                        Lukujonon $(a_n)$ ensimmäinen jäsen on 1 ja toinen jäsen on 19. Seuraavat jäsenet saadaan laskemalla kahden edellisen jäsenen keskiarvo. Lukujono voidaan siis määritellä seuraavasti:
-                        $$
-                        \begin{equation*}
-                        \left\{
-                        \begin{array}{ll}
-                        a_1&=1\\ 
-                        a_2&=19\\
-                        a_n&=\dfrac{a_{n-2}+a_{n-1}}{2}, \quad n=3,4,\ldots.
-                        \end{array}
-                        \right.
-                        \end{equation*}
-                        $$
-                        <ol class="a">
-                            <li> Määritä $a_3$ ja $a_4$.</li>
-                            <li> Miksi rekursiokaavaa 
-                                $$a_n=\dfrac{a_{n-2}+a_{n-1}}{2}$$    
-                                voi käyttää vasta järjestysnumerosta $n=3$ alkaen eikä $n=2$ alkaen?</li>
-                        </ol>  
-                    </div>
-                </div>
-            </div>
-
-            <div class="tehtavat">
-                <div class="tehtava" id="8dc68fba-7df5-11e7-bb31-be2e44b06b34">
-
-                    <header>
-                        <h1>                            <div class="checkbox-group"></div>
-                            <a data-toggle="collapse" class="collapsed" data-target="#t-helloweb8">
-                                Rekursiivinen lukujono
-                            </a>
-                        </h1>
-                    </header>
-                    <div id="t-helloweb8" class="collapse">
-                        Rekursiivisen jonon ensimmäinen jäsen on 3 ja seuraavat saadaan kertomalla edellinen jäsen luvulla 2. <ol class="a">
-                            <li> Määritä $a_2, a_3$ ja $a_4$.</li>
-                            <li> Selitä, miten saisit määritettyä jäsenen $a_{20}$.</li>
-                            <li> Kirjoita rekursiokaava jonon yleiselle jäsenelle $a_n$.</li>
-                        </ol>  
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section class="panel">
@@ -392,10 +394,11 @@ topnav: may1
             </h1>
         </header>
         <div id="aritmeettinen-jono" class="collapse">
-            <p>
-                Lukujonoja voidaan luokitella niiden ominaisuuksien mukaan. Sovelluksissa käyttökelpoisia ovat sellaiset lukujonot, joiden jäseniä on helppo määrittää ja jotka sopivat monien ilmiöiden mallintamiseen. 
-            </p>
-
+            <div class="teoria">
+                <p>
+                    Lukujonoja voidaan luokitella niiden ominaisuuksien mukaan. Sovelluksissa käyttökelpoisia ovat sellaiset lukujonot, joiden jäseniä on helppo määrittää ja jotka sopivat monien ilmiöiden mallintamiseen. 
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc6908c-7df5-11e7-bb31-be2e44b06b34">
 
@@ -438,28 +441,28 @@ topnav: may1
                     </div>
                 </div>
             </div>
+            <div class="teoria">
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: ARITMEETTINEN LUKUJONO</h3>
+                    <p>
+                        Lukujono $(a_n)$ on <em>aritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen erotus on aina sama eli jos on olemassa sellainen luku $d$, että
+                        $$a_{n+1}-a_n = d$$
+                        kaikilla $n = 1$, $2$, $3$, $\ldots$ <br>
+                        Erotus $d$ on nimeltään jonon <em>differenssi</em>.
+                    </p>
+                </div>
 
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: ARITMEETTINEN LUKUJONO</h3>
                 <p>
-                    Lukujono $(a_n)$ on <em>aritmeettinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen erotus on aina sama eli jos on olemassa sellainen luku $d$, että
-                    $$a_{n+1}-a_n = d$$
-                    kaikilla $n = 1$, $2$, $3$, $\ldots$ <br>
-                    Erotus $d$ on nimeltään jonon <em>differenssi</em>.
+                    Se, että lukujono on aritmeettinen, voidaan siis osoittaa tutkimalla peräkkäisten jäsenten $a_{n+1}$ ja $a_n$ erotusta. Tarkastellaan esimerkiksi jonoa $(a_n)$, jolla $a_n = 7n-3$. Sen peräkkäisten jäsenten erotus on 
+                    $$
+                    \begin{align*}
+                    \textcolor{red}{a_{n+1}}-\textcolor{blue}{a_n} &= \textcolor{red}{7(n+1)-3}-\textcolor{blue}{(7n-3)} \\
+                    &= \textcolor{red}{7n+7-3}\textcolor{blue}{-7n+3} \\
+                    &= 7.
+                    \end{align*}$$
+                    Huomataan, että peräkkäisten jäsenten erotus on aina $7$, joten jono $(a_n)$ on aritmeettinen.
                 </p>
             </div>
-
-            <p>
-                Se, että lukujono on aritmeettinen, voidaan siis osoittaa tutkimalla peräkkäisten jäsenten $a_{n+1}$ ja $a_n$ erotusta. Tarkastellaan esimerkiksi jonoa $(a_n)$, jolla $a_n = 7n-3$. Sen peräkkäisten jäsenten erotus on 
-                $$
-                \begin{align*}
-                \textcolor{red}{a_{n+1}}-\textcolor{blue}{a_n} &= \textcolor{red}{7(n+1)-3}-\textcolor{blue}{(7n-3)} \\
-                &= \textcolor{red}{7n+7-3}\textcolor{blue}{-7n+3} \\
-                &= 7.
-                \end{align*}$$
-                Huomataan, että peräkkäisten jäsenten erotus on aina $7$, joten jono $(a_n)$ on aritmeettinen.
-            </p>
-
             <div class="tehtavat">
                 <div class="tehtava" id="8dc694f6-7df5-11e7-bb31-be2e44b06b34">
                     <header>
@@ -529,41 +532,41 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p>
-                Edellisessä tehtävässä havaittiin, että tarkastellun aritmeettisen jonon jäsenet pystyttiin laskemaan, kun tiedetiin jonon ensimmäinen jäsen ja differenssi. Tämä havainto koskee kaikkia aritmeettisia jonoja, kuten seuraava teoreema osoittaa. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
-            </p>
-
-            <div class="theorem">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Aritmeettisen jonon $(a_n)$ jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen $a_1$ ja jonon differenssi $d$, sillä kaikilla positiivisilla kokonaisluvuilla $n$ pätee
-                    $$a_n = a_1 + (n-1)d.$$
+                    Edellisessä tehtävässä havaittiin, että tarkastellun aritmeettisen jonon jäsenet pystyttiin laskemaan, kun tiedetiin jonon ensimmäinen jäsen ja differenssi. Tämä havainto koskee kaikkia aritmeettisia jonoja, kuten seuraava teoreema osoittaa. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
                 </p>
-                <div class="proof">
+
+                <div class="theorem">
+                    <h3>TEOREEMA</h3>
                     <p>
-                        Perustelu: Aritmeettisen jonon määritelmän mukaan $a_{n+1}-a_n = d$ eli $a_{n+1} = a_n + d$ kaikilla positiivisilla kokonaisluvuilla $n$. Tästä saadaan seuraavat tiedot:
-                        $$
-                        \begin{align*}
-                        a_2 &= a_1 + d \\
-                        a_3 &= a_2 + d = (a_1+d) + d = a_1 + 2d \\
-                        a_4 &= a_3 + d = (a_1+2d) + d = a_1 + 3d \\
-                        a_5 &= a_4 + d = (a_1+3d) + d = a_1 + 4d 
-                        \end{align*}
-                        $$
-                        ja niin edelleen. Havaitaan säännönmukaisuus: jonon toisesta jäsenestä alkaen jäsen $a_n$ saadaan aina summana $a_1 + (n-1)d$. 
-                        Lisäksi 
-                        $$a_1 = a_1 + 0\cdot d.$$
-                        Voidaan päätellä, että kaikilla positiivisilla kokonaisluvuilla $n$ pätee
+                        Aritmeettisen jonon $(a_n)$ jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen $a_1$ ja jonon differenssi $d$, sillä kaikilla positiivisilla kokonaisluvuilla $n$ pätee
                         $$a_n = a_1 + (n-1)d.$$
                     </p>
+                    <div class="proof">
+                        <p>
+                            Perustelu: Aritmeettisen jonon määritelmän mukaan $a_{n+1}-a_n = d$ eli $a_{n+1} = a_n + d$ kaikilla positiivisilla kokonaisluvuilla $n$. Tästä saadaan seuraavat tiedot:
+                            $$
+                            \begin{align*}
+                            a_2 &= a_1 + d \\
+                            a_3 &= a_2 + d = (a_1+d) + d = a_1 + 2d \\
+                            a_4 &= a_3 + d = (a_1+2d) + d = a_1 + 3d \\
+                            a_5 &= a_4 + d = (a_1+3d) + d = a_1 + 4d 
+                            \end{align*}
+                            $$
+                            ja niin edelleen. Havaitaan säännönmukaisuus: jonon toisesta jäsenestä alkaen jäsen $a_n$ saadaan aina summana $a_1 + (n-1)d$. 
+                            Lisäksi 
+                            $$a_1 = a_1 + 0\cdot d.$$
+                            Voidaan päätellä, että kaikilla positiivisilla kokonaisluvuilla $n$ pätee
+                            $$a_n = a_1 + (n-1)d.$$
+                        </p>
+                    </div>
                 </div>
+
+                <p>
+                    Seuraavissa tehtävissä harjoitellaan äskeisen teoreeman soveltamista. 
+                </p>
             </div>
-
-            <p>
-                Seuraavissa tehtävissä harjoitellaan äskeisen teoreeman soveltamista. 
-            </p>
-
             <div class="tehtavat">
                 <div class="tehtava" id="8dc69758-7df5-11e7-bb31-be2e44b06b34">
                     <header>
@@ -614,26 +617,27 @@ topnav: may1
             </h1>
         </header>
         <div id="aritmeettinen-summa" class="collapse">
-            <p>
-                Edellä on tarkasteltu päättymättömiä lukujonoja. Joskus ilmiön mallintamiseen tai ongelman ratkaisemiseen tarvitaan vain äärellinen määrä lukuja lukujonon alkupäästä. Tällaisessa tilanteessa nämä luvut voidaan myös laskea yhteen tavalliseen tapaan. Toisin sanottuna voidaan muodostaa niiden summa. Jos tarkastellaan esimerkiksi lukujonoa $(a_n)$, jonka yleinen termi on $a_n = 2n-1$, voidaan laskea vaikkapa sen viiden ensimmäisen termin summa:
-                $$
-                \begin{align*}
-                S_5 &= a_1 + a_2 + a_3 + a_4 + a_5 \\
-                &= 1 + 3 + 5 + 7 + 9 \\
-                &= 25.
-                \end{align*}
-                $$
-                Erilaiset summat luokitellaan niitä vastaavan lukujonon mukaan. 
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: ARITMEETTINEN SUMMA</h3>
+            <div class="teoria">
                 <p>
-                    Summa 
-                    $$S_n = a_1 + \cdots + a_n$$ on <em>aritmeettinen</em>, jos ja vain jos vastaava lukujono $(a_n)$ on aritmeettinen.
+                    Edellä on tarkasteltu päättymättömiä lukujonoja. Joskus ilmiön mallintamiseen tai ongelman ratkaisemiseen tarvitaan vain äärellinen määrä lukuja lukujonon alkupäästä. Tällaisessa tilanteessa nämä luvut voidaan myös laskea yhteen tavalliseen tapaan. Toisin sanottuna voidaan muodostaa niiden summa. Jos tarkastellaan esimerkiksi lukujonoa $(a_n)$, jonka yleinen termi on $a_n = 2n-1$, voidaan laskea vaikkapa sen viiden ensimmäisen termin summa:
+                    $$
+                    \begin{align*}
+                    S_5 &= a_1 + a_2 + a_3 + a_4 + a_5 \\
+                    &= 1 + 3 + 5 + 7 + 9 \\
+                    &= 25.
+                    \end{align*}
+                    $$
+                    Erilaiset summat luokitellaan niitä vastaavan lukujonon mukaan. 
                 </p>
-            </div>
 
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: ARITMEETTINEN SUMMA</h3>
+                    <p>
+                        Summa 
+                        $$S_n = a_1 + \cdots + a_n$$ on <em>aritmeettinen</em>, jos ja vain jos vastaava lukujono $(a_n)$ on aritmeettinen.
+                    </p>
+                </div>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc698de-7df5-11e7-bb31-be2e44b06b34">
                     <header>
@@ -656,18 +660,18 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p>
-                Koska aritmeettisessa summassa yhteenlaskettavia on äärellinen määrä, voi niiden järjestystä vaihtaa vapaasti. Laskut saattavat helpottua huomattavasti, jos yhteenlaskettavat ryhmittelee johonkin toiseen järjestykseen. Aritmeettisen summan tapauksessa erityisen kätevää on ryhmitellä yhteenlaskettavat pareiksi, joiden summa pysyy samana. Esimerkiksi edellä tarkasteltu summa voidaan ryhmitellä seuraavasti:
-                $$
-                \begin{align*}
-                S_5 &= 1 + 3 + 5 + 7 + 9 \\
-                &= (1+9) + (3+7) + 5 \\
-                &= 10 + 10 + 5 = 25
-                \end{align*}
-                $$
-            </p>
-
+            <div class="teoria">
+                <p>
+                    Koska aritmeettisessa summassa yhteenlaskettavia on äärellinen määrä, voi niiden järjestystä vaihtaa vapaasti. Laskut saattavat helpottua huomattavasti, jos yhteenlaskettavat ryhmittelee johonkin toiseen järjestykseen. Aritmeettisen summan tapauksessa erityisen kätevää on ryhmitellä yhteenlaskettavat pareiksi, joiden summa pysyy samana. Esimerkiksi edellä tarkasteltu summa voidaan ryhmitellä seuraavasti:
+                    $$
+                    \begin{align*}
+                    S_5 &= 1 + 3 + 5 + 7 + 9 \\
+                    &= (1+9) + (3+7) + 5 \\
+                    &= 10 + 10 + 5 = 25
+                    \end{align*}
+                    $$
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc69c9e-7df5-11e7-bb31-be2e44b06b34">
 
@@ -715,57 +719,57 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p>
-                Edellisen tehtävän ratkaisun idea voidaan yleistää kaikille aritmeettisille summille, kuten seuraava teoreema osoittaa. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
-            </p>
-
-            <div class="theorem">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Aritmeettinen summa $S_n = a_1 + \cdots + a_n$ lasketaan niin, että termien lukumäärällä kerrotaan summan ensimmäisen ja viimeisen termin keskiarvo eli 
-                    $$a_1 + \cdots + a_n = n \frac{a_1+a_n}{2}.$$
+                    Edellisen tehtävän ratkaisun idea voidaan yleistää kaikille aritmeettisille summille, kuten seuraava teoreema osoittaa. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
                 </p>
-                <div class="proof">
+
+                <div class="theorem">
+                    <h3>TEOREEMA</h3>
                     <p>
-                        Perustelu: Kirjoitetaan summa kahteen kertaan, ensin alusta loppuun ja sitten lopusta alkuun:
-                        $$
-                        \begin{align*}
-                        S_n &= a_1 + a_2 + a_3 + \cdots + a_{n-2} + a_{n-1} + a_n \\
-                        S_n &= a_n + a_{n-1} + a_{n-2} + \cdots + a_3 + a_2 + a_1
-                        \end{align*}
-                        $$
-                        Kun nämä lasketaan puolittain yhteen, saadaan
-                        $$2S_n = (a_1 + a_n) + (a_2 + a_{n-1}) + (a_3 + a_{n-2}) + \cdots + (a_n + a_1).$$
-                        Tässä summassa kaikki sulkujen sisällä olevat lausekkeet ovat yhtä suuria kuin $a_1 + a_n$. Aritmeettisen lukujonon määritelmän nojalla nimittäin esimerkiksi
-                        $$
-                        \begin{align*}
-                        a_2 + a_{n-1} &= (a_1 + d) + a_{n-1} \\
-                        &= a_1 + (a_{n-1} + d) \\
-                        &= a_1 + a_n
-                        \end{align*}
-                        $$
-                        ja sen vuoksi myös
-                        $$
-                        \begin{align*}
-                        a_3 + a_{n-2} &= (a_2 + d) + a_{n-2} \\
-                        &= a_2 + (a_{n-2} + d) \\
-                        &= a_2 + a_{n-1} \\
-                        &= a_1 + a_n.
-                        \end{align*}
-                        $$
-                        Näitä yhteenlaskettavia on $n$ kappaletta, joten voidaan päätellä, että 
-                        $$2S_n = n(a_1 + a_n).$$
-                        Siten
-                        $$S_n = \frac{n(a_1+a_n)}{2}.$$
+                        Aritmeettinen summa $S_n = a_1 + \cdots + a_n$ lasketaan niin, että termien lukumäärällä kerrotaan summan ensimmäisen ja viimeisen termin keskiarvo eli 
+                        $$a_1 + \cdots + a_n = n \frac{a_1+a_n}{2}.$$
                     </p>
+                    <div class="proof">
+                        <p>
+                            Perustelu: Kirjoitetaan summa kahteen kertaan, ensin alusta loppuun ja sitten lopusta alkuun:
+                            $$
+                            \begin{align*}
+                            S_n &= a_1 + a_2 + a_3 + \cdots + a_{n-2} + a_{n-1} + a_n \\
+                            S_n &= a_n + a_{n-1} + a_{n-2} + \cdots + a_3 + a_2 + a_1
+                            \end{align*}
+                            $$
+                            Kun nämä lasketaan puolittain yhteen, saadaan
+                            $$2S_n = (a_1 + a_n) + (a_2 + a_{n-1}) + (a_3 + a_{n-2}) + \cdots + (a_n + a_1).$$
+                            Tässä summassa kaikki sulkujen sisällä olevat lausekkeet ovat yhtä suuria kuin $a_1 + a_n$. Aritmeettisen lukujonon määritelmän nojalla nimittäin esimerkiksi
+                            $$
+                            \begin{align*}
+                            a_2 + a_{n-1} &= (a_1 + d) + a_{n-1} \\
+                            &= a_1 + (a_{n-1} + d) \\
+                            &= a_1 + a_n
+                            \end{align*}
+                            $$
+                            ja sen vuoksi myös
+                            $$
+                            \begin{align*}
+                            a_3 + a_{n-2} &= (a_2 + d) + a_{n-2} \\
+                            &= a_2 + (a_{n-2} + d) \\
+                            &= a_2 + a_{n-1} \\
+                            &= a_1 + a_n.
+                            \end{align*}
+                            $$
+                            Näitä yhteenlaskettavia on $n$ kappaletta, joten voidaan päätellä, että 
+                            $$2S_n = n(a_1 + a_n).$$
+                            Siten
+                            $$S_n = \frac{n(a_1+a_n)}{2}.$$
+                        </p>
+                    </div>
                 </div>
+
+                <p>
+                    Seuraavissa tehtävissä harjoitellaan äskeisen teoreeman soveltamista.
+                </p>
             </div>
-
-            <p>
-                Seuraavissa tehtävissä harjoitellaan äskeisen teoreeman soveltamista.
-            </p>
-
             <div class="tehtavat">
                 <div class="tehtava" id="8dc69e4c-7df5-11e7-bb31-be2e44b06b34">
 
@@ -823,11 +827,11 @@ topnav: may1
             </h1>
         </header>
         <div id="geometrinen-jono" class="collapse">
-
-            <p>
-                Edellä tutustuttiin aritmeettiseen lukujonoon, jossa peräkkäisten jäsenten erotus on vakio. Toinen lukujonotyyppi, jota tarvitaan useissa sovelluksissa, on niin sanottu geometrinen lukujono. Sitä tarvitaan esimerkiksi talouteen liittyvissä sovelluksissa kuten korkoihin ja lainoihin liittyvissä laskelmissa.
-            </p>
-
+            <div class="teoria">
+                <p>
+                    Edellä tutustuttiin aritmeettiseen lukujonoon, jossa peräkkäisten jäsenten erotus on vakio. Toinen lukujonotyyppi, jota tarvitaan useissa sovelluksissa, on niin sanottu geometrinen lukujono. Sitä tarvitaan esimerkiksi talouteen liittyvissä sovelluksissa kuten korkoihin ja lainoihin liittyvissä laskelmissa.
+                </p>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc69fd2-7df5-11e7-bb31-be2e44b06b34">
                     <header>
@@ -873,28 +877,28 @@ topnav: may1
                     </div>
                 </div>
             </div>
+            <div class="teoria">
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: GEOMETRINEN LUKUJONO</h3>
+                    <p>
+                        Lukujono $(a_n)$ on <em>geometrinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku $q$, että
+                        $$\frac{a_{n+1}}{a_n} = q$$
+                        kaikilla positiivisilla kokonaisluvuilla $n$. <br>
+                        Suhde $q$ on nimeltään jonon <em>suhdeluku</em>.
+                    </p>
+                </div>  
 
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: GEOMETRINEN LUKUJONO</h3>
                 <p>
-                    Lukujono $(a_n)$ on <em>geometrinen</em>, jos ja vain jos sen kahden peräkkäisen jäsenen suhde eli osamäärä on aina sama. Toisin sanottuna jos on olemassa sellainen luku $q$, että
-                    $$\frac{a_{n+1}}{a_n} = q$$
-                    kaikilla positiivisilla kokonaisluvuilla $n$. <br>
-                    Suhde $q$ on nimeltään jonon <em>suhdeluku</em>.
+                    Se, että lukujono on geometrinen, voidaan siis osoittaa tutkimalla peräkkäisten jäsenten $a_{n+1}$ ja $a_n$ suhdetta. Tarkastellaan esimerkiksi jonoa $(a_n)$, jolla $a_n = -3 \cdot 7^n$. Sen peräkkäisten jäsenten suhde on 
+                    $$
+                    \begin{align*}
+                    \frac{\textcolor{red}{a_{n+1}}}{\textcolor{blue}{a_n}} &= \frac{\textcolor{red}{-3 \cdot 7^{n+1}}}{\textcolor{blue}{-3 \cdot 7^n}} \\[1mm]
+                    &= \frac{\textcolor{red}{-3 \cdot 7^{n}\cdot 7}}{\textcolor{blue}{-3 \cdot 7^n}} \\[1mm]
+                    &= 7.
+                    \end{align*}$$
+                    Huomataan, että peräkkäisten jäsenten suhde on aina $7$, joten jono $(a_n)$ on geometrinen.
                 </p>
-            </div>  
-
-            <p>
-                Se, että lukujono on geometrinen, voidaan siis osoittaa tutkimalla peräkkäisten jäsenten $a_{n+1}$ ja $a_n$ suhdetta. Tarkastellaan esimerkiksi jonoa $(a_n)$, jolla $a_n = -3 \cdot 7^n$. Sen peräkkäisten jäsenten suhde on 
-                $$
-                \begin{align*}
-                \frac{\textcolor{red}{a_{n+1}}}{\textcolor{blue}{a_n}} &= \frac{\textcolor{red}{-3 \cdot 7^{n+1}}}{\textcolor{blue}{-3 \cdot 7^n}} \\[1mm]
-                &= \frac{\textcolor{red}{-3 \cdot 7^{n}\cdot 7}}{\textcolor{blue}{-3 \cdot 7^n}} \\[1mm]
-                &= 7.
-                \end{align*}$$
-                Huomataan, että peräkkäisten jäsenten suhde on aina $7$, joten jono $(a_n)$ on geometrinen.
-            </p>
-
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc6a4be-7df5-11e7-bb31-be2e44b06b34">
 
@@ -969,40 +973,40 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p>
-                Edellisessä tehtävässä havaittiin, että tarkastellun geometrisen jonon jäsenet pystyttiin laskemaan, kun tiedetiin jonon ensimmäinen jäsen ja suhdeluku. Tämä havainto koskee kaikkia geometrisia jonoja, kuten seuraava teoreema osoittaa. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
-            </p>
-
-            <div class="theorem">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Geometrisen jonon $(a_n)$ jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen $a_1$ ja jonon suhdeluku $q$, sillä kaikilla positiivisilla kokonaisluvuilla $n$ pätee
-                    $$a_n = a_1q^{n-1}.$$
+                    Edellisessä tehtävässä havaittiin, että tarkastellun geometrisen jonon jäsenet pystyttiin laskemaan, kun tiedetiin jonon ensimmäinen jäsen ja suhdeluku. Tämä havainto koskee kaikkia geometrisia jonoja, kuten seuraava teoreema osoittaa. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
                 </p>
-                <div class="proof">
+
+                <div class="theorem">
+                    <h3>TEOREEMA</h3>
                     <p>
-                        Perustelu: Geometrisen jonon määritelmän mukaan 
-                        $$\frac{a_{n+1}}{a_n} = q$$
-                        eli $a_{n+1} = a_nq$ kaikilla positiivisilla kokonaisluvuilla $n$. Tästä saadaan seuraavat tiedot:
-                        $$
-                        \begin{align*}
-                        a_2 &= a_1q \\
-                        a_3 &= a_2q = (a_1q)q = a_1q^2 \\
-                        a_4 &= a_3q = (a_1q^2)q = a_1q^3 \\
-                        a_5 &= a_4q = (a_1q^3)q = a_1q^4 
-                        \end{align*}
-                        $$
-                        ja niin edelleen. Havaitaan säännönmukaisuus: jonon toisesta jäsenestä alkaen jäsen $a_n$ saadaan aina tulona $a_1q^{n-1}$. 
-                        Lisäksi 
-                        $$a_1 = a_1q^0,$$
-                        sillä $q^0 = 1$ kaikilla $q \neq 0$.
-                        Voidaan päätellä, että kaikilla positiivisilla kokonaisluvuilla $n$ pätee
+                        Geometrisen jonon $(a_n)$ jäsenet saadaan laskettua, jos tiedetään jonon ensimmäinen jäsen $a_1$ ja jonon suhdeluku $q$, sillä kaikilla positiivisilla kokonaisluvuilla $n$ pätee
                         $$a_n = a_1q^{n-1}.$$
                     </p>
+                    <div class="proof">
+                        <p>
+                            Perustelu: Geometrisen jonon määritelmän mukaan 
+                            $$\frac{a_{n+1}}{a_n} = q$$
+                            eli $a_{n+1} = a_nq$ kaikilla positiivisilla kokonaisluvuilla $n$. Tästä saadaan seuraavat tiedot:
+                            $$
+                            \begin{align*}
+                            a_2 &= a_1q \\
+                            a_3 &= a_2q = (a_1q)q = a_1q^2 \\
+                            a_4 &= a_3q = (a_1q^2)q = a_1q^3 \\
+                            a_5 &= a_4q = (a_1q^3)q = a_1q^4 
+                            \end{align*}
+                            $$
+                            ja niin edelleen. Havaitaan säännönmukaisuus: jonon toisesta jäsenestä alkaen jäsen $a_n$ saadaan aina tulona $a_1q^{n-1}$. 
+                            Lisäksi 
+                            $$a_1 = a_1q^0,$$
+                            sillä $q^0 = 1$ kaikilla $q \neq 0$.
+                            Voidaan päätellä, että kaikilla positiivisilla kokonaisluvuilla $n$ pätee
+                            $$a_n = a_1q^{n-1}.$$
+                        </p>
+                    </div>
                 </div>
             </div>
-
             <p>
                 Seuraavissa tehtävissä harjoitellaan äskeisen teoreeman soveltamista.
             </p>
@@ -1061,19 +1065,19 @@ topnav: may1
             </h1>
         </header>
         <div id="geometrinen-summa" class="collapse">
-
-            <p>
-                Aiemmin tutustuttiin artimeettiseen summaan, joka muodostuu, kun aritmeettisen lukujonon alkupään jäsenet lasketaan yhteen. Geometriseen lukujonoon liittyy vastaava käsite: geometrinen summa.
-            </p>
-
-            <div class="definition">
-                <h3>MÄÄRITELMÄ: GEOMETRINEN SUMMA</h3>
+            <div class="teoria">
                 <p>
-                    Summa 
-                    $$S_n = a_1 + \cdots + a_n$$ on <em>geometrinen</em>, jos ja vain jos vastaava lukujono $(a_n)$ on geometrinen.
+                    Aiemmin tutustuttiin artimeettiseen summaan, joka muodostuu, kun aritmeettisen lukujonon alkupään jäsenet lasketaan yhteen. Geometriseen lukujonoon liittyy vastaava käsite: geometrinen summa.
                 </p>
-            </div>
 
+                <div class="definition">
+                    <h3>MÄÄRITELMÄ: GEOMETRINEN SUMMA</h3>
+                    <p>
+                        Summa 
+                        $$S_n = a_1 + \cdots + a_n$$ on <em>geometrinen</em>, jos ja vain jos vastaava lukujono $(a_n)$ on geometrinen.
+                    </p>
+                </div>
+            </div>
             <div class="tehtavat">
                 <div class="tehtava" id="8dc6abb2-7df5-11e7-bb31-be2e44b06b34">
                     <header>
@@ -1097,63 +1101,64 @@ topnav: may1
                     </div>
                 </div>
             </div>
-
-            <p>
-                Edellä perustellun teoreeman mukaan geometrisen lukujonon $(a_n)$ jäsenet saadaan aina edellisestä jäsenestä kertomalla suhdeluvulla $q$. Geometrinen lukujono $(a_n)$ on siis muotoa 
-                $$a_1,\, a_1q,\, a_1q^2,\, a_1q^3,\, \ldots$$
-                Vastaava geometrinen summa voidaan siis kirjoittaa muodossa
-                $$S_n = a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1}.$$
-                Seuraavassa teoreemassa esitetään tapa, jolla mikä tahansa geometrinen summa saadaan laskettua. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
-            </p>
-
-            <div class="theorem">
-                <h3>TEOREEMA</h3>
+            <div class="teoria">
                 <p>
-                    Geometrinen summa $S_n = a_1 + \cdots + a_n$ voidaan laskea seuraavasti:
-                <ul>
-                    <li>Jos suhdeluku $q$ on ykkösestä poikkeava eli $q \neq 1$, niin
-                        $$a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}.$$
-                        Huomaa, että tässä luku $n$ kertoo sen, kuinka monta yhteenlaskettavaa summassa on.
-                    </li>
-                    <li> Jos suhdeluku $q$ on yksi eli $q = 1$, niin 
-                        $$a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1.$$
-                    </li>
-                </ul>
+                    Edellä perustellun teoreeman mukaan geometrisen lukujonon $(a_n)$ jäsenet saadaan aina edellisestä jäsenestä kertomalla suhdeluvulla $q$. Geometrinen lukujono $(a_n)$ on siis muotoa 
+                    $$a_1,\, a_1q,\, a_1q^2,\, a_1q^3,\, \ldots$$
+                    Vastaava geometrinen summa voidaan siis kirjoittaa muodossa
+                    $$S_n = a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1}.$$
+                    Seuraavassa teoreemassa esitetään tapa, jolla mikä tahansa geometrinen summa saadaan laskettua. Lue teoreeman perustelu huolellisesti ja mieti jokaisen virkkeen jälkeen, mitä järkeä selityksessä on. Jos jokin kohta tuntuu hämärältä, keskustele siitä kaverin tai opettajan kanssa.
                 </p>
-                <div class="proof">
-                    <p> Perustelu: 
+
+                <div class="theorem">
+                    <h3>TEOREEMA</h3>
+                    <p>
+                        Geometrinen summa $S_n = a_1 + \cdots + a_n$ voidaan laskea seuraavasti:
                     <ul>
-                        <li>
-                            Tarkastellaan aluksi tilannetta, jossa $q \neq 1$. Kirjoitetaan summa kahteen kertaan, ensin tavallisesti ja sitten suhdeluvulla kerrottuna:
-                            $$
-                            \begin{align*}
-                            S_n &= a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} \\
-                            qS_n &= q(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1})
-                            \end{align*}
-                            $$
-                            Kun alemman yhtälön oikealla puolella kerrotaan sulut auki, näyttää tilanne tältä:
-                            $$
-                            \begin{align*}
-                            S_n &= a_1 + a_1q + a_1q^2 + \cdots  + a_1q^{n-1} \\
-                            qS_n &= \phantom{a_1 +{}} a_1q + a_1q^2 + a_1q^3 + \cdots + a_1q^n
-                            \end{align*}
-                            $$
-                            Kun ylemmästä yhtälöstä vähennetään alempi, suurin osa termeistä kumoaa toisensa ja saadaan
-                            $$S_n - qS_n = a_1-a_1q^n.$$
-                            Yhtälön vasemmalta puolelta voidaan ottaa yhteinen tekijä $S_n$, jolloin yhtälö saadaan muotoon
-                            $$(1-q)S_n= a_1-a_1q^n.$$
-                            Jakamalla yhtälön molemmat puolet kertoimella $1-q$ saadaan
-                            $$S_n = \frac{a_1-a_1q^n}{1-q}.$$
-                            Huomaa, että alussa rajoituttiin tarkastelemaan tilannetta, jossa $q \neq 1$. Sen vuoksi $1-q \neq 0$ ja jakaminen voidaan tehdä. 
-                            Saadun yhtälön oikealta puolelta voidaan vielä ottaa yhteinen tekijä $a_1$, jolloin yhtälö saadaan muotoon
-                            $$S_n= a_1\cdot \frac{1-q^n}{1-q}.$$
+                        <li>Jos suhdeluku $q$ on ykkösestä poikkeava eli $q \neq 1$, niin
+                            $$a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = a_1\cdot \frac{1-q^n}{1-q}.$$
+                            Huomaa, että tässä luku $n$ kertoo sen, kuinka monta yhteenlaskettavaa summassa on.
                         </li>
-                        <li>
-                            Jos $q = 1$, niin 
-                            $S_n = a_1 + a_1 + \cdots + a_1$, missä yhteenlaskettavien lukumäärä on $n$. Siis tässä tapauksessa
-                            $S_n = na_1$.</li>
+                        <li> Jos suhdeluku $q$ on yksi eli $q = 1$, niin 
+                            $$a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} = na_1.$$
+                        </li>
                     </ul>
                     </p>
+                    <div class="proof">
+                        <p> Perustelu: 
+                        <ul>
+                            <li>
+                                Tarkastellaan aluksi tilannetta, jossa $q \neq 1$. Kirjoitetaan summa kahteen kertaan, ensin tavallisesti ja sitten suhdeluvulla kerrottuna:
+                                $$
+                                \begin{align*}
+                                S_n &= a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1} \\
+                                qS_n &= q(a_1 + a_1q + a_1q^2 + \cdots + a_1q^{n-1})
+                                \end{align*}
+                                $$
+                                Kun alemman yhtälön oikealla puolella kerrotaan sulut auki, näyttää tilanne tältä:
+                                $$
+                                \begin{align*}
+                                S_n &= a_1 + a_1q + a_1q^2 + \cdots  + a_1q^{n-1} \\
+                                qS_n &= \phantom{a_1 +{}} a_1q + a_1q^2 + a_1q^3 + \cdots + a_1q^n
+                                \end{align*}
+                                $$
+                                Kun ylemmästä yhtälöstä vähennetään alempi, suurin osa termeistä kumoaa toisensa ja saadaan
+                                $$S_n - qS_n = a_1-a_1q^n.$$
+                                Yhtälön vasemmalta puolelta voidaan ottaa yhteinen tekijä $S_n$, jolloin yhtälö saadaan muotoon
+                                $$(1-q)S_n= a_1-a_1q^n.$$
+                                Jakamalla yhtälön molemmat puolet kertoimella $1-q$ saadaan
+                                $$S_n = \frac{a_1-a_1q^n}{1-q}.$$
+                                Huomaa, että alussa rajoituttiin tarkastelemaan tilannetta, jossa $q \neq 1$. Sen vuoksi $1-q \neq 0$ ja jakaminen voidaan tehdä. 
+                                Saadun yhtälön oikealta puolelta voidaan vielä ottaa yhteinen tekijä $a_1$, jolloin yhtälö saadaan muotoon
+                                $$S_n= a_1\cdot \frac{1-q^n}{1-q}.$$
+                            </li>
+                            <li>
+                                Jos $q = 1$, niin 
+                                $S_n = a_1 + a_1 + \cdots + a_1$, missä yhteenlaskettavien lukumäärä on $n$. Siis tässä tapauksessa
+                                $S_n = na_1$.</li>
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
             <p>
