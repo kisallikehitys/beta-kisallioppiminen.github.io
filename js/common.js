@@ -36,6 +36,10 @@ if (document.domain == "localhost" || document.domain == "127.0.0.1") {
   //temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
   temp_backend_base_url = "https://pure-inlet-98383.herokuapp.com/";
   temp_frontend_base_url = "https://ohtukisalli.github.io/";
+} else if (document.domain == "kisallikehitys.github.io") {
+  //temp_backend_base_url = "http://kurssihallinta.kisallioppiminen.fi/";
+  temp_backend_base_url = "https://pure-inlet-98383.herokuapp.com/";
+  temp_frontend_base_url = "https://kisallikehitys.github.io/";
 //if in production
 } else if (document.domain == "beta-kisallioppiminen.github.io") {
   temp_backend_base_url = "https://kurssihallinta.kisallioppiminen.fi/";
