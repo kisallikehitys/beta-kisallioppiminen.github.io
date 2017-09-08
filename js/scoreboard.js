@@ -1,3 +1,63 @@
+class Summary {
+    static get colors() {return ['red', 'green', 'yellow'];}
+    
+    constructor(red = 0, yellow = 0, green = 0, gray = 0) {
+        this.ired =red;
+        this.iyellow = yellow;
+        this.igreen = green;
+        this.igray = gray;
+    }
+    
+    get green() {
+        return this.igreen;
+    }
+
+    get red() {
+        return this.ired;
+    }
+
+    get yellow() {
+        return this.iyellow;
+    }
+    
+   
+    add(another) {
+        if (typeof another === 'object') {
+            this.ired += another.red;
+            this.igreen += another.green;
+            this.iyellow += another.yellow;
+            this.igray += another.gray;
+        }
+        if (typeof another === 'string') {
+            this['i'+another] += 1;
+        }
+    }
+    
+    getView() {
+        const bgColors = {
+            red: '#FF9999',
+            green: '#99FF99',
+            yellow: '#99FFFF'
+        };
+        const fgColors = {
+            red: '#AA0000',
+            green: '#00AA00',
+            yellow: '#00AAAA'
+        };
+        let root = document.createElement('span');
+        for (let color of Summary.colors) {
+            let item = document.createElement('span');
+            item.setAttribute('class', 'summary-set summary-set-'+color);
+            item.style.backgroundColor = bgColors[color];
+            item.style.color = fgColors[color];
+            item.innerHTML = this['i'+color];
+            root.appendChild(item);
+        }
+        return root;
+    }
+}
+
+
 /**
  * Creates scoreboard from input JSON data
  */
@@ -8,7 +68,7 @@ class Scoreboard {
     return `scoreboard.html?id=${encodeURIComponent(id)}&html_id=${encodeURIComponent(html_id)}&coursekey=${coursekey}`;
   }
 
-  static createTable(courseData, exercises, table_id, course) {
+  static createTable(courseData, exercises, table_id, course, chapters) {
     const keys = {
       "green": 0,
       "yellow": 1,
@@ -21,45 +81,72 @@ class Scoreboard {
     let id = Math.random().toString(36).substring(7);
 
     let scoreboard = view.createScoreboardFrame(id);
-
-    for (let i in exercises) {
-      let item = view.createExercise(exercises[i].number);
-      scoreboard.querySelector('tr').appendChild(item);
+    
+    for (let chapter of chapters) {
+        if (chapter !== undefined) {
+            let item = view.createChapterHeader(chapter.name, chapter.exercises.length);
+            let t = scoreboard.querySelector('tr.chapterNames');
+            console.log(t);
+                    t.appendChild(item);
+            for (let exercise of chapter.exercises) {
+                let eItem = view.createExercise(exercise.displayNumber);
+                scoreboard.querySelector('tr.exerciseNumbers').appendChild(eItem);
+            }
+            item = view.createExercise('&Sigma;')
+            scoreboard.querySelector('tr.exerciseNumbers').appendChild(item);
+        }
     }
-
+/*
+    for (let i in exercises) {
+      let item = view.createExercise(exercises[i].displayNumber);
+      scoreboard.querySelector('tr.exerciseNumbers').appendChild(item);
+    }
+*/
     //let body = document.createElement('tbody');
     //scoreboard.appendChild(body);
+    
 
-    for (let j in courseData) {      
-      let student = courseData[j];
+    for (let student of courseData) {      
+      //let student = courseData[j];
+      let studentSummary = new Summary();     
 
       let row = view.createName(student.user);
+      for (let chapter of chapters) {
+        if (chapter !== undefined) {
+            let chapterSummary = new Summary();  
 
-      for (let k in student.exercises) {
-        let correctExercise = exercises[k];
-        let exercise = student.exercises.filter(function (obj) {
-          return obj.id == correctExercise.id;
-        });
-        if (exercise.length === 1) {
-          let checkmark;
-          if(student.color === undefined) {
-            checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.number);            
-          } else {
-            checkmark = view.createScheduleMark(scheduleColors[student.color], exercise[0].status, student.user, correctExercise.number);
-          }
-          row.appendChild(checkmark);
-        } else {
-          let checkmark = view.createCheckmark(3, 'gray', student.user, correctExercise.number);
-          row.appendChild(checkmark);          
+            for (let correctExercise of chapter.exercises) {
+              //let correctExercise = exercises[k]; TÄSSÄ OLI LOGIIKKAVIRHE ALKUPERÄISESSÄ KOODISSA
+              let exercise = student.exercises.filter(function (obj) {
+                return obj.id == correctExercise.id;
+              });
+              if (exercise.length === 1) { // on suorittanut harjoituksen
+                let checkmark;
+                if(student.color === undefined) {
+                  checkmark = view.createCheckmark(keys[exercise[0].status], exercise[0].status, student.user, correctExercise.displayNumber);            
+                  chapterSummary.add(exercise[0].status);
+                } else {
+                  checkmark = view.createScheduleMark(scheduleColors[student.color], exercise[0].status, student.user, correctExercise.displayNumber);
+                }
+                row.appendChild(checkmark);
+              } else {    // ei ole tehnyt harjoitusta
+                let checkmark = view.createCheckmark(3, 'gray', student.user, correctExercise.displayNumber);
+                row.appendChild(checkmark);          
+              }
+            }
+            row.appendChild(view.createChapterSummary(chapterSummary.getView()));
+            studentSummary.add(chapterSummary); 
         }
       }
+      row.appendChild(view.createTotalSummary(studentSummary.getView()));
       if (student.color != undefined) {
         scoreboard.querySelector('tfoot').appendChild(row);
       } else {
         scoreboard.querySelector('tbody').appendChild(row);        
       }
     }
-
+    
+    
     $('div[id=checkmarkTable' + table_id + ']').html(scoreboard);
 
     if (window.location.pathname.includes("/kurssihallinta.html")) {
@@ -97,8 +184,12 @@ class Scoreboard {
   }
 
   static createScoreboard(pageData, data, course) {
-    let exercises = Exercises.extractExercises(pageData);
-    this.createTable(data.students, exercises, data.coursekey, course);
+    let {exercises, chapters} = Exercises.extractExercises(pageData);
+    this.createTable(data.students, exercises, data.coursekey, course, chapters);
+  }
+  
+  static createCsvTable(courseData, exercises, table_id, course, chapters) {
+      
   }
 
   static validateScoreboardData(data) {
@@ -107,6 +198,7 @@ class Scoreboard {
       let item = data.students[i];
       amount.push(item.exercises.length);
     }
+    // testaa, että kaikkien pituus on sama. Miksi?
     return amount.every( (val, i, arr) => val == arr[0] );
   }
 
@@ -130,7 +222,22 @@ class Scoreboard {
     if (window.location.pathname.includes("/omat_kurssit")) {
       url = `students/${Session.getUserId()}/courses/${course.id}/scoreboard`;
     }
-
+    // Huom! Unoptimized fetching?! Why? --> Simultaneus fetching rather
+    let pageDataFetch = this.getPageData(course.html_id);
+    let scoreboardFetch = backend.get(url);
+    Promise.all([pageDataFetch, scoreboardFetch])
+            .then(values => {
+       let pageData = values[0];
+       let data = values[1];
+                if (Scoreboard.validateScoreboardData(data)) {
+                  Scoreboard.createScoreboard(pageData, data, course);                  
+                } else {
+                  Scoreboard.displayError(course, data);
+                }       
+    })    .catch(data => {
+        Scoreboard.displayError(course, data);
+    });
+    /* 
     this.getPageData(course.html_id)
       .then(
         function fulfilled(pageData) {
@@ -151,7 +258,8 @@ class Scoreboard {
         function rejected() {
 
         }
-      );
+        
+      );*/
   }
 
 }

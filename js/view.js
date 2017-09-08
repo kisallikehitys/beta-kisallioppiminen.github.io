@@ -3,12 +3,20 @@
  * @license GPL v2
  * @version 1.00
  */
-
+const scoreboardChapterSummaryColumns = 1,
+      scoreboardTotalSummaryColumns = 2;
 
  /**
   * @class
   */
 class View {
+  static get scoreboardChapterSummaryColumns() {
+      return scoreboardChapterSummaryColumns;
+  };
+
+  static get scoreboardTotalSummaryColumns() {
+      return scoreboardTotalSummaryColumns;
+  };
 
   constructor() {
     this.nav = document.querySelector('nav>ul');
@@ -265,9 +273,15 @@ class View {
     scoreboard.setAttribute('id', id);
 
     let body = document.createElement('tbody');
-
-    let item = document.createElement('tr');
-    body.appendChild(item);
+    let head = document.createElement('thead');
+    let eitem = document.createElement('tr');
+    eitem.setAttribute('class', 'exerciseNumbers');
+    body.appendChild(eitem);
+    
+    let citem = document.createElement('tr');
+    citem.setAttribute('class', 'chapterNames');
+    head.appendChild(citem);
+    scoreboard.appendChild(head);
     scoreboard.appendChild(body);
 
     let foot = document.createElement('tfoot');
@@ -275,9 +289,11 @@ class View {
 
     let column = document.createElement('th');
     column.setAttribute('class', 'nameColumn');
+    let column2 = document.createElement('th');
+    column2.setAttribute('class', 'nameColumn');
 
-    scoreboard.querySelector('tr').appendChild(column);
-
+    scoreboard.querySelector('tr.exerciseNumbers').appendChild(column);
+    scoreboard.querySelector('tr.chapterNames').appendChild(column2);
     return scoreboard;
   }
 
@@ -306,10 +322,37 @@ class View {
     return checkboxDiv;
   }
 
+  createChapterSummary(summary) {
+      let item = document.createElement('td');
+      item.setAttribute('class', 'chapterSummary');
+      if (typeof summary === 'string')
+        item.innerHTML = summary;
+      else if (typeof summary === 'object')
+        item.appendChild(summary);
+      return item;
+  }
+  
+  createTotalSummary(summary) {
+      let item = document.createElement('td');
+      item.setAttribute('class', 'totalSummary');
+      if (typeof summary === 'string')
+        item.innerHTML = summary;
+      else if (typeof summary === 'object')
+        item.appendChild(summary);
+      return item;
+  }
+
+  createChapterHeader(name, numberExercises) {
+      let item = document.createElement('th');
+      item.setAttribute('class', 'chapterTitle');
+      item.setAttribute('colspan', numberExercises + View.scoreboardChapterSummaryColumns);
+      item.innerHTML = name;
+      return item;
+  }
 
   createExercise(number) {
     let item = document.createElement('th');
-    item.setAttribute('class', 'numberHeader');
+    item.setAttribute('class', 'numberHeader exercise-'+number);
     item.innerHTML = number;
     return item;
   }

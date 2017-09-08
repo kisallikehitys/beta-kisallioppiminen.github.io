@@ -47,7 +47,7 @@ resources:
 
 
 
-exclude: [vendor]
+exclude: [vendor, bundle]
 
 defaults:
   -

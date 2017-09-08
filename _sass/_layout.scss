@@ -265,6 +265,14 @@ article ul {
 	padding-right: 8px;
 }
 
+.summary-set:after {
+    content: "/";
+}
+
+.summary-set:after:last-child {
+    content: "";
+}
+
 @media screen and (max-width: 1160px) {
 
 	main {
